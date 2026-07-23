@@ -1,0 +1,13 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"g_vColorTint"	"[1.000000 1.000000 1.000000 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[1.000000 1.000000 0.000000 0.000000]"
+	"TextureColor"	"materials/polygon/adventures/polyadventuretexture_dark_02_color.png"
+	"TextureTranslucency"	"materials/polygon/adventures/polyadventuretexture_dark_02_a5c863e5_trans.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/polygon/adventures/polyadventuretexture_dark_02_color_png_a5c863e5.vtex"
+	}
+}

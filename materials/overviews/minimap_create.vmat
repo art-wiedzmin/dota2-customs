@@ -1,0 +1,10 @@
+"Layer0"
+{
+	"shader"	"ui.vfx"
+	"F_TRANSLUCENT"	"0"
+	"TextureColor"	"materials/overviews/minimap_create.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/overviews/minimap_create_tga_7c396330.vtex"
+	}
+}

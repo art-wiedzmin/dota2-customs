@@ -1,0 +1,10 @@
+"Layer0"
+{
+	"shader"	"ui.vfx"
+	"F_TRANSLUCENT"	"0"
+	"TextureColor"	"materials/overviews/1_player.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/overviews/1_player_tga_c14ad2d4.vtex"
+	}
+}
