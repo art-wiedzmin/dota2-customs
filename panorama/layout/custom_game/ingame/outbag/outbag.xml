@@ -1,0 +1,67 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/outbag/outbag.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/tips/cardtip/cardtip_util.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/outbag/outbag.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="pet_econ_preview_snippet">
+			<Panel class="show_model_bg" hittest="true">
+				<DOTAUIEconSetPreview id="pet_econ_preview" class="showpetmodel" itemdef="" itemstyle="1" allowrotation="true" drawbackground="false" antialias="true" displaymode="loadout_small" hittest="false" />
+			</Panel>
+		</snippet>
+		<snippet name="pet_scene_preview_snippet">
+			<Panel class="show_model_bg" hittest="true">
+				<DOTAScenePanel id="pet_scene_preview" class="showpetmodel" unit="CardPet" allowrotation="y" yawmin="-20" yawmax="20" drawbackground="false" particleonly="false" antialias="true" hittest="false" />
+			</Panel>
+		</snippet>
+		<snippet name="pet_scene_preview_ti10_snippet">
+			<Panel class="show_model_bg" hittest="true">
+				<DOTAScenePanel id="pet_scene_preview_ti10" class="showpetmodel" unit="CardPetTi10" allowrotation="y" yawmin="-20" yawmax="20" drawbackground="false" particleonly="false" antialias="true" hittest="false" />
+			</Panel>
+		</snippet>
+		<snippet name="loadout_slot_snippet">
+			<Panel class="loadout_slot" hittest="true">
+				<Label id="loadout_slot_label" class="loadout_slot_label" text="" />
+				<Panel id="loadout_slot_body" class="loadout_slot_body" hittest="true">
+					<Panel class="loadout_slot_icon_wrap" hittest="true">
+						<Image id="loadout_slot_icon" class="loadout_slot_icon" src="" hittest="false" />
+					</Panel>
+					<Panel id="loadout_slot_model_wrap" class="loadout_slot_model_wrap" hittest="true" />
+					<Label id="loadout_slot_name" class="loadout_slot_name" text="" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="bag_slot_snippet">
+			<Panel class="bag_slot" hittest="true">
+				<Panel class="bag_slot_inner" hittest="true">
+					<Image id="bag_slot_icon" class="bag_slot_icon" src="" hittest="false" />
+					<Panel id="bag_slot_model_wrap" class="bag_slot_model_wrap" hittest="true" />
+					<Label id="bag_slot_count" class="bag_slot_count" text="" />
+					<Button id="bag_slot_hover" class="bag_slot_hover" hittest="true">
+						<Label id="bag_slot_action" class="bag_slot_action" text="佩戴" />
+					</Button>
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="root" hittest="true">
+		<Panel id="outbag_hit_block" class="outbag_hit_block" hittest="true" />
+		<Panel id="outbag_box" class="outbag_box" hittest="true">
+			<Panel id="loadout_panel" class="loadout_panel" hittest="true">
+				<Label class="section_title" text="当前佩戴" />
+				<Panel id="loadout_list" class="loadout_list" hittest="true" />
+			</Panel>
+			<Panel id="items_panel" class="items_panel" hittest="true">
+				<Label class="section_title" text="我的道具" />
+				<Panel id="items_grid" class="items_grid" hittest="true" />
+				<Label id="items_empty" class="items_empty" text="暂无道具，可通过战令等活动获得" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

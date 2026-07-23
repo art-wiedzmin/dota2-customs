@@ -1,0 +1,370 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	opacity: 0;
+}
+
+.book_box
+{
+	width: 1500px;
+	height: 968px;
+	horizontal-align: center;
+	vertical-align: center;
+	background-image: url("s2r://panorama/images/custom_game/t_bac_png.vtex");
+	background-size: 100% 100%;
+	background-position: center;
+	flow-children: down;
+	padding: 0 50px;
+}
+
+.top_nav
+{
+	width: 100%;
+	height: 80px;
+	border-bottom: 1px solid #61829F;
+}
+
+.nav_box
+{
+	horizontal-align: center;
+	flow-children: right;
+	vertical-align: center;
+	height: 41px;
+	width: 361px;
+	background-image: url("s2r://panorama/images/custom_game/t_nav_bac_png.vtex");
+	background-size: 100% 100%;
+	background-position: center;
+}
+
+.nav_item
+{
+	width: 118px;
+	height: 38px;
+}
+
+.nav_item.active
+{
+	background-image: url("s2r://panorama/images/custom_game/t_nav_btn_png.vtex");
+	background-size: 100% 100%;
+	background-position: center;
+}
+
+.nav_label
+{
+	text-align: center;
+	horizontal-align: center;
+	vertical-align: center;
+	font-size: 18px;
+	color: #5F7791;
+}
+
+.nav_item.active .nav_label
+{
+	color: #ffffff;
+}
+
+.nav_label:hover
+{
+	brightness: 1.5;
+}
+
+.close_panel
+{
+	horizontal-align: right;
+	vertical-align: center;
+	margin-right: -20px;
+}
+
+.close_img
+{
+	width: 24px;
+	height: 24px;
+}
+
+.container
+{
+	width: 100%;
+	height: 830px;
+	margin-top: 30px;
+}
+
+.body_box
+{
+	width: 100%;
+	height: 100%;
+	overflow: squish scroll;
+	visibility: collapse;
+}
+
+#body_1
+{
+	flow-children: right;
+	visibility: visible;
+}
+
+.style_box
+{
+	margin-right: 20px;
+	flow-children: down;
+	width: 370px;
+}
+
+.type_list_box
+{
+	width: 100%;
+	flow-children: right-wrap;
+	overflow: squish scroll;
+	margin-top: 25px;
+}
+
+.type_panel
+{
+	flow-children: right;
+}
+
+.type_image
+{
+	width: 24px;
+	height: 24px;
+	vertical-align: center;
+	margin-right: 10px;
+}
+
+.type_label
+{
+	font-size: 22px;
+	color: #5F7791;
+}
+
+.hero_li
+{
+	width: 65px;
+	height: 85px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	z-index: 5;
+}
+
+#style_box_4
+{
+	margin-right: 0;
+}
+
+.no_image
+{
+	width: 100%;
+	height: 100%;
+	visibility: collapse;
+}
+
+.ability_list_box
+{
+	flow-children: right-wrap;
+	width: 100%;
+}
+
+.ability_li
+{
+	margin-right: 10px;
+	flow-children: right;
+	margin-bottom: 20px;
+	width: 456px;
+	padding: 8px 10px;
+	background-color: rgba(0,0,0,0.3);
+	border: 2px solid #000000;
+}
+
+.ability_li:hover
+{
+	background-color: rgba(0,0,0,0.4);
+}
+
+.ability_li_left
+{
+	width: 65px;
+	height: 85px;
+	vertical-align: bottom;
+}
+
+.ability_li_right
+{
+	width: 100%;
+	flow-children: down;
+	margin-left: 10px;
+	height: 100%;
+}
+
+.ability_list
+{
+	width: 100%;
+	flow-children: right;
+	vertical-align: bottom;
+}
+
+#body_2
+{
+	flow-children: down;
+}
+
+.public_skill_box
+{
+	width: 100%;
+	flow-children: down;
+	margin-bottom: 20px;
+}
+
+.public_skill_label
+{
+	font-size: 22px;
+	color: #5F7791;
+	margin-bottom: 12px;
+}
+
+.public_ability_list
+{
+	width: 100%;
+	flow-children: right-wrap;
+}
+
+.slot_li
+{
+	width: 54px;
+	height: 54px;
+	margin-right: 8px;
+}
+
+.ability_image
+{
+	width: 100%;
+	height: 100%;
+}
+
+.no_select
+{
+	width: 100%;
+	height: 100%;
+	visibility: collapse;
+}
+
+.hero_name
+{
+	font-size: 16px;
+	color: #5F7791;
+	margin-top: 2px;
+}
+
+.fight_box
+{
+	width: 100%;
+	flow-children: down;
+}
+
+.fight_label
+{
+	font-size: 24px;
+	color: #FFFFFF;
+	margin-bottom: 35px;
+}
+
+.fight_list
+{
+	width: 100%;
+	flow-children: right-wrap;
+}
+
+.fight_slot_li
+{
+	width: 436px;
+	height: 122px;
+	margin-right: 30px;
+	margin-bottom: 20px;
+	padding: 20px 20px 0 20px;
+	background-color: rgba(0,0,0,0.3);
+	flow-children: right;
+	border: 2px solid #000000;
+}
+
+.fight_slot_li:hover
+{
+	background-color: rgba(0,0,0,0.4);
+}
+
+.fight_left
+{
+	width: 74px;
+	height: 74px;
+}
+
+.fight_image
+{
+	width: 100%;
+	height: 100%;
+}
+
+.fight_right
+{
+	width: 100%;
+	flow-children: down;
+	height: 100%;
+	margin-left: 10px;
+}
+
+.fight_name
+{
+	font-size: 18px;
+	color: #ffffff;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.fight_text
+{
+	font-size: 14px;
+	color: #5F7791;
+}
+
+#body_3
+{
+	flow-children: down;
+}
+
+.hero_panel
+{
+	width: 150px;
+	height: 180px;
+	z-index: 9;
+	transition-property: opacity,pre-transform-scale2d,transform;
+	transition-duration: 0.2s;
+	transition-timing-function: linear;
+	pre-transform-scale2d: 0.1;
+	border: 2px solid #000000;
+}
+
+.unitsize
+{
+	width: 100%;
+	height: 100%;
+}
+
+.text_panel
+{
+	width: 100%;
+	height: 30px;
+	background-color: rgba(0,0,0,0.6);
+	vertical-align: bottom;
+}
+
+.text_label_hover
+{
+	font-size: 18px;
+	color: #ffffff;
+	text-align: center;
+	horizontal-align: center;
+	vertical-align: center;
+}
+

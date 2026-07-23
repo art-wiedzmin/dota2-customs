@@ -1,0 +1,40 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/code/code.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/code/code.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/code/qrcode.vjs_c" />
+	</scripts>
+	<Panel class="root" hittest="true">
+		<Panel id="pay_box" class="pay_box" hittest="true">
+			<Panel class="Title" hittest="true">
+				<Panel class="CloseBtn" onactivate="ClosePage()" hittest="true">
+					<Image class="Img" src="s2r://panorama/images/custom_game/close_icon_png.vtex" />
+				</Panel>
+			</Panel>
+			<Panel class="ZFTYPE" hittest="true">
+				<Panel class="Btn" id="btn_1" onactivate="PayType(1)" hittest="true">
+					<Image id="wx_img" class="pay_icon" src="s2r://panorama/images/custom_game/pay_wx_png.vtex" />
+					<Label class="PayText" text="微信" />
+				</Panel>
+				<Panel class="Btn" id="btn_2" onactivate="PayType(2)" hittest="true">
+					<Image id="zfb_img" class="pay_icon" src="s2r://panorama/images/custom_game/pay_zfb_png.vtex" />
+					<Label class="PayText" text="支付宝" />
+				</Panel>
+			</Panel>
+			<Panel id="pay_panel_box" class="pay_panel_box" hittest="true">
+				<Panel id="pay_else" class="pay_else">
+					<Label id="pay_text_text" class="pay_text" text="" />
+					<Label id="pay_text_num" class="pay_text" text="¥ 60" />
+				</Panel>
+				<Panel id="wx_ewm" class="PayBox" hittest="true">
+					<Panel id="wx_ma" class="pay_ma" />
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

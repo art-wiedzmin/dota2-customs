@@ -1,0 +1,119 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.Box
+{
+	width: 1000px;
+	height: 1000px;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.Img
+{
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+}
+
+DOTAQuickStats,.TopBottomFlow
+{
+	margin-top: 75px;
+}
+
+.qq_box
+{
+	vertical-align: center;
+	margin-top: 329px;
+	margin-left: 102px;
+	flow-children: right;
+}
+
+.text_label_1
+{
+	font-size: 18px;
+	color: #ffffff;
+	vertical-align: bottom;
+}
+
+.text_label
+{
+	font-size: 18px;
+	color: #ffffff;
+	vertical-align: center;
+	text-decoration: underline;
+	margin-left: 4px;
+}
+
+.copy_label
+{
+	background-color: transparent;
+	border: 1px solid transparent;
+}
+
+.copy_label:focus
+{
+	border: 1px solid transparent;
+	background-color: #00000000;
+}
+
+.dy_box
+{
+	width: 220px;
+	height: 345px;
+	background-color: rgba(0,0,0,0.8);
+	vertical-align: center;
+	margin-left: 435px;
+	margin-top: 470px;
+}
+
+.dy_list
+{
+	width: 100%;
+	height: 100%;
+	padding: 15px;
+	flow-children: down;
+	overflow: squish scroll;
+}
+
+.li_text
+{
+	font-size: 20px;
+	color: #fcca83;
+	border-bottom: 1px solid #fcca83;
+}
+
+.text_box
+{
+	background-color: rgba(0,0,0,0.8);
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 110px;
+	padding:6px 15px;
+}
+
+.else_text
+{
+	font-size: 18px;
+	color: #ffffff;
+	text-align: center;
+}
+
+.dy_li
+{
+	flow-children: right;
+	margin-bottom: 8px;
+}
+
+.li_img
+{
+	vertical-align: center;
+	width: 30px;
+	height: 30px;
+}
+
+.li_text
+{
+	vertical-align: center;
+	margin-left: 8px;
+}
+

@@ -1,0 +1,161 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/herodata/herodata.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/herodata/herodata.vjs_c" />
+	</scripts>
+	<Panel class="root">
+		<Panel id="section_panel" class="section_panel">
+			<Panel id="top_box" class="top_box">
+				<Panel id="lv_panel" class="lv_panel">
+					<Label id="" class="lv_text" text="星级" />
+					<Label id="lv_text" class="lv_text" text=" lv10" />
+				</Panel>
+				<Panel class="StarBox">
+					<Panel id="star_1" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_2" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_3" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_4" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_5" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_6" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_7" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_8" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_9" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_10" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_11" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_12" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_13" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_14" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_15" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_16" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_17" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_18" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_19" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+					<Panel id="star_20" class="Star">
+						<Image class="Img" src="s2r://panorama/images/custom_game/star_png.vtex" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel class="AttrBox">
+				<Panel class="AttrData">
+					<Panel class="Attr">
+						<Panel class="AttrImg">
+							<Image class="Img" src="s2r://panorama/images/custom_game/attr_1_png.vtex" />
+						</Panel>
+						<Panel class="AttrTitle">
+							<Label class="Text1" text="力量" />
+						</Panel>
+						<Panel class="AttrText">
+							<Label id="llcz" class="Text2" text="10.1" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="AttrData">
+					<Panel class="Attr">
+						<Panel class="AttrImg">
+							<Image class="Img" src="s2r://panorama/images/custom_game/attr_2_png.vtex" />
+						</Panel>
+						<Panel class="AttrTitle">
+							<Label class="Text1" text="敏捷" />
+						</Panel>
+						<Panel class="AttrText">
+							<Label id="mjcz" class="Text2" text="11.1" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="AttrData">
+					<Panel class="Attr">
+						<Panel class="AttrImg">
+							<Image class="Img" src="s2r://panorama/images/custom_game/attr_3_png.vtex" />
+						</Panel>
+						<Panel class="AttrTitle">
+							<Label class="Text1" text="智力" />
+						</Panel>
+						<Panel class="AttrText">
+							<Label id="zlcz" class="Text2" text="4.1" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel class="FuncBox">
+				<Image id="kuaijie_image" class="kuaijie_image" src="s2r://panorama/images/custom_game/kuaijie_png.vtex" />
+				<Panel class="Btn_class" onactivate="RollStar()">
+					<Image id="suiji" class="suiji" src="s2r://panorama/images/custom_game/suiji_png.vtex" />
+				</Panel>
+				<Panel class="Btn_class" onactivate="LevelStar()">
+					<Image id="jia" class="suiji" src="s2r://panorama/images/custom_game/jia_png.vtex" />
+				</Panel>
+			</Panel>
+			<Panel class="Shop_class" onactivate="EazyShop()">
+				<Label class="Text1 text_num ShopNum" text="便捷商店" />
+			</Panel>
+		</Panel>
+		<Panel id="hover_1" class="hover_panel">
+			<Image id="" class="jiao_img" src="s2r://panorama/images/custom_game/jiao_d_png.vtex" />
+			<Panel id="" class="hover_box">
+				<Panel id="" class="hover_title">
+					<Image id="" class="glod_img" src="s2r://panorama/images/custom_game/gold_png.vtex" />
+					<Label id="gold_num_1" class="gold_num" text="1500" />
+				</Panel>
+				<Panel id="" class="hover_text">
+					<Label id="" class="hover_text_label" text="升级星级：增加一颗星并刷新成长，最高升至16星。" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="hover_2" class="hover_panel">
+			<Image id="" class="jiao_img" src="s2r://panorama/images/custom_game/jiao_d_png.vtex" />
+			<Panel id="" class="hover_box">
+				<Panel id="" class="hover_title">
+					<Image id="" class="glod_img" src="s2r://panorama/images/custom_game/gold_png.vtex" />
+					<Label id="gold_num_2" class="gold_num" text="250" />
+				</Panel>
+				<Panel id="" class="hover_text">
+					<Label id="" class="hover_text_label" text="随机星级：16星前随机刷新星级与成长；16星后10%概率+1星（最高20星）；满星后仅刷新成长。" />
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

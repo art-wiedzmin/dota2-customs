@@ -1,0 +1,35 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/person/person.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/person/person.vjs_c" />
+	</scripts>
+	<Panel class="root" hittest="true">
+		<Panel id="box" class="box" hittest="true">
+			<Panel id="section" class="section" hittest="true">
+				<Panel id="slot_1" class="slot_panel">
+					<Image id="" class="slot_img" src="s2r://panorama/images/custom_game/yk_png.vtex" />
+					<Panel id="" class="day_box">
+						<Label id="label_30" class="label_text" text="30天" />
+					</Panel>
+					<Button id="buy_btn_1" class="buy_btn" onactivate="Pay(1)">
+						<Image id="" class="buy_img" src="s2r://panorama/images/custom_game/h_btn_png.vtex" />
+					</Button>
+				</Panel>
+				<Panel id="slot_2" class="slot_panel">
+					<Image id="" class="slot_img" src="s2r://panorama/images/custom_game/jk_png.vtex" />
+					<Panel id="" class="day_box">
+						<Label id="label_90" class="label_text" text="90天" />
+					</Panel>
+					<Button id="buy_btn_2" class="buy_btn" onactivate="Pay(8)">
+						<Image id="" class="buy_img" src="s2r://panorama/images/custom_game/jk_pay_png.vtex" />
+					</Button>
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

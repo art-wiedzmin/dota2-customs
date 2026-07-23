@@ -1,0 +1,24 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	z-index: 9999999;
+}
+
+#Contents
+{
+	padding: 5px 20px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border: 0px solid none;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#2D2D2D), to(#030404));
+	border: 2px solid #000000;
+}
+
+.tip_text
+{
+	font-size: 16px;
+	color: #CCCCCC;
+}
+

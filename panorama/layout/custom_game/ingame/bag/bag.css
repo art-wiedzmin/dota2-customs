@@ -1,0 +1,78 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	width: 80px;
+	height: 55px;
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-left: 730px;
+	margin-bottom: 90px;
+	opacity: 0;
+	z-index: 1;
+}
+
+.ImgBox
+{
+	width: 25px;
+	height: 25px;
+	margin-left: 5px;
+	brightness: 1;
+	opacity: 0;
+	horizontal-align: right;
+	z-index: 1;
+}
+
+.ImgBox:hover
+{
+	width: 25px;
+	height: 25px;
+	brightness: 2;
+}
+
+.TextBox
+{
+	horizontal-align: right;
+	width: 100%;
+	height: 100%;
+	padding-left: 46px;
+	padding-top: 35px;
+}
+
+.BagText
+{
+	font-size: 14px;
+	color: white;
+	horizontal-align: right;
+	vertical-align: bottom;
+	margin-right: 5px;
+}
+
+.kuang_class
+{
+	margin-left: 15px;
+	margin-top: 8px;
+	opacity: 0;
+	width: 60px;
+	height: 45px;
+}
+
+.kuang_img
+{
+	width: 100%;
+	height: 100%;
+}
+
+#up_img
+{
+	width: 100%;
+	height: 100%;
+}
+
+.Img
+{
+	width: 25px;
+	height: 25px;
+	horizontal-align: right;
+}
+

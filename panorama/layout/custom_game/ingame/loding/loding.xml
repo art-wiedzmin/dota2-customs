@@ -1,0 +1,15 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/loding/loding.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/loding/loding.vjs_c" />
+	</scripts>
+	<Panel class="root" hittest="false">
+		<Label class="Text1" text="载入中..." />
+	</Panel>
+</root>

@@ -1,0 +1,109 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	width: 520px;
+	height: 240px;
+	horizontal-align: center;
+	vertical-align: center;
+	background-image: url("s2r://panorama/images/custom_game/c_bac_720_png.vtex");
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	opacity: 0;
+	flow-children: down;
+}
+
+.TitleText
+{
+	horizontal-align: center;
+}
+
+.TitleFunc
+{
+	width: 16px;
+	height: 16px;
+	margin-top: -25px;
+	horizontal-align: right;
+	vertical-align: center;
+	brightness: 1;
+	margin-right: 30px;
+}
+
+.Text1
+{
+	color: gradient( linear, 0% 0%, 0% 100%, from(#FFFEFC), to(#FFCC44 ) );
+	font-size: 18px;
+}
+
+.TitleFunc:hover
+{
+	brightness: 2;
+}
+
+.top_box
+{
+	width: 100%;
+	margin-top: 35px;
+}
+
+.SlotPage
+{
+	margin: 10px;
+	horizontal-align: center;
+	flow-children: right;
+	opacity: 1;
+	margin-top: 20px;
+}
+
+.SlotBox
+{
+	width: 108px;
+	height: 108px;
+	flow-children: down;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.SlotBox:hover
+{
+	brightness: 2;
+}
+
+.ImgBox
+{
+	width: 87px;
+	height: 87px;
+	horizontal-align: center;
+	background-image: url("s2r://panorama/images/custom_game/j_2_png.vtex");
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	vertical-align: center;
+	margin: 13px 0 0 5px;
+}
+
+.Img
+{
+	width: 80px;
+	height: 80px;
+}
+
+.light_img
+{
+	background-image: url("s2r://panorama/images/custom_game/j_1_png.vtex");
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.SlotPage .ImgBox
+{
+	margin: 10px 0 0 5px;
+}
+
+.light_img .ImgBox
+{
+	background-image: none;
+}
+

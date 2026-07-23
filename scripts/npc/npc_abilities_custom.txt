@@ -1,0 +1,1598 @@
+"DOTAAbilities"
+{
+
+	"ability_null_1"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"scroll/ability_null_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"MaxLevel"	"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"duration"	"1 2 3 4"
+			}
+		}
+	}
+
+	"ability_null_0"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"scroll/ability_null_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"MaxLevel"	"0"
+	}
+
+	"ability_null_2"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"scroll/ability_null_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"MaxLevel"	"0"
+	}
+
+	"ability_null_3"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"scroll/ability_null_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"MaxLevel"	"0"
+	}
+
+	"ability_null_4"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"scroll/ability_null_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"MaxLevel"	"0"
+	}
+
+	"ability_null_5"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"scroll/ability_null_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"MaxLevel"	"0"
+	}
+
+	"ability_null_6"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"scroll/ability_null_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"MaxLevel"	"0"
+	}
+
+	"ability_null_7"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"scroll/ability_null_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"MaxLevel"	"0"
+		"Modifiers"
+		{
+			"modifier_ability_null_7"	{}
+		}
+	}
+
+	"ability_null_8"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"scroll/ability_null_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"MaxLevel"	"0"
+	}
+
+	"ability_null_9"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"scroll/ability_null_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"MaxLevel"	"0"
+	}
+
+	"ability_null_10"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"scroll/ability_null_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"MaxLevel"	"0"
+	}
+
+	"ability_null_11"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"scroll/ability_null_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"MaxLevel"	"0"
+	}
+
+	"ability_null_12"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"scroll/ability_null_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"MaxLevel"	"0"
+	}
+
+	"ability_item_1"
+	{
+		// 基础设置
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_1"
+		"ScriptFile"	"Ability/ability_rb_1/ability_item_1"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		// 等级相关
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"10 20 30 40 50 60 70 80 90 100"
+			"num2"	"10 20 30 40 50 60 70 80 90 100"
+			// 服务端 Lua GetAuraRadius 读取；可调平衡勿改语义
+			"aura_radius"	"600"
+		}
+		// 光环设置
+		"IsAura"	"1"
+		"AuraTeams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AuraTypes"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	}
+
+	"ability_item_2"
+	{
+		// 基础设置
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_2"
+		"ScriptFile"	"Ability/ability_rb_2/ability_item_2"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		// 等级相关
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"10 15 20 25 30 35 40 45 50 55"
+			"num2"	"10 20 30 40 50 60 70 80 90 100"
+			"aura_radius"	"600"
+		}
+		// 光环设置
+		"IsAura"	"1"
+		"AuraTeams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AuraTypes"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	}
+
+	"ability_item_3"
+	{
+		// 基础设置
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_3"
+		"ScriptFile"	"Ability/ability_rb_3/ability_item_3"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		// 等级相关
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"16 22 28 34 40 46 52 58 64 70"
+			"aura_radius"	"600"
+		}
+		// 光环设置
+		"IsAura"	"1"
+		"AuraTeams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AuraTypes"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	}
+
+	"ability_item_4"
+	{
+		// 基础设置
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_4"
+		"ScriptFile"	"Ability/ability_rb_4/ability_item_4"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		// 技能类型
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		// 等级相关
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"16 22 28 34 40 46 52 58 64 70"
+			"aura_radius"	"600"
+		}
+		// 光环设置
+		"IsAura"	"1"
+		"AuraTeams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AuraTypes"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	}
+
+	"ability_item_5"
+	{
+		// 基础设置
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_5"
+		"ScriptFile"	"Ability/ability_rb_5/ability_item_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		// 技能类型
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		// 等级相关
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"4 6 8 10 12 14 16 18 20 22"
+			"aura_radius"	"900"
+		}
+		// 光环设置
+		"IsAura"	"1"
+		"AuraTeams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AuraTypes"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	}
+
+	"ability_item_6"
+	{
+		// 基础设置
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_6"
+		"ScriptFile"	"Ability/ability_rb_6/ability_item_6"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		// 技能类型
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		// 等级相关
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"6 9 12 15 18 21 24 27 30 33"
+			"aura_radius"	"600"
+		}
+		// 光环设置
+		"IsAura"	"1"
+		"AuraTeams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AuraTypes"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	}
+
+	"ability_item_7"
+	{
+		// 基础设置
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_7"
+		"ScriptFile"	"Ability/ability_rb_7/ability_item_7"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		// 技能类型
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		// 等级相关
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"20 30 40 50 60 70 80 90 100 110"
+			"num2"	"3 6 9 12 15 18 21 24 27 30"
+			// 每秒百分比治疗：最大值 * num3 / 100
+			"num3"	"1.5"
+			"aura_radius"	"600"
+		}
+		// 光环设置
+		"IsAura"	"1"
+		"AuraTeams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AuraTypes"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	}
+
+	"ability_item_8"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_8"
+		"ScriptFile"	"Ability/ability_rb_8/ability_item_8"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"4 6 8 10 12 14 16 18 20 22"
+			"aura_radius"	"600"
+		}
+	}
+
+	"ability_item_9"
+	{
+		// 基础设置
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_9"
+		"ScriptFile"	"Ability/ability_rb_9/ability_item_9"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		// 技能类型
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		// 等级相关
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"16 20 24 28 32 36 40 44 48 52"
+			"num2"	"20 40 60 80 100 120 140 160 180 200"
+			"aura_radius"	"900"
+		}
+		// 光环设置
+		"IsAura"	"1"
+		"AuraTeams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AuraTypes"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	}
+
+	"ability_item_10"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_10"
+		"ScriptFile"	"Ability/ability_rb_10/ability_item_10"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"4 6 8 10 12 14 16 18 20 22"
+			"aura_radius"	"900"
+		}
+	}
+
+	"ability_item_11"
+	{
+		// 基础设置
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_11"
+		"ScriptFile"	"Ability/ability_rb_11/ability_item_11"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		// 技能类型
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		// 等级相关
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"9 12 15 18 21 24 27 30 33 36"
+			"aura_radius"	"900"
+		}
+		// 光环设置
+		"IsAura"	"1"
+		"AuraTeams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AuraTypes"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	}
+
+	"ability_item_12"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_12"
+		"ScriptFile"	"Ability/ability_rb_12/ability_item_12"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"evasion_bonus"	"16 20 24 28 32 36 40 44 48 52"
+		}
+	}
+
+	"ability_item_13"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_13"
+		"ScriptFile"	"Ability/ability_rb_13/ability_item_13"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"80 160 240 320 400 480 560 640 720 800"
+		}
+	}
+
+	"ability_item_14"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_14"
+		"ScriptFile"	"Ability/ability_rb_14/ability_item_14"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"60 100 140 180 220 260 300 340 380 420"
+			"num2"	"10"
+		}
+	}
+
+	"ability_item_14_up"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/神·粉碎"
+		"ScriptFile"	"Ability/ability_rb_14_up/ability_item_14_up"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"1"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"420"
+			"num2"	"15"
+		}
+	}
+
+	"ability_item_15"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_15"
+		"ScriptFile"	"Ability/ability_rb_15/ability_item_15"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"160 170 180 190 200 210 220 240 260 280"
+			"num2"	"240 255 270 285 300 315 330 360 390 420"
+			"num3"	"320 340 360 380 400 420 440 480 520 560"
+		}
+	}
+
+	"ability_item_16"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_16"
+		"ScriptFile"	"Ability/ability_rb_16/ability_item_16"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"6 10 14 18 22 27 32 37 42 48"
+			"num2"	"6 9 12 15 18 21 24 27 30 33"
+		}
+	}
+
+	"ability_item_17"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_17"
+		"ScriptFile"	"Ability/ability_rb_17/ability_item_17"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"3 4 5 6 7 8 9 10 11 12"
+			"num2"	"16 22 28 34 40 46 52 58 64 70"
+			"num3"	"1 3 4 7 10 13 16 19 22 25"
+		}
+	}
+
+	"ability_item_18"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_18"
+		"ScriptFile"	"Ability/ability_rb_18/ability_item_18"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"30 60 90 120 150 180 210 240 270 300"
+			"num2"	"10"
+		}
+	}
+
+	"ability_item_19"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_19"
+		"ScriptFile"	"Ability/ability_rb_19/ability_item_19"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"400 420 440 460 500 540 580 620 660 700"
+			"num2"	"40 52 64 76 88 100 112 124 136 148"
+		}
+	}
+
+	"ability_item_20"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_20"
+		"ScriptFile"	"Ability/ability_rb_20/ability_item_20"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"40 80 120 160 200 240 280 320 360 400"
+			"num2"	"30 50 70 90 110 130 150 170 200 230"
+		}
+	}
+
+	"ability_item_20_up"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/神·落雷"
+		"ScriptFile"	"Ability/ability_rb_20_up/ability_item_20_up"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"	"1"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"400"
+			"num2"	"230"
+		}
+	}
+
+	"ability_item_21"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_21"
+		"ScriptFile"	"Ability/ability_rb_21/ability_item_21"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"5 10 15 20 25 30 35 40 45 50"
+			"num2"	"80"
+			"num3"	"120 130 140 150 160 170 180 190 200 210"
+		}
+	}
+
+	"ability_item_22"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_22"
+		"ScriptFile"	"Ability/ability_rb_22/ability_item_22"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"4 8 12 16 20 24 28 32 36 40"
+			"num2"	"2 4 6 8 10 12 14 16 18 20"
+		}
+	}
+
+	"ability_item_23"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_23"
+		"ScriptFile"	"Ability/ability_rb_23/ability_item_23"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"6 9 12 15 18 21 24 27 30 33"
+			"num2"	"0.5"
+		}
+	}
+
+	"ability_item_24"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_24"
+		"ScriptFile"	"Ability/ability_rb_24/ability_item_24"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"5 10 15 20 25 30 35 40 45 50"
+		}
+	}
+
+	"ability_item_24_up"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/神·属性附加"
+		"ScriptFile"	"Ability/ability_rb_24_up/ability_item_24_up"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"1"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"50"
+		}
+	}
+
+	"ability_item_27_up"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/神碎甲"
+		"ScriptFile"	"Ability/ability_rb_27_up/ability_item_27_up"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel"	"1"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"50"
+			"buff_hj"	"10"
+			"wlct_bonus"	"20"
+		}
+	}
+
+	"ability_item_25"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"scroll/ability_item_25"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_tiny/tiny_craggy_hit.vpcf"
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_yinghua_effect"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"IsDebuff"	"0"
+				"OnAttacked"
+				{
+					"FireEffect"
+					{
+						"EffectName"	"particles/units/heroes/hero_tiny/tiny_craggy_hit.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"TARGET"	"attach_attack1"
+							"CASTER"	"attach_hitloc"
+						}
+					}
+				}
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"16 24 32 40 48 56 64 72 80"
+		}
+	}
+
+	"ability_item_26"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_26"
+		"ScriptFile"	"Ability/ability_rb_26/ability_item_26"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"attack_bonus"	"20 40 60 80 100 120 140 160 180 200"
+			"attack_kill"	"5"
+			"attack_pct_kill"	"1"
+		}
+	}
+
+	"ability_item_27"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_27"
+		"ScriptFile"	"Ability/ability_rb_27/ability_item_27"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"1 2 3 4 5 6 7 8 9 10"
+		}
+	}
+
+	"ability_item_28"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_28"
+		"ScriptFile"	"Ability/ability_rb_28/ability_item_28"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"1 2 3 4 5 6 7 8 9 10"
+			"num2"	"1 1 1 1 1.5 1.5 1.5 2 2 2.5"
+		}
+	}
+
+	"ability_item_29"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_29"
+		"ScriptFile"	"Ability/ability_rb_29/ability_item_29"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"8 10 12 14 16 18 20 22 24 26"
+		}
+	}
+
+	"ability_item_30"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_30"
+		"ScriptFile"	"Ability/ability_rb_30/ability_item_30"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"150 140 130 120 110 100 90 80 70 60"
+			"smzf_per_stack"	"1"
+		}
+	}
+
+	"ability_bf_1"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"buff/sljk"
+		"ScriptFile"	"Ability/ability_bf_1/ability_bf_1"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"1"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"150 140 130 120 110 100 90 80 70 60"
+		}
+	}
+
+	"ability_item_31"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_31"
+		"ScriptFile"	"Ability/ability_rb_31/ability_item_31"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"8 16 24 32 40 48 56 64 72 80"
+			// 自爆基础作用半径（码）；模型放大见 modifier 内公式
+			"num2"	"450"
+			// 自爆眩晕时间（秒）
+			// "num3"	"1"
+			// 模型相对基础每放大 10%（scale 每 +0.1）增加的作用半径（码）
+			"num4"	"5"
+		}
+	}
+
+	"ability_item_32"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_32"
+		"ScriptFile"	"Ability/ability_rb_32/ability_item_32"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"4 8 12 16 20 24 28 32 36 40"
+		}
+	}
+
+	"ability_item_33"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/item_skill_33"
+		"ScriptFile"	"Ability/ability_rb_33/ability_item_33"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"3 6 9 12 15 18 21 24 27 30"
+			"num2"	"10 15 20 25 30 35 40 45 50 55"
+			"num3"	"10 15 20 25 30 35 40 45 50 55"
+		}
+	}
+
+	"ability_item_34"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/item_skill_34"
+		"ScriptFile"	"Ability/ability_rb_34/ability_item_34"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"30 32 34 36 38 40 42 46 50 55"
+			"num2"	"2 4 6 8 10 12 14 16 18 20"
+			"num3"	"0 0 0 0 2 4 6 8 10 12"
+			"num4"	"0 0 0 0 0 0 0 2 3 5"
+			"num5"	"0 0 0 0 0 0 0 0 1.5 3"
+			"num6"	"0 0 0 0 0 0 0 0 1 1.5"
+			"num7"	"68 64 60 56 50 44 38 28 16.5 3.5"
+		}
+	}
+
+	"ability_item_35"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/item_skill_35"
+		"ScriptFile"	"Ability/ability_rb_35/ability_item_35"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"6 9 12 15 18 21 24 27 30 33"
+			"num2"	"10 20 30 40 50 60 70 80 90 100"
+			"num3"	"750"
+		}
+	}
+
+	"ability_item_36"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/item_skill_36"
+		"ScriptFile"	"Ability/ability_rb_36/ability_item_36"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"2.5 5 7.5 10 12.5 15 17.5 20 22.5 25"
+			"num2"	"10 20 30 40 50 60 70 80 90 100"
+			"num3"	"1 1.3 1.6 1.9 2.1 2.4 2.7 3 3.3 4"
+		}
+	}
+
+	"ability_item_37"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_item_37"
+		"ScriptFile"	"Ability/ability_rb_37/ability_item_37"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_PHYSICAL"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"num1"	"4 8 12 16 20 24 28 32 36 40"
+		}
+		"AbilityDescription"
+		{
+			"Description"	"DOTA_Tooltip_ability_item_skill_37_Description"
+		}
+	}
+
+	"ability_item_38"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/item_skill_38"
+		"ScriptFile"	"Ability/ability_rb_38/ability_item_38"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"0"
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/items/utils.lua"
+				"Function"	"CheckLevelRequirement"
+				"Target"	"CASTER"
+			}
+		}
+		"AbilityValues"
+		{
+			"health_cap_pct"	"70"
+			"bonus_hit_pct"	"1 2 3 4 5 6 7 8 9 10"
+		}
+		"AbilityDescription"
+		{
+			"Description"	"DOTA_Tooltip_ability_item_skill_38_Description"
+		}
+	}
+
+	"ability_hero_2"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_hero_2"
+		"ScriptFile"	"Ability/ability_hero_2/ability_hero_2"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"	"3"
+		"RequiredLevel"	"6"
+		"LevelsBetweenUpgrades"	"6"
+		"AbilityValues"
+		{
+			"num1"	"200 300 400"
+			"num2"	"450 525 600"
+			"num3"	"0.4"
+		}
+	}
+
+	"ability_hero_1"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_hero_1"
+		"ScriptFile"	"Ability/ability_hero_1/ability_hero_1"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"	"3"
+		"RequiredLevel"	"6"
+		"LevelsBetweenUpgrades"	"6"
+		"AbilityValues"
+		{
+			"num1"	"600 725 800"
+			"num2"	"700 825 950"
+			"num3"	"40"
+		}
+	}
+
+	"ability_hero_3"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_hero_3"
+		"ScriptFile"	"Ability/ability_hero_3/ability_hero_3"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"	"3"
+		"RequiredLevel"	"6"
+		"LevelsBetweenUpgrades"	"6"
+		"AbilityValues"
+		{
+			"num1"	"300 475 650"
+			"num2"	"10"
+		}
+	}
+
+	"ability_hero_4"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_hero_4"
+		"ScriptFile"	"Ability/ability_hero_4/ability_hero_4"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"	"3"
+		"RequiredLevel"	"6"
+		"LevelsBetweenUpgrades"	"6"
+		"AbilityValues"
+		{
+			"num1"	"600 725 800"
+		}
+	}
+
+	"ability_hero_5"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_hero_5"
+		"ScriptFile"	"Ability/ability_hero_5/ability_hero_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"	"SPELL_DISPELLABLE_YES"
+		"AbilityValues"
+		{
+			"num1"	"12"
+			"num2"	"12%% 22%% 26%% 30%%"
+			"num3"	"12 18 24 30"
+		}
+	}
+
+	"ability_hero_7"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/ability_hero_7"
+		"ScriptFile"	"Ability/ability_hero_7/ability_hero_7"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"	"SPELL_DISPELLABLE_YES"
+		"AbilityValues"
+		{
+			"num1"	"425"
+			"num2"	"6"
+			"num3"	"30 50 70 90"
+			"num4"	"1"
+			"num5"	"1.5%% 2%% 2.5&& 3%%"
+			"num6"	"2"
+		}
+	}
+
+	"ability_boss_1"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/yanmie"
+		"ScriptFile"	"Ability/ability_boss_1/ability_boss_1"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"1"
+	}
+
+	"ability_m_1_6_static_field"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"disruptor_thunder_strike"
+		"ScriptFile"	"ingame/Monster/ability_m_1_6_static_field"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"	"1"
+		"IsBreakable"	"1"
+		"AbilitySound"	"Hero_Disruptor.ThunderStrike.Target"
+		"AbilityValues"
+		{
+			"damage_health_pct"
+			{
+				"value"	"3.45"
+				"hero_levelup"	"+0.05"
+				"display_type"	"kMagicalDamagePercentage"
+			}
+		}
+	}
+
+	"spawnlord_master_freeze"
+	{
+		"AbilityCooldown"	"30"
+		"AbilityValues"
+		{
+			"duration"
+			{
+				"value"	"1"
+			}
+			"damage"
+			{
+				"value"	"20"
+			}
+		}
+	}
+
+	"ability_m_1_6_flux"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"arc_warden_flux"
+		"ScriptFile"	"ingame/Monster/ability_m_1_6_flux"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"	"1"
+		"AbilityCastPoint"	"0.3"
+		"AbilityCooldown"	"15"
+		"AbilityCastRange"	"800"
+		"AbilitySound"	"Hero_ArcWarden.Flux.Target"
+		"AbilityValues"
+		{
+			"AbilityCastRange"	"800"
+			"duration"	"3"
+			"tick_interval"	"0.25"
+			"damage_per_second"	"60"
+			"damage_per_tick"	"15"
+			"move_speed_slow_pct"	"35"
+		}
+	}
+
+	"ability_m_2_3_eye_of_storm"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"razor_eye_of_the_storm"
+		"ScriptFile"	"ingame/Monster/ability_m_2_3_eye_of_storm"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel"	"1"
+		"AbilityCooldown"	"30"
+		"AbilitySound"	"Hero_Razor.Storm.Cast"
+		"AbilityValues"
+		{
+			"radius"	"600"
+			"duration"	"30"
+			"strike_interval"	"0.5"
+			"armor_reduction"	"2"
+			"strike_damage"	"1500"
+		}
+	}
+
+	"ability_m_2_3_storm_surge"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"razor_storm_surge"
+		"ScriptFile"	"ingame/Monster/ability_m_2_3_storm_surge"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"	"1"
+		"AbilityValues"
+		{
+			"strike_pct_chance"	"30"
+			"strike_target_count"	"3"
+			"strike_damage"	"1000"
+			"strike_slow_duration"	"2"
+			"strike_search_radius"	"600"
+			"strike_internal_cd"	"0.3"
+		}
+	}
+
+	"ability_hero_8"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"scroll/magnataur_shockwave_alt_png"
+		"ScriptFile"	"Ability/ability_hero_8/ability_hero_8"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"	"3"
+		"RequiredLevel"	"6"
+		"LevelsBetweenUpgrades"	"6"
+		"AbilityValues"
+		{
+			"num1"	"100 200 300"
+			"num2"	"2 3 4"
+			"num3"	"15"
+			"wave_width"	"200"
+			"wave_distance"	"1200"
+			"wave_speed"	"2400"
+		}
+	}
+
+	"ability_m_2_3_plasma_ring"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"razor_plasma_field"
+		"ScriptFile"	"ingame/Monster/ability_m_2_3_plasma_ring"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"	"1"
+		"AbilitySound"	"Ability.PlasmaField"
+		"AbilityValues"
+		{
+			"radius"	"700"
+			"damage_min"	"1000"
+			"damage_max"	"3000"
+			"slow_min"	"15"
+			"slow_max"	"60"
+			"pulse_interval"	"0.5"
+			"pulse_count"	"18"
+			"warning_time"	"1"
+			"invuln_duration"	"9"
+		}
+	}
+}

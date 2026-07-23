@@ -1,0 +1,53 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/store/store.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/store/store.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="pet_snippet">
+			<Panel class="pet_li">
+				<Panel id="pet_box" class="pet_box" />
+				<DOTAUIEconSetPreview class="showpetmodel" id="showpetmodel" itemdef="" itemstyle="1" allowrotation="true" drawbackground="false" antialias="true" displaymode="loadout_small" />
+				<Label id="pet_name" class="pet_name" text="肉山宝宝" />
+				<Panel id="" class="bottom_box">
+					<Label id="time_label" class="time_label" text="剩余29天23小时" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="Devil_fish_snippet">
+			<Panel class="show_model_bg">
+				<DOTAUIEconSetPreview class="showpetmodel" id="showpetmodel" itemdef="10314" itemstyle="1" allowrotation="true" drawbackground="false" antialias="true" displaymode="loadout_small" />
+			</Panel>
+		</snippet>
+		<snippet name="Mountain_Crab_snippet">
+			<Panel class="show_model_bg">
+				<DOTAUIEconSetPreview class="showpetmodel" id="showpetmodel" itemdef="10174" itemstyle="1" allowrotation="true" drawbackground="false" antialias="true" displaymode="loadout_small" />
+			</Panel>
+		</snippet>
+		<snippet name="Magic_Pelican_snippet">
+			<Panel class="show_model_bg">
+				<DOTAUIEconSetPreview class="showpetmodel" id="showpetmodel" itemdef="10938" itemstyle="1" allowrotation="true" drawbackground="false" antialias="true" displaymode="loadout_small" />
+			</Panel>
+		</snippet>
+		<snippet name="Luminaries_Lynx_snippet">
+			<Panel class="show_model_bg">
+				<DOTAUIEconSetPreview class="showpetmodel" id="showpetmodel" itemdef="10281" itemstyle="1" allowrotation="true" drawbackground="false" antialias="true" displaymode="loadout_small" />
+			</Panel>
+		</snippet>
+		<snippet name="Azure_Lion_snippet">
+			<Panel class="show_model_bg">
+				<DOTAUIEconSetPreview class="showpetmodel" id="showpetmodel" itemdef="12919" itemstyle="1" allowrotation="true" drawbackground="false" antialias="true" displaymode="loadout_small" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="root" hittest="true">
+		<Panel id="box" class="box" hittest="true">
+			<Panel id="section" class="section" hittest="true" />
+		</Panel>
+	</Panel>
+</root>

@@ -1,0 +1,72 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/skill/skill.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/skill/skill.vjs_c" />
+	</scripts>
+	<Panel class="root">
+		<Panel id="root_box" class="root_box">
+			<Panel class="TitleBox">
+				<Panel class="root_top1">
+					<Image id="title_text_img" class="title_text_img" src="s2r://panorama/images/custom_game/ji_text_png.vtex" />
+				</Panel>
+				<Panel id="root_top" class="root_top2" onactivate="ClosePage()">
+					<Image id="title_image" class="title_image" src="s2r://panorama/images/custom_game/close_b_png.vtex" />
+				</Panel>
+			</Panel>
+			<Panel class="SkillPage">
+				<Panel id="slot_1" class="BoxData" onactivate="ChoseSkill(1)">
+					<Panel class="ImgBox">
+						<Image id="skill_img" class="Img" src="" />
+					</Panel>
+					<Panel class="TextBox">
+						<Label id="skill_text" class="Text1" text="" />
+					</Panel>
+				</Panel>
+				<Panel id="slot_2" class="BoxData" onactivate="ChoseSkill(2)">
+					<Panel class="ImgBox">
+						<Image id="skill_img" class="Img" src="" />
+					</Panel>
+					<Panel class="TextBox">
+						<Label id="skill_text" class="Text1" text="" />
+					</Panel>
+				</Panel>
+				<Panel id="slot_3" class="BoxData" onactivate="ChoseSkill(3)">
+					<Panel class="ImgBox">
+						<Image id="skill_img" class="Img" src="" />
+					</Panel>
+					<Panel class="TextBox">
+						<Label id="skill_text" class="Text1" text="" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel id="slot_list_page" class="SlotPage">
+				<Panel id="slot_1_null" class="SlotBox" onactivate="ChoseSlot(1)">
+					<Panel class="ImgBox">
+						<Image id="slot_img" class="Img" src="" />
+					</Panel>
+				</Panel>
+				<Panel id="slot_2_null" class="SlotBox" onactivate="ChoseSlot(2)">
+					<Panel class="ImgBox">
+						<Image id="slot_img" class="Img" src="" />
+					</Panel>
+				</Panel>
+				<Panel id="slot_3_null" class="SlotBox" onactivate="ChoseSlot(3)">
+					<Panel class="ImgBox">
+						<Image id="slot_img" class="Img" src="" />
+					</Panel>
+				</Panel>
+				<Panel id="slot_4_null" class="SlotBox" onactivate="ChoseSlot(4)">
+					<Panel class="ImgBox">
+						<Image id="slot_img" class="Img" src="" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

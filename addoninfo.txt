@@ -1,0 +1,28 @@
+"AddonInfo"
+{
+    "maps"          "rank_1v1 rank_5v5 rank_3x4 beidong" // 逻辑名字列表
+
+    // 1v1混战模式
+    "rank_1v1"
+    {
+        "MaxPlayers"    "10"
+    }
+
+    // 与 rank_1v1 规则一致；游廊显示名见 resource/addon_*.txt 中 "beidong" -> 被动模式
+    "beidong"
+    {
+        "MaxPlayers"    "10"
+    }
+
+    // 队伍模式
+    "rank_5v5"
+    {
+        "MaxPlayers"    "10"
+    }
+
+    // 队伍模式
+    "rank_3x4"
+    {
+        "MaxPlayers"    "12"
+    }
+}

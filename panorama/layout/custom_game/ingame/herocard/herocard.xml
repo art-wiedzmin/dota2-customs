@@ -1,0 +1,48 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/herocard/herocard.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/herocard/herocard.vjs_c" />
+	</scripts>
+	<Panel class="root">
+		<Panel id="card_inner" class="card_inner">
+			<Panel class="card_title_row">
+				<Label class="title_label" text="英雄信息" />
+			</Panel>
+			<Panel class="card_header_simple">
+				<Panel class="portrait_column">
+					<DOTAHeroMovie id="portrait" class="portrait_simple" heroname="" heroimagestyle="portrait" />
+					<Panel class="item_grid">
+						<Panel class="item_row">
+							<DOTAItemImage id="item_slot_1" class="item_slot" itemname="" />
+							<DOTAItemImage id="item_slot_2" class="item_slot" itemname="" />
+						</Panel>
+						<Panel class="item_row">
+							<DOTAItemImage id="item_slot_3" class="item_slot" itemname="" />
+							<DOTAItemImage id="item_slot_4" class="item_slot" itemname="" />
+						</Panel>
+						<Panel class="item_row">
+							<DOTAItemImage id="item_slot_5" class="item_slot" itemname="" />
+							<DOTAItemImage id="item_slot_6" class="item_slot" itemname="" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="header_text">
+					<Label id="name_label" class="name_label" text="" />
+					<Label id="sub_label" class="sub_label" text="" />
+					<Label id="stat_hp" class="stat_row stat_below_level" text="" allowtextselection="false" />
+					<Label id="stat_mana" class="stat_row" text="" allowtextselection="false" />
+					<Label id="stat_atk" class="stat_row" text="" allowtextselection="false" />
+					<Label id="stat_armor" class="stat_row" text="" allowtextselection="false" />
+					<Label id="stat_str" class="stat_row" text="" allowtextselection="false" />
+					<Label id="stat_agi" class="stat_row" text="" allowtextselection="false" />
+					<Label id="stat_int" class="stat_row" text="" allowtextselection="false" />
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

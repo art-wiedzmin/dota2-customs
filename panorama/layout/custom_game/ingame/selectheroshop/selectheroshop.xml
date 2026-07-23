@@ -1,0 +1,69 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/public/public.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/selectheroshop/selectheroshop.vjs_c" />
+	</scripts>
+	<Panel class="root" hittest="false">
+		<Panel id="root_box" class="root_box" hittest="true">
+			<Panel class="Title" hittest="true">
+				<Panel id="left_panel" class="left_panel">
+					<Panel id="" class="left_info">
+						<DOTAAvatarImage steamid="" id="player_img_p" class="player_img_p" />
+						<DOTAUserName steamid="" id="player_name_p" class="player_name_p" />
+					</Panel>
+					<Panel id="" class="left_cost">
+						<Panel id="" class="cost_panel">
+							<Image id="" class="cost_img" src="s2r://panorama/images/custom_game/new_cost_png.vtex" />
+							<Label id="cost_text" class="cost_text" text="120000" />
+						</Panel>
+						<Button id="" class="ButtonClass" onactivate="SelectHeroShopClickTag(1)">
+							<Image src="s2r://panorama/images/custom_game/zhengjia_png.vtex" />
+						</Button>
+						<Button id="" class="ButtonClass" onactivate="SelectHeroShopShuaxin()">
+							<Image src="s2r://panorama/images/custom_game/shuaxin_png.vtex" />
+						</Button>
+					</Panel>
+				</Panel>
+				<Panel id="right_panel" class="right_panel">
+					<Panel class="InputBox">
+						<TextEntry id="entry_code" class="entry_text" maxchars="15" placeholder="请输入兑换码，按回车键兑换" oninputsubmit="SelectHeroShopCode()" />
+					</Panel>
+					<Panel class="CloseBtn" onactivate="SelectHeroShopClosePage()">
+						<Image class="Img" src="s2r://panorama/images/custom_game/close_icon_png.vtex" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel id="section_box" class="section_box" hittest="true">
+				<Panel id="tag_panel" class="tag_panel" hittest="true">
+					<Panel class="tag_panel_list_wrap">
+						<Panel id="tag_panel_list" class="tag_panel_list">
+							<Panel id="tag_1" class="tag_btn active">
+								<Label id="" class="tag_text" text="商店" onactivate="SelectHeroShopClickTag(1)" />
+							</Panel>
+							<Panel id="tag_2" class="tag_btn">
+								<Label id="" class="tag_text" text="节日礼包" onactivate="SelectHeroShopClickTag(2)" />
+							</Panel>
+							<Panel id="tag_3" class="tag_btn">
+								<Label id="" class="tag_text" text="通行证" onactivate="SelectHeroShopClickTag(3)" />
+							</Panel>
+							<Panel id="tag_4" class="tag_btn">
+								<Label id="" class="tag_text" text="会员" onactivate="SelectHeroShopClickTag(4)" />
+							</Panel>
+							<Panel id="tag_5" class="tag_btn">
+								<Label id="" class="tag_text" text="背包" onactivate="SelectHeroShopClickTag(5)" />
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="container" class="container" hittest="true">
+					<Panel id="container_box" class="container_box" hittest="true" />
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

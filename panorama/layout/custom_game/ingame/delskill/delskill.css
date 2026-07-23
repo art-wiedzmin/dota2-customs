@@ -1,0 +1,130 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	width: 720px;
+	height: 300px;
+	horizontal-align: center;
+	vertical-align: center;
+	border-radius: 10px;
+	opacity: 0;
+	flow-children: down;
+	background-image: url("s2r://panorama/images/custom_game/c_bac_720_png.vtex");
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.ImgBox
+{
+	width: 87px;
+	height: 87px;
+	horizontal-align: center;
+	background-image: url("s2r://panorama/images/custom_game/j_2_png.vtex");
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	vertical-align: center;
+	margin: 13px 0 0 5px;
+}
+
+.Img
+{
+	width: 80px;
+	height: 80px;
+}
+
+.light_img
+{
+	background-image: url("s2r://panorama/images/custom_game/j_1_png.vtex");
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.SlotPage .ImgBox
+{
+	margin: 10px 0 0 5px;
+}
+
+.light_img .ImgBox
+{
+	background-image: none;
+}
+
+.SlotPage
+{
+	horizontal-align: center;
+	flow-children: right;
+}
+
+.SlotBox
+{
+	width: 108px;
+	height: 108px;
+	flow-children: down;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.FuncBox
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: 20px;
+}
+
+.BtnBox
+{
+	width: 104px;
+	height: 34px;
+	margin-top: 10px;
+	border-radius: 2px;
+	margin: 0 10px;
+}
+
+#fangqi
+{
+	background-image: url("s2r://panorama/images/custom_game/j_5_png.vtex");
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 108px;
+	height: 37px;
+}
+
+#queren
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from(#FFCE7B), to(#CC8100 ) );
+	box-shadow: 1px 1px 3px #000000;
+}
+
+.BtnBox:hover
+{
+	brightness: 1.3;
+}
+
+.Text1
+{
+	font-size: 16px;
+	color: #FFFFFF;
+}
+
+.title_box
+{
+	horizontal-align: center;
+	margin-top: 42px;
+	margin-bottom: 30px;
+}
+
+.title_text
+{
+	color: gradient( linear, 0% 0%, 0% 100%, from(#FFFEFC), to(#FFCC44 ) );
+	font-size: 18px;
+}
+
+.ImgBox:hover
+{
+	brightness: 1.3;
+}
+

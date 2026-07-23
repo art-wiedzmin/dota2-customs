@@ -1,0 +1,17 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"F_NORMAL_MAP"	"1"
+	"g_flBumpStrength"	"2.667"
+	"g_vColorTint"	"[1.000000 1.000000 1.000000 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[1.000000 1.000000 0.000000 0.000000]"
+	"TextureColor"	"models/float_land_stone/yanshi_01/rockgr_20_a.png"
+	"TextureTranslucency"	"models/float_land_stone/yanshi_01/rockgr_20_a_92b9d7f_trans.png"
+	"TextureNormal"	"models/float_land_stone/yanshi_01/rockgr_20_n.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"models/float_land_stone/yanshi_01/rockgr_20_a_tif_92b9d7f.vtex"
+		"g_tNormal"	"models/float_land_stone/yanshi_01/rockgr_20_n_tif_2daf4516.vtex"
+	}
+}

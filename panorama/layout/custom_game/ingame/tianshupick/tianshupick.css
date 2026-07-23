@@ -1,0 +1,86 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.tian_shu_root
+{
+	width: 100%;
+	height: 100%;
+	z-index: 10050;
+	visibility: collapse;
+}
+
+.tian_shu_dim
+{
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.72);
+}
+
+.tian_shu_window
+{
+	width: 520px;
+	horizontal-align: center;
+	vertical-align: center;
+	z-index: 2;
+	flow-children: down;
+	background-color: rgba(20, 20, 24, 0.94);
+	border-radius: 6px;
+	border: 1px solid rgba(255, 210, 120, 0.35);
+	padding: 14px 14px 16px 14px;
+	box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.85);
+}
+
+.tian_shu_grid_wrap
+{
+	width: 100%;
+	max-height: 480px;
+	overflow: squish scroll;
+}
+
+.tian_shu_grid
+{
+	width: 100%;
+	flow-children: down;
+}
+
+.tian_shu_row
+{
+	width: 100%;
+	flow-children: right;
+	margin-bottom: 8px;
+	padding: 8px 10px;
+	background-color: rgba(0, 0, 0, 0.35);
+	border-radius: 4px;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	transition-property: background-color, border, brightness;
+	transition-duration: 0.12s;
+}
+
+.tian_shu_row:hover
+{
+	brightness: 1.04;
+	border: 1px solid rgba(255, 216, 99, 0.45);
+}
+
+.book_icon
+{
+	width: 44px;
+	height: 44px;
+	margin-right: 10px;
+	vertical-align: center;
+}
+
+.tian_shu_meta
+{
+	flow-children: down;
+	width: fill-parent-flow(1);
+	vertical-align: center;
+}
+
+.tian_shu_name
+{
+	font-size: 14px;
+	color: #ffffff;
+	text-shadow: 0px 1px 2px #000000;
+}
+

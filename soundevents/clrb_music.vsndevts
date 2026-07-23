@@ -1,0 +1,36 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	clrb_bgm_monster_hunter = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/music/monster_hunter_01/laning_01.vsnd",
+		]
+		volume = 0.85
+		volume_fade_in = 2.0
+		volume_fade_out = 2.0
+	}
+	clrb_bgm_dsadowski_store_preview = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/music/dsadowski_01/stingers/store_preview.vsnd",
+		]
+		volume = 0.85
+		volume_fade_in = 2.0
+		volume_fade_out = 2.0
+	}
+	clrb_bgm_jlin_store_preview = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/music/jlin_01/stingers/store_preview.vsnd",
+		]
+		volume = 0.85
+		volume_fade_in = 2.0
+		volume_fade_out = 2.0
+	}
+}

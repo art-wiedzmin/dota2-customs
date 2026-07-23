@@ -1,0 +1,19 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/tips/cardtip/cardtip.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/tips/cardtip/cardtip_util.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/tips/cardtip/cardtip.vjs_c" />
+	</scripts>
+	<Panel class="card_tip_root" hittest="false" ontooltiploaded="UpdateCardTip()">
+		<Panel id="card_tip_bg" class="card_tip_bg card_tip_bg_race3" hittest="false">
+			<Label id="card_tip_title" class="card_tip_title" text="" />
+			<Label id="card_tip_text" class="card_tip_text" text="" />
+		</Panel>
+	</Panel>
+</root>

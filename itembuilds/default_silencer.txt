@@ -1,0 +1,71 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"			"npc_dota_hero_silencer"
+	"Title"			"Recommended items for Silencer"
+
+	"Items"
+	{
+		//=========== 基础===========
+		"#DOTA_Item_Build_base"
+		{
+			"item"		"item_ultimate_scepter"
+			"item"		"item_aghanims_shard"
+		}
+
+		//=========== 雷粉（血粉）===========
+		"#DOTA_Item_Build_leifen_qianqi"
+		{
+			// "item"	"item_skill_1"
+			// "item"	"item_skill_18"
+			// "item"	"item_skill_19"
+			// "item"	"item_skill_32"
+			// "item"	"item_skill_28"
+			// "item"	"item_skill_34"
+			// "item"	"item_skill_24"
+			// "item"	"item_skill_13"
+			// "item"	"item_skill_14"
+			"item"		"item_power_treads"
+			"item"		"item_moon_shard"
+			"item"		"item_blink"
+		}
+		"#DOTA_Item_Build_leifen_zhongqi"
+		{
+			// "item"	"item_skill_34"
+			// "item"	"item_skill_28"
+			// "item"	"item_skill_24"
+			// "item"	"item_skill_13"
+			// "item"	"item_skill_14"
+			// "item"	"item_skill_20"
+			// "item"	"item_skill_23"
+			// "item"	"item_skill_21"
+			// "item"	"item_skill_38"
+			"item"		"item_moon_shard"
+			"item"		"item_arcane_blink"
+			"item"		"item_octarine_core"
+			"item"		"item_bloodstone"
+			"item"		"item_parasma"
+			"item"		"item_black_king_bar"
+			"item"		"item_sphere"
+			"item"		"item_hurricane_pike"
+		}
+		"#DOTA_Item_Build_leifen_houqi"
+		{
+			// "item"	"item_skill_24_up"
+			// "item"	"item_skill_20_up"
+			// "item"	"item_skill_14_up"
+			// "item"	"item_skill_13"
+			// "item"	"item_skill_23"
+			// "item"	"item_skill_21"
+			// "item"	"item_skill_38"
+			// "item"	"item_skill_33"
+			"item"		"item_bloodstone"
+			"item"		"item_black_king_bar"
+			"item"		"item_arcane_blink"
+			"item"		"item_skadi"
+			"item"		"item_skadi"
+			"item"		"item_skadi"
+			"item"		"item_skadi"
+		}
+	}
+}

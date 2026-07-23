@@ -1,0 +1,26 @@
+function CustomSets:Item_Pick(keys)
+    --print("Item_Pick")
+    -- print(keys)
+    -- if keys.HeroEntityIndex and keys.ItemEntityIndex then
+    --     local hero = EntIndexToHScript(keys.HeroEntityIndex)
+    --     if hero and not hero:IsNull() then
+    --         local item = EntIndexToHScript(keys.ItemEntityIndex)
+    --         if item and not item:IsNull() then
+    --             local item_name = item:GetName()
+    --             print(item_name)
+    --             if item_name == "item_goods_14" then
+    --                 if item:IsStackable() and Item:IsHaveItem(hero:GetPlayerOwnerID(), item_name) then
+    --                     local bag_item = Item:FindItem(hero:GetPlayerOwnerID(), item_name)
+    --                     if bag_item then
+    --                         bag_item:SetCurrentCharges(bag_item:GetCurrentCharges() + 1)
+    --                         return false
+    --                     end
+    --                 else
+    --                     hero:AddItem(item)
+    --                     return false
+    --                 end
+    --             end
+    --         end
+    --     end
+    -- end
+end

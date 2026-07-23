@@ -1,0 +1,15 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"F_ALPHA_TEST"	"1"
+	"g_flAlphaTestReference"	"0.16"
+	"g_vColorTint"	"[1.000000 1.000000 1.000000 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[1.000000 1.000000 0.000000 0.000000]"
+	"TextureColor"	"materials/models/1104/ss/ss1.png"
+	"TextureTranslucency"	"materials/models/1104/ss/ss1_2b49fe6d_trans.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/models/1104/ss/ss1_tga_2b49fe6d.vtex"
+	}
+}

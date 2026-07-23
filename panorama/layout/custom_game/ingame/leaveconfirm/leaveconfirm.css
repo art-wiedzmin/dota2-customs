@@ -1,0 +1,157 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	opacity: 0;
+}
+
+.LeaveConfirmOverlay
+{
+	width: 100%;
+	height: 100%;
+	flow-children: none;
+}
+
+.LeaveConfirmDim
+{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.72);
+}
+
+.LeaveConfirmDialog
+{
+	width: 639px;
+	height: 439px;
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: down;
+	background-image: url("s2r://panorama/images/custom_game/leave/leave_dialog_bg_png.vtex");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.LeaveConfirmTitle
+{
+	width: 193px;
+	height: 30px;
+	font-size: 30px;
+	color: #FFFFFF;
+	line-height: 24px;
+	text-align: center;
+	horizontal-align: center;
+	margin-top: 48px;
+}
+
+.LeaveConfirmWarning
+{
+	width: 403px;
+	height: 18px;
+	font-size: 18px;
+	color: #F5B263;
+	line-height: 24px;
+	margin-top: 28px;
+	margin-left: 72px;
+}
+
+.LeaveConfirmRow
+{
+	width: 100%;
+	height: 28px;
+	flow-children: right;
+	margin-top: 14px;
+	margin-left: 72px;
+}
+
+.LeaveConfirmRow2
+{
+	margin-top: 10px;
+}
+
+.LeaveConfirmBullet
+{
+	width: 14px;
+	height: 14px;
+	border-radius: 100px;
+	background-color: #F22121;
+	vertical-align: center;
+	margin-right: 10px;
+}
+
+.LeaveConfirmPenalty
+{
+	height: 18px;
+	font-size: 18px;
+	color: #F22121;
+	vertical-align: center;
+}
+
+.LeaveConfirmPenalty1
+{
+	width: 380px;
+}
+
+.LeaveConfirmPenalty2
+{
+	width: 414px;
+}
+
+.LeaveConfirmBtns
+{
+	width: 344px;
+	height: 52px;
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: 42px;
+}
+
+.LeaveConfirmBtn
+{
+	width: 160px;
+	height: 52px;
+	flow-children: none;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.LeaveConfirmBtn:hover
+{
+	brightness: 1.12;
+}
+
+.LeaveConfirmBtnConfirm
+{
+	background-image: url("s2r://panorama/images/custom_game/leave/leave_btn_return_png.vtex");
+	margin-right: 24px;
+}
+
+.LeaveConfirmBtnReturn
+{
+	background-image: url("s2r://panorama/images/custom_game/leave/leave_btn_confirm_png.vtex");
+}
+
+.LeaveConfirmBtnText
+{
+	font-size: 20px;
+	color: #E6E6E6;
+	text-align: center;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.LeaveConfirmFooter
+{
+	width: 432px;
+	height: 17px;
+	font-size: 16px;
+	color: #FFB966;
+	line-height: 24px;
+	text-align: center;
+	horizontal-align: center;
+	margin-top: 30px;
+}
+

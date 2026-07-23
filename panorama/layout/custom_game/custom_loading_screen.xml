@@ -1,0 +1,52 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/custom_game/custom_loading_screem.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/custom_loading_screem.vjs_c" />
+	</scripts>
+	<Panel class="Box">
+		<Image class="Img" src="s2r://panorama/images/custom_game/head_2_png.vtex" />
+		<Panel id="qq_box" class="qq_box">
+			<Label id="" class="text_label_1" text="群:" />
+			<Label id="copy_text" class="text_label copy_label" text="1056843016" />
+		</Panel>
+		<Panel id="dy_box" class="dy_box">
+			<Panel id="dy_list" class="dy_list">
+				<Panel id="" class="dy_li">
+					<Image id="" class="li_img" src="s2r://panorama/images/custom_game/dy_png.vtex" />
+					<Label id="" class="copy_label li_text" text="魔帝dota2" />
+				</Panel>
+				<Panel id="" class="dy_li">
+					<Image id="" class="li_img" src="s2r://panorama/images/custom_game/dy_png.vtex" />
+					<Label id="" class="copy_label li_text" text="胖虎dota2" />
+				</Panel>
+				<Panel id="" class="dy_li">
+					<Image id="" class="li_img" src="s2r://panorama/images/custom_game/dy_png.vtex" />
+					<Label id="" class="copy_label li_text" text="肉搏koko" />
+				</Panel>
+				<Panel id="" class="dy_li">
+					<Image id="" class="li_img" src="s2r://panorama/images/custom_game/dy_png.vtex" />
+					<Label id="" class="copy_label li_text" text="邪能小黑" />
+				</Panel>
+				<Panel id="" class="dy_li">
+					<Image id="" class="li_img" src="s2r://panorama/images/custom_game/dy_png.vtex" />
+					<Label id="" class="copy_label li_text" text="Dota2秋丘" />
+				</Panel>
+				<Panel id="" class="dy_li">
+					<Image id="" class="li_img" src="s2r://panorama/images/custom_game/dy_png.vtex" />
+					<Label id="" class="copy_label li_text" text="Lyrehc~" />
+				</Panel>
+				<Panel id="" class="dy_li">
+					<Image id="" class="li_img" src="s2r://panorama/images/custom_game/dy_png.vtex" />
+					<Label id="" class="copy_label li_text" text="夺夺夺夺夺夺夺" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="text_box" class="text_box">
+			<Label id="" class="else_text" text="为了您的游戏体验，推荐小地图居左设置" />
+		</Panel>
+	</Panel>
+</root>

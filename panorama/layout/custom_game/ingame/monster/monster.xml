@@ -1,0 +1,72 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/monster/monster.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/monster/monster.vjs_c" />
+	</scripts>
+	<Panel class="root monster_hud_minimap_left" hittest="false">
+		<Panel id="map_page" class="MapBox" hittest="false">
+			<Panel id="range" class="RangeBox" hittest="false" />
+		</Panel>
+		<Panel id="monster_left_time_box" class="LeftTimeBox">
+			<Panel class="TimeBox" id="TimeBox_1">
+				<Panel class="TimeImg">
+					<Image class="Img" id="TimeImg_1" src="s2r://panorama/images/custom_game/m1_png.vtex" />
+				</Panel>
+				<Panel class="TimeText" id="TimeText_1">
+					<Label id="time1" class="Text2" text="" />
+				</Panel>
+			</Panel>
+			<Panel class="TimeBox" id="TimeBox_2">
+				<Panel class="TimeImg">
+					<Image class="Img" id="TimeImg_2" src="s2r://panorama/images/custom_game/m2_png.vtex" />
+				</Panel>
+				<Panel class="TimeText" id="TimeText_2">
+					<Label id="time2" class="Text2" text="" />
+				</Panel>
+			</Panel>
+			<Panel class="TimeBox" id="TimeBox_3">
+				<Panel class="TimeImg">
+					<Image class="Img" id="TimeImg_3" src="s2r://panorama/images/custom_game/m3_png.vtex" />
+				</Panel>
+				<Panel class="TimeText" id="TimeText_3">
+					<Label id="time3" class="Text2" text="" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="tip_panel_box" class="tip_panel_box" hittest="false">
+			<Panel id="tip_1" class="tip_panel">
+				<Panel id="" class="img_panel">
+					<Image id="image_1" class="image" src="s2r://panorama/images/custom_game/m1_1_png.vtex" />
+				</Panel>
+				<Panel id="" class="text_panel">
+					<Label id="t1_1" class="text_label" text="" />
+					<Label id="t1_2" class="text_label" text="" />
+				</Panel>
+			</Panel>
+			<Panel id="tip_2" class="tip_panel">
+				<Panel id="" class="img_panel">
+					<Image id="image_2" class="image" src="s2r://panorama/images/custom_game/m2_2_png.vtex" />
+				</Panel>
+				<Panel id="" class="text_panel">
+					<Label id="t2_1" class="text_label" text="" />
+					<Label id="t2_2" class="text_label" text="" />
+				</Panel>
+			</Panel>
+			<Panel id="tip_3" class="tip_panel">
+				<Panel id="" class="img_panel">
+					<Image id="image_3" class="image" src="s2r://panorama/images/custom_game/m3_3_png.vtex" />
+				</Panel>
+				<Panel id="" class="text_panel">
+					<Label id="t3_1" class="text_label" text="" />
+					<Label id="t3_2" class="text_label" text="" />
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

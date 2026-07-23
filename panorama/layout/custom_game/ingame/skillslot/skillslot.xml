@@ -1,0 +1,71 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/skillslot/skillslot.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/skillslot/skillslot.vjs_c" />
+	</scripts>
+	<Panel hittest="false" class="SkillSlotRoot">
+		<Panel class="SkillSlotToolbar">
+			<Panel id="slot_keybind" class="SlotBox SlotBoxKeybind" onactivate="SetKeyBind()">
+				<Label class="SlotText" text="改键设置" />
+			</Panel>
+			<Panel id="slot_swap" class="SlotBox SlotBoxKeybind" onactivate="ChangeSlot()">
+				<Label class="SlotText" text="技能换位" />
+			</Panel>
+		</Panel>
+		<Panel id="keybind_modal_overlay" class="KeyBindModalOverlay KeyBindModalOverlayHidden" visible="false" hittest="false">
+			<Panel id="keybind_modal_dim" class="KeyBindModalDim" />
+			<Panel id="keybind_modal_dialog" class="KeyBindModalDialog" hittest="true">
+				<Panel class="KeyBindModalMenu">
+					<Panel id="keybind_tab_key" class="KeyBindModalTab" onactivate="KeyBindModal_SetTab(1)">
+						<Label class="KeyBindModalTabText" text="改键" />
+					</Panel>
+					<Panel id="keybind_tab_pet" class="KeyBindModalTab KeyBindModalTabSelected" onactivate="KeyBindModal_SetTab(2)">
+						<Label class="KeyBindModalTabText" text="宠物" />
+					</Panel>
+				</Panel>
+				<Panel id="keybind_panel_keys" class="KeyBindModalBody KeyBindModalBodyHidden">
+					<Panel class="KeyBindModalRow">
+						<Label class="KeyBindModalLabel" text="计分板" />
+						<TextEntry id="keybind_input_scoreboard" class="KeyBindModalInput" maxchars="32" placeholder="如 TAB、F4" />
+					</Panel>
+					<Panel class="KeyBindModalRow">
+						<Label class="KeyBindModalLabel" text="便捷商店" />
+						<TextEntry id="keybind_input_eazyshop" class="KeyBindModalInput" maxchars="32" placeholder="如 F4、B" />
+					</Panel>
+				</Panel>
+				<Panel id="keybind_panel_pet" class="KeyBindModalBody KeyBindModalPetBody">
+					<Label class="KeyBindModalPetHint" text="宠物会自动拾取点亮技能书（点击切换点亮，保存后写入宠物设置）" />
+					<Panel class="KeyBindModalPetToolbar">
+						<Panel id="keybind_pet_btn_clear" class="KeyBindModalPetClearBtn" onactivate="KeyBindModal_PetClearAll()">
+							<Label class="KeyBindModalPetClearBtnText" text="一键取消" />
+						</Panel>
+						<Panel id="keybind_pet_btn_preset_1" class="KeyBindModalPetPresetMini" onactivate="KeyBindModal_PetSelectPreset(1)">
+							<Label class="KeyBindModalPetPresetMiniText" text="预设1" />
+						</Panel>
+						<Panel id="keybind_pet_btn_preset_2" class="KeyBindModalPetPresetMini" onactivate="KeyBindModal_PetSelectPreset(2)">
+							<Label class="KeyBindModalPetPresetMiniText" text="预设2" />
+						</Panel>
+						<Panel id="keybind_pet_btn_preset_3" class="KeyBindModalPetPresetMini" onactivate="KeyBindModal_PetSelectPreset(3)">
+							<Label class="KeyBindModalPetPresetMiniText" text="预设3" />
+						</Panel>
+					</Panel>
+					<Panel id="keybind_pet_grid" class="KeyBindModalPetGrid" />
+				</Panel>
+				<Panel class="KeyBindModalFooter">
+					<Panel id="keybind_btn_save" class="KeyBindModalBtn KeyBindModalBtnPrimary" onactivate="KeyBindModal_Save()">
+						<Label class="KeyBindModalBtnText" text="保存" />
+					</Panel>
+					<Panel id="keybind_btn_close" class="KeyBindModalBtn" onactivate="KeyBindModal_Close()">
+						<Label class="KeyBindModalBtnText" text="关闭" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

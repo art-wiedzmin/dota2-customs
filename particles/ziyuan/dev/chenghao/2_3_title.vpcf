@@ -1,0 +1,61 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf65:version{48e806a9-c210-4cd8-811a-38b5ef63b195} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 16
+	m_flConstantRadius = 2.5
+	m_nBehaviorVersion = 5
+	m_nFirstMultipleOverride_BackwardCompat = 3
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/dev/chenghao/2_3_titleh.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/dev/chenghao/2_3_titleg.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/dev/chenghao/2_3_titlec.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/dev/chenghao/2_3_titlem.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/dev/chenghao/2_3_title_rope.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/dev/chenghao/2_3_titlei.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/dev/chenghao/2_3_titleb.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/dev/chenghao/2_3_titlek.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/dev/chenghao/2_3_titled.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/dev/chenghao/2_3_titleo.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/dev/chenghao/2_3_titlef.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/dev/chenghao/2_3_titlea.vpcf"
+		},
+	]
+}

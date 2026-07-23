@@ -1,0 +1,26 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"F_ALPHA_TEST"	"1"
+	"F_ENABLE_WIND"	"1"
+	"F_RENDER_BACKFACES"	"1"
+	"g_flAlphaTestReference"	"0.266"
+	"g_flWindFlexibility"	"0.2"
+	"g_flWindHighFrequencyEffects"	"1"
+	"g_flWindLinearity"	"0"
+	"g_flWindLowFrequencyEffects"	"1"
+	"g_flWindSpeedMultiplier"	"1"
+	"g_vColorTint"	"[1.000000 1.000000 1.000000 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[1.000000 1.000000 0.000000 0.000000]"
+	"TextureColor"	"materials/models/new/jianzhu1/c3c5fe45.png"
+	"TextureTranslucency"	"materials/models/new/jianzhu1/c3c5fe45_a02acb0c_trans.png"
+	"TextureWindMask"	"materials/models/new/jianzhu1/c3c5fe45_dt.png"
+	"TextureWindNoise"	"materials/models/noise.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/models/new/jianzhu1/c3c5fe45_tga_a02acb0c.vtex"
+		"g_tWindMask"	"materials/models/new/jianzhu1/c3c5fe45_dt_tga_c9f5d695.vtex"
+		"g_tWindNoise"	"materials/models/noise_tga_95c2608e.vtex"
+	}
+}

@@ -1,0 +1,211 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	width: 595px;
+	height: 245px;
+	vertical-align: bottom;
+	opacity: 0;
+}
+
+.root.monster_hud_minimap_left
+{
+	horizontal-align: left;
+	flow-children: right;
+}
+
+.root.monster_hud_minimap_right
+{
+	horizontal-align: right;
+	flow-children: left;
+}
+
+.root.monster_hud_minimap_right .LeftTimeBox
+{
+	padding-left: 0px;
+	padding-right: 3px;
+	margin-left: 0px;
+	margin-right: -2px;
+	transform: scaleX(-1);
+}
+
+.root.monster_hud_minimap_right .LeftTimeBox .TimeBox
+{
+	transform: scaleX(-1);
+}
+
+.root.monster_hud_minimap_right .tip_panel_box
+{
+	margin-left: 0px;
+	margin-right: -12px;
+}
+
+.root.monster_hud_minimap_right #TimeBox_3
+{
+	margin-left: 0px;
+	margin-right: 1px;
+}
+
+.MapBox
+{
+	width: 245px;
+	height: 250px;
+	background-color: rgba(164, 58, 58, 0.1);
+	opacity: 0;
+}
+
+.LeftTimeBox
+{
+	width: 60px;
+	height: 186px;
+	flow-children: down;
+	background-image: url("s2r://panorama/images/custom_game/m_bac_png.vtex");
+	background-position: center;
+	background-repeat: no-repeat;
+	padding-top: 22px;
+	vertical-align: bottom;
+	padding-left: 3px;
+	margin-left: -2px;
+}
+
+.TimeBox
+{
+	margin-left: 2px;
+}
+
+.Img
+{
+	vertical-align: center;
+	wash-color: #b8b8b8;
+	saturation: 0;
+}
+
+.TimeImg
+{
+	width: 42px;
+	height: 42px;
+	border-radius: 100px;
+	horizontal-align: center;
+}
+
+.TimeText
+{
+	width: 42px;
+	height: 42px;
+	horizontal-align: center;
+	vertical-align: center;
+	border: 2px solid #909fb6;
+	border-radius: 100px;
+	opacity: 0;
+	transition-duration: 0s;
+	transition-timing-function: linear;
+	clip: radial(50% 50%, 0deg, 0deg);
+}
+
+.Mask_transition
+{
+	visibility: visible;
+	transition-property: pre-transform-scale2d, clip;
+}
+
+.RangeBox
+{
+	width: 145px;
+	height: 145px;
+	horizontal-align: center;
+	vertical-align: center;
+	border-radius: 100px;
+	background-color: rgba(0, 129, 39, 0.1);
+	border: 1px solid rgb(255, 255, 255);
+}
+
+.MapPoint
+{
+	width: 50px;
+	height: 50px;
+	border: 20px;
+}
+
+#TimeBox_2
+{
+	margin-top: 8px;
+}
+
+#TimeBox_3
+{
+	margin-top: 7px;
+	margin-left: 1px;
+}
+
+.tip_panel_box
+{
+	width: 100%;
+	height: 100%;
+	margin-left: -12px;
+}
+
+.tip_panel
+{
+	background-image: url("s2r://panorama/images/custom_game/m_tip_png.vtex");
+	background-size: 100% 100%;
+	background-position: center;
+	width: 298px;
+	height: 77px;
+	padding: 15px 0px 15px 33px;
+	flow-children: right;
+	visibility: collapse;
+}
+
+.text_panel
+{
+	padding-left: 12px;
+}
+
+.img_panel
+{
+	width: 72px;
+	height: 48px;
+}
+
+#tip_1
+{
+	margin-top: 62px;
+}
+
+#tip_2
+{
+	margin-top: 113px;
+}
+
+#tip_3
+{
+	margin-top: 162px;
+}
+
+#image_2
+{
+	transform: scaleX(1.1) scaleY(1.5);
+}
+
+#image_3
+{
+	transform: scaleX(1.1) scaleY(1.5);
+}
+
+.text_panel
+{
+	flow-children: down;
+	vertical-align: center;
+}
+
+#t1_2,#t2_2,#t3_2
+{
+	visibility: collapse;
+}
+
+.text_label
+{
+	font-size: 14px;
+	color: #cccccc;
+}
+

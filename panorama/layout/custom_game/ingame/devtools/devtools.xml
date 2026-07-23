@@ -1,0 +1,30 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/devtools/devtools.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/devtools/devtoolsconfig.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/devtools/devtools.vjs_c" />
+	</scripts>
+	<Panel class="devtools_root devtools_hidden" hittest="false">
+		<Button id="devtools_dock_tab" class="devtools_dock_tab" onactivate="DevToolsToggleSlide()" hittest="true">
+			<Label id="devtools_dock_label" class="devtools_dock_label yahei" text="工具" />
+		</Button>
+		<Panel id="devtools_slide" class="devtools_slide" hittest="false">
+			<Panel id="devtools_panel" class="devtools_panel" hittest="true">
+				<Panel id="devtools_header" class="devtools_header">
+					<Label class="devtools_title yahei" text="工具" />
+					<Button id="devtools_collapse_btn" class="devtools_collapse_btn" onactivate="DevToolsToggleSlide()">
+						<Label id="devtools_collapse_label" text="◀" />
+					</Button>
+				</Panel>
+				<Panel id="devtools_body" class="devtools_body">
+					<Panel id="devtools_list" class="devtools_list" />
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

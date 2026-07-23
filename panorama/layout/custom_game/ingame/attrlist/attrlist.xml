@@ -1,0 +1,56 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/attrlist/attrlist.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/attrlist/attrlist.vjs_c" />
+	</scripts>
+	<Panel class="root" hittest="false">
+		<Panel id="root_box" class="root_box">
+			<Panel class="TitleBox">
+				<Label class="TitleText" text="规则" />
+				<Image id="TitleImg2" class="TitleImg2" src="s2r://panorama/images/custom_game/c_tip_png.vtex" />
+				<Image class="TitleImg3" src="s2r://panorama/images/custom_game/c_text_png.vtex" />
+				<Image onactivate="CloseAttr()" class="TitleImg" src="s2r://panorama/images/custom_game/c_close_png.vtex" />
+			</Panel>
+			<Panel class="AttrBox">
+				<Panel id="slot_1" class="SlotBox" onactivate="Night(1)">
+					<Label id="text_num" class="text_num_class" text="+10" />
+					<Label id="text_data" class="text_att" text="属性信息" />
+					<Label id="text_lv" class="text_lv_class" text="T1" />
+				</Panel>
+				<Panel id="slot_2" class="SlotBox" onactivate="Night(2)">
+					<Label id="text_num" class="text_num_class" text="+10" />
+					<Label id="text_data" class="text_att" text="属性信息" />
+					<Label id="text_lv" class="text_lv_class" text="T1" />
+				</Panel>
+				<Panel id="slot_3" class="SlotBox" onactivate="Night(3)">
+					<Label id="text_num" class="text_num_class" text="+10" />
+					<Label id="text_data" class="text_att" text="属性信息" />
+					<Label id="text_lv" class="text_lv_class" text="T1" />
+				</Panel>
+			</Panel>
+			<Panel class="FunBox">
+				<Panel id="roll_btn" class="BtnBox" onactivate="RollAttr()">
+					<Panel id="roll_panel" class="roll_panel">
+						<Label id="roll_num" class="btn_text" text="重随" />
+						<Image id="cost_img" class="cost_img" src="s2r://panorama/images/custom_game/c_cost_png.vtex" />
+						<Label id="roll_cost" class="btn_text" text="x15" />
+					</Panel>
+				</Panel>
+				<Panel id="yes_btn" class="BtnBox" onactivate="SelectAttr()">
+					<Panel id="yes_panel" class="roll_panel">
+						<Label class="btn_text" text="确定" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="hovertip" class="hovertip">
+			<Image id="hover_img" class="hover_img" src="s2r://panorama/images/custom_game/c_tiptext_png.vtex" />
+		</Panel>
+	</Panel>
+</root>

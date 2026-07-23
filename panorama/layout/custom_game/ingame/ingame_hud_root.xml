@@ -1,0 +1,54 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/layout/custom_game/ingame/ingame_hud_root.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/item_icon_map.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/ingame_hud_root.vjs_c" />
+	</scripts>
+	<Panel hittest="false" class="fill">
+		<Panel id="hudBG" hittest="false" class="fill">
+			<Panel id="MainGame" />
+			<Panel id="Monster" />
+			<Panel id="Prophecy" hittest="false" />
+			<Panel id="HeroData" />
+			<Panel id="BoxData" />
+			<Panel id="ClrbTalentTpTipLayer" hittest="false" />
+			<Panel id="BoxFun" />
+			<Panel id="Talent" />
+			<Panel id="Bag" />
+			<Panel id="AttrList" />
+			<Panel id="Skill" />
+			<Panel id="DelSkill" />
+			<Panel id="ChangeSkill" />
+			<Panel id="Pack" />
+			<Panel hittest="false" id="SkillSlot" />
+			<Panel id="Loding" />
+			<Panel id="Menu" />
+			<Panel id="Task" />
+			<Panel id="Achieve" />
+			<Panel id="baghover" />
+			<Panel id="Reborn" />
+			<Panel id="alter" />
+			<Panel id="bagtipnew" />
+			<Panel id="Msg" />
+			<Panel id="Model" />
+			<Panel id="Point" />
+			<Panel id="Stat" />
+			<Panel id="scoreboard" />
+			<Panel id="logo" />
+			<Panel id="Invite" />
+			<Panel id="Book" />
+			<Panel id="LeaveConfirm" class="fill" hittest="false" />
+			<Panel id="EazyShop" />
+			<Panel id="HeroCard" class="fill" hittest="false" />
+			<Panel id="FreeBook" />
+			<Panel id="Public" />
+			<Panel id="Code" class="fill" hittest="true" />
+			<Panel id="OverData" />
+			<Panel id="DevTools" hittest="false" />
+		</Panel>
+	</Panel>
+</root>

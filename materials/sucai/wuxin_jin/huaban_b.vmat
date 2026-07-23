@@ -1,0 +1,13 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"g_vColorTint"	"[0.878431 0.968628 1.000000 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[1.000000 1.000000 0.000000 0.000000]"
+	"TextureColor"	"materials/sucai/wuxin_jin/huaban_b_pasted__lambert2sg_basecolor.png"
+	"TextureTranslucency"	"materials/sucai/wuxin_jin/huaban_b_pasted__lambert2sg_basecolor_549881ad_trans.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/sucai/wuxin_jin/huaban_b_pasted__lambert2sg_basecolor_jpg_549881ad.vtex"
+	}
+}

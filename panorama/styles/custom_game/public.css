@@ -1,0 +1,354 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.TitleText
+{
+	color: white;
+	font-size: 25px;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.Text1
+{
+	font-size: 20px;
+	color: white;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.Text2
+{
+	font-size: 16px;
+	color: white;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.Img
+{
+	width: 100%;
+	height: 100%;
+}
+
+.Btn1
+{
+	width: 100px;
+	height: 40px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from(#5f5f5f), to(#000000) );
+	border-radius: 5px;
+	border: 1px solid #ffffff;
+}
+
+.Btn1:hover
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from(#5f5f5f), to(#fbff29) );
+	border: 2px solid #ffea00;
+}
+
+.HeroModel
+{
+	width: 100%;
+	height: 100%;
+}
+
+@define zmjj_PlayerColor0: rgb(55,121,254);
+@define zmjj_PlayerColor1: rgb(104,254,193);
+@define zmjj_PlayerColor2: rgb(191,5,193);
+@define zmjj_PlayerColor3: rgb(241,240,17);
+.fill
+{
+	width: 100%;
+	height: 100%;
+}
+
+.hFill
+{
+	width: 100%;
+}
+
+.vFill
+{
+	height: 100%;
+}
+
+.hLayout
+{
+	flow-children: right;
+}
+
+.hLayout2
+{
+	flow-children: right-wrap;
+	width: 100%;
+}
+
+.vLayout
+{
+	flow-children: down;
+}
+
+.BothCenter
+{
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.hCenter
+{
+	horizontal-align: center;
+}
+
+.vCenter
+{
+	vertical-align: center;
+}
+
+.hSep1
+{
+	width: 1px;
+	height: 100%;
+}
+
+.hSep5
+{
+	width: 5px;
+	height: 100%;
+}
+
+.hSep20
+{
+	width: 20px;
+	height: 100%;
+}
+
+.vSep1
+{
+	width: 100%;
+	height: 1px;
+}
+
+.vSep5
+{
+	width: 100%;
+	height: 5px;
+}
+
+.vSep20
+{
+	width: 100%;
+	height: 20px;
+}
+
+.scrollY
+{
+	overflow: squish scroll;
+}
+
+.scrollX
+{
+	overflow: scroll squish;
+}
+
+.scrollXY
+{
+	overflow: scroll scroll;
+}
+
+.ButtonGray
+{
+	width: 100px;
+	height: 29px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #373d45 ), to( #4d5860 ) );
+	border-style: solid;
+	border-width: 1px;
+	border-top-color: #555555;
+	border-left-color: #494949;
+	border-bottom-color: #333333;
+	border-right-color: #404040;
+	transition-property: background-color, opacity;
+	transition-duration: 0.05s;
+	transition-timing-function: linear;
+	box-shadow: #00000055 -2px -2px 4px 4px;
+}
+
+.ButtonGray:hover
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #4c5561 ), to( #6c7d88 ) );
+	border-top-color: #aaaaaa77;
+	border-left-color: #aaaaaa33;
+	border-bottom-color: #333333;
+	border-right-color: #404040;
+}
+
+.ButtonGray:active
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #393939), to( #555555 ) );
+	border-top-color: #222222;
+	border-left-color: #303030;
+	border-bottom-color: #666666;
+	border-right-color: #444444;
+	sound: "ui_generic_button_click";
+}
+
+.ButtonGray Label
+{
+	margin-top: 2px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	horizontal-align: center;
+	text-align: center;
+	vertical-align: middle;
+	text-shadow: 2px 2px 0px 1.0 #000000;
+	font-size: 16px;
+}
+
+.ButtonGray:hover Label
+{
+	color: #FFFFFF;
+}
+
+.ButtonGray:active Label
+{
+	transform: translateY(1px);
+}
+
+.TooltipIcon
+{
+	width: 18px;
+	height: 18px;
+	margin-top: 1px;
+}
+
+Button .ButtonNormalImage
+{
+	visibility: visible;
+}
+
+Button .ButtonHoverImage
+{
+	visibility: collapse;
+}
+
+Button:hover .ButtonNormalImage
+{
+	visibility: collapse;
+}
+
+Button:hover .ButtonHoverImage
+{
+	visibility: visible;
+}
+
+.zmjj_BaseFont
+{
+	font-family: defaultFont;
+}
+
+.zmjj_BaseFontS
+{
+	font-family: defaultFont;
+	text-shadow: 1px 1px 1.5px 2 #000000;
+}
+
+.Language_schinese .zmjj_BaseFont,.Language_schinese .zmjj_BaseFontS
+{
+	font-family: FZKai-Z03,Reaver,Goudy Trajan Medium,TH Sarabun New,YDYGO 540,MingLiURadiance,Gulim, Georgia, 'Times New Roman', 'FZLanTingHei-R-GBK', Times;
+}
+
+.PlayerNameColor0
+{
+	color: zmjj_PlayerColor0;
+}
+
+.PlayerNameColor1
+{
+	color: zmjj_PlayerColor1;
+}
+
+.PlayerNameColor2
+{
+	color: zmjj_PlayerColor2;
+}
+
+.PlayerNameColor3
+{
+	color: zmjj_PlayerColor3;
+}
+
+.ItemQualityBorder
+{
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	vertical-align: center;
+}
+
+.Quality1 .ItemQualityBorder
+{
+	background-image: url("s2r://");
+}
+
+.Quality2 .ItemQualityBorder
+{
+	background-image: url("s2r://");
+}
+
+.Quality3 .ItemQualityBorder
+{
+	background-image: url("s2r://");
+}
+
+.Quality4 .ItemQualityBorder
+{
+	background-image: url("s2r://");
+}
+
+.Quality5 .ItemQualityBorder
+{
+	background-image: url("s2r://");
+}
+
+.Quality6 .ItemQualityBorder
+{
+	background-image: url("s2r://");
+}
+
+.Quality7 .ItemQualityBorder
+{
+	background-image: url("s2r://");
+}
+
+.ItemSlot1
+{
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-image: url("s2r://");
+}
+
+.ItemSlot2
+{
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-image: url("s2r://");
+}
+
+.ItemSlot3
+{
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-image: url("s2r://");
+}
+
+.ItemSlot4
+{
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-image: url("s2r://");
+}
+
+.NoRadioBox .RadioBox
+{
+	visibility: collapse;
+}
+

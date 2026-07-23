@@ -1,0 +1,13 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"g_vColorTint"	"[1.000000 1.000000 1.000000 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[1.000000 1.000000 0.000000 0.000000]"
+	"TextureColor"	"materials/sucai/ceshi_a/t_stone_trims_bc.png"
+	"TextureTranslucency"	"materials/sucai/ceshi_a/t_stone_trims_bc_e099567c_trans.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/sucai/ceshi_a/t_stone_trims_bc_jpg_e099567c.vtex"
+	}
+}

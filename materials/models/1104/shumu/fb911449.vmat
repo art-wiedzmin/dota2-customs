@@ -1,0 +1,13 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"g_vColorTint"	"[1.000000 1.000000 1.000000 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[1.000000 1.000000 0.000000 0.000000]"
+	"TextureColor"	"materials/models/1104/shumu/fb911449.png"
+	"TextureTranslucency"	"materials/models/1104/shumu/fb911449_48b6fd56_trans.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/models/1104/shumu/fb911449_tga_48b6fd56.vtex"
+	}
+}

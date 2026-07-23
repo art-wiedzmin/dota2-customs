@@ -1,0 +1,83 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	width: 750px;
+	height: 500px;
+	horizontal-align: center;
+	vertical-align: center;
+	background-color: rgba(20, 20, 24, 0.88);
+	border-radius: 6px 0px 0px 6px;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	opacity: 0;
+}
+
+.free_book_grid
+{
+	width: 700px;
+	height: 450px;
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: down;
+}
+
+.free_book_grid_row
+{
+	width: 100%;
+	flow-children: right;
+	vertical-align: top;
+}
+
+.free_book_slot
+{
+	width: 100px;
+	min-width: 100px;
+	max-width: 100px;
+	horizontal-align: center;
+}
+
+.free_book_cell
+{
+	flow-children: down;
+	width: 88px;
+	margin-top: 10px;
+	horizontal-align: center;
+}
+
+.free_book_cell:hover
+{
+	brightness: 1.04;
+}
+
+.free_book_cell:hover .free_book_icon_row
+{
+	border: 1px solid rgba(255, 216, 99, 0.45);
+}
+
+.free_book_icon_row
+{
+	width: 70px;
+	height: 60px;
+	horizontal-align: center;
+	border: 1px solid transparent;
+}
+
+.free_book_icon
+{
+	width: 100%;
+	height: 100%;
+}
+
+.free_book_label
+{
+	width: 88px;
+	max-height: 36px;
+	margin-top: 4px;
+	font-size: 12px;
+	color: #c8baa3;
+	text-align: center;
+	horizontal-align: center;
+	vertical-align: top;
+	text-overflow: shrink;
+}
+

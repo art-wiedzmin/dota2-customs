@@ -1,0 +1,366 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	width: 100%;
+	height: 100px;
+	background-size: 100% 100%;
+	flow-children: down;
+	horizontal-align: center;
+	vertical-align: top;
+	opacity: 0;
+}
+
+.root:not(.stat_top_3x4) .section,.root:not(.stat_top_3x4) #section
+{
+	width: fit-children;
+	horizontal-align: center;
+}
+
+.root.stat_top_3x4
+{
+	width: fit-children;
+	min-width: 2000px;
+	max-width: 2220px;
+	horizontal-align: center;
+}
+
+.root.stat_top_3x4 #section
+{
+	width: 2140px;
+	margin-left: 350px;
+}
+
+.clrb_3x4_team_row
+{
+	flow-children: down;
+}
+
+.clrb_3x4_team_row .player_v10
+{
+	flow-children: down;
+}
+
+.clrb_3x4_team_row .light_class
+{
+	visibility: collapse;
+	width: 0px;
+	height: 0px;
+	min-height: 0px;
+}
+
+.clrb_3x4_team_row .player_box
+{
+	padding: 0 6px;
+	vertical-align: top;
+	min-height: 40px;
+	height: fit-children;
+}
+
+.clrb_3x4_team_row .heroes_row .hero_top
+{
+	width: 68px;
+	height: 40px;
+	flow-children: down;
+}
+
+.clrb_3x4_team_row .heroes_row .hero_img
+{
+	width: 100%;
+	height: 40px;
+	horizontal-align: center;
+	vertical-align: top;
+}
+
+.clrb_3x4_team_row .heroes_row .hero_color
+{
+	height: 4px;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	horizontal-align: center;
+	vertical-align: bottom;
+}
+
+.clrb_3x4_team_row .heroes_row .player_li
+{
+	margin-right: 0px;
+	vertical-align: top;
+	min-height: 40px;
+	height: fit-children;
+}
+
+.clrb_3x4_team_row .heroes_row
+{
+	margin: 0px;
+	padding: 0px;
+	vertical-align: top;
+	height: fit-children;
+}
+
+#box_2_list #team_2.clrb_3x4_team_row,#box_2_list #team_3.clrb_3x4_team_row,#box_2_list #team_4.clrb_3x4_team_row
+{
+	margin-left: 10px;
+}
+
+.clrb_3x4_team_row .num_box
+{
+	width: 34px;
+	height: 40px;
+	vertical-align: top;
+	flow-children: down;
+}
+
+.clrb_3x4_team_row .img_color
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	horizontal-align: center;
+}
+
+.clrb_3x4_team_row .num_label
+{
+	margin-top: 0px;
+}
+
+.root.stat_top_3x4 .clrb_3x4_team_row.myself .num_label
+{
+	color: #ffd54a;
+	font-weight: bold;
+	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.55), 0px 0px 5px rgba(255, 213, 74, 0.45);
+}
+
+.section
+{
+	flow-children: right;
+}
+
+.num_box
+{
+	width: 30px;
+	height: 40px;
+	background-color: #000000;
+	flow-children: down;
+}
+
+.num_label
+{
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	horizontal-align: center;
+	margin-top: -3px;
+}
+
+.box_1
+{
+	flow-children: right;
+	visibility: collapse;
+}
+
+.team_box
+{
+	margin-left: 15px;
+	flow-children: right;
+}
+
+.img_color
+{
+	width: 20px;
+	height: 19px;
+	horizontal-align: center;
+	margin-bottom: 1px;
+	margin-top: 2px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.left_box
+{
+	width: 92px;
+	height: 86px;
+}
+
+.bac_img
+{
+	width: 100%;
+	height: 100%;
+}
+
+.time_label
+{
+	font-size: 16px;
+	color: #FFFFFF;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+	vertical-align: bottom;
+	horizontal-align: center;
+	text-align: center;
+	margin-bottom: 8px;
+	font-weight: bold;
+}
+
+.bac_img
+{
+	background-position: center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.t5v5
+{
+	background-image: url("s2r://panorama/images/custom_game/5_5_png.vtex");
+}
+
+.t5v5.night
+{
+	background-image: url("s2r://panorama/images/custom_game/5_6_png.vtex");
+}
+
+.t1v10
+{
+	background-image: url("s2r://panorama/images/custom_game/rank_1v1_75_day_png.vtex");
+}
+
+.t1v10.night
+{
+	background-image: url("s2r://panorama/images/custom_game/rank_1v1_75_night_png.vtex");
+}
+
+.bac_img.t3x4
+{
+	background-image: url("s2r://panorama/images/custom_game/rank_3x4_target_day_png.vtex");
+}
+
+.bac_img.t3x4.night
+{
+	background-image: url("s2r://panorama/images/custom_game/rank_3x4_target_night_png.vtex");
+}
+
+.list_box
+{
+	flow-children: right;
+}
+
+.player_li
+{
+	flow-children: down;
+	margin-right: 2px;
+}
+
+.hero_top
+{
+	width: 60px;
+	height: 40px;
+	brightness: 1;
+}
+
+.hero_img
+{
+	width: 100%;
+	height: 100%;
+	background-color: #32383C;
+}
+
+.hero_color
+{
+	width: 100%;
+	height: 4px;
+	z-index: 99;
+}
+
+#left_team .hero_color
+{
+	background-color: #3476FF;
+}
+
+#right_team .hero_color
+{
+	background-color: #C44DA9;
+}
+
+.hero_bottom
+{
+	width: 28px;
+	height: 26px;
+	horizontal-align: center;
+	background-image: url("s2r://panorama/images/custom_game/5_1_png.vtex");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	visibility: collapse;
+}
+
+.hero_time
+{
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+	font-size: 12px;
+	color: #F2F2F2;
+}
+
+.player_v10
+{
+	brightness: 1;
+	opacity: 0;
+}
+
+.player_box
+{
+	flow-children: right;
+	padding: 0 5px 8px 5px;
+}
+
+.heroes_row
+{
+	flow-children: right;
+}
+
+.light_class
+{
+	height: 48px;
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.myself .light_class
+{
+	background-image: url("s2r://panorama/images/custom_game/bac_m1_png.vtex");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 102% 100%;
+}
+
+.player_v10 .player_li
+{
+	margin-right: 0;
+}
+
+.bac_el
+{
+	height: 48px;
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#box_1 .team_box
+{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#box_1 .else_box
+{
+	margin-left: 10px;
+}
+
+.myself_bac .bac_el
+{
+	background-image: url("s2r://panorama/images/custom_game/bac_m1_png.vtex");
+}
+

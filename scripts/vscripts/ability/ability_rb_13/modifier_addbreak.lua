@@ -1,0 +1,19 @@
+-- 技能modifier
+modifier_addbreak = class({})
+
+function modifier_addbreak:IsHidden()
+    return false
+end
+
+function modifier_addbreak:IsPurgable()
+    return false
+end
+
+function modifier_addbreak:OnCreated()
+    if not IsServer() then return end
+end
+
+-- 声明修改函数
+function modifier_addbreak:CheckState()
+    return { [MODIFIER_STATE_PASSIVES_DISABLED] = true }
+end

@@ -1,0 +1,172 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/public/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/boxdata/boxdata.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/boxdata/boxgiveupconfirm.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/boxdata/boxdata.vjs_c" />
+	</scripts>
+	<Panel class="root" hittest="false">
+		<Panel id="left_box" class="left_box">
+			<Panel id="up_page" class="UpPage">
+				<Panel id="up_top" class="up_top">
+					<Label id="" class="up_top_text" text="升级路线" />
+				</Panel>
+				<Panel id="up_bottom" class="up_bottom">
+					<Panel class="BoxSlot">
+						<Image id="up_slot_1" class="Img" src="s2r://panorama/images/custom_game/null_png.vtex" />
+					</Panel>
+					<Image class="RightImg" src="s2r://panorama/images/custom_game/b_jt_png.vtex" />
+					<Panel class="BoxSlot">
+						<Image id="up_slot_2" class="Img" src="s2r://panorama/images/custom_game/null_png.vtex" />
+					</Panel>
+				</Panel>
+				<Panel id="" class="up_bottom_panel">
+					<Label id="" class="up_bottom_text" text="后续可抽到升级后的装备" />
+				</Panel>
+			</Panel>
+			<Panel id="center_box" class="center_box">
+				<Panel class="Title" hittest="true">
+					<Panel id="give_up_btn" class="GiveUpBtn" visible="false" hittest="true">
+						<Label class="GiveUpBtnText" text="放弃" hittest="false" />
+					</Panel>
+					<Panel class="CloseBtn" onactivate="ClosePage()">
+						<Image class="Img" src="s2r://panorama/images/custom_game/c_close_png.vtex" />
+					</Panel>
+				</Panel>
+				<Panel id="" class="hover_icon_panel">
+					<Image id="hover_icon" class="hover_icon" src="s2r://panorama/images/custom_game/b_icon_png.vtex" />
+				</Panel>
+				<Panel class="BoxPage">
+					<Panel class="Line1">
+						<Panel class="BoxSlot" onactivate="Select(1)" onmouseover="BoxTip(1)" onmouseout="HideTip()">
+							<Image id="slot_1" class="Img" src="s2r://panorama/images/custom_game/null_png.vtex" />
+							<Image id="" class="k_img" src="s2r://panorama/images/custom_game/b_kuang_png.vtex" />
+							<Label id="slot_1_label" class="label_text" text="可升级" />
+						</Panel>
+						<Panel class="BoxSlot" onactivate="Select(2)" onmouseover="BoxTip(2)" onmouseout="HideTip()">
+							<Image id="slot_2" class="Img" src="s2r://panorama/images/custom_game/null_png.vtex" />
+							<Image id="" class="k_img" src="s2r://panorama/images/custom_game/b_kuang_png.vtex" />
+							<Label id="slot_2_label" class="label_text" text="可升级" />
+						</Panel>
+						<Panel class="BoxSlot" onactivate="Select(3)" onmouseover="BoxTip(3)" onmouseout="HideTip()">
+							<Image id="slot_3" class="Img" src="s2r://panorama/images/custom_game/null_png.vtex" />
+							<Image id="" class="k_img" src="s2r://panorama/images/custom_game/b_kuang_png.vtex" />
+							<Label id="slot_3_label" class="label_text" text="可升级" />
+						</Panel>
+						<Panel class="BoxSlot" onactivate="Select(4)" onmouseover="BoxTip(4)" onmouseout="HideTip()">
+							<Image id="slot_4" class="Img" src="s2r://panorama/images/custom_game/null_png.vtex" />
+							<Image id="" class="k_img" src="s2r://panorama/images/custom_game/b_kuang_png.vtex" />
+							<Label id="slot_4_label" class="label_text" text="可升级" />
+						</Panel>
+					</Panel>
+					<Panel class="Line2">
+						<Panel class="Line2Left">
+							<Panel class="BoxSlot" onactivate="Select(5)" onmouseover="BoxTip(5)" onmouseout="HideTip()">
+								<Image id="slot_5" class="Img" src="s2r://panorama/images/custom_game/null_png.vtex" />
+								<Image id="" class="k_img" src="s2r://panorama/images/custom_game/b_kuang_png.vtex" />
+								<Label id="slot_5_label" class="label_text" text="可升级" />
+							</Panel>
+							<Panel class="BoxSlot" onactivate="Select(6)" onmouseover="BoxTip(6)" onmouseout="HideTip()">
+								<Image id="slot_6" class="Img" src="s2r://panorama/images/custom_game/null_png.vtex" />
+								<Image id="" class="k_img" src="s2r://panorama/images/custom_game/b_kuang_png.vtex" />
+								<Label id="slot_6_label" class="label_text" text="可升级" />
+							</Panel>
+						</Panel>
+						<Panel class="Line2Center">
+							<Panel class="CenterButton" onactivate="DrawRoll()">
+								<Panel id="" class="CenterButtonpanel">
+									<Label id="" class="zhuan_text" text="重转" />
+									<Label id="draw_num" class="Text1" text="" />
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel class="Line2Left">
+							<Panel class="BoxSlot" onactivate="Select(7)" onmouseover="BoxTip(7)" onmouseout="HideTip()">
+								<Image id="slot_7" class="Img" src="s2r://panorama/images/custom_game/null_png.vtex" />
+								<Image id="" class="k_img" src="s2r://panorama/images/custom_game/b_kuang_png.vtex" />
+								<Label id="slot_7_label" class="label_text" text="可升级" />
+							</Panel>
+							<Panel class="BoxSlot" onactivate="Select(8)" onmouseover="BoxTip(8)" onmouseout="HideTip()">
+								<Image id="slot_8" class="Img" src="s2r://panorama/images/custom_game/null_png.vtex" />
+								<Image id="" class="k_img" src="s2r://panorama/images/custom_game/b_kuang_png.vtex" />
+								<Label id="slot_8_label" class="label_text" text="可升级" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="Line1">
+						<Panel class="BoxSlot" onactivate="Select(9)" onmouseover="BoxTip(9)" onmouseout="HideTip()">
+							<Image id="slot_9" class="Img" src="s2r://panorama/images/custom_game/null_png.vtex" />
+							<Image id="" class="k_img" src="s2r://panorama/images/custom_game/b_kuang_png.vtex" />
+							<Label id="slot_9_label" class="label_text" text="可升级" />
+						</Panel>
+						<Panel class="BoxSlot" onactivate="Select(10)" onmouseover="BoxTip(10)" onmouseout="HideTip()">
+							<Image id="slot_10" class="Img" src="s2r://panorama/images/custom_game/null_png.vtex" />
+							<Image id="" class="k_img" src="s2r://panorama/images/custom_game/b_kuang_png.vtex" />
+							<Label id="slot_10_label" class="label_text" text="可升级" />
+						</Panel>
+						<Panel class="BoxSlot" onactivate="Select(11)" onmouseover="BoxTip(11)" onmouseout="HideTip()">
+							<Image id="slot_11" class="Img" src="s2r://panorama/images/custom_game/null_png.vtex" />
+							<Image id="" class="k_img" src="s2r://panorama/images/custom_game/b_kuang_png.vtex" />
+							<Label id="slot_11_label" class="label_text" text="可升级" />
+						</Panel>
+						<Panel class="BoxSlot" onactivate="Select(12)" onmouseover="BoxTip(12)" onmouseout="HideTip()">
+							<Image id="slot_12" class="Img" src="s2r://panorama/images/custom_game/null_png.vtex" />
+							<Image id="" class="k_img" src="s2r://panorama/images/custom_game/b_kuang_png.vtex" />
+							<Label id="slot_12_label" class="label_text" text="可升级" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="give_up_confirm_mask" class="give_up_confirm_mask" hittest="false" visible="false">
+					<Panel id="give_up_confirm_dim" class="give_up_confirm_dim" hittest="true" />
+					<Panel id="give_up_confirm_box" class="give_up_confirm_box" hittest="true">
+						<Label class="give_up_confirm_title" text="是否放弃当前宝箱" />
+						<Panel class="give_up_confirm_btns">
+							<Panel id="give_up_confirm_no" class="give_up_confirm_btn give_up_confirm_no" hittest="true">
+								<Label class="give_up_confirm_btn_text" text="否" hittest="false" />
+							</Panel>
+							<Panel id="give_up_confirm_yes" class="give_up_confirm_btn give_up_confirm_yes" hittest="true">
+								<Label class="give_up_confirm_btn_text" text="是" hittest="false" />
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="RightPage" id="RightPage">
+			<Panel class="BagPage">
+				<Panel class="BoxSlot" onmouseover="BagTip(1)" onmouseout="HideTip()">
+					<Image id="bag_slot_1" class="Img" src="" />
+				</Panel>
+				<Panel class="BoxSlot" onmouseover="BagTip(2)" onmouseout="HideTip()">
+					<Image id="bag_slot_2" class="Img" src="" />
+				</Panel>
+				<Panel class="BoxSlot" onmouseover="BagTip(3)" onmouseout="HideTip()">
+					<Image id="bag_slot_3" class="Img" src="" />
+				</Panel>
+				<Panel class="BoxSlot" onmouseover="BagTip(4)" onmouseout="HideTip()">
+					<Image id="bag_slot_4" class="Img" src="" />
+				</Panel>
+				<Panel class="BoxSlot" onmouseover="BagTip(5)" onmouseout="HideTip()">
+					<Image id="bag_slot_5" class="Img" src="" />
+				</Panel>
+				<Panel class="BoxSlot" onmouseover="BagTip(6)" onmouseout="HideTip()">
+					<Image id="bag_slot_6" class="Img" src="" />
+				</Panel>
+			</Panel>
+			<Panel id="hover_cost_panel" class="hover_cost_panel" visible="false">
+				<Panel id="" class="hover_cost_box" onactivate="BreakItemFun()">
+					<Label id="" class="hover_cost_text" text="摧毁" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="hover_panel" class="hover_panel">
+			<Image id="hover_image" class="hover_image" src="s2r://panorama/images/custom_game/b_tip_png.vtex" />
+		</Panel>
+	</Panel>
+</root>

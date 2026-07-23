@@ -1,0 +1,26 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/pack/pack.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/item_icon_map.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/pack/pack.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="pack_slot">
+			<Panel id="" class="SlotBox" draggable="true">
+				<Image id="goods_img" class="ItemImg" src="" />
+				<Label id="goods_num" class="SlotLabel" text="" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel hittest="false" class="root">
+		<Panel class="Title">
+			<Label class="TitleLabel" text="树洞" />
+		</Panel>
+		<Panel id="pack_box" class="PackBox" />
+	</Panel>
+</root>

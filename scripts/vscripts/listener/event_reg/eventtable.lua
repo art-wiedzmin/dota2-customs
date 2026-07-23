@@ -1,0 +1,15 @@
+return {
+	-- dota_item_picked_up = "Item_Pick",
+	game_rules_state_change = "State_Change",
+	dota_player_gained_level = "Gain_Level",
+	npc_spawned = "Npc_Spawn",
+	player_connect_full = "Full_Connect",
+	player_disconnect = "Dis_Connect",
+	player_reconnected = "Re_Connect",
+	entity_killed = "entity_killed",
+	-- dota_hero_inventory_item_change = "inventory_change",
+	-- dota_inventory_item_added = "inventory_add",
+	-- dota_item_purchased = "shop_buy",
+	dota_player_learned_ability = "learn_ability",
+	dota_player_used_ability = "use_ability",
+}

@@ -1,0 +1,507 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	opacity: 0;
+	z-index: 1;
+	transition-property: opacity;
+	transition-duration: 0.3s;
+	transition-timing-function: linear;
+}
+
+.outpanel
+{
+	width: 85%;
+	height: 920px;
+	background-color: #080F14;
+	margin-right: 0;
+	horizontal-align: center;
+	vertical-align: center;
+	padding: 25px;
+	flow-children: down;
+	border-radius: 10px;
+	overflow: clip;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #e8c01033;
+	box-shadow: inset 0px 0px 48px #00000099, inset 0px 1px 0px 0px #ffffff12, 0px 0px 0px 1px #556b7599, 0px 0px 24px #e8c01020, 0px 0px 56px #1a6a9833, 0px 12px 36px #000000aa;
+}
+
+.game_time
+{
+	horizontal-align: center;
+	flow-children: right;
+}
+
+.game_time_text
+{
+	color: rgb(232, 192, 16);
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.game_time_num
+{
+	color: rgb(232, 192, 16);
+	font-size: 30px;
+}
+
+.game_list
+{
+	width: 100%;
+	height: 85%;
+	flow-children: down;
+}
+
+.box
+{
+	width: 100%;
+	flow-children: down;
+}
+
+.top_nav
+{
+	flow-children: right;
+	width: 100%;
+	height: 64px;
+}
+
+.box_2
+{
+	visibility: collapse;
+}
+
+.list_box
+{
+	width: 100%;
+	flow-children: down;
+}
+
+.nav_text
+{
+	horizontal-align: center;
+	text-align: center;
+	vertical-align: center;
+	font-size: 16px;
+	color: #778F8E;
+}
+
+.title_panel
+{
+	height: 100%;
+	vertical-align: center;
+}
+
+.else_box
+{
+	vertical-align: center;
+	flow-children: right;
+	margin-left: 20px;
+}
+
+.team_color
+{
+	vertical-align: center;
+}
+
+.team_text
+{
+	vertical-align: center;
+	flow-children: down;
+	margin-left: 10px;
+}
+
+.team_style
+{
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+.jifen_text
+{
+	font-size: 14px;
+	color: #FFFFFF;
+}
+
+.title_1
+{
+	width: 240px;
+}
+
+.title_2
+{
+	width: 85px;
+}
+
+.title_3
+{
+	width: 60px;
+}
+
+.title_4
+{
+	width: 450px;
+}
+
+.title_5
+{
+	width: 85px;
+}
+
+.title_6
+{
+	width: 85px;
+}
+
+.title_7
+{
+	width: 85px;
+}
+
+.title_8
+{
+	width: 100px;
+}
+
+.title_9
+{
+	width: 400px;
+}
+
+.text_label
+{
+	color: #ffffff;
+	font-size: 16px;
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+}
+
+.player_li
+{
+	width: 100%;
+	height: 53px;
+	background-color: #1E1D2E;
+	flow-children: right;
+	margin-bottom: 4px;
+}
+
+.label_color
+{
+	width: 3px;
+	height: 100%;
+}
+
+.li_panel
+{
+	flow-children: right;
+	height: 100%;
+}
+
+.bac_color
+{
+	width: 36px;
+	height: 34px;
+	vertical-align: center;
+	margin-left: 10px;
+}
+
+.color_img
+{
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+.color_num
+{
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+	font-size: 20px;
+	color: #ffffff;
+}
+
+.hero_img
+{
+	width: 74px;
+	height: 42px;
+	vertical-align: center;
+	border: 1px solid #000000;
+	margin-left: 10px;
+}
+
+.player_else
+{
+	flow-children: down;
+	margin-left: 10px;
+	width: 100%;
+}
+
+.player_top
+{
+	flow-children:right;
+	width: 100%;
+}
+
+.player_name
+{
+	width: 100%;
+	text-overflow: clip;
+	font-size: 16px;
+	height: 22px;
+	margin-top: 4px;
+}
+
+.player_name Label
+{
+	width: 100%;
+	font-size: 16px;
+	vertical-align: center;
+	text-overflow: clip;
+	height: 18px;
+}
+
+.level_label
+{
+	font-size: 10px;
+	color: #facc7b;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #ffd07d;
+	margin-right: 10px;
+	text-align: center;
+	line-height: 16px;
+	border-radius: 100%;
+	vertical-align: center;
+}
+
+.hero_name
+{
+	font-size: 12px;
+	color: #FFFFFF;
+	vertical-align: center;
+	margin-top: 2px;
+}
+
+.text_label
+{
+	color: #ffffff;
+	font-size: 16px;
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+}
+
+.laba_img
+{
+	width: 28px;
+	height: 28px;
+	horizontal-align: center;
+	vertical-align: center;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-image: url("s2r://panorama/images/custom_game/laba_png.vtex");
+}
+
+.border_img
+{
+	width: 50px;
+	height: 37px;
+	padding: 1px;
+	horizontal-align: center;
+	vertical-align: center;
+	background-image: url("s2r://panorama/images/custom_game/skill_null_png.vtex");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.zb_img
+{
+	width: 100%;
+	height: 100%;
+}
+
+.ability_box
+{
+	flow-children: right;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.ability_img_box
+{
+	width: 40px;
+	height: 40px;
+	border: 1px solid #000000;
+	padding: 1px;
+	vertical-align: center;
+	margin: 0 2px;
+}
+
+.ability_img
+{
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/custom_game/skill_null_png.vtex");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#list_box_1,#list_box_2
+{
+	height: 300px;
+}
+
+#list_box_1 .bac_color,#list_box_2 .bac_color
+{
+	visibility: collapse;
+}
+
+.over_footer
+{
+	width: 100%;
+	margin-top: 30px;
+	height: 80px;
+}
+
+.over_footer_actions
+{
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: down;
+}
+
+.over_footer_buttons
+{
+	horizontal-align: center;
+	flow-children: left;
+}
+
+.over_submit_status_label
+{
+	horizontal-align: center;
+	font-size: 20px;
+	color: #E8DCC8;
+	text-align: center;
+	margin-bottom: 8px;
+	visibility: collapse;
+}
+
+.over_submit_status_label.visible
+{
+	visibility: visible;
+}
+
+.over_submit_status_label.fail
+{
+	color: #E8A08A;
+}
+
+#over_close_page_button
+{
+	margin-right: 50px;
+}
+
+.over_footer_buttons .over_button
+{
+	horizontal-align: center;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+.over_footer_rewards
+{
+	horizontal-align: right;
+	vertical-align: center;
+	flow-children: right;
+}
+
+.prophecy_bonus_label
+{
+	font-size: 18px;
+	color: #E8C87A;
+	text-align: right;
+	margin-right: 24px;
+	visibility: collapse;
+}
+
+.prophecy_bonus_label.visible
+{
+	visibility: visible;
+}
+
+.daily_game_bonus_label
+{
+	font-size: 18px;
+	color: #C4B59A;
+	text-align: right;
+}
+
+.over_button
+{
+	horizontal-align: center;
+	width: 100px;
+	margin-top: 0px;
+	vertical-align: center;
+	background-color: #917C59;
+	border-radius: 3px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #d4bf8cdd;
+}
+
+.over_button_text
+{
+	font-size: 20px;
+	color: white;
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+	padding:5px;
+}
+
+.over_button:hover
+{
+	brightness: 1.35;
+	border-color: #f0dfb6ee;
+}
+
+.tag_box
+{
+	vertical-align: center;
+	flow-children: right-wrap;
+	horizontal-align: center;
+}
+
+.tag_img
+{
+	margin: 2px 2px;
+}
+
+.myself
+{
+	background-color: #727180;
+}
+
+.sucess_box
+{
+	vertical-align: center;
+	margin-left: 20px;
+}
+
+.tag_hover
+{
+	opacity: 0;
+	flow-children: down;
+}
+

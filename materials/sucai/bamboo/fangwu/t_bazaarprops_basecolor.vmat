@@ -1,0 +1,14 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"F_RENDER_BACKFACES"	"1"
+	"g_vColorTint"	"[0.815686 0.894118 0.843137 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[1.000000 1.000000 0.000000 0.000000]"
+	"TextureColor"	"materials/sucai/ceshi_a/t_bazaarprops_basecolor.png"
+	"TextureTranslucency"	"materials/sucai/ceshi_a/t_bazaarprops_basecolor_8ca55aa0_trans.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/sucai/ceshi_a/t_bazaarprops_basecolor_jpg_8ca55aa0.vtex"
+	}
+}

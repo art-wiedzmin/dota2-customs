@@ -1,0 +1,38 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/leaveconfirm/leaveconfirm.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/leaveconfirm/leaveconfirm.vjs_c" />
+	</scripts>
+	<Panel class="root" hittest="false">
+		<Panel class="LeaveConfirmOverlay">
+			<Panel class="LeaveConfirmDim" hittest="true" onactivate="ClosePage()" />
+			<Panel class="LeaveConfirmDialog" hittest="true">
+				<Label class="LeaveConfirmTitle" text="中途离开游戏" />
+				<Label class="LeaveConfirmWarning" text="多人全玩家对局提前离开游戏将会导致以下后果：" />
+				<Panel class="LeaveConfirmRow">
+					<Panel class="LeaveConfirmBullet" hittest="false" />
+					<Label class="LeaveConfirmPenalty LeaveConfirmPenalty1" text="每次逃跑需要完成3局无法获取每日金豆奖励局数" />
+				</Panel>
+				<Panel class="LeaveConfirmRow LeaveConfirmRow2">
+					<Panel class="LeaveConfirmBullet" hittest="false" />
+					<Label class="LeaveConfirmPenalty LeaveConfirmPenalty2" text="频繁的中途退出游戏，可能导致游戏被暂时封禁" />
+				</Panel>
+				<Panel class="LeaveConfirmBtns">
+					<Panel class="LeaveConfirmBtn LeaveConfirmBtnConfirm" onactivate="ConfirmLeaveGame()">
+						<Label class="LeaveConfirmBtnText" text="确定离开游戏" />
+					</Panel>
+					<Panel class="LeaveConfirmBtn LeaveConfirmBtnReturn" onactivate="ClosePage()">
+						<Label class="LeaveConfirmBtnText" text="返回游戏" />
+					</Panel>
+				</Panel>
+				<Label class="LeaveConfirmFooter" text="排名落后会有对英雄额外伤害加成，希望大家都能够触底翻盘" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

@@ -1,0 +1,18 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	z-index: 9999999;
+	background-color: none;
+}
+
+#Contents
+{
+	padding: 0px 0px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-color: none;
+	border: 2px solid #000000;
+}
+

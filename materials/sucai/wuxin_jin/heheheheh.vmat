@@ -1,0 +1,13 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"g_vColorTint"	"[1.000000 1.000000 1.000000 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[1.000000 1.000000 0.000000 0.000000]"
+	"TextureColor"	"materials/sucai/wuxin_jin/heheheheh.png"
+	"TextureTranslucency"	"materials/sucai/wuxin_jin/heheheheh_1f6e96d_trans.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/sucai/wuxin_jin/heheheheh_jpg_1f6e96d.vtex"
+	}
+}

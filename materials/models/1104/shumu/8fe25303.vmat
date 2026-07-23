@@ -1,0 +1,25 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"F_ALPHA_TEST"	"1"
+	"F_ENABLE_WIND"	"1"
+	"g_flAlphaTestReference"	"0.185"
+	"g_flWindFlexibility"	"0.3"
+	"g_flWindHighFrequencyEffects"	"1"
+	"g_flWindLinearity"	"0"
+	"g_flWindLowFrequencyEffects"	"1"
+	"g_flWindSpeedMultiplier"	"0.5"
+	"g_vColorTint"	"[1.000000 1.000000 1.000000 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[1.000000 1.000000 0.000000 0.000000]"
+	"TextureColor"	"materials/models/1104/shumu/8fe25303.png"
+	"TextureTranslucency"	"materials/models/1104/shumu/8fe25303_3fa5f2ec_trans.png"
+	"TextureWindMask"	"materials/models/1104/shumu/8fe25303_q.png"
+	"TextureWindNoise"	"materials/models/noise.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/models/1104/shumu/8fe25303_tga_3fa5f2ec.vtex"
+		"g_tWindMask"	"materials/models/1104/shumu/8fe25303_q_tga_ddb851f5.vtex"
+		"g_tWindNoise"	"materials/models/noise_tga_95c2608e.vtex"
+	}
+}

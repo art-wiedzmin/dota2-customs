@@ -1,0 +1,65 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/talent/talent.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/talent/talent.vjs_c" />
+	</scripts>
+	<Panel class="root">
+		<Panel id="box_container" class="box_container">
+			<Panel id="top_title" class="top_title">
+				<Image id="" class="top_title_img" src="s2r://panorama/images/custom_game/title_text_png.vtex" />
+			</Panel>
+			<Panel id="" class="box_list">
+				<Panel class="BoxData" onactivate="SelectTalent(1)">
+					<Panel class="ImgBox" id="item_goods_17">
+						<Image id="" class="light_img" src="s2r://panorama/images/custom_game/c_k_png.vtex" />
+						<Image class="Img" src="s2r://panorama/images/custom_game/item_goods_17_png.vtex" />
+						<Image class="k_img" src="s2r://panorama/images/custom_game/c_j2_png.vtex" />
+						<Label id="text_img_1" class="text_img" text="物理" />
+					</Panel>
+					<Panel class="TextBox">
+						<Label class="Text1" text="迅捷之刃" />
+					</Panel>
+				</Panel>
+				<Panel class="BoxData" onactivate="SelectTalent(2)">
+					<Panel class="ImgBox" id="item_goods_18">
+						<Image id="" class="light_img" src="s2r://panorama/images/custom_game/c_k_png.vtex" />
+						<Image class="Img" src="s2r://panorama/images/custom_game/item_goods_18_png.vtex" />
+						<Image class="k_img" src="s2r://panorama/images/custom_game/c_j2_png.vtex" />
+						<Label id="text_img_2" class="text_img" text="肉盾" />
+					</Panel>
+					<Panel class="TextBox">
+						<Label class="Text1" text="荆棘之甲" />
+					</Panel>
+				</Panel>
+				<Panel class="BoxData" onactivate="SelectTalent(3)">
+					<Panel class="ImgBox" id="item_goods_19">
+						<Image id="" class="light_img" src="s2r://panorama/images/custom_game/c_k_png.vtex" />
+						<Image class="Img" src="s2r://panorama/images/custom_game/item_goods_19_png.vtex" />
+						<Image class="k_img" src="s2r://panorama/images/custom_game/c_j2_png.vtex" />
+						<Label id="text_img_3" class="text_img" text="法术" />
+					</Panel>
+					<Panel class="TextBox">
+						<Label class="Text1" text="炎术斗篷" />
+					</Panel>
+				</Panel>
+				<Panel class="BoxData" onactivate="SelectTalent(4)">
+					<Panel class="ImgBox" id="item_goods_24">
+						<Image id="" class="light_img" src="s2r://panorama/images/custom_game/c_k_png.vtex" />
+						<Image class="Img" src="s2r://panorama/images/custom_game/item_goods_24_png.vtex" />
+						<Image class="k_img" src="s2r://panorama/images/custom_game/c_j2_png.vtex" />
+						<Label id="text_img_4" class="text_img" text="特效" />
+					</Panel>
+					<Panel class="TextBox">
+						<Label class="Text1" text="雷电戟" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

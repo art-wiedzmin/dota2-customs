@@ -1,0 +1,40 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/selectheromsg/selectheromsg.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/selectheromsg/selectheromsg.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="item_snippet">
+			<Panel id="" class="item_panel">
+				<Label id="item_name" class="text_label" text="" />
+				<Label id="item_num" class="text_label" text="" />
+			</Panel>
+		</snippet>
+		<snippet name="redeem_row_snippet">
+			<Panel class="redeem_row_panel">
+				<Image id="redeem_icon" class="redeem_icon" />
+				<Label id="redeem_count" class="text_label redeem_count_label" text="" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="root" hittest="false">
+		<Panel id="msg_dim" class="msg_dim" hittest="true" onactivate="SelectHeroMsgClosePage()" />
+		<Panel id="alter_panel" class="alter_panel" hittest="true">
+			<Panel id="title_top" class="title_top" hittest="true">
+				<Label id="title_text" class="title_text" text="结果" />
+			</Panel>
+			<Panel id="section_box" class="section_box" hittest="true">
+				<Panel id="item_box" class="ItemBox" />
+				<Label id="elsetext" class="text_label" text="" />
+			</Panel>
+			<Panel class="Btn2" onactivate="SelectHeroMsgClosePage()">
+				<Label class="Text111" text="确定" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

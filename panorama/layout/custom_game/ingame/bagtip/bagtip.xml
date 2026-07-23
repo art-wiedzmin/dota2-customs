@@ -1,0 +1,37 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/bagtip/bagtip.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/bagtip/bagtip.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="attr_data">
+			<Panel class="AttrBox">
+				<Panel class="AttrSon">
+					<Label id="attr_name" class="Text2" text="属性名" />
+				</Panel>
+				<Panel class="AttrSon">
+					<Label id="attr_num" class="Text2" text="属性值" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="root">
+		<Panel id="bag_tip" class="TipPage">
+			<Panel class="TipImg">
+				<Image id="tip_img" class="Img" src="s2r://panorama/images/custom_game/item_goods_17_png.vtex" />
+			</Panel>
+			<Panel class="TipTitle">
+				<Label id="tip_title" class="Text1" text="标题" />
+			</Panel>
+			<Panel class="TipMainAttr">
+				<Label id="main_attr" class="Text2" text="主要属性" />
+			</Panel>
+			<Panel id="attr_list" class="TipAttr" />
+		</Panel>
+	</Panel>
+</root>

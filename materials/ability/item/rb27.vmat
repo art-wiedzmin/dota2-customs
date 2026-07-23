@@ -1,0 +1,13 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"g_vColorTint"	"[0.678431 0.678431 0.678431 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[1.000000 1.000000 0.000000 0.000000]"
+	"TextureColor"	"materials/ability/item/rb27.png"
+	"TextureTranslucency"	"materials/ability/item/rb27_9de53ce3_trans.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/ability/item/rb27_png_9de53ce3.vtex"
+	}
+}

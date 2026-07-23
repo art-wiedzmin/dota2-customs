@@ -1,0 +1,219 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	reduce_time = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/ui/reduce_time.vsnd",
+		]
+		volume = 2
+		volume_fade_in = 0
+		volume_fade_out = 2
+		vsnd_duration = 1.17551
+	}
+	use_item = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/ui/use_item.vsnd",
+		]
+		volume = 2
+		volume_fade_in = 0
+		volume_fade_out = 2
+		vsnd_duration = 0.10449
+	}
+	equipsuccess = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/ui/equipsuccess.vsnd",
+		]
+		volume = 2
+		volume_fade_in = 0
+		volume_fade_out = 2
+		vsnd_duration = 0.346848
+	}
+	level_up = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/ui/level_up.vsnd",
+		]
+		volume = 2
+		volume_fade_in = 0
+		volume_fade_out = 2
+		vsnd_duration = 1.306122
+	}
+	cost_glod = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/ui/cost_glod.vsnd",
+		]
+		volume = 6
+		volume_fade_in = 0
+		volume_fade_out = 2
+		vsnd_duration = 0.417959
+	}
+	treasure_drop = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/ui/treasure_drop.vsnd",
+		]
+		volume = 6
+		volume_fade_in = 0
+		volume_fade_out = 2
+		vsnd_duration = 0.888163
+	}
+	wolf1 = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/speak/wolf1.vsnd",
+		]
+		volume = 6
+		volume_fade_in = 0
+		volume_fade_out = 2
+		vsnd_duration = 2.904
+	}
+	bear = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/speak/bear.vsnd",
+		]
+		volume = 6
+		volume_fade_in = 0
+		volume_fade_out = 2
+		vsnd_duration = 3.096
+	}
+	dragon = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/speak/dragon.vsnd",
+		]
+		volume = 6
+		volume_fade_in = 0
+		volume_fade_out = 2
+		vsnd_duration = 3.288
+	}
+	dragon_hp = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/speak/dragon_hp.vsnd",
+		]
+		volume = 6
+		volume_fade_in = 0
+		volume_fade_out = 2
+		vsnd_duration = 2.976
+	}
+	xuanbu = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/speak/xuanbu.vsnd",
+		]
+		volume = 6
+		volume_fade_in = 0
+		volume_fade_out = 2
+		vsnd_duration = 4.944
+	}
+	chiji = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/speak/chiji.vsnd",
+		]
+		volume = 6
+		volume_fade_in = 0
+		volume_fade_out = 2
+		vsnd_duration = 2.88
+	}
+	needkill10 = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/speak/needkill10.vsnd",
+		]
+		volume = 6
+		volume_fade_in = 0
+		volume_fade_out = 2
+		vsnd_duration = 2.904
+	}
+	needkill20 = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/speak/needkill20.vsnd",
+		]
+		volume = 6
+		volume_fade_in = 0
+		volume_fade_out = 2
+		vsnd_duration = 3.144
+	}
+	timeover1 = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/speak/timeover1.vsnd",
+		]
+		volume = 6
+		volume_fade_in = 0
+		volume_fade_out = 2
+		vsnd_duration = 2.52
+	}
+	timeover2 = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/speak/timeover2.vsnd",
+		]
+		volume = 6
+		volume_fade_in = 0
+		volume_fade_out = 2
+		vsnd_duration = 1.992
+	}
+	map30 = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/speak/map30.vsnd",
+		]
+		volume = 6
+		volume_fade_in = 0
+		volume_fade_out = 2
+		vsnd_duration = 2.4
+	}
+	lastfight = 
+	{
+		type = "dota_src1_2d"
+		vsnd_files = 
+		[
+			"sounds/speak/lastfight.vsnd",
+		]
+		volume = 6
+		volume_fade_in = 0
+		volume_fade_out = 2
+		vsnd_duration = 3.84
+	}
+}

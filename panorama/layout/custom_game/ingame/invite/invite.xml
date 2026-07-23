@@ -1,0 +1,62 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/invite/invite.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/invite/invite.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="reward_row_snippet">
+			<Panel class="invite_reward_row">
+				<Panel id="" class="left_box">
+					<Image id="" class="bag_img" src="s2r://panorama/images/custom_game/y_bag_png.vtex" />
+					<Panel id="" class="left_text_box">
+						<Label id="text_1" class="text_label_1" text="" />
+						<Label id="text_2" class="text_label_2" text="" />
+					</Panel>
+				</Panel>
+				<Panel id="invite_reward_btn" class="invite_reward_btn">
+					<Image id="lq_btn" class="lq_btn_class" src="" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="invite_root">
+		<Panel class="invite_header">
+			<Label class="invite_title" text="" />
+			<Panel class="invite_close_btn" onactivate="ClosePage()">
+				<Image class="Img" src="s2r://panorama/images/custom_game/close_white_png.vtex" />
+			</Panel>
+		</Panel>
+		<Panel id="invite_code_section" class="invite_section">
+			<Panel id="" class="my_box">
+				<Label id="invite_status_text" class="invite_status" text="我的邀请码:" />
+				<Label id="my_text" class="text_label" text="1056843016" />
+			</Panel>
+			<Panel id="invite_input_wrap" class="invite_input_wrap">
+				<Panel id="" class="invite_input_box">
+					<TextEntry id="entry_code" class="invite_entry" maxchars="20" placeholder="请输入邀请码" numeric="true" oninputsubmit="WriteInvite()" />
+					<Label id="over_input_text" class="over_input_text" text="已成功绑定" />
+				</Panel>
+				<Panel class="invite_submit_btn" onactivate="WriteInvite()">
+					<Image id="bd_btn" class="btn_class" src="" />
+				</Panel>
+			</Panel>
+			<Label id="invite_fans_text" class="invite_fans" text="填写绑定对象邀请码、绑定后获得1000金豆" />
+		</Panel>
+		<Panel class="invite_section">
+			<Image id="" class="yq_text_img" src="s2r://panorama/images/custom_game/y_text_png.vtex" />
+			<Panel id="invite_invited_box" class="invite_invited_box">
+				<Label id="invite_invited_count_text" class="invite_invited_count" text="当前已成功邀请：0 人" />
+			</Panel>
+			<Panel id="invite_reward_list" class="invite_reward_list" />
+			<Panel id="" class="top_panel">
+				<Label id="" class="top_text" text="ps:活动最多可以领取10份奖励" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

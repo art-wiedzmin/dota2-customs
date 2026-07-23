@@ -1,0 +1,105 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.give_up_confirm_mask Label
+{
+	font-family: defaultFont;
+	text-shadow: 0px 2px 2px #000000;
+}
+
+.give_up_confirm_mask
+{
+	width: 298px;
+	height: 267px;
+	horizontal-align: left;
+	vertical-align: top;
+	margin: 0px;
+	flow-children: none;
+	z-index: 100;
+	visibility: collapse;
+}
+
+.give_up_confirm_dim
+{
+	width: 290px;
+	height: 260px;
+	horizontal-align: center;
+	vertical-align: center;
+	margin: 0px;
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.give_up_confirm_box
+{
+	width: 250px;
+	height: 120px;
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: down;
+	padding: 0px;
+}
+
+.give_up_confirm_title
+{
+	width: 100%;
+	height: 16px;
+	font-family: defaultFont;
+	font-weight: normal;
+	font-size: 16px;
+	color: #FFFFFF;
+	line-height: 16px;
+	text-align: center;
+	horizontal-align: center;
+	margin-top: 28px;
+	margin-bottom: 14px;
+	padding: 0px;
+}
+
+.give_up_confirm_btns
+{
+	width: 100%;
+	height: 36px;
+	flow-children: right;
+	horizontal-align: center;
+}
+
+.give_up_confirm_btn
+{
+	width: 108px;
+	height: 36px;
+	margin-left: 8px;
+	margin-right: 6px;
+	flow-children: none;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.give_up_confirm_btn:hover
+{
+	brightness: 1.15;
+}
+
+.give_up_confirm_no
+{
+	background-image: url("s2r://panorama/images/custom_game/giveupbtn_png.vtex");
+}
+
+.give_up_confirm_yes
+{
+	background-image: url("s2r://panorama/images/custom_game/okbtn_png.vtex");
+}
+
+.give_up_confirm_btn_text
+{
+	width: 100%;
+	height: 16px;
+	font-family: defaultFont;
+	font-weight: normal;
+	font-size: 16px;
+	color: #FFFFFF;
+	line-height: 16px;
+	text-align: center;
+	horizontal-align: center;
+	margin-top: 10px;
+	padding: 0px;
+}
+

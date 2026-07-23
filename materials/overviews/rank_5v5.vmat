@@ -1,0 +1,10 @@
+"Layer0"
+{
+	"shader"	"ui.vfx"
+	"F_TRANSLUCENT"	"0"
+	"TextureColor"	"materials/overviews/rank_5v5.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/overviews/rank_5v5_tga_ef866352.vtex"
+	}
+}

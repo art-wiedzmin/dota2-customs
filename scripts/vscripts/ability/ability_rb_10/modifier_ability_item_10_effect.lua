@@ -1,0 +1,39 @@
+-- 光环效果modifier
+modifier_ability_item_10_effect = class({})
+
+-- 初始化
+function modifier_ability_item_10_effect:OnCreated()
+    if not IsServer() then return end
+    -- 强制刷新属性
+    self:ForceRefresh()
+end
+
+-- 刷新
+function modifier_ability_item_10_effect:OnRefresh()
+    if not IsServer() then return end
+end
+
+-- 声明修改函数
+function modifier_ability_item_10_effect:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
+    }
+end
+
+function modifier_ability_item_10_effect:GetModifierMoveSpeedBonus_Constant()
+    local ability = self:GetAbility()
+    if not ability or ability:IsNull() then
+        return 0
+    end
+    return -ability:GetSpecialValueFor("num1")
+end
+
+-- 是否隐藏
+function modifier_ability_item_10_effect:IsHidden()
+    return false
+end
+
+-- 是否可驱散
+function modifier_ability_item_10_effect:IsPurgable()
+    return false
+end

@@ -1,0 +1,16 @@
+"Layer0"
+{
+	"shader"	"post_process.vfx"
+	"g_flBrightness"	"1"
+	"g_flColorExpBlue"	"1"
+	"g_flColorExpGreen"	"1"
+	"g_flColorExpRed"	"1"
+	"g_flColorScale"	"1"
+	"g_flContrast"	"1"
+	"g_flHueShift"	"0"
+	"g_flSaturate"	"1"
+	"g_vColorTint"	"[1.000000 1.000000 1.000000 0.000000]"
+	"Compiled Textures"
+	{
+	}
+}

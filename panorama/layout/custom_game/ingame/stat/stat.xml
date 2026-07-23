@@ -1,0 +1,97 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/stat/stat.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/stat/stat.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="player_snippet">
+			<Panel id="" class="player_li">
+				<Panel id="" class="hero_top">
+					<DOTAHeroImage id="hero_img" class="hero_img" heroname="" heroimagestyle="landscape" />
+					<Label id="" class="hero_color" text="" />
+				</Panel>
+				<Panel id="hero_bottom" class="hero_bottom">
+					<Label id="hero_time" class="hero_time" text="" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="player_2_snippet">
+			<Panel id="" class="player_v10">
+				<Image id="" class="light_class" src="" />
+				<Panel id="" class="player_box">
+					<Panel id="" class="num_box">
+						<Image id="img_color" class="img_color" src="" />
+						<Label id="num_label_left" class="num_label" text="" />
+					</Panel>
+					<Panel id="" class="player_li">
+						<Panel id="" class="hero_top">
+							<DOTAHeroImage id="hero_img" class="hero_img" heroname="" heroimagestyle="landscape" />
+							<Label id="hero_color" class="hero_color" text="" />
+						</Panel>
+						<Panel id="hero_bottom" class="hero_bottom">
+							<Label id="hero_time" class="hero_time" text="" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="team_4x_row">
+			<Panel id="" class="player_v10">
+				<Image id="" class="light_class" src="" />
+				<Panel id="" class="player_box">
+					<Panel id="" class="num_box">
+						<Image id="img_color" class="img_color" src="" />
+						<Label id="num_label_left" class="num_label" text="" />
+					</Panel>
+					<Panel id="heroes_row" class="heroes_row" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="root">
+		<Panel id="section" class="section">
+			<Panel id="left" class="left">
+				<Panel id="left_box" class="left_box">
+					<Panel id="bac_img" class="bac_img" />
+					<Label id="time_label" class="time_label" text="" />
+				</Panel>
+			</Panel>
+			<Panel id="right" class="right">
+				<Panel id="box_1" class="box_1">
+					<Panel id="" class="else_box">
+						<Image id="" class="bac_el" src="" />
+						<Panel id="left_team" class="team_box">
+							<Panel id="" class="num_box">
+								<Image id="" class="img_color" src="s2r://panorama/images/custom_game/5_4_png.vtex" />
+								<Label id="num_label_left" class="num_label" text="" />
+							</Panel>
+							<Panel id="" class="right_list">
+								<Panel id="list_left" class="list_box" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel id="" class="else_box">
+						<Image id="" class="bac_el" src="" />
+						<Panel id="right_team" class="team_box">
+							<Panel id="" class="num_box">
+								<Image id="" class="img_color" src="s2r://panorama/images/custom_game/5_3_png.vtex" />
+								<Label id="num_label_right" class="num_label" text="" />
+							</Panel>
+							<Panel id="" class="right_list">
+								<Panel id="list_right" class="list_box" />
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="box_2" class="box_1">
+					<Panel id="box_2_list" class="team_box" />
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

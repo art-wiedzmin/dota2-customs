@@ -1,0 +1,26 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/holidaypack/holidaypack.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/holidaypack/holidaypack.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="item_snippet">
+			<Panel class="item_panel">
+				<Image id="item_image" class="item_image" src="" />
+				<Image id="title_image" class="title_image" src="" />
+				<Panel id="btn_panel" class="btn_panel">
+					<Image id="btn_img" class="btn_img" src="" />
+					<Label id="price_text" class="price_text" text="" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="root" hittest="true">
+		<Panel id="list_panel" class="list_panel" hittest="true" />
+	</Panel>
+</root>

@@ -1,0 +1,25 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"F_ENABLE_WIND"	"1"
+	"F_RENDER_BACKFACES"	"1"
+	"g_flWindFlexibility"	"1"
+	"g_flWindHighFrequencyEffects"	"5"
+	"g_flWindLinearity"	"1"
+	"g_flWindLowFrequencyEffects"	"5"
+	"g_flWindSpeedMultiplier"	"1"
+	"g_vColorTint"	"[0.784314 0.784314 0.784314 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[1.000000 1.000000 0.000000 0.000000]"
+	"TextureWindRandomNoise"	"[0.000000 0.000000 0.000000 0.000000]"
+	"TextureColor"	"materials/sucai/wuxin_jin/fanqi_initialshadinggroup_basecolor.png"
+	"TextureTranslucency"	"materials/sucai/wuxin_jin/fanqi_initialshadinggroup_basecolor_98402376_trans.png"
+	"TextureWindMask"	"materials/sucai/wuxin_jin/fanqi_initialshadinggroup_wind_op.png"
+	"TextureWindNoise"	"materials/sucai/wuxin_jin/fanqi_initialshadinggroup_basecolor_vmat_g_twindnoise_ca8723cf.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/sucai/wuxin_jin/fanqi_initialshadinggroup_basecolor_jpg_98402376.vtex"
+		"g_tWindMask"	"materials/sucai/wuxin_jin/fanqi_initialshadinggroup_wind_op_jpg_28f6b65.vtex"
+		"g_tWindNoise"	"materials/sucai/wuxin_jin/fanqi_initialshadinggroup_basecolor_vmat_g_twindnoise_ca8723cf.vtex"
+	}
+}

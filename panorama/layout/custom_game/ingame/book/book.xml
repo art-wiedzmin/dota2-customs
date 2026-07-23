@@ -1,0 +1,131 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/book/book.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/book/book.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="hero_snippet">
+			<Panel class="hero_li">
+				<DOTAHeroImage id="hero_image" class="hero_image" heroname="" heroimagestyle="portrait" />
+				<Image id="no_image" class="no_image" src="s2r://panorama/images/custom_game/t_no_png.vtex" />
+			</Panel>
+		</snippet>
+		<snippet name="ability_snippet">
+			<Panel class="ability_li">
+				<Panel id="" class="ability_li_left">
+					<DOTAHeroImage id="hero_image" class="hero_image" heroname="" heroimagestyle="portrait" />
+				</Panel>
+				<Panel id="" class="ability_li_right">
+					<Label id="hero_name" class="hero_name" text="上古巨神" />
+					<Panel id="ability_list" class="ability_list" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="ability_slot_snippet">
+			<Panel class="slot_li">
+				<Image id="ability_image" class="ability_image" src="" />
+				<Image id="no_select" class="no_select" src="s2r://panorama/images/custom_game/no_select_png.vtex" />
+			</Panel>
+		</snippet>
+		<snippet name="fight_snippet">
+			<Panel class="fight_slot_li">
+				<Panel id="" class="fight_left">
+					<Image id="fight_image" class="fight_image" src="" />
+				</Panel>
+				<Panel id="" class="fight_right">
+					<Label id="fight_name" class="fight_name" text="" />
+					<Label id="fight_text" class="fight_text" text="" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="root">
+		<Panel id="" class="book_box">
+			<Panel id="top_nav" class="top_nav">
+				<Panel id="" class="nav_box">
+					<Panel id="nav_item_1" class="nav_item active" onactivate="opennav(&apos;1&apos;)">
+						<Label id="" class="nav_label" text="英雄图鉴" />
+					</Panel>
+					<Panel id="nav_item_2" class="nav_item" onactivate="opennav(&apos;2&apos;)">
+						<Label id="" class="nav_label" text="技能图鉴" />
+					</Panel>
+					<Panel id="nav_item_3" class="nav_item" onactivate="opennav(&apos;3&apos;)">
+						<Label id="" class="nav_label" text="战斗技能" />
+					</Panel>
+				</Panel>
+				<Panel id="" class="close_panel" onactivate="ClosePage()">
+					<Image id="" class="close_img" src="s2r://panorama/images/custom_game/close_icon_png.vtex" />
+				</Panel>
+			</Panel>
+			<Panel id="container" class="container">
+				<Panel id="body_1" class="body_box">
+					<Panel id="" class="style_box">
+						<Panel id="" class="type_panel">
+							<Image id="" class="type_image" src="s2r://panorama/images/custom_game/t_l_png.vtex" />
+							<Label id="" class="type_label" text="力量" />
+						</Panel>
+						<Panel id="type_list_1" class="type_list_box" />
+					</Panel>
+					<Panel id="" class="style_box">
+						<Panel id="" class="type_panel">
+							<Image id="" class="type_image" src="s2r://panorama/images/custom_game/t_m_png.vtex" />
+							<Label id="" class="type_label" text="敏捷" />
+						</Panel>
+						<Panel id="type_list_2" class="type_list_box" />
+					</Panel>
+					<Panel id="" class="style_box">
+						<Panel id="" class="type_panel">
+							<Image id="" class="type_image" src="s2r://panorama/images/custom_game/t_z_png.vtex" />
+							<Label id="" class="type_label" text="智力" />
+						</Panel>
+						<Panel id="type_list_3" class="type_list_box" />
+					</Panel>
+					<Panel id="style_box_4" class="style_box">
+						<Panel id="" class="type_panel">
+							<Image id="" class="type_image" src="s2r://panorama/images/custom_game/t_q_png.vtex" />
+							<Label id="" class="type_label" text="全才" />
+						</Panel>
+						<Panel id="type_list_4" class="type_list_box" />
+					</Panel>
+				</Panel>
+				<Panel id="body_2" class="body_box">
+					<Panel id="public_skill_box" class="public_skill_box">
+						<Label id="public_skill_label" class="public_skill_label" text="" />
+						<Panel id="public_ability_list" class="public_ability_list" />
+					</Panel>
+					<Panel id="ability_list_box" class="ability_list_box" />
+				</Panel>
+				<Panel id="body_3" class="body_box">
+					<Panel id="" class="fight_box">
+						<Label id="" class="fight_label" text="物理输出型技能" />
+						<Panel id="fight_1" class="fight_list" />
+					</Panel>
+					<Panel id="" class="fight_box">
+						<Label id="" class="fight_label" text="魔法输出型技能" />
+						<Panel id="fight_2" class="fight_list" />
+					</Panel>
+					<Panel id="" class="fight_box">
+						<Label id="" class="fight_label" text="肉盾型技能" />
+						<Panel id="fight_3" class="fight_list" />
+					</Panel>
+					<Panel id="" class="fight_box">
+						<Label id="" class="fight_label" text="通用型技能" />
+						<Panel id="fight_4" class="fight_list" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="hero_panel" class="hero_panel" hittest="false">
+			<DOTAHeroMovie id="hero_movie" class="unitsize" heroname="" hittest="false" />
+			<Panel id="" class="text_panel" hittest="false">
+				<Label id="text_label_hover" class="text_label_hover" text="" hittest="false" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

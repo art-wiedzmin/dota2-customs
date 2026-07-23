@@ -1,0 +1,283 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	width: 470px;
+	opacity: 1;
+	horizontal-align: right;
+	margin-top: 62px;
+	margin-right: 0px;
+}
+
+.section_panel
+{
+	width: 470px;
+	height: 170px;
+	flow-children: down;
+	margin-right: 0px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #0000 ), color-stop( .7, #42566377 ), to( #425663cc ) );
+	background-img-opacity: 0.2;
+	background-size: 100% 100%;
+	background-position: right;
+	background-repeat: no-repeat;
+	padding-right: 10px;
+}
+
+.top_box
+{
+	horizontal-align: right;
+	flow-children: left;
+	width: 100%;
+	margin-top: 19px;
+}
+
+.StarBox
+{
+	flow-children: left;
+	margin-right: 10px;
+	opacity: 1;
+	vertical-align: center;
+}
+
+.Star
+{
+	width: 16px;
+	height: 16px;
+	vertical-align: center;
+	background-image: none;
+	wash-color:none;
+}
+
+.lv_panel
+{
+	horizontal-align: right;
+	vertical-align: center;
+	flow-children: right;
+	padding-top: 1px;
+}
+
+.lv_text
+{
+	font-size: 16px;
+	color: #FFD700;
+	text-shadow: 2px 0px 2px #000000;
+	vertical-align: center;
+}
+
+.Img
+{
+	width: 100%;
+	height: 100%;
+}
+
+.Text1
+{
+	font-size: 16px;
+	color: #FFD700;
+	text-shadow: 2px 0px 2px #000000;
+}
+
+#lv_text
+{
+	color: #AEFF30;
+}
+
+.Text2
+{
+	font-size: 16px;
+	color: #AEFF30;
+	text-shadow: 2px 0px 2px #000000;
+}
+
+.AttrBox
+{
+	flow-children: right;
+	horizontal-align: right;
+	margin: 15px 0;
+}
+
+.AttrData
+{
+	flow-children: right;
+	margin-left: 8px;
+}
+
+.AttrTitle
+{
+	vertical-align: center;
+	margin-right: 6px;
+}
+
+.Attr
+{
+	flow-children: right;
+	vertical-align: center;
+}
+
+.AttrImg
+{
+	width: 20px;
+	height: 20px;
+	vertical-align: center;
+	margin-right: 10px;
+}
+
+.AttrText
+{
+	vertical-align: center;
+}
+
+.FuncBox
+{
+	flow-children: right;
+	horizontal-align: right;
+}
+
+.Btn_class
+{
+	height: 26px;
+	background-color: none;
+	flow-children: right;
+	horizontal-align: center;
+	border: 0px;
+	margin-left: 2px;
+	vertical-align: center;
+}
+
+.Btn_class:hover
+{
+	brightness: 1.3;
+	border: 0;
+	background-color: none;
+}
+
+.suiji
+{
+	width: 36px;
+	height: 26px;
+	vertical-align: center;
+}
+
+.text_num
+{
+	horizontal-align: left;
+	margin-left: 5px;
+	text-shadow:0 1px 1px;
+}
+
+.kuaijie_image
+{
+	width: 67px;
+	height: 26px;
+	vertical-align: center;
+	margin-right: -2px;
+}
+
+.jiao_img
+{
+	width: 23px;
+	height: 21px;
+	z-index: 1;
+	horizontal-align: right;
+	margin-right: 18px;
+}
+
+.hover_panel
+{
+	flow-children: down;
+	height: 121px;
+	width: 204px;
+}
+
+.hover_box
+{
+	width: 204px;
+	height: 100px;
+	background-color: #1B262D;
+	border: 2px solid #000000;
+	margin-top: -3px;
+	flow-children: down;
+	padding: 14px 10px 8px;
+}
+
+.hover_title
+{
+	flow-children: right;
+	margin-left: 4px;
+	margin-bottom: 8px;
+}
+
+.hover_text
+{
+	border-top: 1px solid #2A363C;
+	padding-top: 8px;
+}
+
+.glod_img
+{
+	width: 21px;
+	height: 14px;
+	margin-right: 10px;
+}
+
+.gold_num
+{
+	font-size: 15px;
+	color: #FFCC34;
+}
+
+.hover_text_label
+{
+	font-size: 14px;
+	color: #92A1B5;
+	line-height: 18px;
+	text-shadow: 0px 0px 2px #000000;
+}
+
+#hover_1
+{
+	horizontal-align: right;
+	margin-right: 1px;
+	margin-top: 116px;
+	visibility: collapse;
+}
+
+#hover_2
+{
+	horizontal-align: right;
+	margin-right: 35px;
+	margin-top: 116px;
+	height: 168px;
+	visibility: collapse;
+}
+
+#hover_2 .hover_box
+{
+	height: 146px;
+}
+
+.Shop_class
+{
+	width: 120px;
+	height: 35px;
+	background-color: rgba(20, 20, 24, 0.88);
+	border-radius: 5px;
+	flow-children: right;
+	horizontal-align: right;
+	margin-left: 2px;
+	margin-top: 12px;
+}
+
+.Shop_class:hover
+{
+	brightness: 1.3;
+	border: 0;
+	background-color: rgba(51, 48, 0, 0.88);
+}
+
+.ShopNum
+{
+	horizontal-align: center;
+	margin-right: 5px;
+}
+

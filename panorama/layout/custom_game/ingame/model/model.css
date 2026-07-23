@@ -1,0 +1,64 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 99;
+	visibility: collapse;
+}
+
+.tip_panel
+{
+	width: 400px;
+	height: 207px;
+	horizontal-align: right;
+}
+
+#tip_1
+{
+	margin-top: 130px;
+	margin-right: 28px;
+}
+
+#tip_2
+{
+	vertical-align: bottom;
+	margin-bottom: 110px;
+	margin-right: 355px;
+	visibility: collapse;
+}
+
+.label_text
+{
+	font-size: 12px;
+	color: #FFFFFF;
+	text-align: center;
+	width: 80px;
+	vertical-align: center;
+	horizontal-align: center;
+	margin-top: 2px;
+}
+
+.btn_class
+{
+	height: 30px;
+	border-radius: 15px;
+	border: 1px solid #50FFC3;
+	horizontal-align: right;
+	vertical-align: bottom;
+	margin-right: 55px;
+	margin-bottom: 10px;
+}
+
+#btn_class_2
+{
+	margin-right: 65px;
+}
+
+.btn_class:hover
+{
+	brightness: 1.5;
+}
+

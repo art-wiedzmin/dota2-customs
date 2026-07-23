@@ -1,0 +1,23 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/bag/bag.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/bag/bag.vjs_c" />
+	</scripts>
+	<Panel hittest="true" class="root">
+		<Panel hittest="true" id="kuang_img" class="kuang_class">
+			<Image hittest="true" class="kuang_img" src="s2r://panorama/images/custom_game/c_j_png.vtex" />
+		</Panel>
+		<Panel hittest="true" id="up_img" class="ImgBox" onactivate="LevelUp()">
+			<Image hittest="true" class="Img" src="s2r://panorama/images/custom_game/c_sj_png.vtex" />
+		</Panel>
+		<Panel hittest="true" class="TextBox">
+			<Label hittest="true" id="sy_num" class="BagText" text="" />
+		</Panel>
+	</Panel>
+</root>

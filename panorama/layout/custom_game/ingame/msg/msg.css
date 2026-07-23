@@ -1,0 +1,166 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	width: 100%;
+	height: 100%;
+	visibility: collapse;
+	z-index: 9999;
+}
+
+.alter_panel
+{
+	width: 439px;
+	min-width: 439px;
+	height: 239px;
+	min-height: 239px;
+	horizontal-align: center;
+	vertical-align: center;
+	background-image: url("s2r://panorama/images/custom_game/alter_bac_png.vtex");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	flow-children: down;
+	padding: 20px 30px;
+}
+
+.title_top
+{
+	width: 100%;
+}
+
+.title_text
+{
+	font-size: 24px;
+	color: #FFFFFF;
+	horizontal-align: center;
+	margin-top: 15px;
+}
+
+.close_btn
+{
+	width: 26px;
+	height: 26px;
+	horizontal-align: right;
+}
+
+.section_box
+{
+	width: 100%;
+	min-height: 80px;
+	height: fit-children;
+	horizontal-align: center;
+}
+
+.label_panel
+{
+	horizontal-align: center;
+}
+
+.text_label
+{
+	font-size: 20px;
+	color: #FBDD97;
+}
+
+.ItemBox
+{
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: right;
+}
+
+.ItemBoxRedeem
+{
+	flow-children: right;
+	horizontal-align: center;
+	vertical-align: center;
+	width: fit-children;
+	height: fit-children;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+.redeem_row_panel
+{
+	flow-children: right;
+	width: fit-children;
+	horizontal-align: center;
+	vertical-align: center;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.redeem_row_no_icon
+{
+	flow-children: right;
+}
+
+.redeem_row_no_icon .redeem_icon
+{
+	visibility: collapse;
+	width: 0px;
+	height: 0px;
+	margin-right: 0px;
+}
+
+.redeem_icon
+{
+	width: 44px;
+	height: 44px;
+	margin-right: 8px;
+	vertical-align: center;
+	wash-color: none;
+}
+
+.redeem_icon.redeem_icon_title
+{
+	width: 132px;
+	height: 44px;
+}
+
+.redeem_count_label
+{
+	vertical-align: center;
+	white-space: nowrap;
+}
+
+.Btn2
+{
+	width: 100px;
+	height: 35px;
+	vertical-align: center;
+	horizontal-align: center;
+	background-color: black;
+	border-radius: 4px;
+	margin: 0 60px;
+	background-image: url("s2r://panorama/images/custom_game/s_btn_png.vtex");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.Text111
+{
+	font-size: 16px;
+	horizontal-align: center;
+	vertical-align: center;
+	color: #3B3B3B;
+}
+
+.Text111:hover
+{
+	brightness: 1.3;
+}
+
+.item_panel
+{
+	flow-children: right;
+}
+
+#elsetext
+{
+	visibility: collapse;
+	horizontal-align: center;
+	vertical-align: center;
+}
+

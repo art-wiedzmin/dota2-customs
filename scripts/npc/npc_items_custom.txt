@@ -1,0 +1,3218 @@
+"DOTAAbilities"
+{
+
+	"item_aghanims_shard"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemQuality"	"rare"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"1400"
+		"ItemPermanent"	"0"
+		"ItemShopTags"	"int;str;agi;mana_pool;health_pool;hard_to_tag"
+		"ItemStockMax"	"1"
+		"ItemStockTime"	"1"
+		"ItemStockInitial"	"0"
+		"ItemRequirements"	{}
+		"ItemInitialStockTime"	"480.0"
+		"ItemInitialStockTimeTurbo"	"510.0"
+		"SuggestLategame"	"1"
+	}
+
+	"item_moon_shard"
+	{
+		"UpgradesItems"	"item_hyperstone"
+		"UpgradeRecipe"	"item_recipe_red_moon_crystal"
+		"AbilityValues"
+		{
+			"bonus_night_vision"	"240"
+			"consumed_bonus_night_vision"	"240"
+		}
+	}
+
+	"item_sheepstick"
+	{
+		"UpgradesItems"	"item_angels_demise"
+		"UpgradeRecipe"	"item_recipe_equip_6"
+	}
+
+	"item_black_king_bar"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"	"2"
+		// Stats
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"	"65"
+		"AbilityManaCost"	"50"
+		"ItemQuality"	"epic"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"4050"
+		"ItemSellable"	"1"
+		"ItemDeclarations"	"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemShopTags"	"str;damage;hard_to_tag;teamfight;escape;tank"
+		"SuggestLategame"	"1"
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_strength"	"10"
+			"bonus_damage"	"24"
+			"duration"	"9 8 7"
+			"max_level"	"3"
+			// Percentage over model scale
+			"model_scale"	"30"
+			"spell_reduce"	"80"
+		}
+	}
+
+	"item_ward_observer"
+	{
+		"ItemCost"	"0"
+		"ItemPurchasable"	"0"
+		"ItemIsNeutralDrop"	"0"
+	}
+
+	"item_ward_sentry"
+	{
+		"ItemCost"	"0"
+		"ItemPurchasable"	"0"
+		"ItemIsNeutralDrop"	"0"
+	}
+
+	"item_nullifier"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"FightRecapLevel"	"1"
+		"AbilityCooldown"	"5.0"
+		"AbilityManaCost"	"0"
+		"AbilityCastRange"	"1200"
+		"ItemQuality"	"epic"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"4350"
+		"ItemDeclarations"	"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemShopTags"	"teamfight;disable"
+		"SuggestLategame"	"1"
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_damage"	"75"
+			"bonus_armor"	"10"
+			"bonus_regen"	"0"
+			"mute_duration"	"5.0"
+			"projectile_speed"	"2000"
+			"slow_pct"	"10"
+			"slow_interval_duration"	"0.5"
+		}
+	}
+
+	"item_refresher"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		// Stats
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"	"0.0"
+		"AbilityCooldown"	"75"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"	"325"
+		"ItemQuality"	"rare"
+		"ItemCost"	"5000"
+		"ItemDeclarations"	"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemShopTags"	"regen_health;regen_mana;hard_to_tag;teamfight"
+		"SuggestLategame"	"1"
+		"CooldownPausedOutOfInventory"	"1"
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_health_regen"	"14"
+			"bonus_mana_regen"	"7.0"
+			"bonus_damage"	"0"
+			"max_level"	"1"
+			"cooldown_duration"	"180"
+			"refresh_items"	"0"
+		}
+	}
+
+	"item_goods_1"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_1"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"1"
+		"ItemCost"	"250"
+		"ItemStackable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_goods_2"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_2"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"1"
+		"ItemCost"	"1500"
+		"ItemRequirements"	{}
+	}
+
+	"item_goods_3"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_3"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastPoint"	"0"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"AnimationPlaybackRate"	"0"
+		"ItemCastOnPickup"	"0"
+		"ItemCost"	"200"
+		"ItemSellable"	"1"
+		"ItemPurchasable"	"1"
+		"ItemPermanent"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+	}
+
+	"item_goods_4"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_4"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemCastOnPickup"	"0"
+		"ItemCost"	"200"
+		"ItemSellable"	"1"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+	}
+
+	"item_goods_5"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastPoint"	"0"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"AnimationPlaybackRate"	"0"
+		"ItemCastOnPickup"	"0"
+		"ItemCost"	"200"
+		"ItemSellable"	"1"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+	}
+
+	"item_goods_6"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_6"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemCastOnPickup"	"0"
+		"ItemCost"	"200"
+		"ItemSellable"	"1"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+	}
+
+	"item_goods_7"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_7"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemCastOnPickup"	"0"
+		"ItemCost"	"200"
+		"ItemSellable"	"1"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+	}
+
+	"item_goods_8"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_8"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemCastOnPickup"	"0"
+		"ItemCost"	"200"
+		"ItemSellable"	"1"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+	}
+
+	"item_goods_9"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_9"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/props_gameplay/treasure_chest001b.vmdl"
+		"Effect"	"particles/item_rank1_p.vpcf"
+		"ItemCost"	"350"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"1"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+	}
+
+	"item_goods_20"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_20"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/props_gameplay/treasure_chest001b.vmdl"
+		"Effect"	"particles/item_rank1_p.vpcf"
+		"ItemCost"	"500"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"1"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+	}
+
+	"item_goods_21"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_21"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"ItemCost"	"10000"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+	}
+
+	"item_goods_22"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_tome_of_torrents_png"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/props_gameplay/recipe.vmdl"
+		"ItemCost"	"1800"
+		"ItemSellable"	"0"
+		"ItemPermanent"	"0"
+		"ItemStackable"	"1"
+		"ItemStockMax"	"1"
+		"ItemStockTime"	"1"
+		"ItemStockInitial"	"0"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"TianShuItemUse"
+			}
+		}
+		"ItemInitialStockTime"	"900.0"
+		"ItemInitialStockTimeTurbo"	"900.0"
+		"SuggestLategame"	"1"
+	}
+
+	"item_goods_23"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_23"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/props_gameplay/moon_shard/moon_shard_meteor.vmdl"
+		"ItemCost"	"1000"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"1"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+	}
+
+	"item_goods_10"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_10"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/props_gameplay/treasure_chest001b.vmdl"
+		"Effect"	"particles/item_rank1_p.vpcf"
+		"ItemCost"	"1000"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+	}
+
+	"item_goods_11"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_aegis"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/props_gameplay/aegis.vmdl"
+		"Effect"	"particles/item_rank1_p.vpcf"
+		"ItemCost"	"1600"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+	}
+
+	"item_goods_12"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_12"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/props_gameplay/treasure_chest001b.vmdl"
+		"Effect"	"particles/item_rank2_p.vpcf"
+		"ItemCost"	"2000"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+	}
+
+	"item_goods_13"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/spellbook_normal"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/props_gameplay/recipe.vmdl"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_skill_1"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_1"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb1.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_2"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_2"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb2.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_3"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_3"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb3.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_4"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_4"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb4.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_5"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb5.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_6"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_6"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb6.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_7"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_7"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb7.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_8"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_8"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb8.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_9"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_9"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb9.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_11"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_11"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb11.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_12"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_12"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb12.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_13"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_13"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb13.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_14"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_14"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb14.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_14_up"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_神·粉碎2"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb14.vmdl"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_20_up"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_55"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb14.vmdl"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_24_up"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_56"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb14.vmdl"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_27_up"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_神碎甲"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb27.vmdl"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_15"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_15"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb15.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_16"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_16"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb16.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_17"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_17"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb17.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_18"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_18"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb18.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_19"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_19"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb19.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_20"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_20"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb20.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_21"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_21"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb21.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_22"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_22"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb22.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_23"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_23"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb23.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_24"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_24"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb24.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_25"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_25"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb25.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_26"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_26"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb26.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_27"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_27"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb27.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_28"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_28"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb28.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_29"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_29"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ID"	"1504"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb29.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_30"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_30"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ID"	"1505"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb30.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_31"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_31"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ID"	"1506"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb31.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_32"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_32"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb32.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_33"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_33"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb33.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_34"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_34"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb34.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_35"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_35"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ID"	"1501"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb35.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_36"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_36"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb36.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_37"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_37"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb37.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_skill_38"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ability_scrolls/item_skill_38"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/test/rb38.vmdl"
+		"ItemCost"	"20"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseSkill"
+			}
+		}
+	}
+
+	"item_goods_14"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_0"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/item_ability_book_t2.vmdl"
+		"ItemCost"	"40"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+	}
+
+	"item_goods_15"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_61"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/item_ability_book_t1.vmdl"
+		"Effect"	"particles/item_rank1_p.vpcf"
+		"ItemCost"	"200"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+	}
+
+	"item_goods_16"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_62"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/item_ability_book_t0.vmdl"
+		"ItemCost"	"2000"
+		"ItemSellable"	"0"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemPurchasable"	"1"
+		"ItemPermanent"	"0"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"10"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemStockMax"	"1"
+		"ItemStockTime"	"1"
+		"ItemStockInitial"	"0"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+		"ItemHideCharges"	"0"
+		"ItemInitialStockTime"	"1560.0"
+		"ItemInitialStockTimeTurbo"	"150.0"
+		"SuggestPregame"	"1"
+	}
+
+	"item_box_0"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_necronomicon"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_1"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_1"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_2"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_2"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_3"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_3"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_4"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_4"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_5"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_6"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_6"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_7"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_7"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_8"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_8"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	// 远行鞋 + 踏云靴图纸 升级：24 分钟后可购买图纸
+	"item_travel_cloud_boots"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"item_travel_boots"
+		"ScriptFile"	"Ability/item_travel_cloud_boots/item_travel_cloud_boots.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemQuality"	"artifact"
+		"ItemCost"	"0"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_9"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_9"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_10"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_10"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_11"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_11"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_12"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_12"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_13"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_13"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_14"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_14"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_15"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_15"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_16"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_16"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_17"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_17"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_18"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_18"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_19"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_19"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_20"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_20"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_21"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_21"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_22"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_22"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_23"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_23"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_24"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_24"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_25"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_25"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_26"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_26"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_27"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_27"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_28"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_28"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_29"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_29"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_30"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_30"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_31"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_31"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_32"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_32"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_33"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_33"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_34"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_34"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_35"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_35"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_36"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_36"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_37"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_37"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_38"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_38"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_39"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_39"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_40"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_40"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_41"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_41"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_42"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_42"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_box_42"
+			{
+				"Properties"	{}
+			}
+		}
+	}
+
+	"item_box_43"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_43"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_44"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_44"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_45"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_45"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_46"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_46"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_47"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_47"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_48"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_48"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		"ItemPurchasable"	"0"
+		"AbilityValues"
+		{
+			"AttackPercentage"
+			{
+				"value"	"50"
+			}
+		}
+	}
+
+	"item_box_49"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_49"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_50"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_50"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_51"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_51"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_52"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_52"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_53"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_53"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_68"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_68"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ID"	"1507"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_69"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_69"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ID"	"1508"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_54"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_54"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_55"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_55"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_56"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_56"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_92"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_神碎甲"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_57"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_57"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_58"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_58"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_59"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_59"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_60"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_60"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"	"0"
+	}
+
+	"item_box_61"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_61"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_62"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_62"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_63"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_63"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ID"	"1502"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_box_64"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_box_64"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ID"	"1503"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_goods_0"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_0"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"0"
+		"ItemPurchasable"	"0"
+		"ItemKillable"	"0"
+		"ItemAlertable"	"0"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+	}
+
+	"item_goods_17"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_17"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"0"
+		"ItemPurchasable"	"0"
+		"ItemKillable"	"0"
+		"ItemAlertable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_goods_18"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_18"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"0"
+		"ItemPurchasable"	"0"
+		"ItemKillable"	"0"
+		"ItemAlertable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_goods_19"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_19"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"0"
+		"ItemPurchasable"	"0"
+		"ItemKillable"	"0"
+		"ItemAlertable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_goods_24"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_24"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"0"
+		"ItemPurchasable"	"0"
+		"ItemKillable"	"0"
+		"ItemAlertable"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_goods_25"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_25"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/props_gameplay/rune_arcane.vmdl"
+		"Effect"	"particles/item_rank1_p.vpcf"
+		"ItemCost"	"500"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+	}
+
+	"item_goods_26"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_goods_26"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"	"ACT_DOTA_IDLE"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"Model"	"models/props_gameplay/treasure_chest001b.vmdl"
+		"Effect"	"particles/item_rank5_1.vpcf"
+		"ItemCost"	"2000"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemStackable"	"0"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"LeaderItemUse"
+			}
+		}
+	}
+
+	"item_equip_1"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_equip_1"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastPoint"	"0"
+		"AbilityCooldown"	"60"
+		"AbilityManaCost"	"50"
+		"ItemCost"	"4000"
+		"ItemSellable"	"1"
+		"ItemPurchasable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseEquip"
+			}
+		}
+	}
+
+	"item_equip_2"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_equip_2"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastPoint"	"0"
+		"AbilityCooldown"	"90"
+		"AbilityManaCost"	"400"
+		"ID"	"1500"
+		"ItemCost"	"4000"
+		"ItemSellable"	"1"
+		"ItemPurchasable"	"1"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"UseEquip"
+			}
+		}
+		"OnEquip"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/ingame/Item/Item.lua"
+				"Function"	"AddEquip"
+			}
+		}
+	}
+
+	"item_equip_3"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_item_equip_3"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastPoint"	"0"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"1"
+		"ItemCost"	"1400"
+		"ItemSellable"	"1"
+		"ItemPurchasable"	"1"
+		"ItemPermanent"	"0"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"0"
+		"ItemStockMax"	"1"
+		"ItemStockTime"	"1"
+		"ItemStockInitial"	"0"
+		"ItemRequirements"	{}
+		"ItemHideCharges"	"0"
+		"ItemInitialStockTime"	"480.0"
+		"ItemInitialStockTimeTurbo"	"150.0"
+		"SuggestPregame"	"1"
+	}
+
+	"item_talent_skill_1"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"talent_1"
+		"ScriptFile"	"Ability/item_talent_skill/item_talent_skill"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCooldown"	"0"
+		"AbilityManaCost"	"0"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"0"
+		"ItemShareability"	"ITEM_NOT_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemKillable"	"0"
+		"ItemPermanent"	"1"
+		"ItemHideCharges"	"1"
+	}
+
+	"item_talent_skill_2"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"talent_2"
+		"ScriptFile"	"Ability/item_talent_skill/item_talent_skill"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCooldown"	"0"
+		"AbilityManaCost"	"0"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"0"
+		"ItemShareability"	"ITEM_NOT_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemKillable"	"0"
+		"ItemPermanent"	"1"
+		"ItemHideCharges"	"1"
+	}
+
+	"item_talent_skill_3"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"talent_3"
+		"ScriptFile"	"Ability/item_talent_skill/item_talent_skill"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCooldown"	"0"
+		"AbilityManaCost"	"0"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"0"
+		"ItemShareability"	"ITEM_NOT_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemKillable"	"0"
+		"ItemPermanent"	"1"
+		"ItemHideCharges"	"1"
+	}
+
+	"item_talent_skill_4"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"talent_4"
+		"ScriptFile"	"Ability/item_talent_skill/item_talent_skill"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCooldown"	"0"
+		"AbilityManaCost"	"0"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"0"
+		"ItemShareability"	"ITEM_NOT_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemKillable"	"0"
+		"ItemPermanent"	"1"
+		"ItemHideCharges"	"1"
+	}
+
+	"item_talent_skill_5"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"talent_5"
+		"ScriptFile"	"Ability/item_talent_skill/item_talent_skill"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCooldown"	"0"
+		"AbilityManaCost"	"0"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"0"
+		"ItemShareability"	"ITEM_NOT_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemKillable"	"0"
+		"ItemPermanent"	"1"
+		"ItemHideCharges"	"1"
+	}
+
+	"item_talent_skill_6"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"talent_6"
+		"ScriptFile"	"Ability/item_talent_skill/item_talent_skill"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCooldown"	"0"
+		"AbilityManaCost"	"0"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"0"
+		"ItemShareability"	"ITEM_NOT_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemKillable"	"0"
+		"ItemPermanent"	"1"
+		"ItemHideCharges"	"1"
+	}
+
+	"item_talent_skill_7"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"talent_7"
+		"ScriptFile"	"Ability/item_talent_skill/item_talent_skill"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCooldown"	"0"
+		"AbilityManaCost"	"0"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"0"
+		"ItemShareability"	"ITEM_NOT_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemKillable"	"0"
+		"ItemPermanent"	"1"
+		"ItemHideCharges"	"1"
+	}
+
+	"item_talent_skill_8"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"talent_8"
+		"ScriptFile"	"Ability/item_talent_skill/item_talent_skill"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCooldown"	"0"
+		"AbilityManaCost"	"0"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"0"
+		"ItemShareability"	"ITEM_NOT_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemKillable"	"0"
+		"ItemPermanent"	"1"
+		"ItemHideCharges"	"1"
+	}
+
+	"item_talent_skill_9"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"talent_9"
+		"ScriptFile"	"Ability/item_talent_skill/item_talent_skill"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCooldown"	"0"
+		"AbilityManaCost"	"0"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"0"
+		"ItemShareability"	"ITEM_NOT_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemKillable"	"0"
+		"ItemPermanent"	"1"
+		"ItemHideCharges"	"1"
+	}
+
+	"item_cost_2"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"item_b_bx"
+		"ScriptFile"	"Ability/item_cost_2/item_cost_2"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
+		"AbilityCooldown"	"0"
+		"AbilityManaCost"	"0"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"0"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"0"
+		"ItemPermanent"	"1"
+		"ItemInitialCharges"	"0"
+		"ItemStackable"	"0"
+		"ItemRequirements"	{}
+		"ItemDisassembleRule"	"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemIsNeutralDrop"	"1"
+		"ItemHideCharges"	"0"
+	}
+
+	"item_equip_4"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"item_item_equpi_4"
+		"ScriptFile"	"Ability/item_equip_4/item_equip_4"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"Model"	"models/props_gameplay/treasure_chest001b.vmdl"
+		"ItemCost"	"7500"
+		"ItemSellable"	"1"
+		"ItemPurchasable"	"1"
+		"ItemPurchasable"	"1"
+		"ItemPermanent"	"0"
+		"ItemStackable"	"0"
+		"ItemStockMax"	"1"
+		"ItemStockTime"	"1"
+		"ItemStockInitial"	"0"
+		"MaxUpgradeLevel"	"3"
+		"ItemBaseLevel"	"3"
+		"ItemRequirements"	{}
+		"ItemHideCharges"	"0"
+		"ItemInitialStockTime"	"1440.0"
+		"ItemInitialStockTimeTurbo"	"150.0"
+		"AbilityValues"
+		{
+			"num1"	"150"
+		}
+	}
+
+	"item_recipe_equip_4"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"item_recipe_travel_boots_2"
+		"ScriptFile"	"Ability/item_equip_4_page/item_equip_4_page"
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"Model"	"models/props_gameplay/recipe.vmdl"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"3000"
+		"ItemSellable"	"1"
+		"ItemPurchasable"	"1"
+		"ItemPermanent"	"0"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"0"
+		"ItemStockMax"	"1"
+		"ItemStockTime"	"1"
+		"ItemStockInitial"	"0"
+		// Recipe
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_equip_4"
+		// 仅需一级远行鞋；踏云靴图纸本体为配方物品，勿再要求远行卷轴（否则会显示两张图纸）
+		"ItemRequirements"	{}
+		"ItemRequirements"
+		{
+			"01"	"item_travel_boots*"
+		}
+		"ItemHideCharges"	"0"
+		"ItemInitialStockTime"	"1440.0"
+		"ItemInitialStockTimeTurbo"	"150.0"
+	}
+
+	"item_travel_boots_2"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"ItemQuality"	"common"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"4500"
+		"ItemPurchasable"	"0"
+		"ItemDeclarations"	"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemShopTags"	"teleport;move_speed;mobility"
+		"MaxUpgradeLevel"	"2"
+		"ItemBaseLevel"	"2"
+		"SuggestLategame"	"1"
+		"SpeciallyBannedFromNeutralSlot"	"1"
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_movement_speed"	"110"
+			"maximum_distance"	"800"
+			"vision_radius"	"200"
+			"tp_cooldown"	"40"
+			"tp_channel_time"	"2"
+		}
+	}
+
+	"item_recipe_travel_boots_2"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"Model"	"models/props_gameplay/recipe.vmdl"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"0"
+		"ItemSellable"	"0"
+		"ItemPurchasable"	"0"
+		// 已由 item_recipe_equip_4 直接合成踏云靴，禁用原版二级远行鞋合成
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"	"0"
+	}
+
+	"item_travel_boots"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"ItemQuality"	"common"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"2500"
+		"ItemDeclarations"	"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemShopTags"	"teleport;move_speed;mobility"
+		"MaxUpgradeLevel"	"1"
+		"ItemBaseLevel"	"1"
+		"SuggestLategame"	"1"
+		"SpeciallyBannedFromNeutralSlot"	"1"
+		"UpgradesItems"	"item_travel_boots"
+		"UpgradeRecipe"	"item_recipe_travel_boots"
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_movement_speed"	"90"
+			"maximum_distance"	"800"
+			"vision_radius"	"200"
+			"tp_cooldown"	"40"
+		}
+	}
+
+	"item_recipe_travel_boots"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"Model"	"models/props_gameplay/recipe.vmdl"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"2000"
+		// Recipe
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_travel_boots"
+		"ItemRequirements"
+		{
+			"01"	"item_boots*"
+		}
+	}
+
+	"item_recipe_manta"
+	{
+		"ItemPurchasable"	"0"
+		// 保留有效配方定义，避免引擎报错；仅禁止购买与升级建议
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_manta"
+		"ItemRequirements"
+		{
+			"01"	"item_yasha;item_diadem"
+		}
+		"ShouldNotSuggestMainGame"	"1"
+	}
+
+	"item_manta"
+	{
+		"ItemPurchasable"	"0"
+		"IsObsolete"	"1"
+		"ShouldNotSuggestMainGame"	"1"
+	}
+
+	// 神达贡之神力：5 级达贡 + 以太透镜 + 神达贡之力卷轴（800）
+	"item_equip_5"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"item_item_equip_5"
+		"ScriptFile"	"Ability/item_equip_5/item_equip_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"FightRecapLevel"	"1"
+		"AbilityCastPoint"	"0.0"
+		"AbilityCooldown"	"15"
+		"AbilityManaCost"	"300"
+		"AbilityCastRange"	"800"
+		"ItemQuality"	"epic"
+		"ItemCost"	"10725"
+		"ItemSellable"	"1"
+		"ItemPurchasable"	"1"
+		"ItemPermanent"	"0"
+		"ItemStackable"	"0"
+		"ItemRequirements"	{}
+		"SuggestLategame"	"1"
+		"AbilityValues"
+		{
+			"bonus_all_stats"	"20"
+			"bonus_health"	"240"
+			"bonus_mana"	"450"
+			"cast_range_bonus"	"350"
+			"active_damage"	"1200"
+			"int_damage_mult"	"2.0"
+		}
+	}
+
+	"item_recipe_equip_5"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"item_item_recipe_equip_5"
+		"ScriptFile"	"Ability/item_equip_5_page/item_equip_5_page"
+		"Model"	"models/props_gameplay/recipe.vmdl"
+		"ItemCost"	"800"
+		"ItemSellable"	"1"
+		"ItemPurchasable"	"1"
+		"ItemPermanent"	"0"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"0"
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_equip_5"
+		"ItemRequirements"
+		{
+			"01"	"item_dagon_5;item_aether_lens"
+		}
+	}
+
+	// 三元重戟：魔法攻击改由 modifier_clrb_item_trident_cast_speed 处理跳字
+	"item_trident"
+	{
+		"AbilityValues"
+		{
+			"magic_damage_attack"	"0"
+		}
+	}
+
+	// =================================================================================================================
+	// 红月之晶：银月 + 振奋宝石 + 卷轴（3000）合成
+	// =================================================================================================================
+	"item_red_moon_crystal"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"item_item_red_moon_crystal"
+		"ScriptFile"	"Ability/item_red_moon_crystal/item_red_moon_crystal"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemQuality"	"epic"
+		"ItemCost"	"9000"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_NOT_SHAREABLE"
+		"ItemPurchasable"	"1"
+		"ItemPermanent"	"1"
+		"ItemStackable"	"0"
+		"ItemShopTags"	"attack_speed"
+		"ItemAliases"	"red_moon_crystal;moon_shard"
+		"ItemRequirements"	{}
+		"ShouldBeSuggested"	"1"
+		"SuggestLategame"	"1"
+		"AbilityValues"
+		{
+			"num1"	"240"
+			"num2"	"240"
+		}
+	}
+
+	"item_recipe_red_moon_crystal"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"item_7204ccf6d1d5c7d71d154375f5a72396"
+		"ScriptFile"	"Ability/item_red_moon_crystal_page/item_red_moon_crystal_page"
+		"Model"	"models/props_gameplay/recipe.vmdl"
+		"ItemCost"	"3000"
+		"ItemSellable"	"0"
+		"ItemPurchasable"	"1"
+		"ItemPermanent"	"0"
+		"ItemStackable"	"0"
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_red_moon_crystal"
+		"ItemRequirements"
+		{
+			"01"	"item_moon_shard;item_hyperstone"
+		}
+	}
+
+	// =================================================================================================================
+	// 神邪恶镰刀：邪恶镰刀 + 绝刃 + 卷轴（500）合成
+	// =================================================================================================================
+	"item_equip_6"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"item_8f83d4fdcdfe60739c9100eca4bca9c0"
+		"ScriptFile"	"Ability/item_equip_6/item_equip_6"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"	"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"	"2"
+		"AbilityCastPoint"	"0.0"
+		"AbilityCooldown"	"10"
+		"AbilityManaCost"	"250"
+		"AbilityCastRange"	"800"
+		"ItemQuality"	"epic"
+		"ItemCost"	"11300"
+		"ItemSellable"	"1"
+		"ItemPurchasable"	"1"
+		"ItemPermanent"	"0"
+		"ItemStackable"	"0"
+		"ItemRequirements"	{}
+		"SuggestLategame"	"1"
+		"AbilityValues"
+		{
+			"bonus_intellect"	"30"
+			"bonus_all_stats"	"10"
+			"bonus_health"	"500"
+			"bonus_mana"	"500"
+			"bonus_mana_regen"	"20"
+			"active_damage"	"300"
+			"stat_damage_mult"	"1"
+			"sheep_duration"	"3"
+			"sheep_movement_speed"	"140"
+		}
+	}
+
+	"item_recipe_equip_6"
+	{
+		"BaseClass"	"item_lua"
+		"AbilityTextureName"	"item_97b8db17539176eb9b5f10e8843d5567"
+		"ScriptFile"	"Ability/item_equip_6_page/item_equip_6_page"
+		"Model"	"models/props_gameplay/recipe.vmdl"
+		"ItemCost"	"500"
+		"ItemSellable"	"1"
+		"ItemPurchasable"	"1"
+		"ItemPermanent"	"0"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"0"
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_equip_6"
+		"ItemRequirements"
+		{
+			"01"	"item_sheepstick;item_angels_demise"
+		}
+	}
+}

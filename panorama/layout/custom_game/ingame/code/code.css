@@ -1,0 +1,142 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	opacity: 0;
+	flow-children: down;
+	z-index: 1;
+}
+
+.pay_box
+{
+	width: 639px;
+	height: 479px;
+	background-image: url("s2r://panorama/images/custom_game/pay_bac_png.vtex");
+	background-position: center;
+	background-size: 100% 100%;
+	flow-children: down;
+	padding: 30px;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.Title
+{
+	width: 100%;
+	height: 30px;
+	vertical-align: top;
+	flow-children: down;
+}
+
+.CloseBtn
+{
+	width: 26px;
+	height: 26px;
+	horizontal-align: right;
+}
+
+.ZFTYPE
+{
+	horizontal-align: center;
+	height: 50px;
+	flow-children: right;
+}
+
+.Btn
+{
+	width: 100px;
+	height: 35px;
+	vertical-align: center;
+	background-color: rgba(0, 0, 0, 0.3);
+	border-radius: 4px;
+	margin: 0 60px;
+	flow-children: right;
+	padding-left: 5px;
+}
+
+.Btn:hover
+{
+	brightness: 1.3;
+}
+
+.Btn.active
+{
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.Btn2
+{
+	width: 100px;
+	height: 40px;
+	vertical-align: bottom;
+	horizontal-align: center;
+	background-color: black;
+	border-radius: 4px;
+	margin: 0 60px;
+	margin-bottom: 15px;
+	margin-top: 5px;
+}
+
+.PayText
+{
+	horizontal-align: center;
+	vertical-align: center;
+	font-size: 18px;
+}
+
+.pay_else
+{
+	horizontal-align: center;
+	margin-bottom: 10px;
+	flow-children: right;
+}
+
+.pay_panel_box
+{
+	flow-children: down;
+	horizontal-align: center;
+	margin-top: 10px;
+}
+
+.PayBox
+{
+	flow-children: down;
+	margin: 0 40px;
+}
+
+.pay_ma
+{
+	width: 200px;
+	height: 200px;
+	horizontal-align: center;
+	border: 1px solid #ffffff;
+}
+
+.pay_top
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: 13px;
+}
+
+.pay_icon
+{
+	width: 36px;
+	height: 32px;
+	width: 27px;
+	height: 24px;
+	vertical-align: center;
+}
+
+.pay_text
+{
+	font-size: 20px;
+	color: #ffffff;
+	vertical-align: center;
+	margin-left: 8px;
+}
+

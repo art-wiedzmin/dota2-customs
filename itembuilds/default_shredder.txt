@@ -1,0 +1,121 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"			"npc_dota_hero_shredder"
+	"Title"			"Recommended items for Shredder"
+
+	"Items"
+	{
+		//=========== 基础===========
+		"#DOTA_Item_Build_base"
+		{
+			"item"		"item_ultimate_scepter"
+			"item"		"item_aghanims_shard"
+		}
+
+		//=========== 魔法===========
+		"#DOTA_Item_Build_mofa_qianqi"
+		{
+			// "item"	"item_skill_2"
+			// "item"	"item_skill_7"
+			// "item"	"item_skill_21"
+			// "item"	"item_skill_23"
+			// "item"	"item_skill_24"
+			// "item"	"item_skill_33"
+			// "item"	"item_skill_32"
+			// "item"	"item_skill_36"
+			// "item"	"item_skill_34"
+			"item"		"item_wind_lace"
+			"item"		"item_hand_of_midas"
+			"item"		"item_travel_boots"
+			"item"		"item_blink"
+		}
+		"#DOTA_Item_Build_mofa_zhongqi"
+		{
+			// "item"	"item_skill_21"
+			// "item"	"item_skill_23"
+			// "item"	"item_skill_33"
+			// "item"	"item_skill_36"
+			// "item"	"item_skill_34"
+			// "item"	"item_skill_11"
+			"item"		"item_hand_of_midas"
+			"item"		"item_travel_boots"
+			"item"		"item_arcane_blink"
+			"item"		"item_cyclone"
+			"item"		"item_radiance"
+			"item"		"item_ethereal_blade"
+			"item"		"item_spirit_vessel"
+			"item"		"item_octarine_core"
+			"item"		"item_bloodstone"
+		}
+		"#DOTA_Item_Build_mofa_houqi"
+		{
+			// "item"	"item_skill_21"
+			// "item"	"item_skill_23"
+			// "item"	"item_skill_33"
+			// "item"	"item_skill_36"
+			// "item"	"item_skill_31"
+			// "item"	"item_skill_11"
+			"item"		"item_arcane_blink"
+			"item"		"item_wind_waker"
+			"item"		"item_octarine_core"
+			"item"		"item_bloodstone"
+			"item"		"item_crellas_crozier"
+		}
+
+		//=========== 肉盾===========
+		"#DOTA_Item_Build_rou_qianqi"
+		{
+			// "item"	"item_skill_7"
+			// "item"	"item_skill_2"
+			// "item"	"item_skill_19"
+			// "item"	"item_skill_18"
+			// "item"	"item_skill_17"
+			// "item"	"item_skill_34"
+			// "item"	"item_skill_28"
+			"item"		"item_hand_of_midas"
+			"item"		"item_power_treads"
+			"item"		"item_moon_shard"
+			"item"		"item_blink"
+		}
+		"#DOTA_Item_Build_rou_zhongqi"
+		{
+			// "item"	"item_skill_7"
+			// "item"	"item_skill_2"
+			// "item"	"item_skill_17"
+			// "item"	"item_skill_34"
+			// "item"	"item_skill_28"
+			// "item"	"item_skill_21"
+			// "item"	"item_skill_23"
+			// "item"	"item_skill_33"
+			// "item"	"item_skill_22"
+			"item"		"item_hand_of_midas"
+			"item"		"item_power_treads"
+			"item"		"item_moon_shard"
+			"item"		"item_overwhelming_blink"
+			"item"		"item_blade_mail"
+			"item"		"item_black_king_bar"
+			"item"		"item_octarine_core"
+		}
+		"#DOTA_Item_Build_rou_houqi"
+		{
+			// "item"	"item_skill_7"
+			// "item"	"item_skill_17"
+			// "item"	"item_skill_23"
+			// "item"	"item_skill_33"
+			// "item"	"item_skill_22"
+			// "item"	"item_skill_29"
+			// "item"	"item_skill_35"
+			"item"		"item_overwhelming_blink"
+			"item"		"item_blade_mail"
+			"item"		"item_black_king_bar"
+			"item"		"item_octarine_core"
+			"item"		"item_heart"
+			"item"		"item_heart"
+			"item"		"item_heart"
+			"item"		"item_heart"
+			"item"		"item_heart"
+			"item"		"item_heart"
+		}
+	}
+}

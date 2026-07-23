@@ -1,0 +1,338 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	width: 100%;
+	height: 100%;
+	visibility: collapse;
+}
+
+.container
+{
+	width: 1719px;
+	height: 730px;
+	background-size: 100% 100%;
+	background-color: #080F14;
+	opacity: 1;
+	margin-top: 85px;
+}
+
+.box
+{
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+}
+
+.top_nav
+{
+	width: 100%;
+	flow-children: right;
+	height: 64px;
+}
+
+.list_box
+{
+	width: 100%;
+	flow-children: down;
+}
+
+.title_text
+{
+	horizontal-align: center;
+	text-align: center;
+	vertical-align: center;
+	font-size: 16px;
+	color: #778F8E;
+}
+
+.title_panel
+{
+	height: 100%;
+	vertical-align: center;
+}
+
+.title_1
+{
+	width: 300px;
+}
+
+.title_2
+{
+	width: 60px;
+}
+
+.title_3
+{
+	width: 60px;
+}
+
+.title_4
+{
+	width: 60px;
+}
+
+.title_5
+{
+	width: 80px;
+	visibility: collapse;
+}
+
+.title_6
+{
+	width: 140px;
+}
+
+.title_7
+{
+	width: 240px;
+}
+
+.title_8
+{
+	width: 340px;
+}
+
+.title_9
+{
+	width: 440px;
+}
+
+.player_li
+{
+	width: 100%;
+	height: 53px;
+	background-color: #1E1D2E;
+	flow-children: right;
+	margin-bottom: 4px;
+}
+
+.label_color
+{
+	width: 3px;
+	height: 100%;
+}
+
+.li_panel
+{
+	flow-children: right;
+	height: 100%;
+}
+
+.bac_color
+{
+	width: 36px;
+	height: 34px;
+	vertical-align: center;
+	margin-left: 10px;
+}
+
+.color_img
+{
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+.color_num
+{
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+	font-size: 20px;
+	color: #ffffff;
+}
+
+.hero_img
+{
+	width: 74px;
+	height: 42px;
+	vertical-align: center;
+	border: 1px solid #000000;
+	margin-left: 10px;
+}
+
+.player_else
+{
+	flow-children: down;
+	margin-left: 10px;
+	width: 100%;
+}
+
+.player_top
+{
+	flow-children:right;
+}
+
+.player_name
+{
+	width: 90%;
+	text-overflow: clip;
+	font-size: 16px;
+	height: 22px;
+	margin-top: 4px;
+}
+
+.player_name Label
+{
+	width: 100%;
+	font-size: 16px;
+	vertical-align: center;
+	text-overflow: clip;
+}
+
+.level_label
+{
+	font-size: 10px;
+	color: #facc7b;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #ffd07d;
+	margin-right: 10px;
+	text-align: center;
+	line-height: 16px;
+	border-radius: 100%;
+	vertical-align: center;
+}
+
+.hero_name
+{
+	font-size: 12px;
+	color: #FFFFFF;
+	vertical-align: center;
+	margin-top: 2px;
+}
+
+.text_label
+{
+	color: #ffffff;
+	font-size: 16px;
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+}
+
+.laba_img
+{
+	width: 28px;
+	height: 28px;
+	horizontal-align: center;
+	vertical-align: center;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-image: url("s2r://panorama/images/custom_game/laba_png.vtex");
+}
+
+.border_img
+{
+	width: 50px;
+	height: 37px;
+	padding: 1px;
+	horizontal-align: center;
+	vertical-align: center;
+	background-image: url("s2r://panorama/images/custom_game/skill_null_png.vtex");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.zb_img
+{
+	width: 100%;
+	height: 100%;
+}
+
+.ability_box
+{
+	flow-children: right;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.ability_img_box
+{
+	width: 40px;
+	height: 40px;
+	border: 1px solid #000000;
+	padding: 1px;
+	vertical-align: center;
+	margin: 0 5px;
+}
+
+.ability_img
+{
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/custom_game/skill_null_png.vtex");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.star_box
+{
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: right;
+}
+
+.star_img
+{
+	width: 16px;
+	height: 16px;
+	margin: 0 2px;
+	background-image: url("s2r://panorama/images/custom_game/star_png.vtex");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.myself
+{
+	background-color: #727180;
+}
+
+#list_box_1,#list_box_2
+{
+	height: 285px;
+}
+
+#list_box_1 .bac_color,#list_box_2 .bac_color
+{
+	visibility: collapse;
+}
+
+.else_box
+{
+	vertical-align: center;
+	flow-children: right;
+	margin-left: 20px;
+}
+
+.team_color
+{
+	vertical-align: center;
+}
+
+.team_text
+{
+	vertical-align: center;
+	flow-children: down;
+	margin-left: 10px;
+}
+
+.team_style
+{
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+.jifen_text
+{
+	font-size: 14px;
+	color: #FFFFFF;
+}
+

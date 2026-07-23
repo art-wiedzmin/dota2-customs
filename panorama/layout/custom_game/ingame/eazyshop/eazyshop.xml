@@ -1,0 +1,29 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/eazyshop/eazyshop.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/eazyshop/eazyshop.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="eazy_goods_snippet">
+			<Panel class="eazy_goods_row" hittest="true">
+				<Panel class="eazy_goods_icon_hit" hittest="true">
+					<DOTAItemImage id="goods_icon" class="eazy_goods_icon" itemname="item_dummy" hittest="false" />
+				</Panel>
+				<Panel class="eazy_goods_meta" hittest="false">
+					<Label id="goods_title" class="eazy_goods_title" text="" />
+					<Label id="goods_price" class="eazy_goods_price" text="" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel hittest="false" class="root">
+		<Label class="eazy_shop_head" text="便捷商店" />
+		<Panel id="goods_list" class="goods_list" />
+	</Panel>
+</root>

@@ -1,0 +1,162 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf65:version{48e806a9-c210-4cd8-811a-38b5ef63b195} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 1
+	m_flCullRadius = -1.0
+	m_flConstantLifespan = 0.5
+	m_ConstantColor = [ 61, 2, 239, 255 ]
+	m_nBehaviorVersion = 4
+	m_nFirstMultipleOverride_BackwardCompat = 2
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 400.0, 400.0, 400.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 4
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+		},
+		{
+			m_name = "debut"
+			m_drivers = 
+			[
+				{
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 2
+					m_vecOffset = [ 1.0, 1.0, 1.0 ]
+					m_entityName = "self"
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/heroes/grimstroke/grimstroke.vmdl"
+				m_nModSpecificData = 664
+				m_sequenceName = "gs_idle"
+				m_hitboxSetName = "default"
+			}
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 1.0
+			}
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateWithinSphereTransform"
+		},
+		{
+			_class = "C_INIT_InitFloat"
+			m_InputValue = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 0.5
+			}
+			m_nOutputField = 1
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMax = [ 0.0, 0.0, 500.0 ]
+			m_OffsetMin = [ 0.0, 0.0, 500.0 ]
+		},
+		{
+			_class = "C_INIT_PositionPlaceOnGround"
+			m_flOffset = 5.0
+			m_bIncludeWater = true
+			m_bSetNormal = true
+			m_CollisionGroupName = "DEBRIS"
+			m_flMaxTraceLength = 512.0
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_SetChildControlPoints"
+			m_nFirstControlPoint = 4
+			m_bSetOrientation = true
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_nOrientationType = "PARTICLE_ORIENTATION_WORLD_Z_ALIGNED"
+			m_flOverbrightFactor = 4.0
+			m_bDisableZBuffering = true
+			m_vecTexturesInput = 
+			[
+				{
+				},
+			]
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_grimstroke/grimstroke_ink_swell_aoe_ground.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_grimstroke/grimstroke_ink_swell_aoe_ground_splatter.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_grimstroke/grimstroke_ink_swell_aoe_ground_add.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_grimstroke/grimstroke_ink_swell_aoe_ring_static.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_grimstroke/grimstroke_ink_swell_aoe_ring_static_bright.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_grimstroke/grimstroke_ink_swell_aoe_ring_flare.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_grimstroke/grimstroke_ink_swell_aoe_npc_pull.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_grimstroke/grimstroke_ink_swell_aoe_ground_steam.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_grimstroke/grimstroke_ink_swell_aoe_ground_ink.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_grimstroke/grimstroke_ink_swell_aoe_flash.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_grimstroke/grimstroke_ink_swell_aoe_shake.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_grimstroke/grimstroke_ink_swell_aoe_wave.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/ability/boss/boss_area_ink/ink_dw_crimson_ti8_immortal_cursed_crownmarker.vpcf"
+		},
+	]
+}

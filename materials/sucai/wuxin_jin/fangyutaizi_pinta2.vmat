@@ -1,0 +1,13 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"g_vColorTint"	"[1.000000 1.000000 1.000000 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[1.000000 1.000000 0.000000 0.000000]"
+	"TextureColor"	"materials/sucai/ceshi_a/fangyutaizi_pinta2.png"
+	"TextureTranslucency"	"materials/sucai/ceshi_a/fangyutaizi_pinta2_462f03ed_trans.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/sucai/ceshi_a/fangyutaizi_pinta2_jpg_462f03ed.vtex"
+	}
+}

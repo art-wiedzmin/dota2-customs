@@ -1,0 +1,156 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/public/public.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/battlepass/battlepass.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/tips/cardtip/cardtip_util.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/battlepass/battlepass.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="reward_col">
+			<Panel class="reward_col">
+				<Panel class="reward_col_level">
+					<Label id="reward_col_level_text" class="reward_col_level_text" text="" />
+				</Panel>
+				<Panel id="reward_col_free" class="reward_col_free">
+					<Panel class="reward_item">
+						<Image id="reward_free_icon" class="reward_item_icon" src="s2r://panorama/images/card/jl1_png.vtex" />
+						<Image id="reward_free_lock" class="reward_item_lock" src="s2r://panorama/images/card/lock_png.vtex" />
+						<Label id="reward_free_count" class="reward_item_count" text="40" />
+						<Label class="reward_claimed_text" text="已领取" />
+					</Panel>
+				</Panel>
+				<Panel id="reward_col_premium" class="reward_col_premium reward_premium_single">
+					<Panel class="reward_item reward_item_premium reward_premium_item_1">
+						<Image id="reward_premium_icon" class="reward_item_icon" src="s2r://panorama/images/card/jl1_png.vtex" />
+						<Image id="reward_premium_lock" class="reward_item_lock" src="s2r://panorama/images/card/lock_png.vtex" />
+						<Label id="reward_premium_count" class="reward_item_count" text="40" />
+						<Label class="reward_claimed_text" text="已领取" />
+					</Panel>
+					<Panel class="reward_item reward_item_premium reward_premium_item_2">
+						<Image id="reward_premium_icon_2" class="reward_item_icon" src="s2r://panorama/images/card/herocard_png.vtex" />
+						<Image id="reward_premium_lock_2" class="reward_item_lock" src="s2r://panorama/images/card/lock_png.vtex" />
+						<Label id="reward_premium_count_2" class="reward_item_count" text="40" />
+						<Label class="reward_claimed_text" text="已领取" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="task_row">
+			<Panel class="task_row">
+				<Label id="task_desc" class="task_desc" text="" />
+				<Panel class="task_row_right">
+					<Panel class="task_reward">
+						<Image id="task_reward_icon" class="task_reward_icon" src="s2r://panorama/images/card/taskexp_png.vtex" />
+						<Label id="task_reward_xp" class="task_reward_xp" text="" />
+					</Panel>
+					<Panel id="task_status_btn" class="task_status_btn">
+						<Label id="task_status_text" class="task_status_text" text="" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="root" hittest="true">
+		<Panel id="box" class="box" hittest="true">
+			<Panel id="side_menu" class="side_menu">
+				<Panel id="side_tab_reward" class="side_btn active">
+					<Label id="" class="side_btn_text" text="奖励" onactivate="ClickSideTab(1)" />
+				</Panel>
+				<Panel id="side_tab_task" class="side_btn">
+					<Label id="" class="side_btn_text" text="任务" onactivate="ClickSideTab(2)" />
+				</Panel>
+			</Panel>
+			<Panel id="main_content" class="main_content" hittest="true">
+				<Panel id="panel_reward" class="content_panel">
+					<Panel id="reward_top" class="reward_top">
+						<Panel id="level_module" class="level_module">
+							<Panel id="level_text_row" class="level_text_row">
+								<Label id="level_text" class="level_text" text="战令等级：1级" />
+								<Label id="exp_text" class="exp_text" text="300/500" />
+							</Panel>
+							<Panel id="exp_bar_track" class="exp_bar_track">
+								<Panel id="exp_bar_fill" class="exp_bar_fill" />
+							</Panel>
+						</Panel>
+						<Panel id="btn_buy_level" class="btn_buy_level" onactivate="ClickBuyLevel()">
+							<Image id="btn_buy_level_img" class="btn_buy_level_img" src="s2r://panorama/images/card/buyexp_png.vtex" />
+						</Panel>
+					</Panel>
+					<Panel id="reward_middle" class="reward_middle">
+						<Panel id="reward_middle_left" class="reward_middle_left">
+							<Image id="card_track_free_img" class="card_track_img card_track_free" src="s2r://panorama/images/card/card1_png.vtex" />
+							<Panel id="card_track_premium_wrap" class="card_track_premium_wrap">
+								<Image id="card_track_premium_img" class="card_track_img card_track_premium" src="s2r://panorama/images/card/card2_png.vtex" />
+								<Label id="card_track_premium_locked_text" class="card_track_locked_text" text="未解锁" />
+							</Panel>
+						</Panel>
+						<Panel id="reward_middle_right" class="reward_middle_right">
+							<Panel id="reward_list_stack" class="reward_list_stack">
+								<Panel id="reward_list_scroll" class="reward_list_scroll scrollX" hittest="true">
+									<Panel id="reward_list_row" class="reward_list_row" />
+								</Panel>
+								<Panel id="reward_scroll_edge_left" class="reward_scroll_edge_left" hittest="false" />
+								<Panel id="reward_overlay_layer" class="reward_overlay_layer" hittest="false" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel id="reward_bottom" class="reward_bottom">
+						<Panel id="reward_bottom_left" class="reward_bottom_left">
+							<Panel id="btn_buy_card" class="reward_bottom_btn" onactivate="ClickBuyCard()">
+								<Image id="btn_buy_card_img" class="reward_bottom_btn_img" src="s2r://panorama/images/card/buy_png.vtex" />
+							</Panel>
+							<Panel id="btn_get_reward" class="reward_bottom_btn" onactivate="ClickGetReward()">
+								<Image id="btn_get_reward_img" class="reward_bottom_btn_img" src="s2r://panorama/images/card/get_png.vtex" />
+							</Panel>
+						</Panel>
+						<Label id="deadline_text" class="deadline_text" text="截止日期：2026.08.07" />
+					</Panel>
+				</Panel>
+				<Panel id="panel_task" class="content_panel hidden">
+					<Panel id="task_body" class="task_body">
+						<Panel id="task_col_daily" class="task_col">
+							<Label id="task_daily_title" class="task_col_title" text="每日任务" />
+							<Panel id="task_daily_list" class="task_col_list" />
+						</Panel>
+						<Panel id="task_col_weekly" class="task_col">
+							<Label id="task_weekly_title" class="task_col_title" text="每周任务" />
+							<Panel id="task_weekly_list" class="task_col_list" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="buy_level_overlay" class="buy_level_overlay buy_level_overlay_hidden" hittest="false">
+			<Panel id="buy_level_dim" class="buy_level_dim" onactivate="CloseBuyLevelModal()" />
+			<Panel id="buy_level_dialog" class="buy_level_dialog" hittest="true">
+				<Label id="buy_level_title" class="buy_level_title" text="购买通行证等级" />
+				<Panel class="buy_level_divider" />
+				<Label id="buy_level_hint" class="buy_level_hint" text="购买1级所需" />
+				<Label id="buy_level_price" class="buy_level_price" text="¥5" />
+				<Panel id="buy_level_slider_row" class="buy_level_slider_row">
+					<Panel id="buy_level_minus" class="buy_level_step_btn" onactivate="BuyLevelStep(-1)" />
+					<Label id="buy_level_min" class="buy_level_range_label" text="1" />
+					<Panel class="buy_level_slider_wrap">
+						<Slider id="buy_level_slider" class="buy_level_slider" direction="horizontal" range="1-200" />
+					</Panel>
+					<Label id="buy_level_max" class="buy_level_range_label" text="50" />
+					<Panel id="buy_level_plus" class="buy_level_step_btn" onactivate="BuyLevelStep(1)" />
+				</Panel>
+				<Panel id="buy_level_footer" class="buy_level_footer">
+					<Panel id="buy_level_cancel" class="buy_level_cancel_btn" onactivate="CloseBuyLevelModal()">
+						<Label class="buy_level_cancel_text" text="取消" />
+					</Panel>
+					<Panel id="buy_level_confirm" class="buy_level_confirm_btn" onactivate="ConfirmBuyLevel()">
+						<Label class="buy_level_confirm_text" text="购买" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

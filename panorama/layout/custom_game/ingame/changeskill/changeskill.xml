@@ -1,0 +1,44 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/changeskill/changeskill.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/changeskill/changeskill.vjs_c" />
+	</scripts>
+	<Panel class="root">
+		<Panel id="" class="top_box">
+			<Panel class="TitleFunc" onactivate="CloseSlotPage()">
+				<Image class="Img" src="s2r://panorama/images/custom_game/c_close_png.vtex" />
+			</Panel>
+			<Panel class="TitleText">
+				<Label class="Text1" text="请点击选择技能要替换的槽位" />
+			</Panel>
+		</Panel>
+		<Panel class="SlotPage">
+			<Panel id="slot_1" class="SlotBox" onactivate="SelectSlot(1)">
+				<Panel class="ImgBox">
+					<Image id="slot_img" class="Img" src="" />
+				</Panel>
+			</Panel>
+			<Panel id="slot_2" class="SlotBox" onactivate="SelectSlot(2)">
+				<Panel class="ImgBox">
+					<Image id="slot_img" class="Img" src="" />
+				</Panel>
+			</Panel>
+			<Panel id="slot_3" class="SlotBox" onactivate="SelectSlot(3)">
+				<Panel class="ImgBox">
+					<Image id="slot_img" class="Img" src="" />
+				</Panel>
+			</Panel>
+			<Panel id="slot_4" class="SlotBox" onactivate="SelectSlot(4)">
+				<Panel class="ImgBox">
+					<Image id="slot_img" class="Img" src="" />
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

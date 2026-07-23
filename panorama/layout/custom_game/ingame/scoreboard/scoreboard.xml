@@ -1,0 +1,201 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/scoreboard/scoreboard.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/scoreboard/scoreboard.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="rank_snippet">
+			<Panel id="" class="player_li">
+				<Panel id="" class="li_panel title_1">
+					<Label id="label_color" class="label_color" text="" />
+					<Panel id="bac_color" class="bac_color">
+						<Image id="color_img" class="color_img" src="" />
+						<Label id="color_num" class="color_num" text="" />
+					</Panel>
+					<DOTAHeroImage id="hero_img" class="hero_img" heroname="" heroimagestyle="landscape" />
+					<Panel id="" class="player_else">
+						<DOTAUserName id="player_name" class="player_name" steamid="" />
+						<Panel id="" class="player_top">
+							<Label id="level_label" class="level_label" text="" />
+							<Label id="hero_name" class="hero_name" text="" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="" class="li_panel title_2">
+					<Label id="ji_text" class="text_label" text="" />
+				</Panel>
+				<Panel id="" class="li_panel title_3">
+					<Label id="shi_text" class="text_label" text="" />
+				</Panel>
+				<Panel id="" class="li_panel title_4">
+					<Label id="zhu_text" class="text_label" text="" />
+				</Panel>
+				<Panel id="" class="li_panel title_5">
+					<Image id="laba_img" class="laba_img" src="" />
+				</Panel>
+				<Panel id="" class="li_panel title_6">
+					<Panel id="" class="border_img">
+						<Image id="zb_img" class="zb_img" src="" />
+					</Panel>
+				</Panel>
+				<Panel id="" class="li_panel title_7">
+					<Panel id="ability" class="ability_box">
+						<Panel id="ability_1" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+						<Panel id="ability_2" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+						<Panel id="ability_3" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+						<Panel id="ability_4" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="" class="li_panel title_8">
+					<Panel id="" class="ability_box">
+						<Panel id="ability_5" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+						<Panel id="ability_6" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+						<Panel id="ability_7" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+						<Panel id="ability_8" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+						<Panel id="ability_9" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+						<Panel id="ability_10" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="" class="li_panel title_9">
+					<Panel id="star_box" class="star_box">
+						<Image id="star_img" class="star_img" src="" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="root" onactivate="ClosePage()">
+		<Panel id="container" class="container">
+			<Panel id="box_1" class="box">
+				<Panel id="" class="top_nav">
+					<Panel id="" class="title_panel title_1" />
+					<Panel id="" class="title_panel title_2">
+						<Label id="" class="title_text" text="击" />
+					</Panel>
+					<Panel id="" class="title_panel title_3">
+						<Label id="" class="title_text" text="死" />
+					</Panel>
+					<Panel id="" class="title_panel title_4">
+						<Label id="" class="title_text" text="助" />
+					</Panel>
+					<Panel id="" class="title_panel title_5">
+						<Label id="" class="title_text" text="屏蔽" />
+					</Panel>
+					<Panel id="" class="title_panel title_6">
+						<Label id="" class="title_text" text="专属装备" />
+					</Panel>
+					<Panel id="" class="title_panel title_7">
+						<Label id="" class="title_text" text="DOTA2技能" />
+					</Panel>
+					<Panel id="" class="title_panel title_8">
+						<Label id="" class="title_text" text="战斗技能" />
+					</Panel>
+					<Panel id="" class="title_panel title_9">
+						<Label id="" class="title_text" text="星级" />
+					</Panel>
+				</Panel>
+				<Panel id="list_box" class="list_box" />
+			</Panel>
+			<Panel id="box_2" class="box">
+				<Panel id="" class="top_nav">
+					<Panel id="" class="title_panel title_1">
+						<Panel id="" class="else_box">
+							<Image id="" class="team_color" src="s2r://panorama/images/custom_game/tianhui_png.vtex" />
+							<Panel id="" class="team_text">
+								<Label id="" class="team_style" text="天辉" />
+								<Label id="jifen_1" class="jifen_text" text="积分:" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel id="" class="title_panel title_2">
+						<Label id="" class="title_text" text="击" />
+					</Panel>
+					<Panel id="" class="title_panel title_3">
+						<Label id="" class="title_text" text="死" />
+					</Panel>
+					<Panel id="" class="title_panel title_4">
+						<Label id="" class="title_text" text="助" />
+					</Panel>
+					<Panel id="" class="title_panel title_5">
+						<Label id="" class="title_text" text="屏蔽" />
+					</Panel>
+					<Panel id="" class="title_panel title_6">
+						<Label id="" class="title_text" text="专属装备" />
+					</Panel>
+					<Panel id="" class="title_panel title_7">
+						<Label id="" class="title_text" text="DOTA2技能" />
+					</Panel>
+					<Panel id="" class="title_panel title_8">
+						<Label id="" class="title_text" text="战斗技能" />
+					</Panel>
+					<Panel id="" class="title_panel title_9">
+						<Label id="" class="title_text" text="星级" />
+					</Panel>
+				</Panel>
+				<Panel id="list_box_1" class="list_box" />
+				<Panel id="" class="top_nav">
+					<Panel id="" class="title_panel title_1">
+						<Panel id="" class="else_box">
+							<Image id="" class="team_color" src="s2r://panorama/images/custom_game/yeyan_png.vtex" />
+							<Panel id="" class="team_text">
+								<Label id="" class="team_style" text="夜魇" />
+								<Label id="jifen_2" class="jifen_text" text="积分:" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel id="" class="title_panel title_2">
+						<Label id="" class="title_text" text="击" />
+					</Panel>
+					<Panel id="" class="title_panel title_3">
+						<Label id="" class="title_text" text="死" />
+					</Panel>
+					<Panel id="" class="title_panel title_4">
+						<Label id="" class="title_text" text="助" />
+					</Panel>
+					<Panel id="" class="title_panel title_5">
+						<Label id="" class="title_text" text="屏蔽" />
+					</Panel>
+					<Panel id="" class="title_panel title_6">
+						<Label id="" class="title_text" text="专属装备" />
+					</Panel>
+					<Panel id="" class="title_panel title_7">
+						<Label id="" class="title_text" text="DOTA2技能" />
+					</Panel>
+					<Panel id="" class="title_panel title_8">
+						<Label id="" class="title_text" text="战斗技能" />
+					</Panel>
+					<Panel id="" class="title_panel title_9">
+						<Label id="" class="title_text" text="星级" />
+					</Panel>
+				</Panel>
+				<Panel id="list_box_2" class="list_box" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

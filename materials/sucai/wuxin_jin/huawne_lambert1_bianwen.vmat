@@ -1,0 +1,15 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"F_TRANSLUCENT"	"1"
+	"g_flOpacityScale"	"1"
+	"g_vColorTint"	"[1.000000 1.000000 1.000000 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[1.000000 1.000000 0.000000 0.000000]"
+	"TextureColor"	"materials/sucai/wuxin_jin/huawne_lambert1_bianwen'.png"
+	"TextureTranslucency"	"materials/sucai/wuxin_jin/huawne_lambert1_bianwen'_a7fa9a76_trans.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/sucai/wuxin_jin/huawne_lambert1_bianwen'_jpg_a7fa9a76.vtex"
+	}
+}

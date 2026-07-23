@@ -1,0 +1,382 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.SkillSlotRoot
+{
+	width: 100%;
+	height: 100%;
+}
+
+.SkillSlotToolbar
+{
+	horizontal-align: left;
+	vertical-align: bottom;
+	width: 70px;
+	margin-left: 310px;
+	margin-bottom: 50px;
+	flow-children: down;
+}
+
+.SlotBox
+{
+	height: 32px;
+	width: 100%;
+	min-width: 0px;
+	margin-left: 0px;
+	margin-top: 6px;
+	padding: 0px 8px;
+	border-radius: 6px;
+	flow-children: down;
+	border: 1px solid #5a4a36;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from(#221c14), to(#12100c) );
+	transition-property: brightness, border-color;
+	transition-duration: 0.12s;
+	transition-timing-function: ease-out;
+}
+
+.SlotBox:first-child
+{
+	margin-top: 0px;
+}
+
+.SlotBox:hover
+{
+	brightness: 1.15;
+}
+
+.SlotBox:active
+{
+	brightness: 0.9;
+}
+
+.SlotBoxKeybind
+{
+	border-color: #8a7338;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from(#2a2418), to(#1a1510) );
+	box-shadow: inset 0px 1px 0px #c9a22733;
+}
+
+.SlotBoxKeybind:hover
+{
+	border-color: #c9a227;
+	box-shadow: inset 0px 1px 0px #c9a22755, 0px 0px 8px #c9a22722;
+}
+
+.SlotBoxSwap
+{
+	border-color: #8a7338;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from(#2a2418), to(#1a1510) );
+	box-shadow: inset 0px 1px 0px #c9a22733;
+}
+
+.SlotText
+{
+	width: 100%;
+	height: 30px;
+	line-height: 24px;
+	font-size: 13px;
+	font-weight: bold;
+	color: #f0e6d4;
+	text-align: center;
+	horizontal-align: center;
+	vertical-align: center;
+	text-shadow: 0px 1px 3px #000000cc;
+}
+
+.KeyBindModalOverlay
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	z-index: 600;
+}
+
+.KeyBindModalOverlayHidden
+{
+	visibility: collapse;
+}
+
+.KeyBindModalDim
+{
+	width: 100%;
+	height: 100%;
+	background-color: #000000aa;
+}
+
+.KeyBindModalDialog
+{
+	horizontal-align: center;
+	vertical-align: center;
+	min-width: 440px;
+	flow-children: down;
+	padding: 16px 18px 18px 18px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from(#1e1812ee), to(#0a0806fa) );
+	border: 2px solid #6b5a3c;
+	border-radius: 8px;
+	box-shadow: 0px 8px 28px #000000cc;
+}
+
+.KeyBindModalMenu
+{
+	width: 100%;
+	flow-children: right;
+	margin-bottom: 14px;
+	border-bottom: 1px solid #3d3426;
+}
+
+.KeyBindModalTab
+{
+	padding: 8px 20px 10px 20px;
+	margin-right: 4px;
+	border-radius: 4px 4px 0 0;
+	background-color: #120f0d88;
+	border: 1px solid #3d3426;
+}
+
+.KeyBindModalTab:hover
+{
+	brightness: 1.15;
+}
+
+.KeyBindModalTab.KeyBindModalTabSelected
+{
+	background-color: #2a2218;
+	border-color: #c9a227;
+}
+
+.KeyBindModalTabText
+{
+	font-size: 16px;
+	color: #e8dcc8;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.KeyBindModalBody
+{
+	width: 100%;
+	flow-children: down;
+	margin-bottom: 16px;
+}
+
+.KeyBindModalBodyHidden
+{
+	visibility: collapse;
+}
+
+.KeyBindModalRow
+{
+	width: 100%;
+	flow-children: right;
+	margin-bottom: 12px;
+	vertical-align: center;
+}
+
+.KeyBindModalLabel
+{
+	width: 96px;
+	font-size: 15px;
+	color: #f0d9a8;
+	vertical-align: center;
+	margin-right: 10px;
+}
+
+.KeyBindModalInput
+{
+	width: fill-parent-flow(1);
+	min-width: 200px;
+	height: 36px;
+	padding: 6px 10px;
+	font-size: 15px;
+	color: #f0f0f0;
+	background-color: #0d0b09;
+	border: 1px solid #5a4a36;
+	border-radius: 4px;
+}
+
+.KeyBindModalPetBody
+{
+	min-height: 120px;
+}
+
+.KeyBindModalPetHint
+{
+	width: 100%;
+	font-size: 13px;
+	color: #b8a88c;
+	margin-bottom: 8px;
+}
+
+.KeyBindModalPetToolbar
+{
+	width: 320px;
+	height: 40px;
+	flow-children: right;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.KeyBindModalPetClearBtn
+{
+	margin-right: 30px;
+	padding: 5px 14px;
+	border-radius: 4px;
+	border: 1px solid #6b4a4a;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#2a1818), to(#1a1010));
+	box-shadow: inset 0px 1px 0px #8a505033;
+}
+
+.KeyBindModalPetClearBtn:hover
+{
+	brightness: 1.15;
+}
+
+.KeyBindModalPetClearBtn:active
+{
+	brightness: 0.92;
+}
+
+.KeyBindModalPetClearBtnText
+{
+	font-size: 14px;
+	color: #e8c8c8;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.KeyBindModalPetPresetMini
+{
+	width: 60px;
+	height: 30px;
+	margin-left: 8px;
+	padding: 5px 12px;
+	border-radius: 4px;
+	border: 1px solid #6b5845;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#1f2922), to(#161c18));
+}
+
+.KeyBindModalPetPresetMini:hover
+{
+	brightness: 1.15;
+}
+
+.KeyBindModalPetPresetMini.KeyBindModalPetPresetMiniActive
+{
+	border-color: #c9a227;
+	box-shadow: inset 0px 1px 0px #6a705033, 0px 0px 6px #c9a22744;
+}
+
+.KeyBindModalPetPresetMiniText
+{
+	font-size: 14px;
+	color: #d6ccae;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.KeyBindModalPetGrid
+{
+	width: 100%;
+	flow-children: right-wrap;
+}
+
+.KeyBindModalPetSlot
+{
+	flow-children: down;
+	width: 56px;
+	margin: 3px 4px 6px 4px;
+	padding: 0px;
+	border-radius: 0px;
+	border: 0px solid transparent;
+	overflow: noclip;
+}
+
+.KeyBindModalPetIconWrap
+{
+	width: 52px;
+	height: 44px;
+	horizontal-align: center;
+	border-radius: 4px;
+	border: 2px solid #4a3f30;
+	overflow: noclip;
+}
+
+.KeyBindModalPetIcon
+{
+	width: 100%;
+	height: 100%;
+}
+
+.KeyBindModalPetName
+{
+	width: 100%;
+	max-width: 56px;
+	height: 16px;
+	margin-top: 3px;
+	horizontal-align: center;
+	font-size: 10px;
+	color: #d4c4a8;
+	text-align: center;
+	text-overflow: shrink;
+}
+
+.KeyBindModalPetSlot:hover .KeyBindModalPetIconWrap
+{
+	brightness: 1.12;
+}
+
+.KeyBindModalPetSlot.KeyBindModalPetSlotOn .KeyBindModalPetIconWrap
+{
+	border-color: #e8c84c;
+	box-shadow: 0px 0px 6px #c9a22766;
+}
+
+.KeyBindModalPetSlot.KeyBindModalPetSlotOff .KeyBindModalPetIconWrap
+{
+	border-color: #2a2418;
+	brightness: 0.42;
+	wash-color: #000000bb;
+}
+
+.KeyBindModalPetSlot.KeyBindModalPetSlotOff .KeyBindModalPetName
+{
+	color: #8a8070;
+}
+
+.KeyBindModalFooter
+{
+	width: 100%;
+	flow-children: right;
+	horizontal-align: center;
+}
+
+.KeyBindModalBtn
+{
+	min-width: 100px;
+	padding: 8px 18px;
+	margin: 0 8px;
+	horizontal-align: center;
+	border-radius: 4px;
+	border: 1px solid #5a4a36;
+	background-color: #1a1510;
+}
+
+.KeyBindModalBtn:hover
+{
+	brightness: 1.2;
+}
+
+.KeyBindModalBtnPrimary
+{
+	border-color: #c9a227;
+	background-color: #2a2218;
+}
+
+.KeyBindModalBtnText
+{
+	font-size: 15px;
+	color: #e8dcc8;
+	horizontal-align: center;
+	vertical-align: center;
+}
+

@@ -1,0 +1,10 @@
+"Layer0"
+{
+	"shader"	"ui.vfx"
+	"F_TRANSLUCENT"	"0"
+	"TextureColor"	"materials/overviews/mapimg.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/overviews/mapimg_tga_6e5e9dba.vtex"
+	}
+}

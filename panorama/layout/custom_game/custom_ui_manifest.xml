@@ -1,0 +1,17 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/layout/custom_game/custom_ui_manifest.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/item_icon_map.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/custom_ui_manifest.vjs_c" />
+	</scripts>
+	<Panel>
+		<CustomUIElement type="HeroSelection" layoutfile="s2r://panorama/layout/custom_game/ingame/selecthero/selecthero.vxml_c" />
+		<CustomUIElement type="GameSetup" layoutfile="s2r://panorama/layout/custom_game/ingame/team/team_select.vxml_c" />
+		<CustomUIElement type="Hud" layoutfile="s2r://panorama/layout/custom_game/barebones/barebones_notifications.vxml_c" />
+		<CustomUIElement type="Hud" layoutfile="s2r://panorama/layout/custom_game/ingame/ingame_hud_root.vxml_c" />
+	</Panel>
+</root>

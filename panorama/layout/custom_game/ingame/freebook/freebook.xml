@@ -1,0 +1,25 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/freebook/freebook.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/freebook/freebook.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="book">
+			<Panel class="free_book_cell" hittest="true">
+				<Panel class="free_book_icon_row">
+					<Image id="item_image" class="free_book_icon" src="" />
+				</Panel>
+				<Label id="item_name_label" class="free_book_label" text="" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="root" hittest="false">
+		<Panel id="free_book_grid" class="free_book_grid" />
+	</Panel>
+</root>

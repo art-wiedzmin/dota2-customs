@@ -1,0 +1,235 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/overdata/overdata.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/overdata/overdata.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="rank_snippet">
+			<Panel id="" class="player_li">
+				<Panel id="" class="li_panel title_1">
+					<Label id="label_color" class="label_color" text="" />
+					<Panel id="" class="bac_color">
+						<Image id="color_img" class="color_img" src="" />
+						<Label id="color_num" class="color_num" text="" />
+					</Panel>
+					<DOTAHeroImage id="hero_img" class="hero_img" heroname="" heroimagestyle="landscape" />
+					<Panel id="" class="player_else">
+						<DOTAUserName id="player_name" class="player_name" steamid="" />
+						<Panel id="" class="player_top">
+							<Label id="level_label" class="level_label" text="" />
+							<Label id="hero_name" class="hero_name" text="" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="" class="li_panel title_2">
+					<Label id="ji_text" class="text_label" text="" />
+				</Panel>
+				<Panel id="" class="li_panel title_3">
+					<Panel id="" class="border_img">
+						<Image id="zb_img" class="zb_img" src="" />
+					</Panel>
+				</Panel>
+				<Panel id="" class="li_panel title_4">
+					<Panel id="ability" class="ability_box">
+						<Panel id="ability_1" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+						<Panel id="ability_2" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+						<Panel id="ability_3" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+						<Panel id="ability_4" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+						<Panel id="ability_5" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+						<Panel id="ability_6" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+						<Panel id="ability_7" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+						<Panel id="ability_8" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+						<Panel id="ability_9" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+						<Panel id="ability_10" class="ability_img_box">
+							<Image id="ability_img" class="ability_img" src="" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="" class="li_panel title_5">
+					<Label id="jinbi_text" class="text_label" text="" />
+				</Panel>
+				<Panel id="" class="li_panel title_6">
+					<Label id="shanghai_text" class="text_label" text="" />
+				</Panel>
+				<Panel id="" class="li_panel title_7">
+					<Label id="csshanghai_text" class="text_label" text="" />
+				</Panel>
+				<Panel id="" class="li_panel title_8">
+					<Label id="tianti_text" class="text_label" text="" />
+				</Panel>
+				<Panel id="" class="li_panel title_9">
+					<Panel id="tag_box" class="tag_box">
+						<Image id="tag_img" class="tag_img" src="" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="ability_snippet">
+			<DOTAAbilityImage id="ability_image" class="ability_image" abilityname="" />
+		</snippet>
+	</snippets>
+	<Panel class="root">
+		<Panel id="outpanel" class="outpanel">
+			<Panel id="game_time" class="game_time">
+				<Label id="game_time_text" class="game_time_text" text="游戏时间" />
+				<Label id="game_time_num" class="game_time_num" text="25分钟" />
+			</Panel>
+			<Panel id="game_list" class="game_list">
+				<Panel id="box_1" class="box">
+					<Panel id="" class="top_nav">
+						<Panel id="" class="title_panel title_1">
+							<Panel id="" class="else_box">
+								<Image id="" class="team_color" src="s2r://panorama/images/custom_game/tianhui_png.vtex" />
+								<Panel id="" class="team_text">
+									<Label id="" class="team_style" text="天辉" />
+									<Label id="jifen_1" class="jifen_text" text="积分:" />
+								</Panel>
+								<Panel id="" class="sucess_box">
+									<Label id="sucess_text_1" class="sucess_text" text="" />
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel id="" class="title_panel title_2">
+							<Label id="" class="nav_text" text="K/D/A" />
+						</Panel>
+						<Panel id="" class="title_panel title_3">
+							<Label id="" class="nav_text" text="物品" />
+						</Panel>
+						<Panel id="" class="title_panel title_4">
+							<Label id="" class="nav_text" text="技能" />
+						</Panel>
+						<Panel id="" class="title_panel title_5">
+							<Label id="" class="nav_text" text="金币" />
+						</Panel>
+						<Panel id="" class="title_panel title_6">
+							<Label id="" class="nav_text" text="伤害" />
+						</Panel>
+						<Panel id="" class="title_panel title_7">
+							<Label id="" class="nav_text" text="承受伤害" />
+						</Panel>
+						<Panel id="" class="title_panel title_8">
+							<Label id="" class="nav_text" text="天梯积分" />
+						</Panel>
+						<Panel id="" class="title_panel title_9">
+							<Label id="" class="nav_text" text="本局称号" />
+						</Panel>
+					</Panel>
+					<Panel id="list_box_1" class="list_box" />
+					<Panel id="" class="top_nav">
+						<Panel id="" class="title_panel title_1">
+							<Panel id="" class="else_box">
+								<Image id="" class="team_color" src="s2r://panorama/images/custom_game/yeyan_png.vtex" />
+								<Panel id="" class="team_text">
+									<Label id="" class="team_style" text="夜魇" />
+									<Label id="jifen_2" class="jifen_text" text="积分:" />
+								</Panel>
+								<Panel id="" class="sucess_box">
+									<Label id="sucess_text_2" class="sucess_text" text="" />
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel id="" class="title_panel title_2">
+							<Label id="" class="nav_text" text="K/D/A" />
+						</Panel>
+						<Panel id="" class="title_panel title_3">
+							<Label id="" class="nav_text" text="物品" />
+						</Panel>
+						<Panel id="" class="title_panel title_4">
+							<Label id="" class="nav_text" text="技能" />
+						</Panel>
+						<Panel id="" class="title_panel title_5">
+							<Label id="" class="nav_text" text="金币" />
+						</Panel>
+						<Panel id="" class="title_panel title_6">
+							<Label id="" class="nav_text" text="伤害" />
+						</Panel>
+						<Panel id="" class="title_panel title_7">
+							<Label id="" class="nav_text" text="承受伤害" />
+						</Panel>
+						<Panel id="" class="title_panel title_8">
+							<Label id="" class="nav_text" text="天梯积分" />
+						</Panel>
+						<Panel id="" class="title_panel title_9">
+							<Label id="" class="nav_text" text="本局称号" />
+						</Panel>
+					</Panel>
+					<Panel id="list_box_2" class="list_box" />
+				</Panel>
+				<Panel id="box_2" class="box">
+					<Panel id="" class="top_nav">
+						<Panel id="" class="title_panel title_1" />
+						<Panel id="" class="title_panel title_2">
+							<Label id="" class="nav_text" text="K/D/A" />
+						</Panel>
+						<Panel id="" class="title_panel title_3">
+							<Label id="" class="nav_text" text="物品" />
+						</Panel>
+						<Panel id="" class="title_panel title_4">
+							<Label id="" class="nav_text" text="技能" />
+						</Panel>
+						<Panel id="" class="title_panel title_5">
+							<Label id="" class="nav_text" text="金币" />
+						</Panel>
+						<Panel id="" class="title_panel title_6">
+							<Label id="" class="nav_text" text="伤害" />
+						</Panel>
+						<Panel id="" class="title_panel title_7">
+							<Label id="" class="nav_text" text="承受伤害" />
+						</Panel>
+						<Panel id="" class="title_panel title_8">
+							<Label id="" class="nav_text" text="天梯积分" />
+						</Panel>
+						<Panel id="" class="title_panel title_9">
+							<Label id="" class="nav_text" text="本局称号" />
+						</Panel>
+					</Panel>
+					<Panel id="list_box" class="list_box" />
+				</Panel>
+			</Panel>
+			<Panel id="over_footer" class="over_footer">
+				<Panel id="over_footer_actions" class="over_footer_actions">
+					<Label id="over_submit_status_label" class="over_submit_status_label" text="" />
+					<Panel id="over_footer_buttons" class="over_footer_buttons">
+						<Button id="over_button" class="over_button" onactivate="CloseOver()">
+							<Label class="over_button_text" text="退出游戏" />
+						</Button>
+						<Button id="over_close_page_button" class="over_button" onactivate="DismissOverSettlementWindow()">
+							<Label class="over_button_text" text="关闭页面" />
+						</Button>
+					</Panel>
+				</Panel>
+				<Panel id="over_footer_rewards" class="over_footer_rewards">
+					<Label id="prophecy_bonus_label" class="prophecy_bonus_label" text="" />
+					<Label id="daily_game_bonus_label" class="daily_game_bonus_label" text="" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="tag_hover" class="tag_hover" hittest="false">
+			<Image id="tag_hover_img" class="tag_hover_img" src="" hittest="false" />
+		</Panel>
+	</Panel>
+</root>

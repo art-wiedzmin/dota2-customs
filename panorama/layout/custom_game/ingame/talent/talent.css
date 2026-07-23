@@ -1,0 +1,103 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	opacity: 0;
+}
+
+.box_container
+{
+	width: 530px;
+	height: 210px;
+	flow-children: down;
+	background-color: rgba(0,0,0,0.5);
+	border: 2px solid #374D50;
+	horizontal-align: center;
+	vertical-align: center;
+	padding: 32px 12px 0;
+}
+
+.top_title
+{
+	horizontal-align: center;
+}
+
+.top_title_img
+{
+	horizontal-align: center;
+}
+
+.box_list
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: 15px;
+}
+
+.ImgBox
+{
+	width: 123px;
+	height: 99px;
+	tooltip-position: bottom;
+}
+
+.BoxData
+{
+	flow-children: down;
+}
+
+.BoxData:hover
+{
+	brightness: 1.3;
+}
+
+.TextBox
+{
+	horizontal-align: center;
+}
+
+.Text1
+{
+	font-size: 15px;
+	color: #ffffff;
+}
+
+.light_img
+{
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.k_img
+{
+	opacity: 0;
+}
+
+.ImgBox:hover .light_img,.ImgBox:hover .k_img
+{
+	opacity: 1;
+}
+
+.Img,.k_img
+{
+	width: 89px;
+	height: 65px;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.text_img
+{
+	font-size: 15px;
+	color: #ffffff;
+	text-shadow: 1px 1px 2px 3 #000000;
+	color: gradient( linear, 0% 0%, 0% 100%, from(#FDEA96), to(#E252E0) );
+	margin-top: 23px;
+	margin-left: 23px;
+}
+

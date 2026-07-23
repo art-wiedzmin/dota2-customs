@@ -1,0 +1,17 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"F_NORMAL_MAP"	"1"
+	"g_flBumpStrength"	"3.479"
+	"g_vColorTint"	"[1.000000 1.000000 1.000000 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[1.000000 1.000000 0.000000 0.000000]"
+	"TextureColor"	"models/center/bg_atm_loghill_floor02_d_ksh.png"
+	"TextureTranslucency"	"models/center/bg_atm_loghill_floor02_d_ksh_21f9d69d_trans.png"
+	"TextureNormal"	"models/center/bg_atm_loghill_floor02_n_ksh.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"models/center/bg_atm_loghill_floor02_d_ksh_tga_21f9d69d.vtex"
+		"g_tNormal"	"models/center/bg_atm_loghill_floor02_n_ksh_tga_b5102be8.vtex"
+	}
+}

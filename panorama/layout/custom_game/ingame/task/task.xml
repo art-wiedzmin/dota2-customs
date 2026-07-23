@@ -1,0 +1,217 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/task/task.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/task/task.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="list_snippet">
+			<Panel id="" class="list_panel">
+				<Panel id="" class="paiming_panel hight_54">
+					<Panel id="" class="p_1">
+						<Label id="p_num_p" class="p_text" text="100+" />
+					</Panel>
+				</Panel>
+				<Panel id="" class="playerinfo_panel hight_54">
+					<Panel id="" class="p_2">
+						<DOTAAvatarImage steamid="" id="player_img_p" class="player_img_p" />
+						<DOTAUserName steamid="" id="player_name_p" class="player_name_p" />
+					</Panel>
+				</Panel>
+				<Panel id="" class="tianti_num_panel hight_54">
+					<Panel id="" class="p_3">
+						<Label id="p_jifen_p" class="p_text_2" text="123456" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="ch_snippet">
+			<Panel id="" class="ch_li">
+				<Image id="ch_img" class="ch_img" src="" />
+				<Label id="ch_num" class="ch_num" text="10" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="root" hittest="true">
+		<Panel class="content" hittest="true">
+			<Panel class="content_top" hittest="true">
+				<Panel class="content_top_left">
+					<DOTAAvatarImage steamid="" id="player_img" class="player_img" />
+					<DOTAUserName steamid="" id="player_name" class="player_name" />
+				</Panel>
+				<Panel class="content_top_center">
+					<Panel id="center_tag_1" class="center_tag active" onactivate="checkPage(1)">
+						<Label id="" class="center_tag_text" text="天梯排名" />
+					</Panel>
+					<Panel id="center_tag_2" class="center_tag" onactivate="checkPage(2)">
+						<Label id="" class="center_tag_text" text="历史战绩" />
+					</Panel>
+				</Panel>
+				<Panel class="content_top_right">
+					<Panel class="CloseBtn" onactivate="ClosePage()">
+						<Image class="Img" src="s2r://panorama/images/custom_game/close_icon_png.vtex" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel class="content_section" hittest="true">
+				<Panel id="" class="content_box_title">
+					<Label id="mode_1" class="title_text_label" text="多人模式" onactivate="checkFun(1)" visible="false" />
+					<Image id="mode_sep_1" class="icon_img" src="s2r://panorama/images/custom_game/z_xie_png.vtex" visible="false" />
+					<Label id="mode_2" class="title_text_label active" text="单人模式" onactivate="checkFun(2)" />
+					<Image id="mode_sep_3" class="icon_img" src="s2r://panorama/images/custom_game/z_xie_png.vtex" />
+					<Label id="mode_3" class="title_text_label" text="人机竞速" onactivate="checkFun(3)" />
+				</Panel>
+				<Panel id="content_section_box" class="content_section_box">
+					<Panel id="content_box_tianti" class="content_box" hittest="true">
+						<Panel id="tianti_list_box" class="list_box">
+							<Panel id="" class="top_title">
+								<Panel id="" class="paiming_panel">
+									<Label id="" class="top_title_text" text="排名" />
+								</Panel>
+								<Panel id="" class="playerinfo_panel">
+									<Label id="" class="top_title_text" text="玩家信息" />
+								</Panel>
+								<Panel id="" class="tianti_num_panel">
+									<Label id="tianti_score_title" class="top_title_text" text="天梯积分" />
+								</Panel>
+							</Panel>
+							<Panel id="list_box_container" class="list_box_container" />
+							<Panel id="" class="my_self_panel">
+								<Panel id="myself_panel" class="li_panel">
+									<Panel id="" class="paiming_panel hight_54">
+										<Panel id="" class="p_1">
+											<Label id="p_num" class="p_text" text="100+" />
+										</Panel>
+									</Panel>
+									<Panel id="" class="playerinfo_panel hight_54">
+										<Panel id="" class="p_2">
+											<DOTAAvatarImage steamid="" id="player_my_img" class="player_img_p" />
+											<DOTAUserName steamid="" id="player_my_name" class="player_name_p" />
+										</Panel>
+									</Panel>
+									<Panel id="" class="tianti_num_panel hight_54">
+										<Panel id="" class="p_3">
+											<Label id="p_jifen" class="p_text_2" text="123456" />
+										</Panel>
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel id="" class="top_bottom">
+							<Panel id="" class="top_bottom_row">
+								<Panel id="" class="top_time_panel">
+									<Label id="time_s" class="time_text" text="赛季时间：2026.04.30-2026.06.30" />
+								</Panel>
+								<Panel id="award_rule_hover" class="top_time_right">
+									<Label id="" class="jiangli_text" text="奖励规则" />
+									<Image id="guizhe_icon" class="guizhe_icon" src="s2r://panorama/images/custom_game/b_icon_png.vtex" />
+								</Panel>
+							</Panel>
+							<Panel id="season_view_bar" class="season_view_bar">
+								<Label id="season_live_btn" class="season_tab active" text="当前赛季" onactivate="checkSeasonView(&apos;live&apos;)" />
+								<Panel id="season_history_tabs" class="season_history_tabs" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel id="content_box_zhanji" class="content_box" hittest="true">
+						<Panel id="" class="zhanji_box">
+							<Panel id="zj_1" class="zj_panel" hittest="true">
+								<Panel id="" class="left_panel">
+									<Label id="" class="left_text" text="赛季战绩" />
+								</Panel>
+								<Panel id="" class="right_panel" hittest="true">
+									<Panel id="" class="right_panel_left">
+										<Label id="" class="sj_text" text="天梯" />
+										<Panel id="" class="img_box">
+											<Image id="sj_img_star" class="sj_img_star" src="" />
+											<Panel id="sj_badge_box" class="rank_badge_box">
+												<Image id="sj_img" class="sj_img" src="s2r://panorama/images/custom_game/zj_img_png.vtex" />
+												<Label id="sj_rank_plate" class="rank_plate_num" text="" hittest="false" />
+											</Panel>
+										</Panel>
+										<Label id="sj_num" class="sj_num" text="1300" />
+									</Panel>
+									<Panel id="" class="right_panel_right" hittest="true">
+										<Panel id="" class="right_panel_li">
+											<Label id="sl_text_1" class="right_li_text" text="胜率" />
+											<Label id="right_li_sl" class="right_li_num" text="60%" />
+										</Panel>
+										<Panel id="" class="right_panel_li">
+											<Label id="" class="right_li_text" text="逃跑率" />
+											<Label id="right_li_tpl" class="right_li_num" text="1%" />
+										</Panel>
+										<Panel id="" class="right_panel_li">
+											<Label id="sl_cs_text_1" class="right_li_text" text="胜利场数" />
+											<Label id="right_li_slcs" class="right_li_num" text="100" />
+										</Panel>
+										<Panel id="" class="right_panel_li">
+											<Label id="sb_cs_text_1" class="right_li_text" text="失利场数" />
+											<Label id="right_li_sbcs" class="right_li_num" text="100" />
+										</Panel>
+										<Panel id="" class="right_panel_li">
+											<Label id="" class="right_li_text" text="总场数" />
+											<Label id="right_li_zcs" class="right_li_num" text="100" />
+										</Panel>
+									</Panel>
+								</Panel>
+							</Panel>
+							<Panel id="zj_2" class="zj_panel" hittest="true">
+								<Panel id="" class="left_panel">
+									<Label id="" class="left_text" text="称号" />
+								</Panel>
+								<Panel id="ch_list" class="ch_list" />
+							</Panel>
+							<Panel id="zj_3" class="zj_panel" hittest="true">
+								<Panel id="" class="left_panel">
+									<Label id="" class="left_text" text="总战绩" />
+								</Panel>
+								<Panel id="" class="right_panel">
+									<Panel id="" class="right_panel_left" hittest="true">
+										<Label id="" class="sj_text" text="历史最佳" />
+										<Panel id="" class="img_box">
+											<Image id="zj_img_star" class="sj_img_star" src="" />
+											<Panel id="zj_badge_box" class="rank_badge_box">
+												<Image id="zj_img" class="sj_img" src="s2r://panorama/images/custom_game/zj_img_png.vtex" />
+												<Label id="zj_rank_plate" class="rank_plate_num" text="" hittest="false" />
+											</Panel>
+										</Panel>
+										<Label id="zj_num" class="sj_num" text="1300" />
+									</Panel>
+									<Panel id="" class="right_panel_right" hittest="true">
+										<Panel id="" class="right_panel_li">
+											<Label id="sl_text_2" class="right_li_text" text="胜率" />
+											<Label id="right_li_sl_zj" class="right_li_num" text="60%" />
+										</Panel>
+										<Panel id="" class="right_panel_li">
+											<Label id="" class="right_li_text" text="逃跑率" />
+											<Label id="right_li_tpl_zj" class="right_li_num" text="1%" />
+										</Panel>
+										<Panel id="" class="right_panel_li">
+											<Label id="sl_cs_text_2" class="right_li_text" text="胜利场数" />
+											<Label id="right_li_slcs_zj" class="right_li_num" text="100" />
+										</Panel>
+										<Panel id="" class="right_panel_li">
+											<Label id="sb_cs_text_2" class="right_li_text" text="失利场数" />
+											<Label id="right_li_sbcs_zj" class="right_li_num" text="100" />
+										</Panel>
+										<Panel id="" class="right_panel_li">
+											<Label id="" class="right_li_text" text="总场数" />
+											<Label id="right_li_zcs_zj" class="right_li_num" text="100" />
+										</Panel>
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="award_tip" class="award_tip">
+			<Label id="award_tip_text" class="award_tip_text" text="" html="false" />
+		</Panel>
+	</Panel>
+</root>

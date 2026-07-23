@@ -1,0 +1,36 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/baghover/baghover.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/baghover/baghover.vjs_c" />
+	</scripts>
+	<Panel class="root" hittest="false">
+		<Panel id="hover_panel" class="hover_panel" draggable="false" hittest="false" />
+		<Panel id="hover_tip" class="hover_tip">
+			<Image id="jiantou" class="jiantou" hittest="false" src="s2r://panorama/images/custom_game/c_jt_png.vtex" />
+			<Panel id="bag_tip" class="TipPage" hittest="false">
+				<Panel id="tip_top" class="tip_top" hittest="false">
+					<Image id="tip_img" class="tip_img" src="s2r://panorama/images/custom_game/item_goods_0_png.vtex" />
+					<Label id="tip_name" class="tip_name" text="丛林的馈赠" />
+				</Panel>
+				<Panel id="tip_bottom" class="tip_bottom" hittest="false">
+					<Panel id="tip_bottom_top" class="tip_bottom_top" hittest="false">
+						<Label id="" class="tip_bottom_text" text="技能：" />
+						<Label id="tip_bottom_jineng" class="tip_bottom_text" text="无目标" />
+					</Panel>
+				</Panel>
+				<Panel id="" class="center_img_panel">
+					<Image id="center_img" class="center_img" src="s2r://panorama/images/custom_game/bdxg_png.vtex" />
+				</Panel>
+				<Panel id="bottom_panel" class="bottom_panel" hittest="false">
+					<Label id="bottom_panel_text" class="bottom_panel_text" text="来自神秘力量给予丛林冒险者的馈赠" />
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

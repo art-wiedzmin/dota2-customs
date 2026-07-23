@@ -1,0 +1,1003 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/selecthero/selecthero.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/skillslot/skillslot.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/selecthero/selecthero.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/selecthero/selectheropetsettings.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="index_1">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_pudge" />
+			</Panel>
+		</snippet>
+		<snippet name="index_2">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_tidehunter" />
+			</Panel>
+		</snippet>
+		<snippet name="index_3">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_abaddon" />
+			</Panel>
+		</snippet>
+		<snippet name="index_4">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_centaur" />
+			</Panel>
+		</snippet>
+		<snippet name="index_5">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_life_stealer" />
+			</Panel>
+		</snippet>
+		<snippet name="index_6">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_huskar" />
+			</Panel>
+		</snippet>
+		<snippet name="index_7">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_slardar" />
+			</Panel>
+		</snippet>
+		<snippet name="index_8">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_tusk" />
+			</Panel>
+		</snippet>
+		<snippet name="index_9">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_legion_commander" />
+			</Panel>
+		</snippet>
+		<snippet name="index_10">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_axe" />
+			</Panel>
+		</snippet>
+		<snippet name="index_11">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_juggernaut" />
+			</Panel>
+		</snippet>
+		<snippet name="index_12">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_kez" />
+			</Panel>
+		</snippet>
+		<snippet name="index_13">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_drow_ranger" />
+			</Panel>
+		</snippet>
+		<snippet name="index_14">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_phantom_assassin" />
+			</Panel>
+		</snippet>
+		<snippet name="index_15">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_troll_warlord" />
+			</Panel>
+		</snippet>
+		<snippet name="index_16">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_medusa" />
+			</Panel>
+		</snippet>
+		<snippet name="index_17">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_faceless_void" />
+			</Panel>
+		</snippet>
+		<snippet name="index_18">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_sniper" />
+			</Panel>
+		</snippet>
+		<snippet name="index_19">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_broodmother" />
+			</Panel>
+		</snippet>
+		<snippet name="index_20">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_gyrocopter" />
+			</Panel>
+		</snippet>
+		<snippet name="index_21">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_ursa" />
+			</Panel>
+		</snippet>
+		<snippet name="index_22">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_luna" />
+			</Panel>
+		</snippet>
+		<snippet name="index_23">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_techies" />
+			</Panel>
+		</snippet>
+		<snippet name="index_24">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_silencer" />
+			</Panel>
+		</snippet>
+		<snippet name="index_25">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_lina" />
+			</Panel>
+		</snippet>
+		<snippet name="index_26">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_lion" />
+			</Panel>
+		</snippet>
+		<snippet name="index_27">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_necrolyte" />
+			</Panel>
+		</snippet>
+		<snippet name="index_28">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_zuus" />
+			</Panel>
+		</snippet>
+		<snippet name="index_29">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_enchantress" />
+			</Panel>
+		</snippet>
+		<snippet name="index_30">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_shadow_demon" />
+			</Panel>
+		</snippet>
+		<snippet name="index_31">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_muerta" />
+			</Panel>
+		</snippet>
+		<snippet name="index_32">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_dark_willow" />
+			</Panel>
+		</snippet>
+		<snippet name="index_33">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_obsidian_destroyer" />
+			</Panel>
+		</snippet>
+		<snippet name="index_34">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_jakiro" />
+			</Panel>
+		</snippet>
+		<snippet name="index_35">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_rubick" />
+			</Panel>
+		</snippet>
+		<snippet name="index_36">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_sven" />
+			</Panel>
+		</snippet>
+		<snippet name="index_37">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_magnataur" />
+			</Panel>
+		</snippet>
+		<snippet name="index_38">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_brewmaster" />
+			</Panel>
+		</snippet>
+		<snippet name="index_39">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_dragon_knight" />
+			</Panel>
+		</snippet>
+		<snippet name="index_40">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_omniknight" />
+			</Panel>
+		</snippet>
+		<snippet name="index_41">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_abyssal_underlord" />
+			</Panel>
+		</snippet>
+		<snippet name="index_42">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_kunkka" />
+			</Panel>
+		</snippet>
+		<snippet name="index_43">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_spirit_breaker" />
+			</Panel>
+		</snippet>
+		<snippet name="index_44">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_treant" />
+			</Panel>
+		</snippet>
+		<snippet name="index_45">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_ogre_magi" />
+			</Panel>
+		</snippet>
+		<snippet name="index_46">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_rattletrap" />
+			</Panel>
+		</snippet>
+		<snippet name="index_47">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_lycan" />
+			</Panel>
+		</snippet>
+		<snippet name="index_48">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_snapfire" />
+			</Panel>
+		</snippet>
+		<snippet name="index_49">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_slark" />
+			</Panel>
+		</snippet>
+		<snippet name="index_50">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_bounty_hunter" />
+			</Panel>
+		</snippet>
+		<snippet name="index_51">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_marci" />
+			</Panel>
+		</snippet>
+		<snippet name="index_52">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_vengefulspirit" />
+			</Panel>
+		</snippet>
+		<snippet name="index_53">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_viper" />
+			</Panel>
+		</snippet>
+		<snippet name="index_54">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_bloodseeker" />
+			</Panel>
+		</snippet>
+		<snippet name="index_55">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_razor" />
+			</Panel>
+		</snippet>
+		<snippet name="index_56">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_spectre" />
+			</Panel>
+		</snippet>
+		<snippet name="index_57">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_batrider" />
+			</Panel>
+		</snippet>
+		<snippet name="index_58">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_oracle" />
+			</Panel>
+		</snippet>
+		<snippet name="index_59">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_venomancer" />
+			</Panel>
+		</snippet>
+		<snippet name="index_60">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_ancient_apparition" />
+			</Panel>
+		</snippet>
+		<snippet name="index_61">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_tinker" />
+			</Panel>
+		</snippet>
+		<snippet name="index_62">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_leshrac" />
+			</Panel>
+		</snippet>
+		<snippet name="index_63">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_death_prophet" />
+			</Panel>
+		</snippet>
+		<snippet name="index_64">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_furion" />
+			</Panel>
+		</snippet>
+		<snippet name="index_65">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_windrunner" />
+			</Panel>
+		</snippet>
+		<snippet name="index_66">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_chen" />
+			</Panel>
+		</snippet>
+		<snippet name="index_67">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_dazzle" />
+			</Panel>
+		</snippet>
+		<snippet name="index_68">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_largo" />
+			</Panel>
+		</snippet>
+		<snippet name="index_69">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_riki" />
+			</Panel>
+		</snippet>
+		<snippet name="index_70">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_queenofpain" />
+			</Panel>
+		</snippet>
+		<snippet name="index_71">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_mirana" />
+			</Panel>
+		</snippet>
+		<snippet name="index_72">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_morphling" />
+			</Panel>
+		</snippet>
+		<snippet name="index_73">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_skywrath_mage" />
+			</Panel>
+		</snippet>
+		<snippet name="index_74">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_phoenix" />
+			</Panel>
+		</snippet>
+		<snippet name="index_75">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_earthshaker" />
+			</Panel>
+		</snippet>
+		<snippet name="index_76">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_mars" />
+			</Panel>
+		</snippet>
+		<snippet name="index_77">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_bristleback" />
+			</Panel>
+		</snippet>
+		<snippet name="index_78">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_wisp" />
+			</Panel>
+		</snippet>
+		<snippet name="index_79">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_pugna" />
+			</Panel>
+		</snippet>
+		<snippet name="index_80">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_elder_titan" />
+			</Panel>
+		</snippet>
+		<snippet name="index_81">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_clinkz" />
+			</Panel>
+		</snippet>
+		<snippet name="index_82">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_pangolier" />
+			</Panel>
+		</snippet>
+		<snippet name="index_83">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_night_stalker" />
+			</Panel>
+		</snippet>
+		<snippet name="index_84">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_terrorblade" />
+			</Panel>
+		</snippet>
+		<snippet name="index_85">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_crystal_maiden" />
+			</Panel>
+		</snippet>
+		<snippet name="index_86">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_dark_seer" />
+			</Panel>
+		</snippet>
+		<snippet name="index_87">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_shadow_shaman" />
+			</Panel>
+		</snippet>
+		<snippet name="index_88">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_puck" />
+			</Panel>
+		</snippet>
+		<snippet name="index_89">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_nevermore" />
+			</Panel>
+		</snippet>
+		<snippet name="index_90">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_dawnbreaker" />
+			</Panel>
+		</snippet>
+		<snippet name="index_91">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_alchemist" />
+			</Panel>
+		</snippet>
+		<snippet name="index_92">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_doom_bringer" />
+			</Panel>
+		</snippet>
+		<snippet name="index_93">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_shredder" />
+			</Panel>
+		</snippet>
+		<snippet name="index_94">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_antimage" />
+			</Panel>
+		</snippet>
+		<snippet name="index_95">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_void_spirit" />
+			</Panel>
+		</snippet>
+		<snippet name="index_96">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_beastmaster" />
+			</Panel>
+		</snippet>
+		<snippet name="index_97">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_monkey_king" />
+			</Panel>
+		</snippet>
+		<snippet name="index_98">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_primal_beast" />
+			</Panel>
+		</snippet>
+		<snippet name="index_99">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_earth_spirit" />
+			</Panel>
+		</snippet>
+		<snippet name="index_100">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_winter_wyvern" />
+			</Panel>
+		</snippet>
+		<snippet name="index_101">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_weaver" />
+			</Panel>
+		</snippet>
+		<snippet name="index_102">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_ember_spirit" />
+			</Panel>
+		</snippet>
+		<snippet name="index_103">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_enigma" />
+			</Panel>
+		</snippet>
+		<snippet name="index_104">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_storm_spirit" />
+			</Panel>
+		</snippet>
+		<snippet name="index_105">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_undying" />
+			</Panel>
+		</snippet>
+		<snippet name="index_106">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_witch_doctor" />
+			</Panel>
+		</snippet>
+		<snippet name="index_107">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_chaos_knight" />
+			</Panel>
+		</snippet>
+		<snippet name="index_108">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_templar_assassin" />
+			</Panel>
+		</snippet>
+		<snippet name="index_109">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_hoodwink" />
+			</Panel>
+		</snippet>
+		<snippet name="index_110">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_lich" />
+			</Panel>
+		</snippet>
+		<snippet name="index_111">
+			<Panel id="" class="HeroModel">
+				<DOTAHeroMovie class="unitsize" heroname="npc_dota_hero_tiny" />
+			</Panel>
+		</snippet>
+		<snippet name="dev_hero_picker_hero_snippet">
+			<Panel class="DevHeroPickerHeroLi">
+				<DOTAHeroImage id="dev_hero_picker_hero_image" class="DevHeroPickerHeroImage" heroname="" heroimagestyle="portrait" />
+				<Image id="dev_hero_picker_no_image" class="DevHeroPickerNoImage" src="s2r://panorama/images/custom_game/t_no_png.vtex" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel hittest="false" class="root">
+		<DOTAScenePanel id="center_circle" class="showpetmodelbg" map="backgrounds/pregame_phase" camera="shot_cameraA" />
+		<Panel hittest="false" id="load" class="Loading">
+			<Panel class="LoadText">
+				<Label class="Text1" text="载入中..." />
+			</Panel>
+		</Panel>
+		<Panel id="menu_box" class="menu_box" hittest="false">
+			<Panel id="back_button_id" class="MenuBox" onactivate="OpenLeaveConfirm()">
+				<Image id="menu_icon_exit" class="MenuImg" />
+				<Label class="MenuText yahei" text="退出" />
+			</Panel>
+			<Panel id="set_button_id" class="MenuBox" onactivate="" hittest="false">
+				<Image id="menu_icon_setting" class="MenuImg" hittest="false" />
+				<Label class="MenuText" text="设置" hittest="false" />
+			</Panel>
+			<Panel id="menu_shop_id" class="MenuBox" onactivate="OpenPage(3)">
+				<Image id="menu_icon_shop" class="MenuImg" />
+				<Label class="MenuText" text="商店" />
+			</Panel>
+			<Panel id="menu_achieve_id" class="MenuBox" onactivate="OpenPage(9)">
+				<Panel class="MenuIconWrap">
+					<Image id="menu_icon_achieve" class="MenuImg" />
+					<Panel id="selecthero_menu_achieve_red_dot" class="MenuRedDot" hittest="false" />
+				</Panel>
+				<Label class="MenuText" text="成就" />
+			</Panel>
+			<Panel id="menu_record_id" class="MenuBox" onactivate="OpenPage(5)">
+				<Image id="menu_icon_record" class="MenuImg" />
+				<Label class="MenuText" text="战绩" />
+			</Panel>
+			<Panel id="menu_book_id" class="MenuBox" onactivate="OpenPage(6)">
+				<Image id="menu_icon_book" class="MenuImg" />
+				<Label class="MenuText" text="图鉴" />
+			</Panel>
+		</Panel>
+		<Panel hittest="false" id="Content" class="Page">
+			<Panel id="top_player_row" class="TopPlayerRow">
+				<Panel id="top_players_left" class="TopPlayersLeft">
+					<Panel class="TopSideSpacer" />
+					<Panel id="top_rad_0" class="PlayerData TopPickSlot RadiantPickSlot">
+						<Panel class="PlayerPortraitWrap">
+							<DOTAAvatarImage id="top_player_avatar" class="TopBarPlayerAvatar" steamid="" />
+							<Image id="top_bot_avatar" class="TopBarBotAvatar" src="s2r://panorama/images/custom_game/empty_slot_avatar.png" />
+						</Panel>
+						<Image id="ready_img" class="ReadyBox" src="s2r://panorama/images/custom_game/gou_png.vtex" />
+					</Panel>
+					<Panel id="top_rad_1" class="PlayerData TopPickSlot RadiantPickSlot">
+						<Panel class="PlayerPortraitWrap">
+							<DOTAAvatarImage id="top_player_avatar" class="TopBarPlayerAvatar" steamid="" />
+							<Image id="top_bot_avatar" class="TopBarBotAvatar" src="s2r://panorama/images/custom_game/empty_slot_avatar.png" />
+						</Panel>
+						<Image id="ready_img" class="ReadyBox" src="s2r://panorama/images/custom_game/gou_png.vtex" />
+					</Panel>
+					<Panel id="top_rad_2" class="PlayerData TopPickSlot RadiantPickSlot">
+						<Panel class="PlayerPortraitWrap">
+							<DOTAAvatarImage id="top_player_avatar" class="TopBarPlayerAvatar" steamid="" />
+							<Image id="top_bot_avatar" class="TopBarBotAvatar" src="s2r://panorama/images/custom_game/empty_slot_avatar.png" />
+						</Panel>
+						<Image id="ready_img" class="ReadyBox" src="s2r://panorama/images/custom_game/gou_png.vtex" />
+					</Panel>
+					<Panel id="top_rad_3" class="PlayerData TopPickSlot RadiantPickSlot">
+						<Panel class="PlayerPortraitWrap">
+							<DOTAAvatarImage id="top_player_avatar" class="TopBarPlayerAvatar" steamid="" />
+							<Image id="top_bot_avatar" class="TopBarBotAvatar" src="s2r://panorama/images/custom_game/empty_slot_avatar.png" />
+						</Panel>
+						<Image id="ready_img" class="ReadyBox" src="s2r://panorama/images/custom_game/gou_png.vtex" />
+					</Panel>
+					<Panel id="top_rad_4" class="PlayerData TopPickSlot RadiantPickSlot">
+						<Panel class="PlayerPortraitWrap">
+							<DOTAAvatarImage id="top_player_avatar" class="TopBarPlayerAvatar" steamid="" />
+							<Image id="top_bot_avatar" class="TopBarBotAvatar" src="s2r://panorama/images/custom_game/empty_slot_avatar.png" />
+						</Panel>
+						<Image id="ready_img" class="ReadyBox" src="s2r://panorama/images/custom_game/gou_png.vtex" />
+					</Panel>
+					<Panel id="top_rad_5" class="PlayerData TopPickSlot RadiantPickSlot">
+						<Panel class="PlayerPortraitWrap">
+							<DOTAAvatarImage id="top_player_avatar" class="TopBarPlayerAvatar" steamid="" />
+							<Image id="top_bot_avatar" class="TopBarBotAvatar" src="s2r://panorama/images/custom_game/empty_slot_avatar.png" />
+						</Panel>
+						<Image id="ready_img" class="ReadyBox" src="s2r://panorama/images/custom_game/gou_png.vtex" />
+					</Panel>
+				</Panel>
+				<Panel id="game_time" class="game_time TopTimer">
+					<Label id="time_text" class="time_text" text="" />
+				</Panel>
+				<Panel id="top_players_right" class="TopPlayersRight">
+					<Panel id="top_dire_0" class="PlayerData TopPickSlot DirePickSlot">
+						<Panel class="PlayerPortraitWrap">
+							<DOTAAvatarImage id="top_player_avatar" class="TopBarPlayerAvatar" steamid="" />
+							<Image id="top_bot_avatar" class="TopBarBotAvatar" src="s2r://panorama/images/custom_game/empty_slot_avatar.png" />
+						</Panel>
+						<Image id="ready_img" class="ReadyBox" src="s2r://panorama/images/custom_game/gou_png.vtex" />
+					</Panel>
+					<Panel id="top_dire_1" class="PlayerData TopPickSlot DirePickSlot">
+						<Panel class="PlayerPortraitWrap">
+							<DOTAAvatarImage id="top_player_avatar" class="TopBarPlayerAvatar" steamid="" />
+							<Image id="top_bot_avatar" class="TopBarBotAvatar" src="s2r://panorama/images/custom_game/empty_slot_avatar.png" />
+						</Panel>
+						<Image id="ready_img" class="ReadyBox" src="s2r://panorama/images/custom_game/gou_png.vtex" />
+					</Panel>
+					<Panel id="top_dire_2" class="PlayerData TopPickSlot DirePickSlot">
+						<Panel class="PlayerPortraitWrap">
+							<DOTAAvatarImage id="top_player_avatar" class="TopBarPlayerAvatar" steamid="" />
+							<Image id="top_bot_avatar" class="TopBarBotAvatar" src="s2r://panorama/images/custom_game/empty_slot_avatar.png" />
+						</Panel>
+						<Image id="ready_img" class="ReadyBox" src="s2r://panorama/images/custom_game/gou_png.vtex" />
+					</Panel>
+					<Panel id="top_dire_3" class="PlayerData TopPickSlot DirePickSlot">
+						<Panel class="PlayerPortraitWrap">
+							<DOTAAvatarImage id="top_player_avatar" class="TopBarPlayerAvatar" steamid="" />
+							<Image id="top_bot_avatar" class="TopBarBotAvatar" src="s2r://panorama/images/custom_game/empty_slot_avatar.png" />
+						</Panel>
+						<Image id="ready_img" class="ReadyBox" src="s2r://panorama/images/custom_game/gou_png.vtex" />
+					</Panel>
+					<Panel id="top_dire_4" class="PlayerData TopPickSlot DirePickSlot">
+						<Panel class="PlayerPortraitWrap">
+							<DOTAAvatarImage id="top_player_avatar" class="TopBarPlayerAvatar" steamid="" />
+							<Image id="top_bot_avatar" class="TopBarBotAvatar" src="s2r://panorama/images/custom_game/empty_slot_avatar.png" />
+						</Panel>
+						<Image id="ready_img" class="ReadyBox" src="s2r://panorama/images/custom_game/gou_png.vtex" />
+					</Panel>
+					<Panel id="top_dire_5" class="PlayerData TopPickSlot DirePickSlot">
+						<Panel class="PlayerPortraitWrap">
+							<DOTAAvatarImage id="top_player_avatar" class="TopBarPlayerAvatar" steamid="" />
+							<Image id="top_bot_avatar" class="TopBarBotAvatar" src="s2r://panorama/images/custom_game/empty_slot_avatar.png" />
+						</Panel>
+						<Image id="ready_img" class="ReadyBox" src="s2r://panorama/images/custom_game/gou_png.vtex" />
+					</Panel>
+					<Panel class="TopSideSpacer" />
+				</Panel>
+			</Panel>
+			<Panel id="" class="game_title_panel">
+				<Image id="game_title_img" class="game_title_img" src="s2r://panorama/images/custom_game/s_title_png.vtex" />
+			</Panel>
+			<Panel id="" class="game_title_text_panel">
+				<Label id="game_title_text" class="game_title_text" text="#SelectHero_Subtitle" />
+			</Panel>
+			<Panel id="hero_page" class="ModelBox">
+				<Panel id="team_model_left" class="TeamHeroModel TeamHeroColumn">
+					<Panel class="TeamHeroTeammateSideSpacer" hittest="false" />
+					<Panel id="team_card_1" class="TeamHeroCard HiddenTeamCard">
+						<Panel class="model_img_panel">
+							<Image class="model_img" src="s2r://panorama/images/custom_game/s_liang_png.vtex" />
+						</Panel>
+						<Panel class="model_box TeamHeroCardBox">
+							<Panel id="team_model_1" class="HeroModelBox TeamHeroModelSlot" />
+						</Panel>
+						<Image class="kuang_img TeamHeroKuang" src="s2r://panorama/images/custom_game/s_kuang_png.vtex" />
+						<DOTAAvatarImage id="team_avatar_1" class="TeamPlayerAvatar" steamid="" />
+					</Panel>
+					<Panel id="team_card_2" class="TeamHeroCard HiddenTeamCard">
+						<Panel class="model_img_panel">
+							<Image class="model_img" src="s2r://panorama/images/custom_game/s_liang_png.vtex" />
+						</Panel>
+						<Panel class="model_box TeamHeroCardBox">
+							<Panel id="team_model_2" class="HeroModelBox TeamHeroModelSlot" />
+						</Panel>
+						<Image class="kuang_img TeamHeroKuang" src="s2r://panorama/images/custom_game/s_kuang_png.vtex" />
+						<DOTAAvatarImage id="team_avatar_2" class="TeamPlayerAvatar" steamid="" />
+					</Panel>
+				</Panel>
+				<Panel class="Model" id="model_1">
+					<Panel id="model_img_panel_1" class="model_img_panel">
+						<Image id="" class="model_img" src="s2r://panorama/images/custom_game/s_liang_png.vtex" />
+					</Panel>
+					<Panel id="hero_pick_card_1" class="model_box" onactivate="CheckHero(&apos;model_1&apos;)">
+						<Panel id="slot_1" class="HeroModelBox" />
+						<Panel id="slot_1_ability_list" class="HeroAbilityList" />
+						<Panel id="" class="box_top">
+							<Image id="top_xt_1" class="top_xt" src="s2r://panorama/images/custom_game/xt_png.vtex" />
+							<Panel id="" class="box_top_bottom">
+								<Label id="slot_1_hero_text" class="hero_text_class" text="${Hello world!}" />
+							</Panel>
+							<Image id="tf_1" class="top_img" src="s2r://panorama/images/custom_game/s_tu_png.vtex" />
+						</Panel>
+					</Panel>
+					<Panel class="FaceBox" />
+					<Image id="" class="kuang_img" src="s2r://panorama/images/custom_game/s_kuang_png.vtex" />
+				</Panel>
+				<Panel class="Model" id="model_2">
+					<Panel id="model_img_panel_2" class="model_img_panel">
+						<Image id="" class="model_img" src="s2r://panorama/images/custom_game/s_liang_png.vtex" />
+					</Panel>
+					<Panel id="hero_pick_card_2" class="model_box" onactivate="CheckHero(&apos;model_2&apos;)">
+						<Panel id="slot_2" class="HeroModelBox" />
+						<Panel id="slot_2_ability_list" class="HeroAbilityList" />
+						<Panel id="" class="box_top">
+							<Image id="top_xt_2" class="top_xt" src="s2r://panorama/images/custom_game/xt_png.vtex" />
+							<Panel id="" class="box_top_bottom">
+								<Label id="slot_2_hero_text" class="hero_text_class" text="${Hello world!}" />
+							</Panel>
+							<Image id="tf_2" class="top_img" src="s2r://panorama/images/custom_game/s_tu_png.vtex" />
+						</Panel>
+					</Panel>
+					<Panel class="FaceBox" />
+					<Image id="" class="kuang_img" src="s2r://panorama/images/custom_game/s_kuang_png.vtex" />
+				</Panel>
+				<Panel class="Model" id="model_3">
+					<Panel id="model_img_panel_3" class="model_img_panel">
+						<Image id="" class="model_img" src="s2r://panorama/images/custom_game/s_liang_png.vtex" />
+					</Panel>
+					<Panel id="hero_pick_card_3" class="model_box" onactivate="CheckHero(&apos;model_3&apos;)">
+						<Panel id="slot_3" class="HeroModelBox" />
+						<Panel id="slot_3_ability_list" class="HeroAbilityList" />
+						<Panel id="" class="box_top">
+							<Image id="top_xt_3" class="top_xt" src="s2r://panorama/images/custom_game/xt_png.vtex" />
+							<Panel id="" class="box_top_bottom">
+								<Label id="slot_3_hero_text" class="hero_text_class" text="${Hello world!}" />
+							</Panel>
+							<Image id="tf_3" class="top_img" src="s2r://panorama/images/custom_game/s_tu_png.vtex" />
+						</Panel>
+					</Panel>
+					<Panel class="FaceBox" />
+					<Image id="" class="kuang_img" src="s2r://panorama/images/custom_game/s_kuang_png.vtex" />
+				</Panel>
+				<Panel id="team_model_right" class="TeamHeroModel TeamHeroColumn">
+					<Panel id="team_card_3" class="TeamHeroCard HiddenTeamCard">
+						<Panel class="model_img_panel">
+							<Image class="model_img" src="s2r://panorama/images/custom_game/s_liang_png.vtex" />
+						</Panel>
+						<Panel class="model_box TeamHeroCardBox">
+							<Panel id="team_model_3" class="HeroModelBox TeamHeroModelSlot" />
+						</Panel>
+						<Image class="kuang_img TeamHeroKuang" src="s2r://panorama/images/custom_game/s_kuang_png.vtex" />
+						<DOTAAvatarImage id="team_avatar_3" class="TeamPlayerAvatar" steamid="" />
+					</Panel>
+					<Panel id="team_card_4" class="TeamHeroCard HiddenTeamCard">
+						<Panel class="model_img_panel">
+							<Image class="model_img" src="s2r://panorama/images/custom_game/s_liang_png.vtex" />
+						</Panel>
+						<Panel class="model_box TeamHeroCardBox">
+							<Panel id="team_model_4" class="HeroModelBox TeamHeroModelSlot" />
+						</Panel>
+						<Image class="kuang_img TeamHeroKuang" src="s2r://panorama/images/custom_game/s_kuang_png.vtex" />
+						<DOTAAvatarImage id="team_avatar_4" class="TeamPlayerAvatar" steamid="" />
+					</Panel>
+					<Panel class="TeamHeroTeammateSideSpacer" hittest="false" />
+				</Panel>
+			</Panel>
+			<Panel id="select_talent_wrap" class="SelectTalentWrap">
+				<Panel class="SelectTalentInner">
+					<Panel class="SelectTalentHeaderCol">
+						<Label class="SelectTalentMainTitle" text="#SelectHero_TalentTitle" />
+						<Label class="SelectTalentHint" text="#SelectHero_TalentHint" />
+					</Panel>
+					<Panel id="select_talent_grid" class="SelectTalentGrid">
+						<Panel id="talent_cell_1" class="SelectTalentCell" onactivate="PickSelectTalent(1)">
+							<Panel class="SelectTalentIconWrap">
+								<Image class="SelectTalentIconImg" src="s2r://panorama/images/custom_game/talent_1_png.vtex" />
+							</Panel>
+							<Label class="SelectTalentName" text="#SelectHero_Talent_1_Name" />
+						</Panel>
+						<Panel id="talent_cell_2" class="SelectTalentCell" onactivate="PickSelectTalent(2)">
+							<Panel class="SelectTalentIconWrap">
+								<Image class="SelectTalentIconImg" src="s2r://panorama/images/custom_game/talent_2_png.vtex" />
+							</Panel>
+							<Label class="SelectTalentName" text="#SelectHero_Talent_2_Name" />
+						</Panel>
+						<Panel id="talent_cell_3" class="SelectTalentCell" onactivate="PickSelectTalent(3)">
+							<Panel class="SelectTalentIconWrap">
+								<Image class="SelectTalentIconImg" src="s2r://panorama/images/custom_game/talent_3_png.vtex" />
+							</Panel>
+							<Label class="SelectTalentName" text="#SelectHero_Talent_3_Name" />
+						</Panel>
+						<Panel id="talent_cell_4" class="SelectTalentCell" onactivate="PickSelectTalent(4)">
+							<Panel class="SelectTalentIconWrap">
+								<Image class="SelectTalentIconImg" src="s2r://panorama/images/custom_game/talent_4_png.vtex" />
+							</Panel>
+							<Label class="SelectTalentName" text="#SelectHero_Talent_4_Name" />
+						</Panel>
+						<Panel id="talent_cell_5" class="SelectTalentCell" onactivate="PickSelectTalent(5)">
+							<Panel class="SelectTalentIconWrap">
+								<Image class="SelectTalentIconImg" src="s2r://panorama/images/custom_game/talent_5_png.vtex" />
+							</Panel>
+							<Label class="SelectTalentName" text="#SelectHero_Talent_5_Name" />
+						</Panel>
+						<Panel id="talent_cell_6" class="SelectTalentCell" onactivate="PickSelectTalent(6)">
+							<Panel class="SelectTalentIconWrap">
+								<Image class="SelectTalentIconImg" src="s2r://panorama/images/custom_game/talent_6_png.vtex" />
+							</Panel>
+							<Label class="SelectTalentName" text="#SelectHero_Talent_6_Name" />
+						</Panel>
+						<Panel id="talent_cell_7" class="SelectTalentCell" onactivate="PickSelectTalent(7)">
+							<Panel class="SelectTalentIconWrap">
+								<Image class="SelectTalentIconImg" src="s2r://panorama/images/custom_game/talent_7_png.vtex" />
+							</Panel>
+							<Label class="SelectTalentName" text="#SelectHero_Talent_7_Name" />
+						</Panel>
+						<Panel id="talent_cell_8" class="SelectTalentCell" onactivate="PickSelectTalent(8)">
+							<Panel class="SelectTalentIconWrap">
+								<Image class="SelectTalentIconImg" src="s2r://panorama/images/custom_game/talent_8_png.vtex" />
+							</Panel>
+							<Label class="SelectTalentName" text="#SelectHero_Talent_8_Name" />
+						</Panel>
+						<Panel id="talent_cell_9" class="SelectTalentCell" onactivate="PickSelectTalent(9)">
+							<Panel class="SelectTalentIconWrap">
+								<Image class="SelectTalentIconImg" src="s2r://panorama/images/custom_game/talent_9_png.vtex" />
+							</Panel>
+							<Label class="SelectTalentName" text="#SelectHero_Talent_9_Name" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel id="rmb_recommend_wrap" class="RmbRecommendWrap">
+				<Panel class="RmbRecommendInner">
+					<Panel class="RmbLeftCol">
+						<Label class="RmbMainTitle" text="#SelectHero_RmbTitle" />
+						<Label id="rmb_battle_type" class="RmbBattleType" text="" />
+						<Label id="rmb_hint" class="RmbHint" text="#SelectHero_RmbHint" />
+					</Panel>
+					<Panel id="rmb_skill_row" class="RmbSkillRow" />
+				</Panel>
+			</Panel>
+			<Panel id="func_page" class="FuncBox">
+				<Panel class="btn_panel" id="full_btn" onactivate="RollHero()">
+					<Label id="full_text" class="text_label" text="免费刷新" />
+				</Panel>
+				<Panel class="btn_panel" id="cost_btn" onactivate="RollHero()">
+					<Panel id="" class="center_cost">
+						<Label id="cost_text" class="text_label" text="刷新" />
+						<Panel id="cost_right" class="cost_right">
+							<Image id="cost_img" class="cost_img" src="s2r://panorama/images/custom_game/c_cost_png.vtex" />
+							<Label id="cost_num" class="text_label" text="x0" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="yesbtn" class="btn_panel" onactivate="SelectHero(1)">
+					<Label id="is_ok" class="text_label" text="确认选择" />
+				</Panel>
+				<Panel id="selecthero_pet_settings_btn" class="btn_panel" onactivate="SelectHero_PetSettings_Open()">
+					<Label class="text_label" text="#SelectHero_PetSettingsBtn" />
+				</Panel>
+				<Panel id="tool_btn" class="btn_panel btn_panel_tool_dev" visible="false" onactivate="Tool()">
+					<Panel id="tool_btn_center" class="center_cost">
+						<Label id="tool_text" class="text_label text_label_tool_dev" text="全英雄自选" />
+						<Panel id="tool_pick_right" class="cost_right tool_pick_right">
+							<Image id="tool_pick_img" class="tool_pick_img" src="s2r://panorama/images/card/herocard2_png.vtex" />
+							<Label id="tool_pick_x" class="text_label text_label_tool_dev tool_pick_x" text="x" />
+							<Label id="tool_pick_num" class="text_label text_label_tool_dev tool_pick_num" text="0" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="achieve_container" class="selecthero_page_overlay" hittest="false" />
+		<Panel id="book_container" class="selecthero_page_overlay" hittest="false" />
+		<Panel id="task_container" class="selecthero_page_overlay" hittest="false" />
+		<Panel id="shop_container" class="selecthero_page_overlay" hittest="false" />
+		<Panel id="leave_confirm_container" class="leave_confirm_container" hittest="false" />
+		<Panel id="pay_container" class="pay_container" hittest="false" />
+		<Panel id="alter_container" class="alter_container" hittest="false" />
+		<Panel id="dev_hero_picker_overlay" class="DevHeroPickerOverlay DevHeroPickerOverlayHidden" visible="false" hittest="false">
+			<Panel id="dev_hero_picker_dim" class="DevHeroPickerDim" onactivate="CloseDevHeroPicker()" />
+			<Panel id="dev_hero_picker_dialog" class="DevHeroPickerDialog">
+				<Panel class="DevHeroPickerTopNav">
+					<Label class="DevHeroPickerTitle" text="全英雄自选" />
+					<Panel id="dev_hero_picker_close" class="DevHeroPickerClosePanel" onactivate="CloseDevHeroPicker()">
+						<Image class="DevHeroPickerCloseImg" src="s2r://panorama/images/custom_game/close_icon_png.vtex" />
+					</Panel>
+				</Panel>
+				<Label class="DevHeroPickerDesc" text="点击英雄后将会消耗一张英雄卡完成自选，选择后将不能进行变更，请谨慎选择" />
+				<Panel id="dev_hero_picker_body" class="DevHeroPickerBody">
+					<Panel class="DevHeroPickerStyleBox">
+						<Panel class="DevHeroPickerTypePanel">
+							<Image class="DevHeroPickerTypeImage" src="s2r://panorama/images/custom_game/t_l_png.vtex" />
+							<Label class="DevHeroPickerTypeLabel" text="力量" />
+						</Panel>
+						<Panel id="dev_hero_grid_1" class="DevHeroPickerTypeList" />
+					</Panel>
+					<Panel class="DevHeroPickerStyleBox">
+						<Panel class="DevHeroPickerTypePanel">
+							<Image class="DevHeroPickerTypeImage" src="s2r://panorama/images/custom_game/t_m_png.vtex" />
+							<Label class="DevHeroPickerTypeLabel" text="敏捷" />
+						</Panel>
+						<Panel id="dev_hero_grid_2" class="DevHeroPickerTypeList" />
+					</Panel>
+					<Panel class="DevHeroPickerStyleBox">
+						<Panel class="DevHeroPickerTypePanel">
+							<Image class="DevHeroPickerTypeImage" src="s2r://panorama/images/custom_game/t_z_png.vtex" />
+							<Label class="DevHeroPickerTypeLabel" text="智力" />
+						</Panel>
+						<Panel id="dev_hero_grid_3" class="DevHeroPickerTypeList" />
+					</Panel>
+					<Panel id="dev_hero_style_4" class="DevHeroPickerStyleBox DevHeroPickerStyleBoxLast">
+						<Panel class="DevHeroPickerTypePanel">
+							<Image class="DevHeroPickerTypeImage" src="s2r://panorama/images/custom_game/t_q_png.vtex" />
+							<Label class="DevHeroPickerTypeLabel" text="全才" />
+						</Panel>
+						<Panel id="dev_hero_grid_4" class="DevHeroPickerTypeList" />
+					</Panel>
+				</Panel>
+				<Label id="dev_hero_picker_hint" class="DevHeroPickerHint" text="" />
+			</Panel>
+		</Panel>
+		<Panel id="selecthero_pet_settings_overlay" class="KeyBindModalOverlay KeyBindModalOverlayHidden SelectHeroPetSettingsOverlay" visible="false" hittest="false">
+			<Panel id="selecthero_pet_dim" class="KeyBindModalDim" onactivate="SelectHeroPetSettings_Close()" />
+			<Panel id="selecthero_pet_dialog" class="KeyBindModalDialog" hittest="true">
+				<Label class="SelectHeroPetSettingsTitle" text="#SelectHero_PetSettingsTitle" />
+				<Label class="KeyBindModalPetHint" text="#SelectHero_PetSettingsHint" />
+				<Panel class="KeyBindModalPetToolbar">
+					<Panel id="selecthero_pet_btn_clear" class="KeyBindModalPetClearBtn" onactivate="SelectHeroPet_ClearAll()">
+						<Label class="KeyBindModalPetClearBtnText" text="#SelectHero_PetSettingsClear" />
+					</Panel>
+					<Panel id="selecthero_pet_btn_preset_1" class="KeyBindModalPetPresetMini" onactivate="SelectHeroPet_SelectPreset(1)">
+						<Label class="KeyBindModalPetPresetMiniText" text="预设1" />
+					</Panel>
+					<Panel id="selecthero_pet_btn_preset_2" class="KeyBindModalPetPresetMini" onactivate="SelectHeroPet_SelectPreset(2)">
+						<Label class="KeyBindModalPetPresetMiniText" text="预设2" />
+					</Panel>
+					<Panel id="selecthero_pet_btn_preset_3" class="KeyBindModalPetPresetMini" onactivate="SelectHeroPet_SelectPreset(3)">
+						<Label class="KeyBindModalPetPresetMiniText" text="预设3" />
+					</Panel>
+				</Panel>
+				<Panel id="selecthero_pet_grid" class="KeyBindModalPetGrid" />
+				<Panel class="KeyBindModalFooter">
+					<Panel id="selecthero_pet_btn_save" class="KeyBindModalBtn KeyBindModalBtnPrimary" onactivate="SelectHeroPetSettings_Save()">
+						<Label class="KeyBindModalBtnText" text="保存" />
+					</Panel>
+					<Panel id="selecthero_pet_btn_close" class="KeyBindModalBtn" onactivate="SelectHeroPetSettings_Close()">
+						<Label class="KeyBindModalBtnText" text="关闭" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

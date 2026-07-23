@@ -1,0 +1,21 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/boxfun/boxfun.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/item_icon_map.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/boxfun/boxfun.vjs_c" />
+	</scripts>
+	<Panel class="root">
+		<Panel class="TalentBox" id="talent_box" hittest="true" onactivate="LevelUp()">
+			<Image id="talent_img" class="TalentImg" src="s2r://panorama/images/custom_game/b_bx_png.vtex" hittest="false" />
+			<Image id="up_img" class="up_img" src="s2r://panorama/images/custom_game/c_sj_png.vtex" hittest="false" />
+			<Label id="talent_num" class="TalentNum" text="X1" hittest="false" />
+		</Panel>
+		<Panel class="BoxPage" id="boxpage" hittest="true" onactivate="Draw()" />
+	</Panel>
+</root>

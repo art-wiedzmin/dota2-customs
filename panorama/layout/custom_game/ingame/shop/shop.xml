@@ -1,0 +1,32 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/shop/shop.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/shop/shop.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="item_snippet">
+			<Panel class="item_panel">
+				<Image id="item_image" class="item_image" src="" />
+				<Image id="icon_image" class="icon_image" src="" />
+				<Panel id="btn_panel" class="btn_panel">
+					<Image id="btn_img" class="btn_img" src="" />
+					<Label id="full_text" class="full_text" text="免费领取" />
+					<Label id="btn_text" class="btn_text" text="¥ 6" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="root" hittest="true">
+		<Panel id="section_panel" class="section_panel" hittest="true">
+			<Panel id="list_panel" class="list_panel" hittest="true" />
+			<Panel id="bottom_rule" class="bottom_rule">
+				<Label id="" class="text_label" text="每月1日重置首充3倍" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

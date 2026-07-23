@@ -1,0 +1,45 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/menu/menu.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/menu/menu.vjs_c" />
+	</scripts>
+	<Panel class="root">
+		<Panel id="back_button_id" class="MenuBox" onactivate="OpenLeaveConfirm()">
+			<Image id="menu_icon_exit" class="MenuImg" />
+			<Label class="MenuText yahei" text="退出" />
+		</Panel>
+		<Panel id="set_button_id" class="MenuBox" onactivate="" hittest="false">
+			<Image id="menu_icon_setting" class="MenuImg" hittest="false" />
+			<Label class="MenuText" text="设置" hittest="false" />
+		</Panel>
+		<Panel id="ji_button_id" class="MenuBox" onactivate="OpenScoreboard()">
+			<Image id="menu_icon_scoreboard" class="MenuImg" />
+			<Label class="MenuText" text="计分板" />
+		</Panel>
+		<Panel id="menu_shop_id" class="MenuBox" onactivate="OpenPage(3)">
+			<Image id="menu_icon_shop" class="MenuImg" />
+			<Label class="MenuText" text="商店" />
+		</Panel>
+		<Panel id="menu_achieve_id" class="MenuBox" onactivate="OpenPage(9)">
+			<Panel class="MenuIconWrap">
+				<Image id="menu_icon_achieve" class="MenuImg" />
+				<Panel id="menu_achieve_red_dot" class="MenuRedDot" hittest="false" />
+			</Panel>
+			<Label class="MenuText" text="成就" />
+		</Panel>
+		<Panel id="menu_record_id" class="MenuBox" onactivate="OpenPage(5)">
+			<Image id="menu_icon_record" class="MenuImg" />
+			<Label class="MenuText" text="战绩" />
+		</Panel>
+		<Panel id="menu_book_id" class="MenuBox" onactivate="OpenPage(6)">
+			<Image id="menu_icon_book" class="MenuImg" />
+			<Label class="MenuText" text="图鉴" />
+		</Panel>
+	</Panel>
+</root>

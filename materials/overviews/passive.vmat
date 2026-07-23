@@ -1,0 +1,10 @@
+"Layer0"
+{
+	"shader"	"ui.vfx"
+	"F_TRANSLUCENT"	"0"
+	"TextureColor"	"materials/overviews/passive.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/overviews/passive_tga_35dd6fa.vtex"
+	}
+}

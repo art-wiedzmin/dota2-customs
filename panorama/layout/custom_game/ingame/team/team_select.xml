@@ -1,0 +1,87 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.css" />
+		<include src="s2r://panorama/styles/battle_pass/current_battle_pass.css" />
+		<include src="s2r://panorama/styles/play.css" />
+		<include src="s2r://panorama/layout/custom_game/ingame/team/team_select.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/ingame/team/team_select.vjs_c" />
+	</scripts>
+	<Panel hittest="false" class="TeamSelect">
+		<Panel hittest="false" id="TeamSelectContainer" selectionpos="auto">
+			<Panel hittest="false" id="TeamsSelectEmptySpace" />
+			<Panel id="TeamsList">
+				<Panel id="TeamsListGroup">
+					<Panel id="BotDifficultyPanel">
+						<Label id="BotDifficultyTitle" class="BotDifficultyTitle" text="AI挑战" />
+						<Panel id="BotDifficultyRow" class="BotDifficultyRow">
+							<Button id="BotDiffEasy" class="BotDiffButton" onactivate="OnBotDifficultyPressed(1)">
+								<Label id="BotDiffEasyLabel" text="简单" />
+							</Button>
+							<Button id="BotDiffHard" class="BotDiffButton" onactivate="OnBotDifficultyPressed(2)">
+								<Label id="BotDiffHardLabel" text="困难" />
+							</Button>
+							<Button id="BotDiffInsane" class="BotDiffButton" onactivate="OnBotDifficultyPressed(3)">
+								<Label id="BotDiffInsaneLabel" text="疯狂" />
+							</Button>
+						</Panel>
+					</Panel>
+					<Panel id="TeamListHeader">
+						<Image id="TeamListLockedIcon" src="s2r://panorama/images/control_icons/lock_small.png" />
+					</Panel>
+					<Panel id="TeamsListRoot" />
+					<Button id="ShuffleTeamAssignmentButton" onactivate="OnShufflePlayersPressed()">
+						<Label text="#custom_game_team_select_shuffle" />
+						<Image src="s2r://panorama/images/control_icons/shuffle.psd" />
+					</Button>
+				</Panel>
+			</Panel>
+			<Panel id="GameAndPlayersRoot">
+				<Panel id="GameInfoPanel">
+					<Panel id="CustomGameModeName">
+						<Label id="GameModeNameLabel" text="#addon_game_name" />
+					</Panel>
+					<Panel id="MapInfo">
+						<Label id="MapInfoLabel" text="#LoadingScreenMapInfo" />
+					</Panel>
+					<Panel id="CountdownAndPassiveRow">
+						<Panel id="CountdownTimerRow">
+							<Panel id="StartGameCountdownTimer">
+								<Image id="TimerBg" src="s2r://panorama/images/status_icons/timer_background.psd" />
+								<Image id="TimerRing" src="s2r://panorama/images/status_icons/timer_ring.psd" />
+								<Label id="TeamSelectTimer" text="#custom_game_team_select_timer" />
+								<Panel id="TimerLabelBox">
+									<Label id="TimerLabelAutoStart" text="#custom_game_team_select_auto_start" />
+									<Label id="TimerLabelGameStart" text="#custom_game_team_select_starting" />
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="UnassignedPlayerPanel">
+					<Button id="UnassignedPlayersButton" onactivate="OnLeaveTeamPressed()">
+						<Panel id="UnassignedPlayersHeader">
+							<Label text="#custom_game_team_select_unassigned_players" />
+						</Panel>
+						<Panel id="UnassignedPlayersDivider" />
+						<Panel id="UnassignedPlayersContainer" />
+					</Button>
+					<Button id="AutoAssignButton" onactivate="OnAutoAssignPressed()">
+						<Image src="s2r://panorama/images/control_icons/double_arrow_left.png" />
+						<Label text="#custom_game_team_select_auto_assign" />
+					</Button>
+				</Panel>
+				<Panel id="TeamSelectFooter" class="TeamSelectFooter">
+					<Button id="LockAndStartButton" class="PlayButton" onactivate="OnLockAndStartPressed()">
+						<Label text="#custom_game_team_select_lock_start" />
+					</Button>
+					<Button id="CancelAndUnlockButton" class="PlayButton" onactivate="OnCancelAndUnlockPressed()">
+						<Label text="#custom_game_team_select_cancel_unlock" />
+					</Button>
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

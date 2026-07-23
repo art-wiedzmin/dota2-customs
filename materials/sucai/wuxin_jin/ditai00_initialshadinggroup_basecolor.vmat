@@ -1,0 +1,13 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"g_vColorTint"	"[0.866667 0.890196 0.905882 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[8.000000 10.000000 0.000000 0.000000]"
+	"TextureColor"	"materials/sucai/wuxin_jin/ditai00_initialshadinggroup_basecolor.png"
+	"TextureTranslucency"	"materials/sucai/wuxin_jin/ditai00_initialshadinggroup_basecolor_1b592741_trans.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/sucai/wuxin_jin/ditai00_initialshadinggroup_basecolor_jpg_1b592741.vtex"
+	}
+}

@@ -1,0 +1,1392 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	opacity: 0;
+	transition-property: opacity, pre-transform-scale2d, transform;
+	transition-duration: 0.18s;
+	transition-timing-function: linear;
+	background-image: url("s2r://panorama/images/custom_game/hero_page_png.vtex");
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+}
+
+#center_circle
+{
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	horizontal-align: center;
+	vertical-align: center;
+	visibility: collapse;
+	opacity: 1;
+}
+
+.Loading
+{
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 1;
+}
+
+.LoadText
+{
+	width: 200px;
+	height: 100px;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.Page
+{
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: down;
+	opacity: 0;
+}
+
+.Page
+{
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: down;
+	height: 100%;
+	width: 100%;
+}
+
+#Content
+{
+	width: 100%;
+	height: 100%;
+}
+
+.game_time
+{
+	horizontal-align: center;
+	margin-top: 11px;
+}
+
+.TopPlayerRow
+{
+	width: 100%;
+	flow-children: right;
+	vertical-align: top;
+	horizontal-align: center;
+	margin-top: 48px;
+	padding: 0 8px;
+}
+
+.TopPlayerRow.Mode12Players .TopPickSlot.PlayerData
+{
+	width: 54px;
+	min-height: 76px;
+	margin: 0 2px;
+}
+
+.TopPlayerRow.Mode12Players .TopPickSlot .PlayerPortraitWrap
+{
+	width: 46px;
+	height: 46px;
+}
+
+.TopPlayerRow.TopBarSlots5 #top_rad_5,.TopPlayerRow.TopBarSlots5 #top_dire_5
+{
+	visibility: collapse;
+	width: 0px;
+	min-width: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.TopPlayerRow.TopBarSlots5 .TopPlayersLeft
+{
+	horizontal-align: right;
+}
+
+.TopPlayerRow.TopBarSlots5 .TopPlayersRight
+{
+	horizontal-align: left;
+}
+
+.TopPlayersLeft
+{
+	width: fill-parent-flow(1);
+	min-width: 0px;
+	flow-children: right;
+	vertical-align: center;
+	height: 84px;
+}
+
+.TopPlayersRight
+{
+	width: fill-parent-flow(1);
+	min-width: 0px;
+	flow-children: right;
+	vertical-align: center;
+	height: 84px;
+}
+
+.TopSideSpacer
+{
+	width: fill-parent-flow(1);
+	min-width: 0px;
+	height: 84px;
+}
+
+.TopPickSlot.PlayerData
+{
+	width: 64px;
+	min-height: 80px;
+	flow-children: down;
+	margin: 0 3px;
+	opacity: 0;
+}
+
+.TopPickSlot .PlayerPortraitWrap
+{
+	width: 52px;
+	height: 52px;
+	horizontal-align: center;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#1c252c), to(#0e1318));
+	box-shadow: inset 0px 1px 0px 0px #ffffff14, 0px 2px 5px #000000aa;
+}
+
+.RadiantPickSlot .PlayerPortraitWrap
+{
+	border-color: #3d8f5c;
+}
+
+.DirePickSlot .PlayerPortraitWrap
+{
+	border-color: #8f3d3d;
+}
+
+.TopPickSlot.TopPortraitLocked.RadiantPickSlot .PlayerPortraitWrap
+{
+	border-color: #7ddfa3;
+	box-shadow: inset 0px 1px 0px 0px #ffffff22, 0px 0px 10px 1px #4caf5088, 0px 2px 6px #000000aa;
+}
+
+.TopPickSlot.TopPortraitLocked.DirePickSlot .PlayerPortraitWrap
+{
+	border-color: #ff8a8a;
+	box-shadow: inset 0px 1px 0px 0px #ffffff22, 0px 0px 10px 1px #e5393588, 0px 2px 6px #000000aa;
+}
+
+.TopPickSlot .TopBarPlayerAvatar
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	border-radius: 3px;
+	wash-color: #ffffff;
+}
+
+.TopPickSlot .TopBarBotAvatar
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	border-radius: 3px;
+	opacity: 0;
+	wash-color: #ffffff;
+	img-shadow: 0px 1px 3px 0px #000000aa;
+}
+
+.TopPlayerRow.Mode12Players .TopPickSlot .TopBarBotAvatar
+{
+	border-radius: 2px;
+}
+
+.TopPickSlot .ReadyBox
+{
+	width: 18px;
+	height: 18px;
+	horizontal-align: center;
+	margin-top: 4px;
+	opacity: 0;
+	wash-color: #3ddc84;
+	brightness: 1.12;
+}
+
+.game_time.TopTimer
+{
+	width: 160px;
+	margin-top: 0;
+	margin-left: 8px;
+	margin-right: 8px;
+	vertical-align: center;
+	horizontal-align: center;
+	flow-children: down;
+}
+
+.TopPlayerRow.TopBarSlots5 .game_time.TopTimer
+{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.game_time.TopTimer .time_text
+{
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.time_text
+{
+	font-size: 60px;
+	color: #ffffff;
+}
+
+.game_title_panel
+{
+	horizontal-align: center;
+	margin-top: 5px;
+}
+
+.game_title_img
+{
+	width: 450px;
+	height: 75px;
+}
+
+.game_title_text_panel
+{
+	horizontal-align: center;
+	margin-top: 5px;
+	flow-children: down;
+}
+
+.game_title_text
+{
+	horizontal-align: center;
+	font-size: 16px;
+	color: #e8e0d0;
+	line-height: 15px;
+	max-width: 850px;
+	text-align: center;
+}
+
+.btn_panel
+{
+	width: 160px;
+	height: 44px;
+	background-image: url("s2r://panorama/images/custom_game/s_btn_png.vtex");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	flow-children: right;
+	margin: 0 20px;
+}
+
+.btn_panel_tool_dev
+{
+	width: 200px;
+	border: 1px solid #c8782a99;
+	border-radius: 4px;
+	wash-color: #ffcc6620;
+	box-shadow: 0px 0px 8px #c8782a44;
+}
+
+.btn_panel_tool_dev:hover
+{
+	wash-color: #ffcc6640;
+	border-color: #e8a050cc;
+}
+
+.text_label_tool_dev
+{
+	color: #4a3010;
+}
+
+.tool_pick_right
+{
+	vertical-align: center;
+	height: 44px;
+}
+
+.tool_pick_img
+{
+	width: 14px;
+	height: 20px;
+	vertical-align: center;
+	margin-right: 4px;
+}
+
+.tool_pick_x
+{
+	vertical-align: center;
+	line-height: 20px;
+	margin-top: -3px;
+	margin-right: 0px;
+	padding: 0px;
+}
+
+.tool_pick_num
+{
+	vertical-align: center;
+	line-height: 20px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+
+.text_label
+{
+	font-size: 16px;
+	color: #3b3b3b;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.cost_right
+{
+	flow-children: right;
+	vertical-align: center;
+	margin-left: 5px;
+}
+
+.cost_img
+{
+	width: 14px;
+	height: 17px;
+	vertical-align: center;
+	margin-right: 3px;
+}
+
+.center_cost
+{
+	horizontal-align: center;
+	flow-children: right;
+	vertical-align: center;
+}
+
+.FuncBox
+{
+	horizontal-align: center;
+	flow-children: right;
+	margin-top: 28px;
+}
+
+.RmbRecommendWrap
+{
+	width: 92%;
+	max-width: 1180px;
+	horizontal-align: center;
+	margin-top: 20px;
+	padding: 14px 28px 18px 28px;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#1a1510cc), to(#0a0806ee));
+	border: 1px solid #3d3426;
+	border-radius: 6px;
+	box-shadow: 0px 4px 16px #00000088;
+}
+
+.RmbRecommendInner
+{
+	flow-children: right;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.RmbLeftCol
+{
+	flow-children: down;
+	margin-right: 20px;
+	min-width: 140px;
+	vertical-align: center;
+}
+
+.RmbMainTitle
+{
+	font-size: 18px;
+	font-weight: bold;
+	color: #f0d9a8;
+	text-shadow: 0px 1px 4px #000000;
+}
+
+.RmbBattleType
+{
+	font-size: 16px;
+	color: #ffb866;
+	margin-top: 4px;
+	text-shadow: 0px 1px 3px #000000;
+}
+
+.RmbHint
+{
+	font-size: 13px;
+	color: #9a8f80;
+	margin-top: 6px;
+	visibility: visible;
+}
+
+.RmbSkillRow
+{
+	flow-children: right;
+	horizontal-align: left;
+	vertical-align: center;
+}
+
+.RmbSkillCell
+{
+	flow-children: down;
+	horizontal-align: center;
+	margin: 0 6px 4px 6px;
+	min-width: 56px;
+}
+
+.RmbSkillIconWrap
+{
+	width: 48px;
+	height: 48px;
+	horizontal-align: center;
+	border: 1px solid #2a2218;
+	box-shadow: 0px 0px 6px #000000aa;
+	background-color: #0d0b09;
+}
+
+.RmbSkillIcon
+{
+	width: 100%;
+	height: 100%;
+}
+
+.RmbSkillLabel
+{
+	horizontal-align: center;
+	font-size: 11px;
+	color: #d4c4a8;
+	margin-top: 4px;
+	max-width: 72px;
+	text-align: center;
+	text-overflow: shrink;
+}
+
+.SelectTalentWrap
+{
+	width: 92%;
+	max-width: 1180px;
+	horizontal-align: center;
+	margin-top: 18px;
+	margin-bottom: 6px;
+	padding: 12px 20px 14px 20px;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#1a1510cc), to(#0a0806ee));
+	border: 1px solid #3d3426;
+	border-radius: 6px;
+	box-shadow: 0px 4px 14px #00000080;
+}
+
+.SelectTalentInner
+{
+	flow-children: down;
+	horizontal-align: center;
+}
+
+.SelectTalentHeaderCol
+{
+	flow-children: down;
+	horizontal-align: center;
+	margin-bottom: 10px;
+}
+
+.SelectTalentMainTitle
+{
+	font-size: 17px;
+	font-weight: bold;
+	color: #f0d9a8;
+	text-shadow: 0px 1px 4px #000000;
+	horizontal-align: center;
+}
+
+.SelectTalentHint
+{
+	font-size: 12px;
+	color: #8f8375;
+	margin-top: 4px;
+	horizontal-align: center;
+}
+
+.SelectTalentGrid
+{
+	flow-children: right-wrap;
+	horizontal-align: center;
+	max-width: 1040px;
+}
+
+.SelectTalentCell
+{
+	flow-children: down;
+	width: 96px;
+	margin: 4px 5px 8px 5px;
+	horizontal-align: center;
+	border: 2px solid #332a20;
+	border-radius: 4px;
+	background-color: #120f0dcc;
+	padding: 6px 4px 8px 4px;
+	transition-property: border, background-color, wash-color;
+	transition-duration: 0.12s;
+}
+
+.SelectTalentCell:hover
+{
+	border: 2px solid #7a6a4f;
+	wash-color: #ffffff15;
+}
+
+.SelectTalentCell.SelectTalentCellSelected
+{
+	border: 2px solid #d4a024;
+	background-color: #2a221088;
+	box-shadow: 0px 0px 10px #c9a22755;
+}
+
+.SelectTalentIconWrap
+{
+	width: 52px;
+	height: 52px;
+	horizontal-align: center;
+	border: 1px solid #2a2218;
+	background-color: #0d0b09;
+	box-shadow: inset 0px 0px 4px #000000aa;
+}
+
+.SelectTalentIconImg
+{
+	width: 100%;
+	height: 100%;
+}
+
+.SelectTalentName
+{
+	horizontal-align: center;
+	font-size: 11px;
+	color: #d8cbb8;
+	margin-top: 5px;
+	max-width: 88px;
+	text-align: center;
+	text-overflow: shrink;
+}
+
+#yesbtn
+{
+	background-color: #999999;
+	border-radius: 4px;
+	background-image: none;
+}
+
+#yesbtn .text_label
+{
+	color: #ffffff;
+}
+
+#yesbtn.check
+{
+	background-image: url("s2r://panorama/images/custom_game/s_btn_png.vtex");
+	background-color: none;
+}
+
+#yesbtn.check .text_label
+{
+	color: #3b3b3b;
+}
+
+.btn_panel:hover
+{
+	brightness: 1.3;
+}
+
+.FaceBox
+{
+	visibility: collapse;
+}
+
+.Model
+{
+	width: 361px;
+	height: 400px;
+}
+
+.ModelBox
+{
+	horizontal-align: center;
+	flow-children: right;
+	margin-top: 5px;
+}
+
+.TeamHeroModel
+{
+	width: 400px;
+	height: 190px;
+	margin-top: 100px;
+}
+
+.TeamHeroColumn
+{
+	flow-children: right;
+}
+
+#team_model_left .TeamHeroTeammateSideSpacer,#team_model_right .TeamHeroTeammateSideSpacer
+{
+	width: fill-parent-flow(1);
+	min-width: 0px;
+	height: 0px;
+}
+
+#team_card_1,#team_card_3
+{
+	margin-right: 8px;
+}
+
+.TeamHeroCard
+{
+	width: 140px;
+	height: 180px;
+	horizontal-align: center;
+	margin-bottom: 10px;
+}
+
+.TeamHeroCard.HiddenTeamCard
+{
+	visibility: collapse;
+}
+
+.TeamHeroCardBox
+{
+	width: 200px;
+	height: 192px;
+	border: 2px solid black;
+	background-color: black;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.TeamHeroModelSlot
+{
+	width: 100%;
+	height: 100%;
+}
+
+.HeroModel
+{
+	width: 100%;
+	height: 100%;
+}
+
+.model_img_panel
+{
+	width: 100%;
+	height: 100%;
+}
+
+.model_img
+{
+	width: 100%;
+	height: 100%;
+}
+
+.model_box
+{
+	width: 240px;
+	height: 318px;
+	horizontal-align: center;
+	vertical-align: center;
+	border: 2px solid #1a1510;
+	background-color: black;
+}
+
+.model_box.light_img
+{
+	border: 3px solid #ffae5d;
+	box-shadow: 0px 0px 50px 5px #ff880066;
+}
+
+.HeroModelBox
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+}
+
+.HeroAbilityList
+{
+	flow-children: right;
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 52px;
+	z-index: 3;
+}
+
+.HeroAbilityIcon
+{
+	width: 42px;
+	height: 42px;
+	margin: 0 3px;
+	border: 1px solid #000000cc;
+	box-shadow: #000000bb 0px 0px 4px 0px;
+}
+
+.HeroAbilityImage
+{
+	width: 100%;
+	height: 100%;
+}
+
+.box_top
+{
+	width: 100%;
+	vertical-align: bottom;
+}
+
+.top_img
+{
+	width: 52px;
+	height: 52px;
+	margin-left: 6px;
+	z-index: 2;
+	horizontal-align: right;
+}
+
+.top_xt
+{
+	width: 52px;
+	height: 52px;
+	z-index: 2;
+}
+
+.box_top_bottom
+{
+	height: 44px;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	vertical-align: bottom;
+}
+
+.hero_text_class
+{
+	horizontal-align: center;
+	vertical-align: center;
+	font-size: 20px;
+	color: #ffffff;
+}
+
+.model_img_panel
+{
+	opacity: 0;
+}
+
+.unitsize
+{
+	width: 100%;
+	height: 100%;
+}
+
+#model_2
+{
+	margin-left: -70px;
+}
+
+#model_3
+{
+	margin-left: -70px;
+}
+
+#team_model_left
+{
+	margin-right: -8px;
+}
+
+#team_model_right
+{
+	margin-left: -8px;
+}
+
+.TeamHeroModel.HiddenTeammates
+{
+	visibility: collapse;
+}
+
+.TeamHeroCard .model_img_panel
+{
+	opacity: 1;
+	width: 145px;
+	height: 193px;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.TeamHeroKuang
+{
+	opacity: 1;
+	width: 145px;
+	height: 193px;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.TeamPlayerAvatar
+{
+	width: 36px;
+	height: 36px;
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-right: -2px;
+	margin-bottom: -2px;
+	border: 2px solid #111111;
+	border-radius: 4px;
+	wash-color: #ffffff;
+	z-index: 5;
+}
+
+.kuang_img
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 241px;
+	height: 319px;
+	opacity: 0;
+}
+
+.TitleBox
+{
+	width: 200px;
+	height: 100px;
+	margin-top: 100px;
+	vertical-align: top;
+	horizontal-align: center;
+}
+
+.TitleText
+{
+	color: white;
+	font-size: 40px;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.AttrBox
+{
+	width: 450px;
+	height: 120px;
+	flow-children: right;
+	horizontal-align: center;
+}
+
+.FaceBox
+{
+	width: 450px;
+	height: 70px;
+	margin-top: 35px;
+	flow-children: right;
+}
+
+.FaceButton
+{
+	width: 140px;
+	height: 50px;
+	horizontal-align: center;
+	background-color: rgb(41, 41, 41);
+	border-radius: 5px;
+	brightness: 1;
+}
+
+.FaceButton:hover
+{
+	brightness: 2;
+	border: 1px solid white;
+}
+
+.BtnBox
+{
+	width: 120px;
+	height: 50px;
+	margin: 15px;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#5f5f5f), to(#000000));
+	border-radius: 5px;
+	border: 1px solid #ffffff;
+}
+
+.BtnBox:hover
+{
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#1e1e1e), to(#373737));
+	border: 2px solid #ffea00;
+}
+
+.HeroBtnBox
+{
+	width: 120px;
+	height: 50px;
+	margin: 15px;
+	horizontal-align: center;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#5f5f5f), to(#000000));
+	border-radius: 5px;
+	border: 1px solid #ffffff;
+}
+
+.HeroBtnBox:hover
+{
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#1e1e1e), to(#373737));
+	border: 2px solid #ffea00;
+}
+
+.PlayerBox
+{
+	width: 600px;
+	height: 70px;
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: 80px;
+}
+
+.PImgBox
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.MenuBox
+{
+	width: 44px;
+	flow-children: down;
+	margin-bottom: 10px;
+}
+
+.MenuBox:hover
+{
+	brightness: 2;
+}
+
+.MenuImg
+{
+	width: 28px;
+	height: 28px;
+	horizontal-align: center;
+}
+
+.MenuText
+{
+	horizontal-align: center;
+	font-size: 12px;
+	color: #B7C7DC;
+	margin-top: 10px;
+}
+
+.over_class
+{
+	background-image: none;
+	background-color: #999999;
+	border-radius: 4px;
+}
+
+.over_class .text_label
+{
+	color: #ffffff;
+}
+
+.Page
+{
+	width: 100%;
+}
+
+.menu_box
+{
+	flow-children: right;
+	margin-left: 12px;
+	margin-top: 16px;
+	visibility: visible;
+	opacity: 1;
+	z-index: 3100;
+}
+
+.MenuBox
+{
+	width: 44px;
+	flow-children: down;
+	margin-bottom: 10px;
+}
+
+.MenuBox:hover
+{
+	brightness: 2;
+}
+
+.MenuImg
+{
+	width: 28px;
+	height: 28px;
+	horizontal-align: center;
+}
+
+.MenuIconWrap
+{
+	width: 28px;
+	height: 28px;
+	horizontal-align: center;
+	overflow: noclip;
+}
+
+.MenuRedDot
+{
+	width: 10px;
+	height: 10px;
+	background-color: #FF3B30;
+	border-radius: 100px;
+	clip: radial(50% 50%, 0deg, 360deg);
+	horizontal-align: right;
+	vertical-align: top;
+	margin-top: -2px;
+	margin-right: -3px;
+	z-index: 10;
+	visibility: collapse;
+}
+
+.MenuRedDot.visible
+{
+	visibility: visible;
+}
+
+.MenuText
+{
+	horizontal-align: center;
+	font-size: 12px;
+	color: #B7C7DC;
+	margin-top: 10px;
+}
+
+#shop_container
+{
+	background-image: none;
+}
+
+#pay_container
+{
+	width: 100%;
+	height: 100%;
+	z-index: 13000;
+	background-image: none;
+}
+
+#alter_container
+{
+	width: 100%;
+	height: 100%;
+	z-index: 13500;
+	background-image: none;
+}
+
+#leave_confirm_container
+{
+	width: 100%;
+	height: 100%;
+	z-index: 14000;
+	background-image: none;
+}
+
+.selecthero_page_overlay
+{
+	width: 100%;
+	height: 100%;
+	z-index: 3000;
+}
+
+#achieve_container,#book_container,#task_container,#shop_container
+{
+	background-image: none;
+}
+
+.DevHeroPickerOverlay
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	z-index: 400;
+}
+
+.DevHeroPickerOverlayHidden
+{
+	visibility: collapse;
+}
+
+.DevHeroPickerDim
+{
+	width: 100%;
+	height: 100%;
+	background-color: #0a0806cc;
+}
+
+.DevHeroPickerDialog
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 1600px;
+	height: 950px;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#1a1510ee), to(#0a0806f5));
+	border: 1px solid #3d3426;
+	border-radius: 6px;
+	box-shadow: 0px 6px 24px #000000aa, inset 0px 1px 0px 0px #ffffff0a;
+	flow-children: down;
+	padding: 0 50px;
+}
+
+.DevHeroPickerTopNav
+{
+	width: 100%;
+	height: 80px;
+	border-bottom: 1px solid #3d3426;
+}
+
+.DevHeroPickerTitle
+{
+	font-size: 30px;
+	font-weight: bold;
+	color: #f0d9a8;
+	text-shadow: 0px 1px 4px #000000;
+	vertical-align: center;
+	horizontal-align: center;
+}
+
+.DevHeroPickerDesc
+{
+	width: 100%;
+	horizontal-align: center;
+	text-align: center;
+	font-size: 16px;
+	color: #c8b898;
+	line-height: 20px;
+	margin-top: -12px;
+	margin-bottom: 4px;
+	max-width: 1200px;
+}
+
+.DevHeroPickerClosePanel
+{
+	horizontal-align: right;
+	vertical-align: center;
+	margin-right: -20px;
+}
+
+.DevHeroPickerCloseImg
+{
+	width: 24px;
+	height: 24px;
+}
+
+.DevHeroPickerClosePanel:hover
+{
+	brightness: 1.35;
+	wash-color: #f0d9a830;
+}
+
+.DevHeroPickerBody
+{
+	width: 100%;
+	height: 750px;
+	margin-top: 16px;
+	flow-children: right;
+	overflow: squish scroll;
+}
+
+.DevHeroPickerStyleBox
+{
+	margin-right: 30px;
+	flow-children: down;
+	width: 370px;
+}
+
+.DevHeroPickerStyleBoxLast
+{
+	margin-right: 0px;
+}
+
+.DevHeroPickerTypePanel
+{
+	flow-children: right;
+}
+
+.DevHeroPickerTypeImage
+{
+	width: 24px;
+	height: 24px;
+	vertical-align: center;
+	margin-right: 10px;
+}
+
+.DevHeroPickerTypeLabel
+{
+	font-size: 22px;
+	color: #d4c4a8;
+	text-shadow: 0px 1px 3px #000000;
+}
+
+.DevHeroPickerTypeList
+{
+	width: 100%;
+	flow-children: right-wrap;
+	overflow: squish scroll;
+	margin-top: 25px;
+}
+
+.DevHeroPickerHeroLi
+{
+	width: 65px;
+	height: 85px;
+	margin-bottom: 10px;
+	z-index: 5;
+	border: 1px solid #2a2218;
+	border-radius: 3px;
+	box-shadow: 0px 2px 6px #00000066;
+	transition-property: brightness, pre-transform-scale2d, border, box-shadow;
+	transition-duration: 0.12s;
+}
+
+.DevHeroPickerHeroLi:hover
+{
+	brightness: 1.15;
+	pre-transform-scale2d: 1.04;
+	border: 1px solid #7a6a4f;
+	box-shadow: 0px 0px 8px #c9a22744, 0px 2px 6px #00000088;
+}
+
+.DevHeroPickerHeroImage
+{
+	width: 100%;
+	height: 100%;
+}
+
+.DevHeroPickerNoImage
+{
+	width: 100%;
+	height: 100%;
+	visibility: collapse;
+}
+
+.DevHeroPickerHint
+{
+	width: 100%;
+	height: 40px;
+	margin-top: 10px;
+	padding: 8px 16px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #ffcc66;
+	text-shadow: 0px 1px 4px #000000;
+	text-align: center;
+	background-color: #3d2818ee;
+	border: 1px solid #c8782a;
+	border-radius: 4px;
+	visibility: collapse;
+}
+
+.DevHeroPickerHint.visible
+{
+	visibility: visible;
+}
+
+#selecthero_pet_settings_overlay
+{
+	z-index: 2000;
+	width: 100%;
+	height: 100%;
+}
+
+.SelectHeroPetSettingsTitle
+{
+	width: 100%;
+	font-size: 20px;
+	font-weight: bold;
+	color: #f0e6d2;
+	margin-bottom: 8px;
+	text-shadow: 0px 1px 2px #000a;
+}
+
+.ClrbPrepTopHeroIcon
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	img-shadow: 0px 2px 5px black;
+}
+
+.BattlePrepBar
+{
+	width: 100%;
+	horizontal-align: center;
+	visibility: collapse;
+	margin-top: 10px;
+	flow-children: down;
+}
+
+.root.BattlePrepMode .BattlePrepBar
+{
+	visibility: visible;
+}
+
+.BattlePrepTitle
+{
+	horizontal-align: center;
+	font-size: 22px;
+	color: white;
+	text-shadow: 0px 0px 8px black;
+}
+
+.BattlePrepSecs
+{
+	horizontal-align: center;
+	font-size: 32px;
+	color: gold;
+	text-shadow: 0px 0px 10px black;
+}
+
+.BattlePrepHint
+{
+	horizontal-align: center;
+	font-size: 15px;
+	color: #e0f1ffee;
+	text-shadow: 0px 1px 3px black;
+	margin-bottom: 8px;
+}
+
+.BattlePrepModelsRow
+{
+	horizontal-align: center;
+	flow-children: right-wrap;
+}
+
+.BattlePrepHeroCell
+{
+	margin: 5px;
+	vertical-align: top;
+}
+
+.BattlePrepHeroModelInner
+{
+	width: 110px;
+	height: 140px;
+	horizontal-align: center;
+}
+
+.root.BattlePrepMode #full_btn,.root.BattlePrepMode #cost_btn,.root.BattlePrepMode #yesbtn,.root.BattlePrepMode #tool_btn
+{
+	visibility: collapse;
+}
+
+.root.BattlePrepMode #selecthero_pet_settings_btn
+{
+	visibility: visible;
+}
+

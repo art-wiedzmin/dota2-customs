@@ -1,0 +1,15 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"F_ALPHA_TEST"	"1"
+	"g_flAlphaTestReference"	"0.207"
+	"g_vColorTint"	"[1.000000 1.000000 1.000000 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[1.000000 1.000000 0.000000 0.000000]"
+	"TextureColor"	"materials/models/1104/shumu1/5a427d61.png"
+	"TextureTranslucency"	"materials/models/1104/shumu1/5a427d61_7e4ede4f_trans.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/models/1104/shumu1/5a427d61_tga_7e4ede4f.vtex"
+	}
+}

@@ -1,0 +1,24 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"F_ALPHA_TEST"	"1"
+	"F_RENDER_BACKFACES"	"1"
+	"F_SPECULAR"	"1"
+	"g_flAlphaTestReference"	"0.7"
+	"g_flSpecularBloom"	"0"
+	"g_flSpecularIntensity"	"1"
+	"g_vColorTint"	"[1.000000 1.000000 1.000000 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[1.000000 1.000000 0.000000 0.000000]"
+	"TextureBloom"	"[0.000000 0.000000 0.000000 0.000000]"
+	"TextureReflectance"	"[0.000000 0.000000 0.000000 0.000000]"
+	"TextureSelfIllumMask"	"[0.000000 0.000000 0.000000 0.000000]"
+	"TextureColor"	"materials/sucai/ceshi_a/fengling_lambert1_color.png"
+	"TextureTranslucency"	"materials/sucai/ceshi_a/fengling_lambert1_fea31c0_trans.png"
+	"TextureSelfIllum"	"materials/default/default_refl.tga"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/sucai/ceshi_a/fengling_lambert1_color_jpg_fea31c0.vtex"
+		"g_tSpecular"	"materials/default/default_refl_tga_c1b9c83e.vtex"
+	}
+}

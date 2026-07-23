@@ -1,0 +1,35 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+Label
+{
+	font-family: FZKai-Z03;
+}
+
+.root
+{
+	width: 300px;
+	height: 300px;
+	background-color: #26303A;
+	border: 1px solid red;
+	z-index: 9999999;
+	horizontal-align: center;
+}
+
+#Contents
+{
+	padding: 0px ;
+	box-shadow: none;
+	background-color: #26303A;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border: 0px solid none;
+}
+
+.tip_image_panel
+{
+	width: 200px;
+	height: 200px;
+	background-color: red;
+}
+

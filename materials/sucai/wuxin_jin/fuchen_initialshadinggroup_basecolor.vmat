@@ -1,0 +1,14 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"F_RENDER_BACKFACES"	"1"
+	"g_vColorTint"	"[1.000000 1.000000 1.000000 0.000000]"
+	"g_vTexCoordOffset"	"[0.000000 0.000000 0.000000 0.000000]"
+	"g_vTexCoordScale"	"[1.000000 1.000000 0.000000 0.000000]"
+	"TextureColor"	"materials/sucai/wuxin_jin/fuchen_initialshadinggroup_basecolor.png"
+	"TextureTranslucency"	"materials/sucai/wuxin_jin/fuchen_initialshadinggroup_basecolor_531e896d_trans.png"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/sucai/wuxin_jin/fuchen_initialshadinggroup_basecolor_jpg_531e896d.vtex"
+	}
+}

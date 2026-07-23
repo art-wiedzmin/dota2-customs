@@ -1,0 +1,77 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/talent/talenttip/talenttip.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/item_icon_map.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/talent/talenttip/talenttip.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="citiaosnippet">
+			<Panel id="" class="">
+				<Label id="attr_num" class="attr_num font_15" text="" />
+				<Label id="attr_name" class="attr_name font_15" text="" />
+				<Label id="attr_lv" class="attr_lv font_15" text="" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="root" hittest="false" ontooltiploaded="UpdateTips()">
+		<Panel id="bag_tip" class="TipPage" hittest="false">
+			<Panel id="tip_top" class="tip_top" hittest="false">
+				<Image id="tip_img" class="tip_img" src="s2r://panorama/images/custom_game/item_goods_17_png.vtex" />
+				<Label id="tip_name" class="tip_name" text="荆棘者之甲" />
+			</Panel>
+			<Panel id="tip_bottom" class="tip_bottom" hittest="false">
+				<Panel id="tip_bottom_top" class="tip_bottom_top" hittest="false">
+					<Label id="" class="tip_bottom_text" text="技能：" />
+					<Label id="tip_bottom_jineng" class="tip_bottom_text" text="被动" />
+				</Panel>
+				<Panel id="citiao_panel_1" class="citiao_panel" hittest="false">
+					<Label id="" class="citiao_text" text="+" />
+					<Panel id="citiao_list_1" class="citiao_list" hittest="false" />
+					<Label id="citiao_name_1" class="citiao_name" text="护甲" />
+				</Panel>
+				<Panel id="citiao_panel_2" class="citiao_panel" hittest="false">
+					<Label id="" class="citiao_text" text="+" />
+					<Panel id="citiao_list_2" class="citiao_list" hittest="false" />
+					<Label id="citiao_name_2" class="citiao_name" text="生命回复" />
+				</Panel>
+				<Panel id="attr_list_box" class="attr_list_box" hittest="false">
+					<Panel id="attr_list_1" class="attr_list_panel" hittest="false" />
+				</Panel>
+				<Panel id="jineng_bottom" class="jineng_bottom" hittest="false">
+					<Label id="" class="jineng_bottom_text font_15" text="被动：" />
+					<Label id="jineng_bottom_text" class="jineng_bottom_text font_15" text="伤害反弹" hittest="false" />
+				</Panel>
+				<Panel id="jineng_text_box" class="jineng_text_box hui_bac" hittest="false">
+					<Label id="jineng_text_label" class="jineng_text_label font_15" text="每次收到攻击时，有10%的概率反弹伤害给攻击者" />
+				</Panel>
+				<Panel id="section_panel" class="section_panel" hittest="false">
+					<Panel id="fanwei" class="fanwei" hittest="false">
+						<Label id="fanwei_name" class="fanweiclass font_15" text="范未范未" />
+						<Panel id="fanwei_list" class="citiao_list fanwei_list" />
+					</Panel>
+					<Panel id="citiao_panel_3" class="citiao_panel hui_bac" hittest="false">
+						<Label id="citiao_panel_3_name" class="citiao_name" text="反弹伤害：" hittest="false" />
+						<Panel id="citiao_list_3" class="citiao_list" hittest="false" />
+					</Panel>
+					<Panel id="citiao_panel_4" class="citiao_panel hui_bac" hittest="false">
+						<Label id="citiao_panel_4_name" class="citiao_name" text="反弹伤害：" hittest="false" />
+						<Panel id="citiao_list_4" class="citiao_list" hittest="false" />
+					</Panel>
+					<Panel id="shijian" class="shijian" hittest="false">
+						<Label id="shijian_name" class="shijianclass font_15" text="范未" />
+						<Label id="shijian_num" class="shijianclass font_15" text="100" />
+					</Panel>
+				</Panel>
+				<Panel id="bottom_panel" class="bottom_panel" hittest="false">
+					<Label id="bottom_panel_text" class="bottom_panel_text" text="一件可以通过吸收血液逐渐强化" />
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

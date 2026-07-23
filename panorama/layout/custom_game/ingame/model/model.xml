@@ -1,0 +1,25 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/model/model.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/model/model.vjs_c" />
+	</scripts>
+	<Panel class="root" hittest="true" acceptsinput="true" onactivate="onGuideBackdropActivate()">
+		<Panel id="tip_1" class="tip_panel" onactivate="clickNext()">
+			<Image id="tip_img_1" class="tip_img_1" src="s2r://panorama/images/custom_game/tip_1_png.vtex" />
+			<Button id="btn_class_1" class="btn_class" onactivate="clickNext()">
+				<Label class="label_text" text="我知道了" />
+			</Button>
+		</Panel>
+		<Panel id="tip_2" class="tip_panel" onactivate="clickClose()">
+			<Image id="tip_img_2" class="tip_img_2" src="s2r://panorama/images/custom_game/tip_2_png.vtex" />
+			<Button id="btn_class_2" class="btn_class" onactivate="clickClose()">
+				<Label class="label_text" text="我知道了" />
+			</Button>
+		</Panel>
+	</Panel>
+</root>

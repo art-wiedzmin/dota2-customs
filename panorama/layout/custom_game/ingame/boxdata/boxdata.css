@@ -1,0 +1,343 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	width: 600px;
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-left: 1180px;
+	opacity: 0;
+	height: 100%;
+}
+
+.BoxPage
+{
+	width: 298px;
+	height: 267px;
+	flow-children: down;
+	background-image: url("s2r://panorama/images/custom_game/b_bz_png.vtex");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	padding: 47px 16px 16px 16px;
+}
+
+.BoxSlot
+{
+	width: 60px;
+	height: 45px;
+	margin-left: 5px;
+	margin-top: 5px;
+	background-color: black;
+}
+
+.Line1
+{
+	flow-children: right;
+}
+
+.Line2
+{
+	flow-children: right;
+}
+
+.Line2Left
+{
+	flow-children: down;
+}
+
+.Img
+{
+	width: 100%;
+	height: 100%;
+	brightness: 1;
+}
+
+.Line2Center
+{
+	width: 130px;
+	height: 100%;
+}
+
+.CenterButton
+{
+	width: 80px;
+	height: 80px;
+	border-radius: 50px;
+	background-image: url("s2r://panorama/images/custom_game/b_yuan_png.vtex");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	horizontal-align: center;
+	vertical-align: center;
+	brightness: 1;
+	flow-children: down;
+}
+
+.CenterButton:hover
+{
+	brightness: 2;
+}
+
+.CenterButtonpanel
+{
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: down;
+}
+
+.zhuan_text
+{
+	font-size: 16px;
+	color: #ffffff;
+	margin-bottom: 2px;
+}
+
+#draw_num
+{
+	background-image: url("s2r://panorama/images/custom_game/b_cost_png.vtex");
+	background-size: 16px 18px;
+	background-repeat: no-repeat;
+	background-position: 0px -1px;
+	font-size: 14px;
+	color: #ffffff;
+	padding-left: 16px;
+}
+
+.hover_icon
+{
+	width: 100%;
+	height: 100%;
+}
+
+.center_box
+{
+	width: 298px;
+	height: 267px;
+	flow-children: none;
+}
+
+.left_box
+{
+	flow-children: down;
+	margin-bottom: 141px;
+	vertical-align: bottom;
+}
+
+.UpPage
+{
+	width: 290px;
+	height: 120px;
+	flow-children: down;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	margin-bottom: -5px;
+	horizontal-align: center;
+}
+
+.RightImg
+{
+	width: 20px;
+	height: 11px;
+	vertical-align: center;
+	margin: 0px 3px 0 8px;
+}
+
+.up_top
+{
+	width: 100%;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.up_top_text
+{
+	font-size: 16px;
+	color: #FFFFFF;
+	horizontal-align: center;
+}
+
+.up_bottom
+{
+	flow-children: right;
+	horizontal-align: center;
+}
+
+.up_bottom_text
+{
+	font-size: 12px;
+	color: gradient( linear, 0% 0%, 0% 100%, from(#FFFEFC), to(#FFCC44) );
+}
+
+.up_bottom_panel
+{
+	horizontal-align: center;
+	margin-top: 12px;
+}
+
+.k_img
+{
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.lightimg .k_img
+{
+	opacity: 1;
+}
+
+.hover_panel
+{
+	width: 238px;
+	height: 126px;
+	margin-left: 35px;
+	margin-bottom: 320px;
+	vertical-align: bottom;
+	visibility: collapse;
+}
+
+.hover_image
+{
+	width: 100%;
+	height: 100%;
+}
+
+.RightPage
+{
+	width: 258px;
+	height: 171px;
+	margin-left: 297px;
+	vertical-align: bottom;
+	margin-bottom: 11px;
+}
+
+.BagPage
+{
+	width: 228px;
+	height: 171px;
+	flow-children: right-wrap;
+	horizontal-align: center;
+	background-image: url("s2r://panorama/images/custom_game/b_kbk_png.vtex");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	padding: 38px 0px 0px 14px;
+}
+
+.BagPage .BoxSlot
+{
+	margin-top: 3px;
+	background-color: none;
+}
+
+.hover_icon_panel
+{
+	width: 18px;
+	height: 18px;
+	margin-top: 15px;
+	margin-left: 16px;
+	z-index: 1;
+}
+
+.Title
+{
+	flow-children: right;
+	horizontal-align: right;
+	vertical-align: top;
+	z-index: 2;
+	border-bottom: 0px;
+}
+
+.GiveUpBtn
+{
+	width: 48px;
+	height: 22px;
+	margin-left: 175px;
+	margin-top: 13px;
+	border: 1px solid #AAACAD;
+	border-radius: 4px;
+	flow-children: none;
+	vertical-align: top;
+}
+
+.GiveUpBtn:hover
+{
+	brightness: 1.4;
+}
+
+.GiveUpBtnText
+{
+	width: 48px;
+	height: 22px;
+	font-weight: normal;
+	font-size: 14px;
+	color: #AAACAD;
+	line-height: 19px;
+	text-align: center;
+	horizontal-align: center;
+	padding: 0px;
+}
+
+.CloseBtn
+{
+	width: 14px;
+	height: 14px;
+	horizontal-align: right;
+	vertical-align: top;
+	margin-top: 17px;
+}
+
+.CloseBtn .Img
+{
+	width: 100%;
+	height: 100%;
+}
+
+.hover_cost_panel
+{
+	width: 60px;
+	height: 30px;
+	background-color: #171F26;
+	margin-left: 195px;
+	margin-top: 125px;
+	visibility: collapse;
+}
+
+.hover_cost_box
+{
+	horizontal-align: center;
+	flow-children: right;
+	vertical-align: center;
+}
+
+.hover_cost_text
+{
+	font-size: 16px;
+	color: #FFFFFF;
+	vertical-align: center;
+}
+
+.cost_img
+{
+	width: 12px;
+	height: 14px;
+	vertical-align: center;
+	margin-right: 2px;
+}
+
+.cost_num
+{
+	font-size: 16px;
+	color: #FFFFFF;
+	vertical-align: center;
+	margin-bottom: 1px;
+}
+
+.label_text
+{
+	font-size: 10px;
+	color: #ffffff;
+	visibility: collapse;
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 6px;
+}
+

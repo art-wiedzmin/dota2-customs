@@ -1,0 +1,328 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.invite_root
+{
+	width: 480px;
+	height: 707px;
+	padding: 30px;
+	flow-children: down;
+	horizontal-align: center;
+	vertical-align: center;
+	opacity: 0;
+	background-image: url("s2r://panorama/images/custom_game/y_bac_png.vtex");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.invite_header
+{
+	width: 100%;
+	height: 40px;
+	flow-children: right;
+	margin-bottom: 12px;
+}
+
+.invite_title
+{
+	font-size: 22px;
+	color: white;
+	vertical-align: center;
+}
+
+.invite_close_btn
+{
+	width: 32px;
+	height: 32px;
+	horizontal-align: right;
+	vertical-align: center;
+}
+
+.invite_close_btn .Img
+{
+	width: 30px;
+	height: 30px;
+}
+
+.invite_section
+{
+	width: 100%;
+	flow-children: down;
+	padding-left: 20px;
+}
+
+.invite_input_wrap
+{
+	flow-children: right;
+	width: 100%;
+	margin-bottom: 8px;
+	margin-top: 20px;
+}
+
+.invite_entry
+{
+	width: 240px;
+	height: 42px;
+	padding: 8px 8px;
+	font-size: 18px;
+	color: white;
+	background-color: #2F1818;
+	border-radius: 10px;
+	border: 0px;
+}
+
+.invite_submit_btn
+{
+	width: 108px;
+	height: 40px;
+	margin-left: 32px;
+	vertical-align: center;
+}
+
+TextEntry #PlaceholderText
+{
+	color: #ffffff;
+	vertical-align: center;
+	margin-top: 0px;
+}
+
+.invite_submit_btn .invite_btn_text
+{
+	horizontal-align: center;
+	vertical-align: center;
+	color: white;
+	font-size: 16px;
+}
+
+.invite_fans
+{
+	font-size: 14px;
+	color: #C3B0A0;
+	margin-top: 8px;
+}
+
+.invite_section_title
+{
+	font-size: 18px;
+	color: white;
+	margin-bottom: 8px;
+}
+
+.invite_reward_list
+{
+	width: 100%;
+	flow-children: down;
+	overflow: clip scroll;
+	max-height: 332px;
+	padding-right: 25px;
+}
+
+.invite_reward_row
+{
+	width: 100%;
+	flow-children: right;
+	padding: 13px 0 20px;
+	border-bottom: 2px solid #F0DECF;
+}
+
+.invite_reward_label
+{
+	font-size: 16px;
+	color: white;
+	vertical-align: center;
+	width: 120px;
+}
+
+.invite_reward_btn
+{
+	width: 108px;
+	height: 40px;
+	border-radius: 10px;
+	vertical-align: center;
+	horizontal-align: right;
+	margin-top: 10px;
+}
+
+.invite_reward_btn .invite_btn_text
+{
+	horizontal-align: center;
+	vertical-align: center;
+	color: white;
+	font-size: 14px;
+}
+
+.my_box
+{
+	flow-children: right;
+	width: 100%;
+	height: 30px;
+}
+
+.invite_status
+{
+	font-size: 24px;
+	color: #4A2C14;
+	vertical-align: center;
+}
+
+.text_label
+{
+	font-size: 24px;
+	color: #4A2C14;
+	background-color: transparent;
+	border: 1px solid transparent;
+	vertical-align: center;
+	padding: 0;
+	width: 200px;
+	height: 100%;
+}
+
+#invite_code_section
+{
+	margin-top: 25px;
+	margin-bottom: 16px;
+}
+
+.btn_class
+{
+	width: 100%;
+	height: 100%;
+	background-size: 100% 100%;
+	background-position: center;
+}
+
+#bd_btn
+{
+	background-image: url("s2r://panorama/images/custom_game/y_bd_l_png.vtex");
+}
+
+#bd_btn.over
+{
+	background-image: url("s2r://panorama/images/custom_game/y_bd_h_png.vtex");
+}
+
+.yq_text_img
+{
+	width: 352px;
+	height: 27px;
+	horizontal-align: center;
+	margin-top: 15px;
+	margin-right: 25px;
+	margin-bottom: 10px;
+}
+
+.invite_invited_box
+{
+	width: 100%;
+	margin-bottom: 8px;
+	padding-right: 25px;
+}
+
+.invite_invited_count
+{
+	font-size: 16px;
+	color: #4A2C14;
+	font-weight: bold;
+	horizontal-align: center;
+}
+
+VerticalScrollBar:active .ScrollThumb,HTMLVerticalScrollBar:active .ScrollThumb
+{
+	background-color: #FFA683;
+}
+
+VerticalScrollBar .ScrollThumb,HTMLVerticalScrollBar .ScrollThumb
+{
+	background-color: #FFA683;
+	border-right: 0px;
+	border-top: 0px;
+}
+
+.lq_btn_class
+{
+	width: 100%;
+	height: 100%;
+	background-size: 100% 100%;
+	background-position: center;
+}
+
+#lq_btn
+{
+	background-image: url("s2r://panorama/images/custom_game/y_lq_l_png.vtex");
+}
+
+.over #lq_btn
+{
+	background-image: url("s2r://panorama/images/custom_game/y_lq_h_png.vtex");
+}
+
+.left_box
+{
+	flow-children: right;
+}
+
+.bag_img
+{
+	width: 68px;
+	height: 76px;
+	vertical-align: center;
+}
+
+.left_text_box
+{
+	flow-children: down;
+	vertical-align: center;
+	margin-top: 15px;
+	margin-left: 5px;
+}
+
+.text_label_1
+{
+	font-size: 18px;
+	color: #4A2C14;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+.text_label_2
+{
+	font-size: 14px;
+	color: #C3B0A0;
+}
+
+.top_panel
+{
+	width: 100%;
+	margin-top: 10px;
+}
+
+.top_text
+{
+	font-size: 14px;
+	color: #C3B0A0;
+}
+
+.over_input_text
+{
+	width: 240px;
+	height: 42px;
+	padding: 8px 8px;
+	font-size: 18px;
+	color: white;
+	background-color: #2F1818;
+	border-radius: 10px;
+	border: 0px;
+	padding-top: 11px;
+	visibility: collapse;
+}
+
+.invite_input_box
+{
+	width: 240px;
+}
+
+.invite_reward_btn:hover,.invite_submit_btn:hover
+{
+	brightness: 1.3;
+}
+

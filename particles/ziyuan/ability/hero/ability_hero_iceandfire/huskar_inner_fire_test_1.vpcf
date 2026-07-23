@@ -1,0 +1,73 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf65:version{48e806a9-c210-4cd8-811a-38b5ef63b195} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nBehaviorVersion = 12
+	m_nMaxParticles = 0
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/ability/hero/ability_hero_iceandfire/huskar_inner_fire_flare.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_ultimate_impact_burst.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_ultimate_linger_steam.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_ult_ground_ring.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_ult_ground_embers.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/ability/hero/ability_hero_iceandfire/if_hero_snapfire_ult_ground_flames.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/ability/hero/ability_hero_iceandfire/icefire_ground_bubble.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/ability/hero/ability_hero_iceandfire/if_phoenix_ti10_fire_spirit_ground_hit_embers.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/ability/hero/ability_hero_iceandfire/if_phoenix_ti10_fire_spirit_ground_hit_debris.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/ability/hero/ability_hero_iceandfire/if_phoenix_ti10_fire_spirit_ground_hit_ribbon.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/ability/hero/ability_hero_iceandfire/if_phoenix_ti10_fire_spirit_ground_hit_fireball.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/ability/hero/ability_hero_iceandfire/if_phoenix_ti10_fire_spirit_ground_hit_cracks.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/ability/hero/ability_hero_iceandfire/fv_icefilre.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/ability/hero/ability_hero_iceandfire/abaddon_icefire_explosion.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/ability/hero/ability_hero_iceandfire/abaddon_icefire_sparks.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/ability/hero/ability_hero_iceandfire/icefire_wisp_guardian_explosion_ti7.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/ability/hero/ability_hero_iceandfire/icefire_alchemist_berserk_potion_projectile_explosion.vpcf"
+		},
+	]
+}

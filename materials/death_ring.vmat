@@ -1,0 +1,13 @@
+"Layer0"
+{
+	"shader"	"projected_dota.vfx"
+	"F_SLOPED"	"1"
+	"g_flAlphaRange"	"0.421"
+	"g_flOverbrightFactor"	"0"
+	"g_flSolidRange"	"0.638"
+	"TextureColor"	"[0.000000 0.000000 0.000000 0.000000]"
+	"Compiled Textures"
+	{
+		"g_tColor"	"materials/death_ring_vmat_g_tcolor_7866e0de.vtex"
+	}
+}

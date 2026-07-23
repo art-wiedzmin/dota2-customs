@@ -1,0 +1,8 @@
+rank_1x10
+{
+	material materials/overviews/rank_1x10.vmat
+	pos_x -9216
+	pos_y 9216
+	scale 18.000
+}
+

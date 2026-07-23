@@ -1,0 +1,230 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "BoneMarkupList"
+				children = [  ]
+				bone_cull_type = "None"
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						name = "wingstest"
+						filename = "models/wingstest_wingstest.dmx"
+					},
+				]
+			},
+			{
+				_class = "Skeleton"
+				children = 
+				[
+					{
+						_class = "Bone"
+						name = "spine2"
+						origin = [ 17.262024, -41.063683, -8.717336 ]
+						angles = [ -25.659605, -5.551198, 2.410024 ]
+						do_not_discard = true
+						children = 
+						[
+							{
+								_class = "Bone"
+								name = "lt_wing20_0_L"
+								origin = [ 15.591051, 6.591526, 16.524937 ]
+								angles = [ -70.137848, 55.601875, 55.003452 ]
+								do_not_discard = true
+								children = 
+								[
+									{
+										_class = "Bone"
+										name = "lt_wing20_1_L"
+										origin = [ 35.418339, 0.000055, 0.00016 ]
+										angles = [ 35.525555, -43.056709, -0.596167 ]
+										do_not_discard = true
+										children = 
+										[
+											{
+												_class = "Bone"
+												name = "lt_wing20_2_L"
+												origin = [ 66.768349, -0.000372, 0.00032 ]
+												angles = [ -21.977289, -13.477309, 5.45401 ]
+												do_not_discard = true
+												children = 
+												[
+													{
+														_class = "Bone"
+														name = "lt_wing20_3_L"
+														origin = [ 99.198509, -0.000332, 0.000288 ]
+														angles = [ 61.279316, 22.519613, 8.143209 ]
+														do_not_discard = true
+														children = 
+														[
+															{
+																_class = "Bone"
+																name = "midwing2_0_A_L"
+																origin = [ 17.734589, 11.2808, -10.878113 ]
+																angles = [ 28.87467, 29.487696, -33.502075 ]
+																do_not_discard = true
+																children = 
+																[
+																	{
+																		_class = "Bone"
+																		name = "midwing2_1_A_L"
+																		origin = [ 42.650837, -0.002594, 0.000801 ]
+																		angles = [ 11.079655, 0.00001, 0.000054 ]
+																		do_not_discard = true
+																		children = 
+																		[
+																			{
+																				_class = "Bone"
+																				name = "midwing2_2_A_L"
+																				origin = [ 56.358524, -0.003571, 0.000923 ]
+																				angles = [ -0.000004, -0.000016, -0.000002 ]
+																				do_not_discard = true
+																			},
+																		]
+																	},
+																]
+															},
+															{
+																_class = "Bone"
+																name = "lt_wing20_4_L"
+																origin = [ 22.50499, -0.000881, 0.001465 ]
+																angles = [ -2.75513, -0.67325, -0.181246 ]
+																do_not_discard = true
+																children = 
+																[
+																	{
+																		_class = "Bone"
+																		name = "lt_wing20_5_L"
+																		origin = [ 58.548668, -0.001366, 0.001862 ]
+																		angles = [ 8.389335, -8.54951, -0.700272 ]
+																		do_not_discard = true
+																		children = 
+																		[
+																			{
+																				_class = "Bone"
+																				name = "lt_wing20_6_L"
+																				origin = [ 67.581665, -0.002007, 0.003448 ]
+																				angles = [ 0.0, 0.000007, 0.00004 ]
+																				do_not_discard = true
+																			},
+																		]
+																	},
+																]
+															},
+														]
+													},
+												]
+											},
+										]
+									},
+								]
+							},
+							{
+								_class = "Bone"
+								name = "lt_wing21_0_R"
+								origin = [ 16.719263, -6.294132, 16.524864 ]
+								angles = [ 70.137848, 134.402924, -124.996216 ]
+								do_not_discard = true
+								children = 
+								[
+									{
+										_class = "Bone"
+										name = "lt_wing21_1_R"
+										origin = [ -35.41848, 0.000565, -0.000076 ]
+										angles = [ 35.525681, -43.056808, -0.596252 ]
+										do_not_discard = true
+										children = 
+										[
+											{
+												_class = "Bone"
+												name = "lt_wing21_2_R"
+												origin = [ -66.769127, 0.000756, -0.000791 ]
+												angles = [ -21.977291, -13.477282, 5.453995 ]
+												do_not_discard = true
+												children = 
+												[
+													{
+														_class = "Bone"
+														name = "lt_wing21_3_R"
+														origin = [ -99.200134, 0.000877, -0.000656 ]
+														angles = [ 61.279217, 22.519636, 8.14324 ]
+														do_not_discard = true
+														children = 
+														[
+															{
+																_class = "Bone"
+																name = "lt_wing21_4_R"
+																origin = [ -22.505524, 0.002369, -0.003555 ]
+																angles = [ -2.755089, -0.673307, -0.18119 ]
+																do_not_discard = true
+																children = 
+																[
+																	{
+																		_class = "Bone"
+																		name = "lt_wing21_5_R"
+																		origin = [ -58.550003, 0.003136, -0.004456 ]
+																		angles = [ 8.389332, -8.549505, -0.700296 ]
+																		do_not_discard = true
+																		children = 
+																		[
+																			{
+																				_class = "Bone"
+																				name = "lt_wing21_6_R"
+																				origin = [ -67.583267, 0.00386, -0.006332 ]
+																				angles = [ 0.000016, -0.000002, 0.000005 ]
+																				do_not_discard = true
+																			},
+																		]
+																	},
+																]
+															},
+															{
+																_class = "Bone"
+																name = "rtmidwing3_0_A_R"
+																origin = [ -17.735092, -11.279408, 10.876373 ]
+																angles = [ 28.874693, 29.487673, -33.502014 ]
+																do_not_discard = true
+																children = 
+																[
+																	{
+																		_class = "Bone"
+																		name = "rtmidwing3_1_A_R"
+																		origin = [ -42.649872, 0.005051, -0.001328 ]
+																		angles = [ 11.07966, 0.000007, 0.000013 ]
+																		do_not_discard = true
+																		children = 
+																		[
+																			{
+																				_class = "Bone"
+																				name = "rtmidwing3_2_A_R"
+																				origin = [ -56.357399, 0.006729, -0.001053 ]
+																				angles = [ 0.000002, 0.0, 0.000018 ]
+																				do_not_discard = true
+																			},
+																		]
+																	},
+																]
+															},
+														]
+													},
+												]
+											},
+										]
+									},
+								]
+							},
+						]
+					},
+				]
+			},
+		]
+	}
+}

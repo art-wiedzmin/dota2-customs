@@ -1,0 +1,26 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/alter/alter.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/alter/alter.vjs_c" />
+	</scripts>
+	<Panel class="root" hittest="true">
+		<Panel id="alter_panel" class="alter_panel" hittest="true">
+			<Panel id="title_top" class="title_top" hittest="true">
+				<Label id="title_text" class="title_text" text="结果" />
+				<Button id="close_btn" class="close_btn" onactivate="">
+					<Image class="close_img" src="s2r://panorama/images/custom_game/close_icon_png.vtex" />
+				</Button>
+			</Panel>
+			<Panel id="section_box" class="section_box" hittest="true">
+				<Panel id="" class="label_panel" hittest="true">
+					<Label id="text_label" class="text_label" text="充值成功" />
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

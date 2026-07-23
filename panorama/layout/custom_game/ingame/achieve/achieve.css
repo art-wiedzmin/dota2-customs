@@ -1,0 +1,343 @@
+/* Prettified by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io */
+
+.root
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	opacity: 0;
+}
+
+.achieve_name,.achieve_progress,.achieve_reward_amount,.achieve_claim_count
+{
+	font-family: defaultFont;
+	text-shadow: 0px 2px 2px #000000;
+}
+
+.achieve_tab_text,.achieve_claim_text
+{
+	font-family: defaultFont;
+	text-shadow: none;
+}
+
+.achieve_box
+{
+	width: 1336px;
+	height: 880px;
+	horizontal-align: center;
+	vertical-align: center;
+	background-image: url("s2r://panorama/images/custom_game/z_bac_png.vtex");
+	background-size: 100% 100%;
+	background-position: center;
+	flow-children: down;
+	padding: 10px 24px 0 24px;
+}
+
+.achieve_top
+{
+	width: 100%;
+	height: 80px;
+	margin-top: 0px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #61829F;
+}
+
+.achieve_tab_bar
+{
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: right;
+	padding: 2px 6px;
+	background-image: url("s2r://panorama/images/custom_game/achive/menu_bg_png.vtex");
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.achieve_tab
+{
+	width: 130px;
+	height: 44px;
+	vertical-align: center;
+	horizontal-align: center;
+	flow-children: none;
+}
+
+.achieve_tab.active
+{
+	background-image: url("s2r://panorama/images/custom_game/achive/menu_btn_png.vtex");
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.achieve_tab_text
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	font-weight: normal;
+	font-size: 18px;
+	color: #FFFFFF;
+	line-height: 34px;
+	text-align: center;
+}
+
+.achieve_tab:not(.active) .achieve_tab_text
+{
+	color: rgba(255, 255, 255, 0.72);
+}
+
+.achieve_tab:hover
+{
+	brightness: 1.15;
+}
+
+.achieve_close_btn
+{
+	horizontal-align: right;
+	vertical-align: center;
+	width: 26px;
+	height: 26px;
+	margin-right: 0px;
+}
+
+.achieve_close_btn:hover
+{
+	brightness: 1.3;
+}
+
+.achieve_close_img
+{
+	width: 100%;
+	height: 100%;
+}
+
+.achieve_list_scroll
+{
+	width: 100%;
+	height: 784px;
+	margin-top: 30px;
+	margin-right: 0px;
+	padding-right: 12px;
+	overflow: squish scroll;
+}
+
+.achieve_list_container
+{
+	width: 100%;
+	flow-children: down;
+	horizontal-align: center;
+	padding-bottom: 16px;
+}
+
+.achieve_row
+{
+	flow-children: right;
+	horizontal-align: center;
+	width: 100%;
+	margin-bottom: 12px;
+}
+
+.achieve_card
+{
+	width: 630px;
+	height: 84px;
+	margin-right: 16px;
+	background-color: #212735;
+	border: 1px solid #000000;
+	flow-children: right;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.achieve_card:last-child
+{
+	margin-right: 0px;
+}
+
+.achieve_name_col
+{
+	width: 238px;
+	min-width: 238px;
+	flow-children: down;
+	vertical-align: center;
+}
+
+.achieve_name
+{
+	width: 100%;
+	font-weight: normal;
+	font-size: 18px;
+	color: #FFFFFF;
+	line-height: 24px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.achieve_claim_count
+{
+	width: 100%;
+	margin-top: 2px;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(255, 255, 255, 0.78);
+	line-height: 20px;
+	white-space: nowrap;
+}
+
+.achieve_claim_count.hidden
+{
+	visibility: collapse;
+	height: 0px;
+	margin-top: 0px;
+}
+
+.achieve_progress
+{
+	width: 112px;
+	min-width: 112px;
+	vertical-align: center;
+	font-weight: normal;
+	font-size: 18px;
+	color: #FFFFFF;
+	line-height: 24px;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.achieve_card_spacer
+{
+	width: fill-parent-flow(1.0);
+	height: 1px;
+}
+
+.achieve_card_actions
+{
+	width: 248px;
+	min-width: 248px;
+	flow-children: right;
+	vertical-align: center;
+	horizontal-align: right;
+}
+
+.achieve_rewards_row
+{
+	width: 156px;
+	flow-children: right;
+	vertical-align: center;
+	margin-right: 12px;
+}
+
+.achieve_rewards_spacer
+{
+	width: fill-parent-flow(1);
+	height: 1px;
+}
+
+.achieve_reward_slot
+{
+	width: 48px;
+	height: 48px;
+	margin-right: 6px;
+	vertical-align: center;
+	border: 1px solid #5A6478;
+	border-radius: 4px;
+	background-color: #1A2030;
+	flow-children: none;
+}
+
+.achieve_rewards_row .achieve_reward_slot:last-child
+{
+	margin-right: 0px;
+}
+
+.achieve_reward_icon
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 40px;
+	height: 40px;
+	wash-color: none;
+}
+
+.achieve_reward_icon_gold
+{
+	width: 30px;
+	height: 30px;
+}
+
+.achieve_reward_amount
+{
+	min-width: 16px;
+	horizontal-align: right;
+	vertical-align: bottom;
+	margin-right: 2px;
+	margin-bottom: 1px;
+	font-weight: normal;
+	font-size: 16px;
+	color: #FFFFFF;
+	line-height: 13px;
+	text-align: right;
+	text-shadow: 1px 1px 0px 1.0 #000000;
+}
+
+.achieve_claim_btn
+{
+	width: 80px;
+	height: 40px;
+	vertical-align: center;
+	horizontal-align: right;
+	border-radius: 4px;
+	flow-children: none;
+	margin-left: 0px;
+}
+
+.achieve_claim_btn.claimable
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from(#D3FBFB), to(#FBDD97) );
+	border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.achieve_claim_btn.claimable:hover
+{
+	brightness: 1.08;
+}
+
+.achieve_claim_btn.locked,.achieve_claim_btn.claimed
+{
+	background-color: #999999;
+	border: 0px solid transparent;
+}
+
+.achieve_claim_text
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 32px;
+	text-align: center;
+}
+
+.achieve_claim_btn.claimable .achieve_claim_text
+{
+	color: #3B3B3B;
+}
+
+.achieve_claim_btn.locked .achieve_claim_text,.achieve_claim_btn.claimed .achieve_claim_text
+{
+	color: #CCCCCC;
+}
+
+#achieve_list_scroll VerticalScrollBar .ScrollThumb,#achieve_list_scroll HTMLVerticalScrollBar .ScrollThumb
+{
+	background-color: #61829F;
+	border-right: 0px;
+	border-top: 0px;
+}
+

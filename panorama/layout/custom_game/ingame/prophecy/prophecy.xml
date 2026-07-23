@@ -1,0 +1,34 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/prophecy/prophecy.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/prophecy/prophecy.vjs_c" />
+	</scripts>
+	<Panel class="root prophecy_panel" hittest="true">
+		<Panel id="prophecy_content" class="prophecy_content">
+			<Label id="prophecy_title" class="prophecy_title" text="是否进行预测" />
+			<Panel id="prophecy_countdown_row" class="prophecy_countdown_row">
+				<Label id="prophecy_countdown" class="prophecy_countdown" text="剩余 3:00" />
+			</Panel>
+			<Panel id="prophecy_actions" class="prophecy_actions">
+				<Button id="prophecy_btn_announce" class="prophecy_btn prophecy_btn_announce" onactivate="OnProphecyAnnounce()">
+					<Panel class="prophecy_btn_center">
+						<Label class="prophecy_btn_text prophecy_btn_text_announce" text="宣布！" />
+						<Panel id="prophecy_card_right" class="prophecy_card_right">
+							<Image id="prophecy_card_img" class="prophecy_card_img" src="" />
+							<Label id="prophecy_card_x" class="prophecy_card_x" text="x" />
+							<Label id="prophecy_card_num" class="prophecy_card_num" text="0" />
+						</Panel>
+					</Panel>
+				</Button>
+				<Button id="prophecy_btn_close" class="prophecy_btn prophecy_btn_close" onactivate="OnProphecyClose()">
+					<Label class="prophecy_btn_text prophecy_btn_text_close" text="关闭" />
+				</Button>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

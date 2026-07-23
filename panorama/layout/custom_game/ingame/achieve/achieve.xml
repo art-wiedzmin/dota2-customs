@@ -1,0 +1,57 @@
+<!-- xml reconstructed by Source 2 Viewer 19.2.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/public/public.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/public.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/achieve/achieve.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/tools.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/tips/cardtip/cardtip_util.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/achieve/achieveheromap.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/achieve/achievedata.vjs_c" />
+		<include src="s2r://panorama/layout/custom_game/ingame/achieve/achieve.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="achieve_card_snippet">
+			<Panel class="achieve_card">
+				<Panel class="achieve_name_col">
+					<Label id="achieve_name" class="achieve_name" text="" />
+					<Label id="achieve_claim_count" class="achieve_claim_count hidden" text="" />
+				</Panel>
+				<Label id="achieve_progress" class="achieve_progress" text="" />
+				<Panel class="achieve_card_spacer" />
+				<Panel class="achieve_card_actions">
+					<Panel id="achieve_rewards_row" class="achieve_rewards_row" />
+					<Panel id="achieve_claim_btn" class="achieve_claim_btn">
+						<Label id="achieve_claim_text" class="achieve_claim_text" text="" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="root" hittest="true">
+		<Panel class="achieve_box" hittest="true">
+			<Panel class="achieve_top" hittest="true">
+				<Panel class="achieve_tab_bar">
+					<Panel id="achieve_tab_hero" class="achieve_tab active" onactivate="AchieveSwitchTab(&apos;hero&apos;)">
+						<Label class="achieve_tab_text" text="英雄成就" />
+					</Panel>
+					<Panel id="achieve_tab_daily" class="achieve_tab" onactivate="AchieveSwitchTab(&apos;daily&apos;)">
+						<Label class="achieve_tab_text" text="日常成就" />
+					</Panel>
+					<Panel id="achieve_tab_recharge" class="achieve_tab" onactivate="AchieveSwitchTab(&apos;recharge&apos;)">
+						<Label class="achieve_tab_text" text="累计充值" />
+					</Panel>
+				</Panel>
+				<Panel class="achieve_close_btn" onactivate="AchieveClosePage()">
+					<Image class="achieve_close_img" src="s2r://panorama/images/custom_game/close_icon_png.vtex" />
+				</Panel>
+			</Panel>
+			<Panel id="achieve_list_scroll" class="achieve_list_scroll" hittest="true">
+				<Panel id="achieve_list_container" class="achieve_list_container" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>
