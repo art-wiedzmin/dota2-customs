@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- 技能modifier
 modifier_boss_1 = class({})
 
@@ -47,4 +57,4 @@ function modifier_boss_1:OnAttackLanded(params)
     Util:TopMsg2All(text, "red", 3)
     local dam = target:GetMaxHealth() * 2
     utilex:UnitDam(attacker, target, dam, "cc")
-end
+end

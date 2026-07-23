@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- 文件名: ability_hero_7.lua
 LinkLuaModifier("modifier_hero_7", "Ability/ability_hero_7/ability_hero_7", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_firestorm_burn", "Ability/ability_hero_7/ability_hero_7", LUA_MODIFIER_MOTION_NONE)
@@ -366,4 +376,4 @@ end
 
 function modifier_firestorm_burn:StatusEffectPriority()
     return 10
-end
+end

@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- 剑气斩：攻击 15% 概率触发直线剑气（猛犸金色震荡波特效）
 LinkLuaModifier("modifier_hero_8", "Ability/ability_hero_8/ability_hero_8",
     LUA_MODIFIER_MOTION_NONE)
@@ -266,4 +276,4 @@ function modifier_hero_8:LaunchSwordWave(attacker, target, ability)
         bProvidesVision = false,
         bVisibleToEnemies = false,
     })
-end
+end

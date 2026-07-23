@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- 攻击升级（ability_item_26）：等级攻击力仅由此 modifier；满级击杀英雄叠加层数，每层 + attack_kill 绿字、+ pct_kill %% 攻击力加成（删除技能时 OnDestroy 回收）
 modifier_ability_item_26 = class({})
 
@@ -174,4 +184,4 @@ function modifier_ability_item_26:OnDeath(params)
         HeroData:AddSX(ID, "gjjc", pk)
     end
     self:SetStackCount(ha.skill_26_kills)
-end
+end

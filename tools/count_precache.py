@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 #!/usr/bin/env python3
 import re
 from pathlib import Path
@@ -53,4 +63,4 @@ print(f"  vsndevts refs: {kv_s}")
 print()
 print(f"Naive upper bound (lists + KV, ignoring dedup): {particles + models + sounds + kv_p + kv_m + kv_s}")
 print()
-print("Engine limit: 32767 CLoadingResource entries (16-bit counter)")
+print("Engine limit: 32767 CLoadingResource entries (16-bit counter)")

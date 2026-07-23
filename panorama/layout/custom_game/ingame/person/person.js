@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 //初始化加载加载
 function InitData() {
   var tp = "init";
@@ -37,4 +47,4 @@ function Click_Hide_Page() {
   InitData();
   SubEvent("UI_Shop", GetData);
   GameUI.CustomUIConfig().Click_Hide_Page = Click_Hide_Page;
-})();
+})();

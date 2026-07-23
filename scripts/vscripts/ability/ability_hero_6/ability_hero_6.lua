@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- 文件名: ability_hero_6.lua (简化版本)
 LinkLuaModifier("modifier_hero_6", "Ability/ability_hero_6/ability_hero_6", LUA_MODIFIER_MOTION_NONE)
 
@@ -162,4 +172,4 @@ function RotateVector2D(vector, angle_degrees)
     local new_y = x * sin_theta + y * cos_theta
 
     return Vector(new_x, new_y, vector.z):Normalized()
-end
+end

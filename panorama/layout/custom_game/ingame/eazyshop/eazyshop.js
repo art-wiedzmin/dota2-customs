@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 // 列表重建后旧行会被删掉，已安排的 mouseout 延时仍可能触发，用代际号作废旧回调
 var eazyShopGoodsListGeneration = 0;
 
@@ -295,4 +305,4 @@ function EazyShopOnHudShopClosed() {
   SubEvent("UI_EazyShop", GetData);
   $.RegisterForUnhandledEvent("DOTAHUDShopOpened", EazyShopOnHudShopOpened);
   $.RegisterForUnhandledEvent("DOTAHUDShopClosed", EazyShopOnHudShopClosed);
-})();
+})();

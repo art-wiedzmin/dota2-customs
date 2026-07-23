@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- 血肉丰碑展示用 buff（层数 + 模型缩放走 MODIFIER_PROPERTY，避免 SetModelScale 闪烁）
 modifier_ability_item_30_buff = class({})
 
@@ -53,4 +63,4 @@ end
 -- 工具提示2：显示层数
 function modifier_ability_item_30_buff:OnTooltip2()
     return self:GetStackCount()
-end
+end

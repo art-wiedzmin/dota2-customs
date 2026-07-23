@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 require("listener.filter_reg.order")
 require("listener.filter_reg.damage")
 require("listener.filter_reg.exp")
@@ -41,4 +51,4 @@ function CustomSets:FilterRegister()
       mode:SetItemAddedToInventoryFilter(Dynamic_Wrap(self, "Inventory_Filter"), self)
       CustomSets.Filter_Has_Reg["Inventory_Filter"] = true
    end
-end
+end

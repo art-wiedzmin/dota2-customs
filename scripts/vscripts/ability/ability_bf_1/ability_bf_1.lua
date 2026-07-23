@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 LinkLuaModifier("modifier_ability_bf_1",
                 "Ability/ability_bf_1/modifier_ability_bf_1",
                 LUA_MODIFIER_MOTION_NONE)
@@ -7,4 +17,4 @@ LinkLuaModifier("modifier_ability_bf_1_buff",
 -- 技能类
 ability_bf_1 = class({})
 
-function ability_bf_1:GetIntrinsicModifierName() return "modifier_ability_bf_1" end
+function ability_bf_1:GetIntrinsicModifierName() return "modifier_ability_bf_1" end

@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 modifier_ability_item_33 = class({})
 
 local SKILL_NAME = "ability_item_33"
@@ -77,4 +87,4 @@ function modifier_ability_item_33:GetModifierConstantManaRegen()
     local ab = abi33_resolve(self)
     local lv = abi33_value_level(ab)
     return abi33_read(ab, "num3", lv)
-end
+end

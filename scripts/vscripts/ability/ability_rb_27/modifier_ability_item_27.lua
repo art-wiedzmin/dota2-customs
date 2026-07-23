@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- 攻击者modifier
 modifier_ability_item_27 = class({})
 
@@ -168,4 +178,4 @@ end
 -- 状态图标
 function modifier_ability_item_27_debuff:GetTexture()
     return "scroll/ability_item_27"
-end
+end

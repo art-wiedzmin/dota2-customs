@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 if utilex == nil then _G.utilex = class({}) end
 
 -- 主要记录用到的一些算法工具
@@ -1293,4 +1303,4 @@ function utilex:AddOutItem(ID, item_name, num, func)
     NetLottery:AddAndCost(ID, temp, nil, function(keys)
         if keys.code == 200 then func() end
     end)
-end
+end

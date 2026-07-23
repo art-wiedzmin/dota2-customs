@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 if Util == nil then
   _G.Util = class({})
   --全局账户池PlayerData
@@ -4461,4 +4471,4 @@ function Util:GetPlayer_accountid(ID)
   if not Aid then return '0' end
   local str = tostring(Aid)
   return str
-end
+end

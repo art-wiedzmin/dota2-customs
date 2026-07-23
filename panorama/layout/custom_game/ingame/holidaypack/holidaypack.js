@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 var LIBAO_IMG_BASE = "raw://resource/flash3/images/libao/";
 
 function InitData() {
@@ -319,4 +329,4 @@ function SetData(data) {
   SubEvent("UI_HolidayPack", GetData);
   GameUI.CustomUIConfig().HolidayPackBootstrap = HolidayPackBootstrap;
   $.Schedule(0, HolidayPackBootstrap);
-})();
+})();

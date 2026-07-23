@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 /**
  * 选人界面奖励/兑换结果弹窗（独立子页，显隐方式对齐 Code 二维码支付）
  */
@@ -198,4 +208,4 @@ function SelectHeroMsgGetData(data) {
   GameUI.CustomUIConfig().SelectHeroMsg_ForceClose = SelectHeroMsgForceClose;
   SendServer("Lua_Msgs", { data: { tp: "init" } });
   SubEvent("UI_Msgs", SelectHeroMsgGetData);
-})();
+})();
