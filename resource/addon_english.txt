@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 ﻿"lang"
 {
 	"Language"		"English"
@@ -4129,4 +4139,4 @@
         "levelup_card_stats_bonus_wood_per_sec"              "Wood per second {s:value}"
         "levelup_card_stats_bonus_health"                    "Health {s:value}"
 	}
-}
+}

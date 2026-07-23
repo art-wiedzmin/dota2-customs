@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 function CDOTA_BaseNPC:HasShard()
     return self:HasModifier("modifier_item_aghanims_shard")
 end
@@ -1108,4 +1118,4 @@ function CreateMessageResources(unit, value, source_type, overhead)
             ParticleManager:DestroyParticle(particle, true)
         end)
     end
-end
+end
