@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 function CustomSets:State_Change(keys)
 	local state = GameRules:State_Get()
 	if state == DOTA_GAMERULES_STATE_INIT then
@@ -53,4 +43,4 @@ function CustomSets:State_Change(keys)
 		--print("666")
 		BotAI:CleanupForSettlementUI()
 	end
-end
+end

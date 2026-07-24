@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 -- 技能modifier
 modifier_ability_item_18 = class({})
 
@@ -44,4 +34,4 @@ function modifier_ability_item_18:OnAttackLanded(params)
     end
     local num1 = ability:GetSpecialValueFor("num1")
     target:AddNewModifier(attacker, ability, "modifier_ability_item_18_effect", { dam = 0, dam2 = num1 })
-end
+end

@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 local m = {}
 
 ---黑底，边距=（5 30），圆角7。使用这个样式的话，不要用拼接的方式显示内容，否则内容会断开（有border-radius导致的）
@@ -384,4 +374,4 @@ function m.ShowGameOverHint(time)
 	end
 end
 
-return m;
+return m;

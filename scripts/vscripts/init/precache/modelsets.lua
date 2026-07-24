@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 return {
     -- =====================================================================
     -- 1) 英雄基础模型与饰品（含 models/heroes 默认部件、models/items 装饰）
@@ -349,4 +339,4 @@ return {
     "models/items/lycan/ultimate/_ascension_of_the_hallowed_beast_form/_ascension_of_the_hallowed_beast_form.vmdl",
     "models/items/lycan/wolves/_ascension_of_the_hallowed_beast_summons/_ascension_of_the_hallowed_beast_summons.vmdl",
     "models/items/enigma/eidolon/cosmic_probe/cosmic_probe.vmdl",
-}
+}

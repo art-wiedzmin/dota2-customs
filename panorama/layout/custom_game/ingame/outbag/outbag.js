@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 var LOADOUT_SLOTS = [
   { slot: "title", label: "称号", field: "equipped_title" },
   { slot: "attack_effect", label: "攻击特效", field: "equipped_attack_effect" },
@@ -875,4 +865,4 @@ function GetData(data) {
   SubEvent("UI_Shop", GetData);
   SubEvent("UI_OutBag", OnOutBagEvent);
   InitData();
-})();
+})();

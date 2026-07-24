@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 function CustomSets:TestFunc2(ID, hero)
     -- 测试命令：在聊天输入 bot 创建 bot，输入 staticbot 创建站着不动且有 goods18 的 bot
 end
@@ -416,4 +406,4 @@ function CustomSets:PlayerChat2(keys)
             -- end)
         end
     end
-end
+end

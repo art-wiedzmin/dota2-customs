@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 local encoded=[[bW9kaWZpZXJfZHJhZ29uX21hZ2ljX2ltbXVuZSA9IGNsYXNzKHt9KQoKZnVuY3Rpb24gbW9kaWZpZXJfZHJhZ29uX21hZ2ljX2ltbXVuZTpJc0hpZGRlbigpCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2RyYWdvbl9tYWdpY19pbW11bmU6SXNEZWJ1ZmYoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZHJhZ29uX21hZ2ljX2ltbXVuZTpJc1B1cmdhYmxlKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2RyYWdvbl9tYWdpY19pbW11bmU6UmVtb3ZlT25EZWF0aCgpCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2RyYWdvbl9tYWdpY19pbW11bmU6Q2hlY2tTdGF0ZSgpCiAgICByZXR1cm4gewogICAgICAgIFtNT0RJRklFUl9TVEFURV9NQUdJQ19JTU1VTkVdID0gdHJ1ZSwKICAgIH0KZW5kCg==]]
 local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
 local function decode(data)

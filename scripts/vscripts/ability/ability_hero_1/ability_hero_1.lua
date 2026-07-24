@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 LinkLuaModifier("modifier_hero_1", "Ability/ability_hero_1/ability_hero_1", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_finger_death_add", "Ability/ability_hero_1/ability_hero_1",
     LUA_MODIFIER_MOTION_NONE)
@@ -249,4 +239,4 @@ end
 -- 状态图标
 function modifier_hero_1_buff:GetTexture()
     return "scroll/ability_hero_1"
-end
+end

@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 ---纯被动模式：仅限制真人主动施放「英雄技能」；物品/道具（IsItem）不拦截；机器人不拦截。依赖 MainGame:GetPassiveMode()
 local function ClrbPassiveModeIssuerIsBot(pid)
 	if InitPlayer and InitPlayer.GetPlayerData then
@@ -350,4 +340,4 @@ function CustomSets:Order_Filter(keys)
 		Talent:OpenTextPage(pid)
 	end
 	return true
-end
+end

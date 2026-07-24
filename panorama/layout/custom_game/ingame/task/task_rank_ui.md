@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 # Task 面板内排行榜（UI_Rank）接口说明
 
 排行榜数据由后端通过 **UI_Rank** 事件下发，在 **Task** 面板中展示。支持 5v5 / 1v1 两种模式切换。
@@ -64,4 +54,4 @@ GameEvents.SendCustomGameEventToServer("Lua_Rank", {
 ## 4. 建议
 
 - 使用 **方式 A**：用 `payload.list_5v5` / `payload.list_1v1` 在 Task 内做 5v5/1v1 视图切换，用 `payload.list` 或按当前 Tab 选用的列表渲染表格即可。  
-- 若希望「下次打开面板时记住上次选的模式」，可再采用方式 B，在切换时发一次 `Lua_Rank`（SwitchMode）。
+- 若希望「下次打开面板时记住上次选的模式」，可再采用方式 B，在切换时发一次 `Lua_Rank`（SwitchMode）。

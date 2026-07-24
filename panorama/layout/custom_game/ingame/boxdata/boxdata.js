@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 var ItemList = {
   item_0: "item_box_0",
   item_1: "item_yasha",
@@ -759,4 +749,4 @@ HoverFun("hover_icon");
   cfg.Hide_box_bag_hover = hideBoxBagHover;
   cfg.Schedule_hide_box_bag = scheduleHideBoxBagHover;
   cfg.Cancel_hide_box_bag = cancelHideBoxBagHover;
-})();
+})();

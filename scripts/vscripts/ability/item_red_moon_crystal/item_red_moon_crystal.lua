@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 LinkLuaModifier("modifier_item_red_moon_crystal_buff",
     "Ability/item_red_moon_crystal/modifier_item_red_moon_crystal_buff",
     LUA_MODIFIER_MOTION_NONE)
@@ -21,4 +11,4 @@ function item_red_moon_crystal:GetIntrinsicModifierName()
 end
 
 function item_red_moon_crystal:OnChargeCountChanged(_kv)
-end
+end

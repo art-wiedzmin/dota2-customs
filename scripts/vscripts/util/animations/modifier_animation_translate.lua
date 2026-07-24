@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 modifier_animation_translate = class({})
 local _CODE_TO_ANIMATION_TRANSLATE=require("util.animations.code2translate")
 
@@ -46,4 +36,4 @@ end
 function modifier_animation_translate:GetActivityTranslationModifiers(...)
   return self.translate or 0
 end
-
+

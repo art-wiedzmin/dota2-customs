@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 -- 中立栏宝箱道具：无冷却，使用即走 Box:Draw；次数由物品充能显示，与 Box.Data[ID].box_sy_draw 同步（见 Box:RefreshNeutralChestItemCharges）
 if item_cost_2 == nil then item_cost_2 = class({}) end
 
@@ -52,4 +42,4 @@ function item_cost_2:OnSpellStart()
             Box:SendData(ID)
         end
     end
-end
+end

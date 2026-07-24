@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 -- 必须先于任意 AddNewModifier：modifier_all 不可放在 Pre_Resource 条件块内，否则可能从未执行
 require("init.precache.modifier_all")
 require("init.precache.precacheresource") -- 预加载资源

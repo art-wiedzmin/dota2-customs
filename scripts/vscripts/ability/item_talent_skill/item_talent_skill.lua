@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 -- 选人天赋展示物品 item_talent_skill_1 … _9：被动占位，固定回城卷轴栏；效果由 modifier_talent_skill_* 承担
 
 local ITEM_DEFS = {
@@ -64,4 +54,4 @@ end
 
 for _, row in ipairs(ITEM_DEFS) do
     define_passive_talent_item(row[1], row[2])
-end
+end

@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 -- 技能modifier
 modifier_ability_item_16 = class({})
 
@@ -150,4 +140,4 @@ end
 --     -- 使用不同的粒子特效区分技能吸血
 --     local pcf = "particles/items3_fx/octarine_core_lifesteal.vpcf"
 --     utilex:AddTx(pcf, attacker, 0.3)
--- end
+-- end

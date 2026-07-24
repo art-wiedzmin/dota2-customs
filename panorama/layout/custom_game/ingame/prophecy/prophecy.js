@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 // 与 Prophecy.UI_ENABLED 同步
 var PROPHECY_UI_TEMP_HIDDEN = false;
 var PROPHECY_CARD_ICON = "raw://resource/flash3/images/achive/yyk.png";
@@ -204,4 +194,4 @@ function OnProphecyClose() {
   InitProphecyCardIcon();
   SubEvent("UI_Prophecy", GetData);
   ScheduleInitSync();
-})();
+})();

@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 -- 死者为大（ability_item_34）：每次死亡至多获得一种奖励；轮空概率 = 100% - 各物品概率之和
 modifier_ability_item_34 = class({})
 
@@ -145,4 +135,4 @@ function modifier_ability_item_34:OnDeath(params)
     utilex:Sound(ID, "treasure_drop")
     Item:AddItem(ID, row.key)
     Util:BottomMsg2ID(ID, SKILL_NAME .. "：获得" .. row.label, "yellow", 3)
-end
+end

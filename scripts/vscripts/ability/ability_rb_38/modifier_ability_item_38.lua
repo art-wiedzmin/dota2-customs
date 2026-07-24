@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 -- 血刃：当前生命不超过最大生命的一定比例；普攻附加基于「无法填满的生命池」的魔法伤害
 
 modifier_ability_item_38 = class({})
@@ -164,4 +154,4 @@ function modifier_ability_item_38:OnAttackLanded(keys)
     -- print("伤害系数", bonus_pct)
     -- print("血刃伤害", damage)
     utilex:UnitDam(parent, target, damage, "mf")
-end
+end

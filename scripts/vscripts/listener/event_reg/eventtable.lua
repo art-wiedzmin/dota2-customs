@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 return {
 	-- dota_item_picked_up = "Item_Pick",
 	game_rules_state_change = "State_Change",
@@ -22,4 +12,4 @@ return {
 	-- dota_item_purchased = "shop_buy",
 	dota_player_learned_ability = "learn_ability",
 	dota_player_used_ability = "use_ability",
-}
+}

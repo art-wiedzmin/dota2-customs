@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 ---玩家数据
 --key是玩家id，value是一个table，包括各个玩家的数据
 local PlayerData = {}
@@ -499,4 +489,4 @@ local function GetItemType(itemName)
 	return type
 end
 
-return m;
+return m;

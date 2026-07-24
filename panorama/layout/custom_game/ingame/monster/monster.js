@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 /** 与 Game.IsHUDFlipped() 一致：true = 官方小地图在右，毒圈/倒计时镜像到右下 */
 function InitMonsterHudMinimapAlign() {
   var root = GetRoot();
