@@ -1,13 +1,3 @@
---[[
-  ~ dumper · customs · dota2
-  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
-  ~ special for t.me/wildguild
-
-  ~ build 7258af9 · 2026-07-23 21:55:46 UTC
-  ~ auto-generated — do not edit
-]]
-
-
 return decrypt(
 	[[
 16C709A9259C4EA702DBAE9541FB5718A9ABA3BEED0DBDEF1C292107A48C8DD1595BE723D116A19CCD75974A53A5E23EE016D4B1C82524D8071297DA
