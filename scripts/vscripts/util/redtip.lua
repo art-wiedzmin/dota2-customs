@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 --直线提示器
 LinkLuaModifier("modifier_tip_linetip", "util/redtipmodifier/modifier_tip_linetip", LUA_MODIFIER_MOTION_NONE)
 
@@ -294,4 +304,4 @@ function RedTip:LifeRing_add(location, duration, radius, width)
       ParticleManager:ReleaseParticleIndex(tx)
    end)
    return tx
-end
+end

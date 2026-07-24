@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 LinkLuaModifier("modifier_hero_5", "Ability/ability_hero_5/ability_hero_5",
     LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_axe_battle_hunger_debuff", "Ability/ability_hero_5/ability_hero_5",
@@ -269,4 +279,4 @@ end
 function modifier_axe_battle_hunger_debuff:OnDestroy()
     if not IsServer() then return end
     -- 清理工作
-end
+end

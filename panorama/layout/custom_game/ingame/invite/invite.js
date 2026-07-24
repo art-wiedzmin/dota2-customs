@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 // 暂时关闭邀请码；恢复时改为 true，并取消 Menu.xml 中对应入口注释
 var INVITE_ENABLED = false;
 
@@ -113,4 +123,4 @@ function GetData(data) {
   if (!INVITE_ENABLED) return;
   InitData();
   SubEvent("UI_Invite", GetData);
-})();
+})();

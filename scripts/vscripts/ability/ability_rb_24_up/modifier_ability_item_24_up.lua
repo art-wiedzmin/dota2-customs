@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- 技能modifier
 modifier_ability_item_24_up = class({})
 
@@ -67,4 +77,4 @@ function modifier_ability_item_24_up:GetModifierBonusStats_Intellect()
     local ll = hero:GetBaseIntellect()
     local add = math.ceil(ll * 12 / 100) + 50
     return add
-end
+end

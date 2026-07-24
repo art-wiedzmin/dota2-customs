@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 return {
   abysm = 13,
   admirals_prow = 307,
@@ -956,4 +966,4 @@ return {
   ["particle"] = 580,
   ["ultimate_scepter"]=583,
   -- ["qop_2022_taunt"]=625
-}
+}

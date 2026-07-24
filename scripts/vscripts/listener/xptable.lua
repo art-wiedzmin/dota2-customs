@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 function CustomSets:SetXpTable()
    CustomSets.Xptab = {}
    -- 自定义经验表（累计经验）
@@ -13,4 +23,4 @@ function CustomSets:SetXpTable()
    for i = 1, 45 do
       CustomSets.Xptab[i] = defaultXPTable[i]
    end
-end
+end

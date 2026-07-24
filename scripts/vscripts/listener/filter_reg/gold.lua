@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 --金币过滤
 --[[
    gold  (string)= 70  (number)
@@ -42,4 +52,4 @@ function CustomSets:Gold_Filter(key)
    -- print("获得金币", gold)
    key.gold = gold
    return true
-end
+end

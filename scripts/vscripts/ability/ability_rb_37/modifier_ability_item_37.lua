@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- 蓄力逻辑 modifier（隐藏）
 modifier_ability_item_37 = class({})
 
@@ -188,4 +198,4 @@ function modifier_ability_item_37:OnDestroy()
 
     self.needs_cc_damage = false
     self.pending_crit_pct = 0
-end
+end

@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 modifier_ability_bf_1 = class({})
 
 function modifier_ability_bf_1:IsHidden() return true end
@@ -50,4 +60,4 @@ function modifier_ability_bf_1:OnDeath(params)
         return
     end
 end
-
+

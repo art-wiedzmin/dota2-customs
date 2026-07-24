@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 local M = {}
 
 function M.find_blink_target(caster, radius)
@@ -67,4 +77,4 @@ function M.find_soul_snare_target(caster, radius)
     return nil
 end
 
-return M
+return M

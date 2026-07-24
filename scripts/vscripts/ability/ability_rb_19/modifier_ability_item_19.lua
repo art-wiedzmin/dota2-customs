@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- 技能modifier
 modifier_ability_item_19 = class({})
 
@@ -64,4 +74,4 @@ function modifier_ability_item_19:OnAttackLanded(params)
         EmitSoundOn("hengsaoqianjun", a)
         DoCleaveAttack(a, t, ab_ent, dam, 250, cleave_len, cleave_len, "particles/scrolls/hengsaoqianjun.vpcf")
     end)
-end
+end

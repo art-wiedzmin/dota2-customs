@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- 如果是addon_game_mode.lua，在合适位置添加以下代码
 
 if item_equip_1 == nil then
@@ -68,4 +78,4 @@ end
 
 function modifier_speed_boost_buff:GetEffectAttachType()
     return PATTACH_ABSORIGIN_FOLLOW
-end
+end

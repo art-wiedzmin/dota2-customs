@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- 检测人物的等级是否满足技能升级的需求
 function CheckLevelRequirement(keys)
 	--print("检测技能等级是否满足条件")
@@ -20,4 +30,4 @@ function CheckLevelRequirement(keys)
 		hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
 		ability:SetLevel(ability:GetLevel() - 1)
 	end
-end
+end

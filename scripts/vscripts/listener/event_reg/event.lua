@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 local EventTable = require("listener.event_reg.eventtable")
 -- require("listener.event_reg.item_pick")
 require("listener.event_reg.state_change")
@@ -24,4 +34,4 @@ function CustomSets:EventSet()
 			CustomSets.Event_Has_Reg[k] = true
 		end
 	end
-end
+end

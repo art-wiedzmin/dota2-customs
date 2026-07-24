@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- 腐尸毒效果modifier
 modifier_ability_item_18_effect = class({})
 
@@ -159,4 +169,4 @@ function modifier_ability_item_18_effect:PlayExplosionEffect()
 
     -- 爆炸音效
     EmitSoundOn("Ability.SandKing_CausticFinale", parent)
-end
+end

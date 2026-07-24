@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 LinkLuaModifier("modifier_hero_2", "Ability/ability_hero_2/ability_hero_2",
     LUA_MODIFIER_MOTION_NONE)
 
@@ -76,4 +86,4 @@ function modifier_hero_2:OnAttackLanded(keys)
             end
         end
     end
-end
+end

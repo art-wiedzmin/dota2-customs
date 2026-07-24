@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 // 选将界面：宠物拾取技能设置。与局内 SkillSlot 弹窗同协议（Lua_KeySet / UI_KeySet），独立 DOM，避免选将层覆盖 HUD 导致弹窗不可见。
 
 var gShPetPresetsCommitted = { 1: {}, 2: {}, 3: {} };
@@ -337,4 +347,4 @@ function SelectHeroPet_OnKeySet(data) {
 
 (function () {
   SubEvent("UI_KeySet", SelectHeroPet_OnKeySet);
-})();
+})();

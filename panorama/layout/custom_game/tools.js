@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 //注：！！！当你怀疑多引用了一份JS文件报错时，首先检查自调用前的函数有没有加分号！！！！！
 //非常重要！！！！！！！！
 //非常重要！！！！！！！！

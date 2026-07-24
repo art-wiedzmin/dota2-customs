@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 LinkLuaModifier("modifier_item_equip_6_buff",
     "Ability/item_equip_6/modifier_item_equip_6_buff",
     LUA_MODIFIER_MOTION_NONE)
@@ -129,4 +139,4 @@ function item_equip_6:OnSpellStart()
 
     local duration = self:GetSpecialValueFor("sheep_duration")
     target:AddNewModifier(caster, self, "modifier_item_equip_6_hex", { duration = duration })
-end
+end

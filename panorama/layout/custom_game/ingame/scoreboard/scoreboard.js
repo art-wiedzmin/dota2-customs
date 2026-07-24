@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 // 与 Lua Stat:OpenPage 一致：短节流内反复打开只拉一次 init
 var gClrbScoreboardInitLastGt = null;
 var CLRB_SCOREBOARD_REFRESH_SEC = 0.35;
@@ -303,4 +313,4 @@ function BindPauseHotkey(key) {
     }
   }
   SubEvent("UI_Stat", GetData);
-})();
+})();

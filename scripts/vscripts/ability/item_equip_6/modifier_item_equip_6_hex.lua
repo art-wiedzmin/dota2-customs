@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 modifier_item_equip_6_hex = class({})
 
 local FROG_MODEL = "models/props_gameplay/frog.vmdl"
@@ -102,4 +112,4 @@ function modifier_item_equip_6_hex:OnDestroy()
     if self._orig_model and self._orig_model ~= "" then
         parent:SetModel(self._orig_model)
     end
-end
+end

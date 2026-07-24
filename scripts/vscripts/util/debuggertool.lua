@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 if DeBugerTool == nil then
      DeBugerTool = class({})
      DeBugerTool.HasCrash = {}
@@ -94,4 +104,4 @@ end
 --      message = JSON.encode("5656565"),
 --      extended = "extendedDebugInfo()"
 -- }
--- Http:DebugPOST(param)
+-- Http:DebugPOST(param)

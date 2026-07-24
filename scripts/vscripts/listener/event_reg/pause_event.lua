@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- 自定义暂停系统：禁用默认暂停 + 统计次数
 local MAX_PAUSE_PER_PLAYER = 2
 
@@ -46,4 +56,4 @@ function CustomSets:OnCustomUnpauseRequest(keys)
 
     PauseGame(true)
 
-end
+end

@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 rank_1v1
 {
 	material materials/overviews/rank_1v1.vmat
@@ -5,4 +15,4 @@ rank_1v1
 	pos_y 9216
 	scale 18.000
 }
-
+

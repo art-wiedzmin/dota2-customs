@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- 技能 modifier：攻击前按权重判定是否暴击，若暴击则挂上单次暴击 modifier，由 Dota2 原生暴击处理伤害与表现
 modifier_ability_item_15 = class({})
 
@@ -46,4 +56,4 @@ function modifier_ability_item_15:OnAttackStart(params)
         listkey = listkey,
         level = level,
     })
-end
+end

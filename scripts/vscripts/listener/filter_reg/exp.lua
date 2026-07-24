@@ -1,4 +1,14 @@
 --[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
+--[[
     experience  (string)= 90  (number)
 	hero_entindex_const  (string)= 1685  (number)
 	player_id_const  (string)= 0  (number)
@@ -120,4 +130,4 @@ function CustomSets:StartHeroPassiveExpTimer()
 		end
 		return 1.0
 	end)
-end
+end

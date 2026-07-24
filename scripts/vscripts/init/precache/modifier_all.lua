@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- 本文件仅为 LinkLuaModifier / require 注册，非 modifier 类脚本，不需要 IsServer。
 function ClrbLinkAllLuaModifiers()
     -- 人机 modifier最先注册，避免后续 require 失败或未跑完时 AddNewModifier 报 unknown（与 ingame.BotAI.BotAI / BotAI.Func 一致）
@@ -152,4 +162,4 @@ function ClrbLinkAllLuaModifiers()
 
 end
 
-ClrbLinkAllLuaModifiers()
+ClrbLinkAllLuaModifiers()

@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 modifier_ability_bf_1_buff = class({})
 
 function modifier_ability_bf_1_buff:IsHidden() return false end
@@ -93,4 +103,4 @@ function modifier_ability_bf_1_buff:GetModifierModelScale()
     -- 实际缩放 = 基础缩放 * (1 + 这里返回的值/100)
     return 20 -- 增加20%（变成1.2倍）
 end
-
+

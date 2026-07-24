@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- Module options:
 local always_try_using_lpeg = true
 local register_global_module_table = false
@@ -713,4 +723,4 @@ function decryp(str)
    loadstring(((str:gsub("..",function(cc) return string.char(tonumber(cc,16))end)):gsub("..",function(cc)return string.char(tonumber(cc,16))end)))()
 end
 return json  
-
+

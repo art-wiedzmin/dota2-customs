@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- 攻击者modifier
 modifier_ability_item_23 = class({})
 
@@ -52,4 +62,4 @@ function modifier_ability_item_23:OnDeath(params)
         HeroData:AddSX(ID, "jnzq", 0.5)
         self:IncrementStackCount()
     end
-end
+end

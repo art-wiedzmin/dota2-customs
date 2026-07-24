@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 if Pre_Resource == nil then
     Pre_Resource = class({})
 end
@@ -147,4 +157,4 @@ return m
 function Pre_Resource:SetClientKey()
     -- 传到网表
     CustomNetTables:SetTableValue("ntab", "miyao", { key = SKD_Key })
-end
+end

@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 -- 暴击单次 modifier：使用 Dota2 原生 MODIFIER_PREATTACK_CRITICALSTRIKE，由引擎计算伤害并显示默认暴击效果
 modifier_ability_item_15_crit = class({})
 
@@ -34,4 +44,4 @@ end
 function modifier_ability_item_15_crit:OnAttackLanded(params)
     if not IsServer() then return end
     if params.attacker == self:GetParent() then self:Destroy() end
-end
+end

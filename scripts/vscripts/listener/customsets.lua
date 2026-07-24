@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 if CustomSets == nil then
    _G.CustomSets = class({})
 end
@@ -19,4 +29,4 @@ function CustomSets:GameSet()
    self:SandRegister()
    self:InitCustomPause()
    Http:Init()
-end
+end

@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 // 英雄天赋(8个: 10/15/20/25级各2选1) - 悬停时用 DOTAShowAbilityTooltip 显示游戏内自带说明
 var HeroTalentsData = {
   "npc_dota_hero_pudge": ["special_bonus_armor_5","special_bonus_unique_pudge_4","special_bonus_spell_lifesteal_8","special_bonus_unique_pudge_7","special_bonus_unique_pudge_6","special_bonus_unique_pudge_5","special_bonus_unique_pudge_3","special_bonus_unique_pudge_1"],
@@ -79,4 +89,4 @@ var HeroAbilitiesData = {
   "npc_dota_hero_jakiro": ["jakiro_dual_breath","jakiro_ice_path","jakiro_liquid_fire","jakiro_macropyre"],
   "npc_dota_hero_rubick": ["rubick_telekinesis","rubick_fade_bolt","rubick_arcane_supremacy","rubick_spell_steal"],
   "npc_dota_hero_slark": ["slark_dark_pact","slark_pounce","slark_saltwater_shiv","slark_essence_shift"]
-};
+};

@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 LinkLuaModifier("modifier_ability_item_17", "Ability/ability_rb_17/modifier_ability_item_17",
     LUA_MODIFIER_MOTION_NONE)
 
@@ -26,4 +36,4 @@ function ability_item_17:OnUpgrade()
         hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
         ability:SetLevel(ability:GetLevel() - 1)
     end
-end
+end

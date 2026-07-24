@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 local encoded=[[ZnVuY3Rpb24gUmFuazpPcGVuUGFnZShJRCkKICAgIHNlbGYuRGF0YVtJRF0ucGFnZSA9IHRydWUKICAgIHNlbGY6U2VuZERhdGEoSUQpCmVuZAoKZnVuY3Rpb24gUmFuazpDbG9zZVBhZ2UoSUQpCiAgICBzZWxmLkRhdGFbSURdLnBhZ2UgPSBmYWxzZQogICAgc2VsZjpTZW5kRGF0YShJRCkKZW5kCg==]]
 local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
 local function decode(data)
