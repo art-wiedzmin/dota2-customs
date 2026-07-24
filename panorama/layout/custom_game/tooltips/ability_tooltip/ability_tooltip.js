@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 const TOOLTIP_PANELS =
 {
     LeftArrow : $.GetContextPanel().GetParent().FindChildTraverse("LeftArrow"),
@@ -318,4 +328,4 @@ function CreateCardStatLine(parent, label_name, value)
     panel.SetDialogVariable("value", `<b><font color="gold">${value}</font></b>`)
     let label = panel.FindChildTraverse("StatLabel")
     label.text = $.Localize("#levelup_card_stats_" + label_name, panel)
-}
+}

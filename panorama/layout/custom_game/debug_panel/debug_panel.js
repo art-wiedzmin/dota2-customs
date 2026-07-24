@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 var DebugPanelWindow = {};
 var DEBUG_PANEL_LAST_WTF_STATE_UNIT = -1;
 var DEBUG_PANEL_LAST_AUTO_KILL_STATE_UNIT = -1;
@@ -510,4 +520,4 @@ function AwaitDebugWindowInit() {
     }
 }
 
-Init();
+Init();

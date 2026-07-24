@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 if BaseGameMode == nil then
 	_G.BaseGameMode = class({})
 end
@@ -217,4 +227,4 @@ function BaseGameMode:InitGameMode()
     if neutral_items_system then
         neutral_items_system:Init()
     end
-end
+end

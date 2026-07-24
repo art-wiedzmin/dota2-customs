@@ -1,3 +1,13 @@
+--[[
+  ~ dumper · customs · dota2
+  ~ credits: rou (a.k.a internetenemy), qfun(a.k.a qfun_g9s)
+  ~ special for t.me/wildguild
+
+  ~ build 5411fca · 2026-07-24 06:14:29 UTC
+  ~ auto-generated — do not edit
+]]
+
+
 const NEUTRAL_TOOLTIP = {
     root: $.GetContextPanel(),
     image: $("#ItemImage"),
@@ -118,4 +128,4 @@ function UpdateTooltip()
     const effects = bonusList.unique_effects || {}
     const effectList = Object.values(effects)
     RenderNeutralEffect(effectList.length > 0 ? effectList[0] : null)
-}
+}
