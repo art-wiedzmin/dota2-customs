@@ -8,22 +8,88 @@
 ]]
 
 
-local encoded=[[ZnVuY3Rpb24gSGVyb0RhdGE6SGVyb0dhaW5BdHRyKElELCBoZXJvKQogICAgaWYgbm90IElEIG9yIG5vdCBoZXJvIHRoZW4gcmV0dXJuIGVuZAogICAgbG9jYWwgY29zdF9sbCA9IHNlbGYuRGF0YVtJRF0uY29zdC5sbGN6CiAgICBsb2NhbCBjb3N0X21qID0gc2VsZi5EYXRhW0lEXS5jb3N0Lm1qY3oKICAgIGxvY2FsIGNvc3RfemwgPSBzZWxmLkRhdGFbSURdLmNvc3QuemxjegoKICAgIGxvY2FsIGFkZF9sbCA9IHNlbGYuRGF0YVtJRF0uYXR0ci5sbGN6CiAgICBsb2NhbCBhZGRfbWogPSBzZWxmLkRhdGFbSURdLmF0dHIubWpjegogICAgbG9jYWwgYWRkX3psID0gc2VsZi5EYXRhW0lEXS5hdHRyLnpsY3oKCiAgICBsb2NhbCB6eV9sbCA9IGFkZF9sbAogICAgbG9jYWwgenlfbWogPSBhZGRfbWoKICAgIGxvY2FsIHp5X3psID0gYWRkX3psCgogICAgaGVybzpNb2RpZnlTdHJlbmd0aCh6eV9sbCkKICAgIGhlcm86TW9kaWZ5QWdpbGl0eSh6eV9taikKICAgIGhlcm86TW9kaWZ5SW50ZWxsZWN0KHp5X3psKQplbmQKCi0tIOmaj+acuuaIkOmVv+WxnuaApwpmdW5jdGlvbiBIZXJvRGF0YTpSb2xsR2FpbihJRCkKICAgIGxvY2FsIHN0YXIgPSBzZWxmLkRhdGFbSURdLnN0YXIKICAgIC0tIOWfuuehgOaYn+e6pwogICAgaWYgc3RhciA9PSAwIHRoZW4gcmV0dXJuIGVuZAogICAgLS0gbG9jYWwgYWRkX3N0YXIgPSBzdGFyIC0gYmFzZV9zdGFyCiAgICBsb2NhbCBhZGRfbnVtID0gc3RhciAqIDEwOAogICAgLS0g5bGe5oCn5Z+656GA5L+d5bqVCiAgICBsb2NhbCBiYXNlX2F0dHIgPSBzZWxmLlN0YXRpYy5iYXNlX2F0dHIKICAgIC0tIOS/neW6leWxnuaApwogICAgbG9jYWwgc2F2ZV9hdHRyID0gYWRkX251bSAqIGJhc2VfYXR0ciAvIDEwMDAKICAgIC0tIOWJqeS9memaj+acuuWxnuaApwogICAgbG9jYWwgc3lfYXR0ciA9IGFkZF9udW0gLSAoMyAqIHNhdmVfYXR0cikKICAgIC0tIOS4ieS4quWxnuaAp+maj+acuuS4gOS4qigxOuWKm+mHj++8jDLvvJrmlY/mjbfvvIwz5pm65YqbKQogICAgbG9jYWwgYXR0cl9saXN0ID0gezEsIDIsIDN9CiAgICBsb2NhbCBhZGRfbGwgPSAwCiAgICBsb2NhbCBhZGRfbWogPSAwCiAgICBsb2NhbCBhZGRfemwgPSAwCiAgICAtLSDpmo/mnLrnrKzkuIDkuKrlsZ7mgKcKICAgIGxvY2FsIHJvbGxfMSA9IFV0aWw6VGFiUmFuZG9tKGF0dHJfbGlzdCkKICAgIGZvciBrLCB2IGluIHBhaXJzKGF0dHJfbGlzdCkgZG8KICAgICAgICBpZiByb2xsXzEgPT0gdiB0aGVuIGF0dHJfbGlzdFtrXSA9IG5pbCBlbmQKICAgIGVuZAogICAgLS0g56ys5LiA5Liq5bGe5oCn5Yqg5YC8CiAgICBsb2NhbCBhZGRfMSA9IG1hdGgucmFuZG9tKDAsIHN5X2F0dHIpCiAgICBpZiByb2xsXzEgPT0gMSB0aGVuIGFkZF9sbCA9IGFkZF8xIGVuZAogICAgaWYgcm9sbF8xID09IDIgdGhlbiBhZGRfbWogPSBhZGRfMSBlbmQKICAgIGlmIHJvbGxfMSA9PSAzIHRoZW4gYWRkX3psID0gYWRkXzEgZW5kCiAgICBzeV9hdHRyID0gc3lfYXR0ciAtIGFkZF8xCiAgICAtLSDpmo/mnLrnrKzkuozkuKrlsZ7mgKcKICAgIGxvY2FsIHJvbGxfMiA9IFV0aWw6VGFiUmFuZG9tKGF0dHJfbGlzdCkKICAgIGZvciBrLCB2IGluIHBhaXJzKGF0dHJfbGlzdCkgZG8KICAgICAgICBpZiByb2xsXzIgPT0gdiB0aGVuIGF0dHJfbGlzdFtrXSA9IG5pbCBlbmQKICAgIGVuZAogICAgLS0g56ys5LqM5Liq5bGe5oCn5Yqg5YC8CiAgICBsb2NhbCBhZGRfMiA9IG1hdGgucmFuZG9tKDAsIHN5X2F0dHIpCiAgICBpZiByb2xsXzIgPT0gMSB0aGVuIGFkZF9sbCA9IGFkZF8yIGVuZAogICAgaWYgcm9sbF8yID09IDIgdGhlbiBhZGRfbWogPSBhZGRfMiBlbmQKICAgIGlmIHJvbGxfMiA9PSAzIHRoZW4gYWRkX3psID0gYWRkXzIgZW5kCiAgICBzeV9hdHRyID0gc3lfYXR0ciAtIGFkZF8yCiAgICBsb2NhbCBhZGRfMyA9IHN5X2F0dHIKICAgIC0tIOmaj+acuuesrOS6jOS4quWxnuaApwogICAgbG9jYWwgcm9sbF8zID0gVXRpbDpUYWJSYW5kb20oYXR0cl9saXN0KQogICAgaWYgcm9sbF8zID09IDEgdGhlbiBhZGRfbGwgPSBhZGRfMyBlbmQKICAgIGlmIHJvbGxfMyA9PSAyIHRoZW4gYWRkX21qID0gYWRkXzMgZW5kCiAgICBpZiByb2xsXzMgPT0gMyB0aGVuIGFkZF96bCA9IGFkZF8zIGVuZAoKICAgIGxvY2FsIGluaXRfbGwgPSAwCiAgICBsb2NhbCBpbml0X21qID0gMAogICAgbG9jYWwgaW5pdF96bCA9IDAKCiAgICBsb2NhbCBhbGxfbGwgPSAoaW5pdF9sbCArIGFkZF9sbCArIHNhdmVfYXR0cikgLyAxMDAKICAgIGxvY2FsIGFsbF9taiA9IChpbml0X21qICsgYWRkX21qICsgc2F2ZV9hdHRyKSAvIDEwMAogICAgbG9jYWwgYWxsX3psID0gKGluaXRfemwgKyBhZGRfemwgKyBzYXZlX2F0dHIpIC8gMTAwCgogICAgc2VsZi5EYXRhW0lEXS5hdHRyLmxsY3ogPSB1dGlsZXg6RmxvYXRTZXQoYWxsX2xsLCAxKQogICAgc2VsZi5EYXRhW0lEXS5hdHRyLm1qY3ogPSB1dGlsZXg6RmxvYXRTZXQoYWxsX21qLCAxKQogICAgc2VsZi5EYXRhW0lEXS5hdHRyLnpsY3ogPSB1dGlsZXg6RmxvYXRTZXQoYWxsX3psLCAxKQplbmQKCi0tIOWbuuWumuaIkOmVv+WxnuaApwpmdW5jdGlvbiBIZXJvRGF0YTpCYXNlR2FpbihJRCkKICAgIHNlbGYuRGF0YVtJRF0uYXR0ci5sbGN6ID0gc2VsZi5EYXRhW0lEXS5hdHRyLmxsY3ogKyAwLjM2CiAgICBzZWxmLkRhdGFbSURdLmF0dHIubWpjeiA9IHNlbGYuRGF0YVtJRF0uYXR0ci5tamN6ICsgMC4zNgogICAgc2VsZi5EYXRhW0lEXS5hdHRyLnpsY3ogPSBzZWxmLkRhdGFbSURdLmF0dHIuemxjeiArIDAuMzYKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+function HeroData:HeroGainAttr(ID, hero)
+    if not ID or not hero then return end
+    local cost_ll = self.Data[ID].cost.llcz
+    local cost_mj = self.Data[ID].cost.mjcz
+    local cost_zl = self.Data[ID].cost.zlcz
+
+    local add_ll = self.Data[ID].attr.llcz
+    local add_mj = self.Data[ID].attr.mjcz
+    local add_zl = self.Data[ID].attr.zlcz
+
+    local zy_ll = add_ll
+    local zy_mj = add_mj
+    local zy_zl = add_zl
+
+    hero:ModifyStrength(zy_ll)
+    hero:ModifyAgility(zy_mj)
+    hero:ModifyIntellect(zy_zl)
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+-- 随机成长属性
+function HeroData:RollGain(ID)
+    local star = self.Data[ID].star
+    -- 基础星级
+    if star == 0 then return end
+    -- local add_star = star - base_star
+    local add_num = star * 108
+    -- 属性基础保底
+    local base_attr = self.Static.base_attr
+    -- 保底属性
+    local save_attr = add_num * base_attr / 1000
+    -- 剩余随机属性
+    local sy_attr = add_num - (3 * save_attr)
+    -- 三个属性随机一个(1:力量，2：敏捷，3智力)
+    local attr_list = {1, 2, 3}
+    local add_ll = 0
+    local add_mj = 0
+    local add_zl = 0
+    -- 随机第一个属性
+    local roll_1 = Util:TabRandom(attr_list)
+    for k, v in pairs(attr_list) do
+        if roll_1 == v then attr_list[k] = nil end
+    end
+    -- 第一个属性加值
+    local add_1 = math.random(0, sy_attr)
+    if roll_1 == 1 then add_ll = add_1 end
+    if roll_1 == 2 then add_mj = add_1 end
+    if roll_1 == 3 then add_zl = add_1 end
+    sy_attr = sy_attr - add_1
+    -- 随机第二个属性
+    local roll_2 = Util:TabRandom(attr_list)
+    for k, v in pairs(attr_list) do
+        if roll_2 == v then attr_list[k] = nil end
+    end
+    -- 第二个属性加值
+    local add_2 = math.random(0, sy_attr)
+    if roll_2 == 1 then add_ll = add_2 end
+    if roll_2 == 2 then add_mj = add_2 end
+    if roll_2 == 3 then add_zl = add_2 end
+    sy_attr = sy_attr - add_2
+    local add_3 = sy_attr
+    -- 随机第二个属性
+    local roll_3 = Util:TabRandom(attr_list)
+    if roll_3 == 1 then add_ll = add_3 end
+    if roll_3 == 2 then add_mj = add_3 end
+    if roll_3 == 3 then add_zl = add_3 end
+
+    local init_ll = 0
+    local init_mj = 0
+    local init_zl = 0
+
+    local all_ll = (init_ll + add_ll + save_attr) / 100
+    local all_mj = (init_mj + add_mj + save_attr) / 100
+    local all_zl = (init_zl + add_zl + save_attr) / 100
+
+    self.Data[ID].attr.llcz = utilex:FloatSet(all_ll, 1)
+    self.Data[ID].attr.mjcz = utilex:FloatSet(all_mj, 1)
+    self.Data[ID].attr.zlcz = utilex:FloatSet(all_zl, 1)
+end
+
+-- 固定成长属性
+function HeroData:BaseGain(ID)
+    self.Data[ID].attr.llcz = self.Data[ID].attr.llcz + 0.36
+    self.Data[ID].attr.mjcz = self.Data[ID].attr.mjcz + 0.36
+    self.Data[ID].attr.zlcz = self.Data[ID].attr.zlcz + 0.36
+end

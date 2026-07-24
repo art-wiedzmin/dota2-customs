@@ -8,22 +8,97 @@
 ]]
 
 
-local encoded=[[ZnVuY3Rpb24gU2tpbGw6R2V0VUlEYXRhKElELCBkYXRhKQogICAgaWYgbm90IElEIG9yIG5vdCBkYXRhIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgLS3mmoLlgZznpoHmraLkvKDmlbDmja4KICAgIGlmIEdhbWVSdWxlczpJc0dhbWVQYXVzZWQoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIC0t5Yid5aeL5YyW5pWw5o2uCiAgICBpZiBkYXRhLnRwID09ICJpbml0IiB0aGVuCiAgICAgICAgc2VsZjpTZW5kRGF0YShJRCkKICAgICAgICBTa2lsbDpTZW5kRGVsRGF0YShJRCkKICAgICAgICBTa2lsbDpTZW5kU2xvdERhdGEoSUQpCiAgICAgICAgU2tpbGw6T3BlbkNoYW5nZUltZyhJRCkKICAgIGVuZAogICAgaWYgZGF0YS50cCA9PSAiT3BlblBhZ2UiIHRoZW4KICAgICAgICBzZWxmOk9wZW5QYWdlKElEKQogICAgZW5kCiAgICBpZiBkYXRhLnRwID09ICJDbG9zZVBhZ2UiIHRoZW4KICAgICAgICBzZWxmOkNsb3NlUGFnZShJRCkKICAgIGVuZAogICAgaWYgZGF0YS50cCA9PSAiQ2xvc2VEZWxQYWdlIiB0aGVuCiAgICAgICAgc2VsZjpDbG9zZURlbFBhZ2UoSUQpCiAgICBlbmQKICAgIC0t6YCJ5oup5oqA6IO9CiAgICBpZiBkYXRhLnRwID09ICJTZWxlY3RTa2lsbCIgdGhlbgogICAgICAgIHNlbGY6U2VsZWN0U2tpbGwoSUQsIGRhdGEuc2xvdDEsIGRhdGEuc2xvdDIpCiAgICBlbmQKICAgIC0t5Yig6Zmk5oqA6IO9CiAgICBpZiBkYXRhLnRwID09ICJEZWxTa2lsbCIgdGhlbgogICAgICAgIHNlbGY6RGVsU2tpbGwoSUQsIGRhdGEudGV4dCkKICAgIGVuZAogICAgLS3kv67mlLnmioDog73mp73kvY0KICAgIGlmIGRhdGEudHAgPT0gIkNoYW5nZVNsb3QiIHRoZW4KICAgICAgICBzZWxmOkNoYW5nZVNsb3QoSUQpCiAgICBlbmQKICAgIC0t6YCJ5oup5L+u5pS55qe95L2NCiAgICBpZiBkYXRhLnRwID09ICJTZWxlY3RTbG90IiB0aGVuCiAgICAgICAgc2VsZjpTZWxlY3RTbG90KElELCBkYXRhLnRleHQxLCBkYXRhLnRleHQyKQogICAgZW5kCiAgICBpZiBkYXRhLnRwID09ICJDbG9zZVNsb3RQYWdlIiB0aGVuCiAgICAgICAgc2VsZjpDbG9zZVNsb3RQYWdlKElEKQogICAgZW5kCmVuZAoKLS3nu5nliY3nq6/lj5HmlbDmja4KZnVuY3Rpb24gU2tpbGw6U2VuZERhdGEoSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICAtLSBwcmludChkYXRhKQogICAgVXRpbDpTZW5kMkpzSUQoIlVJX1NraWxsIiwgc2VsZi5EYXRhW0lEXSwgSUQpCmVuZAoKLS3nu5nliY3nq6/lj5HpgIHmlbDmja4KZnVuY3Rpb24gU2tpbGw6U2VuZERlbERhdGEoSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBsaXN0ID0gewogICAgICAgIHBhZ2UgPSBzZWxmLkRhdGFbSURdLmRlbF9wYWdlLAogICAgICAgIHNraWxsID0gc2VsZi5EYXRhW0lEXS5Ta2lsbDIKICAgIH0KICAgIFV0aWw6U2VuZDJKc0lEKCJVSV9EZWxTa2lsbCIsIGxpc3QsIElEKQplbmQKCi0t57uZ5YmN56uv5Y+R6YCB5pWw5o2uCmZ1bmN0aW9uIFNraWxsOlNlbmRTbG90RGF0YShJRCkKICAgIGxvY2FsIGhlcm8gPSBVdGlsOklEMkhlcm8oSUQpCiAgICBpZiBub3QgaGVybyB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGxpc3QgPSB7fQogICAgZm9yIGkgPSAwLCAzIGRvCiAgICAgICAgbG9jYWwgbnVtID0gaSArIDEKICAgICAgICBsb2NhbCBzbG90ID0gInNsb3RfIiAuLiBudW0KICAgICAgICBsb2NhbCBpbmRleCA9IGkKICAgICAgICBpZiBpID09IDMgdGhlbgogICAgICAgICAgICBpbmRleCA9IDUKICAgICAgICBlbmQKICAgICAgICBsb2NhbCBhYl9uYW1lID0gaGVybzpHZXRBYmlsaXR5QnlJbmRleChpbmRleCk6R2V0TmFtZSgpCiAgICAgICAgbG9jYWwgYWJfaWQgPSBzZWxmOkdldFNraWxsSUQoYWJfbmFtZSkKICAgICAgICBpZiBhYl9pZCB0aGVuCiAgICAgICAgICAgIGxpc3Rbc2xvdF0gPSAic2tpbGxfIiAuLiBhYl9pZAogICAgICAgIGVsc2UKICAgICAgICAgICAgbGlzdFtzbG90XSA9ICJhYmlsaXR5X251bGxfIiAuLiBudW0KICAgICAgICBlbmQKICAgIGVuZAogICAgbG9jYWwgZGF0YSA9IHsKICAgICAgICBwYWdlID0gc2VsZi5EYXRhW0lEXS5zbG90X3BhZ2UsCiAgICAgICAgbGlzdCA9IGxpc3QKICAgIH0KICAgIFV0aWw6U2VuZDJKc0lEKCJVSV9TbG90U2tpbGwiLCBkYXRhLCBJRCkKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+function Skill:GetUIData(ID, data)
+    if not ID or not data then
+        return
+    end
+    --暂停禁止传数据
+    if GameRules:IsGamePaused() then
+        return
+    end
+    --初始化数据
+    if data.tp == "init" then
+        self:SendData(ID)
+        Skill:SendDelData(ID)
+        Skill:SendSlotData(ID)
+        Skill:OpenChangeImg(ID)
+    end
+    if data.tp == "OpenPage" then
+        self:OpenPage(ID)
+    end
+    if data.tp == "ClosePage" then
+        self:ClosePage(ID)
+    end
+    if data.tp == "CloseDelPage" then
+        self:CloseDelPage(ID)
+    end
+    --选择技能
+    if data.tp == "SelectSkill" then
+        self:SelectSkill(ID, data.slot1, data.slot2)
+    end
+    --删除技能
+    if data.tp == "DelSkill" then
+        self:DelSkill(ID, data.text)
+    end
+    --修改技能槽位
+    if data.tp == "ChangeSlot" then
+        self:ChangeSlot(ID)
+    end
+    --选择修改槽位
+    if data.tp == "SelectSlot" then
+        self:SelectSlot(ID, data.text1, data.text2)
+    end
+    if data.tp == "CloseSlotPage" then
+        self:CloseSlotPage(ID)
+    end
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--给前端发数据
+function Skill:SendData(ID)
+    if not ID then
+        return
+    end
+    -- print(data)
+    Util:Send2JsID("UI_Skill", self.Data[ID], ID)
+end
+
+--给前端发送数据
+function Skill:SendDelData(ID)
+    if not ID then
+        return
+    end
+    local list = {
+        page = self.Data[ID].del_page,
+        skill = self.Data[ID].Skill2
+    }
+    Util:Send2JsID("UI_DelSkill", list, ID)
+end
+
+--给前端发送数据
+function Skill:SendSlotData(ID)
+    local hero = Util:ID2Hero(ID)
+    if not hero then
+        return
+    end
+    local list = {}
+    for i = 0, 3 do
+        local num = i + 1
+        local slot = "slot_" .. num
+        local index = i
+        if i == 3 then
+            index = 5
+        end
+        local ab_name = hero:GetAbilityByIndex(index):GetName()
+        local ab_id = self:GetSkillID(ab_name)
+        if ab_id then
+            list[slot] = "skill_" .. ab_id
+        else
+            list[slot] = "ability_null_" .. num
+        end
+    end
+    local data = {
+        page = self.Data[ID].slot_page,
+        list = list
+    }
+    Util:Send2JsID("UI_SlotSkill", data, ID)
+end

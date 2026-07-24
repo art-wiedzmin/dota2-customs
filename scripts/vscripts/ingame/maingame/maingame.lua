@@ -8,22 +8,597 @@
 ]]
 
 
-local encoded=[[aWYgTWFpbkdhbWUgPT0gbmlsIHRoZW4KICAgIE1haW5HYW1lID0gY2xhc3Moe30pCiAgICByZXF1aXJlKCJpbmdhbWUuTWFpbkdhbWUuQ29uZmlnIikKICAgIHJlcXVpcmUoImluZ2FtZS5NYWluR2FtZS5TZXQiKQogICAgcmVxdWlyZSgiaW5nYW1lLk1haW5HYW1lLkdldCIpCiAgICByZXF1aXJlKCJpbmdhbWUuTWFpbkdhbWUuUHJvZ3Jlc3NHdWFyZCIpCiAgICByZXF1aXJlKCJpbmdhbWUuTWFpbkdhbWUuRnVuYyIpCmVuZAoKZnVuY3Rpb24gTWFpbkdhbWU6R2FtZVJlYWR5KCkKICAgIGlmIHNlbGYuRGF0YS5zZXNzaW9uX2xvYWRfZ2F0ZV9zdGFydGVkIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5EYXRhLnNlc3Npb25fbG9hZF9nYXRlX3N0YXJ0ZWQgPSB0cnVlCiAgICBVdGlsOlNlbmQySnNCb3RzU2FmZSgiVUlfTG9kaW5nIiwgeyBwYWdlID0gdHJ1ZSB9KQogICAgLS0g6L295YWl5bGC5pyA6ZW/MyDnp5LvvIzotoXml7blvLrliLbpmpDol4/vvJvlhajlkZjlsLHnu6rpl6jmjqfku43lnKjlkI7lj7Dot5HvvIhNb25zdGVyIC8gVUlfUG9pbnQg562J77yJCiAgICBUaW1lcnMoMywgZnVuY3Rpb24oKQogICAgICAgIFV0aWw6U2VuZDJKc0JvdHNTYWZlKCJVSV9Mb2RpbmciLCB7IHBhZ2UgPSBmYWxzZSB9KQogICAgZW5kKQogICAgc2VsZjpTdGFydFNlc3Npb25Mb2FkR2F0ZVBvbGwoKQogICAgaWYgbm90IElzSW5Ub29sc01vZGUoKSBhbmQgR2FtZVJ1bGVzOklzQ2hlYXRNb2RlKCkgdGhlbgogICAgICAgIFV0aWw6U2VuZDJKc0JvdHNTYWZlKCJVSV9PdmVyR2FtZSIsIHsgc3RhdGUgPSB0cnVlIH0pCiAgICBlbmQKZW5kCgotLSDmuLjmiI/lvIDlp4sKZnVuY3Rpb24gTWFpbkdhbWU6R2FtZVN0YXJ0KCkKICAgIHNlbGYuRGF0YS5wYXNzaXZlX21vZGUgPSBmYWxzZQogICAgaWYgQm9vdCBhbmQgQm9vdC5Db25maWcgdGhlbgogICAgICAgIEJvb3QuQ29uZmlnLmJvdF9wYXNzaXZlX21vZGUgPSBmYWxzZQogICAgZW5kCiAgICBzZWxmLkRhdGEuc2Vzc2lvbl9sb2FkX2dhdGVfc3RhcnRlZCA9IGZhbHNlCiAgICBzZWxmLkRhdGEuc2Vzc2lvbl9sb2FkX2dhdGVfZmluaXNoZWQgPSBmYWxzZQogICAgc2VsZi5EYXRhLmJnbV9tdXNpY19ndWFyZF9zdGFydGVkID0gZmFsc2UKICAgIGlmIE92ZXJTdGF0IGFuZCBPdmVyU3RhdC5SZXNldFNlc3Npb24gdGhlbgogICAgICAgIE92ZXJTdGF0OlJlc2V0U2Vzc2lvbigpCiAgICBlbmQKICAgIGlmIFNlcnZlciBhbmQgU2VydmVyLlJlc2V0Q2xpZW50TG9nRGVkdXAgdGhlbgogICAgICAgIFNlcnZlcjpSZXNldENsaWVudExvZ0RlZHVwKCkKICAgIGVuZAoKICAgIC0tIOa4uOaIj+aXtumXtOWIneWni+WMlgogICAgU3RhdDpJbml0U3lTKCkKICAgIC0tIE1haW5HYW1lOlJlYWR5VGltZSgpCiAgICBNYWluR2FtZTpXZWF0aGVySW5pdCgpCiAgICBNYWluR2FtZTpEYXlOaWdodEluaXQoKQogICAgLS0g5ri45oiP5YWo5bGA5a6a5pe25ZmoICsg57yp5ZyIL+e7k+eul+eci+mXqOeLlwogICAgTWFpbkdhbWU6U3RhcnRUaW1lKCkKICAgIE1haW5HYW1lOlN0YXJ0UHJvZ3Jlc3NXYXRjaGRvZygpCiAgICAtLSDliJ3lp4vljJbmgKrnianlh7rnlJ/ngrnvvIjku47lnLDlm74gcmFuZG9tX3BvaW50IOWunuS9k+WKoOi9ve+8iQogICAgTW9uc3RlcjpSZWFkeVBvcygpCiAgICAtLSDlj6zllKTph47mgKoKICAgIE1vbnN0ZXI6Q3JlYXRlKCkKICAgIE1vbnN0ZXI6TGVhZGVyVGltZSgpCiAgICAtLSDlj6zllKTlrp3nrrEKICAgIC0tUGFjazpDcmVhdGVQYWNrKCkKICAgIC0tIOWPrOWUpOS8oOmAgemXqAogICAgc2VsZjpDcmVhdGVEb29yKCkKICAgIE1haW5HYW1lOkNyZWF0ZUhpZGUoKQogICAgaWYgRGV2VG9vbHMgYW5kIERldlRvb2xzLkdhbWVSZWFkeSB0aGVuCiAgICAgICAgRGV2VG9vbHM6R2FtZVJlYWR5KCkKICAgIGVuZAplbmQKCmZ1bmN0aW9uIE1haW5HYW1lOkNyZWF0ZUhpZGUoKQogICAgbG9jYWwgcG9zID0gVmVjdG9yKDMyLjYzMjgyNCwgLTQ3OS45MzgwNDksIDEyOC4wMDAwMTUpCiAgICBsb2NhbCB1bml0ID0gQ3JlYXRlVW5pdEJ5TmFtZSgiZHVtbXkiLCBwb3MsIHRydWUsIG5pbCwgbmlsLAogICAgICAgIERPVEFfVEVBTV9ORVVUUkFMUykKICAgIHV0aWxleDpBZGRNb2RpZmllcih1bml0LCAibW9kaWZpZXJfcGV0YnVmZiIpCiAgICB1bml0OkFkZE5ld01vZGlmaWVyKHVuaXQsIG5pbCwgIm1vZGlmaWVyX3BoYXNlZCIsIHsgZHVyYXRpb24gPSAwLjEgfSkKICAgIGxvY2FsIGluZGV4ID0gdW5pdDpHZXRFbnRpdHlJbmRleCgpCiAgICBzZWxmLkRhdGEuZHVtbXkgPSBpbmRleAplbmQKCmZ1bmN0aW9uIE1haW5HYW1lOkNyZWF0ZURvb3IoKQogICAgZm9yIGssIHYgaW4gcGFpcnMoc2VsZi5EYXRhLmRvb3IpIGRvIGlmIHYgdGhlbiBzZWxmOk9wZW5Eb29yKGspIGVuZCBlbmQKZW5kCgotLSDmuLjmiI/ml7bpl7TliJ3lp4vljJYKZnVuY3Rpb24gTWFpbkdhbWU6UmVhZHlUaW1lKCkKICAgIGxvY2FsIG51bSA9ICNQRC5JRHMKICAgIGxvY2FsIG1heCA9IDEwCiAgICBsb2NhbCBuZWVkID0gbWF4IC0gbnVtCiAgICBsb2NhbCBhZGR0aW1lID0gbmVlZCAqIDYwCiAgICBzZWxmLkV2ZW50TGlzdC5nYW1lX292ZXIudGltZSA9IHNlbGYuRXZlbnRMaXN0LmdhbWVfb3Zlci50aW1lICsgYWRkdGltZQogICAgc2VsZi5FdmVudExpc3QudGltZW92ZXIxLnRpbWUgPSBzZWxmLkV2ZW50TGlzdC5nYW1lX292ZXIudGltZSAtIDYwCiAgICBzZWxmLkV2ZW50TGlzdC50aW1lb3ZlcjIudGltZSA9IHNlbGYuRXZlbnRMaXN0LmdhbWVfb3Zlci50aW1lIC0gMTIwCmVuZAoKLS0g6Ieq5a6a5LmJ5pi85aSc5Yid5aeL5YyW77yI56aB55So5byV5pOO6buY6K6k5b6q546v77yM55SxIERheU5pZ2h0VGljayDpqbHliqjvvIkKZnVuY3Rpb24gTWFpbkdhbWU6RGF5TmlnaHRJbml0KCkKICAgIHNlbGYuRGF0YS5kYXluaWdodF9pc19kYXkgPSB0cnVlCiAgICBzZWxmLkRhdGEuZGF5bmlnaHRfZWxhcHNlZCA9IDAKICAgIEdhbWVSdWxlczpTZXRUaW1lT2ZEYXkoMC4yNSkKZW5kCgotLSDmr4/np5Lmjqjov5vmmLzlpJzvvJvnmb3lpKkgMC4yNeKGkjAuNzXvvIzpu5HlpJwgMC43NeKGkjEuMOKGkjAuMjUKZnVuY3Rpb24gTWFpbkdhbWU6RGF5TmlnaHRUaWNrKCkKICAgIGxvY2FsIGlzX2RheSA9IHNlbGYuRGF0YS5kYXluaWdodF9pc19kYXkgfj0gZmFsc2UKICAgIGxvY2FsIGR1cmF0aW9uID0gaXNfZGF5IGFuZCBzZWxmLlN0YXRpYy5kYXlfdGltZSBvciBzZWxmLlN0YXRpYy5uaWdodF90aW1lCiAgICBpZiBub3QgZHVyYXRpb24gb3IgZHVyYXRpb24gPD0gMCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBzZWxmLkRhdGEuZGF5bmlnaHRfZWxhcHNlZCA9IChzZWxmLkRhdGEuZGF5bmlnaHRfZWxhcHNlZCBvciAwKSArIDEKICAgIGlmIHNlbGYuRGF0YS5kYXluaWdodF9lbGFwc2VkID49IGR1cmF0aW9uIHRoZW4KICAgICAgICBzZWxmLkRhdGEuZGF5bmlnaHRfZWxhcHNlZCA9IDAKICAgICAgICBzZWxmLkRhdGEuZGF5bmlnaHRfaXNfZGF5ID0gbm90IGlzX2RheQogICAgICAgIGlzX2RheSA9IHNlbGYuRGF0YS5kYXluaWdodF9pc19kYXkKICAgICAgICBkdXJhdGlvbiA9IGlzX2RheSBhbmQgc2VsZi5TdGF0aWMuZGF5X3RpbWUgb3Igc2VsZi5TdGF0aWMubmlnaHRfdGltZQogICAgICAgIGlmIHNlbGYuRGF0YS53ZWF0aGVyID09IC0xIHRoZW4KICAgICAgICAgICAgc2VsZi5EYXRhLndlYXRoZXJfdGltZSA9IHNlbGY6R2V0V2VhdGhlckR1cmF0aW9uKCkKICAgICAgICBlbmQKICAgIGVuZAoKICAgIGxvY2FsIGZyYWMgPSBzZWxmLkRhdGEuZGF5bmlnaHRfZWxhcHNlZCAvIGR1cmF0aW9uCiAgICBsb2NhbCB0b2QKICAgIGlmIGlzX2RheSB0aGVuCiAgICAgICAgdG9kID0gMC4yNSArIDAuNSAqIGZyYWMKICAgIGVsc2UKICAgICAgICB0b2QgPSAwLjc1ICsgMC41ICogZnJhYwogICAgICAgIGlmIHRvZCA+PSAxLjAgdGhlbgogICAgICAgICAgICB0b2QgPSB0b2QgLSAxLjAKICAgICAgICBlbmQKICAgIGVuZAogICAgR2FtZVJ1bGVzOlNldFRpbWVPZkRheSh0b2QpCmVuZAoKLS0g5aSp5rCU5Yid5aeL5YyWCmZ1bmN0aW9uIE1haW5HYW1lOldlYXRoZXJJbml0KCkKICAgIHNlbGYuRGF0YS53ZWF0aGVyID0gLTEKICAgIHNlbGYuRGF0YS53ZWF0aGVyX2xhc3RfaWQgPSBuaWwKICAgIHNlbGYuRGF0YS53ZWF0aGVyX3RpbWUgPSBzZWxmOkdldFdlYXRoZXJEdXJhdGlvbigpCmVuZAoKLS0g5aSp5rCU6Kem5Y+R5Zmo77yI5q+P56eS6LCD55So77yJCmZ1bmN0aW9uIE1haW5HYW1lOldlYXRoZXJUcmlnZ2VyKCkKICAgIGlmIHNlbGYuRGF0YS53ZWF0aGVyIH49IC0xIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgc2VsZi5EYXRhLndlYXRoZXJfdGltZSA8IDAgdGhlbgogICAgICAgIHNlbGYuRGF0YS53ZWF0aGVyX3RpbWUgPSBzZWxmOkdldFdlYXRoZXJEdXJhdGlvbigpCiAgICBlbmQKICAgIHNlbGYuRGF0YS53ZWF0aGVyX3RpbWUgPSBzZWxmLkRhdGEud2VhdGhlcl90aW1lIC0gMQogICAgaWYgc2VsZi5EYXRhLndlYXRoZXJfdGltZSA8PSAwIHRoZW4KICAgICAgICBzZWxmOldlYXRoZXJTdGFyKCkKICAgIGVuZAplbmQKCi0tIOWkqeawlOinpuWPkQpmdW5jdGlvbiBNYWluR2FtZTpXZWF0aGVyTGlua01vZGlmaWVycygpCiAgICBMaW5rTHVhTW9kaWZpZXIoIm1vZGlmaWVyX3dlYXRoZXJfMSIsICJpbmdhbWUvbW9kaWZpZXIvbW9kaWZpZXJfd2VhdGhlcl8xIiwKICAgICAgICBMVUFfTU9ESUZJRVJfTU9USU9OX05PTkUpCiAgICBMaW5rTHVhTW9kaWZpZXIoIm1vZGlmaWVyX3dlYXRoZXJfMiIsICJpbmdhbWUvbW9kaWZpZXIvbW9kaWZpZXJfd2VhdGhlcl8yIiwKICAgICAgICBMVUFfTU9ESUZJRVJfTU9USU9OX05PTkUpCiAgICBMaW5rTHVhTW9kaWZpZXIoIm1vZGlmaWVyX3dlYXRoZXJfMyIsICJpbmdhbWUvbW9kaWZpZXIvbW9kaWZpZXJfd2VhdGhlcl8zIiwKICAgICAgICBMVUFfTU9ESUZJRVJfTU9USU9OX05PTkUpCiAgICBMaW5rTHVhTW9kaWZpZXIoIm1vZGlmaWVyX3dlYXRoZXJfNCIsICJpbmdhbWUvbW9kaWZpZXIvbW9kaWZpZXJfd2VhdGhlcl80IiwKICAgICAgICBMVUFfTU9ESUZJRVJfTU9USU9OX05PTkUpCiAgICBMaW5rTHVhTW9kaWZpZXIoIm1vZGlmaWVyX3dlYXRoZXJfNiIsICJpbmdhbWUvbW9kaWZpZXIvbW9kaWZpZXJfd2VhdGhlcl82IiwKICAgICAgICBMVUFfTU9ESUZJRVJfTU9USU9OX05PTkUpCmVuZAoKZnVuY3Rpb24gTWFpbkdhbWU6V2VhdGhlckdldENvbmZpZygpCiAgICBpZiBub3Qgc2VsZi5fd2VhdGhlcl9jZmcgdGhlbgogICAgICAgIHNlbGYuX3dlYXRoZXJfY2ZnID0gewogICAgICAgICAgICBbMV0gPSB7CiAgICAgICAgICAgICAgICB0aXAgPSAi56aP5pif6auY54Wn77ya5aSp6LWQ56Wd56aP77yM5YWo5L2T546p5a625Z+656GA5pS75Ye75Yqb5aKe5YqgMzAl77yM5oqA6IO95aKe5by65aKe5YqgMTUlIiwKICAgICAgICAgICAgICAgIGNvbG9yID0gIm9yYW5nZSIsCiAgICAgICAgICAgICAgICB0eCA9ICJwYXJ0aWNsZXMvcmFpbl9meC9lY29uX3dlYXRoZXJfaGFydmVzdC52cGNmIiwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgWzJdID0gewogICAgICAgICAgICAgICAgdGlwID0gIuWFtueWvuWmgumjju+8muWFqOS9k+eOqeWutuaUu+mAn+WinuWKoCA2MO+8jOenu+mAn+WinuWKoCAxMCUiLAogICAgICAgICAgICAgICAgY29sb3IgPSAic2t5Ymx1ZSIsCiAgICAgICAgICAgICAgICB0eCA9ICJwYXJ0aWNsZXMvcmFpbl9meC9lY29uX3dlYXRoZXJfc2lyb2Njby52cGNmIiwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgWzNdID0gewogICAgICAgICAgICAgICAgdGlwID0gIuWkqemZjeeUmOmclu+8muWFqOS9k+eOqeWutuiOt+W+lyBCVUZGIOavj+enkuaBouWkjeeUn+WRvSAzJSIsCiAgICAgICAgICAgICAgICBjb2xvciA9ICJncmVlbnllbGxvdyIsCiAgICAgICAgICAgICAgICB0eCA9ICJwYXJ0aWNsZXMvcmFpbl9meC9lY29uX3JhaW4udnBjZiIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIFs0XSA9IHsKICAgICAgICAgICAgICAgIHRpcCA9ICLlhrDlpKnpm6rlnLDvvJrlhajkvZPnjqnlrrbojrflvpcgQlVGRiDmlLvlh7vmlYzkurrlkI7lh4/lsJHnm67moIcgNjAg5pS76YCf5LiOIDI1Jeenu+mAnyIsCiAgICAgICAgICAgICAgICBjb2xvciA9ICJsaWdodGJsdWUiLAogICAgICAgICAgICAgICAgdHggPSAicGFydGljbGVzL3JhaW5fZngvZWNvbl9zbm93LnZwY2YiLAogICAgICAgICAgICB9LAogICAgICAgICAgICBbNl0gPSB7CiAgICAgICAgICAgICAgICB0aXAgPSAi6Zu36ZyG6ZmN5LiW77ya5aSp6Zu35rua5rua77yM5YWo5L2T6Iux6ZuE5Y+X5Lyk5aKe5YqgMTUlIiwKICAgICAgICAgICAgICAgIGNvbG9yID0gInllbGxvdyIsCiAgICAgICAgICAgICAgICB0eCA9ICIiLAogICAgICAgICAgICB9LAogICAgICAgIH0KICAgIGVuZAogICAgcmV0dXJuIHNlbGYuX3dlYXRoZXJfY2ZnCmVuZAoKZnVuY3Rpb24gTWFpbkdhbWU6V2VhdGhlclBpY2tGcm9tUG9vbChwb29sKQogICAgbG9jYWwgbGFzdCA9IHNlbGYuRGF0YS53ZWF0aGVyX2xhc3RfaWQKICAgIGxvY2FsIGNhbmRpZGF0ZXMgPSBwb29sCiAgICBpZiBsYXN0IHRoZW4KICAgICAgICBsb2NhbCBmaWx0ZXJlZCA9IHt9CiAgICAgICAgZm9yIF8sIGlkIGluIGlwYWlycyhwb29sKSBkbwogICAgICAgICAgICBpZiBpZCB+PSBsYXN0IHRoZW4KICAgICAgICAgICAgICAgIGZpbHRlcmVkWyNmaWx0ZXJlZCArIDFdID0gaWQKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICAgICAgaWYgI2ZpbHRlcmVkID4gMCB0aGVuCiAgICAgICAgICAgIGNhbmRpZGF0ZXMgPSBmaWx0ZXJlZAogICAgICAgIGVuZAogICAgZW5kCiAgICByZXR1cm4gY2FuZGlkYXRlc1ttYXRoLnJhbmRvbSgxLCAjY2FuZGlkYXRlcyldCmVuZAoKZnVuY3Rpb24gTWFpbkdhbWU6V2VhdGhlclJvbGxJZCgpCiAgICBpZiBzZWxmOklzRGF5dGltZSgpIHRoZW4KICAgICAgICByZXR1cm4gc2VsZjpXZWF0aGVyUGlja0Zyb21Qb29sKHsgMSwgMiwgMywgNCB9KQogICAgZW5kCiAgICByZXR1cm4gc2VsZjpXZWF0aGVyUGlja0Zyb21Qb29sKHsgMSwgMiwgMywgNCwgNiB9KQplbmQKCmZ1bmN0aW9uIE1haW5HYW1lOldlYXRoZXI2U3RvcFRodW5kZXJTdHJpa2VzKCkKICAgIHNlbGYuRGF0YS53ZWF0aGVyXzZfdGh1bmRlcl9nZW4gPSAoc2VsZi5EYXRhLndlYXRoZXJfNl90aHVuZGVyX2dlbiBvciAwKSArIDEKZW5kCgpmdW5jdGlvbiBNYWluR2FtZTpXZWF0aGVyNlBsYXlUaHVuZGVyU3RyaWtlT25IZXJvKGhlcm8pCiAgICBpZiBub3QgaGVybyBvciBoZXJvOklzTnVsbCgpIG9yIG5vdCBoZXJvOklzQWxpdmUoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIHBhdGggPSAicGFydGljbGVzL2Vjb24vaXRlbXMvemV1cy9hcmNhbmFfY2hhcmlvdC96ZXVzX3Rnd19zY3JlZW5fZGFtYWdlLnZwY2YiCiAgICBsb2NhbCBmeCA9IFBhcnRpY2xlTWFuYWdlcjpDcmVhdGVQYXJ0aWNsZShwYXRoLCBQQVRUQUNIX0VZRVNfRk9MTE9XLCBoZXJvKQogICAgVGltZXJzKDMsIGZ1bmN0aW9uKCkKICAgICAgICBpZiBmeCB0aGVuCiAgICAgICAgICAgIFBhcnRpY2xlTWFuYWdlcjpEZXN0cm95UGFydGljbGUoZngsIHRydWUpCiAgICAgICAgICAgIFBhcnRpY2xlTWFuYWdlcjpSZWxlYXNlUGFydGljbGVJbmRleChmeCkKICAgICAgICBlbmQKICAgIGVuZCkKICAgIEVtaXRTb3VuZE9uKCJIZXJvX1p1dXMuR29kc1dyYXRoIiwgaGVybykKZW5kCgpmdW5jdGlvbiBNYWluR2FtZTpXZWF0aGVyNlBsYXlUaHVuZGVyU3RyaWtlKCkKICAgIGZvciBrLCB2IGluIHBhaXJzKHV0aWxleDpHZXRBbGxQbGF5ZXIoKSkgZG8KICAgICAgICBpZiB2IGFuZCBub3QgKFV0aWwgYW5kIFV0aWwuSXNQc2V1ZG9QbGF5ZXJJRCBhbmQgVXRpbDpJc1BzZXVkb1BsYXllcklEKHYpKSB0aGVuCiAgICAgICAgICAgIGxvY2FsIGhlcm8gPSBVdGlsOklEMkhlcm8odikKICAgICAgICAgICAgaWYgaGVybyB0aGVuCiAgICAgICAgICAgICAgICBzZWxmOldlYXRoZXI2UGxheVRodW5kZXJTdHJpa2VPbkhlcm8oaGVybykKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBNYWluR2FtZTpXZWF0aGVyNlN0YXJ0VGh1bmRlclN0cmlrZXMoKQogICAgc2VsZjpXZWF0aGVyNlN0b3BUaHVuZGVyU3RyaWtlcygpCiAgICBsb2NhbCBnZW4gPSBzZWxmLkRhdGEud2VhdGhlcl82X3RodW5kZXJfZ2VuCiAgICBsb2NhbCBmdW5jdGlvbiBzY2hlZHVsZV9uZXh0KCkKICAgICAgICBpZiBub3QgTWFpbkdhbWUgb3IgTWFpbkdhbWUuRGF0YS53ZWF0aGVyIH49IDYgdGhlbgogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgICAgICBpZiBNYWluR2FtZS5EYXRhLndlYXRoZXJfNl90aHVuZGVyX2dlbiB+PSBnZW4gdGhlbgogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgICAgICBsb2NhbCBkZWxheSA9IFJhbmRvbUZsb2F0KDQwLCA2MCkKICAgICAgICBUaW1lcnMoZGVsYXksIGZ1bmN0aW9uKCkKICAgICAgICAgICAgaWYgbm90IE1haW5HYW1lIG9yIE1haW5HYW1lLkRhdGEud2VhdGhlciB+PSA2IHRoZW4KICAgICAgICAgICAgICAgIHJldHVybgogICAgICAgICAgICBlbmQKICAgICAgICAgICAgaWYgTWFpbkdhbWUuRGF0YS53ZWF0aGVyXzZfdGh1bmRlcl9nZW4gfj0gZ2VuIHRoZW4KICAgICAgICAgICAgICAgIHJldHVybgogICAgICAgICAgICBlbmQKICAgICAgICAgICAgTWFpbkdhbWU6V2VhdGhlcjZQbGF5VGh1bmRlclN0cmlrZSgpCiAgICAgICAgICAgIHNjaGVkdWxlX25leHQoKQogICAgICAgIGVuZCkKICAgIGVuZAogICAgc2NoZWR1bGVfbmV4dCgpCmVuZAoKZnVuY3Rpb24gTWFpbkdhbWU6V2VhdGhlckFwcGx5QnVmZnMocm9sbF93ZWF0aGVyLCB0aW1lLCB0eCkKICAgIGxvY2FsIGJ1ZmZfbmFtZSA9ICJtb2RpZmllcl93ZWF0aGVyXyIgLi4gcm9sbF93ZWF0aGVyCiAgICBmb3IgaywgdiBpbiBwYWlycyh1dGlsZXg6R2V0QWxsUGxheWVyKCkpIGRvCiAgICAgICAgaWYgdiBhbmQgbm90IChVdGlsIGFuZCBVdGlsLklzUHNldWRvUGxheWVySUQgYW5kIFV0aWw6SXNQc2V1ZG9QbGF5ZXJJRCh2KSkgdGhlbgogICAgICAgICAgICBsb2NhbCBoZXJvID0gVXRpbDpJRDJIZXJvKHYpCiAgICAgICAgICAgIGlmIGhlcm8gdGhlbgogICAgICAgICAgICAgICAgaWYgdHggfj0gIiIgYW5kIHJvbGxfd2VhdGhlciB+PSA0IHRoZW4KICAgICAgICAgICAgICAgICAgICB1dGlsZXg6QWRkVHgodHgsIGhlcm8sIHRpbWUpCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgIGlmIG5vdCBoZXJvOkhhc01vZGlmaWVyKCJtb2RpZmllcl93ZWF0aGVyXzUiKSB0aGVuCiAgICAgICAgICAgICAgICAgICAgaGVybzpBZGROZXdNb2RpZmllcihoZXJvLCBzZWxmLCBidWZmX25hbWUsIHsgZHVyID0gdGltZSB9KQogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCiAgICBpZiByb2xsX3dlYXRoZXIgPT0gNiB0aGVuCiAgICAgICAgc2VsZjpXZWF0aGVyNlN0YXJ0VGh1bmRlclN0cmlrZXMoKQogICAgZW5kCmVuZAoKZnVuY3Rpb24gTWFpbkdhbWU6V2VhdGhlckVuZFRpbWVyKHRpbWUpCiAgICBUaW1lcnModGltZSwgZnVuY3Rpb24oKQogICAgICAgIGlmIG5vdCBNYWluR2FtZSBvciBub3QgTWFpbkdhbWUuRGF0YSB0aGVuCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZAogICAgICAgIE1haW5HYW1lOldlYXRoZXI2U3RvcFRodW5kZXJTdHJpa2VzKCkKICAgICAgICBsb2NhbCBlbmRlZCA9IE1haW5HYW1lLkRhdGEud2VhdGhlcgogICAgICAgIGlmIGVuZGVkIGFuZCBlbmRlZCB+PSAtMSB0aGVuCiAgICAgICAgICAgIE1haW5HYW1lLkRhdGEud2VhdGhlcl9sYXN0X2lkID0gZW5kZWQKICAgICAgICBlbmQKICAgICAgICBNYWluR2FtZS5EYXRhLndlYXRoZXIgPSAtMQogICAgICAgIE1haW5HYW1lLkRhdGEud2VhdGhlcl90aW1lID0gTWFpbkdhbWU6R2V0V2VhdGhlckR1cmF0aW9uKCkKICAgIGVuZCkKZW5kCgpmdW5jdGlvbiBNYWluR2FtZTpXZWF0aGVyU3RhcnRCeUlkKHdlYXRoZXJfaWQsIGR1cmF0aW9uKQogICAgaWYgbm90IHdlYXRoZXJfaWQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBjZmcgPSBzZWxmOldlYXRoZXJHZXRDb25maWcoKVt3ZWF0aGVyX2lkXQogICAgaWYgbm90IGNmZyB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGY6V2VhdGhlckxpbmtNb2RpZmllcnMoKQogICAgc2VsZjpXZWF0aGVyNlN0b3BUaHVuZGVyU3RyaWtlcygpCiAgICBkdXJhdGlvbiA9IGR1cmF0aW9uIG9yIHNlbGY6R2V0V2VhdGhlckR1cmF0aW9uKCkKICAgIHNlbGYuRGF0YS53ZWF0aGVyID0gd2VhdGhlcl9pZAogICAgVXRpbDpUb3BNc2cyQWxsKGNmZy50aXAsIGNmZy5jb2xvciwgNSkKICAgIHNlbGY6V2VhdGhlckFwcGx5QnVmZnMod2VhdGhlcl9pZCwgZHVyYXRpb24sIGNmZy50eCBvciAiIikKICAgIHNlbGY6V2VhdGhlckVuZFRpbWVyKGR1cmF0aW9uKQplbmQKCmZ1bmN0aW9uIE1haW5HYW1lOldlYXRoZXJTdGFyKGZvcmNlZF9pZCkKICAgIHNlbGY6V2VhdGhlckxpbmtNb2RpZmllcnMoKQogICAgbG9jYWwgcm9sbF93ZWF0aGVyID0gZm9yY2VkX2lkIG9yIHNlbGY6V2VhdGhlclJvbGxJZCgpCiAgICBzZWxmLkRhdGEud2VhdGhlciA9IHJvbGxfd2VhdGhlcgogICAgbG9jYWwgY2ZnID0gc2VsZjpXZWF0aGVyR2V0Q29uZmlnKClbcm9sbF93ZWF0aGVyXQogICAgaWYgbm90IGNmZyB0aGVuCiAgICAgICAgc2VsZi5EYXRhLndlYXRoZXIgPSAtMQogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCB0aW1lID0gc2VsZjpHZXRXZWF0aGVyRHVyYXRpb24oKQogICAgVXRpbDpUb3BNc2cyQWxsKGNmZy50aXAsIGNmZy5jb2xvciwgNSkKICAgIHNlbGY6V2VhdGhlckFwcGx5QnVmZnMocm9sbF93ZWF0aGVyLCB0aW1lLCBjZmcudHggb3IgIiIpCiAgICBzZWxmOldlYXRoZXJFbmRUaW1lcih0aW1lKQplbmQKCi0tIOesrOS4gOasoee8qeWciApmdW5jdGlvbiBNYWluR2FtZTpNYXBDaGFuZ2UxKCkKICAgIFV0aWw6VG9wTXNnMkFsbCgi55if55ar5byA5aeL6JST5bu277yBIiwgInJlZCIsIDUsICIjMDAwMDAwY2MiKQogICAgc2VsZi5EYXRhLnN0YXRlID0gMgogICAgbG9jYWwgcG9zID0gTW9uc3Rlci5TdGF0aWMubWFwX2NlbnRlcgogICAgbG9jYWwgcmFuZzEgPSBzZWxmLlN0YXRpYy5yYW5nMQogICAgbG9jYWwgc3RyID0gInBhcnRpY2xlcy9kZWF0aF9yaW5nLnZwY2YiCgoKICAgIGxvY2FsIGFsbF9wb3MgPSBFbnRpdGllczpGaW5kQWxsQnlDbGFzc25hbWUoImluZm9fdGFyZ2V0IikKICAgIGZvciBfLCB2IGluIHBhaXJzKGFsbF9wb3MpIGRvCiAgICAgICAgaWYgdiBhbmQgbm90IHY6SXNOdWxsKCkgYW5kIHY6R2V0TmFtZSgpID09ICJyYW5kb21fcG9pbnQiIHRoZW4KICAgICAgICAgICAgVVRJTF9SZW1vdmUodikKICAgICAgICBlbmQKICAgIGVuZAoKICAgIE1vbnN0ZXIuRGF0YS5zdGFnZSA9IDEKICAgIE1vbnN0ZXI6UmVmcmVzaFBvc0ZvclJpbmcocmFuZzEpCiAgICBNYWluR2FtZTpDbGVhckRvb3IoKQogICAgTW9uc3RlcjpTZW5kRGF0YSgpCgogICAgLS0g6YeK5pS+5q+S5ZyICiAgICBUaW1lcnMoMC41LCBmdW5jdGlvbigpCiAgICAgICAgbG9jYWwgZnggPSBQYXJ0aWNsZU1hbmFnZXI6Q3JlYXRlUGFydGljbGUoc3RyLCBQQVRUQUNIX1dPUkxET1JJR0lOLCBuaWwpCiAgICAgICAgUGFydGljbGVNYW5hZ2VyOlNldFBhcnRpY2xlQ29udHJvbChmeCwgMCwKICAgICAgICAgICAgVmVjdG9yKDE4Ny44NDE2NjAsIC02NDQuNzY3NDU2LCAzNTApKQogICAgICAgIFBhcnRpY2xlTWFuYWdlcjpTZXRQYXJ0aWNsZUNvbnRyb2woZngsIDIsCiAgICAgICAgICAgIFZlY3RvcigxODcuODQxNjYwLCAtNjQ0Ljc2NzQ1NiwgMzUwKSkKICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6U2V0UGFydGljbGVTaG91bGRDaGVja0ZvVyhmeCwgZmFsc2UpCiAgICAgICAgUGFydGljbGVNYW5hZ2VyOlNldFBhcnRpY2xlQ29udHJvbChmeCwgMTEsCiAgICAgICAgICAgIFZlY3RvcihyYW5nMSwgLTY0NC43Njc0NTYsIDQwMCkpOwogICAgICAgIHNlbGYuRGF0YS50eCA9IGZ4CiAgICBlbmQpCiAgICBUaW1lcnMoMiwgZnVuY3Rpb24oKQogICAgICAgIGlmIHNlbGYuRGF0YS5zdGF0ZSB+PSAyIHRoZW4gcmV0dXJuIGVuZAogICAgICAgIGxvY2FsIHNlYXJjaF9yYWRpdXMgPSAxNDAwMAogICAgICAgIGxvY2FsIHRlYW1fYm90aCA9IERPVEFfVU5JVF9UQVJHRVRfVEVBTV9CT1RICiAgICAgICAgbG9jYWwgYmFzaWNzID0gRmluZFVuaXRzSW5SYWRpdXMoRE9UQV9VTklUX1RBUkdFVF9URUFNX0JPVEgsIHBvcywgbmlsLAogICAgICAgICAgICBzZWFyY2hfcmFkaXVzLCB0ZWFtX2JvdGgsIERPVEFfVU5JVF9UQVJHRVRfQkFTSUMsIDAsIDEsIGZhbHNlKQogICAgICAgIGZvciBfLCB2IGluIHBhaXJzKGJhc2ljcykgZG8KICAgICAgICAgICAgaWYgdiBhbmQgdXRpbGV4OklzVHJ1ZUVudGl0eSh2KSBhbmQgbm90IHY6SXNIZXJvKCkgYW5kIG5vdCB1dGlsZXg6SXNDbHJiQ291cmllclBldCh2KSB0aGVuCiAgICAgICAgICAgICAgICBsb2NhbCBsZW4gPSAocG9zIC0gdjpHZXRBYnNPcmlnaW4oKSk6TGVuZ3RoMkQoKQogICAgICAgICAgICAgICAgaWYgbGVuID49IHJhbmcxIHRoZW4KICAgICAgICAgICAgICAgICAgICB2OkFkZE5vRHJhdygpCiAgICAgICAgICAgICAgICAgICAgbG9jYWwgdGltZSA9IG1hdGgucmFuZG9tKDEsIDMpCiAgICAgICAgICAgICAgICAgICAgVGltZXJzKHRpbWUsIGZ1bmN0aW9uKCkKICAgICAgICAgICAgICAgICAgICAgICAgaWYgdiBhbmQgSXNWYWxpZEVudGl0eSh2KSBhbmQgbm90IHY6SXNOdWxsKCkgYW5kIG5vdCB1dGlsZXg6SXNDbHJiQ291cmllclBldCh2KSB0aGVuCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBVVElMX1JlbW92ZSh2KQogICAgICAgICAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgICAgICBlbmQpCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQpCmVuZAoKLS0g56ys5LqM5qyh57yp5ZyICmZ1bmN0aW9uIE1haW5HYW1lOk1hcENoYW5nZTIoKQogICAgVXRpbDpUb3BNc2cyQWxsKCLnmJ/nlqvlho3mrKHmianmlaPvvIEiLCAicmVkIiwgNSwgIiMwMDAwMDBjYyIpCiAgICBzZWxmLkRhdGEuc3RhdGUgPSAzCiAgICBNb25zdGVyLkRhdGEuc3RhZ2UgPSAyCiAgICBNb25zdGVyOlJlZnJlc2hQb3NGb3JSaW5nKE1haW5HYW1lLlN0YXRpYy5yYW5nMikKICAgIGxvY2FsIHBvcyA9IE1vbnN0ZXIuU3RhdGljLm1hcF9jZW50ZXIKICAgIGxvY2FsIHJhbmcyID0gc2VsZi5TdGF0aWMucmFuZzIKICAgIGxvY2FsIGZ4ID0gc2VsZi5EYXRhLnR4CiAgICAtLeavkuWciOaUtue8qQogICAgaWYgZnggdGhlbgogICAgICAgIFBhcnRpY2xlTWFuYWdlcjpTZXRQYXJ0aWNsZUNvbnRyb2woZngsIDExLCBWZWN0b3IocmFuZzIsIC02NDQuNzY3NDU2LCA0MDApKQogICAgZW5kCiAgICBNb25zdGVyOlNlbmREYXRhKCkKICAgIGxvY2FsIGFsbF9wb3MgPSBFbnRpdGllczpGaW5kQWxsQnlDbGFzc25hbWUoImluZm9fdGFyZ2V0IikKICAgIGZvciBfLCB2IGluIHBhaXJzKGFsbF9wb3MpIGRvCiAgICAgICAgaWYgdiBhbmQgbm90IHY6SXNOdWxsKCkgYW5kIHY6R2V0TmFtZSgpID09ICJyYW5kb21fcG9pbnQiIHRoZW4KICAgICAgICAgICAgVVRJTF9SZW1vdmUodikKICAgICAgICBlbmQKICAgIGVuZAoKICAgIFRpbWVycygyLCBmdW5jdGlvbigpCiAgICAgICAgaWYgc2VsZi5EYXRhLnN0YXRlIH49IDMgdGhlbiByZXR1cm4gZW5kCiAgICAgICAgbG9jYWwgc2VhcmNoX3JhZGl1cyA9IDE0MDAwCiAgICAgICAgbG9jYWwgdGVhbV9ib3RoID0gRE9UQV9VTklUX1RBUkdFVF9URUFNX0JPVEgKCiAgICAgICAgbG9jYWwgYmFzaWNzID0gRmluZFVuaXRzSW5SYWRpdXMoRE9UQV9VTklUX1RBUkdFVF9URUFNX0JPVEgsIHBvcywgbmlsLAogICAgICAgICAgICBzZWFyY2hfcmFkaXVzLCB0ZWFtX2JvdGgsIERPVEFfVU5JVF9UQVJHRVRfQkFTSUMsIDAsIDEsIGZhbHNlKQogICAgICAgIGZvciBfLCB2IGluIHBhaXJzKGJhc2ljcykgZG8KICAgICAgICAgICAgaWYgdiBhbmQgdXRpbGV4OklzVHJ1ZUVudGl0eSh2KSBhbmQgbm90IHY6SXNIZXJvKCkgYW5kIG5vdCB1dGlsZXg6SXNDbHJiQ291cmllclBldCh2KSB0aGVuCiAgICAgICAgICAgICAgICBsb2NhbCBsZW4gPSAocG9zIC0gdjpHZXRBYnNPcmlnaW4oKSk6TGVuZ3RoMkQoKQogICAgICAgICAgICAgICAgaWYgbGVuID49IHJhbmcyIHRoZW4KICAgICAgICAgICAgICAgICAgICB2OkFkZE5vRHJhdygpCiAgICAgICAgICAgICAgICAgICAgbG9jYWwgdGltZSA9IG1hdGgucmFuZG9tKDEsIDMpCiAgICAgICAgICAgICAgICAgICAgVGltZXJzKHRpbWUsIGZ1bmN0aW9uKCkKICAgICAgICAgICAgICAgICAgICAgICAgaWYgdiBhbmQgSXNWYWxpZEVudGl0eSh2KSBhbmQgbm90IHY6SXNOdWxsKCkgYW5kIG5vdCB1dGlsZXg6SXNDbHJiQ291cmllclBldCh2KSB0aGVuCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBVVElMX1JlbW92ZSh2KQogICAgICAgICAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgICAgICBlbmQpCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQpCmVuZAoKLS0g6Iux6ZuE5Ye75p2A6K6h5pWwCmZ1bmN0aW9uIE1haW5HYW1lOkhlcm9LaWxsQWRkKGhlcm8pCiAgICBpZiBub3QgaGVybyB0aGVuIHJldHVybiBlbmQKICAgIGxvY2FsIElEID0gVXRpbDpIZXJvMklEKGhlcm8pCiAgICBpZiBub3QgSUQgdGhlbiByZXR1cm4gZW5kCiAgICBpZiBzZWxmLkRhdGEub3ZlciB0aGVuIHJldHVybiBlbmQKICAgIC0tIEhlcm9EYXRhLkRhdGFbSURdLmtpbGwgPSBIZXJvRGF0YS5EYXRhW0lEXS5raWxsICsgMQogICAgbG9jYWwgdGVhbSA9IGhlcm86R2V0VGVhbSgpCiAgICAtLSBsb2NhbCB0ZWFtX2tleSA9ICJUZWFtIiAuLiB0ZWFtCiAgICAtLSBzZWxmLk92ZXJEYXRhW3RlYW1fa2V5XS5raWxsID0gc2VsZi5PdmVyRGF0YVt0ZWFtX2tleV0ua2lsbCArIDEKICAgIGlmIE1haW5HYW1lOkdldEdhbWVUeXBlKCkgPT0gMiB0aGVuCiAgICAgICAgLS0gcHJpbnQoIueOqeWutiIgLi4gSUQgLi4gIuWHu+adgOaVsOmHj++8miIgLi4gSGVyb0RhdGEuRGF0YVtJRF0ua2lsbCkKICAgICAgICBpZiBIZXJvRGF0YS5EYXRhW0lEXS5raWxsID49IHNlbGY6R2V0UGVyc29uS2lsbFRhcmdldCgpIHRoZW4KICAgICAgICAgICAgTWFpbkdhbWU6VGltZXJPdmVyKCkKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGlmIE1haW5HYW1lOkdldEdhbWVUeXBlKCkgPT0gMyB0aGVuCiAgICAgICAgbG9jYWwgbGFiZWwgPSAoewogICAgICAgICAgICBbMl0gPSAi5aSp6L6JIiwKICAgICAgICAgICAgWzNdID0gIuWknOmthyIsCiAgICAgICAgICAgIFs2XSA9ICLpmLXokKXkuIkiLAogICAgICAgICAgICBbN10gPSAi6Zi16JCl5ZubIiwKICAgICAgICB9KVt0ZWFtXQogICAgICAgIGxvY2FsIGtleSA9ICh7IFsyXSA9ICJUZWFtMiIsIFszXSA9ICJUZWFtMyIsIFs2XSA9ICJUZWFtNiIsIFs3XSA9ICJUZWFtNyIgfSlbdGVhbV0KICAgICAgICBpZiBrZXkgYW5kIGxhYmVsIHRoZW4KICAgICAgICAgICAgc2VsZi5EYXRhLmtpbGxba2V5XSA9IHNlbGYuRGF0YS5raWxsW2tleV0gKyAxCiAgICAgICAgICAgIGxvY2FsIGsgPSBzZWxmLkRhdGEua2lsbFtrZXldCiAgICAgICAgICAgIGxvY2FsIHRrID0gc2VsZjpHZXRUZWFtS2lsbFRhcmdldCgpCiAgICAgICAgICAgIGxvY2FsIHJlbWFpbiA9IHRrIC0gawogICAgICAgICAgICBpZiByZW1haW4gPT0gMjAgb3IgcmVtYWluID09IDEwIG9yIHJlbWFpbiA9PSA1IHRoZW4KICAgICAgICAgICAgICAgIFV0aWw6VG9wTXNnMkFsbChsYWJlbCAuLiAi6Led56a75ri45oiP6IOc5Yip6L+Y5Ymp5L2ZIiAuLiB0b3N0cmluZyhyZW1haW4pIC4uICLmrKHlh7vmnYDvvIEiLCAicmVkIiwgMykKICAgICAgICAgICAgICAgIGlmIHJlbWFpbiA9PSAyMCBvciByZW1haW4gPT0gMTAgdGhlbgogICAgICAgICAgICAgICAgICAgIHV0aWxleDpTb3VuZEFsbChyZW1haW4gPT0gMjAgYW5kICJuZWVka2lsbDIwIiBvciAibmVlZGtpbGwxMCIpCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGlmIGsgPj0gdGsgdGhlbgogICAgICAgICAgICAgICAgTWFpbkdhbWU6VGltZXJPdmVyKCkKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIE1haW5HYW1lOkdldEdhbWVUeXBlKCkgPT0gMSB0aGVuCiAgICAgICAgaWYgdGVhbSA9PSAyIHRoZW4KICAgICAgICAgICAgc2VsZi5EYXRhLmtpbGwuVGVhbTIgPSBzZWxmLkRhdGEua2lsbC5UZWFtMiArIDEKICAgICAgICAgICAgaWYgc2VsZi5TdGF0aWMudGVhbV9raWxsIC0gc2VsZi5EYXRhLmtpbGwuVGVhbTIgPT0gMjAgdGhlbgogICAgICAgICAgICAgICAgVXRpbDpUb3BNc2cyQWxsKCLlpKnovonot53nprvmuLjmiI/og5zliKnov5jliankvZkyMOasoeWHu+adgO+8gSIsCiAgICAgICAgICAgICAgICAgICAgInJlZCIsIDMpCiAgICAgICAgICAgICAgICB1dGlsZXg6U291bmRBbGwoIm5lZWRraWxsMjAiKQogICAgICAgICAgICBlbmQKICAgICAgICAgICAgaWYgc2VsZi5TdGF0aWMudGVhbV9raWxsIC0gc2VsZi5EYXRhLmtpbGwuVGVhbTIgPT0gMTAgdGhlbgogICAgICAgICAgICAgICAgVXRpbDpUb3BNc2cyQWxsKCLlpKnovonot53nprvmuLjmiI/og5zliKnov5jliankvZkxMOasoeWHu+adgO+8gSIsCiAgICAgICAgICAgICAgICAgICAgInJlZCIsIDMpCiAgICAgICAgICAgICAgICB1dGlsZXg6U291bmRBbGwoIm5lZWRraWxsMTAiKQogICAgICAgICAgICBlbmQKICAgICAgICAgICAgaWYgc2VsZi5TdGF0aWMudGVhbV9raWxsIC0gc2VsZi5EYXRhLmtpbGwuVGVhbTIgPT0gNSB0aGVuCiAgICAgICAgICAgICAgICBVdGlsOlRvcE1zZzJBbGwoIuWkqei+iei3neemu+a4uOaIj+iDnOWIqei/mOWJqeS9mTXmrKHlh7vmnYDvvIEiLAogICAgICAgICAgICAgICAgICAgICJyZWQiLCAzKQogICAgICAgICAgICBlbmQKICAgICAgICAgICAgaWYgc2VsZi5EYXRhLmtpbGwuVGVhbTIgPj0gc2VsZi5TdGF0aWMudGVhbV9raWxsIHRoZW4KICAgICAgICAgICAgICAgIE1haW5HYW1lOlRpbWVyT3ZlcigpCiAgICAgICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICAgICAgaWYgdGVhbSA9PSAzIHRoZW4KICAgICAgICAgICAgc2VsZi5EYXRhLmtpbGwuVGVhbTMgPSBzZWxmLkRhdGEua2lsbC5UZWFtMyArIDEKICAgICAgICAgICAgaWYgc2VsZi5TdGF0aWMudGVhbV9raWxsIC0gc2VsZi5EYXRhLmtpbGwuVGVhbTMgPT0gMjAgdGhlbgogICAgICAgICAgICAgICAgVXRpbDpUb3BNc2cyQWxsKCLlpJzlrrTot53nprvmuLjmiI/og5zliKnov5jliankvZkyMOasoeWHu+adgO+8gSIsCiAgICAgICAgICAgICAgICAgICAgInJlZCIsIDMpCiAgICAgICAgICAgICAgICB1dGlsZXg6U291bmRBbGwoIm5lZWRraWxsMjAiKQogICAgICAgICAgICBlbmQKICAgICAgICAgICAgaWYgc2VsZi5TdGF0aWMudGVhbV9raWxsIC0gc2VsZi5EYXRhLmtpbGwuVGVhbTMgPT0gMTAgdGhlbgogICAgICAgICAgICAgICAgVXRpbDpUb3BNc2cyQWxsKCLlpJzlrrTot53nprvmuLjmiI/og5zliKnov5jliankvZkxMOasoeWHu+adgO+8gSIsCiAgICAgICAgICAgICAgICAgICAgInJlZCIsIDMpCiAgICAgICAgICAgICAgICB1dGlsZXg6U291bmRBbGwoIm5lZWRraWxsMTAiKQogICAgICAgICAgICBlbmQKICAgICAgICAgICAgaWYgc2VsZi5TdGF0aWMudGVhbV9raWxsIC0gc2VsZi5EYXRhLmtpbGwuVGVhbTMgPT0gNSB0aGVuCiAgICAgICAgICAgICAgICBVdGlsOlRvcE1zZzJBbGwoIuWknOWutOi3neemu+a4uOaIj+iDnOWIqei/mOWJqeS9mTXmrKHlh7vmnYDvvIEiLAogICAgICAgICAgICAgICAgICAgICJyZWQiLCAzKQogICAgICAgICAgICBlbmQKICAgICAgICAgICAgaWYgc2VsZi5EYXRhLmtpbGwuVGVhbTMgPj0gc2VsZi5TdGF0aWMudGVhbV9raWxsIHRoZW4KICAgICAgICAgICAgICAgIE1haW5HYW1lOlRpbWVyT3ZlcigpCiAgICAgICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQKZW5kCgotLSDml7bpl7Tnu5PmnZ8KZnVuY3Rpb24gTWFpbkdhbWU6VGltZXJPdmVyKCkKICAgIC0tIHByaW50KCLml7bpl7Tnu5PmnZ8iKQogICAgaWYgc2VsZi5EYXRhLm92ZXIgPT0gdHJ1ZSB0aGVuIHJldHVybiBlbmQKICAgIHV0aWxleDpTbG93TW90aW9uKCkKICAgIGlmIFN0YXQgYW5kIFN0YXQuU2VuZFB1YmxpY0RhdGEgdGhlbgogICAgICAgIFN0YXQ6U2VuZFB1YmxpY0RhdGEodHJ1ZSkKICAgIGVuZAogICAgc2VsZi5EYXRhLm92ZXIgPSB0cnVlCiAgICBpZiBzZWxmOkdldEdhbWVUeXBlKCkgPT0gMyB0aGVuCiAgICAgICAgc2VsZi5EYXRhLndpbl90ZWFtID0gc2VsZjpSZXNvbHZlRm91clRlYW1XaW5CeUtpbGxzKCkKICAgIGVsc2UKICAgICAgICBsb2NhbCB0ZWFtMl9udW0gPSBzZWxmLkRhdGEua2lsbC5UZWFtMgogICAgICAgIGxvY2FsIHRlYW0zX251bSA9IHNlbGYuRGF0YS5raWxsLlRlYW0zCiAgICAgICAgaWYgdGVhbTJfbnVtID49IHRlYW0zX251bSB0aGVuCiAgICAgICAgICAgIHNlbGYuRGF0YS53aW5fdGVhbSA9IDEKICAgICAgICBlbHNlCiAgICAgICAgICAgIHNlbGYuRGF0YS53aW5fdGVhbSA9IDIKICAgICAgICBlbmQKICAgIGVuZAogICAgVGltZXJzKDEsIGZ1bmN0aW9uKCkKICAgICAgICBzZWxmOkdhbWVPdmVyKCkKICAgIGVuZCkKZW5kCgotLSDmuLjmiI/nu5PmnZ8KZnVuY3Rpb24gTWFpbkdhbWU6R2FtZU92ZXIoKQogICAgaWYgTW9uc3RlciBhbmQgTW9uc3Rlci5PblNldHRsZW1lbnRVSVN0YXJ0IHRoZW4KICAgICAgICBNb25zdGVyOk9uU2V0dGxlbWVudFVJU3RhcnQoKQogICAgZW5kCiAgICBPdmVyRGF0YTpJbml0UHVibGljKCkKICAgIC0tIOiuvue9ruiOt+iDnOmYn+S8jQogICAgc2VsZjpTZXRXaW5UZWFtKCkKICAgIC0tIOe7k+eul+ensOWPtwogICAgc2VsZjpTZXRUYWcoKQogICAgLS0g5pu05paw5o6S5ZCNCiAgICBTdGF0OlVwRGF0YVJhbmsoKQogICAgU3RhdDpUb3BMaXN0VXBEYXRhKCkKICAgIGZvciBrLCB2IGluIHBhaXJzKFBELklEcykgZG8KICAgICAgICBpZiB2IHRoZW4KICAgICAgICAgICAgT3ZlckRhdGE6TG9hZERhdGEodikKICAgICAgICAgICAgT3ZlckRhdGE6T3BlblBhZ2UodikKICAgICAgICAgICAgT3ZlckRhdGE6U2VuZERhdGEodikKICAgICAgICAgICAgbG9jYWwgaGVybyA9IFV0aWw6SUQySGVybyh2KQogICAgICAgICAgICBpZiBoZXJvIGFuZCBub3QgaGVybzpJc051bGwoKSB0aGVuCiAgICAgICAgICAgICAgICB1dGlsZXg6QWRkTW9kaWZpZXIoaGVybywgIm1vZGlmaWVyX3BldGJ1ZmYiKQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZAogICAgaWYgQm90QUkgYW5kIEJvdEFJLkNsZWFudXBGb3JTZXR0bGVtZW50VUkgdGhlbgogICAgICAgIFRpbWVycygxLCBmdW5jdGlvbigpCiAgICAgICAgICAgIEJvdEFJOkNsZWFudXBGb3JTZXR0bGVtZW50VUkoKQogICAgICAgIGVuZCkKICAgIGVuZAogICAgTWFpbkdhbWU6RXhpdEdhbWUoKQplbmQKCmZ1bmN0aW9uIE1haW5HYW1lOkV4aXRHYW1lKCkKICAgIGxvY2FsIHR4ID0gc2VsZi5EYXRhLnR4CiAgICB1dGlsZXg6Q2xlYXJUeCh0eCkKICAgIC0tIOiusOW9leWvueWxgAogICAgT3ZlckRhdGE6TG9nR2FtZSgpCmVuZAo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if MainGame == nil then
+    MainGame = class({})
+    require("ingame.MainGame.Config")
+    require("ingame.MainGame.Set")
+    require("ingame.MainGame.Get")
+    require("ingame.MainGame.ProgressGuard")
+    require("ingame.MainGame.Func")
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function MainGame:GameReady()
+    if self.Data.session_load_gate_started then
+        return
+    end
+    self.Data.session_load_gate_started = true
+    Util:Send2JsBotsSafe("UI_Loding", { page = true })
+    -- 载入层最长3 秒，超时强制隐藏；全员就绪门控仍在后台跑（Monster / UI_Point 等）
+    Timers(3, function()
+        Util:Send2JsBotsSafe("UI_Loding", { page = false })
+    end)
+    self:StartSessionLoadGatePoll()
+    if not IsInToolsMode() and GameRules:IsCheatMode() then
+        Util:Send2JsBotsSafe("UI_OverGame", { state = true })
+    end
+end
+
+-- 游戏开始
+function MainGame:GameStart()
+    self.Data.passive_mode = false
+    if Boot and Boot.Config then
+        Boot.Config.bot_passive_mode = false
+    end
+    self.Data.session_load_gate_started = false
+    self.Data.session_load_gate_finished = false
+    self.Data.bgm_music_guard_started = false
+    if OverStat and OverStat.ResetSession then
+        OverStat:ResetSession()
+    end
+    if Server and Server.ResetClientLogDedup then
+        Server:ResetClientLogDedup()
+    end
+
+    -- 游戏时间初始化
+    Stat:InitSyS()
+    -- MainGame:ReadyTime()
+    MainGame:WeatherInit()
+    MainGame:DayNightInit()
+    -- 游戏全局定时器 + 缩圈/结算看门狗
+    MainGame:StartTime()
+    MainGame:StartProgressWatchdog()
+    -- 初始化怪物出生点（从地图 random_point 实体加载）
+    Monster:ReadyPos()
+    -- 召唤野怪
+    Monster:Create()
+    Monster:LeaderTime()
+    -- 召唤宝箱
+    --Pack:CreatePack()
+    -- 召唤传送门
+    self:CreateDoor()
+    MainGame:CreateHide()
+    if DevTools and DevTools.GameReady then
+        DevTools:GameReady()
+    end
+end
+
+function MainGame:CreateHide()
+    local pos = Vector(32.632824, -479.938049, 128.000015)
+    local unit = CreateUnitByName("dummy", pos, true, nil, nil,
+        DOTA_TEAM_NEUTRALS)
+    utilex:AddModifier(unit, "modifier_petbuff")
+    unit:AddNewModifier(unit, nil, "modifier_phased", { duration = 0.1 })
+    local index = unit:GetEntityIndex()
+    self.Data.dummy = index
+end
+
+function MainGame:CreateDoor()
+    for k, v in pairs(self.Data.door) do if v then self:OpenDoor(k) end end
+end
+
+-- 游戏时间初始化
+function MainGame:ReadyTime()
+    local num = #PD.IDs
+    local max = 10
+    local need = max - num
+    local addtime = need * 60
+    self.EventList.game_over.time = self.EventList.game_over.time + addtime
+    self.EventList.timeover1.time = self.EventList.game_over.time - 60
+    self.EventList.timeover2.time = self.EventList.game_over.time - 120
+end
+
+-- 自定义昼夜初始化（禁用引擎默认循环，由 DayNightTick 驱动）
+function MainGame:DayNightInit()
+    self.Data.daynight_is_day = true
+    self.Data.daynight_elapsed = 0
+    GameRules:SetTimeOfDay(0.25)
+end
+
+-- 每秒推进昼夜；白天 0.25→0.75，黑夜 0.75→1.0→0.25
+function MainGame:DayNightTick()
+    local is_day = self.Data.daynight_is_day ~= false
+    local duration = is_day and self.Static.day_time or self.Static.night_time
+    if not duration or duration <= 0 then
+        return
+    end
+
+    self.Data.daynight_elapsed = (self.Data.daynight_elapsed or 0) + 1
+    if self.Data.daynight_elapsed >= duration then
+        self.Data.daynight_elapsed = 0
+        self.Data.daynight_is_day = not is_day
+        is_day = self.Data.daynight_is_day
+        duration = is_day and self.Static.day_time or self.Static.night_time
+        if self.Data.weather == -1 then
+            self.Data.weather_time = self:GetWeatherDuration()
+        end
+    end
+
+    local frac = self.Data.daynight_elapsed / duration
+    local tod
+    if is_day then
+        tod = 0.25 + 0.5 * frac
+    else
+        tod = 0.75 + 0.5 * frac
+        if tod >= 1.0 then
+            tod = tod - 1.0
+        end
+    end
+    GameRules:SetTimeOfDay(tod)
+end
+
+-- 天气初始化
+function MainGame:WeatherInit()
+    self.Data.weather = -1
+    self.Data.weather_last_id = nil
+    self.Data.weather_time = self:GetWeatherDuration()
+end
+
+-- 天气触发器（每秒调用）
+function MainGame:WeatherTrigger()
+    if self.Data.weather ~= -1 then
+        return
+    end
+    if self.Data.weather_time < 0 then
+        self.Data.weather_time = self:GetWeatherDuration()
+    end
+    self.Data.weather_time = self.Data.weather_time - 1
+    if self.Data.weather_time <= 0 then
+        self:WeatherStar()
+    end
+end
+
+-- 天气触发
+function MainGame:WeatherLinkModifiers()
+    LinkLuaModifier("modifier_weather_1", "ingame/modifier/modifier_weather_1",
+        LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_weather_2", "ingame/modifier/modifier_weather_2",
+        LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_weather_3", "ingame/modifier/modifier_weather_3",
+        LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_weather_4", "ingame/modifier/modifier_weather_4",
+        LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_weather_6", "ingame/modifier/modifier_weather_6",
+        LUA_MODIFIER_MOTION_NONE)
+end
+
+function MainGame:WeatherGetConfig()
+    if not self._weather_cfg then
+        self._weather_cfg = {
+            [1] = {
+                tip = "福星高照：天赐祝福，全体玩家基础攻击力增加30%，技能增强增加15%",
+                color = "orange",
+                tx = "particles/rain_fx/econ_weather_harvest.vpcf",
+            },
+            [2] = {
+                tip = "其疾如风：全体玩家攻速增加 60，移速增加 10%",
+                color = "skyblue",
+                tx = "particles/rain_fx/econ_weather_sirocco.vpcf",
+            },
+            [3] = {
+                tip = "天降甘霖：全体玩家获得 BUFF 每秒恢复生命 3%",
+                color = "greenyellow",
+                tx = "particles/rain_fx/econ_rain.vpcf",
+            },
+            [4] = {
+                tip = "冰天雪地：全体玩家获得 BUFF 攻击敌人后减少目标 60 攻速与 25%移速",
+                color = "lightblue",
+                tx = "particles/rain_fx/econ_snow.vpcf",
+            },
+            [6] = {
+                tip = "雷霆降世：天雷滚滚，全体英雄受伤增加15%",
+                color = "yellow",
+                tx = "",
+            },
+        }
+    end
+    return self._weather_cfg
+end
+
+function MainGame:WeatherPickFromPool(pool)
+    local last = self.Data.weather_last_id
+    local candidates = pool
+    if last then
+        local filtered = {}
+        for _, id in ipairs(pool) do
+            if id ~= last then
+                filtered[#filtered + 1] = id
+            end
+        end
+        if #filtered > 0 then
+            candidates = filtered
+        end
+    end
+    return candidates[math.random(1, #candidates)]
+end
+
+function MainGame:WeatherRollId()
+    if self:IsDaytime() then
+        return self:WeatherPickFromPool({ 1, 2, 3, 4 })
+    end
+    return self:WeatherPickFromPool({ 1, 2, 3, 4, 6 })
+end
+
+function MainGame:Weather6StopThunderStrikes()
+    self.Data.weather_6_thunder_gen = (self.Data.weather_6_thunder_gen or 0) + 1
+end
+
+function MainGame:Weather6PlayThunderStrikeOnHero(hero)
+    if not hero or hero:IsNull() or not hero:IsAlive() then
+        return
+    end
+    local path = "particles/econ/items/zeus/arcana_chariot/zeus_tgw_screen_damage.vpcf"
+    local fx = ParticleManager:CreateParticle(path, PATTACH_EYES_FOLLOW, hero)
+    Timers(3, function()
+        if fx then
+            ParticleManager:DestroyParticle(fx, true)
+            ParticleManager:ReleaseParticleIndex(fx)
+        end
+    end)
+    EmitSoundOn("Hero_Zuus.GodsWrath", hero)
+end
+
+function MainGame:Weather6PlayThunderStrike()
+    for k, v in pairs(utilex:GetAllPlayer()) do
+        if v and not (Util and Util.IsPseudoPlayerID and Util:IsPseudoPlayerID(v)) then
+            local hero = Util:ID2Hero(v)
+            if hero then
+                self:Weather6PlayThunderStrikeOnHero(hero)
+            end
+        end
+    end
+end
+
+function MainGame:Weather6StartThunderStrikes()
+    self:Weather6StopThunderStrikes()
+    local gen = self.Data.weather_6_thunder_gen
+    local function schedule_next()
+        if not MainGame or MainGame.Data.weather ~= 6 then
+            return
+        end
+        if MainGame.Data.weather_6_thunder_gen ~= gen then
+            return
+        end
+        local delay = RandomFloat(40, 60)
+        Timers(delay, function()
+            if not MainGame or MainGame.Data.weather ~= 6 then
+                return
+            end
+            if MainGame.Data.weather_6_thunder_gen ~= gen then
+                return
+            end
+            MainGame:Weather6PlayThunderStrike()
+            schedule_next()
+        end)
+    end
+    schedule_next()
+end
+
+function MainGame:WeatherApplyBuffs(roll_weather, time, tx)
+    local buff_name = "modifier_weather_" .. roll_weather
+    for k, v in pairs(utilex:GetAllPlayer()) do
+        if v and not (Util and Util.IsPseudoPlayerID and Util:IsPseudoPlayerID(v)) then
+            local hero = Util:ID2Hero(v)
+            if hero then
+                if tx ~= "" and roll_weather ~= 4 then
+                    utilex:AddTx(tx, hero, time)
+                end
+                if not hero:HasModifier("modifier_weather_5") then
+                    hero:AddNewModifier(hero, self, buff_name, { dur = time })
+                end
+            end
+        end
+    end
+    if roll_weather == 6 then
+        self:Weather6StartThunderStrikes()
+    end
+end
+
+function MainGame:WeatherEndTimer(time)
+    Timers(time, function()
+        if not MainGame or not MainGame.Data then
+            return
+        end
+        MainGame:Weather6StopThunderStrikes()
+        local ended = MainGame.Data.weather
+        if ended and ended ~= -1 then
+            MainGame.Data.weather_last_id = ended
+        end
+        MainGame.Data.weather = -1
+        MainGame.Data.weather_time = MainGame:GetWeatherDuration()
+    end)
+end
+
+function MainGame:WeatherStartById(weather_id, duration)
+    if not weather_id then
+        return
+    end
+    local cfg = self:WeatherGetConfig()[weather_id]
+    if not cfg then
+        return
+    end
+    self:WeatherLinkModifiers()
+    self:Weather6StopThunderStrikes()
+    duration = duration or self:GetWeatherDuration()
+    self.Data.weather = weather_id
+    Util:TopMsg2All(cfg.tip, cfg.color, 5)
+    self:WeatherApplyBuffs(weather_id, duration, cfg.tx or "")
+    self:WeatherEndTimer(duration)
+end
+
+function MainGame:WeatherStar(forced_id)
+    self:WeatherLinkModifiers()
+    local roll_weather = forced_id or self:WeatherRollId()
+    self.Data.weather = roll_weather
+    local cfg = self:WeatherGetConfig()[roll_weather]
+    if not cfg then
+        self.Data.weather = -1
+        return
+    end
+    local time = self:GetWeatherDuration()
+    Util:TopMsg2All(cfg.tip, cfg.color, 5)
+    self:WeatherApplyBuffs(roll_weather, time, cfg.tx or "")
+    self:WeatherEndTimer(time)
+end
+
+-- 第一次缩圈
+function MainGame:MapChange1()
+    Util:TopMsg2All("瘟疫开始蔓延！", "red", 5, "#000000cc")
+    self.Data.state = 2
+    local pos = Monster.Static.map_center
+    local rang1 = self.Static.rang1
+    local str = "particles/death_ring.vpcf"
+
+
+    local all_pos = Entities:FindAllByClassname("info_target")
+    for _, v in pairs(all_pos) do
+        if v and not v:IsNull() and v:GetName() == "random_point" then
+            UTIL_Remove(v)
+        end
+    end
+
+    Monster.Data.stage = 1
+    Monster:RefreshPosForRing(rang1)
+    MainGame:ClearDoor()
+    Monster:SendData()
+
+    -- 释放毒圈
+    Timers(0.5, function()
+        local fx = ParticleManager:CreateParticle(str, PATTACH_WORLDORIGIN, nil)
+        ParticleManager:SetParticleControl(fx, 0,
+            Vector(187.841660, -644.767456, 350))
+        ParticleManager:SetParticleControl(fx, 2,
+            Vector(187.841660, -644.767456, 350))
+        ParticleManager:SetParticleShouldCheckFoW(fx, false)
+        ParticleManager:SetParticleControl(fx, 11,
+            Vector(rang1, -644.767456, 400));
+        self.Data.tx = fx
+    end)
+    Timers(2, function()
+        if self.Data.state ~= 2 then return end
+        local search_radius = 14000
+        local team_both = DOTA_UNIT_TARGET_TEAM_BOTH
+        local basics = FindUnitsInRadius(DOTA_UNIT_TARGET_TEAM_BOTH, pos, nil,
+            search_radius, team_both, DOTA_UNIT_TARGET_BASIC, 0, 1, false)
+        for _, v in pairs(basics) do
+            if v and utilex:IsTrueEntity(v) and not v:IsHero() and not utilex:IsClrbCourierPet(v) then
+                local len = (pos - v:GetAbsOrigin()):Length2D()
+                if len >= rang1 then
+                    v:AddNoDraw()
+                    local time = math.random(1, 3)
+                    Timers(time, function()
+                        if v and IsValidEntity(v) and not v:IsNull() and not utilex:IsClrbCourierPet(v) then
+                            UTIL_Remove(v)
+                        end
+                    end)
+                end
+            end
+        end
+    end)
+end
+
+-- 第二次缩圈
+function MainGame:MapChange2()
+    Util:TopMsg2All("瘟疫再次扩散！", "red", 5, "#000000cc")
+    self.Data.state = 3
+    Monster.Data.stage = 2
+    Monster:RefreshPosForRing(MainGame.Static.rang2)
+    local pos = Monster.Static.map_center
+    local rang2 = self.Static.rang2
+    local fx = self.Data.tx
+    --毒圈收缩
+    if fx then
+        ParticleManager:SetParticleControl(fx, 11, Vector(rang2, -644.767456, 400))
+    end
+    Monster:SendData()
+    local all_pos = Entities:FindAllByClassname("info_target")
+    for _, v in pairs(all_pos) do
+        if v and not v:IsNull() and v:GetName() == "random_point" then
+            UTIL_Remove(v)
+        end
+    end
+
+    Timers(2, function()
+        if self.Data.state ~= 3 then return end
+        local search_radius = 14000
+        local team_both = DOTA_UNIT_TARGET_TEAM_BOTH
+
+        local basics = FindUnitsInRadius(DOTA_UNIT_TARGET_TEAM_BOTH, pos, nil,
+            search_radius, team_both, DOTA_UNIT_TARGET_BASIC, 0, 1, false)
+        for _, v in pairs(basics) do
+            if v and utilex:IsTrueEntity(v) and not v:IsHero() and not utilex:IsClrbCourierPet(v) then
+                local len = (pos - v:GetAbsOrigin()):Length2D()
+                if len >= rang2 then
+                    v:AddNoDraw()
+                    local time = math.random(1, 3)
+                    Timers(time, function()
+                        if v and IsValidEntity(v) and not v:IsNull() and not utilex:IsClrbCourierPet(v) then
+                            UTIL_Remove(v)
+                        end
+                    end)
+                end
+            end
+        end
+    end)
+end
+
+-- 英雄击杀计数
+function MainGame:HeroKillAdd(hero)
+    if not hero then return end
+    local ID = Util:Hero2ID(hero)
+    if not ID then return end
+    if self.Data.over then return end
+    -- HeroData.Data[ID].kill = HeroData.Data[ID].kill + 1
+    local team = hero:GetTeam()
+    -- local team_key = "Team" .. team
+    -- self.OverData[team_key].kill = self.OverData[team_key].kill + 1
+    if MainGame:GetGameType() == 2 then
+        -- print("玩家" .. ID .. "击杀数量：" .. HeroData.Data[ID].kill)
+        if HeroData.Data[ID].kill >= self:GetPersonKillTarget() then
+            MainGame:TimerOver()
+            return
+        end
+    end
+    if MainGame:GetGameType() == 3 then
+        local label = ({
+            [2] = "天辉",
+            [3] = "夜魇",
+            [6] = "阵营三",
+            [7] = "阵营四",
+        })[team]
+        local key = ({ [2] = "Team2", [3] = "Team3", [6] = "Team6", [7] = "Team7" })[team]
+        if key and label then
+            self.Data.kill[key] = self.Data.kill[key] + 1
+            local k = self.Data.kill[key]
+            local tk = self:GetTeamKillTarget()
+            local remain = tk - k
+            if remain == 20 or remain == 10 or remain == 5 then
+                Util:TopMsg2All(label .. "距离游戏胜利还剩余" .. tostring(remain) .. "次击杀！", "red", 3)
+                if remain == 20 or remain == 10 then
+                    utilex:SoundAll(remain == 20 and "needkill20" or "needkill10")
+                end
+            end
+            if k >= tk then
+                MainGame:TimerOver()
+            end
+        end
+        return
+    end
+    if MainGame:GetGameType() == 1 then
+        if team == 2 then
+            self.Data.kill.Team2 = self.Data.kill.Team2 + 1
+            if self.Static.team_kill - self.Data.kill.Team2 == 20 then
+                Util:TopMsg2All("天辉距离游戏胜利还剩余20次击杀！",
+                    "red", 3)
+                utilex:SoundAll("needkill20")
+            end
+            if self.Static.team_kill - self.Data.kill.Team2 == 10 then
+                Util:TopMsg2All("天辉距离游戏胜利还剩余10次击杀！",
+                    "red", 3)
+                utilex:SoundAll("needkill10")
+            end
+            if self.Static.team_kill - self.Data.kill.Team2 == 5 then
+                Util:TopMsg2All("天辉距离游戏胜利还剩余5次击杀！",
+                    "red", 3)
+            end
+            if self.Data.kill.Team2 >= self.Static.team_kill then
+                MainGame:TimerOver()
+                return
+            end
+        end
+        if team == 3 then
+            self.Data.kill.Team3 = self.Data.kill.Team3 + 1
+            if self.Static.team_kill - self.Data.kill.Team3 == 20 then
+                Util:TopMsg2All("夜宴距离游戏胜利还剩余20次击杀！",
+                    "red", 3)
+                utilex:SoundAll("needkill20")
+            end
+            if self.Static.team_kill - self.Data.kill.Team3 == 10 then
+                Util:TopMsg2All("夜宴距离游戏胜利还剩余10次击杀！",
+                    "red", 3)
+                utilex:SoundAll("needkill10")
+            end
+            if self.Static.team_kill - self.Data.kill.Team3 == 5 then
+                Util:TopMsg2All("夜宴距离游戏胜利还剩余5次击杀！",
+                    "red", 3)
+            end
+            if self.Data.kill.Team3 >= self.Static.team_kill then
+                MainGame:TimerOver()
+                return
+            end
+        end
+    end
+end
+
+-- 时间结束
+function MainGame:TimerOver()
+    -- print("时间结束")
+    if self.Data.over == true then return end
+    utilex:SlowMotion()
+    if Stat and Stat.SendPublicData then
+        Stat:SendPublicData(true)
+    end
+    self.Data.over = true
+    if self:GetGameType() == 3 then
+        self.Data.win_team = self:ResolveFourTeamWinByKills()
+    else
+        local team2_num = self.Data.kill.Team2
+        local team3_num = self.Data.kill.Team3
+        if team2_num >= team3_num then
+            self.Data.win_team = 1
+        else
+            self.Data.win_team = 2
+        end
+    end
+    Timers(1, function()
+        self:GameOver()
+    end)
+end
+
+-- 游戏结束
+function MainGame:GameOver()
+    if Monster and Monster.OnSettlementUIStart then
+        Monster:OnSettlementUIStart()
+    end
+    OverData:InitPublic()
+    -- 设置获胜队伍
+    self:SetWinTeam()
+    -- 结算称号
+    self:SetTag()
+    -- 更新排名
+    Stat:UpDataRank()
+    Stat:TopListUpData()
+    for k, v in pairs(PD.IDs) do
+        if v then
+            OverData:LoadData(v)
+            OverData:OpenPage(v)
+            OverData:SendData(v)
+            local hero = Util:ID2Hero(v)
+            if hero and not hero:IsNull() then
+                utilex:AddModifier(hero, "modifier_petbuff")
+            end
+        end
+    end
+    if BotAI and BotAI.CleanupForSettlementUI then
+        Timers(1, function()
+            BotAI:CleanupForSettlementUI()
+        end)
+    end
+    MainGame:ExitGame()
+end
+
+function MainGame:ExitGame()
+    local tx = self.Data.tx
+    utilex:ClearTx(tx)
+    -- 记录对局
+    OverData:LogGame()
+end

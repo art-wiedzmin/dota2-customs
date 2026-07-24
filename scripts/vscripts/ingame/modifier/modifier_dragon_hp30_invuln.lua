@@ -8,22 +8,189 @@
 ]]
 
 
-local encoded=[[bW9kaWZpZXJfZHJhZ29uX2hwMzBfaW52dWxuID0gY2xhc3Moe30pCgpmdW5jdGlvbiBtb2RpZmllcl9kcmFnb25faHAzMF9pbnZ1bG46SXNIaWRkZW4oKSByZXR1cm4gZmFsc2UgZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9kcmFnb25faHAzMF9pbnZ1bG46SXNEZWJ1ZmYoKSByZXR1cm4gZmFsc2UgZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9kcmFnb25faHAzMF9pbnZ1bG46SXNQdXJnYWJsZSgpIHJldHVybiBmYWxzZSBlbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2RyYWdvbl9ocDMwX2ludnVsbjpSZW1vdmVPbkRlYXRoKCkgcmV0dXJuIHRydWUgZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9kcmFnb25faHAzMF9pbnZ1bG46SXNQZXJtYW5lbnQoKSByZXR1cm4gZmFsc2UgZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9kcmFnb25faHAzMF9pbnZ1bG46T25DcmVhdGVkKGt2KQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbiByZXR1cm4gZW5kCgogICAgc2VsZi5kdXJhdGlvbiA9IDgKICAgIHNlbGYudGljayA9IDAuNQogICAgc2VsZi5jYXN0X2RlbGF5ID0gMS41CiAgICBzZWxmLnNlYXJjaF9yYWRpdXMgPSA3NTAKICAgIHNlbGYuaW1wYWN0X3JhZGl1cyA9IDMwMAogICAgc2VsZi5kYW1hZ2VfcGN0ID0gMC4zMAogICAgc2VsZi5wZW5kaW5nX2ltcGFjdF90aW1lcnMgPSB7fQogICAgc2VsZi5leHBpcmVfdGltZXJfbmFtZSA9IG5pbAogICAgLS0g6JC954K555u45a+56Z2i5pyd5pa55ZCR55qE6ZqP5py65YGP6KeS77yI5bqm77yJ77yM5bem5Y+z5ZCE5LiN6LaF6L+H6K+l5YC8CiAgICBzZWxmLmFpbV9hbmdsZV9tYXggPSAxODAKICAgIHNlbGYuY2FzdF9kaXN0X21pbiA9IG5pbAogICAgc2VsZi5jYXN0X2Rpc3RfbWF4ID0gbmlsCgogICAgaWYga3YgdGhlbgogICAgICAgIGlmIHRvbnVtYmVyKGt2LmR1cmF0aW9uKSB0aGVuIHNlbGYuZHVyYXRpb24gPSB0b251bWJlcihrdi5kdXJhdGlvbikgZW5kCiAgICAgICAgaWYgdG9udW1iZXIoa3YuZHVyKSB0aGVuIHNlbGYuZHVyYXRpb24gPSB0b251bWJlcihrdi5kdXIpIGVuZAogICAgICAgIGlmIHRvbnVtYmVyKGt2LnRpY2spIHRoZW4gc2VsZi50aWNrID0gdG9udW1iZXIoa3YudGljaykgZW5kCiAgICAgICAgaWYgdG9udW1iZXIoa3YuY2FzdF9kZWxheSkgdGhlbiBzZWxmLmNhc3RfZGVsYXkgPSB0b251bWJlcihrdi5jYXN0X2RlbGF5KSBlbmQKICAgICAgICBpZiB0b251bWJlcihrdi5haW1fYW5nbGVfbWF4KSB0aGVuIHNlbGYuYWltX2FuZ2xlX21heCA9IHRvbnVtYmVyKGt2LmFpbV9hbmdsZV9tYXgpIGVuZAogICAgICAgIGlmIHRvbnVtYmVyKGt2LmNhc3RfZGlzdF9taW4pIHRoZW4gc2VsZi5jYXN0X2Rpc3RfbWluID0gdG9udW1iZXIoa3YuY2FzdF9kaXN0X21pbikgZW5kCiAgICAgICAgaWYgdG9udW1iZXIoa3YuY2FzdF9kaXN0X21heCkgdGhlbiBzZWxmLmNhc3RfZGlzdF9tYXggPSB0b251bWJlcihrdi5jYXN0X2Rpc3RfbWF4KSBlbmQKICAgIGVuZAoKICAgIC0tIGZhbHNl77ya5oyJ57ud5a+55Ymp5L2Z5pe26Ze06K6h77yb6YOo5YiG54mI5pys5LiLIHRydWUg5Lya5a+86Ie05Yiw5pyf6KGM5Li65byC5bi4CiAgICBzZWxmOlNldER1cmF0aW9uKHNlbGYuZHVyYXRpb24sIGZhbHNlKQogICAgbG9jYWwgbW9kID0gc2VsZgogICAgc2VsZi5leHBpcmVfdGltZXJfbmFtZSA9IFRpbWVyczpDcmVhdGVUaW1lcihzZWxmLmR1cmF0aW9uLCBmdW5jdGlvbigpCiAgICAgICAgaWYgbW9kIHRoZW4gbW9kLmV4cGlyZV90aW1lcl9uYW1lID0gbmlsIGVuZAogICAgICAgIGlmIG1vZCBhbmQgbm90IG1vZDpJc051bGwoKSB0aGVuCiAgICAgICAgICAgIG1vZDpEZXN0cm95KCkKICAgICAgICBlbmQKICAgIGVuZCkKCiAgICBzZWxmOlN0YXJ0SW50ZXJ2YWxUaGluayhzZWxmLnRpY2spCiAgICBzZWxmOk9uSW50ZXJ2YWxUaGluaygpCmVuZAoKbG9jYWwgZnVuY3Rpb24gbW9kaWZpZXJfZHJhZ29uX2hwMzBfaW52dWxuX0RvU3BsaXRFYXJ0aChzZWxmLCBjYXN0ZXIsIHBvcykKICAgIGlmIG5vdCBzZWxmIG9yIHNlbGY6SXNOdWxsKCkgdGhlbiByZXR1cm4gZW5kCiAgICBpZiBub3QgY2FzdGVyIG9yIGNhc3RlcjpJc051bGwoKSBvciBub3QgY2FzdGVyOklzQWxpdmUoKSB0aGVuIHJldHVybiBlbmQKICAgIGlmIG5vdCBwb3MgdGhlbiByZXR1cm4gZW5kCgogICAgbG9jYWwgcGZ4ID0gUGFydGljbGVNYW5hZ2VyOkNyZWF0ZVBhcnRpY2xlKAogICAgICAgICJwYXJ0aWNsZXMvdW5pdHMvaGVyb2VzL2hlcm9fbGVzaHJhYy9sZXNocmFjX3NwbGl0X2VhcnRoLnZwY2YiLAogICAgICAgIFBBVFRBQ0hfV09STERPUklHSU4sCiAgICAgICAgbmlsCiAgICApCiAgICBQYXJ0aWNsZU1hbmFnZXI6U2V0UGFydGljbGVDb250cm9sKHBmeCwgMCwgcG9zKQogICAgUGFydGljbGVNYW5hZ2VyOlNldFBhcnRpY2xlQ29udHJvbChwZngsIDEsIFZlY3RvcihzZWxmLmltcGFjdF9yYWRpdXMsIDAsIDApKQogICAgUGFydGljbGVNYW5hZ2VyOlJlbGVhc2VQYXJ0aWNsZUluZGV4KHBmeCkKICAgIEVtaXRTb3VuZE9uTG9jYXRpb25XaXRoQ2FzdGVyKHBvcywgIkhlcm9fTGVzaHJhYy5TcGxpdF9FYXJ0aCIsIGNhc3RlcikKCiAgICBsb2NhbCB2aWN0aW1zID0gRmluZFVuaXRzSW5SYWRpdXMoCiAgICAgICAgY2FzdGVyOkdldFRlYW1OdW1iZXIoKSwKICAgICAgICBwb3MsCiAgICAgICAgbmlsLAogICAgICAgIHNlbGYuaW1wYWN0X3JhZGl1cywKICAgICAgICBET1RBX1VOSVRfVEFSR0VUX1RFQU1fRU5FTVksCiAgICAgICAgRE9UQV9VTklUX1RBUkdFVF9IRVJPICsgRE9UQV9VTklUX1RBUkdFVF9CQVNJQywKICAgICAgICBET1RBX1VOSVRfVEFSR0VUX0ZMQUdfTk9ORSwKICAgICAgICBGSU5EX0FOWV9PUkRFUiwKICAgICAgICBmYWxzZQogICAgKQogICAgZm9yIF8sIGVuZW15IGluIGlwYWlycyh2aWN0aW1zKSBkbwogICAgICAgIGlmIGVuZW15IGFuZCBub3QgZW5lbXk6SXNOdWxsKCkgYW5kIGVuZW15OklzQWxpdmUoKSB0aGVuCiAgICAgICAgICAgIEFwcGx5RGFtYWdlKHsKICAgICAgICAgICAgICAgIHZpY3RpbSA9IGVuZW15LAogICAgICAgICAgICAgICAgYXR0YWNrZXIgPSBjYXN0ZXIsCiAgICAgICAgICAgICAgICBkYW1hZ2UgPSBlbmVteTpHZXRNYXhIZWFsdGgoKSAqIHNlbGYuZGFtYWdlX3BjdCwKICAgICAgICAgICAgICAgIGRhbWFnZV90eXBlID0gREFNQUdFX1RZUEVfTUFHSUNBTCwKICAgICAgICAgICAgICAgIGFiaWxpdHkgPSBuaWwsCiAgICAgICAgICAgICAgICBkYW1hZ2VfZmxhZ3MgPSBET1RBX0RBTUFHRV9GTEFHX0JZUEFTU0VTX0JMT0NLCiAgICAgICAgICAgIH0pCiAgICAgICAgICAgIFV0aWw6QWRkU3R1bihlbmVteSwgMS41KQogICAgICAgIGVuZAogICAgZW5kCmVuZAoKbG9jYWwgZnVuY3Rpb24gbW9kaWZpZXJfZHJhZ29uX2hwMzBfcGlja19haW1fcG9zKHNlbGYsIGNhc3RlcikKICAgIGlmIG5vdCBjYXN0ZXIgdGhlbiByZXR1cm4gbmlsIGVuZAogICAgbG9jYWwgZiA9IGNhc3RlcjpHZXRGb3J3YXJkVmVjdG9yKCkKICAgIGYueiA9IDAKICAgIGlmIGY6TGVuZ3RoMkQoKSA8IDAuMDEgdGhlbgogICAgICAgIGYgPSBWZWN0b3IoMSwgMCwgMCkKICAgIGVsc2UKICAgICAgICBmID0gZjpOb3JtYWxpemVkKCkKICAgIGVuZAogICAgbG9jYWwgYW5nbGUgPSBSYW5kb21GbG9hdCgtc2VsZi5haW1fYW5nbGVfbWF4LCBzZWxmLmFpbV9hbmdsZV9tYXgpCiAgICBsb2NhbCBkaXIgPSBSb3RhdGVQb3NpdGlvbihWZWN0b3IoMCwgMCwgMCksIFFBbmdsZSgwLCBhbmdsZSwgMCksIGYpCiAgICBkaXIueiA9IDAKICAgIGlmIGRpcjpMZW5ndGgyRCgpIDwgMC4wMSB0aGVuCiAgICAgICAgZGlyID0gZgogICAgZWxzZQogICAgICAgIGRpciA9IGRpcjpOb3JtYWxpemVkKCkKICAgIGVuZAogICAgbG9jYWwgZG1pbiA9IHNlbGYuY2FzdF9kaXN0X21pbiBvciBzZWxmLmltcGFjdF9yYWRpdXMKICAgIGxvY2FsIGRtYXggPSBzZWxmLmNhc3RfZGlzdF9tYXggb3Igc2VsZi5zZWFyY2hfcmFkaXVzCiAgICBpZiBkbWF4IDwgZG1pbiB0aGVuIGRtYXggPSBkbWluIGVuZAogICAgbG9jYWwgZGlzdCA9IFJhbmRvbUZsb2F0KGRtaW4sIGRtYXgpCiAgICBsb2NhbCByYXcgPSBjYXN0ZXI6R2V0QWJzT3JpZ2luKCkgKyBkaXIgKiBkaXN0CiAgICByZXR1cm4gR2V0R3JvdW5kUG9zaXRpb24ocmF3LCBjYXN0ZXIpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZHJhZ29uX2hwMzBfaW52dWxuOk9uSW50ZXJ2YWxUaGluaygpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuIHJldHVybiBlbmQKCiAgICBsb2NhbCBjYXN0ZXIgPSBzZWxmOkdldFBhcmVudCgpCiAgICBpZiBub3QgY2FzdGVyIG9yIGNhc3RlcjpJc051bGwoKSBvciBub3QgY2FzdGVyOklzQWxpdmUoKSB0aGVuCiAgICAgICAgc2VsZjpEZXN0cm95KCkKICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGxvY2FsIGltcGFjdF9wb3MgPSBtb2RpZmllcl9kcmFnb25faHAzMF9waWNrX2FpbV9wb3Moc2VsZiwgY2FzdGVyKQogICAgaWYgbm90IGltcGFjdF9wb3MgdGhlbiByZXR1cm4gZW5kCgogICAgc2VsZjpGb3JjZVJlZnJlc2goKQoKICAgIGxvY2FsIGZhY2UgPSBpbXBhY3RfcG9zIC0gY2FzdGVyOkdldEFic09yaWdpbigpCiAgICBmYWNlLnogPSAwCiAgICBpZiBmYWNlOkxlbmd0aDJEKCkgPiAwLjAxIHRoZW4KICAgICAgICBjYXN0ZXI6U2V0Rm9yd2FyZFZlY3RvcihmYWNlOk5vcm1hbGl6ZWQoKSkKICAgIGVuZAoKICAgIGNhc3RlcjpTdGFydEdlc3R1cmUoQUNUX0RPVEFfQ0FTVF9BQklMSVRZXzEpCgogICAgLS0g55So5bim5o+Q56S65ZyI55qE54mI5pys77yM6YG/5YWN6aKd5aSW5aSW5qGG57KS5a2Q5Ye6546w5bqV5Zu+5pa55Z2XCiAgICBSZWRUaXA6TGlmZUNpcmNsZV9hZGQoaW1wYWN0X3Bvcywgc2VsZi5jYXN0X2RlbGF5LCBzZWxmLmltcGFjdF9yYWRpdXMpCgogICAgLS0g5q+P5Liq57qi5ZyI54us56uL6K6h5pe26JC95Zyw77yb5Yu/55So5Y2V6K6h5pe25Zmo5bm25Zyo5paw5ZyI5pe2IFJlbW92Ze+8jOWQpuWImSAwLjVzIHRpY2sg5Lya5LiN5pat5Y+W5raI5LiK5LiA5q6177yM5rC46L+c5LiN5Ye65pKV6KOC5aSn5ZywCiAgICBsb2NhbCBwb3NfZml4ZWQgPSBWZWN0b3IoaW1wYWN0X3Bvcy54LCBpbXBhY3RfcG9zLnksIGltcGFjdF9wb3MueikKICAgIGxvY2FsIGRlbGF5ID0gc2VsZi5jYXN0X2RlbGF5CiAgICBsb2NhbCBtb2QgPSBzZWxmCiAgICBsb2NhbCB0bmFtZSA9IERvVW5pcXVlU3RyaW5nKCJkcmFnb25faHAzMF9zcGxpdF8iKQogICAgc2VsZi5wZW5kaW5nX2ltcGFjdF90aW1lcnNbdG5hbWVdID0gdHJ1ZQogICAgVGltZXJzOkNyZWF0ZVRpbWVyKHRuYW1lLCB7CiAgICAgICAgZW5kVGltZSA9IGRlbGF5LAogICAgICAgIGNhbGxiYWNrID0gZnVuY3Rpb24oKQogICAgICAgICAgICBpZiBtb2QucGVuZGluZ19pbXBhY3RfdGltZXJzIHRoZW4KICAgICAgICAgICAgICAgIG1vZC5wZW5kaW5nX2ltcGFjdF90aW1lcnNbdG5hbWVdID0gbmlsCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBpZiBub3QgbW9kIG9yIG1vZDpJc051bGwoKSB0aGVuIHJldHVybiBlbmQKICAgICAgICAgICAgbW9kOkZvcmNlUmVmcmVzaCgpCiAgICAgICAgICAgIGxvY2FsIGMgPSBtb2Q6R2V0UGFyZW50KCkKICAgICAgICAgICAgaWYgbm90IGMgb3IgYzpJc051bGwoKSBvciBub3QgYzpJc0FsaXZlKCkgdGhlbiByZXR1cm4gZW5kCiAgICAgICAgICAgIG1vZGlmaWVyX2RyYWdvbl9ocDMwX2ludnVsbl9Eb1NwbGl0RWFydGgobW9kLCBjLCBwb3NfZml4ZWQpCiAgICAgICAgZW5kCiAgICB9KQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2RyYWdvbl9ocDMwX2ludnVsbjpPbkRlc3Ryb3koKQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbiByZXR1cm4gZW5kCiAgICBpZiBzZWxmLnBlbmRpbmdfaW1wYWN0X3RpbWVycyB0aGVuCiAgICAgICAgZm9yIG5hbWUsIF8gaW4gcGFpcnMoc2VsZi5wZW5kaW5nX2ltcGFjdF90aW1lcnMpIGRvCiAgICAgICAgICAgIFRpbWVyczpSZW1vdmVUaW1lcihuYW1lKQogICAgICAgIGVuZAogICAgICAgIHNlbGYucGVuZGluZ19pbXBhY3RfdGltZXJzID0ge30KICAgIGVuZAogICAgaWYgc2VsZi5leHBpcmVfdGltZXJfbmFtZSB0aGVuCiAgICAgICAgVGltZXJzOlJlbW92ZVRpbWVyKHNlbGYuZXhwaXJlX3RpbWVyX25hbWUpCiAgICAgICAgc2VsZi5leHBpcmVfdGltZXJfbmFtZSA9IG5pbAogICAgZW5kCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZHJhZ29uX2hwMzBfaW52dWxuOkNoZWNrU3RhdGUoKQogICAgcmV0dXJuIHsKICAgICAgICBbTU9ESUZJRVJfU1RBVEVfSU5WVUxORVJBQkxFXSA9IHRydWUsCiAgICAgICAgW01PRElGSUVSX1NUQVRFX0FUVEFDS19JTU1VTkVdID0gdHJ1ZSwKICAgICAgICBbTU9ESUZJRVJfU1RBVEVfTUFHSUNfSU1NVU5FXSA9IHRydWUsCiAgICAgICAgW01PRElGSUVSX1NUQVRFX1JPT1RFRF0gPSB0cnVlLAogICAgfQplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+modifier_dragon_hp30_invuln = class({})
+
+function modifier_dragon_hp30_invuln:IsHidden() return false end
+
+function modifier_dragon_hp30_invuln:IsDebuff() return false end
+
+function modifier_dragon_hp30_invuln:IsPurgable() return false end
+
+function modifier_dragon_hp30_invuln:RemoveOnDeath() return true end
+
+function modifier_dragon_hp30_invuln:IsPermanent() return false end
+
+function modifier_dragon_hp30_invuln:OnCreated(kv)
+    if not IsServer() then return end
+
+    self.duration = 8
+    self.tick = 0.5
+    self.cast_delay = 1.5
+    self.search_radius = 750
+    self.impact_radius = 300
+    self.damage_pct = 0.30
+    self.pending_impact_timers = {}
+    self.expire_timer_name = nil
+    -- 落点相对面朝方向的随机偏角（度），左右各不超过该值
+    self.aim_angle_max = 180
+    self.cast_dist_min = nil
+    self.cast_dist_max = nil
+
+    if kv then
+        if tonumber(kv.duration) then self.duration = tonumber(kv.duration) end
+        if tonumber(kv.dur) then self.duration = tonumber(kv.dur) end
+        if tonumber(kv.tick) then self.tick = tonumber(kv.tick) end
+        if tonumber(kv.cast_delay) then self.cast_delay = tonumber(kv.cast_delay) end
+        if tonumber(kv.aim_angle_max) then self.aim_angle_max = tonumber(kv.aim_angle_max) end
+        if tonumber(kv.cast_dist_min) then self.cast_dist_min = tonumber(kv.cast_dist_min) end
+        if tonumber(kv.cast_dist_max) then self.cast_dist_max = tonumber(kv.cast_dist_max) end
+    end
+
+    -- false：按绝对剩余时间计；部分版本下 true 会导致到期行为异常
+    self:SetDuration(self.duration, false)
+    local mod = self
+    self.expire_timer_name = Timers:CreateTimer(self.duration, function()
+        if mod then mod.expire_timer_name = nil end
+        if mod and not mod:IsNull() then
+            mod:Destroy()
+        end
+    end)
+
+    self:StartIntervalThink(self.tick)
+    self:OnIntervalThink()
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+local function modifier_dragon_hp30_invuln_DoSplitEarth(self, caster, pos)
+    if not self or self:IsNull() then return end
+    if not caster or caster:IsNull() or not caster:IsAlive() then return end
+    if not pos then return end
+
+    local pfx = ParticleManager:CreateParticle(
+        "particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf",
+        PATTACH_WORLDORIGIN,
+        nil
+    )
+    ParticleManager:SetParticleControl(pfx, 0, pos)
+    ParticleManager:SetParticleControl(pfx, 1, Vector(self.impact_radius, 0, 0))
+    ParticleManager:ReleaseParticleIndex(pfx)
+    EmitSoundOnLocationWithCaster(pos, "Hero_Leshrac.Split_Earth", caster)
+
+    local victims = FindUnitsInRadius(
+        caster:GetTeamNumber(),
+        pos,
+        nil,
+        self.impact_radius,
+        DOTA_UNIT_TARGET_TEAM_ENEMY,
+        DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+        DOTA_UNIT_TARGET_FLAG_NONE,
+        FIND_ANY_ORDER,
+        false
+    )
+    for _, enemy in ipairs(victims) do
+        if enemy and not enemy:IsNull() and enemy:IsAlive() then
+            ApplyDamage({
+                victim = enemy,
+                attacker = caster,
+                damage = enemy:GetMaxHealth() * self.damage_pct,
+                damage_type = DAMAGE_TYPE_MAGICAL,
+                ability = nil,
+                damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_BLOCK
+            })
+            Util:AddStun(enemy, 1.5)
+        end
+    end
+end
+
+local function modifier_dragon_hp30_pick_aim_pos(self, caster)
+    if not caster then return nil end
+    local f = caster:GetForwardVector()
+    f.z = 0
+    if f:Length2D() < 0.01 then
+        f = Vector(1, 0, 0)
+    else
+        f = f:Normalized()
+    end
+    local angle = RandomFloat(-self.aim_angle_max, self.aim_angle_max)
+    local dir = RotatePosition(Vector(0, 0, 0), QAngle(0, angle, 0), f)
+    dir.z = 0
+    if dir:Length2D() < 0.01 then
+        dir = f
+    else
+        dir = dir:Normalized()
+    end
+    local dmin = self.cast_dist_min or self.impact_radius
+    local dmax = self.cast_dist_max or self.search_radius
+    if dmax < dmin then dmax = dmin end
+    local dist = RandomFloat(dmin, dmax)
+    local raw = caster:GetAbsOrigin() + dir * dist
+    return GetGroundPosition(raw, caster)
+end
+
+function modifier_dragon_hp30_invuln:OnIntervalThink()
+    if not IsServer() then return end
+
+    local caster = self:GetParent()
+    if not caster or caster:IsNull() or not caster:IsAlive() then
+        self:Destroy()
+        return
+    end
+
+    local impact_pos = modifier_dragon_hp30_pick_aim_pos(self, caster)
+    if not impact_pos then return end
+
+    self:ForceRefresh()
+
+    local face = impact_pos - caster:GetAbsOrigin()
+    face.z = 0
+    if face:Length2D() > 0.01 then
+        caster:SetForwardVector(face:Normalized())
+    end
+
+    caster:StartGesture(ACT_DOTA_CAST_ABILITY_1)
+
+    -- 用带提示圈的版本，避免额外外框粒子出现底图方块
+    RedTip:LifeCircle_add(impact_pos, self.cast_delay, self.impact_radius)
+
+    -- 每个红圈独立计时落地；勿用单计时器并在新圈时 Remove，否则 0.5s tick 会不断取消上一段，永远不出撕裂大地
+    local pos_fixed = Vector(impact_pos.x, impact_pos.y, impact_pos.z)
+    local delay = self.cast_delay
+    local mod = self
+    local tname = DoUniqueString("dragon_hp30_split_")
+    self.pending_impact_timers[tname] = true
+    Timers:CreateTimer(tname, {
+        endTime = delay,
+        callback = function()
+            if mod.pending_impact_timers then
+                mod.pending_impact_timers[tname] = nil
+            end
+            if not mod or mod:IsNull() then return end
+            mod:ForceRefresh()
+            local c = mod:GetParent()
+            if not c or c:IsNull() or not c:IsAlive() then return end
+            modifier_dragon_hp30_invuln_DoSplitEarth(mod, c, pos_fixed)
+        end
+    })
+end
+
+function modifier_dragon_hp30_invuln:OnDestroy()
+    if not IsServer() then return end
+    if self.pending_impact_timers then
+        for name, _ in pairs(self.pending_impact_timers) do
+            Timers:RemoveTimer(name)
+        end
+        self.pending_impact_timers = {}
+    end
+    if self.expire_timer_name then
+        Timers:RemoveTimer(self.expire_timer_name)
+        self.expire_timer_name = nil
+    end
+end
+
+function modifier_dragon_hp30_invuln:CheckState()
+    return {
+        [MODIFIER_STATE_INVULNERABLE] = true,
+        [MODIFIER_STATE_ATTACK_IMMUNE] = true,
+        [MODIFIER_STATE_MAGIC_IMMUNE] = true,
+        [MODIFIER_STATE_ROOTED] = true,
+    }
+end

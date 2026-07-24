@@ -8,22 +8,145 @@
 ]]
 
 
-local encoded=[[aWYgUGVyc29uID09IG5pbCB0aGVuCiAgICBQZXJzb24gPSBjbGFzcyh7fSkKICAgIHJlcXVpcmUoImluZ2FtZS5QZXJzb24uQ29uZmlnIikKICAgIHJlcXVpcmUoImluZ2FtZS5QZXJzb24uU2V0IikKICAgIHJlcXVpcmUoImluZ2FtZS5QZXJzb24uR2V0IikKICAgIHJlcXVpcmUoImluZ2FtZS5QZXJzb24uVWkiKQplbmQKCmZ1bmN0aW9uIFBlcnNvbjpJbml0KElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5EYXRhW0lEXSA9IFV0aWw6RGVlcENvcHlUYWIoc2VsZi5UZW1wbGF0ZSkKZW5kCgotLS0gdXNlci5kYWlseV9nYW1lX2JvbnVzX2RheSDovazkuLogWVlZWU1NRETvvIjkuI4gVXRpbDpHZXREYXRlKCkg5ZCM5rqQ5pys5Zyw5pel5Y6G77yJCmxvY2FsIGZ1bmN0aW9uIFBlcnNvbl9ib251c0RheURpZ2l0czgoc3RvcmVkKQogICAgaWYgbm90IHN0b3JlZCB0aGVuCiAgICAgICAgcmV0dXJuICIiCiAgICBlbmQKICAgIGxvY2FsIGQgPSBzdHJpbmcuZ3N1Yih0b3N0cmluZyhzdG9yZWQpLCAiJUQiLCAiIikKICAgIHJldHVybiBzdHJpbmcuc3ViKGQsIDEsIDgpCmVuZAoKLS0tIOivu+WPlueZu+W9leeUqOaIt+ihqOS4reeahOWujOi1m+mHkeixhuWtl+aute+8jOWGmeWFpSBkYWlseV9nYW1lX2JvbnVzX3RvZGF577yIMO+9njXvvIkKZnVuY3Rpb24gUGVyc29uOkFwcGx5RGFpbHlHYW1lQm9udXNGcm9tVXNlcihJRCwgdXNlcikKICAgIGlmIG5vdCBJRCBvciBub3QgdXNlciBvciBub3Qgc2VsZi5EYXRhW0lEXSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIHRvZGF5ID0gVXRpbDpHZXREYXRlKCkKICAgIGxvY2FsIHNkID0gUGVyc29uX2JvbnVzRGF5RGlnaXRzOCh1c2VyLmRhaWx5X2dhbWVfYm9udXNfZGF5KQogICAgbG9jYWwgY250ID0gdG9udW1iZXIodXNlci5kYWlseV9nYW1lX2JvbnVzX2NvdW50KQogICAgaWYgbm90IGNudCBvciBjbnQgPCAwIHRoZW4KICAgICAgICBjbnQgPSAwCiAgICBlbmQKICAgIGlmIHNkIH49IHRvZGF5IG9yIHNkID09ICIiIHRoZW4KICAgICAgICBzZWxmLkRhdGFbSURdLmRhaWx5X2dhbWVfYm9udXNfdG9kYXkgPSAwCiAgICBlbHNlCiAgICAgICAgaWYgY250ID4gNSB0aGVuCiAgICAgICAgICAgIGNudCA9IDUKICAgICAgICBlbmQKICAgICAgICBzZWxmLkRhdGFbSURdLmRhaWx5X2dhbWVfYm9udXNfdG9kYXkgPSBjbnQKICAgIGVuZAogICAgbG9jYWwgdHBjZiA9IHRvbnVtYmVyKHVzZXIudHBjZikKICAgIGlmIG5vdCB0cGNmIG9yIHRwY2YgPCAwIHRoZW4KICAgICAgICB0cGNmID0gMAogICAgZW5kCiAgICBzZWxmLkRhdGFbSURdLnRwY2YgPSBtYXRoLmZsb29yKHRwY2YpCmVuZAoKLS0tIOacrOaooeW8j+Wkqeair+WIhuaYr+WQpuW3suS7juacjeWKoeerr+aIkOWKn+WKoOi9ve+8iOeUqOS6jue7k+eul+mYsuaKpO+8iQpmdW5jdGlvbiBQZXJzb246SXNMYWRkZXJTY29yZVN5bmNlZChJRCwgZ2FtZV90cCkKICAgIGlmIG5vdCBJRCBvciBub3Qgc2VsZi5EYXRhW0lEXSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIGdhbWVfdHAgPT0gMSBvciBnYW1lX3RwID09IDIgb3IgZ2FtZV90cCA9PSAzIHRoZW4KICAgICAgICByZXR1cm4gc2VsZi5EYXRhW0lEXS5zY29yZV9zeW5jZWRfMXYxID09IHRydWUKICAgIGVuZAogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gUGVyc29uOlNldFBlcnNvbkRhdGEoSUQsIGRhdGEpCiAgICBpZiBub3QgSUQgb3Igbm90IGRhdGEgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICAtLSBwcmludCgi5Yqg6L29546p5a625oiY57upIikKICAgIC0tIHByaW50KGRhdGEpCiAgICBsb2NhbCB0b3RhbCA9IHRvbnVtYmVyKGRhdGEudG90YWxfZ2FtZXMpCiAgICBsb2NhbCB0b3RhbDF2MSA9IHRvbnVtYmVyKGRhdGEudG90YWxfZ2FtZXMyKQogICAgbG9jYWwgd2luID0gdG9udW1iZXIoZGF0YS53aW5fY291bnQpCiAgICBsb2NhbCB0YWc3ID0gdG9udW1iZXIoZGF0YS50YWc3X2NvdW50KQogICAgaWYgbm90IHRvdGFsIHRoZW4KICAgICAgICB0b3RhbCA9IDAKICAgIGVuZAogICAgaWYgbm90IHRvdGFsMXYxIHRoZW4KICAgICAgICB0b3RhbDF2MSA9IDAKICAgIGVuZAogICAgaWYgbm90IHdpbiB0aGVuCiAgICAgICAgd2luID0gMAogICAgZW5kCiAgICBpZiBub3QgdGFnNyB0aGVuCiAgICAgICAgdGFnNyA9IDAKICAgIGVuZAogICAgbG9jYWwgdG90YWxfYWxsX21vZGVzID0gdG90YWwgKyB0b3RhbDF2MQogICAgbG9jYWwgcDUgPSB0b251bWJlcihkYXRhLnBvaW50KQogICAgaWYgcDUgfj0gbmlsIGFuZCBwNSA+PSAwIHRoZW4KICAgICAgICBzZWxmLkRhdGFbSURdLnBvaW50ID0gcDUKICAgICAgICBzZWxmLkRhdGFbSURdLnNjb3JlX3N5bmNlZF81djUgPSB0cnVlCiAgICBlbHNlCiAgICAgICAgc2VsZi5EYXRhW0lEXS5zY29yZV9zeW5jZWRfNXY1ID0gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgcDEgPSB0b251bWJlcihkYXRhLnBvaW50MikKICAgIGlmIHAxIH49IG5pbCBhbmQgcDEgPj0gMCB0aGVuCiAgICAgICAgc2VsZi5EYXRhW0lEXS5wb2ludDIgPSBwMQogICAgICAgIHNlbGYuRGF0YVtJRF0uc2NvcmVfc3luY2VkXzF2MSA9IHRydWUKICAgIGVsc2UKICAgICAgICBzZWxmLkRhdGFbSURdLnNjb3JlX3N5bmNlZF8xdjEgPSBmYWxzZQogICAgZW5kCiAgICBzZWxmLkRhdGFbSURdLmhpZ2hfcG9pbnQgPSBkYXRhLmhpZ2hlc3RfcG9pbnQKICAgIHNlbGYuRGF0YVtJRF0ud2luX2NvdW50ID0gd2luCiAgICBzZWxmLkRhdGFbSURdLnRvdGFsX2dhbWUgPSB0b3RhbAogICAgc2VsZi5EYXRhW0lEXS5sb3NlX2NvdW50ID0gZGF0YS5sb3NlX2NvdW50CgogICAgc2VsZi5EYXRhW0lEXS5oaWdoZXN0X3BvaW50MiA9IGRhdGEuaGlnaGVzdF9wb2ludDIKICAgIHNlbGYuRGF0YVtJRF0udG90YWxfZ2FtZTIgPSBkYXRhLnRvdGFsX2dhbWVzMgogICAgc2VsZi5EYXRhW0lEXS50b3BfY291bnQgPSBkYXRhLnRvcF9jb3VudAogICAgc2VsZi5EYXRhW0lEXS50b3AzX2NvdW50ID0gZGF0YS50b3AzX2NvdW50CiAgICBpZiBkYXRhLmJvdF90aW1lIHRoZW4KICAgICAgICBzZWxmLkRhdGFbSURdLmJvdF90aW1lID0gZGF0YS5ib3RfdGltZQogICAgZW5kCiAgICBzZWxmLkRhdGFbSURdLnRhZ3MudGFnMSA9IGRhdGEudGFnMV9jb3VudAogICAgc2VsZi5EYXRhW0lEXS50YWdzLnRhZzIgPSBkYXRhLnRhZzJfY291bnQKICAgIHNlbGYuRGF0YVtJRF0udGFncy50YWczID0gZGF0YS50YWczX2NvdW50CiAgICBzZWxmLkRhdGFbSURdLnRhZ3MudGFnNCA9IGRhdGEudGFnNF9jb3VudAogICAgc2VsZi5EYXRhW0lEXS50YWdzLnRhZzUgPSBkYXRhLnRhZzVfY291bnQKICAgIHNlbGYuRGF0YVtJRF0udGFncy50YWc2ID0gZGF0YS50YWc2X2NvdW50CiAgICBzZWxmLkRhdGFbSURdLnRhZ3MudGFnNyA9IGRhdGEudGFnN19jb3VudAogICAgc2VsZi5EYXRhW0lEXS50YWdzLnRhZzggPSBkYXRhLnRhZzhfY291bnQKICAgIHNlbGYuRGF0YVtJRF0udGFncy50YWc5ID0gZGF0YS50YWc5X2NvdW50CiAgICBzZWxmLkRhdGFbSURdLnRhZ3MudGFnMTAgPSBkYXRhLnRhZzEwX2NvdW50CiAgICBzZWxmLkRhdGFbSURdLnRhZ3MudGFnMTEgPSBkYXRhLnRhZzExX2NvdW50CiAgICBzZWxmLkRhdGFbSURdLnRhZ3MudGFnMTIgPSBkYXRhLnRhZzEyX2NvdW50CiAgICBzZWxmLkRhdGFbSURdLnRhZ3MudGFnMTMgPSBkYXRhLnRhZzEzX2NvdW50CiAgICBzZWxmLkRhdGFbSURdLnRhZ3MudGFnMTQgPSBkYXRhLnRhZzE0X2NvdW50CiAgICBzZWxmLkRhdGFbSURdLnRhZ3MudGFnMTUgPSBkYXRhLnRhZzE1X2NvdW50CiAgICAtLSB0b3RhbD09MCDml7bpgb/lhY0gMC8wIOKGkiBuYW7vvIznmb7liIbmr5TmjIkgMAogICAgbG9jYWwgd2luX251bSA9IHRvdGFsID4gMCBhbmQgKHdpbiAvIHRvdGFsICogMTAwKSBvciAwCiAgICBzZWxmLkRhdGFbSURdLndpbl9yYXRlID0gdXRpbGV4OkZsb2F0U2V0KHdpbl9udW0sIDEpCiAgICAtLSDpgIPot5HnjocgPSDpgIPot5Hnp7Dlj7codGFnNynmrKHmlbAgLyDlhajmqKHlvI/mgLvlnLrmlbDvvIg1djUrM3g0IOiuoSB0b3RhbF9nYW1lc++8jDF2MSDorqEgdG90YWxfZ2FtZXMy77yJCiAgICBsb2NhbCBydW5fbnVtID0gdG90YWxfYWxsX21vZGVzID4gMCBhbmQgKHRhZzcgLyB0b3RhbF9hbGxfbW9kZXMpICogMTAwIG9yIDAKICAgIHNlbGYuRGF0YVtJRF0ucnVuX3JhdGUgPSBtYXRoLmZsb29yKHJ1bl9udW0gKyAwLjUpCiAgICBzZWxmOkFwcGx5RGFpbHlHYW1lQm9udXNGcm9tVXNlcihJRCwgZGF0YSkKICAgIHNlbGY6U2VuZERhdGEoSUQpCgogICAgaWYgUmFuayBhbmQgUmFuay5EYXRhIGFuZCBSYW5rLkRhdGFbSURdIGFuZCBSYW5rLkRhdGFbSURdLmRhdGEgdGhlbgogICAgICAgIFJhbmsuRGF0YVtJRF0uZGF0YS5wb2ludCA9IFBlcnNvbi5EYXRhW0lEXS5wb2ludAogICAgICAgIFJhbmsuRGF0YVtJRF0uZGF0YS5wb2ludDIgPSBQZXJzb24uRGF0YVtJRF0ucG9pbnQyCiAgICAgICAgaWYgUmFuay5EYXRhW0lEXS5wYWdlIHRoZW4KICAgICAgICAgICAgUmFuazpTZW5kRGF0YShJRCkKICAgICAgICBlbmQKICAgIGVuZAplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if Person == nil then
+    Person = class({})
+    require("ingame.Person.Config")
+    require("ingame.Person.Set")
+    require("ingame.Person.Get")
+    require("ingame.Person.Ui")
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function Person:Init(ID)
+    if not ID then
+        return
+    end
+    self.Data[ID] = Util:DeepCopyTab(self.Template)
+end
+
+--- user.daily_game_bonus_day 转为 YYYYMMDD（与 Util:GetDate() 同源本地日历）
+local function Person_bonusDayDigits8(stored)
+    if not stored then
+        return ""
+    end
+    local d = string.gsub(tostring(stored), "%D", "")
+    return string.sub(d, 1, 8)
+end
+
+--- 读取登录用户表中的完赛金豆字段，写入 daily_game_bonus_today（0～5）
+function Person:ApplyDailyGameBonusFromUser(ID, user)
+    if not ID or not user or not self.Data[ID] then
+        return
+    end
+    local today = Util:GetDate()
+    local sd = Person_bonusDayDigits8(user.daily_game_bonus_day)
+    local cnt = tonumber(user.daily_game_bonus_count)
+    if not cnt or cnt < 0 then
+        cnt = 0
+    end
+    if sd ~= today or sd == "" then
+        self.Data[ID].daily_game_bonus_today = 0
+    else
+        if cnt > 5 then
+            cnt = 5
+        end
+        self.Data[ID].daily_game_bonus_today = cnt
+    end
+    local tpcf = tonumber(user.tpcf)
+    if not tpcf or tpcf < 0 then
+        tpcf = 0
+    end
+    self.Data[ID].tpcf = math.floor(tpcf)
+end
+
+--- 本模式天梯分是否已从服务端成功加载（用于结算防护）
+function Person:IsLadderScoreSynced(ID, game_tp)
+    if not ID or not self.Data[ID] then
+        return false
+    end
+    if game_tp == 1 or game_tp == 2 or game_tp == 3 then
+        return self.Data[ID].score_synced_1v1 == true
+    end
+    return false
+end
+
+function Person:SetPersonData(ID, data)
+    if not ID or not data then
+        return
+    end
+    -- print("加载玩家战绩")
+    -- print(data)
+    local total = tonumber(data.total_games)
+    local total1v1 = tonumber(data.total_games2)
+    local win = tonumber(data.win_count)
+    local tag7 = tonumber(data.tag7_count)
+    if not total then
+        total = 0
+    end
+    if not total1v1 then
+        total1v1 = 0
+    end
+    if not win then
+        win = 0
+    end
+    if not tag7 then
+        tag7 = 0
+    end
+    local total_all_modes = total + total1v1
+    local p5 = tonumber(data.point)
+    if p5 ~= nil and p5 >= 0 then
+        self.Data[ID].point = p5
+        self.Data[ID].score_synced_5v5 = true
+    else
+        self.Data[ID].score_synced_5v5 = false
+    end
+    local p1 = tonumber(data.point2)
+    if p1 ~= nil and p1 >= 0 then
+        self.Data[ID].point2 = p1
+        self.Data[ID].score_synced_1v1 = true
+    else
+        self.Data[ID].score_synced_1v1 = false
+    end
+    self.Data[ID].high_point = data.highest_point
+    self.Data[ID].win_count = win
+    self.Data[ID].total_game = total
+    self.Data[ID].lose_count = data.lose_count
+
+    self.Data[ID].highest_point2 = data.highest_point2
+    self.Data[ID].total_game2 = data.total_games2
+    self.Data[ID].top_count = data.top_count
+    self.Data[ID].top3_count = data.top3_count
+    if data.bot_time then
+        self.Data[ID].bot_time = data.bot_time
+    end
+    self.Data[ID].tags.tag1 = data.tag1_count
+    self.Data[ID].tags.tag2 = data.tag2_count
+    self.Data[ID].tags.tag3 = data.tag3_count
+    self.Data[ID].tags.tag4 = data.tag4_count
+    self.Data[ID].tags.tag5 = data.tag5_count
+    self.Data[ID].tags.tag6 = data.tag6_count
+    self.Data[ID].tags.tag7 = data.tag7_count
+    self.Data[ID].tags.tag8 = data.tag8_count
+    self.Data[ID].tags.tag9 = data.tag9_count
+    self.Data[ID].tags.tag10 = data.tag10_count
+    self.Data[ID].tags.tag11 = data.tag11_count
+    self.Data[ID].tags.tag12 = data.tag12_count
+    self.Data[ID].tags.tag13 = data.tag13_count
+    self.Data[ID].tags.tag14 = data.tag14_count
+    self.Data[ID].tags.tag15 = data.tag15_count
+    -- total==0 时避免 0/0 → nan，百分比按 0
+    local win_num = total > 0 and (win / total * 100) or 0
+    self.Data[ID].win_rate = utilex:FloatSet(win_num, 1)
+    -- 逃跑率 = 逃跑称号(tag7)次数 / 全模式总场数（5v5+3x4 计 total_games，1v1 计 total_games2）
+    local run_num = total_all_modes > 0 and (tag7 / total_all_modes) * 100 or 0
+    self.Data[ID].run_rate = math.floor(run_num + 0.5)
+    self:ApplyDailyGameBonusFromUser(ID, data)
+    self:SendData(ID)
+
+    if Rank and Rank.Data and Rank.Data[ID] and Rank.Data[ID].data then
+        Rank.Data[ID].data.point = Person.Data[ID].point
+        Rank.Data[ID].data.point2 = Person.Data[ID].point2
+        if Rank.Data[ID].page then
+            Rank:SendData(ID)
+        end
+    end
+end

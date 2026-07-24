@@ -8,22 +8,83 @@
 ]]
 
 
-local encoded=[[LS0g5L+u5LuZ6aOe6KGMIC8g6LiP5LqR6Z2077ya562L5paX5LqR54m55pWI5ZCM5q2l77yIbW9kaWZpZXJfY2xyYl9mbHlfY2xvdWTvvIkKCkNscmJGbHlDbG91ZFhpdVdlaVVubG9jayA9IDI0CgpmdW5jdGlvbiBDbHJiSGVyb0hhc0ZseUNsb3VkU291cmNlKGhlcm8pCiAgICBpZiBub3QgaGVybyBvciBoZXJvOklzTnVsbCgpIG9yIG5vdCBoZXJvOklzSGVybygpIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAoKICAgIGxvY2FsIHQ2ID0gaGVybzpGaW5kTW9kaWZpZXJCeU5hbWUoIm1vZGlmaWVyX3RhbGVudF9za2lsbF82IikKICAgIGlmIHQ2IGFuZCAodDY6R2V0U3RhY2tDb3VudCgpIG9yIDApID49IENscmJGbHlDbG91ZFhpdVdlaVVubG9jayB0aGVuCiAgICAgICAgcmV0dXJuIHRydWUKICAgIGVuZAoKICAgIGxvY2FsIHR5eF9pdGVtID0gaGVybzpGaW5kTW9kaWZpZXJCeU5hbWUoIm1vZGlmaWVyX2l0ZW1fZXF1aXBfNF9idWZmIikKICAgIGlmIHR5eF9pdGVtIGFuZCB0eXhfaXRlbS5Jc0VuYWJsZWQgYW5kIHR5eF9pdGVtOklzRW5hYmxlZCgpIHRoZW4KICAgICAgICByZXR1cm4gdHJ1ZQogICAgZW5kCgogICAgaWYgaGVybzpIYXNNb2RpZmllcigibW9kaWZpZXJfY2xyYl90eXhfdGVycmFpbiIpIHRoZW4KICAgICAgICByZXR1cm4gdHJ1ZQogICAgZW5kCgogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gQ2xyYkhlcm9TaG91bGRTaG93Rmx5Q2xvdWQoaGVybykKICAgIGlmIG5vdCBoZXJvIG9yIGhlcm86SXNOdWxsKCkgb3Igbm90IGhlcm86SXNBbGl2ZSgpIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgcmV0dXJuIENscmJIZXJvSGFzRmx5Q2xvdWRTb3VyY2UoaGVybykKZW5kCgpmdW5jdGlvbiBDbHJiRmx5Q2xvdWRTeW5jKGhlcm8pCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIG5vdCBoZXJvIG9yIGhlcm86SXNOdWxsKCkgb3Igbm90IGhlcm86SXNIZXJvKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCgogICAgbG9jYWwgaGFzX3NvdXJjZSA9IENscmJIZXJvSGFzRmx5Q2xvdWRTb3VyY2UoaGVybykKICAgIGxvY2FsIHdhbnQgPSBoYXNfc291cmNlIGFuZCBoZXJvOklzQWxpdmUoKQogICAgbG9jYWwgaGFzX2Nsb3VkID0gaGVybzpIYXNNb2RpZmllcigibW9kaWZpZXJfY2xyYl9mbHlfY2xvdWQiKQoKICAgIGlmIHdhbnQgdGhlbgogICAgICAgIGlmIG5vdCBoYXNfY2xvdWQgdGhlbgogICAgICAgICAgICBoZXJvOkFkZE5ld01vZGlmaWVyKGhlcm8sIG5pbCwgIm1vZGlmaWVyX2NscmJfZmx5X2Nsb3VkIiwge30pCiAgICAgICAgZW5kCiAgICBlbHNlaWYgaGFzX2Nsb3VkIHRoZW4KICAgICAgICBoZXJvOlJlbW92ZU1vZGlmaWVyQnlOYW1lKCJtb2RpZmllcl9jbHJiX2ZseV9jbG91ZCIpCiAgICBlbmQKZW5kCgotLS0g5aSN5rS7556s6Ze0IElzQWxpdmUg5Y+v6IO95LuN5Li6IGZhbHNl77yb5aSa5qyh5bu26L+f6KGl5oyC5LqR5py1CmZ1bmN0aW9uIENscmJGbHlDbG91ZFNjaGVkdWxlU3luYyhoZXJvKQogICAgaWYgbm90IElzU2VydmVyKCkgb3Igbm90IGhlcm8gb3IgaGVybzpJc051bGwoKSBvciBub3QgaGVybzpJc0hlcm8oKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIG5vdCBDbHJiSGVyb0hhc0ZseUNsb3VkU291cmNlKGhlcm8pIHRoZW4KICAgICAgICBDbHJiRmx5Q2xvdWRTeW5jKGhlcm8pCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIENscmJGbHlDbG91ZFN5bmMoaGVybykKICAgIGlmIG5vdCBUaW1lcnMgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBmb3IgXywgZGVsYXkgaW4gaXBhaXJzKHsgMC4wNSwgMC4xNSwgMC4zNSwgMC42LCAxLjAgfSkgZG8KICAgICAgICBUaW1lcnMoZGVsYXksIGZ1bmN0aW9uKCkKICAgICAgICAgICAgaWYgbm90IGhlcm8gb3IgaGVybzpJc051bGwoKSB0aGVuCiAgICAgICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGlmIG5vdCBDbHJiSGVyb0hhc0ZseUNsb3VkU291cmNlKGhlcm8pIHRoZW4KICAgICAgICAgICAgICAgIENscmJGbHlDbG91ZFN5bmMoaGVybykKICAgICAgICAgICAgICAgIHJldHVybgogICAgICAgICAgICBlbmQKICAgICAgICAgICAgQ2xyYkZseUNsb3VkU3luYyhoZXJvKQogICAgICAgIGVuZCkKICAgIGVuZAplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 修仙飞行 / 踏云靴：筋斗云特效同步（modifier_clrb_fly_cloud）
+
+ClrbFlyCloudXiuWeiUnlock = 24
+
+function ClrbHeroHasFlyCloudSource(hero)
+    if not hero or hero:IsNull() or not hero:IsHero() then
+        return false
+    end
+
+    local t6 = hero:FindModifierByName("modifier_talent_skill_6")
+    if t6 and (t6:GetStackCount() or 0) >= ClrbFlyCloudXiuWeiUnlock then
+        return true
+    end
+
+    local tyx_item = hero:FindModifierByName("modifier_item_equip_4_buff")
+    if tyx_item and tyx_item.IsEnabled and tyx_item:IsEnabled() then
+        return true
+    end
+
+    if hero:HasModifier("modifier_clrb_tyx_terrain") then
+        return true
+    end
+
+    return false
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function ClrbHeroShouldShowFlyCloud(hero)
+    if not hero or hero:IsNull() or not hero:IsAlive() then
+        return false
+    end
+    return ClrbHeroHasFlyCloudSource(hero)
+end
+
+function ClrbFlyCloudSync(hero)
+    if not IsServer() then
+        return
+    end
+    if not hero or hero:IsNull() or not hero:IsHero() then
+        return
+    end
+
+    local has_source = ClrbHeroHasFlyCloudSource(hero)
+    local want = has_source and hero:IsAlive()
+    local has_cloud = hero:HasModifier("modifier_clrb_fly_cloud")
+
+    if want then
+        if not has_cloud then
+            hero:AddNewModifier(hero, nil, "modifier_clrb_fly_cloud", {})
+        end
+    elseif has_cloud then
+        hero:RemoveModifierByName("modifier_clrb_fly_cloud")
+    end
+end
+
+--- 复活瞬间 IsAlive 可能仍为 false；多次延迟补挂云朵
+function ClrbFlyCloudScheduleSync(hero)
+    if not IsServer() or not hero or hero:IsNull() or not hero:IsHero() then
+        return
+    end
+    if not ClrbHeroHasFlyCloudSource(hero) then
+        ClrbFlyCloudSync(hero)
+        return
+    end
+    ClrbFlyCloudSync(hero)
+    if not Timers then
+        return
+    end
+    for _, delay in ipairs({ 0.05, 0.15, 0.35, 0.6, 1.0 }) do
+        Timers(delay, function()
+            if not hero or hero:IsNull() then
+                return
+            end
+            if not ClrbHeroHasFlyCloudSource(hero) then
+                ClrbFlyCloudSync(hero)
+                return
+            end
+            ClrbFlyCloudSync(hero)
+        end)
+    end
+end

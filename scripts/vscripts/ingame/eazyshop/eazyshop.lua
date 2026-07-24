@@ -8,22 +8,308 @@
 ]]
 
 
-local encoded=[[aWYgRWF6eVNob3AgPT0gbmlsIHRoZW4KICAgIEVhenlTaG9wID0gY2xhc3Moe30pCgogICAgcmVxdWlyZSgiaW5nYW1lLkVhenlTaG9wLkNvbmZpZyIpCgogICAgcmVxdWlyZSgiaW5nYW1lLkVhenlTaG9wLlNldCIpCgogICAgcmVxdWlyZSgiaW5nYW1lLkVhenlTaG9wLkdldCIpCgogICAgcmVxdWlyZSgiaW5nYW1lLkVhenlTaG9wLkZ1bmMiKQoKICAgIHJlcXVpcmUoImluZ2FtZS5FYXp5U2hvcC5VaSIpCmVuZAoKCgpmdW5jdGlvbiBFYXp5U2hvcDpJbml0KElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIHNlbGYuRGF0YVtJRF0gPSBVdGlsOkRlZXBDb3B5VGFiKHNlbGYuVGVtcGxhdGUpCgogICAgc2VsZi5EYXRhW0lEXS5nb29kcyA9IFV0aWw6RGVlcENvcHlUYWIoRWF6eVNob3AuU3RhdGljLkdvb2RzKQplbmQKCmZ1bmN0aW9uIEVhenlTaG9wOkVhenlTaG9wQ2hhbmdlKElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgc2VsZi5EYXRhW0lEXS5wYWdlID09IHRydWUgdGhlbgogICAgICAgIHNlbGY6Q2xvc2VQYWdlKElEKQogICAgZWxzZQogICAgICAgIHNlbGY6T3BlblBhZ2UoSUQpCiAgICBlbmQKICAgIHNlbGY6U2VuZERhdGEoSUQpCmVuZAoKbG9jYWwgZnVuY3Rpb24gRWF6eVNob3BGaW5kR29vZChrZXkpCiAgICBmb3IgXywgcm93IGluIGlwYWlycyhFYXp5U2hvcC5TdGF0aWMuR29vZHMpIGRvCiAgICAgICAgaWYgcm93LmlkID09IGtleSB0aGVuCiAgICAgICAgICAgIHJldHVybiByb3cKICAgICAgICBlbmQKICAgIGVuZAplbmQKCgoKZnVuY3Rpb24gRWF6eVNob3A6SXNSYlNraWxsSXRlbShuYW1lKQogICAgaWYgbm90IG5hbWUgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCgogICAgZm9yIF8sIHYgaW4gaXBhaXJzKEl0ZW0uUmIpIGRvCiAgICAgICAgaWYgdiA9PSBuYW1lIHRoZW4KICAgICAgICAgICAgcmV0dXJuIHRydWUKICAgICAgICBlbmQKICAgIGVuZAoKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIEVhenlTaG9wOk9wZW5UaWFuU2h1UGlja2VyKElEKQogICAgLS0gcHJpbnQoIk9wZW5UaWFuU2h1UGlja2VyIikKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBsb2NhbCBwYXJ0cyA9IHt9CgogICAgZm9yIF8sIHNraWxsX2l0ZW0gaW4gaXBhaXJzKEl0ZW0uUmIpIGRvCiAgICAgICAgdGFibGUuaW5zZXJ0KHBhcnRzLCBza2lsbF9pdGVtKQogICAgZW5kCiAgICAtLSBwcmludCgxMTExKQogICAgLS0g5pWw5o2u5p2l6IeqIEl0ZW0uUmLvvJvlrZfnrKbkuLLliJfooajpgb/lhY3lrqLmiLfnq6/kuovku7bph4wgdGFibGUg5bqP5YiX5YyW5byC5bi4CiAgICAtLSBwcmludCgyMjIpCiAgICBVdGlsOlNlbmQySnNJRCgiVUlfRnJlZUJvb2siLCB7CgogICAgICAgIHZpc2libGUgPSB0cnVlLAoKICAgICAgICBza2lsbHMgPSBJdGVtLlJiLAoKICAgIH0sIElEKQplbmQKCi0tLSDku47og4zljIXkvb/nlKjlpKnkuabvvJrlt7LmtojogJfpgZPlhbfvvIzlj5bmtojliJnooaXlm54gaXRlbV9nb29kc18yMgoKZnVuY3Rpb24gRWF6eVNob3A6T3BlblRpYW5TaHVQaWNrZXJGcm9tSXRlbShJRCkKICAgIGlmIG5vdCBJRCBvciBub3Qgc2VsZi5EYXRhW0lEXSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBsb2NhbCBkID0gc2VsZi5EYXRhW0lEXQoKICAgIGQudGlhbl9zaHVfcGVuZGluZyA9IGZhbHNlCgogICAgZC50aWFuX3NodV9pdGVtX3JlZnVuZCA9IHRydWUKCiAgICBzZWxmOk9wZW5UaWFuU2h1UGlja2VyKElEKQplbmQKCmZ1bmN0aW9uIEVhenlTaG9wOlRpYW5TaHVQaWNrU2tpbGwoSUQsIGl0ZW1fbmFtZSkKICAgIC0tIHByaW50KGl0ZW1fbmFtZSkKICAgIGlmIG5vdCBJRCBvciBub3QgaXRlbV9uYW1lIG9yIGl0ZW1fbmFtZSA9PSAiIiB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBpZiBub3Qgc2VsZi5EYXRhW0lEXSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBsb2NhbCBkID0gc2VsZi5EYXRhW0lEXQoKICAgIGlmIG5vdCBkLnRpYW5fc2h1X3BlbmRpbmcgYW5kIG5vdCBkLnRpYW5fc2h1X2l0ZW1fcmVmdW5kIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGlmIG5vdCBzZWxmOklzUmJTa2lsbEl0ZW0oaXRlbV9uYW1lKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBkLnRpYW5fc2h1X3BlbmRpbmcgPSBmYWxzZQoKICAgIGQudGlhbl9zaHVfaXRlbV9yZWZ1bmQgPSBmYWxzZQoKICAgIEl0ZW06QWRkSXRlbShJRCwgaXRlbV9uYW1lKQoKICAgIFV0aWw6U2VuZDJKc0lEKCJVSV9GcmVlQm9vayIsIHsgdmlzaWJsZSA9IGZhbHNlIH0sIElEKQplbmQKCmZ1bmN0aW9uIEVhenlTaG9wOlRpYW5TaHVDYW5jZWwoSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIFV0aWw6U2VuZDJKc0lEKCJVSV9GcmVlQm9vayIsIHsgdmlzaWJsZSA9IGZhbHNlIH0sIElEKQoKICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGxvY2FsIGQgPSBzZWxmLkRhdGFbSURdCgogICAgaWYgZCB0aGVuCiAgICAgICAgaWYgZC50aWFuX3NodV9wZW5kaW5nIHRoZW4KICAgICAgICAgICAgbG9jYWwgciA9IHRvbnVtYmVyKEVhenlTaG9wLlN0YXRpYy5UaWFuU2h1UHJpY2UpIG9yIDEwMDAKCiAgICAgICAgICAgIFBsYXllclJlc291cmNlOk1vZGlmeUdvbGQoSUQsIHIsIGZhbHNlLCAwKQoKICAgICAgICAgICAgZC50aWFuX3NodV9wZW5kaW5nID0gZmFsc2UKICAgICAgICBlbmQKCiAgICAgICAgaWYgZC50aWFuX3NodV9pdGVtX3JlZnVuZCB0aGVuCiAgICAgICAgICAgIEl0ZW06QWRkSXRlbShJRCwgIml0ZW1fZ29vZHNfMjIiKQoKICAgICAgICAgICAgZC50aWFuX3NodV9pdGVtX3JlZnVuZCA9IGZhbHNlCiAgICAgICAgZW5kCiAgICBlbmQKCiAgICBVdGlsOlNlbmQySnNJRCgiVUlfRnJlZUJvb2siLCB7IHZpc2libGUgPSBmYWxzZSB9LCBJRCkKZW5kCgotLS0g5L6/5o236LSt5Lmw77ya5LiN5Y+R5pS+5a6e54mp77yI5aSp5Lmm6Zmk5aSW5Li65by556qX6YCJ5oqA6IO95Lmm77yJCgpmdW5jdGlvbiBFYXp5U2hvcDpCdXkoSUQsIHRleHQpCiAgICBpZiBub3QgSUQgb3Igbm90IHRleHQgb3IgdGV4dCA9PSAiIiB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBsb2NhbCByb3cgPSBFYXp5U2hvcEZpbmRHb29kKHRleHQpCgogICAgaWYgbm90IHJvdyB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBpZiBNYWluR2FtZSBhbmQgTWFpbkdhbWUuSXNQYXNzaXZlTW9kZUJhbm5lZFB1cmNoYXNlSXRlbQogICAgICAgIGFuZCBNYWluR2FtZTpJc1Bhc3NpdmVNb2RlQmFubmVkUHVyY2hhc2VJdGVtKHJvdy5pdGVtKSB0aGVuCiAgICAgICAgVXRpbDpCb3R0b21Nc2cySUQoSUQsICLooqvliqjmqKHlvI/kuIvkuI3lj6/otK3kubDor6Xnianlk4EiLCAicmVkIiwgMSkKCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBsb2NhbCBjb3N0ID0gdG9udW1iZXIocm93LnByaWNlKSBvciAwCgogICAgaWYgUGxheWVyUmVzb3VyY2U6R2V0R29sZChJRCkgPCBjb3N0IHRoZW4KICAgICAgICBVdGlsOkJvdHRvbU1zZzJJRChJRCwgIumHkeW4geS4jei2syIsICJyZWQiLCAxKQoKICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGxvY2FsIGhlcm8gPSBVdGlsOklEMkhlcm8oSUQpCgogICAgaWYgbm90IGhlcm8gb3IgaGVybzpJc051bGwoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBpZiB0ZXh0ID09ICJ0aWFuX3NodSIgdGhlbgogICAgICAgIGxvY2FsIGdyID0gR2FtZVJ1bGVzCiAgICAgICAgbG9jYWwgZ2FtZV90ID0gKGdyIGFuZCBnci5HZXRET1RBVGltZSBhbmQgZ3I6R2V0RE9UQVRpbWUodHJ1ZSwgdHJ1ZSkpIG9yIDAKICAgICAgICBsb2NhbCBuZWVkX3QgPSB0b251bWJlcihFYXp5U2hvcC5TdGF0aWMuVGlhblNodVVubG9ja0dhbWVUaW1lKSBvciAxMjAwCiAgICAgICAgaWYgZ2FtZV90IDwgbmVlZF90IHRoZW4KICAgICAgICAgICAgbG9jYWwgbmVlZF9taW4gPSBtYXRoLm1heCgxLCBtYXRoLmNlaWwobmVlZF90IC8gNjApKQogICAgICAgICAgICBVdGlsOkJvdHRvbU1zZzJJRCgKICAgICAgICAgICAgICAgIElELAogICAgICAgICAgICAgICAgc3RyaW5nLmZvcm1hdCgi5ri45oiP5pe26Ze05ruhJWTliIbpkp/lkI7miY3lj6/ku47kvr/mjbfllYblupfotK3kubDlpKnkuaYiLCBuZWVkX21pbiksCiAgICAgICAgICAgICAgICAicmVkIiwKICAgICAgICAgICAgICAgIDEKICAgICAgICAgICAgKQoKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCgogICAgICAgIFBsYXllclJlc291cmNlOlNwZW5kR29sZChJRCwgY29zdCwgMCkKCiAgICAgICAgRW1pdFNvdW5kT24oIkdlbmVyYWwuQnV5IiwgaGVybykKCiAgICAgICAgc2VsZi5EYXRhW0lEXS50aWFuX3NodV9wZW5kaW5nID0gdHJ1ZQoKICAgICAgICBzZWxmLkRhdGFbSURdLnRpYW5fc2h1X2l0ZW1fcmVmdW5kID0gZmFsc2UKCiAgICAgICAgc2VsZjpPcGVuVGlhblNodVBpY2tlcihJRCkKCiAgICAgICAgc2VsZjpTZW5kRGF0YShJRCkKCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBpZiB0ZXh0ID09ICJnb29kc18zIiB0aGVuCiAgICAgICAgaWYgaGVybzpHZXRCYXNlU3RyZW5ndGgoKSA8PSAxMCB0aGVuCiAgICAgICAgICAgIFV0aWw6Qm90dG9tTXNnMklEKElELCAi5Yqb6YeP5LiN6LazIiwgInJlZCIpCgogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKCiAgICAgICAgaGVybzpNb2RpZnlTdHJlbmd0aCgtMTApCgogICAgICAgIGhlcm86TW9kaWZ5QWdpbGl0eSgxMCkKICAgIGVsc2VpZiB0ZXh0ID09ICJnb29kc180IiB0aGVuCiAgICAgICAgaWYgaGVybzpHZXRCYXNlU3RyZW5ndGgoKSA8PSAxMCB0aGVuCiAgICAgICAgICAgIFV0aWw6Qm90dG9tTXNnMklEKElELCAi5Yqb6YeP5LiN6LazIiwgInJlZCIpCgogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKCiAgICAgICAgaGVybzpNb2RpZnlTdHJlbmd0aCgtMTApCgogICAgICAgIGhlcm86TW9kaWZ5SW50ZWxsZWN0KDEwKQogICAgZWxzZWlmIHRleHQgPT0gImdvb2RzXzUiIHRoZW4KICAgICAgICBpZiBoZXJvOkdldEJhc2VBZ2lsaXR5KCkgPD0gMTAgdGhlbgogICAgICAgICAgICBVdGlsOkJvdHRvbU1zZzJJRChJRCwgIuaVj+aNt+S4jei2syIsICJyZWQiKQoKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCgogICAgICAgIGhlcm86TW9kaWZ5U3RyZW5ndGgoMTApCgogICAgICAgIGhlcm86TW9kaWZ5QWdpbGl0eSgtMTApCiAgICBlbHNlaWYgdGV4dCA9PSAiZ29vZHNfNiIgdGhlbgogICAgICAgIGlmIGhlcm86R2V0QmFzZUFnaWxpdHkoKSA8PSAxMCB0aGVuCiAgICAgICAgICAgIFV0aWw6Qm90dG9tTXNnMklEKElELCAi5pWP5o235LiN6LazIiwgInJlZCIpCgogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKCiAgICAgICAgaGVybzpNb2RpZnlBZ2lsaXR5KC0xMCkKCiAgICAgICAgaGVybzpNb2RpZnlJbnRlbGxlY3QoMTApCiAgICBlbHNlaWYgdGV4dCA9PSAiZ29vZHNfNyIgdGhlbgogICAgICAgIGlmIGhlcm86R2V0QmFzZUludGVsbGVjdCgpIDw9IDEwIHRoZW4KICAgICAgICAgICAgVXRpbDpCb3R0b21Nc2cySUQoSUQsICLmmbrlipvkuI3otrMiLCAicmVkIikKCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZAoKICAgICAgICBoZXJvOk1vZGlmeVN0cmVuZ3RoKDEwKQoKICAgICAgICBoZXJvOk1vZGlmeUludGVsbGVjdCgtMTApCiAgICBlbHNlaWYgdGV4dCA9PSAiZ29vZHNfOCIgdGhlbgogICAgICAgIGlmIGhlcm86R2V0QmFzZUludGVsbGVjdCgpIDw9IDEwIHRoZW4KICAgICAgICAgICAgVXRpbDpCb3R0b21Nc2cySUQoSUQsICLmmbrlipvkuI3otrMiLCAicmVkIikKCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZAoKICAgICAgICBoZXJvOk1vZGlmeUFnaWxpdHkoMTApCgogICAgICAgIGhlcm86TW9kaWZ5SW50ZWxsZWN0KC0xMCkKICAgIGVsc2VpZiB0ZXh0ID09ICJza2lsbF9wb2ludCIgdGhlbgogICAgICAgIGhlcm86U2V0QWJpbGl0eVBvaW50cyhoZXJvOkdldEFiaWxpdHlQb2ludHMoKSArIDEpCiAgICBlbHNlaWYgdGV4dCA9PSAiZGVsX3NraWxsIiB0aGVuCiAgICAgICAgaWYgbm90IFNraWxsOk9wZW5EZWxTa2lsbChJRCkgdGhlbgogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgIGVsc2VpZiB0ZXh0ID09ICJsaWZlX2Jvb2siIHRoZW4KICAgICAgICBpZiBub3QgSGVyb0RhdGE6VHJ5QXBwbHlMaWZlQm9va1NtamMoSUQpIHRoZW4KICAgICAgICAgICAgVXRpbDpCb3R0b21Nc2cySUQoSUQsICLmnKzlsYDnlJ/lkb3kuYvkuabliqDmiJDmrKHmlbDlt7Lovr7kuIrpmZAiLCAicmVkIiwgMikKCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZAogICAgZWxzZQogICAgICAgIHJldHVybgogICAgZW5kCgogICAgUGxheWVyUmVzb3VyY2U6U3BlbmRHb2xkKElELCBjb3N0LCAwKQoKICAgIEVtaXRTb3VuZE9uKCJHZW5lcmFsLkJ1eSIsIGhlcm8pCgogICAgc2VsZjpTZW5kRGF0YShJRCkKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if EazyShop == nil then
+    EazyShop = class({})
+
+    require("ingame.EazyShop.Config")
+
+    require("ingame.EazyShop.Set")
+
+    require("ingame.EazyShop.Get")
+
+    require("ingame.EazyShop.Func")
+
+    require("ingame.EazyShop.Ui")
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+
+
+function EazyShop:Init(ID)
+    if not ID then
+        return
+    end
+
+    self.Data[ID] = Util:DeepCopyTab(self.Template)
+
+    self.Data[ID].goods = Util:DeepCopyTab(EazyShop.Static.Goods)
+end
+
+function EazyShop:EazyShopChange(ID)
+    if not ID then
+        return
+    end
+    if self.Data[ID].page == true then
+        self:ClosePage(ID)
+    else
+        self:OpenPage(ID)
+    end
+    self:SendData(ID)
+end
+
+local function EazyShopFindGood(key)
+    for _, row in ipairs(EazyShop.Static.Goods) do
+        if row.id == key then
+            return row
+        end
+    end
+end
+
+
+
+function EazyShop:IsRbSkillItem(name)
+    if not name then
+        return false
+    end
+
+    for _, v in ipairs(Item.Rb) do
+        if v == name then
+            return true
+        end
+    end
+
+    return false
+end
+
+function EazyShop:OpenTianShuPicker(ID)
+    -- print("OpenTianShuPicker")
+    if not ID then
+        return
+    end
+
+    local parts = {}
+
+    for _, skill_item in ipairs(Item.Rb) do
+        table.insert(parts, skill_item)
+    end
+    -- print(1111)
+    -- 数据来自 Item.Rb；字符串列表避免客户端事件里 table 序列化异常
+    -- print(222)
+    Util:Send2JsID("UI_FreeBook", {
+
+        visible = true,
+
+        skills = Item.Rb,
+
+    }, ID)
+end
+
+--- 从背包使用天书：已消耗道具，取消则补回 item_goods_22
+
+function EazyShop:OpenTianShuPickerFromItem(ID)
+    if not ID or not self.Data[ID] then
+        return
+    end
+
+    local d = self.Data[ID]
+
+    d.tian_shu_pending = false
+
+    d.tian_shu_item_refund = true
+
+    self:OpenTianShuPicker(ID)
+end
+
+function EazyShop:TianShuPickSkill(ID, item_name)
+    -- print(item_name)
+    if not ID or not item_name or item_name == "" then
+        return
+    end
+
+    if not self.Data[ID] then
+        return
+    end
+
+    local d = self.Data[ID]
+
+    if not d.tian_shu_pending and not d.tian_shu_item_refund then
+        return
+    end
+
+    if not self:IsRbSkillItem(item_name) then
+        return
+    end
+
+    d.tian_shu_pending = false
+
+    d.tian_shu_item_refund = false
+
+    Item:AddItem(ID, item_name)
+
+    Util:Send2JsID("UI_FreeBook", { visible = false }, ID)
+end
+
+function EazyShop:TianShuCancel(ID)
+    if not ID then
+        Util:Send2JsID("UI_FreeBook", { visible = false }, ID)
+
+        return
+    end
+
+    local d = self.Data[ID]
+
+    if d then
+        if d.tian_shu_pending then
+            local r = tonumber(EazyShop.Static.TianShuPrice) or 1000
+
+            PlayerResource:ModifyGold(ID, r, false, 0)
+
+            d.tian_shu_pending = false
+        end
+
+        if d.tian_shu_item_refund then
+            Item:AddItem(ID, "item_goods_22")
+
+            d.tian_shu_item_refund = false
+        end
+    end
+
+    Util:Send2JsID("UI_FreeBook", { visible = false }, ID)
+end
+
+--- 便捷购买：不发放实物（天书除外为弹窗选技能书）
+
+function EazyShop:Buy(ID, text)
+    if not ID or not text or text == "" then
+        return
+    end
+
+    local row = EazyShopFindGood(text)
+
+    if not row then
+        return
+    end
+
+    if MainGame and MainGame.IsPassiveModeBannedPurchaseItem
+        and MainGame:IsPassiveModeBannedPurchaseItem(row.item) then
+        Util:BottomMsg2ID(ID, "被动模式下不可购买该物品", "red", 1)
+
+        return
+    end
+
+    local cost = tonumber(row.price) or 0
+
+    if PlayerResource:GetGold(ID) < cost then
+        Util:BottomMsg2ID(ID, "金币不足", "red", 1)
+
+        return
+    end
+
+    local hero = Util:ID2Hero(ID)
+
+    if not hero or hero:IsNull() then
+        return
+    end
+
+    if text == "tian_shu" then
+        local gr = GameRules
+        local game_t = (gr and gr.GetDOTATime and gr:GetDOTATime(true, true)) or 0
+        local need_t = tonumber(EazyShop.Static.TianShuUnlockGameTime) or 1200
+        if game_t < need_t then
+            local need_min = math.max(1, math.ceil(need_t / 60))
+            Util:BottomMsg2ID(
+                ID,
+                string.format("游戏时间满%d分钟后才可从便捷商店购买天书", need_min),
+                "red",
+                1
+            )
+
+            return
+        end
+
+        PlayerResource:SpendGold(ID, cost, 0)
+
+        EmitSoundOn("General.Buy", hero)
+
+        self.Data[ID].tian_shu_pending = true
+
+        self.Data[ID].tian_shu_item_refund = false
+
+        self:OpenTianShuPicker(ID)
+
+        self:SendData(ID)
+
+        return
+    end
+
+    if text == "goods_3" then
+        if hero:GetBaseStrength() <= 10 then
+            Util:BottomMsg2ID(ID, "力量不足", "red")
+
+            return
+        end
+
+        hero:ModifyStrength(-10)
+
+        hero:ModifyAgility(10)
+    elseif text == "goods_4" then
+        if hero:GetBaseStrength() <= 10 then
+            Util:BottomMsg2ID(ID, "力量不足", "red")
+
+            return
+        end
+
+        hero:ModifyStrength(-10)
+
+        hero:ModifyIntellect(10)
+    elseif text == "goods_5" then
+        if hero:GetBaseAgility() <= 10 then
+            Util:BottomMsg2ID(ID, "敏捷不足", "red")
+
+            return
+        end
+
+        hero:ModifyStrength(10)
+
+        hero:ModifyAgility(-10)
+    elseif text == "goods_6" then
+        if hero:GetBaseAgility() <= 10 then
+            Util:BottomMsg2ID(ID, "敏捷不足", "red")
+
+            return
+        end
+
+        hero:ModifyAgility(-10)
+
+        hero:ModifyIntellect(10)
+    elseif text == "goods_7" then
+        if hero:GetBaseIntellect() <= 10 then
+            Util:BottomMsg2ID(ID, "智力不足", "red")
+
+            return
+        end
+
+        hero:ModifyStrength(10)
+
+        hero:ModifyIntellect(-10)
+    elseif text == "goods_8" then
+        if hero:GetBaseIntellect() <= 10 then
+            Util:BottomMsg2ID(ID, "智力不足", "red")
+
+            return
+        end
+
+        hero:ModifyAgility(10)
+
+        hero:ModifyIntellect(-10)
+    elseif text == "skill_point" then
+        hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
+    elseif text == "del_skill" then
+        if not Skill:OpenDelSkill(ID) then
+            return
+        end
+    elseif text == "life_book" then
+        if not HeroData:TryApplyLifeBookSmjc(ID) then
+            Util:BottomMsg2ID(ID, "本局生命之书加成次数已达上限", "red", 2)
+
+            return
+        end
+    else
+        return
+    end
+
+    PlayerResource:SpendGold(ID, cost, 0)
+
+    EmitSoundOn("General.Buy", hero)
+
+    self:SendData(ID)
+end

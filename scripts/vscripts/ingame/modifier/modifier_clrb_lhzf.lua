@@ -8,22 +8,224 @@
 ]]
 
 
-local encoded=[[LS0gcmFua18xdjEgLyBiZWlkb25nIOS4quS6uuWHu+adgOaooeW8j++8iOWQq+S6uuacuuWhq+WFheWxgO+8m+S7heecn+S6uuWPr+iOt+W+l+iQveWQjuWinuW5he+8iQotLSDnirbmgIHmoI/lsYLmlbAgPSDorqHliIbmnb/lkI3mrKHvvJt0b29sdGlwIOaMieWQjeasoSA2fjEwIOaYvuekuiA4LzE2LzI0LzMyLzQwJSDlr7noi7Hpm4TkvKTlrrPvvIjlj4LogIPmnqrmnK8gT25Ub29sdGlw77yJCgpDTFJCX0xIWkZfSEVST19ETUdfUENUID0gewogICAgWzZdID0gOCwKICAgIFs3XSA9IDE2LAogICAgWzhdID0gMjQsCiAgICBbOV0gPSAzMiwKICAgIFsxMF0gPSA0MCwKfQoKQ2xyYkxoemZMYXN0UmFuayA9IENscmJMaHpmTGFzdFJhbmsgb3Ige30KCmZ1bmN0aW9uIENscmJMaHpmRGFtYWdlUGN0Rm9yUmFuayhyYW5rKQogICAgcmFuayA9IHRvbnVtYmVyKHJhbmspIG9yIDAKICAgIHJldHVybiBDTFJCX0xIWkZfSEVST19ETUdfUENUW3JhbmtdIG9yIDAKZW5kCgotLS0g5piv5ZCm5ZCv55So6JC95ZCO5aKe5bmF77yIMXYxIOS4quS6uuWHu+adgO+8jOWQq+S6uuacuuWvueWxgO+8iQpmdW5jdGlvbiBDbHJiTGh6ZklzRW5hYmxlZE1vZGUoKQogICAgaWYgTWFpbkdhbWUgYW5kIE1haW5HYW1lLkdldEdhbWVUeXBlIHRoZW4KICAgICAgICByZXR1cm4gTWFpbkdhbWU6R2V0R2FtZVR5cGUoKSA9PSAyCiAgICBlbmQKICAgIGxvY2FsIG1hcCA9IEdldE1hcE5hbWUoKQogICAgcmV0dXJuIG1hcCA9PSAicmFua18xdjEiIG9yIG1hcCA9PSAiYmVpZG9uZyIKZW5kCgpmdW5jdGlvbiBDbHJiTGh6ZklzSHVtYW5QbGF5ZXIoSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBIZXJvRGF0YSBhbmQgSGVyb0RhdGEuSXNCb3QgYW5kIEhlcm9EYXRhOklzQm90KElEKSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIEluaXRQbGF5ZXIgYW5kIEluaXRQbGF5ZXIuR2V0UGxheWVyRGF0YSB0aGVuCiAgICAgICAgbG9jYWwgaXAgPSBJbml0UGxheWVyOkdldFBsYXllckRhdGEoSUQpCiAgICAgICAgaWYgbm90IGlwIG9yIGlwLmJvdCB0aGVuCiAgICAgICAgICAgIHJldHVybiBmYWxzZQogICAgICAgIGVuZAogICAgZW5kCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIENscmJMaHpmU3RyaXBGcm9tSGVybyhoZXJvKQogICAgaWYgbm90IGhlcm8gb3IgaGVybzpJc051bGwoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGhlcm86UmVtb3ZlTW9kaWZpZXJCeU5hbWUoIm1vZGlmaWVyX2NscmJfbGh6Zl9zaG93IikKICAgIGhlcm86UmVtb3ZlTW9kaWZpZXJCeU5hbWUoIm1vZGlmaWVyX2NscmJfbGh6Zl9keXNoIikKICAgIGhlcm86UmVtb3ZlTW9kaWZpZXJCeU5hbWUoIm1vZGlmaWVyX2NscmJfbGh6ZiIpCmVuZAoKZnVuY3Rpb24gQ2xyYkxoemZHZXRSYW5rRm9yUGxheWVyKElEKQogICAgaWYgbm90IENscmJMaHpmSXNFbmFibGVkTW9kZSgpIG9yIG5vdCBDbHJiTGh6ZklzSHVtYW5QbGF5ZXIoSUQpIHRoZW4KICAgICAgICByZXR1cm4gMAogICAgZW5kCiAgICBpZiBub3QgU3RhdCBvciBub3QgU3RhdC5HZXRUb3BTY29yZWJvYXJkUmFuayB0aGVuCiAgICAgICAgcmV0dXJuIDAKICAgIGVuZAogICAgcmV0dXJuIFN0YXQ6R2V0VG9wU2NvcmVib2FyZFJhbmsoSUQpIG9yIDAKZW5kCgpmdW5jdGlvbiBDbHJiTGh6ZkdldERhbWFnZVBjdEZvclBsYXllcihJRCkKICAgIHJldHVybiBDbHJiTGh6ZkRhbWFnZVBjdEZvclJhbmsoQ2xyYkxoemZHZXRSYW5rRm9yUGxheWVyKElEKSkKZW5kCgpmdW5jdGlvbiBDbHJiTGh6ZkVuc3VyZU9uSGVybyhJRCwgaGVybykKICAgIGlmIG5vdCBDbHJiTGh6ZklzRW5hYmxlZE1vZGUoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIG5vdCBJRCBvciBub3QgaGVybyBvciBoZXJvOklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgbm90IENscmJMaHpmSXNIdW1hblBsYXllcihJRCkgdGhlbgogICAgICAgIENscmJMaHpmU3RyaXBGcm9tSGVybyhoZXJvKQogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBub3QgaGVybzpIYXNNb2RpZmllcigibW9kaWZpZXJfY2xyYl9saHpmIikgdGhlbgogICAgICAgIGhlcm86QWRkTmV3TW9kaWZpZXIoaGVybywgbmlsLCAibW9kaWZpZXJfY2xyYl9saHpmIiwgeyBwbGF5ZXJfaWQgPSBJRCB9KQogICAgZWxzZQogICAgICAgIGxvY2FsIG0gPSBoZXJvOkZpbmRNb2RpZmllckJ5TmFtZSgibW9kaWZpZXJfY2xyYl9saHpmIikKICAgICAgICBpZiBtIGFuZCBtLlJlZnJlc2hGcm9tUmFuayB0aGVuCiAgICAgICAgICAgIG06UmVmcmVzaEZyb21SYW5rKCkKICAgICAgICBlbmQKICAgIGVuZAplbmQKCmZ1bmN0aW9uIENscmJMaHpmUmVmcmVzaFBsYXllcklmUmFua0NoYW5nZWQoSUQsIGZvcmNlKQogICAgaWYgbm90IElEIG9yIG5vdCBDbHJiTGh6ZklzSHVtYW5QbGF5ZXIoSUQpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgcmFuayA9IENscmJMaHpmR2V0UmFua0ZvclBsYXllcihJRCkKICAgIGlmIG5vdCBmb3JjZSBhbmQgQ2xyYkxoemZMYXN0UmFua1tJRF0gPT0gcmFuayB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIENscmJMaHpmTGFzdFJhbmtbSURdID0gcmFuawogICAgbG9jYWwgaGVybyA9IEhlcm9EYXRhIGFuZCBIZXJvRGF0YS5HZXRIZXJvIGFuZCBIZXJvRGF0YTpHZXRIZXJvKElEKQogICAgaWYgaGVybyBhbmQgbm90IGhlcm86SXNOdWxsKCkgdGhlbgogICAgICAgIENscmJMaHpmRW5zdXJlT25IZXJvKElELCBoZXJvKQogICAgZW5kCmVuZAoKLS0tQHBhcmFtIGNoYW5nZWRfaWRzIG51bWJlcltdfG5pbCBuaWw95YWo6YeP5YWc5bqV77yI57uT566XL+mHjei/nu+8ie+8m+epuuihqD3ot7Pov4cKZnVuY3Rpb24gQ2xyYkxoemZPblJhbmtVcGRhdGVkKGNoYW5nZWRfaWRzKQogICAgaWYgbm90IENscmJMaHpmSXNFbmFibGVkTW9kZSgpIG9yIG5vdCBQRCBvciBub3QgUEQuSURzIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgY2hhbmdlZF9pZHMgfj0gbmlsIHRoZW4KICAgICAgICBpZiAjY2hhbmdlZF9pZHMgPT0gMCB0aGVuCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZAogICAgICAgIGZvciBfLCBJRCBpbiBpcGFpcnMoY2hhbmdlZF9pZHMpIGRvCiAgICAgICAgICAgIENscmJMaHpmUmVmcmVzaFBsYXllcklmUmFua0NoYW5nZWQoSUQsIHRydWUpCiAgICAgICAgZW5kCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGZvciBfLCBJRCBpbiBwYWlycyhQRC5JRHMpIGRvCiAgICAgICAgaWYgSUQgdGhlbgogICAgICAgICAgICBDbHJiTGh6ZlJlZnJlc2hQbGF5ZXJJZlJhbmtDaGFuZ2VkKElELCBmYWxzZSkKICAgICAgICBlbmQKICAgIGVuZAplbmQKCi0tLSDkvKTlrrPov4fmu6TlmajvvJrku4Xoi7Hpm4Tlr7noi7Hpm4TkuJTmlLvlh7vogIXmjIHmnInokL3lkI7lop7luYXml7bor7vlj5YKZnVuY3Rpb24gQ2xyYkxoemZBcHBseUhlcm9Wc0hlcm9EYW1hZ2VBbXAoYXR0YWNrZXIsIGRhbWFnZSkKICAgIGlmIG5vdCBhdHRhY2tlciBvciBhdHRhY2tlcjpJc051bGwoKSBvciBub3QgZGFtYWdlIG9yIGRhbWFnZSA8PSAwIHRoZW4KICAgICAgICByZXR1cm4gZGFtYWdlCiAgICBlbmQKICAgIGlmIHR5cGUoYXR0YWNrZXIuRmluZE1vZGlmaWVyQnlOYW1lKSB+PSAiZnVuY3Rpb24iIHRoZW4KICAgICAgICByZXR1cm4gZGFtYWdlCiAgICBlbmQKICAgIGxvY2FsIG0gPSBhdHRhY2tlcjpGaW5kTW9kaWZpZXJCeU5hbWUoIm1vZGlmaWVyX2NscmJfbGh6ZiIpCiAgICBpZiBub3QgbSBvciB0eXBlKG0uR2V0SGVyb0RhbWFnZUJvbnVzUGN0KSB+PSAiZnVuY3Rpb24iIHRoZW4KICAgICAgICByZXR1cm4gZGFtYWdlCiAgICBlbmQKICAgIGxvY2FsIHBjdCA9IG06R2V0SGVyb0RhbWFnZUJvbnVzUGN0KCkKICAgIGlmIG5vdCBwY3Qgb3IgcGN0IDw9IDAgdGhlbgogICAgICAgIHJldHVybiBkYW1hZ2UKICAgIGVuZAogICAgcmV0dXJuIGRhbWFnZSAqICgxMDAgKyBwY3QpIC8gMTAwCmVuZAoKbW9kaWZpZXJfY2xyYl9saHpmID0gY2xhc3Moe30pCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2xoemY6SXNIaWRkZW4oKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9saHpmOklzRGVidWZmKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfbGh6ZjpJc1B1cmdhYmxlKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfbGh6ZjpSZW1vdmVPbkRlYXRoKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfbGh6ZjpJc1Blcm1hbmVudCgpCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfbGh6ZjpBbGxvd0lsbHVzaW9uRHVwbGljYXRlKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfbGh6ZjpHZXRUZXh0dXJlKCkKICAgIHJldHVybiAiaXRlbV9zb3VsX3JpbmciCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9saHpmOk9uQ3JlYXRlZChrdikKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5wbGF5ZXJfaWQgPSBrdiBhbmQga3YucGxheWVyX2lkCiAgICBpZiBub3Qgc2VsZi5wbGF5ZXJfaWQgdGhlbgogICAgICAgIHNlbGYucGxheWVyX2lkID0gVXRpbDpIZXJvMklEKHNlbGY6R2V0UGFyZW50KCkpCiAgICBlbmQKICAgIHNlbGY6U3RhcnRJbnRlcnZhbFRoaW5rKDEpCiAgICBzZWxmOlJlZnJlc2hGcm9tUmFuaygpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9saHpmOk9uSW50ZXJ2YWxUaGluaygpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGY6UmVmcmVzaEZyb21SYW5rKCkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2xoemY6UmVmcmVzaEZyb21SYW5rKCkKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgcGFyZW50ID0gc2VsZjpHZXRQYXJlbnQoKQogICAgaWYgbm90IHBhcmVudCBvciBwYXJlbnQ6SXNOdWxsKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBub3Qgc2VsZi5wbGF5ZXJfaWQgdGhlbgogICAgICAgIHNlbGYucGxheWVyX2lkID0gVXRpbDpIZXJvMklEKHBhcmVudCkKICAgIGVuZAogICAgbG9jYWwgcmFuayA9IENscmJMaHpmR2V0UmFua0ZvclBsYXllcihzZWxmLnBsYXllcl9pZCkKICAgIHNlbGY6U2V0U3RhY2tDb3VudChyYW5rID4gMCBhbmQgcmFuayBvciAwKQogICAgc2VsZjpTZW5kQnVmZlJlZnJlc2hUb0NsaWVudHMoKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfbGh6ZjpHZXRIZXJvRGFtYWdlQm9udXNQY3QoKQogICAgcmV0dXJuIENscmJMaHpmRGFtYWdlUGN0Rm9yUmFuayhzZWxmOkdldFN0YWNrQ291bnQoKSkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2xoemY6RGVjbGFyZUZ1bmN0aW9ucygpCiAgICByZXR1cm4gewogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX1RPT0xUSVAsCiAgICB9CmVuZAoKLS0tIOWxguaVsOWNs+W9k+WJjeWQjeasoSDihpIgdG9vbHRpcCDmmL7npLrlr7nlupTkvKTlrrPliqDmiJDvvIjkuI7mnqrmnK8gT25Ub29sdGlwIOebuOWQjOWGmeazle+8iQpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2xoemY6T25Ub29sdGlwKCkKICAgIHJldHVybiBDbHJiTGh6ZkRhbWFnZVBjdEZvclJhbmsoc2VsZjpHZXRTdGFja0NvdW50KCkgb3IgMCkKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- rank_1v1 / beidong 个人击杀模式（含人机填充局；仅真人可获得落后增幅）
+-- 状态栏层数 = 计分板名次；tooltip 按名次 6~10 显示 8/16/24/32/40% 对英雄伤害（参考枪术 OnTooltip）
+
+CLRB_LHZF_HERO_DMG_PCT = {
+    [6] = 8,
+    [7] = 16,
+    [8] = 24,
+    [9] = 32,
+    [10] = 40,
+}
+
+ClrbLhzfLastRank = ClrbLhzfLastRank or {}
+
+function ClrbLhzfDamagePctForRank(rank)
+    rank = tonumber(rank) or 0
+    return CLRB_LHZF_HERO_DMG_PCT[rank] or 0
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--- 是否启用落后增幅（1v1 个人击杀，含人机对局）
+function ClrbLhzfIsEnabledMode()
+    if MainGame and MainGame.GetGameType then
+        return MainGame:GetGameType() == 2
+    end
+    local map = GetMapName()
+    return map == "rank_1v1" or map == "beidong"
+end
+
+function ClrbLhzfIsHumanPlayer(ID)
+    if not ID then
+        return false
+    end
+    if HeroData and HeroData.IsBot and HeroData:IsBot(ID) then
+        return false
+    end
+    if InitPlayer and InitPlayer.GetPlayerData then
+        local ip = InitPlayer:GetPlayerData(ID)
+        if not ip or ip.bot then
+            return false
+        end
+    end
+    return true
+end
+
+function ClrbLhzfStripFromHero(hero)
+    if not hero or hero:IsNull() then
+        return
+    end
+    hero:RemoveModifierByName("modifier_clrb_lhzf_show")
+    hero:RemoveModifierByName("modifier_clrb_lhzf_dysh")
+    hero:RemoveModifierByName("modifier_clrb_lhzf")
+end
+
+function ClrbLhzfGetRankForPlayer(ID)
+    if not ClrbLhzfIsEnabledMode() or not ClrbLhzfIsHumanPlayer(ID) then
+        return 0
+    end
+    if not Stat or not Stat.GetTopScoreboardRank then
+        return 0
+    end
+    return Stat:GetTopScoreboardRank(ID) or 0
+end
+
+function ClrbLhzfGetDamagePctForPlayer(ID)
+    return ClrbLhzfDamagePctForRank(ClrbLhzfGetRankForPlayer(ID))
+end
+
+function ClrbLhzfEnsureOnHero(ID, hero)
+    if not ClrbLhzfIsEnabledMode() then
+        return
+    end
+    if not ID or not hero or hero:IsNull() then
+        return
+    end
+    if not ClrbLhzfIsHumanPlayer(ID) then
+        ClrbLhzfStripFromHero(hero)
+        return
+    end
+    if not hero:HasModifier("modifier_clrb_lhzf") then
+        hero:AddNewModifier(hero, nil, "modifier_clrb_lhzf", { player_id = ID })
+    else
+        local m = hero:FindModifierByName("modifier_clrb_lhzf")
+        if m and m.RefreshFromRank then
+            m:RefreshFromRank()
+        end
+    end
+end
+
+function ClrbLhzfRefreshPlayerIfRankChanged(ID, force)
+    if not ID or not ClrbLhzfIsHumanPlayer(ID) then
+        return
+    end
+    local rank = ClrbLhzfGetRankForPlayer(ID)
+    if not force and ClrbLhzfLastRank[ID] == rank then
+        return
+    end
+    ClrbLhzfLastRank[ID] = rank
+    local hero = HeroData and HeroData.GetHero and HeroData:GetHero(ID)
+    if hero and not hero:IsNull() then
+        ClrbLhzfEnsureOnHero(ID, hero)
+    end
+end
+
+---@param changed_ids number[]|nil nil=全量兜底（结算/重连）；空表=跳过
+function ClrbLhzfOnRankUpdated(changed_ids)
+    if not ClrbLhzfIsEnabledMode() or not PD or not PD.IDs then
+        return
+    end
+    if changed_ids ~= nil then
+        if #changed_ids == 0 then
+            return
+        end
+        for _, ID in ipairs(changed_ids) do
+            ClrbLhzfRefreshPlayerIfRankChanged(ID, true)
+        end
+        return
+    end
+    for _, ID in pairs(PD.IDs) do
+        if ID then
+            ClrbLhzfRefreshPlayerIfRankChanged(ID, false)
+        end
+    end
+end
+
+--- 伤害过滤器：仅英雄对英雄且攻击者持有落后增幅时读取
+function ClrbLhzfApplyHeroVsHeroDamageAmp(attacker, damage)
+    if not attacker or attacker:IsNull() or not damage or damage <= 0 then
+        return damage
+    end
+    if type(attacker.FindModifierByName) ~= "function" then
+        return damage
+    end
+    local m = attacker:FindModifierByName("modifier_clrb_lhzf")
+    if not m or type(m.GetHeroDamageBonusPct) ~= "function" then
+        return damage
+    end
+    local pct = m:GetHeroDamageBonusPct()
+    if not pct or pct <= 0 then
+        return damage
+    end
+    return damage * (100 + pct) / 100
+end
+
+modifier_clrb_lhzf = class({})
+
+function modifier_clrb_lhzf:IsHidden()
+    return false
+end
+
+function modifier_clrb_lhzf:IsDebuff()
+    return false
+end
+
+function modifier_clrb_lhzf:IsPurgable()
+    return false
+end
+
+function modifier_clrb_lhzf:RemoveOnDeath()
+    return false
+end
+
+function modifier_clrb_lhzf:IsPermanent()
+    return true
+end
+
+function modifier_clrb_lhzf:AllowIllusionDuplicate()
+    return false
+end
+
+function modifier_clrb_lhzf:GetTexture()
+    return "item_soul_ring"
+end
+
+function modifier_clrb_lhzf:OnCreated(kv)
+    if not IsServer() then
+        return
+    end
+    self.player_id = kv and kv.player_id
+    if not self.player_id then
+        self.player_id = Util:Hero2ID(self:GetParent())
+    end
+    self:StartIntervalThink(1)
+    self:RefreshFromRank()
+end
+
+function modifier_clrb_lhzf:OnIntervalThink()
+    if not IsServer() then
+        return
+    end
+    self:RefreshFromRank()
+end
+
+function modifier_clrb_lhzf:RefreshFromRank()
+    if not IsServer() then
+        return
+    end
+    local parent = self:GetParent()
+    if not parent or parent:IsNull() then
+        return
+    end
+    if not self.player_id then
+        self.player_id = Util:Hero2ID(parent)
+    end
+    local rank = ClrbLhzfGetRankForPlayer(self.player_id)
+    self:SetStackCount(rank > 0 and rank or 0)
+    self:SendBuffRefreshToClients()
+end
+
+function modifier_clrb_lhzf:GetHeroDamageBonusPct()
+    return ClrbLhzfDamagePctForRank(self:GetStackCount())
+end
+
+function modifier_clrb_lhzf:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_TOOLTIP,
+    }
+end
+
+--- 层数即当前名次 → tooltip 显示对应伤害加成（与枪术 OnTooltip 相同写法）
+function modifier_clrb_lhzf:OnTooltip()
+    return ClrbLhzfDamagePctForRank(self:GetStackCount() or 0)
+end

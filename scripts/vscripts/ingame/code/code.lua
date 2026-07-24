@@ -8,22 +8,161 @@
 ]]
 
 
-local encoded=[[aWYgQ29kZSA9PSBuaWwgdGhlbgogICAgQ29kZSA9IGNsYXNzKHt9KQogICAgcmVxdWlyZSgiaW5nYW1lLkNvZGUuQ29uZmlnIikKICAgIHJlcXVpcmUoImluZ2FtZS5Db2RlLlNldCIpCiAgICByZXF1aXJlKCJpbmdhbWUuQ29kZS5HZXQiKQogICAgcmVxdWlyZSgiaW5nYW1lLkNvZGUuVWkiKQplbmQKCmZ1bmN0aW9uIENvZGU6SW5pdChJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGYuRGF0YVtJRF0gPSBVdGlsOkRlZXBDb3B5VGFiKHNlbGYuVGVtcGxhdGUpCmVuZAoKbG9jYWwgQ09ERV9QQVlfUE9MTF9QUkVGSVggPSAiY29kZV9wYXlwb2xsXyIKbG9jYWwgQ09ERV9QQVlfUE9MTF9JTlRFUlZBTCA9IDIKbG9jYWwgQ09ERV9QQVlfUE9MTF9NQVhfRFVSQVRJT04gPSA2MDAKCmZ1bmN0aW9uIENvZGU6U3RvcFBheW1lbnRTdGF0dXNQb2xsKElEKQogICAgaWYgSUQgPT0gbmlsIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgVGltZXJzOlJlbW92ZVRpbWVyKENPREVfUEFZX1BPTExfUFJFRklYIC4uIHRvc3RyaW5nKElEKSkKZW5kCgotLSDova7or6Lmn6XljZXvvJrmnKrmiJDljZXkuI3lhbPpl63pobXpnaLvvIznvZHnu5zlvILluLjkuI3lvLnnqpfjgIIKZnVuY3Rpb24gQ29kZTpSZXF1ZXN0UGF5bWVudFN0YXR1cyhJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIG9yZGVyX2tleSA9ICJvcmRlciIgLi4gc2VsZjpHZXRQYXlUcChJRCkKICAgIGxvY2FsIG9yZGVyID0gc2VsZi5EYXRhW0lEXVtvcmRlcl9rZXldCiAgICBpZiBvcmRlciA9PSAiIiB0aGVuCiAgICAgICAgc2VsZjpTdG9wUGF5bWVudFN0YXR1c1BvbGwoSUQpCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIEh0dHA6UE9TVCgiL3BheW1lbnQvc3RhdHVzIiwgeyBvdXRUcmFkZU5vID0gb3JkZXIgfSwgSUQsIGZ1bmN0aW9uKGtleXMpCiAgICAgICAgbG9jYWwgZCA9IENvZGUuRGF0YVtJRF0KICAgICAgICBpZiBub3QgZCBvciBkW29yZGVyX2tleV0gfj0gb3JkZXIgdGhlbgogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgICAgICBpZiBrZXlzLmNvZGUgPT0gMjAwIHRoZW4KICAgICAgICAgICAgbG9jYWwgZGF0YSA9IGtleXMuZGF0YQogICAgICAgICAgICBpZiBkYXRhLnN0YXR1cyA9PSAiU1VDQ0VTUyIgdGhlbgogICAgICAgICAgICAgICAgc2VsZjpTdG9wUGF5bWVudFN0YXR1c1BvbGwoSUQpCiAgICAgICAgICAgICAgICBNc2dzOlBvcFJlZGVlbVN1Y2Nlc3MoSUQsICLlhYXlgLzmiJDlip8iLCBzZWxmOlBheVJld2FyZFJvd3MoSUQpKQogICAgICAgICAgICAgICAgc2VsZjpDbGVhckNvZGUoSUQpCiAgICAgICAgICAgICAgICBTaG9wOkxvYWRTaG9wKElEKQogICAgICAgICAgICAgICAgaWYgSG9saWRheVBhY2sgYW5kIEhvbGlkYXlQYWNrLkxvYWRHaWZ0UGFja3MgdGhlbgogICAgICAgICAgICAgICAgICAgIEhvbGlkYXlQYWNrOkxvYWRHaWZ0UGFja3MoSUQpCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQpCmVuZAoKZnVuY3Rpb24gQ29kZTpTdGFydFBheW1lbnRTdGF0dXNQb2xsKElEKQogICAgaWYgbm90IElEIG9yIG5vdCBzZWxmLkRhdGFbSURdIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZjpTdG9wUGF5bWVudFN0YXR1c1BvbGwoSUQpCiAgICBsb2NhbCB0aWQgPSBDT0RFX1BBWV9QT0xMX1BSRUZJWCAuLiB0b3N0cmluZyhJRCkKICAgIGxvY2FsIHQwID0gVGltZSgpCiAgICAtLSDlhYjlj5HkuIDmrKHor7fmsYLvvIzlho3phY3lkIjlrprml7bph43lpI0KICAgIHNlbGY6UmVxdWVzdFBheW1lbnRTdGF0dXMoSUQpCiAgICBUaW1lcnM6Q3JlYXRlVGltZXIodGlkLCB7CiAgICAgICAgdXNlR2FtZVRpbWUgPSBmYWxzZSwKICAgICAgICBlbmRUaW1lID0gQ09ERV9QQVlfUE9MTF9JTlRFUlZBTCwKICAgICAgICBjYWxsYmFjayA9IGZ1bmN0aW9uKCkKICAgICAgICAgICAgbG9jYWwgZCA9IENvZGUuRGF0YVtJRF0KICAgICAgICAgICAgaWYgbm90IGQgb3IgZC5wYXlfcGFnZSB+PSB0cnVlIHRoZW4KICAgICAgICAgICAgICAgIHJldHVybiBuaWwKICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGlmIFRpbWUoKSAtIHQwID49IENPREVfUEFZX1BPTExfTUFYX0RVUkFUSU9OIHRoZW4KICAgICAgICAgICAgICAgIENvZGU6U3RvcFBheW1lbnRTdGF0dXNQb2xsKElEKQogICAgICAgICAgICAgICAgcmV0dXJuIG5pbAogICAgICAgICAgICBlbmQKICAgICAgICAgICAgQ29kZTpSZXF1ZXN0UGF5bWVudFN0YXR1cyhJRCkKICAgICAgICAgICAgcmV0dXJuIENPREVfUEFZX1BPTExfSU5URVJWQUwKICAgICAgICBlbmQKICAgIH0pCmVuZAoKZnVuY3Rpb24gQ29kZTpQYXkoSUQsIHBheV90cCkKICAgIGlmIG5vdCBJRCBvciBub3QgcGF5X3RwIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZjpTdG9wUGF5bWVudFN0YXR1c1BvbGwoSUQpCiAgICAtLeaJk+W8gOmhtemdogogICAgc2VsZjpPcGVuUGFnZShJRCkKICAgIC0t6K6+572u5pSv5LuY5pa55byPCiAgICBzZWxmOlNldFBheVRwKElELCBwYXlfdHApCiAgICBsb2NhbCBwYXlfbGlzdCA9IHsKICAgICAgICBwcm9kdWN0VHlwZSA9IHNlbGY6R2V0R29vZHMoSUQpLAogICAgICAgIHBheW1lbnRNZXRob2QgPSBzZWxmOkdldFBheVRwKElEKQogICAgfQogICAgaWYgc2VsZi5EYXRhW0lEXS5nb29kcyA9PSBDb2RlLkNhcmRMZXZlbFByb2R1Y3QgdGhlbgogICAgICAgIHBheV9saXN0LmxldmVsQ291bnQgPSBzZWxmLkRhdGFbSURdLmNhcmRfbGV2ZWxfY291bnQgb3IgMQogICAgZW5kCiAgICBpZiBzZWxmLkRhdGFbSURdLmdvb2RzID09ICIiIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgSHR0cDpQT1NUKCIvcGF5bWVudC9jcmVhdGUiLCBwYXlfbGlzdCwgSUQsIGZ1bmN0aW9uKGtleXMpCiAgICAgICAgLS1wcmludChrZXlzKQogICAgICAgIGlmIGtleXMuY29kZSA9PSAyMDAgdGhlbgogICAgICAgICAgICBsb2NhbCBkYXRhID0ga2V5cy5kYXRhCiAgICAgICAgICAgIC0tIHByaW50KGRhdGEpCiAgICAgICAgICAgIHNlbGY6U2V0RXdtKElELCBkYXRhKQogICAgICAgICAgICBzZWxmOlNlbmREYXRhKElEKQogICAgICAgICAgICBzZWxmOlN0YXJ0UGF5bWVudFN0YXR1c1BvbGwoSUQpCiAgICAgICAgZWxzZQogICAgICAgICAgICBsb2NhbCBtc2cgPSBuaWwKICAgICAgICAgICAgaWYga2V5cyBhbmQga2V5cy5kYXRhIGFuZCBrZXlzLmRhdGEubWVzc2FnZSB0aGVuCiAgICAgICAgICAgICAgICBtc2cgPSBrZXlzLmRhdGEubWVzc2FnZQogICAgICAgICAgICBlbHNlaWYga2V5cyBhbmQga2V5cy5tZXNzYWdlIGFuZCBrZXlzLm1lc3NhZ2Ugfj0gIiIgdGhlbgogICAgICAgICAgICAgICAgbXNnID0ga2V5cy5tZXNzYWdlCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBNc2dzOlBvcChJRCwgbXNnIG9yICLnvZHnu5zlvILluLgiKQogICAgICAgIGVuZAogICAgZW5kKQplbmQKCmZ1bmN0aW9uIENvZGU6UGF5VHlwZShJRCwgdHApCiAgICBpZiBub3QgSUQgb3Igbm90IHRwIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgdHAgPT0gc2VsZjpHZXRQYXlUcChJRCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBld21fa2V5ID0gImV3bSIgLi4gdHAKICAgIGlmIHNlbGYuRGF0YVtJRF1bZXdtX2tleV0gPT0gIiIgdGhlbgogICAgICAgIENvZGU6UGF5KElELCB0cCkKICAgIGVsc2UKICAgICAgICBzZWxmOlNldFBheVRwKElELCB0cCkKICAgICAgICBzZWxmOlNlbmREYXRhKElEKQogICAgZW5kCmVuZAoKZnVuY3Rpb24gQ29kZTpDbGVhckNvZGUoSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmOlN0b3BQYXltZW50U3RhdHVzUG9sbChJRCkKICAgIC0t5YWz6Zet6aG16Z2iCiAgICBzZWxmLkRhdGFbSURdLnBhZ2UgPSBmYWxzZQogICAgc2VsZi5EYXRhW0lEXS5nb29kcyA9ICIiCiAgICBzZWxmLkRhdGFbSURdLnByaWNlID0gMAogICAgc2VsZi5EYXRhW0lEXS5nb29kc19uYW1lID0gIiIKICAgIHNlbGYuRGF0YVtJRF0uY2FyZF9sZXZlbF9jb3VudCA9IDAKICAgIHNlbGYuRGF0YVtJRF0ucGF5X3RwID0gLTEKICAgIHNlbGYuRGF0YVtJRF0ub3JkZXIxID0gIiIKICAgIHNlbGYuRGF0YVtJRF0ub3JkZXIyID0gIiIKICAgIHNlbGYuRGF0YVtJRF0ucGF5X3BhZ2UgPSBmYWxzZQogICAgc2VsZi5EYXRhW0lEXS5ld20xID0gIiIKICAgIHNlbGYuRGF0YVtJRF0uZXdtMiA9ICIiCiAgICBzZWxmOlNlbmREYXRhKElEKQplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if Code == nil then
+    Code = class({})
+    require("ingame.Code.Config")
+    require("ingame.Code.Set")
+    require("ingame.Code.Get")
+    require("ingame.Code.Ui")
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function Code:Init(ID)
+    if not ID then
+        return
+    end
+    self.Data[ID] = Util:DeepCopyTab(self.Template)
+end
+
+local CODE_PAY_POLL_PREFIX = "code_paypoll_"
+local CODE_PAY_POLL_INTERVAL = 2
+local CODE_PAY_POLL_MAX_DURATION = 600
+
+function Code:StopPaymentStatusPoll(ID)
+    if ID == nil then
+        return
+    end
+    Timers:RemoveTimer(CODE_PAY_POLL_PREFIX .. tostring(ID))
+end
+
+-- 轮询查单：未成单不关闭页面，网络异常不弹窗。
+function Code:RequestPaymentStatus(ID)
+    if not ID then
+        return
+    end
+    local order_key = "order" .. self:GetPayTp(ID)
+    local order = self.Data[ID][order_key]
+    if order == "" then
+        self:StopPaymentStatusPoll(ID)
+        return
+    end
+    Http:POST("/payment/status", { outTradeNo = order }, ID, function(keys)
+        local d = Code.Data[ID]
+        if not d or d[order_key] ~= order then
+            return
+        end
+        if keys.code == 200 then
+            local data = keys.data
+            if data.status == "SUCCESS" then
+                self:StopPaymentStatusPoll(ID)
+                Msgs:PopRedeemSuccess(ID, "充值成功", self:PayRewardRows(ID))
+                self:ClearCode(ID)
+                Shop:LoadShop(ID)
+                if HolidayPack and HolidayPack.LoadGiftPacks then
+                    HolidayPack:LoadGiftPacks(ID)
+                end
+            end
+        end
+    end)
+end
+
+function Code:StartPaymentStatusPoll(ID)
+    if not ID or not self.Data[ID] then
+        return
+    end
+    self:StopPaymentStatusPoll(ID)
+    local tid = CODE_PAY_POLL_PREFIX .. tostring(ID)
+    local t0 = Time()
+    -- 先发一次请求，再配合定时重复
+    self:RequestPaymentStatus(ID)
+    Timers:CreateTimer(tid, {
+        useGameTime = false,
+        endTime = CODE_PAY_POLL_INTERVAL,
+        callback = function()
+            local d = Code.Data[ID]
+            if not d or d.pay_page ~= true then
+                return nil
+            end
+            if Time() - t0 >= CODE_PAY_POLL_MAX_DURATION then
+                Code:StopPaymentStatusPoll(ID)
+                return nil
+            end
+            Code:RequestPaymentStatus(ID)
+            return CODE_PAY_POLL_INTERVAL
+        end
+    })
+end
+
+function Code:Pay(ID, pay_tp)
+    if not ID or not pay_tp then
+        return
+    end
+    self:StopPaymentStatusPoll(ID)
+    --打开页面
+    self:OpenPage(ID)
+    --设置支付方式
+    self:SetPayTp(ID, pay_tp)
+    local pay_list = {
+        productType = self:GetGoods(ID),
+        paymentMethod = self:GetPayTp(ID)
+    }
+    if self.Data[ID].goods == Code.CardLevelProduct then
+        pay_list.levelCount = self.Data[ID].card_level_count or 1
+    end
+    if self.Data[ID].goods == "" then
+        return
+    end
+    Http:POST("/payment/create", pay_list, ID, function(keys)
+        --print(keys)
+        if keys.code == 200 then
+            local data = keys.data
+            -- print(data)
+            self:SetEwm(ID, data)
+            self:SendData(ID)
+            self:StartPaymentStatusPoll(ID)
+        else
+            local msg = nil
+            if keys and keys.data and keys.data.message then
+                msg = keys.data.message
+            elseif keys and keys.message and keys.message ~= "" then
+                msg = keys.message
+            end
+            Msgs:Pop(ID, msg or "网络异常")
+        end
+    end)
+end
+
+function Code:PayType(ID, tp)
+    if not ID or not tp then
+        return
+    end
+    if tp == self:GetPayTp(ID) then
+        return
+    end
+    local ewm_key = "ewm" .. tp
+    if self.Data[ID][ewm_key] == "" then
+        Code:Pay(ID, tp)
+    else
+        self:SetPayTp(ID, tp)
+        self:SendData(ID)
+    end
+end
+
+function Code:ClearCode(ID)
+    if not ID then
+        return
+    end
+    self:StopPaymentStatusPoll(ID)
+    --关闭页面
+    self.Data[ID].page = false
+    self.Data[ID].goods = ""
+    self.Data[ID].price = 0
+    self.Data[ID].goods_name = ""
+    self.Data[ID].card_level_count = 0
+    self.Data[ID].pay_tp = -1
+    self.Data[ID].order1 = ""
+    self.Data[ID].order2 = ""
+    self.Data[ID].pay_page = false
+    self.Data[ID].ewm1 = ""
+    self.Data[ID].ewm2 = ""
+    self:SendData(ID)
+end

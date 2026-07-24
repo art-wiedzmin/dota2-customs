@@ -8,22 +8,333 @@
 ]]
 
 
-local encoded=[[aWYgS2V5U2V0ID09IG5pbCB0aGVuCiAgICBLZXlTZXQgPSBjbGFzcyh7fSkKICAgIHJlcXVpcmUoImluZ2FtZS5LZXlTZXQuQ29uZmlnIikKICAgIHJlcXVpcmUoImluZ2FtZS5LZXlTZXQuRnVuYyIpCmVuZAoKcmVxdWlyZSgiaW5nYW1lLktleVNldC5VaSIpCgoKZnVuY3Rpb24gS2V5U2V0OkluaXQoSUQpCiAgICBpZiBub3QgSUQgdGhlbiByZXR1cm4gZW5kCiAgICBzZWxmLkRhdGFbSURdID0gVXRpbDpEZWVwQ29weVRhYihzZWxmLlRlbXBsYXRlKQogICAgc2VsZjpTZXRQZXREYXRhKElEKQogICAgc2VsZjpfRW5zdXJlUGV0UHJlc2V0cyhJRCkKICAgIGxvY2FsIHJvdyA9IHNlbGYuRGF0YVtJRF0KICAgIGZvciBzID0gMSwgMyBkbwogICAgICAgIHJvdy5wZXRfcHJlc2V0c1tzXSA9IFV0aWw6RGVlcENvcHlUYWIocm93LnBldCkKICAgIGVuZAogICAgcm93LnBldF9wcmVzZXRfYWN0aXZlID0gMQplbmQKCi0tLSDmnKrorr7nva7miJbnqbrkuLLml7bkvb/nlKjmqKHmnb/pu5jorqTvvIjorrDliIbmnb/kuI7lrqLmiLfnq68gVGFiIOS4gOiHtO+8iQpmdW5jdGlvbiBLZXlTZXQ6RW5zdXJlS2V5YmluZERlZmF1bHRzKElEKQogICAgbG9jYWwgcm93ID0gc2VsZi5EYXRhW0lEXQogICAgaWYgbm90IHJvdyBvciBub3Qgcm93LmtleWJpbmQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBzYiA9IHJvdy5rZXliaW5kLnNjb3JlYm9hcmQKICAgIGlmIHR5cGUoc2IpIH49ICJzdHJpbmciIG9yIHNiID09ICIiIHRoZW4KICAgICAgICByb3cua2V5YmluZC5zY29yZWJvYXJkID0gc2VsZi5UZW1wbGF0ZS5rZXliaW5kLnNjb3JlYm9hcmQKICAgIGVuZAplbmQKCmZ1bmN0aW9uIEtleVNldDpTZXRQZXREYXRhKElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgZm9yIF8sIG5hbWUgaW4gaXBhaXJzKEl0ZW0uUmIgb3Ige30pIGRvCiAgICAgICAgc2VsZi5EYXRhW0lEXS5wZXRbbmFtZV0gPSBmYWxzZQogICAgZW5kCmVuZAoKZnVuY3Rpb24gS2V5U2V0Ol9FbnN1cmVQZXRQcmVzZXRzKElEKQogICAgbG9jYWwgcm93ID0gc2VsZi5EYXRhW0lEXQogICAgaWYgbm90IHJvdyB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIHJvdy5wZXRfcHJlc2V0cyA9PSBuaWwgb3IgdHlwZShyb3cucGV0X3ByZXNldHMpIH49ICJ0YWJsZSIgdGhlbgogICAgICAgIHJvdy5wZXRfcHJlc2V0cyA9IHsgWzFdID0ge30sIFsyXSA9IHt9LCBbM10gPSB7fSB9CiAgICBlbmQKICAgIGZvciBzID0gMSwgMyBkbwogICAgICAgIGlmIHJvdy5wZXRfcHJlc2V0c1tzXSA9PSBuaWwgb3IgdHlwZShyb3cucGV0X3ByZXNldHNbc10pIH49ICJ0YWJsZSIgdGhlbgogICAgICAgICAgICByb3cucGV0X3ByZXNldHNbc10gPSB7fQogICAgICAgIGVuZAogICAgZW5kCiAgICBsb2NhbCBhID0gdG9udW1iZXIocm93LnBldF9wcmVzZXRfYWN0aXZlKQogICAgaWYgbm90IGEgb3IgYSA8IDEgb3IgYSA+IDMgdGhlbgogICAgICAgIHJvdy5wZXRfcHJlc2V0X2FjdGl2ZSA9IDEKICAgIGVsc2UKICAgICAgICByb3cucGV0X3ByZXNldF9hY3RpdmUgPSBtYXRoLmZsb29yKGEpCiAgICBlbmQKZW5kCgotLS0g5Li6IEl0ZW0uUmIg5Lit5q+P5LiA6aG56KGl5YWo6ZSu77yb5LiJ5aWX6aKE6K6+5LiOIHJvdy5wZXQg5LiA5bm257u05oqkCmZ1bmN0aW9uIEtleVNldDpFbnN1cmVQZXRLZXlzKElEKQogICAgaWYgbm90IElEIG9yIG5vdCBzZWxmLkRhdGFbSURdIG9yIG5vdCBzZWxmLkRhdGFbSURdLnBldCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGY6X0Vuc3VyZVBldFByZXNldHMoSUQpCiAgICBsb2NhbCByb3cgPSBzZWxmLkRhdGFbSURdCiAgICBmb3IgcyA9IDEsIDMgZG8KICAgICAgICBmb3IgXywgbmFtZSBpbiBpcGFpcnMoSXRlbS5SYiBvciB7fSkgZG8KICAgICAgICAgICAgaWYgcm93LnBldF9wcmVzZXRzW3NdW25hbWVdID09IG5pbCB0aGVuCiAgICAgICAgICAgICAgICByb3cucGV0X3ByZXNldHNbc11bbmFtZV0gPSBmYWxzZQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZAogICAgZm9yIF8sIG5hbWUgaW4gaXBhaXJzKEl0ZW0uUmIgb3Ige30pIGRvCiAgICAgICAgaWYgcm93LnBldFtuYW1lXSA9PSBuaWwgdGhlbgogICAgICAgICAgICByb3cucGV0W25hbWVdID0gZmFsc2UKICAgICAgICBlbmQKICAgIGVuZAplbmQKCi0tLSDlsIblvZPliY3nlJ/mlYjpooTorr7mioTliLAgcm93LnBldO+8iOWuoOeJqeaLvuWPluivuyByb3cucGV077yJCmZ1bmN0aW9uIEtleVNldDpTeW5jQWN0aXZlUGV0VG9Sb3coSUQpCiAgICBsb2NhbCByb3cgPSBzZWxmLkRhdGFbSURdCiAgICBpZiBub3Qgcm93IG9yIG5vdCByb3cucGV0IHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZjpfRW5zdXJlUGV0UHJlc2V0cyhJRCkKICAgIGxvY2FsIGEgPSByb3cucGV0X3ByZXNldF9hY3RpdmUgb3IgMQogICAgaWYgYSA8IDEgb3IgYSA+IDMgdGhlbgogICAgICAgIGEgPSAxCiAgICBlbmQKICAgIHJvdy5wZXRfcHJlc2V0X2FjdGl2ZSA9IGEKICAgIGxvY2FsIHNyYyA9IHJvdy5wZXRfcHJlc2V0c1thXQogICAgZm9yIF8sIG5hbWUgaW4gaXBhaXJzKEl0ZW0uUmIgb3Ige30pIGRvCiAgICAgICAgcm93LnBldFtuYW1lXSA9IHNyY1tuYW1lXSA9PSB0cnVlCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBLZXlTZXQ6T3BlblBhZ2UoSUQpCiAgICBpZiBub3QgSUQgdGhlbiByZXR1cm4gZW5kCiAgICBzZWxmLkRhdGFbSURdLnBhZ2UgPSB0cnVlCiAgICBzZWxmOlNlbmREYXRhKElEKQplbmQKCmZ1bmN0aW9uIEtleVNldDpDbG9zZVBhZ2UoSUQpCiAgICBpZiBub3QgSUQgdGhlbiByZXR1cm4gZW5kCiAgICBzZWxmLkRhdGFbSURdLnBhZ2UgPSBmYWxzZQogICAgc2VsZjpTZW5kRGF0YShJRCkKZW5kCgpmdW5jdGlvbiBLZXlTZXQ6U2VuZFB1YmxpY0RhdGEoKQplbmQKCi0tLSDlsIblrqLmiLfnq6/mn5DkuIDpooTorr7ooajlhpnlhaUgcGV0X3ByZXNldHNbc2xvdF3vvIjku4UgSXRlbS5SYu+8iQpmdW5jdGlvbiBLZXlTZXQ6X0FwcGx5UGV0TWFwVG9TbG90KElELCBzbG90LCBwZXRDbGllbnQpCiAgICBpZiBub3QgSUQgb3Igbm90IHNsb3Qgb3Igc2xvdCA8IDEgb3Igc2xvdCA+IDMgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBub3QgcGV0Q2xpZW50IG9yIHR5cGUocGV0Q2xpZW50KSB+PSAidGFibGUiIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZjpfRW5zdXJlUGV0UHJlc2V0cyhJRCkKICAgIGxvY2FsIHJvdyA9IHNlbGYuRGF0YVtJRF0KICAgIGxvY2FsIGFsbG93ID0ge30KICAgIGZvciBfLCBuYW1lIGluIGlwYWlycyhJdGVtLlJiIG9yIHt9KSBkbwogICAgICAgIGFsbG93W25hbWVdID0gdHJ1ZQogICAgZW5kCiAgICBsb2NhbCBkZXN0ID0gcm93LnBldF9wcmVzZXRzW3Nsb3RdCiAgICBmb3IgaywgdiBpbiBwYWlycyhwZXRDbGllbnQpIGRvCiAgICAgICAgaWYgYWxsb3dba10gdGhlbgogICAgICAgICAgICBkZXN0W2tdID0gKHYgPT0gdHJ1ZSBvciB2ID09IDEgb3IgdiA9PSAiMSIpCiAgICAgICAgZW5kCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBLZXlTZXQ6X0FwcGx5UGV0RnJvbUNsaWVudChJRCwgcGV0Q2xpZW50KQogICAgaWYgbm90IElEIG9yIG5vdCBzZWxmLkRhdGFbSURdIG9yIG5vdCBzZWxmLkRhdGFbSURdLnBldCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIG5vdCBwZXRDbGllbnQgb3IgdHlwZShwZXRDbGllbnQpIH49ICJ0YWJsZSIgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmOl9FbnN1cmVQZXRQcmVzZXRzKElEKQogICAgbG9jYWwgYWxsb3cgPSB7fQogICAgZm9yIF8sIG5hbWUgaW4gaXBhaXJzKEl0ZW0uUmIgb3Ige30pIGRvCiAgICAgICAgYWxsb3dbbmFtZV0gPSB0cnVlCiAgICBlbmQKICAgIGZvciBrLCB2IGluIHBhaXJzKHBldENsaWVudCkgZG8KICAgICAgICBpZiBhbGxvd1trXSB0aGVuCiAgICAgICAgICAgIHNlbGYuRGF0YVtJRF0ucGV0W2tdID0gKHYgPT0gdHJ1ZSBvciB2ID09IDEgb3IgdiA9PSAiMSIpCiAgICAgICAgZW5kCiAgICBlbmQKZW5kCgotLS0gY2xpZW50QnVuZGxlIOWPr+S4uiBTYXZlS2V5QmluZCDnmoQgZGF0Ye+8muWQqyBwZXRfcHJlc2V0c+OAgXBldF9wcmVzZXRfYWN0aXZl77yb5YW85a655LuFIHBldApmdW5jdGlvbiBLZXlTZXQ6U2F2ZUtleUJpbmQoSUQsIGxpc3QsIGNsaWVudEJ1bmRsZSkKICAgIGlmIG5vdCBJRCBvciBub3Qgc2VsZi5EYXRhW0lEXSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIHJvdyA9IHNlbGYuRGF0YVtJRF0KICAgIGlmIGxpc3QgYW5kIHR5cGUobGlzdCkgPT0gInRhYmxlIiB0aGVuCiAgICAgICAgZm9yIF8sIHYgaW4gaXBhaXJzKGxpc3QpIGRvCiAgICAgICAgICAgIGlmIHR5cGUodikgPT0gInRhYmxlIiBhbmQgdi5pZCB0aGVuCiAgICAgICAgICAgICAgICByb3cua2V5YmluZFt2LmlkXSA9IHYua2V5CiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCiAgICBsb2NhbCBiZCA9IGNsaWVudEJ1bmRsZQogICAgaWYgdHlwZShiZCkgfj0gInRhYmxlIiB0aGVuCiAgICAgICAgYmQgPSB7fQogICAgZW5kCiAgICBzZWxmOl9FbnN1cmVQZXRQcmVzZXRzKElEKQogICAgaWYgYmQucGV0X3ByZXNldHMgYW5kIHR5cGUoYmQucGV0X3ByZXNldHMpID09ICJ0YWJsZSIgdGhlbgogICAgICAgIGZvciBzID0gMSwgMyBkbwogICAgICAgICAgICBsb2NhbCBzbG90TWFwID0gYmQucGV0X3ByZXNldHNbc10gb3IgYmQucGV0X3ByZXNldHNbdG9zdHJpbmcocyldCiAgICAgICAgICAgIGlmIHR5cGUoc2xvdE1hcCkgPT0gInRhYmxlIiB0aGVuCiAgICAgICAgICAgICAgICBzZWxmOl9BcHBseVBldE1hcFRvU2xvdChJRCwgcywgc2xvdE1hcCkKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbHNlaWYgYmQucGV0IGFuZCB0eXBlKGJkLnBldCkgPT0gInRhYmxlIiB0aGVuCiAgICAgICAgc2VsZjpfQXBwbHlQZXRGcm9tQ2xpZW50KElELCBiZC5wZXQpCiAgICAgICAgZm9yIHMgPSAxLCAzIGRvCiAgICAgICAgICAgIGZvciBrLCB2IGluIHBhaXJzKHJvdy5wZXQpIGRvCiAgICAgICAgICAgICAgICByb3cucGV0X3ByZXNldHNbc11ba10gPSB2CiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCiAgICBsb2NhbCBhID0gdG9udW1iZXIoYmQucGV0X3ByZXNldF9hY3RpdmUpCiAgICBpZiBhIGFuZCBhID49IDEgYW5kIGEgPD0gMyB0aGVuCiAgICAgICAgcm93LnBldF9wcmVzZXRfYWN0aXZlID0gbWF0aC5mbG9vcihhKQogICAgZW5kCiAgICBzZWxmOkVuc3VyZVBldEtleXMoSUQpCiAgICBzZWxmOlN5bmNBY3RpdmVQZXRUb1JvdyhJRCkKICAgIHNlbGY6U2VuZERhdGEoSUQpCiAgICBzZWxmOlBlcnNpc3RUb1NlcnZlcihJRCkKZW5kCgotLS0g55m75b2V5ZCO5LuOIHVzZXIua2V5c2V0IOWQiOW5tu+8iOS7heimhuebluW3suacieaooeadv+Wtl+aute+8iQpmdW5jdGlvbiBLZXlTZXQ6QXBwbHlVc2VyS2V5c2V0KElELCB1c2VyKQogICAgaWYgbm90IElEIG9yIG5vdCB1c2VyIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgcmF3ID0gdXNlci5rZXlzZXQKICAgIGlmIHJhdyA9PSBuaWwgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCB0YWIgPSBuaWwKICAgIGlmIHR5cGUocmF3KSA9PSAidGFibGUiIHRoZW4KICAgICAgICB0YWIgPSByYXcKICAgIGVsc2VpZiB0eXBlKHJhdykgPT0gInN0cmluZyIgYW5kIHJhdyB+PSAiIiB0aGVuCiAgICAgICAgbG9jYWwgb2ssIGRlY29kZWQgPSBwY2FsbChmdW5jdGlvbigpCiAgICAgICAgICAgIHJldHVybiBKU09OLmRlY29kZShyYXcpCiAgICAgICAgZW5kKQogICAgICAgIGlmIG9rIGFuZCB0eXBlKGRlY29kZWQpID09ICJ0YWJsZSIgdGhlbgogICAgICAgICAgICB0YWIgPSBkZWNvZGVkCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGlmIG5vdCB0YWIgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmOkFwcGx5S2V5c2V0VGFibGUoSUQsIHRhYikKICAgIHNlbGY6RW5zdXJlUGV0S2V5cyhJRCkKZW5kCgpmdW5jdGlvbiBLZXlTZXQ6QXBwbHlLZXlzZXRUYWJsZShJRCwgdGFiKQogICAgbG9jYWwgcm93ID0gc2VsZi5EYXRhW0lEXQogICAgaWYgbm90IHJvdyBvciB0eXBlKHRhYikgfj0gInRhYmxlIiB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGY6X0Vuc3VyZVBldFByZXNldHMoSUQpCiAgICBpZiB0YWIua2V5YmluZCBhbmQgdHlwZSh0YWIua2V5YmluZCkgPT0gInRhYmxlIiBhbmQgcm93LmtleWJpbmQgdGhlbgogICAgICAgIGZvciBrLCBfIGluIHBhaXJzKHJvdy5rZXliaW5kKSBkbwogICAgICAgICAgICBsb2NhbCBzdiA9IHRhYi5rZXliaW5kW2tdCiAgICAgICAgICAgIGlmIHN2IH49IG5pbCB0aGVuCiAgICAgICAgICAgICAgICByb3cua2V5YmluZFtrXSA9IHN2CiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCiAgICBpZiB0YWIucGV0X3ByZXNldHMgYW5kIHR5cGUodGFiLnBldF9wcmVzZXRzKSA9PSAidGFibGUiIHRoZW4KICAgICAgICBmb3IgcyA9IDEsIDMgZG8KICAgICAgICAgICAgbG9jYWwgc2xvdCA9IHRhYi5wZXRfcHJlc2V0c1tzXSBvciB0YWIucGV0X3ByZXNldHNbdG9zdHJpbmcocyldCiAgICAgICAgICAgIGlmIHR5cGUoc2xvdCkgPT0gInRhYmxlIiB0aGVuCiAgICAgICAgICAgICAgICBmb3IgXywgbmFtZSBpbiBpcGFpcnMoSXRlbS5SYiBvciB7fSkgZG8KICAgICAgICAgICAgICAgICAgICBsb2NhbCBzdiA9IHNsb3RbbmFtZV0KICAgICAgICAgICAgICAgICAgICBpZiBzdiB+PSBuaWwgdGhlbgogICAgICAgICAgICAgICAgICAgICAgICByb3cucGV0X3ByZXNldHNbc11bbmFtZV0gPSAoc3YgPT0gdHJ1ZSBvciBzdiA9PSAxIG9yIHN2ID09ICIxIikKICAgICAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVsc2VpZiB0YWIucGV0IGFuZCB0eXBlKHRhYi5wZXQpID09ICJ0YWJsZSIgYW5kIHJvdy5wZXQgdGhlbgogICAgICAgIGZvciBrLCBfIGluIHBhaXJzKHJvdy5wZXQpIGRvCiAgICAgICAgICAgIGxvY2FsIHN2ID0gdGFiLnBldFtrXQogICAgICAgICAgICBpZiBzdiB+PSBuaWwgdGhlbgogICAgICAgICAgICAgICAgcm93LnBldFtrXSA9IChzdiA9PSB0cnVlIG9yIHN2ID09IDEgb3Igc3YgPT0gIjEiKQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgICAgICBmb3IgcyA9IDEsIDMgZG8KICAgICAgICAgICAgZm9yIGssIHYgaW4gcGFpcnMocm93LnBldCkgZG8KICAgICAgICAgICAgICAgIHJvdy5wZXRfcHJlc2V0c1tzXVtrXSA9IHYKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGxvY2FsIGFwID0gdG9udW1iZXIodGFiLnBldF9wcmVzZXRfYWN0aXZlKQogICAgaWYgYXAgYW5kIGFwID49IDEgYW5kIGFwIDw9IDMgdGhlbgogICAgICAgIHJvdy5wZXRfcHJlc2V0X2FjdGl2ZSA9IG1hdGguZmxvb3IoYXApCiAgICBlbmQKICAgIHNlbGY6RW5zdXJlS2V5YmluZERlZmF1bHRzKElEKQogICAgc2VsZjpFbnN1cmVQZXRLZXlzKElEKQogICAgc2VsZjpTeW5jQWN0aXZlUGV0VG9Sb3coSUQpCmVuZAoKZnVuY3Rpb24gS2V5U2V0OkJ1aWxkUGVyc2lzdEpzb24oSUQpCiAgICBsb2NhbCByb3cgPSBzZWxmLkRhdGFbSURdCiAgICBpZiBub3Qgcm93IHRoZW4KICAgICAgICByZXR1cm4gbmlsCiAgICBlbmQKICAgIHNlbGY6X0Vuc3VyZVBldFByZXNldHMoSUQpCiAgICBsb2NhbCBwcmVzZXRzT3V0ID0ge30KICAgIGZvciBzID0gMSwgMyBkbwogICAgICAgIHByZXNldHNPdXRbdG9zdHJpbmcocyldID0gVXRpbDpEZWVwQ29weVRhYihyb3cucGV0X3ByZXNldHNbc10pCiAgICBlbmQKICAgIGxvY2FsIHBlcnNpc3QgPSB7CiAgICAgICAga2V5YmluZCA9IFV0aWw6RGVlcENvcHlUYWIocm93LmtleWJpbmQpLAogICAgICAgIHBldCA9IFV0aWw6RGVlcENvcHlUYWIocm93LnBldCksCiAgICAgICAgcGV0X3ByZXNldHMgPSBwcmVzZXRzT3V0LAogICAgICAgIHBldF9wcmVzZXRfYWN0aXZlID0gcm93LnBldF9wcmVzZXRfYWN0aXZlIG9yIDEsCiAgICB9CiAgICBsb2NhbCBvaywgcyA9IHBjYWxsKGZ1bmN0aW9uKCkKICAgICAgICByZXR1cm4gSlNPTi5lbmNvZGUocGVyc2lzdCkKICAgIGVuZCkKICAgIGlmIG9rIGFuZCB0eXBlKHMpID09ICJzdHJpbmciIHRoZW4KICAgICAgICByZXR1cm4gcwogICAgZW5kCiAgICByZXR1cm4gbmlsCmVuZAoKZnVuY3Rpb24gS2V5U2V0OlBlcnNpc3RUb1NlcnZlcihJRCkKICAgIGlmIG5vdCBJRCBvciBub3QgUGxheWVyUmVzb3VyY2U6SXNWYWxpZFBsYXllcihJRCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBqc29uU3RyID0gc2VsZjpCdWlsZFBlcnNpc3RKc29uKElEKQogICAgaWYgbm90IGpzb25TdHIgb3IganNvblN0ciA9PSAiIiB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIEh0dHA6UE9TVCgiL3VzZXIvc3luYy9rZXlzZXQiLCB7IGtleXNldCA9IGpzb25TdHIgfSwgSUQsIGZ1bmN0aW9uKGtleXMpCiAgICAgICAgaWYga2V5cy5jb2RlIH49IDIwMCB0aGVuCiAgICAgICAgICAgIC0tIHByaW50KCJbS2V5U2V0XSBzeW5jIGtleXNldCBmYWlsZWQgY29kZT0iIC4uIHRvc3RyaW5nKGtleXMuY29kZSkpCiAgICAgICAgZW5kCiAgICBlbmQpCmVuZAoKZnVuY3Rpb24gS2V5U2V0Ok9uUGxheWVyS2V5RG93bihJRCwgZGF0YSkKICAgIGlmIG5vdCBJRCBvciBub3QgZGF0YSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGFjdGlvbiA9IGRhdGEuYWN0aW9uCiAgICBsb2NhbCBrZXkgPSBkYXRhLmtleQogICAgLS0gcHJpbnQoZGF0YSkKICAgIGlmIGFjdGlvbiA9PSAic2NvcmVib2FyZCIgdGhlbgogICAgICAgIFN0YXQ6Q2hhbmdlUGFnZShJRCkKICAgIGVuZAogICAgaWYgYWN0aW9uID09ICJlYXp5c2hvcCIgdGhlbgogICAgICAgIEVhenlTaG9wOkNoYW5nZVBhZ2UoSUQpCiAgICBlbmQKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if KeySet == nil then
+    KeySet = class({})
+    require("ingame.KeySet.Config")
+    require("ingame.KeySet.Func")
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+require("ingame.KeySet.Ui")
+
+
+function KeySet:Init(ID)
+    if not ID then return end
+    self.Data[ID] = Util:DeepCopyTab(self.Template)
+    self:SetPetData(ID)
+    self:_EnsurePetPresets(ID)
+    local row = self.Data[ID]
+    for s = 1, 3 do
+        row.pet_presets[s] = Util:DeepCopyTab(row.pet)
+    end
+    row.pet_preset_active = 1
+end
+
+--- 未设置或空串时使用模板默认（记分板与客户端 Tab 一致）
+function KeySet:EnsureKeybindDefaults(ID)
+    local row = self.Data[ID]
+    if not row or not row.keybind then
+        return
+    end
+    local sb = row.keybind.scoreboard
+    if type(sb) ~= "string" or sb == "" then
+        row.keybind.scoreboard = self.Template.keybind.scoreboard
+    end
+end
+
+function KeySet:SetPetData(ID)
+    if not ID then
+        return
+    end
+    for _, name in ipairs(Item.Rb or {}) do
+        self.Data[ID].pet[name] = false
+    end
+end
+
+function KeySet:_EnsurePetPresets(ID)
+    local row = self.Data[ID]
+    if not row then
+        return
+    end
+    if row.pet_presets == nil or type(row.pet_presets) ~= "table" then
+        row.pet_presets = { [1] = {}, [2] = {}, [3] = {} }
+    end
+    for s = 1, 3 do
+        if row.pet_presets[s] == nil or type(row.pet_presets[s]) ~= "table" then
+            row.pet_presets[s] = {}
+        end
+    end
+    local a = tonumber(row.pet_preset_active)
+    if not a or a < 1 or a > 3 then
+        row.pet_preset_active = 1
+    else
+        row.pet_preset_active = math.floor(a)
+    end
+end
+
+--- 为 Item.Rb 中每一项补全键；三套预设与 row.pet 一并维护
+function KeySet:EnsurePetKeys(ID)
+    if not ID or not self.Data[ID] or not self.Data[ID].pet then
+        return
+    end
+    self:_EnsurePetPresets(ID)
+    local row = self.Data[ID]
+    for s = 1, 3 do
+        for _, name in ipairs(Item.Rb or {}) do
+            if row.pet_presets[s][name] == nil then
+                row.pet_presets[s][name] = false
+            end
+        end
+    end
+    for _, name in ipairs(Item.Rb or {}) do
+        if row.pet[name] == nil then
+            row.pet[name] = false
+        end
+    end
+end
+
+--- 将当前生效预设抄到 row.pet（宠物拾取读 row.pet）
+function KeySet:SyncActivePetToRow(ID)
+    local row = self.Data[ID]
+    if not row or not row.pet then
+        return
+    end
+    self:_EnsurePetPresets(ID)
+    local a = row.pet_preset_active or 1
+    if a < 1 or a > 3 then
+        a = 1
+    end
+    row.pet_preset_active = a
+    local src = row.pet_presets[a]
+    for _, name in ipairs(Item.Rb or {}) do
+        row.pet[name] = src[name] == true
+    end
+end
+
+function KeySet:OpenPage(ID)
+    if not ID then return end
+    self.Data[ID].page = true
+    self:SendData(ID)
+end
+
+function KeySet:ClosePage(ID)
+    if not ID then return end
+    self.Data[ID].page = false
+    self:SendData(ID)
+end
+
+function KeySet:SendPublicData()
+end
+
+--- 将客户端某一预设表写入 pet_presets[slot]（仅 Item.Rb）
+function KeySet:_ApplyPetMapToSlot(ID, slot, petClient)
+    if not ID or not slot or slot < 1 or slot > 3 then
+        return
+    end
+    if not petClient or type(petClient) ~= "table" then
+        return
+    end
+    self:_EnsurePetPresets(ID)
+    local row = self.Data[ID]
+    local allow = {}
+    for _, name in ipairs(Item.Rb or {}) do
+        allow[name] = true
+    end
+    local dest = row.pet_presets[slot]
+    for k, v in pairs(petClient) do
+        if allow[k] then
+            dest[k] = (v == true or v == 1 or v == "1")
+        end
+    end
+end
+
+function KeySet:_ApplyPetFromClient(ID, petClient)
+    if not ID or not self.Data[ID] or not self.Data[ID].pet then
+        return
+    end
+    if not petClient or type(petClient) ~= "table" then
+        return
+    end
+    self:_EnsurePetPresets(ID)
+    local allow = {}
+    for _, name in ipairs(Item.Rb or {}) do
+        allow[name] = true
+    end
+    for k, v in pairs(petClient) do
+        if allow[k] then
+            self.Data[ID].pet[k] = (v == true or v == 1 or v == "1")
+        end
+    end
+end
+
+--- clientBundle 可为 SaveKeyBind 的 data：含 pet_presets、pet_preset_active；兼容仅 pet
+function KeySet:SaveKeyBind(ID, list, clientBundle)
+    if not ID or not self.Data[ID] then
+        return
+    end
+    local row = self.Data[ID]
+    if list and type(list) == "table" then
+        for _, v in ipairs(list) do
+            if type(v) == "table" and v.id then
+                row.keybind[v.id] = v.key
+            end
+        end
+    end
+    local bd = clientBundle
+    if type(bd) ~= "table" then
+        bd = {}
+    end
+    self:_EnsurePetPresets(ID)
+    if bd.pet_presets and type(bd.pet_presets) == "table" then
+        for s = 1, 3 do
+            local slotMap = bd.pet_presets[s] or bd.pet_presets[tostring(s)]
+            if type(slotMap) == "table" then
+                self:_ApplyPetMapToSlot(ID, s, slotMap)
+            end
+        end
+    elseif bd.pet and type(bd.pet) == "table" then
+        self:_ApplyPetFromClient(ID, bd.pet)
+        for s = 1, 3 do
+            for k, v in pairs(row.pet) do
+                row.pet_presets[s][k] = v
+            end
+        end
+    end
+    local a = tonumber(bd.pet_preset_active)
+    if a and a >= 1 and a <= 3 then
+        row.pet_preset_active = math.floor(a)
+    end
+    self:EnsurePetKeys(ID)
+    self:SyncActivePetToRow(ID)
+    self:SendData(ID)
+    self:PersistToServer(ID)
+end
+
+--- 登录后从 user.keyset 合并（仅覆盖已有模板字段）
+function KeySet:ApplyUserKeyset(ID, user)
+    if not ID or not user then
+        return
+    end
+    local raw = user.keyset
+    if raw == nil then
+        return
+    end
+    local tab = nil
+    if type(raw) == "table" then
+        tab = raw
+    elseif type(raw) == "string" and raw ~= "" then
+        local ok, decoded = pcall(function()
+            return JSON.decode(raw)
+        end)
+        if ok and type(decoded) == "table" then
+            tab = decoded
+        end
+    end
+    if not tab then
+        return
+    end
+    self:ApplyKeysetTable(ID, tab)
+    self:EnsurePetKeys(ID)
+end
+
+function KeySet:ApplyKeysetTable(ID, tab)
+    local row = self.Data[ID]
+    if not row or type(tab) ~= "table" then
+        return
+    end
+    self:_EnsurePetPresets(ID)
+    if tab.keybind and type(tab.keybind) == "table" and row.keybind then
+        for k, _ in pairs(row.keybind) do
+            local sv = tab.keybind[k]
+            if sv ~= nil then
+                row.keybind[k] = sv
+            end
+        end
+    end
+    if tab.pet_presets and type(tab.pet_presets) == "table" then
+        for s = 1, 3 do
+            local slot = tab.pet_presets[s] or tab.pet_presets[tostring(s)]
+            if type(slot) == "table" then
+                for _, name in ipairs(Item.Rb or {}) do
+                    local sv = slot[name]
+                    if sv ~= nil then
+                        row.pet_presets[s][name] = (sv == true or sv == 1 or sv == "1")
+                    end
+                end
+            end
+        end
+    elseif tab.pet and type(tab.pet) == "table" and row.pet then
+        for k, _ in pairs(row.pet) do
+            local sv = tab.pet[k]
+            if sv ~= nil then
+                row.pet[k] = (sv == true or sv == 1 or sv == "1")
+            end
+        end
+        for s = 1, 3 do
+            for k, v in pairs(row.pet) do
+                row.pet_presets[s][k] = v
+            end
+        end
+    end
+    local ap = tonumber(tab.pet_preset_active)
+    if ap and ap >= 1 and ap <= 3 then
+        row.pet_preset_active = math.floor(ap)
+    end
+    self:EnsureKeybindDefaults(ID)
+    self:EnsurePetKeys(ID)
+    self:SyncActivePetToRow(ID)
+end
+
+function KeySet:BuildPersistJson(ID)
+    local row = self.Data[ID]
+    if not row then
+        return nil
+    end
+    self:_EnsurePetPresets(ID)
+    local presetsOut = {}
+    for s = 1, 3 do
+        presetsOut[tostring(s)] = Util:DeepCopyTab(row.pet_presets[s])
+    end
+    local persist = {
+        keybind = Util:DeepCopyTab(row.keybind),
+        pet = Util:DeepCopyTab(row.pet),
+        pet_presets = presetsOut,
+        pet_preset_active = row.pet_preset_active or 1,
+    }
+    local ok, s = pcall(function()
+        return JSON.encode(persist)
+    end)
+    if ok and type(s) == "string" then
+        return s
+    end
+    return nil
+end
+
+function KeySet:PersistToServer(ID)
+    if not ID or not PlayerResource:IsValidPlayer(ID) then
+        return
+    end
+    local jsonStr = self:BuildPersistJson(ID)
+    if not jsonStr or jsonStr == "" then
+        return
+    end
+    Http:POST("/user/sync/keyset", { keyset = jsonStr }, ID, function(keys)
+        if keys.code ~= 200 then
+            -- print("[KeySet] sync keyset failed code=" .. tostring(keys.code))
+        end
+    end)
+end
+
+function KeySet:OnPlayerKeyDown(ID, data)
+    if not ID or not data then
+        return
+    end
+    local action = data.action
+    local key = data.key
+    -- print(data)
+    if action == "scoreboard" then
+        Stat:ChangePage(ID)
+    end
+    if action == "eazyshop" then
+        EazyShop:ChangePage(ID)
+    end
+end

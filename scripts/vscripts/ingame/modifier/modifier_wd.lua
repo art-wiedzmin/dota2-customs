@@ -8,22 +8,90 @@
 ]]
 
 
-local encoded=[[LS0g5paH5Lu25ZCN77yabW9kaWZpZXJfd2QubHVhCm1vZGlmaWVyX3dkID0gY2xhc3Moe30pCgotLSDln7rnoYDphY3nva4KZnVuY3Rpb24gbW9kaWZpZXJfd2Q6SXNIaWRkZW4oKQogICAgcmV0dXJuIGZhbHNlIC0tIOmakOiXj+eKtuaAgeagj+aYvuekuuWbvuaghwplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3dkOklzRGVidWZmKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3dkOklzUHVyZ2FibGUoKQogICAgcmV0dXJuIGZhbHNlIC0tIOS4jeWPr+iiq+mpseaVowplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3dkOlJlbW92ZU9uRGVhdGgoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfd2Q6QWxsb3dJbGx1c2lvbkR1cGxpY2F0ZSgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl93ZDpPbkNyZWF0ZWQoa3YpCiAgICBpZiBJc1NlcnZlcigpIHRoZW4KCiAgICBlbmQKZW5kCgotLSDopobnm5blhY3nlqvlsZ7mgKcKZnVuY3Rpb24gbW9kaWZpZXJfd2Q6RGVjbGFyZUZ1bmN0aW9ucygpCiAgICByZXR1cm4gewogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX1NUQVRVU19SRVNJU1RBTkNFX1NUQUNLSU5HLCAtLSDnirbmgIHmipfmgKcKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9IRUFMVEhfQk9OVVMsICAgICAgICAgICAgICAgLS0g55Sf5ZG95YC85aKe55uKCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfTU9WRVNQRUVEX0JPTlVTX0NPTlNUQU5ULCAgIC0t56e75Yqo6YCf5bqmCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfQkFTRUFUVEFDS19CT05VU0RBTUFHRSwKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9BVFRBQ0tTUEVFRF9CT05VU19DT05TVEFOVCwKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9NT1ZFU1BFRURfTElNSVQsCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfTU9WRVNQRUVEX01BWCwKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9JR05PUkVfTU9WRVNQRUVEX0xJTUlULAogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX0hFQUxUSF9SRUdFTl9DT05TVEFOVAogICAgfQplbmQKCi0tIOiOt+WPlueKtuaAgeaKl+aAp+WinuebigpmdW5jdGlvbiBtb2RpZmllcl93ZDpHZXRNb2RpZmllclN0YXR1c1Jlc2lzdGFuY2VTdGFja2luZygpCiAgICByZXR1cm4gMTAwCmVuZAoKLS0g6I635Y+W55Sf5ZG95YC85aKe55uKCmZ1bmN0aW9uIG1vZGlmaWVyX3dkOkdldE1vZGlmaWVySGVhbHRoQm9udXMoKQogICAgcmV0dXJuIDk5OTk5CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfd2Q6R2V0TW9kaWZpZXJNb3ZlU3BlZWRCb251c19Db25zdGFudCgpCiAgICByZXR1cm4gOTAwMAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3dkOkdldE1vZGlmaWVyQmFzZUF0dGFja19Cb251c0RhbWFnZSgpCiAgICByZXR1cm4gOTk5OTkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl93ZDpHZXRNb2RpZmllckF0dGFja1NwZWVkQm9udXNfQ29uc3RhbnQoKQogICAgcmV0dXJuIDk5OTkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl93ZDpHZXRNb2RpZmllck1vdmVTcGVlZF9MaW1pdCgpCiAgICByZXR1cm4gMjAwMAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3dkOkdldE1vZGlmaWVyTW92ZVNwZWVkTWF4X0JvbnVzQ29uc3RhbnQoKQogICAgcmV0dXJuIDkwMDAKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl93ZDpHZXRNb2RpZmllcklnbm9yZU1vdmVzcGVlZExpbWl0KCkKICAgIHJldHVybiAxCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfd2Q6R2V0TW9kaWZpZXJIZWFsdGhSZWdlblBlcmNlbnRhZ2UoKSByZXR1cm4gMTAgZW5kCgpmdW5jdGlvbiBtb2RpZmllcl93ZDpDaGVja1N0YXRlKCkKICAgIHJldHVybiB7CiAgICAgICAgW01PRElGSUVSX1NUQVRFX0ZMWUlOR19GT1JfUEFUSElOR19QVVJQT1NFU19PTkxZXSA9IHRydWUsCiAgICAgICAgW01PRElGSUVSX1NUQVRFX05PX1VOSVRfQ09MTElTSU9OXSA9IHRydWUsCiAgICB9CmVuZA==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 文件名：modifier_wd.lua
+modifier_wd = class({})
+
+-- 基础配置
+function modifier_wd:IsHidden()
+    return false -- 隐藏状态栏显示图标
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function modifier_wd:IsDebuff()
+    return false
+end
+
+function modifier_wd:IsPurgable()
+    return false -- 不可被驱散
+end
+
+function modifier_wd:RemoveOnDeath()
+    return false
+end
+
+function modifier_wd:AllowIllusionDuplicate()
+    return false
+end
+
+function modifier_wd:OnCreated(kv)
+    if IsServer() then
+
+    end
+end
+
+-- 覆盖免疫属性
+function modifier_wd:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING, -- 状态抗性
+        MODIFIER_PROPERTY_HEALTH_BONUS,               -- 生命值增益
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,   --移动速度
+        MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
+        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+        MODIFIER_PROPERTY_MOVESPEED_LIMIT,
+        MODIFIER_PROPERTY_MOVESPEED_MAX,
+        MODIFIER_PROPERTY_IGNORE_MOVESPEED_LIMIT,
+        MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT
+    }
+end
+
+-- 获取状态抗性增益
+function modifier_wd:GetModifierStatusResistanceStacking()
+    return 100
+end
+
+-- 获取生命值增益
+function modifier_wd:GetModifierHealthBonus()
+    return 99999
+end
+
+function modifier_wd:GetModifierMoveSpeedBonus_Constant()
+    return 9000
+end
+
+function modifier_wd:GetModifierBaseAttack_BonusDamage()
+    return 99999
+end
+
+function modifier_wd:GetModifierAttackSpeedBonus_Constant()
+    return 9999
+end
+
+function modifier_wd:GetModifierMoveSpeed_Limit()
+    return 2000
+end
+
+function modifier_wd:GetModifierMoveSpeedMax_BonusConstant()
+    return 9000
+end
+
+function modifier_wd:GetModifierIgnoreMovespeedLimit()
+    return 1
+end
+
+function modifier_wd:GetModifierHealthRegenPercentage() return 10 end
+
+function modifier_wd:CheckState()
+    return {
+        [MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true,
+        [MODIFIER_STATE_NO_UNIT_COLLISION] = true,
+    }
+end

@@ -8,22 +8,211 @@
 ]]
 
 
-local encoded=[[aWYgU2VydmVyID09IG5pbCB0aGVuCiAgICBTZXJ2ZXIgPSBjbGFzcyh7fSkKICAgIHJlcXVpcmUoImluZ2FtZS5TZXJ2ZXIuQ29uZmlnIikKICAgIHJlcXVpcmUoImluZ2FtZS5TZXJ2ZXIuU2V0IikKICAgIHJlcXVpcmUoImluZ2FtZS5TZXJ2ZXIuR2V0IikKICAgIHJlcXVpcmUoImluZ2FtZS5TZXJ2ZXIuRnVuYyIpCmVuZAoKLS0g5Yid5aeL5YyW546p5a625pWw5o2uCmZ1bmN0aW9uIFNlcnZlcjpJbml0SUQoSUQpCiAgICBpZiBub3QgSUQgdGhlbiByZXR1cm4gZW5kCiAgICBzZWxmLkRhdGFbSURdID0gVXRpbDpEZWVwQ29weVRhYihzZWxmLlRlbXBsYXRlKQplbmQKCi0tIOeZveWQjeWNleajgOa1iwpmdW5jdGlvbiBTZXJ2ZXI6TG9hZFdoaXRlTGlzdCgpCiAgICBpZiBub3QgSXNJblRvb2xzTW9kZSgpIGFuZCBHYW1lUnVsZXM6SXNDaGVhdE1vZGUoKSB0aGVuCiAgICAgICAgVXRpbDpTZW5kMkpzQm90c1NhZmUoIlVJX092ZXJHYW1lIiwge3N0YXRlID0gdHJ1ZX0pCiAgICBlbmQKICAgIC0tIOWKoOi9veeZveWQjeWNlQogICAgU2VydmVyOkdldFdoaXRlTGlzdCgpCiAgICAtLSDmuLjmiI/mgKfosIPmlbTvvJroi7Hpm4TlvLrluqbvvIjmlbTlsYDku4Xmi4nkuIDmrKHvvIkKICAgIFNlcnZlcjpMb2FkSGVyb0JhbGFuY2UoKQogICAgLS0g6I635Y+W5o6S6KGM5qac5pWw5o2uCiAgICBSYW5rOkxvYWRTZXJ2ZXIoKQogICAgVGltZXJzKDAsIGZ1bmN0aW9uKCkKICAgICAgICBsb2NhbCBuZWVkID0gZmFsc2UKICAgICAgICBmb3IgXywgdiBpbiBwYWlycyh1dGlsZXg6R2V0QWxsUGxheWVyKCkpIGRvCiAgICAgICAgICAgIGxvY2FsIGQgPSBzZWxmLkRhdGFbdl0KICAgICAgICAgICAgbG9jYWwgYWlkID0gUGxheWVyUmVzb3VyY2U6R2V0U3RlYW1BY2NvdW50SUQodikKICAgICAgICAgICAgaWYgZAogICAgICAgICAgICAgICAgYW5kIGFpZCBhbmQgYWlkIH49IDAKICAgICAgICAgICAgICAgIGFuZCAobm90IGQudXNlcl9zdGF0ZSkKICAgICAgICAgICAgICAgIGFuZCAobm90IGQubG9naW5fZ2F2ZV91cCkKICAgICAgICAgICAgICAgIGFuZCAoKGQubG9naW5fZmFpbF9jb3VudCBvciAwKSA8IChzZWxmLkxPR0lOX0ZBSUxfTUFYIG9yIDIwKSkKICAgICAgICAgICAgdGhlbgogICAgICAgICAgICAgICAgbmVlZCA9IHRydWUKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICAgICAgZm9yIGssIHYgaW4gcGFpcnModXRpbGV4OkdldEFsbFBsYXllcigpKSBkbwogICAgICAgICAgICBzZWxmOkNoZWNrVXNlcih2KQogICAgICAgIGVuZAogICAgICAgIGlmIG5vdCBuZWVkIHRoZW4KICAgICAgICAgICAgcmV0dXJuIG5pbAogICAgICAgIGVuZAogICAgICAgIHJldHVybiAxCiAgICBlbmQpCmVuZAoKLS0g6aqM6K+B55m95ZCN5Y2VCmZ1bmN0aW9uIFNlcnZlcjpHZXRXaGl0ZUxpc3QoKQogICAgbG9jYWwgSUQgPSBQRC5Ib3N0CiAgICBIdHRwOlBPU1QoIi93aGl0ZWxpc3QvcGxheWVyIiwge30sIElELCBmdW5jdGlvbihrZXlzKQogICAgICAgIC0tIHByaW50KGtleXMpCiAgICAgICAgaWYga2V5cy5jb2RlID09IDIwMCB0aGVuCiAgICAgICAgICAgIGZvciBrLCB2IGluIHBhaXJzKGtleXMuZGF0YSkgZG8KICAgICAgICAgICAgICAgIGlmIHYgdGhlbgogICAgICAgICAgICAgICAgICAgIGxvY2FsIHBpZCA9IHYucGlkCiAgICAgICAgICAgICAgICAgICAgdGFibGUuaW5zZXJ0KFNlcnZlci5XTGlzdCwgcGlkKQogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kKQplbmQKCi0tIOa4uOaIj+aAp+iwg+aVtO+8muiLsembhOW8uuW6pumFjee9ru+8iOW8gOWxgOS4gOasoe+8iQpmdW5jdGlvbiBTZXJ2ZXI6TG9hZEhlcm9CYWxhbmNlKCkKICAgIGlmIHNlbGYuSGVyb0JhbGFuY2VMb2FkZWQgb3Igc2VsZi5faGVyb0JhbGFuY2VSZXF1ZXN0aW5nIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5faGVyb0JhbGFuY2VSZXF1ZXN0aW5nID0gdHJ1ZQogICAgc2VsZi5IZXJvQmFsYW5jZUJ5SWQgPSB7fQogICAgbG9jYWwgSUQgPSBQRC5Ib3N0CiAgICAtLSDotbAgL2dhbWUvaGVyb19iYWxhbmNlX2xpc3TvvJrnur/kuIogL2hlcm9CYWxhbmNlL2xpc3Qg5Lya6ZSZ6K+v5ZG95Lit56S85YyF5o6l5Y+jCiAgICBIdHRwOlBPU1QoIi9nYW1lL2hlcm9fYmFsYW5jZV9saXN0Iiwge30sIElELCBmdW5jdGlvbihrZXlzKQogICAgICAgIHNlbGYuX2hlcm9CYWxhbmNlUmVxdWVzdGluZyA9IGZhbHNlCiAgICAgICAgc2VsZi5IZXJvQmFsYW5jZUxvYWRlZCA9IHRydWUKICAgICAgICBsb2NhbCBuID0gMAogICAgICAgIGlmIGtleXMgYW5kIGtleXMuY29kZSA9PSAyMDAgYW5kIGtleXMuZGF0YSB0aGVuCiAgICAgICAgICAgIGxvY2FsIHJvd3MgPSBrZXlzLmRhdGEucm93cyBvciBrZXlzLmRhdGEKICAgICAgICAgICAgaWYgdHlwZShyb3dzKSA9PSAidGFibGUiIHRoZW4KICAgICAgICAgICAgICAgIGZvciBfLCByb3cgaW4gcGFpcnMocm93cykgZG8KICAgICAgICAgICAgICAgICAgICBpZiByb3cgYW5kIHJvdy5oZXJvX2lkIHRoZW4KICAgICAgICAgICAgICAgICAgICAgICAgbG9jYWwgaGlkID0gdG9udW1iZXIocm93Lmhlcm9faWQpCiAgICAgICAgICAgICAgICAgICAgICAgIGlmIGhpZCB0aGVuCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBzZWxmLkhlcm9CYWxhbmNlQnlJZFtoaWRdID0gewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRhbWFnZV9kZWFsdF9wY3QgPSBtYXRoLmZsb29yKHRvbnVtYmVyKHJvdy5kYW1hZ2VfZGVhbHRfcGN0KSBvciAwKSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBkYW1hZ2VfdGFrZW5fcmVkdWNlX3BjdCA9IG1hdGguZmxvb3IodG9udW1iZXIocm93LmRhbWFnZV90YWtlbl9yZWR1Y2VfcGN0KSBvciAwKSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIG4gPSBuICsgMQogICAgICAgICAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgICAgICBpZiBDbHJiSGVyb0JhbGFuY2VBcHBseUFsbFBsYXllcnMgdGhlbgogICAgICAgICAgICBDbHJiSGVyb0JhbGFuY2VBcHBseUFsbFBsYXllcnMoKQogICAgICAgIGVuZAogICAgZW5kLCB7IGFsbG93X25vX3BpZCA9IHRydWUgfSkKZW5kCgotLSDpqozor4Hnmb3lkI3ljZUKZnVuY3Rpb24gU2VydmVyOkNoZWNrUGxheWVyKElEKQogICAgaWYgbm90IElEIHRoZW4gcmV0dXJuIGVuZAogICAgbG9jYWwgcGlkID0gUGxheWVyUmVzb3VyY2U6R2V0U3RlYW1BY2NvdW50SUQoSUQpCiAgICBmb3IgaywgdiBpbiBwYWlycyhzZWxmLldMaXN0KSBkbwogICAgICAgIGlmIHBpZCA9PSB2IHRoZW4gU2VydmVyLkRhdGFbSURdLndoaXRlbGlzdCA9IHRydWUgZW5kCiAgICBlbmQKICAgIGlmIFNlcnZlci5EYXRhW0lEXS53aGl0ZWxpc3QgdGhlbiBTZWxlY3RIZXJvOkNsb3NlTG9hZChJRCkgZW5kCmVuZAoKLS0g6aqM6K+B55So5oi35pWw5o2uCmZ1bmN0aW9uIFNlcnZlcjpDaGVja1VzZXIoSUQpCiAgICAtLSBwcmludCgi6aqM6K+B55So5oi3IikKICAgIGlmIG5vdCBJRCB0aGVuIHJldHVybiBlbmQKICAgIGlmIG5vdCBzZWxmLkRhdGFbSURdIHRoZW4gcmV0dXJuIGVuZAogICAgLS0g6aqM6K+B546p5a62IFN0ZWFtIOi0puaItyBJRCDmmK/lkKbmnInmlYjvvIjpgb/lhY3nlKjmiLcgSUQgMO+8iQogICAgbG9jYWwgYWlkID0gUGxheWVyUmVzb3VyY2U6R2V0U3RlYW1BY2NvdW50SUQoSUQpCiAgICBpZiBub3QgYWlkIG9yIGFpZCA9PSAwIHRoZW4gcmV0dXJuIGVuZAogICAgLS0gU2VsZWN0SGVybzpFeGl0R2FtZShJRCkKICAgIGlmIG5vdCBJc0luVG9vbHNNb2RlKCkgYW5kIEdhbWVSdWxlczpJc0NoZWF0TW9kZSgpIHRoZW4KICAgICAgICBTZWxlY3RIZXJvOkV4aXRHYW1lKElEKQogICAgZW5kCiAgICBpZiBzZWxmLkRhdGFbSURdLnVzZXJfc3RhdGUgPT0gdHJ1ZSB0aGVuIHJldHVybiBlbmQKICAgIGlmIHNlbGYuRGF0YVtJRF0ubG9naW5fZ2F2ZV91cCB0aGVuIHJldHVybiBlbmQKICAgIGlmIHNlbGYuRGF0YVtJRF0ubG9naW5faW5mbGlnaHQgdGhlbiByZXR1cm4gZW5kCiAgICBzZWxmLkRhdGFbSURdLmxvZ2luX2luZmxpZ2h0ID0gdHJ1ZQogICAgbG9jYWwgbWF4RmFpbCA9IHNlbGYuTE9HSU5fRkFJTF9NQVggb3IgMjAKICAgIEh0dHA6UE9TVCgiL3VzZXIvbG9naW4iLCB7fSwgSUQsIGZ1bmN0aW9uKGtleXMpCiAgICAgICAgaWYgbm90IHNlbGYuRGF0YVtJRF0gdGhlbgogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgICAgICBzZWxmLkRhdGFbSURdLmxvZ2luX2luZmxpZ2h0ID0gZmFsc2UKCiAgICAgICAgbG9jYWwgZnVuY3Rpb24gb25Mb2dpbkZhaWwoKQogICAgICAgICAgICBsb2NhbCBkID0gc2VsZi5EYXRhW0lEXQogICAgICAgICAgICBpZiBub3QgZCBvciBkLnVzZXJfc3RhdGUgb3IgZC5sb2dpbl9nYXZlX3VwIHRoZW4KICAgICAgICAgICAgICAgIHJldHVybgogICAgICAgICAgICBlbmQKICAgICAgICAgICAgZC5sb2dpbl9mYWlsX2NvdW50ID0gKGQubG9naW5fZmFpbF9jb3VudCBvciAwKSArIDEKICAgICAgICAgICAgLS0gcHJpbnQoIueZu+W9leacquaIkOWKnyDnrKwgIiAuLiBkLmxvZ2luX2ZhaWxfY291bnQgLi4gIiDmrKEsIOeUqOaIt0lEIiAuLiB0b3N0cmluZyhJRCkpCiAgICAgICAgICAgIGlmIGQubG9naW5fZmFpbF9jb3VudCA+PSBtYXhGYWlsIHRoZW4KICAgICAgICAgICAgICAgIGQubG9naW5fZ2F2ZV91cCA9IHRydWUKICAgICAgICAgICAgICAgIC0tIHByaW50KCLnmbvlvZXov57nu63lpLHotKUgIiAuLiBtYXhGYWlsIC4uICIg5qyh77yM6K+35rGC6YCA5Ye6LCDnlKjmiLdJRCIgLi4gdG9zdHJpbmcoSUQpKQogICAgICAgICAgICAgICAgaWYgU2VsZWN0SGVybyBhbmQgU2VsZWN0SGVyby5EYXRhIGFuZCBTZWxlY3RIZXJvLkRhdGFbSURdIHRoZW4KICAgICAgICAgICAgICAgICAgICBTZWxlY3RIZXJvOkV4aXRHYW1lKElEKQogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAoKICAgICAgICBpZiBrZXlzLmNvZGUgPT0gMjAwIHRoZW4KICAgICAgICAgICAgbG9jYWwgZGF0YSA9IGtleXMuZGF0YQogICAgICAgICAgICBpZiBkYXRhIGFuZCBkYXRhLmFjY2Vzc1Rva2VuIHRoZW4KICAgICAgICAgICAgICAgIEh0dHA6U2V0UGxheWVyQWNjZXNzVG9rZW4oSUQsIGRhdGEuYWNjZXNzVG9rZW4pCiAgICAgICAgICAgIGVsc2UKICAgICAgICAgICAgICAgIEh0dHA6U2V0UGxheWVyQWNjZXNzVG9rZW4oSUQsIG5pbCkKICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGlmIGRhdGEgYW5kIGRhdGEudXNlciB0aGVuCiAgICAgICAgICAgICAgICBzZWxmLkRhdGFbSURdLnVzZXJfc3RhdGUgPSB0cnVlCiAgICAgICAgICAgICAgICBzZWxmLkRhdGFbSURdLmxvZ2luX2ZhaWxfY291bnQgPSAwCiAgICAgICAgICAgICAgICBsb2NhbCBmbyA9IGRhdGEuZmlyc3RfcmVjaGFyZ2VfZG91YmxlX29wZW4KICAgICAgICAgICAgICAgIGlmIGZvID09IG5pbCB0aGVuCiAgICAgICAgICAgICAgICAgICAgZm8gPSB0cnVlCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgIFNob3A6U2V0U2hvcFNlcnZlckRhdGEoSUQsIGRhdGEudXNlciwgZm8pCiAgICAgICAgICAgICAgICAtLSDov5vmuLjmiI/nmbvlvZXvvJrnq4vliLvmjInlvZPliY3pgJrooYzor4HotZvlraPliLfmlrAgVUnvvIjnp7Dlj7cv54m55pWI5Zu+ICsg5oiq5q2i5pel5pyf77yJCiAgICAgICAgICAgICAgICBpZiBkYXRhLnBhc3NfY29zbWV0aWNzIGFuZCBTaG9wLkFwcGx5UGFzc0Nvc21ldGljcyB0aGVuCiAgICAgICAgICAgICAgICAgICAgU2hvcDpBcHBseVBhc3NDb3NtZXRpY3MoSUQsIGRhdGEucGFzc19jb3NtZXRpY3MpCiAgICAgICAgICAgICAgICBlbHNlaWYgZGF0YS5zZWFzb25faWQgYW5kIFNob3AuQXBwbHlQYXNzQ29zbWV0aWNzIHRoZW4KICAgICAgICAgICAgICAgICAgICBTaG9wOkFwcGx5UGFzc0Nvc21ldGljcyhJRCwgewogICAgICAgICAgICAgICAgICAgICAgICBzZWFzb25faWQgPSBkYXRhLnNlYXNvbl9pZCwKICAgICAgICAgICAgICAgICAgICAgICAgZGVhZGxpbmVfdGV4dCA9IGRhdGEuZGVhZGxpbmVfdGV4dCwKICAgICAgICAgICAgICAgICAgICB9KQogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgICAgICBpZiBkYXRhLmNhcmQgdGhlbgogICAgICAgICAgICAgICAgICAgIFNob3A6U2V0Q2FyZFNlcnZlckRhdGEoSUQsIGRhdGEuY2FyZCkKICAgICAgICAgICAgICAgIGVsc2UKICAgICAgICAgICAgICAgICAgICBTaG9wOlNlbmREYXRhKElEKQogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgICAgICBpZiBTaG9wIGFuZCBTaG9wLlB1c2hQYXNzU2Vhc29uVG9DbGllbnQgdGhlbgogICAgICAgICAgICAgICAgICAgIFNob3A6UHVzaFBhc3NTZWFzb25Ub0NsaWVudChJRCkKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgUGVyc29uOlNldFBlcnNvbkRhdGEoSUQsIGRhdGEudXNlcikKICAgICAgICAgICAgICAgIEtleVNldDpBcHBseVVzZXJLZXlzZXQoSUQsIGRhdGEudXNlcikKICAgICAgICAgICAgICAgIEtleVNldDpTZW5kRGF0YShJRCkKICAgICAgICAgICAgICAgIGlmIGRhdGEudXNlciBhbmQgKGRhdGEudXNlci5pbnZpdGVkIH49IG5pbCBvciBkYXRhLnVzZXIuaW52aXRlcyBvciBkYXRhLnVzZXIuaW52aXRlZHMpIHRoZW4KICAgICAgICAgICAgICAgICAgICBJbnZpdGU6TG9hZEludml0ZShJRCwgZGF0YS51c2VyKQogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgICAgICBpZiBTaG9wIGFuZCBTaG9wLkFwcGx5TG9naW5CYWcgYW5kIGRhdGEuYmFnIHRoZW4KICAgICAgICAgICAgICAgICAgICBTaG9wOkFwcGx5TG9naW5CYWcoSUQsIGRhdGEpCiAgICAgICAgICAgICAgICBlbHNlaWYgU2hvcCBhbmQgU2hvcC5TeW5jT3V0QmFnIHRoZW4KICAgICAgICAgICAgICAgICAgICBTaG9wOlN5bmNPdXRCYWcoSUQpCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgIGlmIEFjaGlldmVNb2R1bGUgYW5kIEFjaGlldmVNb2R1bGUuQXBwbHlMb2dpblBheWxvYWQgdGhlbgogICAgICAgICAgICAgICAgICAgIEFjaGlldmVNb2R1bGU6QXBwbHlMb2dpblBheWxvYWQoSUQsIGRhdGEpCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgIFNlbGVjdEhlcm86Q2xvc2VMb2FkKElEKQogICAgICAgICAgICAgICAgLS0gcHJpbnQoIueUqOaIt+WKoOi9veaIkOWKn++8jOeUqOaIt0lEIiAuLiBJRCkKICAgICAgICAgICAgZWxzZQogICAgICAgICAgICAgICAgLS0gcHJpbnQoIueUqOaIt+WKoOi9veWksei0pe+8jOeUqOaIt0lEIiAuLiBJRCkKICAgICAgICAgICAgICAgIG9uTG9naW5GYWlsKCkKICAgICAgICAgICAgZW5kCiAgICAgICAgZWxzZQogICAgICAgICAgICAtLSBwcmludCgi5pyN5Yqh5Zmo5Yqg6L295aSx6LSl77yM55So5oi3SUQiIC4uIElEKQogICAgICAgICAgICBvbkxvZ2luRmFpbCgpCiAgICAgICAgZW5kCiAgICBlbmQpCmVuZAo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if Server == nil then
+    Server = class({})
+    require("ingame.Server.Config")
+    require("ingame.Server.Set")
+    require("ingame.Server.Get")
+    require("ingame.Server.Func")
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+-- 初始化玩家数据
+function Server:InitID(ID)
+    if not ID then return end
+    self.Data[ID] = Util:DeepCopyTab(self.Template)
+end
+
+-- 白名单检测
+function Server:LoadWhiteList()
+    if not IsInToolsMode() and GameRules:IsCheatMode() then
+        Util:Send2JsBotsSafe("UI_OverGame", {state = true})
+    end
+    -- 加载白名单
+    Server:GetWhiteList()
+    -- 游戏性调整：英雄强度（整局仅拉一次）
+    Server:LoadHeroBalance()
+    -- 获取排行榜数据
+    Rank:LoadServer()
+    Timers(0, function()
+        local need = false
+        for _, v in pairs(utilex:GetAllPlayer()) do
+            local d = self.Data[v]
+            local aid = PlayerResource:GetSteamAccountID(v)
+            if d
+                and aid and aid ~= 0
+                and (not d.user_state)
+                and (not d.login_gave_up)
+                and ((d.login_fail_count or 0) < (self.LOGIN_FAIL_MAX or 20))
+            then
+                need = true
+            end
+        end
+        for k, v in pairs(utilex:GetAllPlayer()) do
+            self:CheckUser(v)
+        end
+        if not need then
+            return nil
+        end
+        return 1
+    end)
+end
+
+-- 验证白名单
+function Server:GetWhiteList()
+    local ID = PD.Host
+    Http:POST("/whitelist/player", {}, ID, function(keys)
+        -- print(keys)
+        if keys.code == 200 then
+            for k, v in pairs(keys.data) do
+                if v then
+                    local pid = v.pid
+                    table.insert(Server.WList, pid)
+                end
+            end
+        end
+    end)
+end
+
+-- 游戏性调整：英雄强度配置（开局一次）
+function Server:LoadHeroBalance()
+    if self.HeroBalanceLoaded or self._heroBalanceRequesting then
+        return
+    end
+    self._heroBalanceRequesting = true
+    self.HeroBalanceById = {}
+    local ID = PD.Host
+    -- 走 /game/hero_balance_list：线上 /heroBalance/list 会错误命中礼包接口
+    Http:POST("/game/hero_balance_list", {}, ID, function(keys)
+        self._heroBalanceRequesting = false
+        self.HeroBalanceLoaded = true
+        local n = 0
+        if keys and keys.code == 200 and keys.data then
+            local rows = keys.data.rows or keys.data
+            if type(rows) == "table" then
+                for _, row in pairs(rows) do
+                    if row and row.hero_id then
+                        local hid = tonumber(row.hero_id)
+                        if hid then
+                            self.HeroBalanceById[hid] = {
+                                damage_dealt_pct = math.floor(tonumber(row.damage_dealt_pct) or 0),
+                                damage_taken_reduce_pct = math.floor(tonumber(row.damage_taken_reduce_pct) or 0),
+                            }
+                            n = n + 1
+                        end
+                    end
+                end
+            end
+        end
+        if ClrbHeroBalanceApplyAllPlayers then
+            ClrbHeroBalanceApplyAllPlayers()
+        end
+    end, { allow_no_pid = true })
+end
+
+-- 验证白名单
+function Server:CheckPlayer(ID)
+    if not ID then return end
+    local pid = PlayerResource:GetSteamAccountID(ID)
+    for k, v in pairs(self.WList) do
+        if pid == v then Server.Data[ID].whitelist = true end
+    end
+    if Server.Data[ID].whitelist then SelectHero:CloseLoad(ID) end
+end
+
+-- 验证用户数据
+function Server:CheckUser(ID)
+    -- print("验证用户")
+    if not ID then return end
+    if not self.Data[ID] then return end
+    -- 验证玩家 Steam 账户 ID 是否有效（避免用户 ID 0）
+    local aid = PlayerResource:GetSteamAccountID(ID)
+    if not aid or aid == 0 then return end
+    -- SelectHero:ExitGame(ID)
+    if not IsInToolsMode() and GameRules:IsCheatMode() then
+        SelectHero:ExitGame(ID)
+    end
+    if self.Data[ID].user_state == true then return end
+    if self.Data[ID].login_gave_up then return end
+    if self.Data[ID].login_inflight then return end
+    self.Data[ID].login_inflight = true
+    local maxFail = self.LOGIN_FAIL_MAX or 20
+    Http:POST("/user/login", {}, ID, function(keys)
+        if not self.Data[ID] then
+            return
+        end
+        self.Data[ID].login_inflight = false
+
+        local function onLoginFail()
+            local d = self.Data[ID]
+            if not d or d.user_state or d.login_gave_up then
+                return
+            end
+            d.login_fail_count = (d.login_fail_count or 0) + 1
+            -- print("登录未成功 第 " .. d.login_fail_count .. " 次, 用户ID" .. tostring(ID))
+            if d.login_fail_count >= maxFail then
+                d.login_gave_up = true
+                -- print("登录连续失败 " .. maxFail .. " 次，请求退出, 用户ID" .. tostring(ID))
+                if SelectHero and SelectHero.Data and SelectHero.Data[ID] then
+                    SelectHero:ExitGame(ID)
+                end
+            end
+        end
+
+        if keys.code == 200 then
+            local data = keys.data
+            if data and data.accessToken then
+                Http:SetPlayerAccessToken(ID, data.accessToken)
+            else
+                Http:SetPlayerAccessToken(ID, nil)
+            end
+            if data and data.user then
+                self.Data[ID].user_state = true
+                self.Data[ID].login_fail_count = 0
+                local fo = data.first_recharge_double_open
+                if fo == nil then
+                    fo = true
+                end
+                Shop:SetShopServerData(ID, data.user, fo)
+                -- 进游戏登录：立刻按当前通行证赛季刷新 UI（称号/特效图 + 截止日期）
+                if data.pass_cosmetics and Shop.ApplyPassCosmetics then
+                    Shop:ApplyPassCosmetics(ID, data.pass_cosmetics)
+                elseif data.season_id and Shop.ApplyPassCosmetics then
+                    Shop:ApplyPassCosmetics(ID, {
+                        season_id = data.season_id,
+                        deadline_text = data.deadline_text,
+                    })
+                end
+                if data.card then
+                    Shop:SetCardServerData(ID, data.card)
+                else
+                    Shop:SendData(ID)
+                end
+                if Shop and Shop.PushPassSeasonToClient then
+                    Shop:PushPassSeasonToClient(ID)
+                end
+                Person:SetPersonData(ID, data.user)
+                KeySet:ApplyUserKeyset(ID, data.user)
+                KeySet:SendData(ID)
+                if data.user and (data.user.invited ~= nil or data.user.invites or data.user.inviteds) then
+                    Invite:LoadInvite(ID, data.user)
+                end
+                if Shop and Shop.ApplyLoginBag and data.bag then
+                    Shop:ApplyLoginBag(ID, data)
+                elseif Shop and Shop.SyncOutBag then
+                    Shop:SyncOutBag(ID)
+                end
+                if AchieveModule and AchieveModule.ApplyLoginPayload then
+                    AchieveModule:ApplyLoginPayload(ID, data)
+                end
+                SelectHero:CloseLoad(ID)
+                -- print("用户加载成功，用户ID" .. ID)
+            else
+                -- print("用户加载失败，用户ID" .. ID)
+                onLoginFail()
+            end
+        else
+            -- print("服务器加载失败，用户ID" .. ID)
+            onLoginFail()
+        end
+    end)
+end

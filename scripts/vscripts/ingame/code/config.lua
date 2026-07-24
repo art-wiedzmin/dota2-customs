@@ -8,22 +8,90 @@
 ]]
 
 
-local encoded=[[Q29kZS5EYXRhID0ge30KLS0g5LiO5pyN5Yqh56uvIGdhbWVSZWNoYXJnZURlbGl2ZXJ5LmpzIOmHkeixhuWAjeaVsOS/neaMgeS4gOiHtApDb2RlLkZJUlNUX0NIQVJHRV9HT0xEX01VTFQgPSAzCkNvZGUuUkVDSEFSR0VfR09MRF9NVUxUID0gMgotLSDmnIjljaEgLyDlraPljaHpmYTotaDph5HosYbvvIjkuI4gY2xyYl9zZXJ2ZXIgZ2FtZVJlY2hhcmdlRGVsaXZlcnkg5Zu65a6a5Y+R5pS+5LiA6Ie077yJCkNvZGUuTU9OVEhfQ0FSRF9HT0xEX0JPTlVTID0gMzAwCkNvZGUuQ0FSRDJfR09MRF9CT05VUyA9IDkwMAotLSDlhYXlgLzmiJDlip/lvLnnqpcgcmVkZWVtX3Jvd3Mg6YeR6LGG5Zu+5qCH77yI5LiOIFNob3AubHVhIOWFkeaNouS4gOiHtO+8iQpDb2RlLlBBWV9SRVdBUkRfR09MRF9JQ09OID0gInJhdzovL3Jlc291cmNlL2ZsYXNoMy9pbWFnZXMvc2hvcC9iX2Nvc3QucG5nIgotLSDpgJrooYzor4Hnu4/pqozlm77moIfvvIjkuI4gQmF0dGxlUGFzcyDku7vliqHnu4/pqowgaWNvbiDkuIDoh7TvvIkKQ29kZS5QQVlfUkVXQVJEX0NBUkRfWFBfSUNPTiA9ICJyYXc6Ly9yZXNvdXJjZS9mbGFzaDMvaW1hZ2VzL2NhcmQvdGFza2V4cC5wbmciCi0tIOmrmOe6p+mAmuihjOivgea/gOa0u+WbvuaghwpDb2RlLlBBWV9SRVdBUkRfQ0FSRF9QUkVNSVVNX0lDT04gPSAicmF3Oi8vcmVzb3VyY2UvZmxhc2gzL2ltYWdlcy9jYXJkL3psLnBuZyIKQ29kZS5UZW1wbGF0ZSA9IHsKICAgIC0t6aG16Z2i5byA5YWzCiAgICBwYWdlID0gZmFsc2UsCiAgICAtLeaUr+S7mOaWueW8j++8iOm7mOiupOS4ujHvvJrlvq7kv6HvvIwy77ya5pSv5LuY5a6d77yJCiAgICBwYXlfdHlwZSA9IDEsCiAgICAtLeWVhuWTgeS/oeaBrwogICAgZ29vZHMgPSAiIiwKICAgIC0t5ZWG5ZOB5ZCN5a2XCiAgICBnb29kc19uYW1lID0gIiIsCiAgICAtLeWVhuWTgeS7t+agvAogICAgcHJpY2UgPSAwLAogICAgLS3kuoznu7TnoIHpobXpnaLmmL7npLrlvIDlhbMKICAgIHBheV9wYWdlID0gZmFsc2UsCiAgICAtLeW+ruS/oeiuouWNleWPt++8iOS4jeeUqOWxleekuu+8iQogICAgb3JkZXIxID0gIiIsCiAgICAtLeaUr+S7mOWuneiuouWNleWPt++8iOS4jeeUqOWxleekuu+8iQogICAgb3JkZXIyID0gIiIsCiAgICAtLeW+ruS/oeS6jOe7tOeggQogICAgZXdtMSA9ICIiLAogICAgLS3mlK/ku5jlrp3kuoznu7TnoIEKICAgIGV3bTIgPSAiIiwKICAgIC0tIOi0reS5sOmAmuihjOivgeetiee6p+aVsOmHj++8iENBUkRfTEVWRUwg5LiT55So77yJCiAgICBjYXJkX2xldmVsX2NvdW50ID0gMCwKfQpDb2RlLkdvb2RzID0gewogICAgZ29vZHNfMSA9ICJNT05USF9DQVJEIiwKICAgIGdvb2RzXzIgPSAiRElBTU9ORF82MCIsCiAgICBnb29kc18zID0gIkRJQU1PTkRfMzAwIiwKICAgIGdvb2RzXzQgPSAiRElBTU9ORF82ODAiLAogICAgZ29vZHNfNSA9ICJESUFNT05EXzEyODAiLAogICAgZ29vZHNfNiA9ICJESUFNT05EXzMyODAiLAogICAgZ29vZHNfNyA9ICJESUFNT05EXzY0ODAiLAogICAgZ29vZHNfOCA9ICJDQVJEMiIsCiAgICBnb29kc185ID0gIkNBUkQzIiwKICAgIGdvb2RzXzEwID0gIkRJQU1PTkRfMTI4MDAiLAogICAgZ29vZHNfMTEgPSAiSE9MSURBWV9EV18zMCIsCiAgICBnb29kc18xMiA9ICJIT0xJREFZX0RXXzY4IiwKICAgIGdvb2RzXzEzID0gIkhPTElEQVlfRFdfMTI4IiwKfQotLSDotK3kubDpgJrooYzor4HnrYnnuqfvvJrkuI4gQ2FyZFNlcnZpY2UgLyBwYXltZW50IOS4gOiHtO+8jOavj+e6pyA1IOWFg+OAgTUwMCDpgJrooYzor4Hnu4/pqowKQ29kZS5DYXJkTGV2ZWxQcm9kdWN0ID0gIkNBUkRfTEVWRUwiCkNvZGUuQ2FyZExldmVsUHJpY2VZdWFuID0gNQpDb2RlLkNhcmRMZXZlbFhwUGVyTGV2ZWwgPSA1MDAKQ29kZS5Hb29kc1ByaWNlID0gewogICAgTU9OVEhfQ0FSRCA9IDMwLAogICAgRElBTU9ORF82MCA9IDYsCiAgICBESUFNT05EXzMwMCA9IDMwLAogICAgRElBTU9ORF82ODAgPSA2OCwKICAgIERJQU1PTkRfMTI4MCA9IDEyOCwKICAgIERJQU1PTkRfMzI4MCA9IDMyOCwKICAgIERJQU1PTkRfNjQ4MCA9IDY0OCwKICAgIERJQU1PTkRfMTI4MDAgPSAxMjgwLAogICAgQ0FSRDIgPSA4OCwKICAgIENBUkQzID0gOTgsCiAgICBIT0xJREFZX0RXXzMwID0gMzAsCiAgICBIT0xJREFZX0RXXzY4ID0gNjgsCiAgICBIT0xJREFZX0RXXzEyOCA9IDEyOCwKfQpDb2RlLkdvb2RzTmFtZSA9IHsKICAgIE1PTlRIX0NBUkQgPSAiY2FyZDEiLAogICAgRElBTU9ORF82MCA9ICJnb2xkNiIsCiAgICBESUFNT05EXzMwMCA9ICJnb2xkMzAiLAogICAgRElBTU9ORF82ODAgPSAiZ29sZDY4IiwKICAgIERJQU1PTkRfMTI4MCA9ICJnb2xkMTI4IiwKICAgIERJQU1PTkRfMzI4MCA9ICJnb2xkMzI4IiwKICAgIERJQU1PTkRfNjQ4MCA9ICJnb2xkNjQ4IiwKICAgIERJQU1PTkRfMTI4MDAgPSAiZ29sZDEyODAiLAogICAgQ0FSRDIgPSAiY2FyZDIiLAogICAgQ0FSRDMgPSAiY2FyZDMiLAogICAgQ0FSRF9MRVZFTCA9ICJjYXJkX2xldmVsIiwKICAgIEhPTElEQVlfRFdfMzAgPSAiZHdfMzAiLAogICAgSE9MSURBWV9EV182OCA9ICJkd182OCIsCiAgICBIT0xJREFZX0RXXzEyOCA9ICJkd18xMjgiLAp9Cg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
-end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+Code.Data = {}
+-- 与服务端 gameRechargeDelivery.js 金豆倍数保持一致
+Code.FIRST_CHARGE_GOLD_MULT = 3
+Code.RECHARGE_GOLD_MULT = 2
+-- 月卡 / 季卡附赠金豆（与 clrb_server gameRechargeDelivery 固定发放一致）
+Code.MONTH_CARD_GOLD_BONUS = 300
+Code.CARD2_GOLD_BONUS = 900
+-- 充值成功弹窗 redeem_rows 金豆图标（与 Shop.lua 兑换一致）
+Code.PAY_REWARD_GOLD_ICON = "raw://resource/flash3/images/shop/b_cost.png"
+-- 通行证经验图标（与 BattlePass 任务经验 icon 一致）
+Code.PAY_REWARD_CARD_XP_ICON = "raw://resource/flash3/images/card/taskexp.png"
+-- 高级通行证激活图标
+Code.PAY_REWARD_CARD_PREMIUM_ICON = "raw://resource/flash3/images/card/zl.png"
+Code.Template = {
+    --页面开关
+    page = false,
+    --支付方式（默认为1：微信，2：支付宝）
+    pay_type = 1,
+    --商品信息
+    goods = "",
+    --商品名字
+    goods_name = "",
+    --商品价格
+    price = 0,
+    --二维码页面显示开关
+    pay_page = false,
+    --微信订单号（不用展示）
+    order1 = "",
+    --支付宝订单号（不用展示）
+    order2 = "",
+    --微信二维码
+    ewm1 = "",
+    --支付宝二维码
+    ewm2 = "",
+    -- 购买通行证等级数量（CARD_LEVEL 专用）
+    card_level_count = 0,
+}
+Code.Goods = {
+    goods_1 = "MONTH_CARD",
+    goods_2 = "DIAMOND_60",
+    goods_3 = "DIAMOND_300",
+    goods_4 = "DIAMOND_680",
+    goods_5 = "DIAMOND_1280",
+    goods_6 = "DIAMOND_3280",
+    goods_7 = "DIAMOND_6480",
+    goods_8 = "CARD2",
+    goods_9 = "CARD3",
+    goods_10 = "DIAMOND_12800",
+    goods_11 = "HOLIDAY_DW_30",
+    goods_12 = "HOLIDAY_DW_68",
+    goods_13 = "HOLIDAY_DW_128",
+}
+-- 购买通行证等级：与 CardService / payment 一致，每级 5 元、500 通行证经验
+Code.CardLevelProduct = "CARD_LEVEL"
+Code.CardLevelPriceYuan = 5
+Code.CardLevelXpPerLevel = 500
+Code.GoodsPrice = {
+    MONTH_CARD = 30,
+    DIAMOND_60 = 6,
+    DIAMOND_300 = 30,
+    DIAMOND_680 = 68,
+    DIAMOND_1280 = 128,
+    DIAMOND_3280 = 328,
+    DIAMOND_6480 = 648,
+    DIAMOND_12800 = 1280,
+    CARD2 = 88,
+    CARD3 = 98,
+    HOLIDAY_DW_30 = 30,
+    HOLIDAY_DW_68 = 68,
+    HOLIDAY_DW_128 = 128,
+}
+Code.GoodsName = {
+    MONTH_CARD = "card1",
+    DIAMOND_60 = "gold6",
+    DIAMOND_300 = "gold30",
+    DIAMOND_680 = "gold68",
+    DIAMOND_1280 = "gold128",
+    DIAMOND_3280 = "gold328",
+    DIAMOND_6480 = "gold648",
+    DIAMOND_12800 = "gold1280",
+    CARD2 = "card2",
+    CARD3 = "card3",
+    CARD_LEVEL = "card_level",
+    HOLIDAY_DW_30 = "dw_30",
+    HOLIDAY_DW_68 = "dw_68",
+    HOLIDAY_DW_128 = "dw_128",
+}

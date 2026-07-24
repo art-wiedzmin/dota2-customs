@@ -8,22 +8,124 @@
 ]]
 
 
-local encoded=[[LS0tIOWuouaIt+err+mrmOS6ruafkOanveS9huacquehruWumuaXtuWQjOatpe+8m+WIt+aWsOWIl+ihqOWQjuWcqCBBZGRIZXJvVG9MaXN0IOWGhea4hembtgpmdW5jdGlvbiBTZWxlY3RIZXJvOlNldFByZXZpZXdTbG90KElELCBzbG90KQogICAgaWYgbm90IElEIG9yIG5vdCBzZWxmLkRhdGFbSURdIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgc2VsZi5EYXRhW0lEXS5oZXJvX3N0YXRlIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgcyA9IHRvbnVtYmVyKHNsb3QpCiAgICBpZiBub3QgcyBvciBzIDwgMSBvciBzID4gMyB0aGVuCiAgICAgICAgc2VsZi5EYXRhW0lEXS5wZW5kaW5nX3Nsb3QgPSAwCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGYuRGF0YVtJRF0ucGVuZGluZ19zbG90ID0gbWF0aC5mbG9vcihzKQplbmQKCmZ1bmN0aW9uIFNlbGVjdEhlcm86T3BlblBhZ2UoSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmLkRhdGFbSURdLnBhZ2UgPSB0cnVlCiAgICBzZWxmOlNlbmREYXRhKElEKQplbmQKCmZ1bmN0aW9uIFNlbGVjdEhlcm86Q2xvc2VQYWdlKElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5EYXRhW0lEXS5wYWdlID0gZmFsc2UKICAgIHNlbGY6U2VuZERhdGEoSUQpCmVuZAoKZnVuY3Rpb24gU2VsZWN0SGVybzpPcGVuTG9hZChJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGYuRGF0YVtJRF0ubG9hZCA9IHRydWUKICAgIHNlbGY6U2VuZERhdGEoSUQpCmVuZAoKZnVuY3Rpb24gU2VsZWN0SGVybzpDbG9zZUxvYWQoSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICAtLSBwcmludCgi5YWz6Zet5Yqg6L296aG16Z2iIikKICAgIHNlbGYuRGF0YVtJRF0ubG9hZCA9IGZhbHNlCiAgICBzZWxmOlNlbmREYXRhKElEKQplbmQKCi0tLSDmnIjljaEv5a2j5Y2h5ZCEIDEg5qyh6LWE5qC877yI6ZqPIFNob3Ag6K+75bqT5pu05paw77yb6YCJ5Lq66Zi25q615Y+v6IO95pma5LqOIEhlcm9QYWdlIOaJjeWwsee7qu+8iQpmdW5jdGlvbiBTZWxlY3RIZXJvOkNhcmRCb251c0VsaWdpYmxlKElEKQogICAgaWYgbm90IElEIG9yIG5vdCBTaG9wLkRhdGFbSURdIHRoZW4KICAgICAgICByZXR1cm4gMAogICAgZW5kCiAgICBsb2NhbCBuID0gMAogICAgaWYgU2hvcC5EYXRhW0lEXS5jYXJkMSA+IDAgdGhlbgogICAgICAgIG4gPSBuICsgMQogICAgZW5kCiAgICBpZiBTaG9wLkRhdGFbSURdLmNhcmQyID4gMCB0aGVuCiAgICAgICAgbiA9IG4gKyAxCiAgICBlbmQKICAgIHJldHVybiBuCmVuZAoKLS0tIOS7jeWPr+eUqOeahOaciOWNoS/lraPljaHlhY3otLnmrKHmlbDvvIjkuI3ljaDph5HosYbmoaPkvY3vvIzkuI3miaMgcmVmcmVzaO+8iQpmdW5jdGlvbiBTZWxlY3RIZXJvOkdldENhcmRGcmVlTGVmdChJRCkKICAgIGlmIG5vdCBJRCBvciBub3Qgc2VsZi5EYXRhW0lEXSB0aGVuCiAgICAgICAgcmV0dXJuIDAKICAgIGVuZAogICAgbG9jYWwgZWwgPSBzZWxmOkNhcmRCb251c0VsaWdpYmxlKElEKQogICAgbG9jYWwgdXNlZCA9IHNlbGYuRGF0YVtJRF0uY2FyZF9ib251c191c2VkIG9yIDAKICAgIGlmIHVzZWQgPiBlbCB0aGVuCiAgICAgICAgdXNlZCA9IGVsCiAgICAgICAgc2VsZi5EYXRhW0lEXS5jYXJkX2JvbnVzX3VzZWQgPSB1c2VkCiAgICBlbmQKICAgIHJldHVybiBtYXRoLm1heCgwLCBlbCAtIHVzZWQpCmVuZAoKLS0tIFVzZXIg5Yiw6LSm5ZCO6Kem5Y+R77ya55m75b2V5pma5LqO6YCJ5Lq66aG15omT5byA5pe26KGl6Laz5pyI5Y2hL+Wto+WNoeWFjei0ueaYvuekugpmdW5jdGlvbiBTZWxlY3RIZXJvOk9uU2hvcERhdGFVcGRhdGVkKElEKQogICAgaWYgbm90IElEIG9yIG5vdCBzZWxmLkRhdGFbSURdIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgc2VsZi5EYXRhW0lEXS5oZXJvX3N0YXRlIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZjpTZXRSZWZyZXNoQ29zdChJRCkKICAgIGlmIHNlbGYuRGF0YVtJRF0ucGFnZSB0aGVuCiAgICAgICAgc2VsZjpTZW5kRGF0YShJRCkKICAgIGVuZAplbmQKCmZ1bmN0aW9uIFNlbGVjdEhlcm86U2V0UmVmcmVzaENvc3QoSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBudW0gPSBzZWxmLkRhdGFbSURdLnJlZnJlc2gKICAgIHNlbGYuRGF0YVtJRF0uZnJlZSA9IGZhbHNlCgogICAgaWYgc2VsZjpHZXRDYXJkRnJlZUxlZnQoSUQpID4gMCB0aGVuCiAgICAgICAgc2VsZi5EYXRhW0lEXS5mcmVlID0gdHJ1ZQogICAgICAgIHNlbGYuRGF0YVtJRF0uY29zdCA9IDAKICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgKHNlbGYuRGF0YVtJRF0uYmFzZV9mcmVlX2xlZnQgb3IgMCkgPiAwIHRoZW4KICAgICAgICBzZWxmLkRhdGFbSURdLmZyZWUgPSB0cnVlCiAgICAgICAgc2VsZi5EYXRhW0lEXS5jb3N0ID0gMAogICAgICAgIHJldHVybgogICAgZW5kCgogICAgLS0gbnVtID0g5Ymp5L2Z5Y+v5Yi35paw5qyh5pWw77yI5Y+v6ZmN5Li66LSf77yJ77yb6YeR6LGG5qGj5L2N6KeBIENvc3QubnVtMe+9nm51bTEwCiAgICAtLSDotoXlh7rljp/phY3pop3lkI7ku6UgbnVtMSDkuLrlh4bvvIjkuI7lkIzns7vliJfjgIznrKwxMOasoeWIt+aWsOOAjeetieS7t++8muWJqeS9measoeaVsOiQveiHsyAxIOaXtueahOaho+S9je+8iQogICAgbG9jYWwgdGllciA9IG51bQogICAgaWYgdGllciA8IDEgdGhlbgogICAgICAgIHRpZXIgPSAxCiAgICBlbHNlaWYgdGllciA+IDEwIHRoZW4KICAgICAgICB0aWVyID0gMTAKICAgIGVuZAogICAgbG9jYWwga2V5ID0gIm51bSIgLi4gdGllcgogICAgc2VsZi5EYXRhW0lEXS5jb3N0ID0gc2VsZi5Db3N0W2tleV0gb3IgMAplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+--- 客户端高亮某槽但未确定时同步；刷新列表后在 AddHeroToList 内清零
+function SelectHero:SetPreviewSlot(ID, slot)
+    if not ID or not self.Data[ID] then
+        return
+    end
+    if self.Data[ID].hero_state then
+        return
+    end
+    local s = tonumber(slot)
+    if not s or s < 1 or s > 3 then
+        self.Data[ID].pending_slot = 0
+        return
+    end
+    self.Data[ID].pending_slot = math.floor(s)
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function SelectHero:OpenPage(ID)
+    if not ID then
+        return
+    end
+    self.Data[ID].page = true
+    self:SendData(ID)
+end
+
+function SelectHero:ClosePage(ID)
+    if not ID then
+        return
+    end
+    self.Data[ID].page = false
+    self:SendData(ID)
+end
+
+function SelectHero:OpenLoad(ID)
+    if not ID then
+        return
+    end
+    self.Data[ID].load = true
+    self:SendData(ID)
+end
+
+function SelectHero:CloseLoad(ID)
+    if not ID then
+        return
+    end
+    -- print("关闭加载页面")
+    self.Data[ID].load = false
+    self:SendData(ID)
+end
+
+--- 月卡/季卡各 1 次资格（随 Shop 读库更新；选人阶段可能晚于 HeroPage 才就绪）
+function SelectHero:CardBonusEligible(ID)
+    if not ID or not Shop.Data[ID] then
+        return 0
+    end
+    local n = 0
+    if Shop.Data[ID].card1 > 0 then
+        n = n + 1
+    end
+    if Shop.Data[ID].card2 > 0 then
+        n = n + 1
+    end
+    return n
+end
+
+--- 仍可用的月卡/季卡免费次数（不占金豆档位，不扣 refresh）
+function SelectHero:GetCardFreeLeft(ID)
+    if not ID or not self.Data[ID] then
+        return 0
+    end
+    local el = self:CardBonusEligible(ID)
+    local used = self.Data[ID].card_bonus_used or 0
+    if used > el then
+        used = el
+        self.Data[ID].card_bonus_used = used
+    end
+    return math.max(0, el - used)
+end
+
+--- User 到账后触发：登录晚于选人页打开时补足月卡/季卡免费显示
+function SelectHero:OnShopDataUpdated(ID)
+    if not ID or not self.Data[ID] then
+        return
+    end
+    if self.Data[ID].hero_state then
+        return
+    end
+    self:SetRefreshCost(ID)
+    if self.Data[ID].page then
+        self:SendData(ID)
+    end
+end
+
+function SelectHero:SetRefreshCost(ID)
+    if not ID then
+        return
+    end
+    local num = self.Data[ID].refresh
+    self.Data[ID].free = false
+
+    if self:GetCardFreeLeft(ID) > 0 then
+        self.Data[ID].free = true
+        self.Data[ID].cost = 0
+        return
+    end
+    if (self.Data[ID].base_free_left or 0) > 0 then
+        self.Data[ID].free = true
+        self.Data[ID].cost = 0
+        return
+    end
+
+    -- num = 剩余可刷新次数（可降为负）；金豆档位见 Cost.num1～num10
+    -- 超出原配额后以 num1 为准（与同系列「第10次刷新」等价：剩余次数落至 1 时的档位）
+    local tier = num
+    if tier < 1 then
+        tier = 1
+    elseif tier > 10 then
+        tier = 10
+    end
+    local key = "num" .. tier
+    self.Data[ID].cost = self.Cost[key] or 0
+end

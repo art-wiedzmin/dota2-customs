@@ -8,22 +8,113 @@
 ]]
 
 
-local encoded=[[ZnVuY3Rpb24gQm94OkdldEN1cnJlbmN5KElEKSByZXR1cm4gc2VsZi5EYXRhW0lEXS5jdXJyZW5jeSBlbmQKCmZ1bmN0aW9uIEJveDpHZXREcmF3Q291bnQoSUQpCiAgICBsb2NhbCBuID0gc2VsZi5EYXRhW0lEXS5ib3hfc3lfZHJhdwogICAgcmV0dXJuIChuIGFuZCBuID4gMCkgYW5kIG4gb3IgMAplbmQKCi0tIOacrOWxgOaYr+WQpuS7jeWPr+WinuWKoOWuneeuseaKveWPluasoeaVsO+8iOS4jiBtYXhfZHJhd19wZXJfZ2FtZeOAgWJveF9kcmF3X251bSDkuIDoh7TvvJvlj5HmlL7lpITkuI4gQWRkRHJhdyDlhoXlnYfkvJrliKTlrprvvIkKZnVuY3Rpb24gQm94OkNhbkFkZERyYXdDaGFyZ2UoSUQpCiAgICBpZiBub3QgSUQgb3Igbm90IHNlbGYuRGF0YVtJRF0gdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBsb2NhbCBjYXAgPSBzZWxmLlN0YXRpYy5tYXhfZHJhd19wZXJfZ2FtZSBvciAyMAogICAgcmV0dXJuIChzZWxmLkRhdGFbSURdLmJveF9kcmF3X251bSBvciAwKSA8IGNhcAplbmQKCmZ1bmN0aW9uIEJveDpHZXRCb3hUeXBlKElEKQogICAgbG9jYWwgZHJhd19udW0gPSBzZWxmLkRhdGFbSURdLmJveF9kcmF3X251bQogICAgaWYgZHJhd19udW0gPD0gNCB0aGVuIHJldHVybiAiYm94XzEiIGVuZAogICAgaWYgZHJhd19udW0gPiA0IGFuZCBkcmF3X251bSA8PSA4IHRoZW4gcmV0dXJuICJib3hfMiIgZW5kCiAgICBpZiBkcmF3X251bSA+IDggdGhlbiByZXR1cm4gImJveF8zIiBlbmQKZW5kCgotLSDku47lvZPliY3lrp3nrrHmsaDkuK3lj5bkuIDkuKrjgIzmnKrplIHlrprkuJTkuI3lnKjog4zljIXjgI3nmoQga2V577yM55So5LqO5aGr5qe95YWc5bqV77yI6YG/5YWN5ZCO5pyf56m654mp5ZOB77yJCmZ1bmN0aW9uIEJveDpHZXRPbmVBdmFpbGFibGVCb3hLZXkoSUQsIGJveF9rZXkpCiAgICBpZiBub3QgSUQgb3Igbm90IGJveF9rZXkgb3Igbm90IHNlbGYuRGF0YVtJRF1bYm94X2tleV0gdGhlbiByZXR1cm4gbmlsIGVuZAogICAgbG9jYWwgcG9vbCA9IHNlbGYuRGF0YVtJRF1bYm94X2tleV0KICAgIGxvY2FsIGxpc3QgPSB7fQogICAgZm9yIGssIHYgaW4gcGFpcnMocG9vbCkgZG8KICAgICAgICBpZiB2ID09IHRydWUgYW5kIG5vdCBzZWxmOklzSW5CYWcoSUQsIGspIHRoZW4KICAgICAgICAgICAgdGFibGUuaW5zZXJ0KGxpc3QsIGspCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGlmICNsaXN0ID09IDAgdGhlbiByZXR1cm4gbmlsIGVuZAogICAgcmV0dXJuIGxpc3RbbWF0aC5yYW5kb20oMSwgI2xpc3QpXQplbmQKCi0tIOijheWkh+aYr+WQpuWcqOiDjOWMheWGhQpmdW5jdGlvbiBCb3g6SXNJbkJhZyhJRCwgaXRlbSkKICAgIGlmIG5vdCBJRCBvciBub3QgaXRlbSB0aGVuIHJldHVybiBlbmQKICAgIGxvY2FsIGl0ZW1faWQKICAgIGlmIHR5cGUoaXRlbSkgPT0gInN0cmluZyIgdGhlbgogICAgICAgIGl0ZW1faWQgPSB0b251bWJlcih1dGlsZXg6c3BsaXRJbmRleChpdGVtLCAiXyIsIDIpKQogICAgZWxzZQogICAgICAgIGl0ZW1faWQgPSBpdGVtCiAgICBlbmQKICAgIGZvciBrLCB2IGluIHBhaXJzKHNlbGYuRGF0YVtJRF0uYmFnKSBkbwogICAgICAgIGlmIGl0ZW1faWQgPT0gdiB0aGVuIHJldHVybiB0cnVlIGVuZAogICAgZW5kCmVuZAoKLS0g56e76Zmk6IOM5YyF5Lit54mp5ZOBCmZ1bmN0aW9uIEJveDpSZW1vdmVJdGVtKElELCBpdGVtX2lkKQogICAgZm9yIGssIHYgaW4gcGFpcnMoc2VsZi5EYXRhW0lEXS5iYWcpIGRvCiAgICAgICAgaWYgdiA9PSBpdGVtX2lkIHRoZW4KICAgICAgICAgICAgc2VsZi5EYXRhW0lEXS5iYWdba10gPSAtMQogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgIGVuZAplbmQKCmZ1bmN0aW9uIEJveDpCYWdJc0Z1bGwoSUQpCiAgICBmb3IgaywgdiBpbiBwYWlycyhzZWxmLkRhdGFbSURdLmJhZykgZG8gaWYgdiA9PSAtMSB0aGVuIHJldHVybiBmYWxzZSBlbmQgZW5kCiAgICByZXR1cm4gdHJ1ZQplbmQKCi0tIOWcqOivpeWuneeuseS4reaYr+WQpuS4uumrmOmYtuijheWkhwpmdW5jdGlvbiBCb3g6SXNIaWdoWmJJbkJveChib3hfa2V5LCBoaWdoX2l0ZW0pCiAgICBpZiBub3QgYm94X2tleSBvciBub3QgaGlnaF9pdGVtIHRoZW4gcmV0dXJuIGZhbHNlIGVuZAogICAgbG9jYWwgaXRlbV9pZCA9IHRvbnVtYmVyKHV0aWxleDpzcGxpdEluZGV4KGhpZ2hfaXRlbSwgIl8iLCAyKSkKICAgIGlmIG5vdCBpdGVtX2lkIHRoZW4gcmV0dXJuIGVuZAogICAgZm9yIGssIHYgaW4gcGFpcnMoc2VsZi5Sb2xsW2JveF9rZXldLndlaWdodF8xKSBkbwogICAgICAgIGlmIHYgPT0gaXRlbV9pZCB0aGVuIHJldHVybiB0cnVlIGVuZAogICAgZW5kCmVuZAoKLS0g6I635Y+W54mp5ZOB5L+h5oGvCmZ1bmN0aW9uIEJveDpHZXRJdGVtRGF0YShpdGVtX2lkKQogICAgbG9jYWwgaXRlbV9rZXkgPSAiaXRlbV9ib3hfIiAuLiBpdGVtX2lkCiAgICBsb2NhbCBkYXRhID0gVXRpbDpEZWVwQ29weVRhYihzZWxmLkl0ZW1baXRlbV9rZXldKQogICAgcmV0dXJuIGRhdGEKZW5kCgotLSDmmK/lkKbmnInnibnlrprmioDog73lop7lvLoKZnVuY3Rpb24gQm94OklzSGF2ZVNraWxsKElELCBpdGVtX2lkKQogICAgaWYgbm90IElEIG9yIG5vdCBpdGVtX2lkIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgcm93ID0gc2VsZi5EYXRhIGFuZCBzZWxmLkRhdGFbSURdCiAgICBpZiBub3Qgcm93IG9yIG5vdCByb3cuc2tpbGwgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBsb2NhbCBpdGVtX2tleSA9ICJpdGVtXyIgLi4gaXRlbV9pZAogICAgcmV0dXJuIHJvdy5za2lsbFtpdGVtX2tleV0KZW5kCgotLeiOt+WPluWBh+S6ugpmdW5jdGlvbiBCb3g6R2V0RHVtbXkoSUQpCiAgICBsb2NhbCBkdW1teSA9IEVudEluZGV4VG9IU2NyaXB0KHNlbGYuRGF0YVtJRF0uZHVtbXkpCiAgICBpZiBkdW1teSB0aGVuCiAgICAgICAgcmV0dXJuIGR1bW15CiAgICBlbmQKZW5kCgpmdW5jdGlvbiBCb3g6SXNOb0R1bW15KGl0ZW1faWQpCiAgICBmb3IgaywgdiBpbiBwYWlycyhCb3guTm9EdW1teSkgZG8KICAgICAgICBpZiB2ID09IGl0ZW1faWQgdGhlbiByZXR1cm4gdHJ1ZSBlbmQKICAgIGVuZAogICAgcmV0dXJuIGZhbHNlCmVuZAo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+function Box:GetCurrency(ID) return self.Data[ID].currency end
+
+function Box:GetDrawCount(ID)
+    local n = self.Data[ID].box_sy_draw
+    return (n and n > 0) and n or 0
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+-- 本局是否仍可增加宝箱抽取次数（与 max_draw_per_game、box_draw_num 一致；发放处与 AddDraw 内均会判定）
+function Box:CanAddDrawCharge(ID)
+    if not ID or not self.Data[ID] then
+        return false
+    end
+    local cap = self.Static.max_draw_per_game or 20
+    return (self.Data[ID].box_draw_num or 0) < cap
+end
+
+function Box:GetBoxType(ID)
+    local draw_num = self.Data[ID].box_draw_num
+    if draw_num <= 4 then return "box_1" end
+    if draw_num > 4 and draw_num <= 8 then return "box_2" end
+    if draw_num > 8 then return "box_3" end
+end
+
+-- 从当前宝箱池中取一个「未锁定且不在背包」的 key，用于填槽兜底（避免后期空物品）
+function Box:GetOneAvailableBoxKey(ID, box_key)
+    if not ID or not box_key or not self.Data[ID][box_key] then return nil end
+    local pool = self.Data[ID][box_key]
+    local list = {}
+    for k, v in pairs(pool) do
+        if v == true and not self:IsInBag(ID, k) then
+            table.insert(list, k)
+        end
+    end
+    if #list == 0 then return nil end
+    return list[math.random(1, #list)]
+end
+
+-- 装备是否在背包内
+function Box:IsInBag(ID, item)
+    if not ID or not item then return end
+    local item_id
+    if type(item) == "string" then
+        item_id = tonumber(utilex:splitIndex(item, "_", 2))
+    else
+        item_id = item
+    end
+    for k, v in pairs(self.Data[ID].bag) do
+        if item_id == v then return true end
+    end
+end
+
+-- 移除背包中物品
+function Box:RemoveItem(ID, item_id)
+    for k, v in pairs(self.Data[ID].bag) do
+        if v == item_id then
+            self.Data[ID].bag[k] = -1
+            return
+        end
+    end
+end
+
+function Box:BagIsFull(ID)
+    for k, v in pairs(self.Data[ID].bag) do if v == -1 then return false end end
+    return true
+end
+
+-- 在该宝箱中是否为高阶装备
+function Box:IsHighZbInBox(box_key, high_item)
+    if not box_key or not high_item then return false end
+    local item_id = tonumber(utilex:splitIndex(high_item, "_", 2))
+    if not item_id then return end
+    for k, v in pairs(self.Roll[box_key].weight_1) do
+        if v == item_id then return true end
+    end
+end
+
+-- 获取物品信息
+function Box:GetItemData(item_id)
+    local item_key = "item_box_" .. item_id
+    local data = Util:DeepCopyTab(self.Item[item_key])
+    return data
+end
+
+-- 是否有特定技能增强
+function Box:IsHaveSkill(ID, item_id)
+    if not ID or not item_id then
+        return false
+    end
+    local row = self.Data and self.Data[ID]
+    if not row or not row.skill then
+        return false
+    end
+    local item_key = "item_" .. item_id
+    return row.skill[item_key]
+end
+
+--获取假人
+function Box:GetDummy(ID)
+    local dummy = EntIndexToHScript(self.Data[ID].dummy)
+    if dummy then
+        return dummy
+    end
+end
+
+function Box:IsNoDummy(item_id)
+    for k, v in pairs(Box.NoDummy) do
+        if v == item_id then return true end
+    end
+    return false
+end

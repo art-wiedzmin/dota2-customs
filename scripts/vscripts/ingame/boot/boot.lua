@@ -8,22 +8,216 @@
 ]]
 
 
-local encoded=[[aWYgQm9vdCA9PSBuaWwgdGhlbgogICAgQm9vdCA9IGNsYXNzKHt9KQogICAgcmVxdWlyZSgiaW5nYW1lLkJvb3QuQ29uZmlnIikKICAgIHJlcXVpcmUoImluZ2FtZS5Cb290LlNldCIpCiAgICByZXF1aXJlKCJpbmdhbWUuQm9vdC5HZXQiKQogICAgcmVxdWlyZSgiaW5nYW1lLkJvb3QuRnVuYyIpCmVuZAoKbG9jYWwgVEVBTV9HT09ER1VZUyA9IHJhd2dldChfRywgIkRPVEFfVEVBTV9HT09ER1VZUyIpIG9yIDIKbG9jYWwgVEVBTV9CQURHVVlTID0gcmF3Z2V0KF9HLCAiRE9UQV9URUFNX0JBREdVWVMiKSBvciAzCmxvY2FsIFRFQU1fQ1VTVE9NXzEgPSByYXdnZXQoX0csICJET1RBX1RFQU1fQ1VTVE9NXzEiKSBvciA2CmxvY2FsIFRFQU1fQ1VTVE9NXzIgPSByYXdnZXQoX0csICJET1RBX1RFQU1fQ1VTVE9NXzIiKSBvciA3CmxvY2FsIFRFQU1fQ1VTVE9NXzMgPSByYXdnZXQoX0csICJET1RBX1RFQU1fQ1VTVE9NXzMiKSBvciA4CmxvY2FsIFRFQU1fQ1VTVE9NXzQgPSByYXdnZXQoX0csICJET1RBX1RFQU1fQ1VTVE9NXzQiKSBvciA5CmxvY2FsIFRFQU1fQ1VTVE9NXzUgPSByYXdnZXQoX0csICJET1RBX1RFQU1fQ1VTVE9NXzUiKSBvciAxMApsb2NhbCBURUFNX0NVU1RPTV82ID0gcmF3Z2V0KF9HLCAiRE9UQV9URUFNX0NVU1RPTV82Iikgb3IgMTEKbG9jYWwgVEVBTV9DVVNUT01fNyA9IHJhd2dldChfRywgIkRPVEFfVEVBTV9DVVNUT01fNyIpIG9yIDEyCmxvY2FsIFRFQU1fQ1VTVE9NXzggPSByYXdnZXQoX0csICJET1RBX1RFQU1fQ1VTVE9NXzgiKSBvciAxMwpsb2NhbCBDcmVhdGVGYWtlQ2xpZW50Rm4gPSByYXdnZXQoX0csICJDcmVhdGVGYWtlQ2xpZW50IikKCmZ1bmN0aW9uIEJvb3Q6QWRkQm9vdFBsYXllcigpCiAgICBpZiBzZWxmLkRhdGEuYm90X2FkZGVkIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5EYXRhLmJvdF9hZGRlZCA9IHRydWUKCiAgICBpZiBzZWxmLkNvbmZpZy5lbmFibGVfYm90X3BsYXllcnMgPT0gZmFsc2UgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCgogICAgaWYgQm90QUkgYW5kIEJvdEFJLkFwcGx5Q29uZmlnUHJlc2V0IHRoZW4KICAgICAgICBCb3RBSTpBcHBseUNvbmZpZ1ByZXNldCgpCiAgICBlbmQKCiAgICBsb2NhbCB0YXJnZXRfY291bnQgPSBzZWxmLkNvbmZpZy5hdXRvX2ZpbGxfcGxheWVyX2NvdW50IG9yIDEwCiAgICBpZiBHZXRNYXBOYW1lKCkgPT0gInJhbmtfM3g0IiB0aGVuCiAgICAgICAgdGFyZ2V0X2NvdW50ID0gMTIKICAgIGVuZAogICAgbG9jYWwgY3VycmVudF9jb3VudCA9IDAKICAgIGlmIFBEIGFuZCBQRC5JRHMgdGhlbgogICAgICAgIGN1cnJlbnRfY291bnQgPSAjUEQuSURzCiAgICBlbmQKICAgIGxvY2FsIGFkZF9udW0gPSB0YXJnZXRfY291bnQgLSBjdXJyZW50X2NvdW50CiAgICBpZiBhZGRfbnVtIDw9IDAgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCgogICAgZm9yIGkgPSAxLCBhZGRfbnVtIGRvCiAgICAgICAgc2VsZjpBZGRPbmVGYWtlUGxheWVyKGkpCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBCb290OkdldEJvdFRhcmdldFRlYW0oKQogICAgbG9jYWwgbWFwX25hbWUgPSBHZXRNYXBOYW1lKCkKICAgIGlmIG1hcF9uYW1lID09ICJyYW5rXzF2MSIgb3IgbWFwX25hbWUgPT0gImJlaWRvbmciIHRoZW4KICAgICAgICBsb2NhbCB0ZWFtcyA9IHsKICAgICAgICAgICAgVEVBTV9HT09ER1VZUywKICAgICAgICAgICAgVEVBTV9CQURHVVlTLAogICAgICAgICAgICBURUFNX0NVU1RPTV8xLAogICAgICAgICAgICBURUFNX0NVU1RPTV8yLAogICAgICAgICAgICBURUFNX0NVU1RPTV8zLAogICAgICAgICAgICBURUFNX0NVU1RPTV80LAogICAgICAgICAgICBURUFNX0NVU1RPTV81LAogICAgICAgICAgICBURUFNX0NVU1RPTV82LAogICAgICAgICAgICBURUFNX0NVU1RPTV83LAogICAgICAgICAgICBURUFNX0NVU1RPTV84LAogICAgICAgIH0KICAgICAgICBsb2NhbCB0ZWFtX2NvdW50cyA9IHt9CiAgICAgICAgZm9yIF8sIHRlYW0gaW4gcGFpcnModGVhbXMpIGRvCiAgICAgICAgICAgIHRlYW1fY291bnRzW3RlYW1dID0gMAogICAgICAgIGVuZAogICAgICAgIGZvciBfLCBJRCBpbiBwYWlycyhQRC5JRHMgb3Ige30pIGRvCiAgICAgICAgICAgIGxvY2FsIHBsYXllcl9kYXRhID0gSW5pdFBsYXllcjpHZXRQbGF5ZXJEYXRhKElEKQogICAgICAgICAgICBpZiBwbGF5ZXJfZGF0YSBhbmQgcGxheWVyX2RhdGEuc3RhdGUgYW5kIHRlYW1fY291bnRzW3BsYXllcl9kYXRhLnRlYW1dIH49IG5pbCB0aGVuCiAgICAgICAgICAgICAgICB0ZWFtX2NvdW50c1twbGF5ZXJfZGF0YS50ZWFtXSA9IHRlYW1fY291bnRzW3BsYXllcl9kYXRhLnRlYW1dICsgMQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgICAgICBmb3IgXywgdGVhbSBpbiBwYWlycyh0ZWFtcykgZG8KICAgICAgICAgICAgaWYgdGVhbV9jb3VudHNbdGVhbV0gPT0gMCB0aGVuCiAgICAgICAgICAgICAgICByZXR1cm4gdGVhbQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKCiAgICAgICAgbG9jYWwgdGFyZ2V0X3RlYW0gPSB0ZWFtc1sxXQogICAgICAgIGxvY2FsIG1pbl9jb3VudCA9IHRlYW1fY291bnRzW3RhcmdldF90ZWFtXQogICAgICAgIGZvciBfLCB0ZWFtIGluIHBhaXJzKHRlYW1zKSBkbwogICAgICAgICAgICBpZiB0ZWFtX2NvdW50c1t0ZWFtXSA8IG1pbl9jb3VudCB0aGVuCiAgICAgICAgICAgICAgICBtaW5fY291bnQgPSB0ZWFtX2NvdW50c1t0ZWFtXQogICAgICAgICAgICAgICAgdGFyZ2V0X3RlYW0gPSB0ZWFtCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgICAgIHJldHVybiB0YXJnZXRfdGVhbQogICAgZW5kCgogICAgaWYgbWFwX25hbWUgPT0gInJhbmtfM3g0IiB0aGVuCiAgICAgICAgbG9jYWwgdGVhbXM0ID0geyBURUFNX0dPT0RHVVlTLCBURUFNX0JBREdVWVMsIFRFQU1fQ1VTVE9NXzEsIFRFQU1fQ1VTVE9NXzIgfQogICAgICAgIGxvY2FsIHRlYW1fY291bnRzID0ge30KICAgICAgICBmb3IgXywgdCBpbiBpcGFpcnModGVhbXM0KSBkbwogICAgICAgICAgICB0ZWFtX2NvdW50c1t0XSA9IDAKICAgICAgICBlbmQKICAgICAgICBmb3IgXywgSUQgaW4gcGFpcnMoUEQuSURzIG9yIHt9KSBkbwogICAgICAgICAgICBsb2NhbCBwbGF5ZXJfZGF0YSA9IEluaXRQbGF5ZXI6R2V0UGxheWVyRGF0YShJRCkKICAgICAgICAgICAgaWYgcGxheWVyX2RhdGEgYW5kIHBsYXllcl9kYXRhLnN0YXRlIGFuZCB0ZWFtX2NvdW50c1twbGF5ZXJfZGF0YS50ZWFtXSB+PSBuaWwgdGhlbgogICAgICAgICAgICAgICAgdGVhbV9jb3VudHNbcGxheWVyX2RhdGEudGVhbV0gPSB0ZWFtX2NvdW50c1twbGF5ZXJfZGF0YS50ZWFtXSArIDEKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICAgICAgbG9jYWwgY2FwID0gMwogICAgICAgIGZvciBfLCB0IGluIGlwYWlycyh0ZWFtczQpIGRvCiAgICAgICAgICAgIGlmIHRlYW1fY291bnRzW3RdIDwgY2FwIHRoZW4KICAgICAgICAgICAgICAgIHJldHVybiB0CiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgICAgIGxvY2FsIHRhcmdldF90ZWFtID0gdGVhbXM0WzFdCiAgICAgICAgbG9jYWwgbWluX2NvdW50ID0gdGVhbV9jb3VudHNbdGFyZ2V0X3RlYW1dCiAgICAgICAgZm9yIF8sIHQgaW4gaXBhaXJzKHRlYW1zNCkgZG8KICAgICAgICAgICAgaWYgdGVhbV9jb3VudHNbdF0gPCBtaW5fY291bnQgdGhlbgogICAgICAgICAgICAgICAgbWluX2NvdW50ID0gdGVhbV9jb3VudHNbdF0KICAgICAgICAgICAgICAgIHRhcmdldF90ZWFtID0gdAogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgICAgICByZXR1cm4gdGFyZ2V0X3RlYW0KICAgIGVuZAoKICAgIGxvY2FsIGdvb2RfbnVtID0gMAogICAgbG9jYWwgYmFkX251bSA9IDAKICAgIGZvciBfLCBJRCBpbiBwYWlycyhQRC5JRHMgb3Ige30pIGRvCiAgICAgICAgbG9jYWwgcGxheWVyX2RhdGEgPSBJbml0UGxheWVyOkdldFBsYXllckRhdGEoSUQpCiAgICAgICAgaWYgcGxheWVyX2RhdGEgYW5kIHBsYXllcl9kYXRhLnN0YXRlIHRoZW4KICAgICAgICAgICAgaWYgcGxheWVyX2RhdGEudGVhbSA9PSBURUFNX0dPT0RHVVlTIHRoZW4KICAgICAgICAgICAgICAgIGdvb2RfbnVtID0gZ29vZF9udW0gKyAxCiAgICAgICAgICAgIGVsc2VpZiBwbGF5ZXJfZGF0YS50ZWFtID09IFRFQU1fQkFER1VZUyB0aGVuCiAgICAgICAgICAgICAgICBiYWRfbnVtID0gYmFkX251bSArIDEKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGlmIGdvb2RfbnVtIDw9IGJhZF9udW0gdGhlbgogICAgICAgIHJldHVybiBURUFNX0dPT0RHVVlTCiAgICBlbmQKICAgIHJldHVybiBURUFNX0JBREdVWVMKZW5kCgpmdW5jdGlvbiBCb290OkFkZE9uZUZha2VQbGF5ZXIoaW5kZXgpCiAgICBpZiB0eXBlKENyZWF0ZUZha2VDbGllbnRGbikgfj0gImZ1bmN0aW9uIiB0aGVuCiAgICAgICAgcmV0dXJuIHNlbGY6QWRkT25lUHNldWRvUGxheWVyKGluZGV4KQogICAgZW5kCgogICAgbG9jYWwgYm90X25hbWUgPSAiYm90X3BsYXllcl8iIC4uIHRvc3RyaW5nKGluZGV4IG9yIDEpCiAgICBsb2NhbCBmYWtlX3BsYXllciA9IENyZWF0ZUZha2VDbGllbnRGbihib3RfbmFtZSkKICAgIGlmIG5vdCBmYWtlX3BsYXllciB0aGVuCiAgICAgICAgcmV0dXJuIHNlbGY6QWRkT25lUHNldWRvUGxheWVyKGluZGV4KQogICAgZW5kCgogICAgbG9jYWwgYm90X2lkID0gZmFrZV9wbGF5ZXI6R2V0UGxheWVySUQoKQogICAgaWYgYm90X2lkID09IG5pbCBvciBib3RfaWQgPCAwIHRoZW4KICAgICAgICAtLSBwcmludCgi6I635Y+W5py65Zmo5Lq6IFBsYXllcklEIOWksei0pToiLCBib3RfbmFtZSkKICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGxvY2FsIHRlYW0gPSBzZWxmOkdldEJvdFRhcmdldFRlYW0oKQogICAgUGxheWVyUmVzb3VyY2U6U2V0Q3VzdG9tVGVhbUFzc2lnbm1lbnQoYm90X2lkLCB0ZWFtKQogICAgaWYgZmFrZV9wbGF5ZXIuU2V0VGVhbSB0aGVuCiAgICAgICAgZmFrZV9wbGF5ZXI6U2V0VGVhbSh0ZWFtKQogICAgZW5kCgogICAgVXRpbDpBZGRQbGF5ZXIoYm90X2lkKQogICAgbG9jYWwgcGxheWVyX2luZGV4ID0gI1BELklEcwogICAgaWYgSW5pdFBsYXllciB0aGVuCiAgICAgICAgaWYgbm90IEluaXRQbGF5ZXI6R2V0UGxheWVyRGF0YShib3RfaWQpIHRoZW4KICAgICAgICAgICAgSW5pdFBsYXllcjpJbml0UGxheWVyRGF0YShib3RfaWQsIHBsYXllcl9pbmRleCkKICAgICAgICBlbmQKICAgICAgICBsb2NhbCBwayA9ICJwbGF5ZXJfIiAuLiBib3RfaWQKICAgICAgICBsb2NhbCByb3cgPSBJbml0UGxheWVyLlB1YmxpYy5wbGF5ZXJzW3BrXQogICAgICAgIGlmIHJvdyB0aGVuCiAgICAgICAgICAgIHJvdy5ib3QgPSB0cnVlCiAgICAgICAgICAgIHJvdy5vbmxpbmUgPSB0cnVlCiAgICAgICAgICAgIHJvdy5zdGF0ZSA9IHRydWUKICAgICAgICAgICAgaWYgbm90IHJvdy5uYW1lIG9yIHJvdy5uYW1lID09ICIiIHRoZW4KICAgICAgICAgICAgICAgIHJvdy5uYW1lID0gIueUteiEkSIgLi4gdG9zdHJpbmcoaW5kZXggb3IgMSkgLi4gIuWPtyIKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQKICAgIC0tcHJpbnQoIuacuuWZqOS6uueOqeWutuWIm+W7uuaIkOWKnyIsIGJvdF9uYW1lLCBib3RfaWQsIHRlYW0pCmVuZAoKZnVuY3Rpb24gQm9vdDpBZGRPbmVQc2V1ZG9QbGF5ZXIoaW5kZXgpCiAgICBsb2NhbCBib3RfaWQgPSAjUEQuSURzICsgMQogICAgbG9jYWwgcGxheWVyX2tleSA9ICJwbGF5ZXJfIiAuLiBib3RfaWQKICAgIGlmIEluaXRQbGF5ZXIuUHVibGljLnBsYXllcnNbcGxheWVyX2tleV0gdGhlbgogICAgICAgIHJldHVybiBib3RfaWQKICAgIGVuZAoKICAgIGxvY2FsIHRlYW0gPSBzZWxmOkdldEJvdFRhcmdldFRlYW0oKQogICAgUERbYm90X2lkXSA9IFBEW2JvdF9pZF0gb3Ige30KICAgIFBEW2JvdF9pZF0ucHNldWRvX3BsYXllciA9IHRydWUKICAgIHRhYmxlLmluc2VydChQRC5JRHMsIGJvdF9pZCkKICAgIGxvY2FsIHBsYXllcl9pbmRleCA9ICNQRC5JRHMKICAgIEluaXRQbGF5ZXI6SW5pdFBsYXllckRhdGEoYm90X2lkLCBwbGF5ZXJfaW5kZXgpCiAgICBJbml0UGxheWVyOkluaXRfSUQoYm90X2lkKQoKICAgIGxvY2FsIGRhdGEgPSBJbml0UGxheWVyLlB1YmxpYy5wbGF5ZXJzW3BsYXllcl9rZXldCiAgICBpZiBub3QgZGF0YSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBkYXRhLmJvdCA9IHRydWUKICAgIGRhdGEub25saW5lID0gdHJ1ZQogICAgZGF0YS5zdGF0ZSA9IHRydWUKICAgIGRhdGEudGVhbSA9IHRlYW0KICAgIGRhdGEubmFtZSA9ICLnlLXohJEiIC4uIHRvc3RyaW5nKGluZGV4IG9yIDEpIC4uICLlj7ciCgogICAgLS1wcmludCgi5Lyq546p5a625py65Zmo5Lq65Yib5bu65oiQ5YqfIiwgYm90X2lkLCB0ZWFtKQogICAgcmV0dXJuIGJvdF9pZAplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if Boot == nil then
+    Boot = class({})
+    require("ingame.Boot.Config")
+    require("ingame.Boot.Set")
+    require("ingame.Boot.Get")
+    require("ingame.Boot.Func")
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+local TEAM_GOODGUYS = rawget(_G, "DOTA_TEAM_GOODGUYS") or 2
+local TEAM_BADGUYS = rawget(_G, "DOTA_TEAM_BADGUYS") or 3
+local TEAM_CUSTOM_1 = rawget(_G, "DOTA_TEAM_CUSTOM_1") or 6
+local TEAM_CUSTOM_2 = rawget(_G, "DOTA_TEAM_CUSTOM_2") or 7
+local TEAM_CUSTOM_3 = rawget(_G, "DOTA_TEAM_CUSTOM_3") or 8
+local TEAM_CUSTOM_4 = rawget(_G, "DOTA_TEAM_CUSTOM_4") or 9
+local TEAM_CUSTOM_5 = rawget(_G, "DOTA_TEAM_CUSTOM_5") or 10
+local TEAM_CUSTOM_6 = rawget(_G, "DOTA_TEAM_CUSTOM_6") or 11
+local TEAM_CUSTOM_7 = rawget(_G, "DOTA_TEAM_CUSTOM_7") or 12
+local TEAM_CUSTOM_8 = rawget(_G, "DOTA_TEAM_CUSTOM_8") or 13
+local CreateFakeClientFn = rawget(_G, "CreateFakeClient")
+
+function Boot:AddBootPlayer()
+    if self.Data.bot_added then
+        return
+    end
+    self.Data.bot_added = true
+
+    if self.Config.enable_bot_players == false then
+        return
+    end
+
+    if BotAI and BotAI.ApplyConfigPreset then
+        BotAI:ApplyConfigPreset()
+    end
+
+    local target_count = self.Config.auto_fill_player_count or 10
+    if GetMapName() == "rank_3x4" then
+        target_count = 12
+    end
+    local current_count = 0
+    if PD and PD.IDs then
+        current_count = #PD.IDs
+    end
+    local add_num = target_count - current_count
+    if add_num <= 0 then
+        return
+    end
+
+    for i = 1, add_num do
+        self:AddOneFakePlayer(i)
+    end
+end
+
+function Boot:GetBotTargetTeam()
+    local map_name = GetMapName()
+    if map_name == "rank_1v1" or map_name == "beidong" then
+        local teams = {
+            TEAM_GOODGUYS,
+            TEAM_BADGUYS,
+            TEAM_CUSTOM_1,
+            TEAM_CUSTOM_2,
+            TEAM_CUSTOM_3,
+            TEAM_CUSTOM_4,
+            TEAM_CUSTOM_5,
+            TEAM_CUSTOM_6,
+            TEAM_CUSTOM_7,
+            TEAM_CUSTOM_8,
+        }
+        local team_counts = {}
+        for _, team in pairs(teams) do
+            team_counts[team] = 0
+        end
+        for _, ID in pairs(PD.IDs or {}) do
+            local player_data = InitPlayer:GetPlayerData(ID)
+            if player_data and player_data.state and team_counts[player_data.team] ~= nil then
+                team_counts[player_data.team] = team_counts[player_data.team] + 1
+            end
+        end
+        for _, team in pairs(teams) do
+            if team_counts[team] == 0 then
+                return team
+            end
+        end
+
+        local target_team = teams[1]
+        local min_count = team_counts[target_team]
+        for _, team in pairs(teams) do
+            if team_counts[team] < min_count then
+                min_count = team_counts[team]
+                target_team = team
+            end
+        end
+        return target_team
+    end
+
+    if map_name == "rank_3x4" then
+        local teams4 = { TEAM_GOODGUYS, TEAM_BADGUYS, TEAM_CUSTOM_1, TEAM_CUSTOM_2 }
+        local team_counts = {}
+        for _, t in ipairs(teams4) do
+            team_counts[t] = 0
+        end
+        for _, ID in pairs(PD.IDs or {}) do
+            local player_data = InitPlayer:GetPlayerData(ID)
+            if player_data and player_data.state and team_counts[player_data.team] ~= nil then
+                team_counts[player_data.team] = team_counts[player_data.team] + 1
+            end
+        end
+        local cap = 3
+        for _, t in ipairs(teams4) do
+            if team_counts[t] < cap then
+                return t
+            end
+        end
+        local target_team = teams4[1]
+        local min_count = team_counts[target_team]
+        for _, t in ipairs(teams4) do
+            if team_counts[t] < min_count then
+                min_count = team_counts[t]
+                target_team = t
+            end
+        end
+        return target_team
+    end
+
+    local good_num = 0
+    local bad_num = 0
+    for _, ID in pairs(PD.IDs or {}) do
+        local player_data = InitPlayer:GetPlayerData(ID)
+        if player_data and player_data.state then
+            if player_data.team == TEAM_GOODGUYS then
+                good_num = good_num + 1
+            elseif player_data.team == TEAM_BADGUYS then
+                bad_num = bad_num + 1
+            end
+        end
+    end
+    if good_num <= bad_num then
+        return TEAM_GOODGUYS
+    end
+    return TEAM_BADGUYS
+end
+
+function Boot:AddOneFakePlayer(index)
+    if type(CreateFakeClientFn) ~= "function" then
+        return self:AddOnePseudoPlayer(index)
+    end
+
+    local bot_name = "bot_player_" .. tostring(index or 1)
+    local fake_player = CreateFakeClientFn(bot_name)
+    if not fake_player then
+        return self:AddOnePseudoPlayer(index)
+    end
+
+    local bot_id = fake_player:GetPlayerID()
+    if bot_id == nil or bot_id < 0 then
+        -- print("获取机器人 PlayerID 失败:", bot_name)
+        return
+    end
+
+    local team = self:GetBotTargetTeam()
+    PlayerResource:SetCustomTeamAssignment(bot_id, team)
+    if fake_player.SetTeam then
+        fake_player:SetTeam(team)
+    end
+
+    Util:AddPlayer(bot_id)
+    local player_index = #PD.IDs
+    if InitPlayer then
+        if not InitPlayer:GetPlayerData(bot_id) then
+            InitPlayer:InitPlayerData(bot_id, player_index)
+        end
+        local pk = "player_" .. bot_id
+        local row = InitPlayer.Public.players[pk]
+        if row then
+            row.bot = true
+            row.online = true
+            row.state = true
+            if not row.name or row.name == "" then
+                row.name = "电脑" .. tostring(index or 1) .. "号"
+            end
+        end
+    end
+    --print("机器人玩家创建成功", bot_name, bot_id, team)
+end
+
+function Boot:AddOnePseudoPlayer(index)
+    local bot_id = #PD.IDs + 1
+    local player_key = "player_" .. bot_id
+    if InitPlayer.Public.players[player_key] then
+        return bot_id
+    end
+
+    local team = self:GetBotTargetTeam()
+    PD[bot_id] = PD[bot_id] or {}
+    PD[bot_id].pseudo_player = true
+    table.insert(PD.IDs, bot_id)
+    local player_index = #PD.IDs
+    InitPlayer:InitPlayerData(bot_id, player_index)
+    InitPlayer:Init_ID(bot_id)
+
+    local data = InitPlayer.Public.players[player_key]
+    if not data then
+        return
+    end
+
+    data.bot = true
+    data.online = true
+    data.state = true
+    data.team = team
+    data.name = "电脑" .. tostring(index or 1) .. "号"
+
+    --print("伪玩家机器人创建成功", bot_id, team)
+    return bot_id
+end

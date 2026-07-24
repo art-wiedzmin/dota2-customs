@@ -8,22 +8,193 @@
 ]]
 
 
-local encoded=[[LS3ojrflj5blvZPliY3muLjmiI/ov5vnqIsKZnVuY3Rpb24gTWFpbkdhbWU6R2V0U3RhdGUoKQogICAgcmV0dXJuIHNlbGYuRGF0YS5zdGF0ZQplbmQKCi0t6I635Y+W5b2T5YmN5ri45oiP5YiG6ZKfCmZ1bmN0aW9uIE1haW5HYW1lOkdldFRpbWVNaW4oKQogICAgbG9jYWwgdGltZSA9IEdhbWVSdWxlczpHZXRET1RBVGltZSh0cnVlLCB0cnVlKQogICAgbG9jYWwgbWluID0gbWF0aC5mbG9vcih0aW1lIC8gNjApCiAgICByZXR1cm4gbWluCmVuZAoKLS3ojrflj5blvZPliY3muLjmiI/np5LmlbAKZnVuY3Rpb24gTWFpbkdhbWU6R2V0VGltZSgpCiAgICBsb2NhbCB0aW1lID0gR2FtZVJ1bGVzOkdldERPVEFUaW1lKHRydWUsIHRydWUpCiAgICByZXR1cm4gbWF0aC5mbG9vcih0aW1lKQplbmQKCi0t6I635Y+W5a+56LGh5Lyg6YCBCmZ1bmN0aW9uIE1haW5HYW1lOkdldERvb3JUYXJnZXQobmFtZSkKICAgIGlmIG5hbWUgPT0gImRvb3IxIiB0aGVuCiAgICAgICAgcmV0dXJuIHNlbGYuRGF0YS5kb29yLmRvb3JzMS5kb29yMi5wb3MKICAgIGVuZAogICAgaWYgbmFtZSA9PSAiZG9vcjIiIHRoZW4KICAgICAgICByZXR1cm4gc2VsZi5EYXRhLmRvb3IuZG9vcnMxLmRvb3IxLnBvcwogICAgZW5kCiAgICBpZiBuYW1lID09ICJkb29yMyIgdGhlbgogICAgICAgIHJldHVybiBzZWxmLkRhdGEuZG9vci5kb29yczIuZG9vcjQucG9zCiAgICBlbmQKICAgIGlmIG5hbWUgPT0gImRvb3I0IiB0aGVuCiAgICAgICAgcmV0dXJuIHNlbGYuRGF0YS5kb29yLmRvb3JzMi5kb29yMy5wb3MKICAgIGVuZAplbmQKCi0tLSDlvZPliY3lnLDlm77pmLXokKXmgLvlh7vmnYDog5zliKnnur/vvIg1djUg55SoIHRlYW1fa2lsbO+8m3JhbmtfM3g0IOeUqCB0ZWFtX2tpbGxfM3g077yJCmZ1bmN0aW9uIE1haW5HYW1lOkdldFRlYW1LaWxsVGFyZ2V0KCkKICAgIGlmIHNlbGY6R2V0R2FtZVR5cGUoKSA9PSAzIHRoZW4KICAgICAgICBsb2NhbCBuID0gc2VsZi5TdGF0aWMudGVhbV9raWxsXzN4NAogICAgICAgIGlmIHR5cGUobikgPT0gIm51bWJlciIgYW5kIG4gPiAwIHRoZW4KICAgICAgICAgICAgcmV0dXJuIG4KICAgICAgICBlbmQKICAgIGVuZAogICAgcmV0dXJuIHNlbGYuU3RhdGljLnRlYW1fa2lsbAplbmQKCi0tLSDkuKrkurrlh7vmnYDog5zliKnnur/vvIhyYW5rXzF2MSAvIGJlaWRvbmfvvIxnYW1lX3R5cGU9PTLvvIkKZnVuY3Rpb24gTWFpbkdhbWU6R2V0UGVyc29uS2lsbFRhcmdldCgpCiAgICBsb2NhbCBtYXAgPSBHZXRNYXBOYW1lKCkKICAgIGlmIG1hcCA9PSAicmFua18xdjEiIG9yIG1hcCA9PSAiYmVpZG9uZyIgdGhlbgogICAgICAgIGxvY2FsIG4gPSBzZWxmLlN0YXRpYy5wZXJzb25fa2lsbF9yYW5rXzF2MQogICAgICAgIGlmIHR5cGUobikgPT0gIm51bWJlciIgYW5kIG4gPiAwIHRoZW4KICAgICAgICAgICAgcmV0dXJuIG4KICAgICAgICBlbmQKICAgIGVuZAogICAgcmV0dXJuIHNlbGYuU3RhdGljLnBlcnNvbl9raWxsCmVuZAoKLS3ojrflj5bmuLjmiI/mqKHlvI/vvIgxPTV2Ne+8mzI9cmFua18xdjEgLyBiZWlkb25n77yI5Liq5Lq65Ye75p2A77yJ77ybMz1yYW5rXzN4NO+8iQpmdW5jdGlvbiBNYWluR2FtZTpHZXRHYW1lVHlwZSgpCiAgICBsb2NhbCBtYXAgPSBHZXRNYXBOYW1lKCkKICAgIGlmIG1hcCA9PSAicmFua181djUiIHRoZW4KICAgICAgICByZXR1cm4gMQogICAgZW5kCiAgICBpZiBtYXAgPT0gInJhbmtfM3g0IiB0aGVuCiAgICAgICAgcmV0dXJuIDMKICAgIGVuZAogICAgLS0gYmVpZG9uZ++8muS4jiByYW5rXzF2MSDnm7jlkIzvvIjkuKrkurrlh7vmnYDlhrPog5zjgIHorqHliIbmnb/ljYHpmJ/nrYnvvIkKICAgIGlmIG1hcCA9PSAicmFua18xdjEiIG9yIG1hcCA9PSAiYmVpZG9uZyIgdGhlbgogICAgICAgIHJldHVybiAyCiAgICBlbmQKZW5kCgotLS0g5aSp6L6J5L6n77yIdGVhbV8x77yJ5Zyo6K6h5YiG5p2/IC8gcmFuayDnvJblj7fkuK3nmoTmnIDlpKfkurrmlbDvvIjku4UgNXY177yJCmZ1bmN0aW9uIE1haW5HYW1lOkdldER1YWxUZWFtU2xvdENhcFJhZGlhbnQoKQogICAgcmV0dXJuIDUKZW5kCgotLS0g5aSc6a2H5L6n77yIdGVhbV8y77yJ5pyA5aSn5Lq65pWw77yI5LuFIDV2Ne+8iQpmdW5jdGlvbiBNYWluR2FtZTpHZXREdWFsVGVhbVNsb3RDYXBEaXJlKCkKICAgIHJldHVybiA1CmVuZAoKLS0tIOWbm+mYn+aooeW8j++8muaMiemYteiQpeS6uuWktOS4juS8pOWus+WGs+WHuiAxfjQg6IOc6Zif57Si5byV77yI5LiOIFN0YXQgdGVhbV8xLi40IOS4gOiHtO+8iQpmdW5jdGlvbiBNYWluR2FtZTpSZXNvbHZlRm91clRlYW1XaW5CeUtpbGxzKCkKICAgIGxvY2FsIHJvd3MgPSB7CiAgICAgICAgeyBzaSA9IDEsIGsgPSBzZWxmLkRhdGEua2lsbC5UZWFtMiB9LAogICAgICAgIHsgc2kgPSAyLCBrID0gc2VsZi5EYXRhLmtpbGwuVGVhbTMgfSwKICAgICAgICB7IHNpID0gMywgayA9IHNlbGYuRGF0YS5raWxsLlRlYW02IH0sCiAgICAgICAgeyBzaSA9IDQsIGsgPSBzZWxmLkRhdGEua2lsbC5UZWFtNyB9LAogICAgfQogICAgbG9jYWwgYmVzdF9rID0gLTEKICAgIGZvciBfLCByb3cgaW4gaXBhaXJzKHJvd3MpIGRvCiAgICAgICAgaWYgcm93LmsgPiBiZXN0X2sgdGhlbgogICAgICAgICAgICBiZXN0X2sgPSByb3cuawogICAgICAgIGVuZAogICAgZW5kCiAgICBsb2NhbCBjYW5kcyA9IHt9CiAgICBmb3IgXywgcm93IGluIGlwYWlycyhyb3dzKSBkbwogICAgICAgIGlmIHJvdy5rID09IGJlc3RfayB0aGVuCiAgICAgICAgICAgIGNhbmRzWyNjYW5kcyArIDFdID0gcm93LnNpCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGlmICNjYW5kcyA9PSAxIHRoZW4KICAgICAgICByZXR1cm4gY2FuZHNbMV0KICAgIGVuZAogICAgbG9jYWwgYmVzdF9kID0gLTEKICAgIGxvY2FsIHdpbm5lciA9IGNhbmRzWzFdCiAgICBmb3IgXywgc2kgaW4gaXBhaXJzKGNhbmRzKSBkbwogICAgICAgIGxvY2FsIGRzdW0gPSAwCiAgICAgICAgbG9jYWwgdGsgPSAidGVhbV8iIC4uIHNpCiAgICAgICAgbG9jYWwgbHN0ID0gU3RhdC5QdWJsaWMubGlzdFt0a10gYW5kIFN0YXQuUHVibGljLmxpc3RbdGtdLmxpc3QKICAgICAgICBpZiBsc3QgdGhlbgogICAgICAgICAgICBmb3IgXywgdiBpbiBwYWlycyhsc3QpIGRvCiAgICAgICAgICAgICAgICBpZiB2IGFuZCB2LmlkIGFuZCBIZXJvRGF0YS5EYXRhW3YuaWRdIHRoZW4KICAgICAgICAgICAgICAgICAgICBkc3VtID0gZHN1bSArIChIZXJvRGF0YS5EYXRhW3YuaWRdLmRhbWFnZSBvciAwKQogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgICAgIGlmIGRzdW0gPiBiZXN0X2QgdGhlbgogICAgICAgICAgICBiZXN0X2QgPSBkc3VtCiAgICAgICAgICAgIHdpbm5lciA9IHNpCiAgICAgICAgZW5kCiAgICBlbmQKICAgIHJldHVybiB3aW5uZXIKZW5kCgpmdW5jdGlvbiBNYWluR2FtZTpHZXREdW1teSgpCiAgICBsb2NhbCBpbmRleCA9IHNlbGYuRGF0YS5kdW1teQogICAgbG9jYWwgdW5pdCA9IEVudEluZGV4VG9IU2NyaXB0KGluZGV4KQogICAgaWYgdW5pdCB0aGVuCiAgICAgICAgcmV0dXJuIHVuaXQKICAgIGVuZAplbmQKCmZ1bmN0aW9uIE1haW5HYW1lOkdldExhc3RGaWdodCgpCiAgICByZXR1cm4gc2VsZi5FdmVudExpc3QubGFzdGZpZ2h0LnN0YXRlCmVuZAoKZnVuY3Rpb24gTWFpbkdhbWU6R2V0UGFzc2l2ZU1vZGUoKQogICAgcmV0dXJuIHNlbGYuRGF0YS5wYXNzaXZlX21vZGUKZW5kCgotLS0g5b2T5YmN5piv5ZCm5Li655m95aSp77yI6Ieq5a6a5LmJ5pi85aSc5b6q546v77yJCmZ1bmN0aW9uIE1haW5HYW1lOklzRGF5dGltZSgpCiAgICBpZiBzZWxmLkRhdGEgYW5kIHNlbGYuRGF0YS5kYXluaWdodF9pc19kYXkgfj0gbmlsIHRoZW4KICAgICAgICByZXR1cm4gc2VsZi5EYXRhLmRheW5pZ2h0X2lzX2RheSA9PSB0cnVlCiAgICBlbmQKICAgIGxvY2FsIGdyID0gR2FtZVJ1bGVzCiAgICBpZiBnciBhbmQgZ3IuSXNEYXl0aW1lIHRoZW4KICAgICAgICByZXR1cm4gZ3I6SXNEYXl0aW1lKCkKICAgIGVuZAogICAgcmV0dXJuIHRydWUKZW5kCgotLS0g5b2T5YmN5pe25q615aSp5rCU5pWI5p6c5oyB57ut5pe26Ze077yI56eS77yJCmZ1bmN0aW9uIE1haW5HYW1lOkdldFdlYXRoZXJEdXJhdGlvbigpCiAgICBpZiBzZWxmOklzRGF5dGltZSgpIHRoZW4KICAgICAgICByZXR1cm4gc2VsZi5TdGF0aWMud2VhdGhlcl90aW1lX2RheSBvciAxMjAKICAgIGVuZAogICAgcmV0dXJuIHNlbGYuU3RhdGljLndlYXRoZXJfdGltZV9uaWdodCBvciAxODAKZW5kCgotLS0g6KKr5Yqo5qih5byP5LiL5piv5ZCm56aB55So6K+l54mp5ZOB77yI6LSt5Lmw44CB5ZCI5oiQ5YWl5bqT44CB5L2/55So77yJ44CC5LiOIEJvb3QuQ29uZmlnIOWPjOa6kO+8jOmBv+WFjSBEYXRhIOacquWQjOatpeaXtua8j+aLpuOAggotLS0g5YiX6KGo6YeM5YaZ5oiQ5ZOB5pe277yM6Ieq5Yqo6KeG5Li65ZCM5pe256aB55So5a+55bqU6YWN5pa5IGl0ZW1fcmVjaXBlXyrvvIjllYblupfkubDphY3mlrnkuI3otbDmiJDlk4HlkI3vvInjgIIKZnVuY3Rpb24gTWFpbkdhbWU6SXNQYXNzaXZlTW9kZUJhbm5lZFB1cmNoYXNlSXRlbShpdGVtX25hbWUpCiAgICBpZiBub3QgaXRlbV9uYW1lIG9yIGl0ZW1fbmFtZSA9PSAiIiB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGxvY2FsIHBhc3NpdmUgPSBzZWxmOkdldFBhc3NpdmVNb2RlKCkKICAgIGlmIG5vdCBwYXNzaXZlIGFuZCBCb290IGFuZCBCb290LkNvbmZpZyBhbmQgQm9vdC5Db25maWcuYm90X3Bhc3NpdmVfbW9kZSA9PSB0cnVlIHRoZW4KICAgICAgICBwYXNzaXZlID0gdHJ1ZQogICAgZW5kCiAgICBpZiBub3QgcGFzc2l2ZSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGxvY2FsIHQgPSBzZWxmLlN0YXRpYy5QYXNzaXZlTW9kZUJhbm5lZFNob3BJdGVtcwogICAgaWYgdCA9PSBuaWwgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiB0W2l0ZW1fbmFtZV0gPT0gdHJ1ZSB0aGVuCiAgICAgICAgcmV0dXJuIHRydWUKICAgIGVuZAogICAgaWYgc3RyaW5nLnN1YihpdGVtX25hbWUsIDEsIDEyKSA9PSAiaXRlbV9yZWNpcGVfIiB0aGVuCiAgICAgICAgbG9jYWwgaW1wbGllZCA9IHN0cmluZy5nc3ViKGl0ZW1fbmFtZSwgIl5pdGVtX3JlY2lwZV8iLCAiaXRlbV8iLCAxKQogICAgICAgIGlmIHRbaW1wbGllZF0gPT0gdHJ1ZSB0aGVuCiAgICAgICAgICAgIHJldHVybiB0cnVlCiAgICAgICAgZW5kCiAgICBlbmQKICAgIHJldHVybiBmYWxzZQplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+--获取当前游戏进程
+function MainGame:GetState()
+    return self.Data.state
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--获取当前游戏分钟
+function MainGame:GetTimeMin()
+    local time = GameRules:GetDOTATime(true, true)
+    local min = math.floor(time / 60)
+    return min
+end
+
+--获取当前游戏秒数
+function MainGame:GetTime()
+    local time = GameRules:GetDOTATime(true, true)
+    return math.floor(time)
+end
+
+--获取对象传送
+function MainGame:GetDoorTarget(name)
+    if name == "door1" then
+        return self.Data.door.doors1.door2.pos
+    end
+    if name == "door2" then
+        return self.Data.door.doors1.door1.pos
+    end
+    if name == "door3" then
+        return self.Data.door.doors2.door4.pos
+    end
+    if name == "door4" then
+        return self.Data.door.doors2.door3.pos
+    end
+end
+
+--- 当前地图阵营总击杀胜利线（5v5 用 team_kill；rank_3x4 用 team_kill_3x4）
+function MainGame:GetTeamKillTarget()
+    if self:GetGameType() == 3 then
+        local n = self.Static.team_kill_3x4
+        if type(n) == "number" and n > 0 then
+            return n
+        end
+    end
+    return self.Static.team_kill
+end
+
+--- 个人击杀胜利线（rank_1v1 / beidong，game_type==2）
+function MainGame:GetPersonKillTarget()
+    local map = GetMapName()
+    if map == "rank_1v1" or map == "beidong" then
+        local n = self.Static.person_kill_rank_1v1
+        if type(n) == "number" and n > 0 then
+            return n
+        end
+    end
+    return self.Static.person_kill
+end
+
+--获取游戏模式（1=5v5；2=rank_1v1 / beidong（个人击杀）；3=rank_3x4）
+function MainGame:GetGameType()
+    local map = GetMapName()
+    if map == "rank_5v5" then
+        return 1
+    end
+    if map == "rank_3x4" then
+        return 3
+    end
+    -- beidong：与 rank_1v1 相同（个人击杀决胜、计分板十队等）
+    if map == "rank_1v1" or map == "beidong" then
+        return 2
+    end
+end
+
+--- 天辉侧（team_1）在计分板 / rank 编号中的最大人数（仅 5v5）
+function MainGame:GetDualTeamSlotCapRadiant()
+    return 5
+end
+
+--- 夜魇侧（team_2）最大人数（仅 5v5）
+function MainGame:GetDualTeamSlotCapDire()
+    return 5
+end
+
+--- 四队模式：按阵营人头与伤害决出 1~4 胜队索引（与 Stat team_1..4 一致）
+function MainGame:ResolveFourTeamWinByKills()
+    local rows = {
+        { si = 1, k = self.Data.kill.Team2 },
+        { si = 2, k = self.Data.kill.Team3 },
+        { si = 3, k = self.Data.kill.Team6 },
+        { si = 4, k = self.Data.kill.Team7 },
+    }
+    local best_k = -1
+    for _, row in ipairs(rows) do
+        if row.k > best_k then
+            best_k = row.k
+        end
+    end
+    local cands = {}
+    for _, row in ipairs(rows) do
+        if row.k == best_k then
+            cands[#cands + 1] = row.si
+        end
+    end
+    if #cands == 1 then
+        return cands[1]
+    end
+    local best_d = -1
+    local winner = cands[1]
+    for _, si in ipairs(cands) do
+        local dsum = 0
+        local tk = "team_" .. si
+        local lst = Stat.Public.list[tk] and Stat.Public.list[tk].list
+        if lst then
+            for _, v in pairs(lst) do
+                if v and v.id and HeroData.Data[v.id] then
+                    dsum = dsum + (HeroData.Data[v.id].damage or 0)
+                end
+            end
+        end
+        if dsum > best_d then
+            best_d = dsum
+            winner = si
+        end
+    end
+    return winner
+end
+
+function MainGame:GetDummy()
+    local index = self.Data.dummy
+    local unit = EntIndexToHScript(index)
+    if unit then
+        return unit
+    end
+end
+
+function MainGame:GetLastFight()
+    return self.EventList.lastfight.state
+end
+
+function MainGame:GetPassiveMode()
+    return self.Data.passive_mode
+end
+
+--- 当前是否为白天（自定义昼夜循环）
+function MainGame:IsDaytime()
+    if self.Data and self.Data.daynight_is_day ~= nil then
+        return self.Data.daynight_is_day == true
+    end
+    local gr = GameRules
+    if gr and gr.IsDaytime then
+        return gr:IsDaytime()
+    end
+    return true
+end
+
+--- 当前时段天气效果持续时间（秒）
+function MainGame:GetWeatherDuration()
+    if self:IsDaytime() then
+        return self.Static.weather_time_day or 120
+    end
+    return self.Static.weather_time_night or 180
+end
+
+--- 被动模式下是否禁用该物品（购买、合成入库、使用）。与 Boot.Config 双源，避免 Data 未同步时漏拦。
+--- 列表里写成品时，自动视为同时禁用对应配方 item_recipe_*（商店买配方不走成品名）。
+function MainGame:IsPassiveModeBannedPurchaseItem(item_name)
+    if not item_name or item_name == "" then
+        return false
+    end
+    local passive = self:GetPassiveMode()
+    if not passive and Boot and Boot.Config and Boot.Config.bot_passive_mode == true then
+        passive = true
+    end
+    if not passive then
+        return false
+    end
+    local t = self.Static.PassiveModeBannedShopItems
+    if t == nil then
+        return false
+    end
+    if t[item_name] == true then
+        return true
+    end
+    if string.sub(item_name, 1, 12) == "item_recipe_" then
+        local implied = string.gsub(item_name, "^item_recipe_", "item_", 1)
+        if t[implied] == true then
+            return true
+        end
+    end
+    return false
+end

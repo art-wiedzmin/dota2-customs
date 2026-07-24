@@ -8,22 +8,249 @@
 ]]
 
 
-local encoded=[[LS0tIOWxgOWkluiDjOWMheS9qeaItOensOWPtyAtPiDlpLTpobblubPpnaLnspLlrZDvvIhtb2RpZmllciArIHZwY2bvvIkKCmxvY2FsIE1PRElGSUVSX1RJVExFID0gIm1vZGlmaWVyX2NscmJfdGl0bGUiCmxvY2FsIFRJVExFX0FUVEFDSF9USU1FUl9QUkVGSVggPSAiY2xyYl90aXRsZV9hdHRhY2hfIgpsb2NhbCBUSVRMRV9TWU5DX1JFVFJZX1BSRUZJWCA9ICJjbHJiX3RpdGxlX3N5bmNfcmV0cnlfIgpsb2NhbCBUSVRMRV9TWU5DX1JFVFJZX1NFQyA9IDAuNQoKZnVuY3Rpb24gVGl0bGU6QXR0YWNoVGltZXJOYW1lKGhlcm8pCiAgICBpZiBub3QgaGVybyBvciBoZXJvOklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4gbmlsCiAgICBlbmQKICAgIHJldHVybiBUSVRMRV9BVFRBQ0hfVElNRVJfUFJFRklYIC4uIHRvc3RyaW5nKGhlcm86R2V0RW50aXR5SW5kZXgoKSkKZW5kCgpmdW5jdGlvbiBUaXRsZTpDYW5jZWxQZW5kaW5nQXR0YWNoKGhlcm8pCiAgICBpZiBub3QgaGVybyBvciBoZXJvOklzTnVsbCgpIG9yIG5vdCBUaW1lcnMgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBuYW1lID0gc2VsZjpBdHRhY2hUaW1lck5hbWUoaGVybykKICAgIGlmIG5hbWUgdGhlbgogICAgICAgIFRpbWVyczpSZW1vdmVUaW1lcihuYW1lKQogICAgZW5kCmVuZAoKZnVuY3Rpb24gVGl0bGU6UmVzb2x2ZUhlcm8oSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgbG9jYWwgaGVybyA9IFV0aWwgYW5kIFV0aWwuSUQySGVybyBhbmQgVXRpbDpJRDJIZXJvKElEKQogICAgaWYgaGVybyBhbmQgbm90IGhlcm86SXNOdWxsKCkgdGhlbgogICAgICAgIHJldHVybiBoZXJvCiAgICBlbmQKICAgIGlmIEhlcm9EYXRhIGFuZCBIZXJvRGF0YS5HZXRIZXJvIHRoZW4KICAgICAgICBoZXJvID0gSGVyb0RhdGE6R2V0SGVybyhJRCkKICAgICAgICBpZiBoZXJvIGFuZCBub3QgaGVybzpJc051bGwoKSB0aGVuCiAgICAgICAgICAgIHJldHVybiBoZXJvCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGlmIFBsYXllclJlc291cmNlIGFuZCBQbGF5ZXJSZXNvdXJjZS5HZXRTZWxlY3RlZEhlcm9FbnRpdHkgdGhlbgogICAgICAgIGhlcm8gPSBQbGF5ZXJSZXNvdXJjZTpHZXRTZWxlY3RlZEhlcm9FbnRpdHkoSUQpCiAgICAgICAgaWYgaGVybyBhbmQgbm90IGhlcm86SXNOdWxsKCkgdGhlbgogICAgICAgICAgICByZXR1cm4gaGVybwogICAgICAgIGVuZAogICAgZW5kCiAgICByZXR1cm4gbmlsCmVuZAoKZnVuY3Rpb24gVGl0bGU6U2hvdWxkU2hvd0ZvclBsYXllcihJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIFV0aWwgYW5kIFV0aWwuSXNQc2V1ZG9QbGF5ZXJJRCBhbmQgVXRpbDpJc1BzZXVkb1BsYXllcklEKElEKSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIFNob3AgYW5kIFNob3AuU2hvdWxkU2hvd0luR2FtZVRpdGxlIHRoZW4KICAgICAgICByZXR1cm4gU2hvcDpTaG91bGRTaG93SW5HYW1lVGl0bGUoSUQpCiAgICBlbmQKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIFRpdGxlOlJlbW92ZUFsbFRpdGxlTW9kaWZpZXJzKGhlcm8pCiAgICBpZiBub3QgaGVybyBvciBoZXJvOklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgZ3VhcmQgPSAwCiAgICB3aGlsZSBoZXJvOkhhc01vZGlmaWVyKE1PRElGSUVSX1RJVExFKSBhbmQgZ3VhcmQgPCA4IGRvCiAgICAgICAgaGVybzpSZW1vdmVNb2RpZmllckJ5TmFtZShNT0RJRklFUl9USVRMRSkKICAgICAgICBndWFyZCA9IGd1YXJkICsgMQogICAgZW5kCmVuZAoKZnVuY3Rpb24gVGl0bGU6UmVtb3ZlVGl0bGUoaGVybykKICAgIGlmIG5vdCBoZXJvIG9yIGhlcm86SXNOdWxsKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmLl9hcHBsaWVkS2V5ID0gc2VsZi5fYXBwbGllZEtleSBvciB7fQogICAgc2VsZi5fZm9yY2VQcmV2aWV3ID0gc2VsZi5fZm9yY2VQcmV2aWV3IG9yIHt9CiAgICBsb2NhbCBlbnRJZHggPSBoZXJvOkdldEVudGl0eUluZGV4KCkKICAgIHNlbGYuX2FwcGxpZWRLZXlbZW50SWR4XSA9IG5pbAogICAgc2VsZi5fZm9yY2VQcmV2aWV3W2VudElkeF0gPSBuaWwKICAgIHNlbGY6Q2FuY2VsUGVuZGluZ0F0dGFjaChoZXJvKQogICAgc2VsZjpSZW1vdmVBbGxUaXRsZU1vZGlmaWVycyhoZXJvKQplbmQKCmZ1bmN0aW9uIFRpdGxlOkFwcGx5VGl0bGUoaGVybywgaXRlbV9rZXksIHBsYXllcklELCBmb3JjZV9wcmV2aWV3KQogICAgaWYgbm90IGhlcm8gb3IgaGVybzpJc051bGwoKSBvciBub3QgaXRlbV9rZXkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGZ4ID0gU2hvcCBhbmQgU2hvcC5HZXRUaXRsZVBhcnRpY2xlIGFuZCBTaG9wOkdldFRpdGxlUGFydGljbGUoaXRlbV9rZXkpCiAgICBpZiBub3QgZnggb3IgZnggPT0gIiIgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmLl9hcHBsaWVkS2V5ID0gc2VsZi5fYXBwbGllZEtleSBvciB7fQogICAgbG9jYWwgZW50SWR4ID0gaGVybzpHZXRFbnRpdHlJbmRleCgpCiAgICBpZiBub3QgZm9yY2VfcHJldmlldyBhbmQgc2VsZi5fYXBwbGllZEtleVtlbnRJZHhdID09IGl0ZW1fa2V5IGFuZCBoZXJvOkhhc01vZGlmaWVyKE1PRElGSUVSX1RJVExFKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBzZWxmOlJlbW92ZVRpdGxlKGhlcm8pCgogICAgbG9jYWwgZnVuY3Rpb24gYXR0YWNoKCkKICAgICAgICBpZiBoZXJvOklzTnVsbCgpIHRoZW4KICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgaWYgbm90IGZvcmNlX3ByZXZpZXcgYW5kIHBsYXllcklEIGFuZCBTaG9wIGFuZCBTaG9wLkdldEVxdWlwcGVkVGl0bGVLZXkgdGhlbgogICAgICAgICAgICBsb2NhbCBjdXJyZW50S2V5ID0gU2hvcDpHZXRFcXVpcHBlZFRpdGxlS2V5KHBsYXllcklEKQogICAgICAgICAgICBpZiBjdXJyZW50S2V5IH49IGl0ZW1fa2V5IHRoZW4KICAgICAgICAgICAgICAgIHJldHVybgogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgICAgICBUaXRsZTpSZW1vdmVBbGxUaXRsZU1vZGlmaWVycyhoZXJvKQogICAgICAgIGhlcm86QWRkTmV3TW9kaWZpZXIoaGVybywgbmlsLCBNT0RJRklFUl9USVRMRSwgewogICAgICAgICAgICB0aXRsZV9meCA9IGZ4LAogICAgICAgICAgICBpdGVtX2tleSA9IGl0ZW1fa2V5LAogICAgICAgIH0pCiAgICAgICAgVGl0bGUuX2FwcGxpZWRLZXkgPSBUaXRsZS5fYXBwbGllZEtleSBvciB7fQogICAgICAgIFRpdGxlLl9hcHBsaWVkS2V5W2VudElkeF0gPSBpdGVtX2tleQogICAgICAgIGlmIGZvcmNlX3ByZXZpZXcgdGhlbgogICAgICAgICAgICBUaXRsZS5fZm9yY2VQcmV2aWV3ID0gVGl0bGUuX2ZvcmNlUHJldmlldyBvciB7fQogICAgICAgICAgICBUaXRsZS5fZm9yY2VQcmV2aWV3W2VudElkeF0gPSBpdGVtX2tleQogICAgICAgIGVuZAogICAgZW5kCgogICAgbG9jYWwgdGltZXJOYW1lID0gc2VsZjpBdHRhY2hUaW1lck5hbWUoaGVybykKICAgIGlmIFRpbWVycyBhbmQgdGltZXJOYW1lIHRoZW4KICAgICAgICBUaW1lcnM6Q3JlYXRlVGltZXIodGltZXJOYW1lLCB7CiAgICAgICAgICAgIGVuZFRpbWUgPSAwLAogICAgICAgICAgICB1c2VHYW1lVGltZSA9IGZhbHNlLAogICAgICAgICAgICBjYWxsYmFjayA9IGF0dGFjaCwKICAgICAgICB9KQogICAgZWxzZQogICAgICAgIGF0dGFjaCgpCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBUaXRsZTpTeW5jUGxheWVyKElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgaGVybyA9IHNlbGY6UmVzb2x2ZUhlcm8oSUQpCiAgICBpZiBoZXJvIGFuZCBub3QgaGVybzpJc051bGwoKSB0aGVuCiAgICAgICAgbG9jYWwgZW50SWR4ID0gaGVybzpHZXRFbnRpdHlJbmRleCgpCiAgICAgICAgaWYgc2VsZi5fZm9yY2VQcmV2aWV3IGFuZCBzZWxmLl9mb3JjZVByZXZpZXdbZW50SWR4XSB0aGVuCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZAogICAgZW5kCiAgICBpZiBzZWxmOlNob3VsZFNob3dGb3JQbGF5ZXIoSUQpIHRoZW4KICAgICAgICBsb2NhbCBrZXkgPSBTaG9wIGFuZCBTaG9wLkdldEVxdWlwcGVkVGl0bGVLZXkgYW5kIFNob3A6R2V0RXF1aXBwZWRUaXRsZUtleShJRCkKICAgICAgICBpZiBrZXkgYW5kIGhlcm8gdGhlbgogICAgICAgICAgICBzZWxmOkFwcGx5VGl0bGUoaGVybywga2V5LCBJRCkKICAgICAgICBlbmQKICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgaGVybyB0aGVuCiAgICAgICAgc2VsZjpSZW1vdmVUaXRsZShoZXJvKQogICAgZW5kCmVuZAoKZnVuY3Rpb24gVGl0bGU6SGFzUGVuZGluZ1RpdGxlV2l0aG91dEhlcm8oKQogICAgbG9jYWwgc2VlbiA9IHt9CiAgICBsb2NhbCBmdW5jdGlvbiBuZWVkc19yZXRyeShJRCkKICAgICAgICBpZiBzZWVuW0lEXSB0aGVuCiAgICAgICAgICAgIHJldHVybiBmYWxzZQogICAgICAgIGVuZAogICAgICAgIHNlZW5bSURdID0gdHJ1ZQogICAgICAgIGlmIG5vdCBzZWxmOlNob3VsZFNob3dGb3JQbGF5ZXIoSUQpIHRoZW4KICAgICAgICAgICAgcmV0dXJuIGZhbHNlCiAgICAgICAgZW5kCiAgICAgICAgcmV0dXJuIG5vdCBzZWxmOlJlc29sdmVIZXJvKElEKQogICAgZW5kCiAgICBpZiBQRCBhbmQgUEQuSURzIHRoZW4KICAgICAgICBmb3IgXywgSUQgaW4gcGFpcnMoUEQuSURzKSBkbwogICAgICAgICAgICBpZiBuZWVkc19yZXRyeShJRCkgdGhlbgogICAgICAgICAgICAgICAgcmV0dXJuIHRydWUKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGlmIFBsYXllclJlc291cmNlIHRoZW4KICAgICAgICBmb3IgSUQgPSAwLCAyMyBkbwogICAgICAgICAgICBpZiBQbGF5ZXJSZXNvdXJjZTpJc1ZhbGlkUGxheWVyKElEKSBvciBQbGF5ZXJSZXNvdXJjZTpJc1ZhbGlkUGxheWVySUQoSUQpIHRoZW4KICAgICAgICAgICAgICAgIGlmIG5lZWRzX3JldHJ5KElEKSB0aGVuCiAgICAgICAgICAgICAgICAgICAgcmV0dXJuIHRydWUKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZAogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gVGl0bGU6U3luY0FsbCgpCiAgICBsb2NhbCBzZWVuID0ge30KICAgIGxvY2FsIGZ1bmN0aW9uIHRyeV9zeW5jKElEKQogICAgICAgIGlmIHNlZW5bSURdIHRoZW4KICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgc2VlbltJRF0gPSB0cnVlCiAgICAgICAgc2VsZjpTeW5jUGxheWVyKElEKQogICAgZW5kCiAgICBpZiBQRCBhbmQgUEQuSURzIHRoZW4KICAgICAgICBmb3IgXywgSUQgaW4gcGFpcnMoUEQuSURzKSBkbwogICAgICAgICAgICB0cnlfc3luYyhJRCkKICAgICAgICBlbmQKICAgIGVuZAogICAgaWYgUGxheWVyUmVzb3VyY2UgdGhlbgogICAgICAgIGZvciBJRCA9IDAsIDIzIGRvCiAgICAgICAgICAgIGlmIFBsYXllclJlc291cmNlOklzVmFsaWRQbGF5ZXIoSUQpIG9yIFBsYXllclJlc291cmNlOklzVmFsaWRQbGF5ZXJJRChJRCkgdGhlbgogICAgICAgICAgICAgICAgdHJ5X3N5bmMoSUQpCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCmVuZAoKZnVuY3Rpb24gVGl0bGU6U2NoZWR1bGVTeW5jUmV0cnkoX0lEKQogICAgbG9jYWwgbmFtZSA9IFRJVExFX1NZTkNfUkVUUllfUFJFRklYIC4uICJhbGwiCiAgICBpZiBUaW1lcnMgYW5kIFRpbWVycy50aW1lcnMgYW5kIFRpbWVycy50aW1lcnNbbmFtZV0gdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBUaW1lcnM6Q3JlYXRlVGltZXIobmFtZSwgewogICAgICAgIGVuZFRpbWUgPSBUSVRMRV9TWU5DX1JFVFJZX1NFQywKICAgICAgICBjYWxsYmFjayA9IGZ1bmN0aW9uKCkKICAgICAgICAgICAgaWYgbm90IFRpdGxlIHRoZW4KICAgICAgICAgICAgICAgIHJldHVybgogICAgICAgICAgICBlbmQKICAgICAgICAgICAgVGl0bGU6U3luY0FsbCgpCiAgICAgICAgICAgIGlmIFRpdGxlOkhhc1BlbmRpbmdUaXRsZVdpdGhvdXRIZXJvKCkgdGhlbgogICAgICAgICAgICAgICAgcmV0dXJuIFRJVExFX1NZTkNfUkVUUllfU0VDCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICByZXR1cm4gbmlsCiAgICAgICAgZW5kLAogICAgICAgIHVzZUdhbWVUaW1lID0gZmFsc2UsCiAgICB9KQplbmQKCmZ1bmN0aW9uIFRpdGxlOlN5bmNGcm9tT3V0QmFnKElEKQogICAgaWYgSUQgdGhlbgogICAgICAgIHNlbGY6U3luY1BsYXllcihJRCkKICAgIGVsc2UKICAgICAgICBzZWxmOlN5bmNBbGwoKQogICAgZW5kCiAgICBpZiBzZWxmOkhhc1BlbmRpbmdUaXRsZVdpdGhvdXRIZXJvKCkgdGhlbgogICAgICAgIHNlbGY6U2NoZWR1bGVTeW5jUmV0cnkoSUQgb3IgMCkKICAgIGVuZAplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+--- 局外背包佩戴称号 -> 头顶平面粒子（modifier + vpcf）
+
+local MODIFIER_TITLE = "modifier_clrb_title"
+local TITLE_ATTACH_TIMER_PREFIX = "clrb_title_attach_"
+local TITLE_SYNC_RETRY_PREFIX = "clrb_title_sync_retry_"
+local TITLE_SYNC_RETRY_SEC = 0.5
+
+function Title:AttachTimerName(hero)
+    if not hero or hero:IsNull() then
+        return nil
+    end
+    return TITLE_ATTACH_TIMER_PREFIX .. tostring(hero:GetEntityIndex())
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function Title:CancelPendingAttach(hero)
+    if not hero or hero:IsNull() or not Timers then
+        return
+    end
+    local name = self:AttachTimerName(hero)
+    if name then
+        Timers:RemoveTimer(name)
+    end
+end
+
+function Title:ResolveHero(ID)
+    if not ID then
+        return nil
+    end
+    local hero = Util and Util.ID2Hero and Util:ID2Hero(ID)
+    if hero and not hero:IsNull() then
+        return hero
+    end
+    if HeroData and HeroData.GetHero then
+        hero = HeroData:GetHero(ID)
+        if hero and not hero:IsNull() then
+            return hero
+        end
+    end
+    if PlayerResource and PlayerResource.GetSelectedHeroEntity then
+        hero = PlayerResource:GetSelectedHeroEntity(ID)
+        if hero and not hero:IsNull() then
+            return hero
+        end
+    end
+    return nil
+end
+
+function Title:ShouldShowForPlayer(ID)
+    if not ID then
+        return false
+    end
+    if Util and Util.IsPseudoPlayerID and Util:IsPseudoPlayerID(ID) then
+        return false
+    end
+    if Shop and Shop.ShouldShowInGameTitle then
+        return Shop:ShouldShowInGameTitle(ID)
+    end
+    return false
+end
+
+function Title:RemoveAllTitleModifiers(hero)
+    if not hero or hero:IsNull() then
+        return
+    end
+    local guard = 0
+    while hero:HasModifier(MODIFIER_TITLE) and guard < 8 do
+        hero:RemoveModifierByName(MODIFIER_TITLE)
+        guard = guard + 1
+    end
+end
+
+function Title:RemoveTitle(hero)
+    if not hero or hero:IsNull() then
+        return
+    end
+    self._appliedKey = self._appliedKey or {}
+    self._forcePreview = self._forcePreview or {}
+    local entIdx = hero:GetEntityIndex()
+    self._appliedKey[entIdx] = nil
+    self._forcePreview[entIdx] = nil
+    self:CancelPendingAttach(hero)
+    self:RemoveAllTitleModifiers(hero)
+end
+
+function Title:ApplyTitle(hero, item_key, playerID, force_preview)
+    if not hero or hero:IsNull() or not item_key then
+        return
+    end
+    if not IsServer() then
+        return
+    end
+    local fx = Shop and Shop.GetTitleParticle and Shop:GetTitleParticle(item_key)
+    if not fx or fx == "" then
+        return
+    end
+    self._appliedKey = self._appliedKey or {}
+    local entIdx = hero:GetEntityIndex()
+    if not force_preview and self._appliedKey[entIdx] == item_key and hero:HasModifier(MODIFIER_TITLE) then
+        return
+    end
+
+    self:RemoveTitle(hero)
+
+    local function attach()
+        if hero:IsNull() then
+            return
+        end
+        if not force_preview and playerID and Shop and Shop.GetEquippedTitleKey then
+            local currentKey = Shop:GetEquippedTitleKey(playerID)
+            if currentKey ~= item_key then
+                return
+            end
+        end
+        Title:RemoveAllTitleModifiers(hero)
+        hero:AddNewModifier(hero, nil, MODIFIER_TITLE, {
+            title_fx = fx,
+            item_key = item_key,
+        })
+        Title._appliedKey = Title._appliedKey or {}
+        Title._appliedKey[entIdx] = item_key
+        if force_preview then
+            Title._forcePreview = Title._forcePreview or {}
+            Title._forcePreview[entIdx] = item_key
+        end
+    end
+
+    local timerName = self:AttachTimerName(hero)
+    if Timers and timerName then
+        Timers:CreateTimer(timerName, {
+            endTime = 0,
+            useGameTime = false,
+            callback = attach,
+        })
+    else
+        attach()
+    end
+end
+
+function Title:SyncPlayer(ID)
+    if not ID then
+        return
+    end
+    local hero = self:ResolveHero(ID)
+    if hero and not hero:IsNull() then
+        local entIdx = hero:GetEntityIndex()
+        if self._forcePreview and self._forcePreview[entIdx] then
+            return
+        end
+    end
+    if self:ShouldShowForPlayer(ID) then
+        local key = Shop and Shop.GetEquippedTitleKey and Shop:GetEquippedTitleKey(ID)
+        if key and hero then
+            self:ApplyTitle(hero, key, ID)
+        end
+        return
+    end
+    if hero then
+        self:RemoveTitle(hero)
+    end
+end
+
+function Title:HasPendingTitleWithoutHero()
+    local seen = {}
+    local function needs_retry(ID)
+        if seen[ID] then
+            return false
+        end
+        seen[ID] = true
+        if not self:ShouldShowForPlayer(ID) then
+            return false
+        end
+        return not self:ResolveHero(ID)
+    end
+    if PD and PD.IDs then
+        for _, ID in pairs(PD.IDs) do
+            if needs_retry(ID) then
+                return true
+            end
+        end
+    end
+    if PlayerResource then
+        for ID = 0, 23 do
+            if PlayerResource:IsValidPlayer(ID) or PlayerResource:IsValidPlayerID(ID) then
+                if needs_retry(ID) then
+                    return true
+                end
+            end
+        end
+    end
+    return false
+end
+
+function Title:SyncAll()
+    local seen = {}
+    local function try_sync(ID)
+        if seen[ID] then
+            return
+        end
+        seen[ID] = true
+        self:SyncPlayer(ID)
+    end
+    if PD and PD.IDs then
+        for _, ID in pairs(PD.IDs) do
+            try_sync(ID)
+        end
+    end
+    if PlayerResource then
+        for ID = 0, 23 do
+            if PlayerResource:IsValidPlayer(ID) or PlayerResource:IsValidPlayerID(ID) then
+                try_sync(ID)
+            end
+        end
+    end
+end
+
+function Title:ScheduleSyncRetry(_ID)
+    local name = TITLE_SYNC_RETRY_PREFIX .. "all"
+    if Timers and Timers.timers and Timers.timers[name] then
+        return
+    end
+    Timers:CreateTimer(name, {
+        endTime = TITLE_SYNC_RETRY_SEC,
+        callback = function()
+            if not Title then
+                return
+            end
+            Title:SyncAll()
+            if Title:HasPendingTitleWithoutHero() then
+                return TITLE_SYNC_RETRY_SEC
+            end
+            return nil
+        end,
+        useGameTime = false,
+    })
+end
+
+function Title:SyncFromOutBag(ID)
+    if ID then
+        self:SyncPlayer(ID)
+    else
+        self:SyncAll()
+    end
+    if self:HasPendingTitleWithoutHero() then
+        self:ScheduleSyncRetry(ID or 0)
+    end
+end

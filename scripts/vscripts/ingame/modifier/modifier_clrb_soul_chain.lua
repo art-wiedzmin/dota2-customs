@@ -8,22 +8,126 @@
 ]]
 
 
-local encoded=[[LS0g5aSp6LWLIDUg57ya6a2C77ya57O75bim55uu5qCH77yM5peg6KeG5YeP55uK5YWN55ar77yb5Y+v5q2j5bi45q2l6KGM5L2G5LiN5Y+v6Led6ZSa54K56LaFIDcwMOOAgeemgeeUqOS9jeenu+aKgOiDve+8iOWiqOWuoueJueaViO+8iQoKbW9kaWZpZXJfY2xyYl9zb3VsX2NoYWluX3ZpY3RpbSA9IGNsYXNzKHt9KQoKbG9jYWwgQ0hBSU5fUkFESVVTID0gNzAwCmxvY2FsIFRISU5LID0gMSAvIDMwCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX3NvdWxfY2hhaW5fdmljdGltOklzSGlkZGVuKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfc291bF9jaGFpbl92aWN0aW06SXNEZWJ1ZmYoKQogICAgcmV0dXJuIHRydWUKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX3NvdWxfY2hhaW5fdmljdGltOklzUHVyZ2FibGUoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9zb3VsX2NoYWluX3ZpY3RpbTpSZW1vdmVPbkRlYXRoKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9zb3VsX2NoYWluX3ZpY3RpbTpHZXRBdHRyaWJ1dGVzKCkKICAgIHJldHVybiBNT0RJRklFUl9BVFRSSUJVVEVfSUdOT1JFX0lOVlVMTkVSQUJMRQplbmQKCi0tLSDkuI4gZ3JpbXN0cm9rZV9zb3VsX2NoYWluIOS4gOiHtO+8muWPr+WvuemtlOWFjWVuZW155pa95YqgCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfc291bF9jaGFpbl92aWN0aW06R2V0TW9kaWZpZXJJZ25vcmVEZWJ1ZmZJbW11bml0eSgpCiAgICBpZiBET1RBX0FCSUxJVFlfUElFUkNFX1RZUEVfTUFHSUNfSU1NVU5FIH49IG5pbCB0aGVuCiAgICAgICAgcmV0dXJuIERPVEFfQUJJTElUWV9QSUVSQ0VfVFlQRV9NQUdJQ19JTU1VTkUKICAgIGVuZAogICAgcmV0dXJuIDEKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX3NvdWxfY2hhaW5fdmljdGltOkdldFRleHR1cmUoKQogICAgcmV0dXJuICJncmltc3Ryb2tlX3NvdWxfY2hhaW4iCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9zb3VsX2NoYWluX3ZpY3RpbTpHZXRFZmZlY3ROYW1lKCkKICAgIHJldHVybiAicGFydGljbGVzL3VuaXRzL2hlcm9lcy9oZXJvX2dyaW1zdHJva2UvZ3JpbXN0cm9rZV9zb3VsY2hhaW5fZGVidWZmLnZwY2YiCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9zb3VsX2NoYWluX3ZpY3RpbTpHZXRFZmZlY3RBdHRhY2hUeXBlKCkKICAgIHJldHVybiBQQVRUQUNIX0FCU09SSUdJTl9GT0xMT1cKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX3NvdWxfY2hhaW5fdmljdGltOk9uQ3JlYXRlZCgpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGYucGZ4X2NoYWluID0gbmlsCiAgICBzZWxmLnBmeF9tYXJrZXIgPSBuaWwKICAgIGxvY2FsIHAgPSBzZWxmOkdldFBhcmVudCgpCiAgICBsb2NhbCBjYXN0ZXIgPSBzZWxmOkdldENhc3RlcigpCiAgICBpZiBub3QgcCBvciBwOklzTnVsbCgpIG9yIG5vdCBjYXN0ZXIgb3IgY2FzdGVyOklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIHNlbGYucGZ4X2NoYWluID0gUGFydGljbGVNYW5hZ2VyOkNyZWF0ZVBhcnRpY2xlKAogICAgICAgICJwYXJ0aWNsZXMvdW5pdHMvaGVyb2VzL2hlcm9fZ3JpbXN0cm9rZS9ncmltc3Ryb2tlX3NvdWxjaGFpbi52cGNmIiwKICAgICAgICBQQVRUQUNIX0NVU1RPTU9SSUdJTiwKICAgICAgICBuaWwKICAgICkKICAgIFV0aWw6UGFydGljbGVTZXRDb250cm9sRW50SGl0bG9jT3JBYnNGb2xsb3coc2VsZi5wZnhfY2hhaW4sIDAsIGNhc3RlcikKICAgIFV0aWw6UGFydGljbGVTZXRDb250cm9sRW50SGl0bG9jT3JBYnNGb2xsb3coc2VsZi5wZnhfY2hhaW4sIDEsIHApCgogICAgc2VsZi5wZnhfbWFya2VyID0gUGFydGljbGVNYW5hZ2VyOkNyZWF0ZVBhcnRpY2xlKAogICAgICAgICJwYXJ0aWNsZXMvdW5pdHMvaGVyb2VzL2hlcm9fZ3JpbXN0cm9rZS9ncmltc3Ryb2tlX3NvdWxjaGFpbl9tYXJrZXIudnBjZiIsCiAgICAgICAgUEFUVEFDSF9BQlNPUklHSU5fRk9MTE9XLAogICAgICAgIHAKICAgICkKCiAgICBzZWxmOlN0YXJ0SW50ZXJ2YWxUaGluayhUSElOSykKICAgIHNlbGY6T25JbnRlcnZhbFRoaW5rKCkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX3NvdWxfY2hhaW5fdmljdGltOk9uRGVzdHJveSgpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIHNlbGYucGZ4X2NoYWluIHRoZW4KICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6RGVzdHJveVBhcnRpY2xlKHNlbGYucGZ4X2NoYWluLCBmYWxzZSkKICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6UmVsZWFzZVBhcnRpY2xlSW5kZXgoc2VsZi5wZnhfY2hhaW4pCiAgICAgICAgc2VsZi5wZnhfY2hhaW4gPSBuaWwKICAgIGVuZAogICAgaWYgc2VsZi5wZnhfbWFya2VyIHRoZW4KICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6RGVzdHJveVBhcnRpY2xlKHNlbGYucGZ4X21hcmtlciwgZmFsc2UpCiAgICAgICAgUGFydGljbGVNYW5hZ2VyOlJlbGVhc2VQYXJ0aWNsZUluZGV4KHNlbGYucGZ4X21hcmtlcikKICAgICAgICBzZWxmLnBmeF9tYXJrZXIgPSBuaWwKICAgIGVuZAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfc291bF9jaGFpbl92aWN0aW06T25JbnRlcnZhbFRoaW5rKCkKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgcGFyZW50ID0gc2VsZjpHZXRQYXJlbnQoKQogICAgbG9jYWwgYW5jaG9yID0gc2VsZjpHZXRDYXN0ZXIoKQogICAgaWYgbm90IHBhcmVudCBvciBwYXJlbnQ6SXNOdWxsKCkgb3Igbm90IHBhcmVudDpJc0FsaXZlKCkgdGhlbgogICAgICAgIHNlbGY6RGVzdHJveSgpCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIG5vdCBhbmNob3Igb3IgYW5jaG9yOklzTnVsbCgpIG9yIG5vdCBhbmNob3I6SXNBbGl2ZSgpIHRoZW4KICAgICAgICBzZWxmOkRlc3Ryb3koKQogICAgICAgIHJldHVybgogICAgZW5kCgogICAgbG9jYWwgdjEgPSBhbmNob3I6R2V0QWJzT3JpZ2luKCkKICAgIGxvY2FsIHYyID0gcGFyZW50OkdldEFic09yaWdpbigpCiAgICBsb2NhbCBkeCA9IHYyLnggLSB2MS54CiAgICBsb2NhbCBkeSA9IHYyLnkgLSB2MS55CiAgICBsb2NhbCBkaXN0ID0gbWF0aC5zcXJ0KGR4ICogZHggKyBkeSAqIGR5KQogICAgaWYgZGlzdCA+IENIQUlOX1JBRElVUyBhbmQgZGlzdCA+IDAuMDEgdGhlbgogICAgICAgIGxvY2FsIHNjYWxlID0gQ0hBSU5fUkFESVVTIC8gZGlzdAogICAgICAgIGxvY2FsIG54ID0gdjEueCArIGR4ICogc2NhbGUKICAgICAgICBsb2NhbCBueSA9IHYxLnkgKyBkeSAqIHNjYWxlCiAgICAgICAgbG9jYWwgbmV3cG9zID0gVmVjdG9yKG54LCBueSwgdjIueikKICAgICAgICBuZXdwb3MueiA9IEdldEdyb3VuZFBvc2l0aW9uKG5ld3BvcywgcGFyZW50KS56CiAgICAgICAgcGFyZW50OlNldEFic09yaWdpbihuZXdwb3MpCiAgICAgICAgRmluZENsZWFyU3BhY2VGb3JVbml0KHBhcmVudCwgbmV3cG9zLCB0cnVlKQogICAgZW5kCmVuZAo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 天赋 5 缚魂：系带目标，无视减益免疫；可正常步行但不可距锚点超 700、禁用位移技能（墨客特效）
+
+modifier_clrb_soul_chain_victim = class({})
+
+local CHAIN_RADIUS = 700
+local THINK = 1 / 30
+
+function modifier_clrb_soul_chain_victim:IsHidden()
+    return false
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function modifier_clrb_soul_chain_victim:IsDebuff()
+    return true
+end
+
+function modifier_clrb_soul_chain_victim:IsPurgable()
+    return false
+end
+
+function modifier_clrb_soul_chain_victim:RemoveOnDeath()
+    return true
+end
+
+function modifier_clrb_soul_chain_victim:GetAttributes()
+    return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE
+end
+
+--- 与 grimstroke_soul_chain 一致：可对魔免enemy施加
+function modifier_clrb_soul_chain_victim:GetModifierIgnoreDebuffImmunity()
+    if DOTA_ABILITY_PIERCE_TYPE_MAGIC_IMMUNE ~= nil then
+        return DOTA_ABILITY_PIERCE_TYPE_MAGIC_IMMUNE
+    end
+    return 1
+end
+
+function modifier_clrb_soul_chain_victim:GetTexture()
+    return "grimstroke_soul_chain"
+end
+
+function modifier_clrb_soul_chain_victim:GetEffectName()
+    return "particles/units/heroes/hero_grimstroke/grimstroke_soulchain_debuff.vpcf"
+end
+
+function modifier_clrb_soul_chain_victim:GetEffectAttachType()
+    return PATTACH_ABSORIGIN_FOLLOW
+end
+
+function modifier_clrb_soul_chain_victim:OnCreated()
+    if not IsServer() then
+        return
+    end
+    self.pfx_chain = nil
+    self.pfx_marker = nil
+    local p = self:GetParent()
+    local caster = self:GetCaster()
+    if not p or p:IsNull() or not caster or caster:IsNull() then
+        return
+    end
+
+    self.pfx_chain = ParticleManager:CreateParticle(
+        "particles/units/heroes/hero_grimstroke/grimstroke_soulchain.vpcf",
+        PATTACH_CUSTOMORIGIN,
+        nil
+    )
+    Util:ParticleSetControlEntHitlocOrAbsFollow(self.pfx_chain, 0, caster)
+    Util:ParticleSetControlEntHitlocOrAbsFollow(self.pfx_chain, 1, p)
+
+    self.pfx_marker = ParticleManager:CreateParticle(
+        "particles/units/heroes/hero_grimstroke/grimstroke_soulchain_marker.vpcf",
+        PATTACH_ABSORIGIN_FOLLOW,
+        p
+    )
+
+    self:StartIntervalThink(THINK)
+    self:OnIntervalThink()
+end
+
+function modifier_clrb_soul_chain_victim:OnDestroy()
+    if not IsServer() then
+        return
+    end
+    if self.pfx_chain then
+        ParticleManager:DestroyParticle(self.pfx_chain, false)
+        ParticleManager:ReleaseParticleIndex(self.pfx_chain)
+        self.pfx_chain = nil
+    end
+    if self.pfx_marker then
+        ParticleManager:DestroyParticle(self.pfx_marker, false)
+        ParticleManager:ReleaseParticleIndex(self.pfx_marker)
+        self.pfx_marker = nil
+    end
+end
+
+function modifier_clrb_soul_chain_victim:OnIntervalThink()
+    if not IsServer() then
+        return
+    end
+    local parent = self:GetParent()
+    local anchor = self:GetCaster()
+    if not parent or parent:IsNull() or not parent:IsAlive() then
+        self:Destroy()
+        return
+    end
+    if not anchor or anchor:IsNull() or not anchor:IsAlive() then
+        self:Destroy()
+        return
+    end
+
+    local v1 = anchor:GetAbsOrigin()
+    local v2 = parent:GetAbsOrigin()
+    local dx = v2.x - v1.x
+    local dy = v2.y - v1.y
+    local dist = math.sqrt(dx * dx + dy * dy)
+    if dist > CHAIN_RADIUS and dist > 0.01 then
+        local scale = CHAIN_RADIUS / dist
+        local nx = v1.x + dx * scale
+        local ny = v1.y + dy * scale
+        local newpos = Vector(nx, ny, v2.z)
+        newpos.z = GetGroundPosition(newpos, parent).z
+        parent:SetAbsOrigin(newpos)
+        FindClearSpaceForUnit(parent, newpos, true)
+    end
+end

@@ -8,22 +8,174 @@
 ]]
 
 
-local encoded=[[aWYgUGFjayA9PSBuaWwgdGhlbgogICAgUGFjayA9IGNsYXNzKHt9KQogICAgcmVxdWlyZSgiaW5nYW1lLlBhY2suQ29uZmlnIikKICAgIHJlcXVpcmUoImluZ2FtZS5QYWNrLlNldCIpCiAgICByZXF1aXJlKCJpbmdhbWUuUGFjay5HZXQiKQogICAgcmVxdWlyZSgiaW5nYW1lLlBhY2suRnVuYyIpCiAgICByZXF1aXJlKCJpbmdhbWUuUGFjay5VaSIpCmVuZAoKZnVuY3Rpb24gUGFjazpJbml0KElEKQogICAgaWYgbm90IElEIHRoZW4gcmV0dXJuIGVuZAogICAgc2VsZi5EYXRhW0lEXSA9IFV0aWw6RGVlcENvcHlUYWIoc2VsZi5UZW1wbGF0ZSkKICAgIC0tIOWIneWni+WMluiDjOWMhQogICAgbG9jYWwgc2xvdF9tYXggPSBzZWxmLlN0YXRpYy5zbG90X21heAogICAgZm9yIGkgPSAxLCBzbG90X21heCBkbwogICAgICAgIGxvY2FsIHNsb3QgPSAic2xvdF8iIC4uIGkKICAgICAgICBzZWxmLlRlYW0yW3Nsb3RdID0gVXRpbDpEZWVwQ29weVRhYihzZWxmLlNsb3RUZW1wbGF0ZSkKICAgICAgICBzZWxmLlRlYW0yW3Nsb3RdLnNsb3QgPSBpCiAgICAgICAgc2VsZi5UZWFtM1tzbG90XSA9IFV0aWw6RGVlcENvcHlUYWIoc2VsZi5TbG90VGVtcGxhdGUpCiAgICAgICAgc2VsZi5UZWFtM1tzbG90XS5zbG90ID0gaQogICAgZW5kCiAgICBsb2NhbCBoZXJvID0gVXRpbDpJRDJIZXJvKElEKQogICAgaWYgaGVybyB0aGVuCiAgICAgICAgbG9jYWwgdGVhbSA9IGhlcm86R2V0VGVhbSgpCiAgICAgICAgbG9jYWwgdGVhbV9rZXkgPSAiVGVhbSIgLi4gdGVhbQogICAgICAgIHNlbGYuRGF0YVtJRF0ucGFja190cCA9IHRlYW1fa2V5CiAgICBlbmQKZW5kCgotLSDngrnlh7vljZXkvY0KZnVuY3Rpb24gUGFjazpHZXRVbml0KElELCBkYXRhKQogICAgaWYgbm90IElEIG9yIG5vdCBkYXRhIHRoZW4gcmV0dXJuIGVuZAogICAgaWYgbm90IGRhdGEgdGhlbiByZXR1cm4gZW5kCiAgICBpZiAjZGF0YSA9PSAwIHRoZW4gcmV0dXJuIGVuZAogICAgbG9jYWwgaW5kZXggPSBkYXRhWzFdLmVudGl0eUluZGV4CiAgICBpZiBpbmRleCB0aGVuCiAgICAgICAgbG9jYWwgdW5pdCA9IEVudEluZGV4VG9IU2NyaXB0KGluZGV4KQogICAgICAgIC0tIGlmIHVuaXQ6SXNJdGVtKCkgdGhlbiByZXR1cm4gZW5kCiAgICAgICAgaWYgbm90IHVuaXQgb3IgdW5pdDpJc051bGwoKSB0aGVuIHJldHVybiBlbmQKICAgICAgICBpZiB1bml0ID09IEhlcm9EYXRhOkdldEhlcm8oSUQpIHRoZW4KICAgICAgICAgICAgU2tpbGw6T3BlbkNoYW5nZUltZyhJRCkKICAgICAgICAgICAgQm94OlNob3coSUQpCiAgICAgICAgICAgIFRhbGVudDpPcGVuVGV4dFBhZ2UoSUQpCiAgICAgICAgZWxzZQogICAgICAgICAgICBTa2lsbDpDbG9zZUNoYW5nZUltZyhJRCkKICAgICAgICAgICAgQm94OkhpZGUoSUQpCiAgICAgICAgICAgIFRhbGVudDpDbG9zZVRleHRQYWdlKElEKQogICAgICAgIGVuZAogICAgZW5kCmVuZAoKLS0g6YCJ5Lit6Iux6ZuECmZ1bmN0aW9uIFBhY2s6U2VsZWN0SGVybyhJRCwgaW5kZXgpCiAgICBsb2NhbCB1bml0ID0gRW50SW5kZXhUb0hTY3JpcHQoaW5kZXgpCiAgICBpZiBub3QgdW5pdDpJc0hlcm8oKSB0aGVuCiAgICAgICAgU2tpbGw6Q2xvc2VDaGFuZ2VJbWcoSUQpCiAgICAgICAgQm94OkhpZGUoSUQpCiAgICAgICAgVGFsZW50OkNsb3NlVGV4dFBhZ2UoSUQpCiAgICBlbHNlCiAgICAgICAgU2tpbGw6T3BlbkNoYW5nZUltZyhJRCkKICAgICAgICBCb3g6U2hvdyhJRCkKICAgICAgICBUYWxlbnQ6T3BlblRleHRQYWdlKElEKQogICAgZW5kCmVuZAoKZnVuY3Rpb24gUGFjazpHZXRJdGVtKGhlcm8sIGl0ZW1fbmFtZSkKICAgIGZvciBpID0gMCwgOSBkbwogICAgICAgIGxvY2FsIGl0ZW0gPSBoZXJvOkdldEl0ZW1JblNsb3QoaSkKICAgICAgICBpZiBpdGVtIGFuZCBpdGVtOkdldE5hbWUoKSA9PSBpdGVtX25hbWUgdGhlbiByZXR1cm4gaXRlbSBlbmQKICAgIGVuZAplbmQKCi0tIOWtmOmBk+WFtwpmdW5jdGlvbiBQYWNrOlNhdmVJdGVtKGhlcm8sIGl0ZW1fbmFtZSwgdGVhbSwgbnVtKQogICAgbG9jYWwgdGVhbV9rZXkgPSAiVGVhbSIgLi4gdGVhbQogICAgLS0g5piv5ZCm5pyJ5ZCM5ZCN6YGT5YW3CiAgICBpZiBzZWxmOklzSGF2ZUl0ZW0odGVhbSwgaXRlbV9uYW1lKSB0aGVuCiAgICAgICAgZm9yIGssIHYgaW4gcGFpcnMoc2VsZlt0ZWFtX2tleV0pIGRvCiAgICAgICAgICAgIGlmIHYuc3RhdGUgYW5kIHYuaXRlbSA9PSBpdGVtX25hbWUgdGhlbgogICAgICAgICAgICAgICAgdi5udW0gPSB2Lm51bSArIG51bQogICAgICAgICAgICAgICAgLS0g5pu05paw5YWs5YWx6IOM5YyFCiAgICAgICAgICAgICAgICBzZWxmOlNlbmRQdWJsaWNEYXRhKHRlYW0pCiAgICAgICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbHNlCiAgICAgICAgZm9yIGkgPSAxLCAyMCBkbwogICAgICAgICAgICBsb2NhbCBzbG90ID0gInNsb3RfIiAuLiBpCiAgICAgICAgICAgIGlmIFBhY2tbdGVhbV9rZXldW3Nsb3RdLnN0YXRlID09IGZhbHNlIHRoZW4KICAgICAgICAgICAgICAgIFBhY2tbdGVhbV9rZXldW3Nsb3RdLnN0YXRlID0gdHJ1ZQogICAgICAgICAgICAgICAgUGFja1t0ZWFtX2tleV1bc2xvdF0uaXRlbSA9IGl0ZW1fbmFtZQogICAgICAgICAgICAgICAgUGFja1t0ZWFtX2tleV1bc2xvdF0ubnVtID0gbnVtCiAgICAgICAgICAgICAgICBzZWxmOlNlbmRQdWJsaWNEYXRhKHRlYW0pCiAgICAgICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQKZW5kCgotLSDlj5bpgZPlhbcKZnVuY3Rpb24gUGFjazpUYWNrSXRlbShJRCwgc2xvdCkKICAgIGlmIG5vdCBJRCBvciBub3Qgc2xvdCB0aGVuIHJldHVybiBlbmQKICAgIGxvY2FsIGhlcm8gPSBVdGlsOklEMkhlcm8oSUQpCiAgICBpZiBub3QgaGVybyB0aGVuIHJldHVybiBlbmQKICAgIGxvY2FsIHRlYW0gPSBoZXJvOkdldFRlYW0oKQogICAgbG9jYWwgdGVhbV9rZXkgPSAiVGVhbSIgLi4gdGVhbQogICAgaWYgc2VsZlt0ZWFtX2tleV1bc2xvdF0uc3RhdGUgPT0gZmFsc2UgdGhlbiByZXR1cm4gZW5kCiAgICBsb2NhbCBudW0gPSBzZWxmW3RlYW1fa2V5XVtzbG90XS5udW0KICAgIGxvY2FsIGl0ZW1fbmFtZSA9IHNlbGZbdGVhbV9rZXldW3Nsb3RdLml0ZW0KICAgIGZvciBpID0gMSwgbnVtIGRvIEl0ZW06QWRkSXRlbShJRCwgaXRlbV9uYW1lKSBlbmQKCiAgICBzZWxmW3RlYW1fa2V5XVtzbG90XS5zdGF0ZSA9IGZhbHNlCiAgICBzZWxmW3RlYW1fa2V5XVtzbG90XS5pdGVtID0gIiIKICAgIHNlbGZbdGVhbV9rZXldW3Nsb3RdLm51bSA9IC0xCiAgICBzZWxmOlNlbmRQdWJsaWNEYXRhKHRlYW0pCmVuZAoKLS0g57uZ5Y2V5L2N5LiA5Liq6K6h5pe25ZmoCmZ1bmN0aW9uIFBhY2s6QXV0b1BhZ2UodW5pdCkKICAgIGlmIG5vdCB1bml0IHRoZW4gcmV0dXJuIGVuZAogICAgbG9jYWwgbmFtZSA9IHVuaXQ6R2V0VW5pdE5hbWUoKQogICAgbG9jYWwgc3QgPSB1bml0OkdldEFic09yaWdpbigpCiAgICBsb2NhbCB0ZWFtID0gMgogICAgaWYgbmFtZSA9PSAiUGFjayIgdGhlbiB0ZWFtID0gMiBlbmQKICAgIGlmIG5hbWUgPT0gIkJhZFBhY2siIHRoZW4gdGVhbSA9IDMgZW5kCiAgICBsb2NhbCBsaXN0ID0ge30KICAgIFRpbWVycygwLjUsIGZ1bmN0aW9uKCkKICAgICAgICBsb2NhbCB1bml0cyA9IHV0aWxleDpHZXRSYWRpdXNVbml0KHVuaXQsIHVuaXQ6R2V0QWJzT3JpZ2luKCksIDEwMDAsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiZ29vZCIpCiAgICAgICAgaWYgdW5pdHMgYW5kICN1bml0cyA+IDAgdGhlbgogICAgICAgICAgICBmb3IgaywgdiBpbiBwYWlycyh1bml0cykgZG8KICAgICAgICAgICAgICAgIGlmIHY6SXNIZXJvKCkgYW5kIHY6R2V0VGVhbSgpID09IHRlYW0gdGhlbgogICAgICAgICAgICAgICAgICAgIGxvY2FsIGVkID0gdjpHZXRBYnNPcmlnaW4oKQogICAgICAgICAgICAgICAgICAgIGxvY2FsIGxlbiA9IChzdCAtIGVkKTpMZW5ndGgyRCgpCiAgICAgICAgICAgICAgICAgICAgbG9jYWwgSUQgPSBVdGlsOkhlcm8ySUQodikKICAgICAgICAgICAgICAgICAgICBpZiBsZW4gPD0gNTAwIGFuZCBub3QgUGFjazpHZXRQYWdlKElEKSB0aGVuCiAgICAgICAgICAgICAgICAgICAgICAgIFBhY2s6T3BlblBhZ2UoSUQpCiAgICAgICAgICAgICAgICAgICAgICAgIGxvY2FsIGluZGV4ID0gdjpHZXRFbnRpdHlJbmRleCgpCiAgICAgICAgICAgICAgICAgICAgICAgIHRhYmxlLmluc2VydChsaXN0LCBpbmRleCkKICAgICAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgICAgICBmb3IgaywgdiBpbiBwYWlycyhsaXN0KSBkbwogICAgICAgICAgICBsb2NhbCBoZXJvID0gRW50SW5kZXhUb0hTY3JpcHQodikKICAgICAgICAgICAgaWYgaGVybyB0aGVuCiAgICAgICAgICAgICAgICBsb2NhbCBJRCA9IFV0aWw6SGVybzJJRChoZXJvKQogICAgICAgICAgICAgICAgbG9jYWwgZWQgPSBoZXJvOkdldEFic09yaWdpbigpCiAgICAgICAgICAgICAgICBsb2NhbCBsZW4gPSAoc3QgLSBlZCk6TGVuZ3RoMkQoKQogICAgICAgICAgICAgICAgaWYgbGVuID4gNTAwIGFuZCBQYWNrOkdldFBhZ2UoSUQpIHRoZW4KICAgICAgICAgICAgICAgICAgICBQYWNrOkNsb3NlUGFnZShJRCkKICAgICAgICAgICAgICAgICAgICBsaXN0W2tdID0gbmlsCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICAgICAgcmV0dXJuIDAuNQogICAgZW5kKQplbmQKCmZ1bmN0aW9uIFBhY2s6Q3JlYXRlUGFjaygpCiAgICBmb3IgaywgdiBpbiBwYWlycyhzZWxmLlN0YXRpYy5wb3MpIGRvCiAgICAgICAgbG9jYWwgbmFtZSA9IHYubmFtZQogICAgICAgIGxvY2FsIHBvcyA9IHYudmUKICAgICAgICBsb2NhbCB0dXJuID0gdi50dXJuCiAgICAgICAgbG9jYWwgdGVhbSA9IHYudGVhbQogICAgICAgIGxvY2FsIHVuaXQgPSB1dGlsZXg6Q3JlYXRlVW5pdChuYW1lLCBwb3MsIG5pbCwgdGVhbSkKICAgICAgICB1dGlsZXg6QWRkTW9kaWZpZXIodW5pdCwgIndkX25vYmFyIikKICAgICAgICB1bml0OlNldEFuZ2xlcygwLCB0dXJuLCAwKQogICAgICAgIFBhY2s6QXV0b1BhZ2UodW5pdCkKICAgIGVuZAplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if Pack == nil then
+    Pack = class({})
+    require("ingame.Pack.Config")
+    require("ingame.Pack.Set")
+    require("ingame.Pack.Get")
+    require("ingame.Pack.Func")
+    require("ingame.Pack.Ui")
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function Pack:Init(ID)
+    if not ID then return end
+    self.Data[ID] = Util:DeepCopyTab(self.Template)
+    -- 初始化背包
+    local slot_max = self.Static.slot_max
+    for i = 1, slot_max do
+        local slot = "slot_" .. i
+        self.Team2[slot] = Util:DeepCopyTab(self.SlotTemplate)
+        self.Team2[slot].slot = i
+        self.Team3[slot] = Util:DeepCopyTab(self.SlotTemplate)
+        self.Team3[slot].slot = i
+    end
+    local hero = Util:ID2Hero(ID)
+    if hero then
+        local team = hero:GetTeam()
+        local team_key = "Team" .. team
+        self.Data[ID].pack_tp = team_key
+    end
+end
+
+-- 点击单位
+function Pack:GetUnit(ID, data)
+    if not ID or not data then return end
+    if not data then return end
+    if #data == 0 then return end
+    local index = data[1].entityIndex
+    if index then
+        local unit = EntIndexToHScript(index)
+        -- if unit:IsItem() then return end
+        if not unit or unit:IsNull() then return end
+        if unit == HeroData:GetHero(ID) then
+            Skill:OpenChangeImg(ID)
+            Box:Show(ID)
+            Talent:OpenTextPage(ID)
+        else
+            Skill:CloseChangeImg(ID)
+            Box:Hide(ID)
+            Talent:CloseTextPage(ID)
+        end
+    end
+end
+
+-- 选中英雄
+function Pack:SelectHero(ID, index)
+    local unit = EntIndexToHScript(index)
+    if not unit:IsHero() then
+        Skill:CloseChangeImg(ID)
+        Box:Hide(ID)
+        Talent:CloseTextPage(ID)
+    else
+        Skill:OpenChangeImg(ID)
+        Box:Show(ID)
+        Talent:OpenTextPage(ID)
+    end
+end
+
+function Pack:GetItem(hero, item_name)
+    for i = 0, 9 do
+        local item = hero:GetItemInSlot(i)
+        if item and item:GetName() == item_name then return item end
+    end
+end
+
+-- 存道具
+function Pack:SaveItem(hero, item_name, team, num)
+    local team_key = "Team" .. team
+    -- 是否有同名道具
+    if self:IsHaveItem(team, item_name) then
+        for k, v in pairs(self[team_key]) do
+            if v.state and v.item == item_name then
+                v.num = v.num + num
+                -- 更新公共背包
+                self:SendPublicData(team)
+                return
+            end
+        end
+    else
+        for i = 1, 20 do
+            local slot = "slot_" .. i
+            if Pack[team_key][slot].state == false then
+                Pack[team_key][slot].state = true
+                Pack[team_key][slot].item = item_name
+                Pack[team_key][slot].num = num
+                self:SendPublicData(team)
+                return
+            end
+        end
+    end
+end
+
+-- 取道具
+function Pack:TackItem(ID, slot)
+    if not ID or not slot then return end
+    local hero = Util:ID2Hero(ID)
+    if not hero then return end
+    local team = hero:GetTeam()
+    local team_key = "Team" .. team
+    if self[team_key][slot].state == false then return end
+    local num = self[team_key][slot].num
+    local item_name = self[team_key][slot].item
+    for i = 1, num do Item:AddItem(ID, item_name) end
+
+    self[team_key][slot].state = false
+    self[team_key][slot].item = ""
+    self[team_key][slot].num = -1
+    self:SendPublicData(team)
+end
+
+-- 给单位一个计时器
+function Pack:AutoPage(unit)
+    if not unit then return end
+    local name = unit:GetUnitName()
+    local st = unit:GetAbsOrigin()
+    local team = 2
+    if name == "Pack" then team = 2 end
+    if name == "BadPack" then team = 3 end
+    local list = {}
+    Timers(0.5, function()
+        local units = utilex:GetRadiusUnit(unit, unit:GetAbsOrigin(), 1000,
+                                           "good")
+        if units and #units > 0 then
+            for k, v in pairs(units) do
+                if v:IsHero() and v:GetTeam() == team then
+                    local ed = v:GetAbsOrigin()
+                    local len = (st - ed):Length2D()
+                    local ID = Util:Hero2ID(v)
+                    if len <= 500 and not Pack:GetPage(ID) then
+                        Pack:OpenPage(ID)
+                        local index = v:GetEntityIndex()
+                        table.insert(list, index)
+                    end
+                end
+            end
+        end
+        for k, v in pairs(list) do
+            local hero = EntIndexToHScript(v)
+            if hero then
+                local ID = Util:Hero2ID(hero)
+                local ed = hero:GetAbsOrigin()
+                local len = (st - ed):Length2D()
+                if len > 500 and Pack:GetPage(ID) then
+                    Pack:ClosePage(ID)
+                    list[k] = nil
+                end
+            end
+        end
+        return 0.5
+    end)
+end
+
+function Pack:CreatePack()
+    for k, v in pairs(self.Static.pos) do
+        local name = v.name
+        local pos = v.ve
+        local turn = v.turn
+        local team = v.team
+        local unit = utilex:CreateUnit(name, pos, nil, team)
+        utilex:AddModifier(unit, "wd_nobar")
+        unit:SetAngles(0, turn, 0)
+        Pack:AutoPage(unit)
+    end
+end

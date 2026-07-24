@@ -8,22 +8,130 @@
 ]]
 
 
-local encoded=[[U3RhdC5EYXRhID0ge30KLS3lt6bkvqforqHliIbmnb8KU3RhdC5UZW1wbGF0ZSA9IHsKICAgIC0t6K6h5YiG5p2/6aG16Z2i5byA5YWzCiAgICBwYWdlID0gZmFsc2UsCiAgICAtLeiuoeWIhuadv+WIl+ihqAogICAgbGlzdCA9IHt9Cn0KLS3pobbpg6jlhazlhbHliJfooagKU3RhdC5QdWJsaWMgPSB7CiAgICAtLeaYr+WQpuWKqOaAgeWPmOWMluaOkuWQjQogICAgY2hhbmdlID0gZmFsc2UsCiAgICAtLeaVtOS9k+mhtemdouaYvuekugogICAgcGFnZSA9IGZhbHNlLAogICAgLS3nm67moIfkurrlpLTmlbAKICAgIGtpbGxfdGFyZ2V0ID0gMTQwLAogICAgLS3pmJ/kvI3liJfooagKICAgIGxpc3QgPSB7fQp9ClN0YXQuU2xvdFRlbXBsYXRlID0gewogICAgLS3mp73kvY3ntKLlvJUo55u45b2T5LqO5Lmf5piv5o6S5ZCN5L2N572uKQogICAgc2xvdCA9IC0xLAogICAgLS3pmJ/kvI3ntKLlvJUKICAgIHRlYW0gPSAtMSwKICAgIC0t5piv5ZCm5pi+56S66Zif5LyNCiAgICBzdGF0ZSA9IGZhbHNlLAogICAgLS3mjpLlkI3vvIjlj6rmnIkxdjHmiY3pnIDopoHov5nkuKrvvIkKICAgIHJhbmsgPSAwLAogICAgLS3pmJ/kvI3lh7vmnYDmlbDph48KICAgIGtpbGwgPSAwLAogICAgLS3pmJ/kvI3njqnlrrbliJfooagKICAgIGxpc3QgPSB7fQp9Ci0t6aG26YOo6K6h5YiG5p2/546p5a625pWw5o2uClN0YXQuUGxheWVyVGVtcGxhdGUgPSB7CiAgICAtLeaYr+WQpuacieaViAogICAgc3RhdGUgPSBmYWxzZSwKICAgIC0t546p5a62SUQKICAgIGlkID0gLTEsCiAgICAtLeeOqeWutumYn+S8jQogICAgdGVhbSA9IC0xLAogICAgLS3njqnlrrbmuLjmiI/lhoXkvY3nva4KICAgIGdpZCA9IC0xLAogICAgLS3njqnlrrboi7Hpm4QKICAgIGhlcm8gPSAiIiwKICAgIC0t6Iux6ZuE5piv5ZCm5a2Y6LSnCiAgICBhbGl2ZSA9IHRydWUsCiAgICAtLeWkjea0u+aXtumXtAogICAgdGltZSA9IC0xLAogICAgLS3mmK/lkKblnKjnur8KICAgIG9ubGluZSA9IHRydWUsCn0KU3RhdC5SYW5rTGlzdCA9IHsKICAgIC0t5piv5ZCm6IO95pu05pawCiAgICB1cGRhdGEgPSB0cnVlLAogICAgbGlzdCA9IHt9Cn0KLS3njqnlrrborqHliIbmnb/or6bnu4bmlbDmja4KU3RhdC5QbGF5ZXJEZXRhaWwgPSB7CiAgICAtLeaYr+WQpuS4uuepugogICAgc3RhdGUgPSBmYWxzZSwKICAgIC0t5o6S5ZCNCiAgICByYW5rID0gLTEsCiAgICAtLea4uOaIj+WGhUlECiAgICBpZCA9IC0xLAogICAgLS3njqnlrrZzdGVhbWlkKOiOt+WPluWktOWDjykKICAgIHBpZCA9IC0xLAoKICAgIC0t6Zif5LyNCiAgICB0ZWFtID0gLTEsCiAgICAtLeiLsembhAogICAgaGVybyA9ICIiLAogICAgLS3kuJPlsZ7mrablmagKICAgIHdlYXBvbiA9ICIiLAogICAgLS3nrYnnuqcKICAgIGxldmVsID0gMSwKICAgIC0t6YeR5biBCiAgICBnb2xkID0gNTAwLAogICAgLS3mmJ/mmJ/mlbDph48KICAgIHN0YXIgPSAzLAogICAgLS3lh7vmnYAKICAgIGtpbGwgPSAwLAogICAgLS3mrbvkuqEKICAgIGRlYXRoID0gMCwKICAgIC0t5Yqp5pS7CiAgICBhc3NpdCA9IDAsCiAgICAtLeaKgOiDvQogICAgc2tpbGwgPSB7fSwKfQotLeaKgOiDveanveaooeadvwpTdGF0LlNraWxsVGVtcGxhdGUgPSB7CiAgICAtLeanvee0ouW8lQogICAgc2xvdCA9IC0xLAogICAgLS3mmK/lkKbkuLrnqboKICAgIHN0YXRlID0gZmFsc2UsCiAgICAtLeaKgOiDveWQjeWtlwogICAgbmFtZSA9ICIiCn0KU3RhdC5TdGF0aWMgPSB7CiAgICAtLSDpobbmoI8gVUlfVG9wU3RhdO+8mjEwIOWIhumSn+WJjemZjemikS/nvKnljIXvvIjlh4/ovbvkuJPnlKjmnI3luo/liJfljJbljovlipvvvIkKICAgIHRvcF9zdGF0X2Vhcmx5X2N1dG9mZl9zZWMgPSA2MDAsCiAgICB0b3Bfc3RhdF9lYXJseV9pbnRlcnZhbCA9IDEsCiAgICB0b3Bfc3RhdF9wcmVfcmluZ19pbnRlcnZhbCA9IDAuNiwKICAgIC0tIDF2MSAvIGJlaWRvbmfvvJrlh7vmnYDmm7Tlr4bvvIzpobbmoI/lj6/nlaXmlL7lrr3vvIjku4UgZ2FtZV90eXBlPT0yIOeUn+aViO+8iQogICAgdG9wX3N0YXRfMXYxX2Vhcmx5X2ludGVydmFsID0gMS41LAogICAgdG9wX3N0YXRfMXYxX3ByZV9yaW5nX2ludGVydmFsID0gMC44LAogICAgLS3pmJ/kvI3mlbDph48KICAgIHRlYW1fbnVtID0gewogICAgICAgIHJhbmtfNXY1ID0gMiwKICAgICAgICByYW5rXzN4NCA9IDQsCiAgICAgICAgcmFua18xdjEgPSAxMCwKICAgICAgICBiZWlkb25nID0gMTAsCiAgICB9LAogICAgLS3pmJ/kvI3ntKLlvJUKICAgIHRlYW1faW5kZXggPSB7CiAgICAgICAgdGVhbV8yID0gMSwKICAgICAgICB0ZWFtXzMgPSAyLAogICAgICAgIHRlYW1fNiA9IDMsCiAgICAgICAgdGVhbV83ID0gNCwKICAgICAgICB0ZWFtXzggPSA1LAogICAgICAgIHRlYW1fOSA9IDYsCiAgICAgICAgdGVhbV8xMCA9IDcsCiAgICAgICAgdGVhbV8xMSA9IDgsCiAgICAgICAgdGVhbV8xMiA9IDksCiAgICAgICAgdGVhbV8xMyA9IDEwLAogICAgfQp9Cg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
-end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+Stat.Data = {}
+--左侧计分板
+Stat.Template = {
+    --计分板页面开关
+    page = false,
+    --计分板列表
+    list = {}
+}
+--顶部公共列表
+Stat.Public = {
+    --是否动态变化排名
+    change = false,
+    --整体页面显示
+    page = false,
+    --目标人头数
+    kill_target = 140,
+    --队伍列表
+    list = {}
+}
+Stat.SlotTemplate = {
+    --槽位索引(相当于也是排名位置)
+    slot = -1,
+    --队伍索引
+    team = -1,
+    --是否显示队伍
+    state = false,
+    --排名（只有1v1才需要这个）
+    rank = 0,
+    --队伍击杀数量
+    kill = 0,
+    --队伍玩家列表
+    list = {}
+}
+--顶部计分板玩家数据
+Stat.PlayerTemplate = {
+    --是否有效
+    state = false,
+    --玩家ID
+    id = -1,
+    --玩家队伍
+    team = -1,
+    --玩家游戏内位置
+    gid = -1,
+    --玩家英雄
+    hero = "",
+    --英雄是否存货
+    alive = true,
+    --复活时间
+    time = -1,
+    --是否在线
+    online = true,
+}
+Stat.RankList = {
+    --是否能更新
+    updata = true,
+    list = {}
+}
+--玩家计分板详细数据
+Stat.PlayerDetail = {
+    --是否为空
+    state = false,
+    --排名
+    rank = -1,
+    --游戏内ID
+    id = -1,
+    --玩家steamid(获取头像)
+    pid = -1,
+
+    --队伍
+    team = -1,
+    --英雄
+    hero = "",
+    --专属武器
+    weapon = "",
+    --等级
+    level = 1,
+    --金币
+    gold = 500,
+    --星星数量
+    star = 3,
+    --击杀
+    kill = 0,
+    --死亡
+    death = 0,
+    --助攻
+    assit = 0,
+    --技能
+    skill = {},
+}
+--技能槽模板
+Stat.SkillTemplate = {
+    --槽索引
+    slot = -1,
+    --是否为空
+    state = false,
+    --技能名字
+    name = ""
+}
+Stat.Static = {
+    -- 顶栏 UI_TopStat：10 分钟前降频/缩包（减轻专用服序列化压力）
+    top_stat_early_cutoff_sec = 600,
+    top_stat_early_interval = 1,
+    top_stat_pre_ring_interval = 0.6,
+    -- 1v1 / beidong：击杀更密，顶栏可略放宽（仅 game_type==2 生效）
+    top_stat_1v1_early_interval = 1.5,
+    top_stat_1v1_pre_ring_interval = 0.8,
+    --队伍数量
+    team_num = {
+        rank_5v5 = 2,
+        rank_3x4 = 4,
+        rank_1v1 = 10,
+        beidong = 10,
+    },
+    --队伍索引
+    team_index = {
+        team_2 = 1,
+        team_3 = 2,
+        team_6 = 3,
+        team_7 = 4,
+        team_8 = 5,
+        team_9 = 6,
+        team_10 = 7,
+        team_11 = 8,
+        team_12 = 9,
+        team_13 = 10,
+    }
+}

@@ -8,22 +8,76 @@
 ]]
 
 
-local encoded=[[ZnVuY3Rpb24gUmFuazpHZXRVSURhdGEoSUQsIGRhdGEpCiAgICBpZiBub3QgSUQgb3Igbm90IGRhdGEgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBHYW1lUnVsZXM6SXNHYW1lUGF1c2VkKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBkYXRhLnRwID09ICJpbml0IiB0aGVuCiAgICAgICAgc2VsZjpTZW5kRGF0YShJRCkKICAgIGVuZAogICAgaWYgZGF0YS50cCA9PSAiT3BlblBhZ2UiIHRoZW4KICAgICAgICBsb2NhbCB0ID0gdG9udW1iZXIoZGF0YS50YXNrX3BhZ2UpCiAgICAgICAgaWYgdCA9PSAxIG9yIHQgPT0gMiB0aGVuCiAgICAgICAgICAgIHNlbGYuRGF0YVtJRF0udGFza19wYWdlX2hpbnQgPSB0CiAgICAgICAgZWxzZQogICAgICAgICAgICBzZWxmLkRhdGFbSURdLnRhc2tfcGFnZV9oaW50ID0gbmlsCiAgICAgICAgZW5kCiAgICAgICAgc2VsZjpPcGVuUGFnZShJRCkKICAgIGVuZAogICAgaWYgZGF0YS50cCA9PSAiQ2xvc2VQYWdlIiB0aGVuCiAgICAgICAgc2VsZjpDbG9zZVBhZ2UoSUQpCiAgICBlbmQKICAgIC0tIOWIh+aNoiAxdjEgLyDkurrmnLrnq57pgJ/vvIg1djUg57uE6Zif5qac5bey5YGc55So77yJCiAgICBpZiBkYXRhLnRwID09ICJTd2l0Y2hNb2RlIiBhbmQgKGRhdGEubW9kZSA9PSAiMXYxIiBvciBkYXRhLm1vZGUgPT0gImJvdF8xdjEiKSB0aGVuCiAgICAgICAgc2VsZi5EYXRhW0lEXS52aWV3X21vZGUgPSBkYXRhLm1vZGUKICAgICAgICBzZWxmOlNlbmREYXRhKElEKQogICAgZW5kCiAgICAtLSDliIfmjaLlvZPliY3otZvlraMgLyDljoblj7LotZvlraMKICAgIGlmIGRhdGEudHAgPT0gIlN3aXRjaFNlYXNvbiIgdGhlbgogICAgICAgIGlmIGRhdGEudmlldyA9PSAiaGlzdG9yeSIgYW5kIGRhdGEuc2Vhc29uIGFuZCBkYXRhLnNlYXNvbiB+PSAiIiB0aGVuCiAgICAgICAgICAgIHNlbGY6TG9hZFNlYXNvbkhpc3RvcnkoZGF0YS5zZWFzb24pCiAgICAgICAgZWxzZQogICAgICAgICAgICBzZWxmOlN3aXRjaFRvTGl2ZVZpZXcoSUQpCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGlmIGRhdGEudHAgPT0gIlJlZnJlc2hTZWFzb25MaXN0IiB0aGVuCiAgICAgICAgc2VsZi5QdWJsaWMuc2Vhc29uc19sb2FkZWQgPSBmYWxzZQogICAgICAgIHNlbGY6TG9hZFNlYXNvbkxpc3QoKQogICAgZW5kCmVuZAoKLS0g57uZ5YmN56uv5Y+R5pWw5o2u77yI5o6S6KGM5qac55SxIFRhc2sg6Z2i5p2/5bGV56S677yM5LqL5Lu25ZCN5LuN5Li6IFVJX1JhbmvvvIkKZnVuY3Rpb24gUmFuazpTZW5kRGF0YShJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIHZtID0gc2VsZi5EYXRhW0lEXS52aWV3X21vZGUgb3IgIjF2MSIKICAgIGxvY2FsIGxpc3RfY3VyID0gc2VsZi5EYXRhW0lEXS5saXN0XzV2NSBvciBzZWxmLkRhdGFbSURdLmxpc3Qgb3Ige30KICAgIGlmIHZtID09ICIxdjEiIHRoZW4KICAgICAgICBsaXN0X2N1ciA9IHNlbGYuRGF0YVtJRF0ubGlzdF8xdjEgb3Ige30KICAgIGVsc2VpZiB2bSA9PSAiYm90XzF2MSIgdGhlbgogICAgICAgIGxpc3RfY3VyID0gc2VsZi5EYXRhW0lEXS5saXN0X2JvdF8xdjEgb3Ige30KICAgIGVuZAogICAgbG9jYWwgaGludCA9IHNlbGYuRGF0YVtJRF0udGFza19wYWdlX2hpbnQKICAgIGlmIGhpbnQgfj0gbmlsIHRoZW4KICAgICAgICBzZWxmLkRhdGFbSURdLnRhc2tfcGFnZV9oaW50ID0gbmlsCiAgICBlbmQKICAgIGxvY2FsIHBheWxvYWQgPSB7CiAgICAgICAgcGFnZSA9IHNlbGYuRGF0YVtJRF0ucGFnZSwKICAgICAgICB2aWV3X21vZGUgPSB2bSwKICAgICAgICByYW5rX3ZpZXcgPSBzZWxmLkRhdGFbSURdLnJhbmtfdmlldyBvciAibGl2ZSIsCiAgICAgICAgaGlzdG9yeV9zZWFzb24gPSBzZWxmLkRhdGFbSURdLmhpc3Rvcnlfc2Vhc29uIG9yICIiLAogICAgICAgIHNlYXNvbnMgPSBzZWxmLkRhdGFbSURdLnNlYXNvbnMgb3Ige30sCiAgICAgICAgY3VycmVudF9zZWFzb25fbGFiZWwgPSBzZWxmLkRhdGFbSURdLmN1cnJlbnRfc2Vhc29uX2xhYmVsIG9yICJTMCIsCiAgICAgICAgbGlzdF81djUgPSBzZWxmLkRhdGFbSURdLmxpc3RfNXY1IG9yIHt9LAogICAgICAgIGxpc3RfMXYxID0gc2VsZi5EYXRhW0lEXS5saXN0XzF2MSBvciB7fSwKICAgICAgICBsaXN0X2JvdF8xdjEgPSBzZWxmLkRhdGFbSURdLmxpc3RfYm90XzF2MSBvciB7fSwKICAgICAgICBsaXN0ID0gbGlzdF9jdXIsCiAgICAgICAgZGF0YSA9IHNlbGYuRGF0YVtJRF0uZGF0YSwKICAgICAgICB0YXNrX3BhZ2UgPSBoaW50LAogICAgfQogICAgVXRpbDpTZW5kMkpzSUQoIlVJX1JhbmsiLCBwYXlsb2FkLCBJRCkKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+function Rank:GetUIData(ID, data)
+    if not ID or not data then
+        return
+    end
+    if GameRules:IsGamePaused() then
+        return
+    end
+    if data.tp == "init" then
+        self:SendData(ID)
+    end
+    if data.tp == "OpenPage" then
+        local t = tonumber(data.task_page)
+        if t == 1 or t == 2 then
+            self.Data[ID].task_page_hint = t
+        else
+            self.Data[ID].task_page_hint = nil
+        end
+        self:OpenPage(ID)
+    end
+    if data.tp == "ClosePage" then
+        self:ClosePage(ID)
+    end
+    -- 切换 1v1 / 人机竞速（5v5 组队榜已停用）
+    if data.tp == "SwitchMode" and (data.mode == "1v1" or data.mode == "bot_1v1") then
+        self.Data[ID].view_mode = data.mode
+        self:SendData(ID)
+    end
+    -- 切换当前赛季 / 历史赛季
+    if data.tp == "SwitchSeason" then
+        if data.view == "history" and data.season and data.season ~= "" then
+            self:LoadSeasonHistory(data.season)
+        else
+            self:SwitchToLiveView(ID)
+        end
+    end
+    if data.tp == "RefreshSeasonList" then
+        self.Public.seasons_loaded = false
+        self:LoadSeasonList()
+    end
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+-- 给前端发数据（排行榜由 Task 面板展示，事件名仍为 UI_Rank）
+function Rank:SendData(ID)
+    if not ID then
+        return
+    end
+    local vm = self.Data[ID].view_mode or "1v1"
+    local list_cur = self.Data[ID].list_5v5 or self.Data[ID].list or {}
+    if vm == "1v1" then
+        list_cur = self.Data[ID].list_1v1 or {}
+    elseif vm == "bot_1v1" then
+        list_cur = self.Data[ID].list_bot_1v1 or {}
+    end
+    local hint = self.Data[ID].task_page_hint
+    if hint ~= nil then
+        self.Data[ID].task_page_hint = nil
+    end
+    local payload = {
+        page = self.Data[ID].page,
+        view_mode = vm,
+        rank_view = self.Data[ID].rank_view or "live",
+        history_season = self.Data[ID].history_season or "",
+        seasons = self.Data[ID].seasons or {},
+        current_season_label = self.Data[ID].current_season_label or "S0",
+        list_5v5 = self.Data[ID].list_5v5 or {},
+        list_1v1 = self.Data[ID].list_1v1 or {},
+        list_bot_1v1 = self.Data[ID].list_bot_1v1 or {},
+        list = list_cur,
+        data = self.Data[ID].data,
+        task_page = hint,
+    }
+    Util:Send2JsID("UI_Rank", payload, ID)
+end

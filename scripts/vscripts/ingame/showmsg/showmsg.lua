@@ -8,22 +8,261 @@
 ]]
 
 
-local encoded=[[aWYgU2hvd01zZyA9PSBuaWwgdGhlbgogICAgU2hvd01zZyA9IGNsYXNzKHt9KQplbmQKcmVxdWlyZSgiaW5nYW1lLlNob3dNc2cuQ29uZmlnIikKLS3popzoibIKU2hvd01zZy5Db2xvciA9IHsKICAgIC0t54mp55CGCiAgICBQaHlzaWNhbCA9IFZlY3Rvcig5NiwgOTYsIDk2KSwKICAgIC0t6a2U5rOVCiAgICBNYWdpY2FsID0gVmVjdG9yKDAsIDEwMiwgMjU1KSwKICAgIC0t57qv57K5CiAgICBQdXJlID0gVmVjdG9yKDE4NCwgMjI2LCAyMjYpLAogICAgLS3niannkIbmmrTlh7sKICAgIFBoeUNyaXQgPSBWZWN0b3IoMjU1LCA1MSwgMCksCiAgICAtLemtlOazleaatOWHuwogICAgTWFnQ3JpdCA9IFZlY3RvcigwLCAwLCAxMDIpLAogICAgLS3lm57ooYAKICAgIEhlYWwgPSBWZWN0b3IoNTEsIDIwNCwgNTEpLAogICAgLS3ph5HoibIKICAgIHB1bmNoID0gVmVjdG9yKDI1NSwgMjM0LCAwKQp9CgotLeeJueaViOaWh+S7tgpTaG93TXNnLkZ4RmlsZSA9IHsKICAgICJwYXJ0aWNsZXMvbXNnX2Z4L21zZ19kYW1hZ2UudnBjZiIsICAgICAgICAgICAgICAgICAgLS0xCiAgICAicGFydGljbGVzL21zZ19meC9tc2dfY291bnRkb3duLnZwY2YiLCAgICAgICAgICAgICAgIC0tMgogICAgInBhcnRpY2xlcy9tc2dfZngvbXNnX2NyaXRfZGFtYWdlLnZwY2YiLCAgICAgICAgICAgICAtLTMKICAgICJwYXJ0aWNsZXMvbXNnX2Z4L21zZ19kYW1hZ2UudnBjZiIsICAgICAgICAgICAgICAgICAgLS00CiAgICAicGFydGljbGVzL21zZ19meC9tc2dfZGFtYWdlXzIudnBjZiIsICAgICAgICAgICAgICAgIC0tNQogICAgInBhcnRpY2xlcy9tc2dfZngvbXNnX2RhbWFnZV8zLnZwY2YiLCAgICAgICAgICAgICAgICAtLTYKICAgICJwYXJ0aWNsZXMvbXNnX2Z4L21zZ19kYW1hZ2VfNC52cGNmIiwgICAgICAgICAgICAgICAgLS03CiAgICAicGFydGljbGVzL21zZ19meC9tc2dfZGFtYWdlX2hlcm8udnBjZiIsICAgICAgICAgICAgIC0tOAogICAgInBhcnRpY2xlcy9tc2dfZngvbXNnX2RhbWFnZV9udW1iZXJzXzMudnBjZiIsICAgICAgICAtLTkKICAgICJwYXJ0aWNsZXMvbXNnX2Z4L21zZ19kYW1hZ2Vfc2xlLnZwY2YiLCAgICAgICAgICAgICAgLS0xMAogICAgInBhcnRpY2xlcy9tc2dfZngvbXNnX2luZmluaXR5LnZwY2YiLCAgICAgICAgICAgICAgICAtLTExCiAgICAicGFydGljbGVzL21zZ19meC9vdGhlci9tc2dfY291bnRkb3duLnZwY2YiLCAgICAgICAgIC0tMTIKICAgICJwYXJ0aWNsZXMvbXNnX2Z4L290aGVyL21zZ19jcml0X2RhbWFnZS52cGNmIiwgICAgICAgLS0xMwogICAgInBhcnRpY2xlcy9tc2dfZngvb3RoZXIvbXNnX2RhbWFnZS52cGNmIiwgICAgICAgICAgICAtLTE0CiAgICAicGFydGljbGVzL21zZ19meC9vdGhlci9tc2dfZGFtYWdlX2hlcm8udnBjZiIsICAgICAgIC0tMTUKICAgICJwYXJ0aWNsZXMvbXNnX2Z4L290aGVyL21zZ19kYW1hZ2Vfb3RoZXIudnBjZiIsICAgICAgLS0xNgogICAgInBhcnRpY2xlcy9tc2dfZngvb3RoZXIvbXNnX2RhbWFnZV9zbGUudnBjZiIsICAgICAgICAtLTE3CiAgICAicGFydGljbGVzL21zZ19meC9tc2dfZXZhZGUudnBjZiIsICAgICAgICAgICAgICAgICAgIC0tMTgKICAgICJwYXJ0aWNsZXMvbXNnX2Z4L21zZ19oZWFsLnZwY2YiLCAgICAgICAgICAgICAgICAgICAgLS0xOSAtLem7mOiupOS8pOWus+exu+WeiwogICAgInBhcnRpY2xlcy9tc2dfZngvbXNnX2RhbWFnZV9udW1iZXJzX291dGdvaW5nLnZwY2YiLCAtLTIwIOmtlOazleS8pOWuswogICAgInBhcnRpY2xlcy9tc2dfZngvbXNnX2NyaXQudnBjZiIsICAgICAgICAgICAgICAgICAgICAtLTIxIOmtlOazleaatOWHuwogICAgInBhcnRpY2xlcy9tc2dfZngvbXNnX2RhbWFnZV9udW1iZXJzX291dGdvaW5nLnZwY2YiLCAtLTIyICDniannkIbkvKTlrrMKICAgICJwYXJ0aWNsZXMvbXNnX2Z4L21zZ19jcml0LnZwY2YiLCAgICAgICAgICAgICAgICAgICAgLS0yMyAg54mp55CG5pq05Ye7Cn0KCi0t6buY6K6k5L2/55So56ysMeS4queJueaViOaWh+S7tgpTaG93TXNnLkRlZmF1bHRGeEluZGV4ID0gMTkKLS3pu5jorqTmmL7npLrlrZfkvZPlpKflsI8KU2hvd01zZy5EZWZhdWx0U2l6ZSA9IDMKLS3pu5jorqTkvY3nva4g5aSH6YCJUEFUVEFDSF9DRU5URVJfRk9MTE9XClNob3dNc2cuRGVmYXVsdEF0dGFjaCA9IFBBVFRBQ0hfT1ZFUkhFQURfRk9MTE9XCi0t6buY6K6k5YGP56e7ClNob3dNc2cuRGVmYXVsdE9mZnNldCA9IFZlY3RvcigwLCAwLCAzMDApCi0t6buY6K6k5YmN57yAClNob3dNc2cuRGVmYXVsdEhlYWQgPSAxCi0t6buY6K6k5ZCO57yAClNob3dNc2cuRGVmYXVsdFRhaWwgPSAwCi0t6buY6K6k5oyB57ut5pe26Ze0ClNob3dNc2cuRGVmYXVsdER1cmF0aW9uID0gMgotLeaYr+WQpuaYvuekuuWJjee8gApTaG93TXNnLlNob3dIZWFkID0gdHJ1ZQoKLS3pgInmi6nkuIDkuKrnibnmlYgKZnVuY3Rpb24gU2hvd01zZzpHZXRGeEZpbGUoaW5kZXgpCiAgICBpZiBub3QgaW5kZXggdGhlbgogICAgICAgIGluZGV4ID0gU2hvd01zZy5EZWZhdWx0RnhJbmRleAogICAgZW5kCiAgICByZXR1cm4gU2hvd01zZy5GeEZpbGVbaW5kZXhdCmVuZAoKZnVuY3Rpb24gU2hvd01zZzpUZWFtTXNnKHRhYikKICAgIGxvY2FsIGF0ID0gdGFiLmF0CiAgICBpZiBub3QgYXQgdGhlbiByZXR1cm4gZW5kCiAgICBpZiBhdDpJc051bGwoKSB0aGVuIHJldHVybiBlbmQKICAgIGxvY2FsIHRlYW0gPSBhdDpHZXRUZWFtTnVtYmVyKCkKICAgIGlmIG5vdCB0ZWFtIHRoZW4gcmV0dXJuIGVuZAogICAgbG9jYWwgdGEgPSB0YWIudGEKICAgIGlmIG5vdCB0YSB0aGVuIHJldHVybiBlbmQKICAgIGlmIHRhOklzTnVsbCgpIHRoZW4gcmV0dXJuIGVuZAogICAgaWYgYXQ6SXNJbGx1c2lvbigpIHRoZW4KICAgICAgICBhdCA9IGF0OkdldE93bmVyKCkKICAgIGVuZAogICAgbG9jYWwgSUQgPSBhdC5Pd25lcklEIG9yIFV0aWw6SGVybzJJRChhdCkKICAgIGlmIG5vdCBJRCB0aGVuIHJldHVybiBlbmQKCiAgICAtLeWtmOWCqOeJueaViOaOp+WItueCueaVsOaNrgogICAgbG9jYWwgdHRhYiA9IHt9IC0t5oC76KGoCiAgICBsb2NhbCBwdGFiID0ge30gLS3ljZXkuKrmjqfliLbngrnlrZjlgqjooagKCiAgICAtLeeJueaViHN0cmluZwogICAgbG9jYWwgRnhGaWxlID0gc2VsZjpHZXRGeEZpbGUodGFiLmluZGV4KQogICAgLS3liJvlu7oKICAgIC0tICAgbG9jYWwgZng9UGFydGljbGVNYW5hZ2VyOkNyZWF0ZVBhcnRpY2xlRm9yVGVhbShGeEZpbGUsUEFUVEFDSF9DVVNUT01PUklHSU4sbmlsLHRlYW0pCiAgICAtLemZhOedgOS9jee9rgogICAgbG9jYWwgYXR0YWNoID0gdGFiLmF0dGFjaCBvciBTaG93TXNnLkRlZmF1bHRBdHRhY2gKICAgIC0t5Z2Q5qCHK+WBj+enuwogICAgbG9jYWwgcG9zID0gdGE6R2V0QWJzT3JpZ2luKCkgKyAodGFiLm9mZnNldCBvciBTaG93TXNnLkRlZmF1bHRPZmZzZXQpCgogICAgLS3kvY3nva7orr7nva4KICAgIC0tICAgUGFydGljbGVNYW5hZ2VyOlNldFBhcnRpY2xlQ29udHJvbEVudChmeCwwLHRhLGF0dGFjaCxuaWwscG9zLHRydWUpCiAgICBwdGFiLmluZGV4ID0gMAogICAgcHRhYi5pc2ZvbGxvdyA9IHRhCiAgICBwdGFiLmhpdCA9IGF0dGFjaAogICAgcHRhYi5wb3MgPSBwb3MKICAgIHRhYmxlLmluc2VydCh0dGFiLCBwdGFiKQogICAgLS3liY3lkI7nvIDnrKblj7cg5Lyk5a6zCiAgICBsb2NhbCBoZWFkID0gdGFiLmhlYWQgb3IgU2hvd01zZy5EZWZhdWx0SGVhZAogICAgbG9jYWwgdGFpbCA9IHRhYi50YWlsIG9yIFNob3dNc2cuRGVmYXVsdFRhaWwKICAgIGxvY2FsIGRtZyA9IHRhYi5kbWcgb3IgMAogICAgZG1nID0gbWF0aC5jZWlsKGRtZykKCiAgICBpZiBkbWcgPCAxMDAwMDAgdGhlbgogICAgZWxzZWlmIGRtZyA+PSAxMDAwMDAgYW5kIGRtZyA8IDEwMDAwMDAwMDAgdGhlbiAtLeWNgeS4hwogICAgICAgIGRtZyA9IG1hdGguY2VpbChkbWcgLyAxMDAwMCkKICAgICAgICB0YWlsID0gMwogICAgZWxzZWlmIGRtZyA+PSAxMDAwMDAwMDAwIGFuZCBkbWcgPCAxMDAwMDAwMDAwMDAwIHRoZW4gLS3ljYHkur8KICAgICAgICBkbWcgPSBtYXRoLmNlaWwoZG1nIC8gMTAwMDAwMDAwKQogICAgICAgIHRhaWwgPSAyCiAgICBlbHNlaWYgZG1nID49IDEwMDAwMDAwMDAwMDAgYW5kIGRtZyA8IDEwMDAwMDAwMDAwMDAwMDAwIHRoZW4gLS3kuIfkur8KICAgICAgICBkbWcgPSBtYXRoLmNlaWwoZG1nIC8gMTAwMDAwMDAwMDAwMCkKICAgICAgICB0YWlsID0gMzIKICAgIGVsc2VpZiBkbWcgPj0gMTAwMDAwMDAwMDAwMDAwMDAgYW5kIGRtZyA8IDEwMDAwMDAwMDAwMDAwMDAwMDAwMCB0aGVuIC0t5LqsCiAgICAgICAgZG1nID0gbWF0aC5jZWlsKGRtZyAvIDEwMDAwMDAwMDAwMDAwMDAwKQogICAgICAgIHRhaWwgPSA4CiAgICBlbHNlaWYgZG1nID49IDEwMDAwMDAwMDAwMDAwMDAwMDAwMCB0aGVuIC0t5LiH5LqsCiAgICAgICAgZG1nID0gbWF0aC5jZWlsKGRtZyAvIDEwMDAwMDAwMDAwMDAwMDAwMDAwMCkKICAgICAgICB0YWlsID0gMzgKICAgIGVuZAogICAgLS0gICBQYXJ0aWNsZU1hbmFnZXI6U2V0UGFydGljbGVDb250cm9sKGZ4LDEsVmVjdG9yKGhlYWQsZG1nLHRhaWwpKQogICAgcHRhYiA9IHt9CiAgICBwdGFiLmluZGV4ID0gMQogICAgcHRhYi5wb3MgPSBWZWN0b3IoaGVhZCwgZG1nLCB0YWlsKQogICAgdGFibGUuaW5zZXJ0KHR0YWIsIHB0YWIpCiAgICAtLeaMgee7reaXtumXtAogICAgbG9jYWwgZHVyYXRpb24gPSB0YWIuZHVyYXRpb24gb3IgU2hvd01zZy5EZWZhdWx0RHVyYXRpb24KICAgIGxvY2FsIGxlbiA9IHN0cmluZy5sZW4odG9zdHJpbmcoZG1nKSkKCiAgICAtLeaYvuekuuWJjee8gAogICAgaWYgdGFiLnNob3doZWFkIHRoZW4KICAgICAgICBsZW4gPSBsZW4gKyAxCiAgICBlbmQKCiAgICAtLeaYvuekuuWQjue8gAogICAgaWYgdGFpbCA+IDAgdGhlbgogICAgICAgIGxlbiA9IGxlbiArIHN0cmluZy5sZW4odG9zdHJpbmcodGFpbCkpCiAgICBlbmQKCiAgICAtLSAgIFBhcnRpY2xlTWFuYWdlcjpTZXRQYXJ0aWNsZUNvbnRyb2woZngsMixWZWN0b3IoZHVyYXRpb24sbGVuLDApKQogICAgcHRhYiA9IHt9CiAgICBwdGFiLmluZGV4ID0gMgogICAgcHRhYi5wb3MgPSBWZWN0b3IoZHVyYXRpb24sIGxlbiwgMCkKICAgIHRhYmxlLmluc2VydCh0dGFiLCBwdGFiKQogICAgLS3popzoibIKICAgIGxvY2FsIHRwCiAgICBpZiB0YWIudHAgPT0gREFNQUdFX1RZUEVfUEhZU0lDQUwgdGhlbgogICAgICAgIHRwID0gIlBoeXNpY2FsIgogICAgZWxzZWlmIHRhYi50cCA9PSBEQU1BR0VfVFlQRV9NQUdJQ0FMIHRoZW4KICAgICAgICB0cCA9ICJNYWdpY2FsIgogICAgZWxzZWlmIHRhYi50cCA9PSBEQU1BR0VfVFlQRV9QVVJFIHRoZW4KICAgICAgICB0cCA9ICJQdXJlIgogICAgZWxzZQogICAgICAgIHRwID0gdGFiLnRwCiAgICBlbmQKCiAgICBsb2NhbCBjb2xvciA9IFNob3dNc2cuQ29sb3JbdHBdIG9yIFNob3dNc2cuQ29sb3IuUGh5c2ljYWwKCiAgICAtLeWkp+WwjwogICAgbG9jYWwgc2l6ZSA9IHRhYi5zaXplIG9yIFNob3dNc2cuRGVmYXVsdFNpemUKICAgIC0tICAgUGFydGljbGVNYW5hZ2VyOlNldFBhcnRpY2xlQ29udHJvbChmeCw0LFZlY3RvcihzaXplLDAsMCkpCiAgICBwdGFiID0ge30KICAgIHB0YWIuaW5kZXggPSA0CiAgICBwdGFiLnBvcyA9IFZlY3RvcihzaXplLCBzaXplLCAzMDApCiAgICB0YWJsZS5pbnNlcnQodHRhYiwgcHRhYikKICAgIC0tICAgVGltZXJzKDEuNSxmdW5jdGlvbigpCiAgICAtLSAgICAgICBQYXJ0aWNsZU1hbmFnZXI6RGVzdHJveVBhcnRpY2xlKGZ4LHRydWUpCiAgICAtLSAgICAgICBQYXJ0aWNsZU1hbmFnZXI6UmVsZWFzZVBhcnRpY2xlSW5kZXgoZngpCiAgICAtLSAgIGVuZCkKICAgIFNob3dNc2c6Q3JlYXRlUGFydGljbGVfbXNnKElELCBGeEZpbGUsIFBBVFRBQ0hfQ1VTVE9NT1JJR0lOLCBuaWwsIHR0YWIsIDEuNSwgY29sb3IpCmVuZAoKZnVuY3Rpb24gU2hvd01zZzpDcmVhdGVQYXJ0aWNsZV9tc2coSUQsIHB0bmFtZSwgYXR0YWNoLCBvd25lciwgdGFiLCBkeSwgY29sb3IpCiAgICBpZiBub3QgSUQgdGhlbiByZXR1cm4gZW5kCiAgICBpZiBub3QgYXR0YWNoIHRoZW4gcmV0dXJuIGVuZAogICAgbG9jYWwgdHhfc3VtID0ge30KICAgIGxvY2FsIElEX1N1bSA9IFV0aWw6Tm9BYmFuZG9uZWRJRHMoKQogICAgZm9yIGssIHYgaW4gcGFpcnMoSURfU3VtKSBkbwogICAgICAgIGlmIFV0aWw6SXNQc2V1ZG9QbGF5ZXJJRCh2KSB0aGVuCiAgICAgICAgICAgIGdvdG8gY29udGludWUKICAgICAgICBlbmQKICAgICAgICBsb2NhbCBwbGF5ZXIgPSBVdGlsOklEMlBsYXllcih2KQogICAgICAgIGlmIG5vdCBwbGF5ZXIgb3IgdHlwZShwbGF5ZXIpIH49ICJ1c2VyZGF0YSIgdGhlbgogICAgICAgICAgICBnb3RvIGNvbnRpbnVlCiAgICAgICAgZW5kCiAgICAgICAgbG9jYWwgb2ssIHBhcnRpY2xlID0gcGNhbGwoUGFydGljbGVNYW5hZ2VyLkNyZWF0ZVBhcnRpY2xlRm9yUGxheWVyLCBQYXJ0aWNsZU1hbmFnZXIsIHB0bmFtZSwgYXR0YWNoLCBvd25lciwgcGxheWVyKQogICAgICAgIGlmIG5vdCBvayBvciBub3QgcGFydGljbGUgdGhlbgogICAgICAgICAgICBnb3RvIGNvbnRpbnVlCiAgICAgICAgZW5kCiAgICAgICAgZm9yIG0sIG4gaW4gcGFpcnModGFiKSBkbwogICAgICAgICAgICBpZiBuLmlzZm9sbG93IHRoZW4KICAgICAgICAgICAgICAgIFV0aWw6UGFydGljbGVTZXRDb250cm9sRW50SGl0bG9jT3JBYnNGb2xsb3cocGFydGljbGUsIG4uaW5kZXgsIG4uaXNmb2xsb3cpCiAgICAgICAgICAgIGVsc2UKICAgICAgICAgICAgICAgIFBhcnRpY2xlTWFuYWdlcjpTZXRQYXJ0aWNsZUNvbnRyb2wocGFydGljbGUsIG4uaW5kZXgsIG4ucG9zKQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6U2V0UGFydGljbGVDb250cm9sKHBhcnRpY2xlLCAzLCBjb2xvcikKICAgICAgICB0YWJsZS5pbnNlcnQodHhfc3VtLCBwYXJ0aWNsZSkKICAgICAgICA6OmNvbnRpbnVlOjoKICAgIGVuZAoKICAgIFRpbWVycyhkeSwgZnVuY3Rpb24oKQogICAgICAgIGZvciBrLCB2IGluIHBhaXJzKHR4X3N1bSkgZG8KICAgICAgICAgICAgUGFydGljbGVNYW5hZ2VyOkRlc3Ryb3lQYXJ0aWNsZSh2LCB0cnVlKQogICAgICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6UmVsZWFzZVBhcnRpY2xlSW5kZXgodikKICAgICAgICBlbmQKICAgIGVuZCkKZW5kCgpmdW5jdGlvbiBTaG93TXNnOlNob3dHb29kRG1hZ2VNc2coY2EsIHRhLCBudW0sIGRtdHApCiAgICBsb2NhbCB0YWIgPSB7CiAgICAgICAgYXQgPSBjYSwKICAgICAgICB0YSA9IHRhLAogICAgICAgIGRtZyA9IG51bSwKICAgICAgICB0cCA9IGRtdHAsCiAgICB9CiAgICB0YWIuaW5kZXggPSBTaG93TXNnOkdldFBhcnRpY2xlSW5kZXgoZG10cCkKICAgIGlmIGRtdHAgPT0gIlBoeUNyaXQiIG9yIGRtdHAgPT0gIk1hZ0NyaXQiIHRoZW4KICAgICAgICB0YWIuc2hvd2hlYWQgPSBmYWxzZQogICAgICAgIHRhYi5oZWFkID0gMTAKICAgIGVuZAogICAgc2VsZjpUZWFtTXNnKHRhYikKZW5kCgotLeiOt+WPlueJueaViApmdW5jdGlvbiBTaG93TXNnOkdldFBhcnRpY2xlSW5kZXgoZG10cCkKICAgIGlmIGRtdHAgPT0gREFNQUdFX1RZUEVfTUFHSUNBTCB0aGVuCiAgICAgICAgcmV0dXJuIDIwCiAgICBlbmQKICAgIGlmIGRtdHAgPT0gIk1hZ0NyaXQiIHRoZW4KICAgICAgICByZXR1cm4gMjEKICAgIGVuZAogICAgaWYgZG10cCA9PSBEQU1BR0VfVFlQRV9QSFlTSUNBTCB0aGVuCiAgICAgICAgcmV0dXJuIDIyCiAgICBlbmQKICAgIGlmIGRtdHAgPT0gIlBoeUNyaXQiIHRoZW4KICAgICAgICByZXR1cm4gMjMKICAgIGVuZAogICAgaWYgZG10cCA9PSAiSGVhbCIgdGhlbgogICAgICAgIHJldHVybiAxOQogICAgZW5kCiAgICBpZiBkbXRwID09ICJNaXNzIiB0aGVuCiAgICAgICAgcmV0dXJuIDE4CiAgICBlbmQKICAgIHJldHVybiAxOAplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if ShowMsg == nil then
+    ShowMsg = class({})
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+require("ingame.ShowMsg.Config")
+--颜色
+ShowMsg.Color = {
+    --物理
+    Physical = Vector(96, 96, 96),
+    --魔法
+    Magical = Vector(0, 102, 255),
+    --纯粹
+    Pure = Vector(184, 226, 226),
+    --物理暴击
+    PhyCrit = Vector(255, 51, 0),
+    --魔法暴击
+    MagCrit = Vector(0, 0, 102),
+    --回血
+    Heal = Vector(51, 204, 51),
+    --金色
+    punch = Vector(255, 234, 0)
+}
+
+--特效文件
+ShowMsg.FxFile = {
+    "particles/msg_fx/msg_damage.vpcf",                  --1
+    "particles/msg_fx/msg_countdown.vpcf",               --2
+    "particles/msg_fx/msg_crit_damage.vpcf",             --3
+    "particles/msg_fx/msg_damage.vpcf",                  --4
+    "particles/msg_fx/msg_damage_2.vpcf",                --5
+    "particles/msg_fx/msg_damage_3.vpcf",                --6
+    "particles/msg_fx/msg_damage_4.vpcf",                --7
+    "particles/msg_fx/msg_damage_hero.vpcf",             --8
+    "particles/msg_fx/msg_damage_numbers_3.vpcf",        --9
+    "particles/msg_fx/msg_damage_sle.vpcf",              --10
+    "particles/msg_fx/msg_infinity.vpcf",                --11
+    "particles/msg_fx/other/msg_countdown.vpcf",         --12
+    "particles/msg_fx/other/msg_crit_damage.vpcf",       --13
+    "particles/msg_fx/other/msg_damage.vpcf",            --14
+    "particles/msg_fx/other/msg_damage_hero.vpcf",       --15
+    "particles/msg_fx/other/msg_damage_other.vpcf",      --16
+    "particles/msg_fx/other/msg_damage_sle.vpcf",        --17
+    "particles/msg_fx/msg_evade.vpcf",                   --18
+    "particles/msg_fx/msg_heal.vpcf",                    --19 --默认伤害类型
+    "particles/msg_fx/msg_damage_numbers_outgoing.vpcf", --20 魔法伤害
+    "particles/msg_fx/msg_crit.vpcf",                    --21 魔法暴击
+    "particles/msg_fx/msg_damage_numbers_outgoing.vpcf", --22  物理伤害
+    "particles/msg_fx/msg_crit.vpcf",                    --23  物理暴击
+}
+
+--默认使用第1个特效文件
+ShowMsg.DefaultFxIndex = 19
+--默认显示字体大小
+ShowMsg.DefaultSize = 3
+--默认位置 备选PATTACH_CENTER_FOLLOW
+ShowMsg.DefaultAttach = PATTACH_OVERHEAD_FOLLOW
+--默认偏移
+ShowMsg.DefaultOffset = Vector(0, 0, 300)
+--默认前缀
+ShowMsg.DefaultHead = 1
+--默认后缀
+ShowMsg.DefaultTail = 0
+--默认持续时间
+ShowMsg.DefaultDuration = 2
+--是否显示前缀
+ShowMsg.ShowHead = true
+
+--选择一个特效
+function ShowMsg:GetFxFile(index)
+    if not index then
+        index = ShowMsg.DefaultFxIndex
+    end
+    return ShowMsg.FxFile[index]
+end
+
+function ShowMsg:TeamMsg(tab)
+    local at = tab.at
+    if not at then return end
+    if at:IsNull() then return end
+    local team = at:GetTeamNumber()
+    if not team then return end
+    local ta = tab.ta
+    if not ta then return end
+    if ta:IsNull() then return end
+    if at:IsIllusion() then
+        at = at:GetOwner()
+    end
+    local ID = at.OwnerID or Util:Hero2ID(at)
+    if not ID then return end
+
+    --存储特效控制点数据
+    local ttab = {} --总表
+    local ptab = {} --单个控制点存储表
+
+    --特效string
+    local FxFile = self:GetFxFile(tab.index)
+    --创建
+    --   local fx=ParticleManager:CreateParticleForTeam(FxFile,PATTACH_CUSTOMORIGIN,nil,team)
+    --附着位置
+    local attach = tab.attach or ShowMsg.DefaultAttach
+    --坐标+偏移
+    local pos = ta:GetAbsOrigin() + (tab.offset or ShowMsg.DefaultOffset)
+
+    --位置设置
+    --   ParticleManager:SetParticleControlEnt(fx,0,ta,attach,nil,pos,true)
+    ptab.index = 0
+    ptab.isfollow = ta
+    ptab.hit = attach
+    ptab.pos = pos
+    table.insert(ttab, ptab)
+    --前后缀符号 伤害
+    local head = tab.head or ShowMsg.DefaultHead
+    local tail = tab.tail or ShowMsg.DefaultTail
+    local dmg = tab.dmg or 0
+    dmg = math.ceil(dmg)
+
+    if dmg < 100000 then
+    elseif dmg >= 100000 and dmg < 1000000000 then --十万
+        dmg = math.ceil(dmg / 10000)
+        tail = 3
+    elseif dmg >= 1000000000 and dmg < 1000000000000 then --十亿
+        dmg = math.ceil(dmg / 100000000)
+        tail = 2
+    elseif dmg >= 1000000000000 and dmg < 10000000000000000 then --万亿
+        dmg = math.ceil(dmg / 1000000000000)
+        tail = 32
+    elseif dmg >= 10000000000000000 and dmg < 100000000000000000000 then --京
+        dmg = math.ceil(dmg / 10000000000000000)
+        tail = 8
+    elseif dmg >= 100000000000000000000 then --万京
+        dmg = math.ceil(dmg / 100000000000000000000)
+        tail = 38
+    end
+    --   ParticleManager:SetParticleControl(fx,1,Vector(head,dmg,tail))
+    ptab = {}
+    ptab.index = 1
+    ptab.pos = Vector(head, dmg, tail)
+    table.insert(ttab, ptab)
+    --持续时间
+    local duration = tab.duration or ShowMsg.DefaultDuration
+    local len = string.len(tostring(dmg))
+
+    --显示前缀
+    if tab.showhead then
+        len = len + 1
+    end
+
+    --显示后缀
+    if tail > 0 then
+        len = len + string.len(tostring(tail))
+    end
+
+    --   ParticleManager:SetParticleControl(fx,2,Vector(duration,len,0))
+    ptab = {}
+    ptab.index = 2
+    ptab.pos = Vector(duration, len, 0)
+    table.insert(ttab, ptab)
+    --颜色
+    local tp
+    if tab.tp == DAMAGE_TYPE_PHYSICAL then
+        tp = "Physical"
+    elseif tab.tp == DAMAGE_TYPE_MAGICAL then
+        tp = "Magical"
+    elseif tab.tp == DAMAGE_TYPE_PURE then
+        tp = "Pure"
+    else
+        tp = tab.tp
+    end
+
+    local color = ShowMsg.Color[tp] or ShowMsg.Color.Physical
+
+    --大小
+    local size = tab.size or ShowMsg.DefaultSize
+    --   ParticleManager:SetParticleControl(fx,4,Vector(size,0,0))
+    ptab = {}
+    ptab.index = 4
+    ptab.pos = Vector(size, size, 300)
+    table.insert(ttab, ptab)
+    --   Timers(1.5,function()
+    --       ParticleManager:DestroyParticle(fx,true)
+    --       ParticleManager:ReleaseParticleIndex(fx)
+    --   end)
+    ShowMsg:CreateParticle_msg(ID, FxFile, PATTACH_CUSTOMORIGIN, nil, ttab, 1.5, color)
+end
+
+function ShowMsg:CreateParticle_msg(ID, ptname, attach, owner, tab, dy, color)
+    if not ID then return end
+    if not attach then return end
+    local tx_sum = {}
+    local ID_Sum = Util:NoAbandonedIDs()
+    for k, v in pairs(ID_Sum) do
+        if Util:IsPseudoPlayerID(v) then
+            goto continue
+        end
+        local player = Util:ID2Player(v)
+        if not player or type(player) ~= "userdata" then
+            goto continue
+        end
+        local ok, particle = pcall(ParticleManager.CreateParticleForPlayer, ParticleManager, ptname, attach, owner, player)
+        if not ok or not particle then
+            goto continue
+        end
+        for m, n in pairs(tab) do
+            if n.isfollow then
+                Util:ParticleSetControlEntHitlocOrAbsFollow(particle, n.index, n.isfollow)
+            else
+                ParticleManager:SetParticleControl(particle, n.index, n.pos)
+            end
+        end
+        ParticleManager:SetParticleControl(particle, 3, color)
+        table.insert(tx_sum, particle)
+        ::continue::
+    end
+
+    Timers(dy, function()
+        for k, v in pairs(tx_sum) do
+            ParticleManager:DestroyParticle(v, true)
+            ParticleManager:ReleaseParticleIndex(v)
+        end
+    end)
+end
+
+function ShowMsg:ShowGoodDmageMsg(ca, ta, num, dmtp)
+    local tab = {
+        at = ca,
+        ta = ta,
+        dmg = num,
+        tp = dmtp,
+    }
+    tab.index = ShowMsg:GetParticleIndex(dmtp)
+    if dmtp == "PhyCrit" or dmtp == "MagCrit" then
+        tab.showhead = false
+        tab.head = 10
+    end
+    self:TeamMsg(tab)
+end
+
+--获取特效
+function ShowMsg:GetParticleIndex(dmtp)
+    if dmtp == DAMAGE_TYPE_MAGICAL then
+        return 20
+    end
+    if dmtp == "MagCrit" then
+        return 21
+    end
+    if dmtp == DAMAGE_TYPE_PHYSICAL then
+        return 22
+    end
+    if dmtp == "PhyCrit" then
+        return 23
+    end
+    if dmtp == "Heal" then
+        return 19
+    end
+    if dmtp == "Miss" then
+        return 18
+    end
+    return 18
+end

@@ -8,22 +8,190 @@
 ]]
 
 
-local encoded=[[bW9kaWZpZXJfdGFsZW50XzMgPSBjbGFzcyh7fSkKCi0t6K+lbW9kaWZpZXLmmK/lkKbmmK/otJ/pnaLnmoQKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzM6SXNEZWJ1ZmYoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKLS3or6Vtb2RpZmllcuiDveWQpuiiq+a4hemZpApmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMzpJc1B1cmdhYmxlKCkKICAgIHJldHVybiBmYWxzZQplbmQKCi0t6K+lbW9kaWZpZXLmmK/lkKbpmpDol48KZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzM6SXNIaWRkZW4oKQogICAgcmV0dXJuIHRydWUKZW5kCgotLeatu+S6oeaXtuaYr+WQpuenu+mZpApmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMzpSZW1vdmVPbkRlYXRoKCkKICAgIHJldHVybiBmYWxzZQplbmQKCi0tIOW5u+ixoeS4jee7p+aJv+eBvOeDp+WFieeOr++8jOmBv+WFjSBUYWxlbnQuRGF0YVtJRF0gLyBIZXJvMklEIOS4juacrOS9k+mUmeS9jQpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMzpBbGxvd0lsbHVzaW9uRHVwbGljYXRlKCkKICAgIHJldHVybiBmYWxzZQplbmQKCi0tIOWIneWni+WMlm1vZGlmaWVyCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8zOk9uQ3JlYXRlZChrdikKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4gcmV0dXJuIGVuZAogICAgLS0g6I635Y+W5Y+C5pWwCiAgICBzZWxmLmRhbWFnZV90eXBlID0ga3YuZGFtYWdlX3R5cGUgb3IgREFNQUdFX1RZUEVfTUFHSUNBTCAtLSDkvKTlrrPnsbvlnosKICAgIC0tIHByaW50KCJtb2RpZmllcl90YWxlbnRfMyIpCiAgICAtLSDlvIDlp4vkvKTlrrPpl7TpmpQKICAgIHNlbGY6U3RhcnRJbnRlcnZhbFRoaW5rKDEpCiAgICBzZWxmOkZvcmNlUmVmcmVzaCgpCmVuZAoKLS0g5Yi35pawbW9kaWZpZXIKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzM6T25SZWZyZXNoKGt2KQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbiByZXR1cm4gZW5kCiAgICAtLSBGb3JjZVJlZnJlc2ggLyDljYfmuKnmlLnlsYLlkI7lgbblj5HkuKLmjokgSW50ZXJ2YWxUaGlua++8jOS4jiBPbkNyZWF0ZWQg5LiA6Ie06YeN57uR5ZGo5pyfCiAgICBzZWxmOlN0YXJ0SW50ZXJ2YWxUaGluaygxKQoKICAgIGxvY2FsIGhlcm8gPSBzZWxmOkdldFBhcmVudCgpCiAgICBpZiBub3QgaGVybyBvciBoZXJvOklzTnVsbCgpIHRoZW4gcmV0dXJuIGVuZAogICAgbG9jYWwgSUQgPSBVdGlsOkhlcm8ySUQoaGVybykKICAgIGlmIG5vdCBJRCBvciBub3QgSGVyb0RhdGEuRGF0YVtJRF0gb3Igbm90IEhlcm9EYXRhLkRhdGFbSURdLmhlcm9fYXR0ciB0aGVuCiAgICAgICAgc2VsZi5scWpzID0gMAogICAgICAgIHNlbGY6U2V0U3RhY2tDb3VudCgwKQogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmLmxxanMgPSBIZXJvRGF0YS5EYXRhW0lEXS5oZXJvX2F0dHIubHFqcyBvciAwCiAgICBzZWxmOlNldFN0YWNrQ291bnQoc2VsZi5scWpzKQogICAgaGVybzpDYWxjdWxhdGVTdGF0Qm9udXModHJ1ZSkKZW5kCgotLSDms6jlhozkvKTlrrPnm5HlkKzkuovku7YKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzM6RGVjbGFyZUZ1bmN0aW9ucygpCiAgICByZXR1cm4gewogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX0NPT0xET1dOX1BFUkNFTlRBR0UsCiAgICB9CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzM6R2V0TW9kaWZpZXJQZXJjZW50YWdlQ29vbGRvd24oKQogICAgbG9jYWwgY291bnQgPSBzZWxmOkdldFN0YWNrQ291bnQoKQogICAgcmV0dXJuIGNvdW50CmVuZAoKLS0g6Ze06ZqU5Lyk5a6zCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8zOk9uSW50ZXJ2YWxUaGluaygpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuIHJldHVybiBlbmQKCiAgICBsb2NhbCBwYXJlbnQgPSBzZWxmOkdldFBhcmVudCgpCgogICAgLS0g5qOA5p+l54i25Y2V5L2N5piv5ZCm5a2Y5rS7CiAgICBpZiBub3QgcGFyZW50OklzQWxpdmUoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBsb2NhbCBJRCA9IFV0aWw6SGVybzJJRChwYXJlbnQpCiAgICAtLSDmjonokL3nur8v5o2i5Lq65bin562J556s5pe2IEhlcm8ySUQg5aSx6LSl5pe255SoIFBsYXllck93bmVy77yI5LiOIFRhbGVudC5EYXRhIOS4i+agh+S4gOiHtO+8iQogICAgaWYgKG5vdCBJRCBvciBJRCA8IDApIGFuZCBwYXJlbnQuR2V0UGxheWVyT3duZXJJRCB0aGVuCiAgICAgICAgSUQgPSBwYXJlbnQ6R2V0UGxheWVyT3duZXJJRCgpCiAgICBlbmQKCiAgICBpZiBub3QgSUQgb3IgSUQgPCAwIG9yIG5vdCBUYWxlbnQuRGF0YSBvciBub3QgVGFsZW50LkRhdGFbSURdIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGlmIFV0aWwgYW5kIFV0aWwuSUQySWZPbmxpbmUgYW5kIG5vdCBVdGlsOklEMklmT25saW5lKElEKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBsb2NhbCBsZXZlbCA9IFRhbGVudC5EYXRhW0lEXS5sZXZlbCBvciAwCiAgICBsb2NhbCBkYW0gPSAxCiAgICBsb2NhbCByYWRpdXMgPSAxMDAKCiAgICBpZiBsZXZlbCA9PSAwIHRoZW4KICAgICAgICBkYW0gPSAzMAogICAgICAgIHJhZGl1cyA9IDQwMAogICAgZW5kCiAgICBpZiBsZXZlbCA9PSAxIHRoZW4KICAgICAgICBkYW0gPSA0NQogICAgICAgIHJhZGl1cyA9IDQ1MAogICAgZW5kCiAgICBpZiBsZXZlbCA9PSAyIHRoZW4KICAgICAgICBkYW0gPSA2MAogICAgICAgIHJhZGl1cyA9IDU1MAogICAgZW5kCiAgICBpZiBsZXZlbCA9PSAzIHRoZW4KICAgICAgICBkYW0gPSA4MCArIG1hdGguZmxvb3IocGFyZW50OkdldE1hbmEoKSAqIDAuMDE1KQogICAgICAgIHJhZGl1cyA9IDYwMAogICAgZW5kCiAgICBpZiBsZXZlbCA9PSA0IHRoZW4KICAgICAgICBkYW0gPSAxMDAgKyBtYXRoLmZsb29yKHBhcmVudDpHZXRNYW5hKCkgKiAwLjAzKQogICAgICAgIHJhZGl1cyA9IDY1MAogICAgZW5kCiAgICBpZiBsZXZlbCA9PSA1IHRoZW4KICAgICAgICBkYW0gPSAxMjAgKyBtYXRoLmZsb29yKHBhcmVudDpHZXRNYW5hKCkgKiAwLjA1KQogICAgICAgIHJhZGl1cyA9IDcwMAogICAgZW5kCgogICAgLS0g5aSp6LWL6KOF5aSH5Z+656GA5L2c55So6IyD5Zu077yIenlmd++8ie+8muWPoOWKoOWIsOeBvOeDp+Wvu+aVjOWNiuW+hO+8iOW8leaTjiBBT0Ug5Yqg5oiQ5LiN5L2c55So5LqOIEx1YSDmiYvlhpnljYrlvoTvvIkKICAgIGlmIEhlcm9EYXRhIGFuZCBIZXJvRGF0YS5HZXRTWCB0aGVuCiAgICAgICAgcmFkaXVzID0gcmFkaXVzICsgbWF0aC5mbG9vcih0b251bWJlcihIZXJvRGF0YTpHZXRTWChJRCwgInp5ZnciKSkgb3IgMCkKICAgIGVuZAoKICAgIGxvY2FsIHRlYW0gPSBwYXJlbnQ6R2V0VGVhbU51bWJlcigpCiAgICBsb2NhbCBwb3NpdGlvbiA9IHBhcmVudDpHZXRBYnNPcmlnaW4oKQoKICAgIC0tIOafpeaJvuiMg+WbtOWGheeahOaVjOS6ugogICAgbG9jYWwgZW5lbWllcyA9IEZpbmRVbml0c0luUmFkaXVzKAogICAgICAgIHRlYW0sCiAgICAgICAgcG9zaXRpb24sCiAgICAgICAgbmlsLAogICAgICAgIHJhZGl1cywKICAgICAgICBET1RBX1VOSVRfVEFSR0VUX1RFQU1fRU5FTVksCiAgICAgICAgRE9UQV9VTklUX1RBUkdFVF9IRVJPICsgRE9UQV9VTklUX1RBUkdFVF9CQVNJQywKICAgICAgICBET1RBX1VOSVRfVEFSR0VUX0ZMQUdfTk9ORSwKICAgICAgICBGSU5EX0FOWV9PUkRFUiwKICAgICAgICBmYWxzZQogICAgKQoKICAgIC0tIOWvueavj+S4quaVjOS6uumAoOaIkOS8pOWuswogICAgZm9yIF8sIGVuZW15IGluIHBhaXJzKGVuZW1pZXMpIGRvCiAgICAgICAgaWYgZW5lbXkgYW5kIG5vdCBlbmVteTpJc051bGwoKSBhbmQgZW5lbXk6SXNBbGl2ZSgpIHRoZW4KICAgICAgICAgICAgc2VsZjpBcHBseURhbWFnZShlbmVteSwgZGFtKQogICAgICAgICAgICBsb2NhbCB0eCA9CiAgICAgICAgICAgICJwYXJ0aWNsZXMvZWNvbi9ldmVudHMvc2Vhc29uYWxfcmV3YXJkX2xpbmVfd2ludGVyXzIwMjUvcmFkaWFuY2VfdGFyZ2V0X3dpbnRlcnJld2FyZGxpbmVfMjAyNS52cGNmIgogICAgICAgICAgICB1dGlsZXg6QWRkVHgodHgsIGVuZW15LCAxKQogICAgICAgIGVuZAogICAgZW5kCmVuZAoKLS0g5bqU55So5Lyk5a6z77yI5LiN5Y+C5LiOIGRhbWFnZS5sdWEg5LitIHp6c2gv6a2U5Yqb5rOi5YqoL+aMqOaJk+WHj+WFjeetieS4juaZrumAmuaKgOiDveS8pOWus+eahCBMdWEg5Y+g566X77yJCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8zOkFwcGx5RGFtYWdlKHRhcmdldCwgZGFtKQogICAgbG9jYWwgcGFyZW50ID0gc2VsZjpHZXRQYXJlbnQoKQoKICAgIGxvY2FsIGRhbWFnZV90YWJsZSA9IHsKICAgICAgICB2aWN0aW0gPSB0YXJnZXQsCiAgICAgICAgYXR0YWNrZXIgPSBwYXJlbnQsCiAgICAgICAgZGFtYWdlID0gZGFtLAogICAgICAgIGRhbWFnZV90eXBlID0gc2VsZi5kYW1hZ2VfdHlwZSwKICAgICAgICBkYW1hZ2VfZmxhZ3MgPSBET1RBX0RBTUFHRV9GTEFHX05PTkUsCiAgICAgICAgYWJpbGl0eSA9IHNlbGY6R2V0QWJpbGl0eSgpCiAgICB9CgogICAgbG9jYWwgZm5fZW50ZXIgPSByYXdnZXQoX0csICJDbHJiRG1nX0ZpbHRlcl9UYWxlbnQzQXVyYUlzb2xhdGlvbl9FbnRlciIpCiAgICBsb2NhbCBmbl9sZWF2ZSA9IHJhd2dldChfRywgIkNscmJEbWdfRmlsdGVyX1RhbGVudDNBdXJhSXNvbGF0aW9uX0xlYXZlIikKICAgIGlmIGZuX2VudGVyIHRoZW4KICAgICAgICBmbl9lbnRlcigpCiAgICBlbmQKICAgIGxvY2FsIG9rLCBlcnJfbXNnID0gcGNhbGwoZnVuY3Rpb24oKQogICAgICAgIEFwcGx5RGFtYWdlKGRhbWFnZV90YWJsZSkKICAgIGVuZCkKICAgIGlmIGZuX2xlYXZlIHRoZW4KICAgICAgICBmbl9sZWF2ZSgpCiAgICBlbmQKICAgIGlmIG5vdCBvayB0aGVuCiAgICAgICAgLS0gcHJpbnQoIlttb2RpZmllcl90YWxlbnRfM10gQXBwbHlEYW1hZ2U6ICIgLi4gdG9zdHJpbmcoZXJyX21zZykpCiAgICAgICAgaWYgU2VydmVyIGFuZCBTZXJ2ZXIuU2VuZEVycm9yIHRoZW4KICAgICAgICAgICAgU2VydmVyOlNlbmRFcnJvcih0b3N0cmluZyhlcnJfbXNnKSwgIm1vZGlmaWVyX3RhbGVudF8zOkFwcGx5RGFtYWdlIikKICAgICAgICBlbmQKICAgIGVuZAplbmQKCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+modifier_talent_3 = class({})
+
+--该modifier是否是负面的
+function modifier_talent_3:IsDebuff()
+    return false
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--该modifier能否被清除
+function modifier_talent_3:IsPurgable()
+    return false
+end
+
+--该modifier是否隐藏
+function modifier_talent_3:IsHidden()
+    return true
+end
+
+--死亡时是否移除
+function modifier_talent_3:RemoveOnDeath()
+    return false
+end
+
+-- 幻象不继承灼烧光环，避免 Talent.Data[ID] / Hero2ID 与本体错位
+function modifier_talent_3:AllowIllusionDuplicate()
+    return false
+end
+
+-- 初始化modifier
+function modifier_talent_3:OnCreated(kv)
+    if not IsServer() then return end
+    -- 获取参数
+    self.damage_type = kv.damage_type or DAMAGE_TYPE_MAGICAL -- 伤害类型
+    -- print("modifier_talent_3")
+    -- 开始伤害间隔
+    self:StartIntervalThink(1)
+    self:ForceRefresh()
+end
+
+-- 刷新modifier
+function modifier_talent_3:OnRefresh(kv)
+    if not IsServer() then return end
+    -- ForceRefresh / 升温改层后偶发丢掉 IntervalThink，与 OnCreated 一致重绑周期
+    self:StartIntervalThink(1)
+
+    local hero = self:GetParent()
+    if not hero or hero:IsNull() then return end
+    local ID = Util:Hero2ID(hero)
+    if not ID or not HeroData.Data[ID] or not HeroData.Data[ID].hero_attr then
+        self.lqjs = 0
+        self:SetStackCount(0)
+        return
+    end
+    self.lqjs = HeroData.Data[ID].hero_attr.lqjs or 0
+    self:SetStackCount(self.lqjs)
+    hero:CalculateStatBonus(true)
+end
+
+-- 注册伤害监听事件
+function modifier_talent_3:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
+    }
+end
+
+function modifier_talent_3:GetModifierPercentageCooldown()
+    local count = self:GetStackCount()
+    return count
+end
+
+-- 间隔伤害
+function modifier_talent_3:OnIntervalThink()
+    if not IsServer() then return end
+
+    local parent = self:GetParent()
+
+    -- 检查父单位是否存活
+    if not parent:IsAlive() then
+        return
+    end
+
+    local ID = Util:Hero2ID(parent)
+    -- 掉落线/换人帧等瞬时 Hero2ID 失败时用 PlayerOwner（与 Talent.Data 下标一致）
+    if (not ID or ID < 0) and parent.GetPlayerOwnerID then
+        ID = parent:GetPlayerOwnerID()
+    end
+
+    if not ID or ID < 0 or not Talent.Data or not Talent.Data[ID] then
+        return
+    end
+
+    if Util and Util.ID2IfOnline and not Util:ID2IfOnline(ID) then
+        return
+    end
+
+    local level = Talent.Data[ID].level or 0
+    local dam = 1
+    local radius = 100
+
+    if level == 0 then
+        dam = 30
+        radius = 400
+    end
+    if level == 1 then
+        dam = 45
+        radius = 450
+    end
+    if level == 2 then
+        dam = 60
+        radius = 550
+    end
+    if level == 3 then
+        dam = 80 + math.floor(parent:GetMana() * 0.015)
+        radius = 600
+    end
+    if level == 4 then
+        dam = 100 + math.floor(parent:GetMana() * 0.03)
+        radius = 650
+    end
+    if level == 5 then
+        dam = 120 + math.floor(parent:GetMana() * 0.05)
+        radius = 700
+    end
+
+    -- 天赋装备基础作用范围（zyfw）：叠加到灼烧寻敌半径（引擎 AOE 加成不作用于 Lua 手写半径）
+    if HeroData and HeroData.GetSX then
+        radius = radius + math.floor(tonumber(HeroData:GetSX(ID, "zyfw")) or 0)
+    end
+
+    local team = parent:GetTeamNumber()
+    local position = parent:GetAbsOrigin()
+
+    -- 查找范围内的敌人
+    local enemies = FindUnitsInRadius(
+        team,
+        position,
+        nil,
+        radius,
+        DOTA_UNIT_TARGET_TEAM_ENEMY,
+        DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+        DOTA_UNIT_TARGET_FLAG_NONE,
+        FIND_ANY_ORDER,
+        false
+    )
+
+    -- 对每个敌人造成伤害
+    for _, enemy in pairs(enemies) do
+        if enemy and not enemy:IsNull() and enemy:IsAlive() then
+            self:ApplyDamage(enemy, dam)
+            local tx =
+            "particles/econ/events/seasonal_reward_line_winter_2025/radiance_target_winterrewardline_2025.vpcf"
+            utilex:AddTx(tx, enemy, 1)
+        end
+    end
+end
+
+-- 应用伤害（不参与 damage.lua 中 zzsh/魔力波动/挨打减免等与普通技能伤害的 Lua 叠算）
+function modifier_talent_3:ApplyDamage(target, dam)
+    local parent = self:GetParent()
+
+    local damage_table = {
+        victim = target,
+        attacker = parent,
+        damage = dam,
+        damage_type = self.damage_type,
+        damage_flags = DOTA_DAMAGE_FLAG_NONE,
+        ability = self:GetAbility()
+    }
+
+    local fn_enter = rawget(_G, "ClrbDmg_Filter_Talent3AuraIsolation_Enter")
+    local fn_leave = rawget(_G, "ClrbDmg_Filter_Talent3AuraIsolation_Leave")
+    if fn_enter then
+        fn_enter()
+    end
+    local ok, err_msg = pcall(function()
+        ApplyDamage(damage_table)
+    end)
+    if fn_leave then
+        fn_leave()
+    end
+    if not ok then
+        -- print("[modifier_talent_3] ApplyDamage: " .. tostring(err_msg))
+        if Server and Server.SendError then
+            Server:SendError(tostring(err_msg), "modifier_talent_3:ApplyDamage")
+        end
+    end
+end
+

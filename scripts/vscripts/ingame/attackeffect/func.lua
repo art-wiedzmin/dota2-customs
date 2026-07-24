@@ -8,22 +8,189 @@
 ]]
 
 
-local encoded=[[LS0tIOWxgOWkluiDjOWMheS9qeaItOaUu+WHu+W8uemBk+eJueaViCAtPiBtb2RpZmllcl9hdHRhY2tfZWZmZWN0Cgpsb2NhbCBNT0RJRklFUl9BVFRBQ0tfRUZGRUNUID0gIm1vZGlmaWVyX2F0dGFja19lZmZlY3QiCmxvY2FsIEFUVEFDS19FRkZFQ1RfU1lOQ19SRVRSWV9QUkVGSVggPSAiY2xyYl9hdHRhY2tfZWZmZWN0X3N5bmNfcmV0cnlfIgpsb2NhbCBBVFRBQ0tfRUZGRUNUX1NZTkNfUkVUUllfU0VDID0gMC41CgpmdW5jdGlvbiBBdHRhY2tFZmZlY3Q6UmVzb2x2ZUhlcm8oSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgbG9jYWwgaGVybyA9IFV0aWwgYW5kIFV0aWwuSUQySGVybyBhbmQgVXRpbDpJRDJIZXJvKElEKQogICAgaWYgaGVybyBhbmQgbm90IGhlcm86SXNOdWxsKCkgdGhlbgogICAgICAgIHJldHVybiBoZXJvCiAgICBlbmQKICAgIGlmIEhlcm9EYXRhIGFuZCBIZXJvRGF0YS5HZXRIZXJvIHRoZW4KICAgICAgICBoZXJvID0gSGVyb0RhdGE6R2V0SGVybyhJRCkKICAgICAgICBpZiBoZXJvIGFuZCBub3QgaGVybzpJc051bGwoKSB0aGVuCiAgICAgICAgICAgIHJldHVybiBoZXJvCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGlmIFBsYXllclJlc291cmNlIGFuZCBQbGF5ZXJSZXNvdXJjZS5HZXRTZWxlY3RlZEhlcm9FbnRpdHkgdGhlbgogICAgICAgIGhlcm8gPSBQbGF5ZXJSZXNvdXJjZTpHZXRTZWxlY3RlZEhlcm9FbnRpdHkoSUQpCiAgICAgICAgaWYgaGVybyBhbmQgbm90IGhlcm86SXNOdWxsKCkgdGhlbgogICAgICAgICAgICByZXR1cm4gaGVybwogICAgICAgIGVuZAogICAgZW5kCiAgICByZXR1cm4gbmlsCmVuZAoKZnVuY3Rpb24gQXR0YWNrRWZmZWN0OlNob3VsZFNob3dGb3JQbGF5ZXIoSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBVdGlsIGFuZCBVdGlsLklzUHNldWRvUGxheWVySUQgYW5kIFV0aWw6SXNQc2V1ZG9QbGF5ZXJJRChJRCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBTaG9wIGFuZCBTaG9wLlNob3VsZFNob3dJbkdhbWVBdHRhY2tFZmZlY3QgdGhlbgogICAgICAgIHJldHVybiBTaG9wOlNob3VsZFNob3dJbkdhbWVBdHRhY2tFZmZlY3QoSUQpCiAgICBlbmQKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIEF0dGFja0VmZmVjdDpJc1JhbmdlZEhlcm8oaGVybykKICAgIHJldHVybiBoZXJvIGFuZCBub3QgaGVybzpJc051bGwoKSBhbmQgaGVyby5Jc1JhbmdlZEF0dGFja2VyIGFuZCBoZXJvOklzUmFuZ2VkQXR0YWNrZXIoKQplbmQKCmZ1bmN0aW9uIEF0dGFja0VmZmVjdDpSZW1vdmVBdHRhY2tFZmZlY3QoaGVybykKICAgIGlmIG5vdCBoZXJvIG9yIGhlcm86SXNOdWxsKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBoZXJvOkhhc01vZGlmaWVyKE1PRElGSUVSX0FUVEFDS19FRkZFQ1QpIHRoZW4KICAgICAgICBoZXJvOlJlbW92ZU1vZGlmaWVyQnlOYW1lKE1PRElGSUVSX0FUVEFDS19FRkZFQ1QpCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBBdHRhY2tFZmZlY3Q6QXBwbHlBdHRhY2tFZmZlY3QoaGVybywgaXRlbV9rZXkpCiAgICBpZiBub3QgaGVybyBvciBoZXJvOklzTnVsbCgpIG9yIG5vdCBpdGVtX2tleSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIG5vdCBoZXJvOklzSGVybygpIG9yIG5vdCBoZXJvOklzUmVhbEhlcm8oKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIHV0aWxleCBhbmQgdXRpbGV4LklzQ2xyYkNvdXJpZXJQZXQgYW5kIHV0aWxleDpJc0NscmJDb3VyaWVyUGV0KGhlcm8pIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgLS0g6IOM5YyF5pS75Ye75by56YGT77yI5aaC5rWB5pif54Gr55+i77yJ5LuF6L+c56iL6Iux6ZuE55Sf5pWICiAgICBpZiBub3Qgc2VsZjpJc1JhbmdlZEhlcm8oaGVybykgdGhlbgogICAgICAgIHNlbGY6UmVtb3ZlQXR0YWNrRWZmZWN0KGhlcm8pCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGVmZmVjdF9rZXkgPSBTaG9wIGFuZCBTaG9wLkdldEF0dGFja0VmZmVjdE1vZGlmaWVyS2V5IGFuZCBTaG9wOkdldEF0dGFja0VmZmVjdE1vZGlmaWVyS2V5KGl0ZW1fa2V5KQogICAgaWYgbm90IGVmZmVjdF9rZXkgb3IgZWZmZWN0X2tleSA9PSAiIiB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIG1vZCA9IGhlcm86RmluZE1vZGlmaWVyQnlOYW1lKE1PRElGSUVSX0FUVEFDS19FRkZFQ1QpCiAgICBpZiBtb2QgYW5kIG1vZC5hdHRhY2tfZWZmZWN0X2tleSA9PSBlZmZlY3Rfa2V5IHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZjpSZW1vdmVBdHRhY2tFZmZlY3QoaGVybykKICAgIGhlcm86QWRkTmV3TW9kaWZpZXIoaGVybywgbmlsLCBNT0RJRklFUl9BVFRBQ0tfRUZGRUNULCB7CiAgICAgICAgYXR0YWNrX2VmZmVjdCA9IGVmZmVjdF9rZXksCiAgICB9KQplbmQKCmZ1bmN0aW9uIEF0dGFja0VmZmVjdDpTeW5jUGxheWVyKElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgaGVybyA9IHNlbGY6UmVzb2x2ZUhlcm8oSUQpCiAgICBpZiBzZWxmOlNob3VsZFNob3dGb3JQbGF5ZXIoSUQpIHRoZW4KICAgICAgICBsb2NhbCBrZXkgPSBTaG9wIGFuZCBTaG9wLkdldEVxdWlwcGVkQXR0YWNrRWZmZWN0S2V5IGFuZCBTaG9wOkdldEVxdWlwcGVkQXR0YWNrRWZmZWN0S2V5KElEKQogICAgICAgIGlmIGtleSBhbmQgaGVybyB0aGVuCiAgICAgICAgICAgIGlmIHNlbGY6SXNSYW5nZWRIZXJvKGhlcm8pIHRoZW4KICAgICAgICAgICAgICAgIHNlbGY6QXBwbHlBdHRhY2tFZmZlY3QoaGVybywga2V5KQogICAgICAgICAgICBlbHNlCiAgICAgICAgICAgICAgICBzZWxmOlJlbW92ZUF0dGFja0VmZmVjdChoZXJvKQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgaGVybyB0aGVuCiAgICAgICAgc2VsZjpSZW1vdmVBdHRhY2tFZmZlY3QoaGVybykKICAgIGVuZAplbmQKCmZ1bmN0aW9uIEF0dGFja0VmZmVjdDpIYXNQZW5kaW5nQXR0YWNrRWZmZWN0V2l0aG91dEhlcm8oKQogICAgbG9jYWwgc2VlbiA9IHt9CiAgICBsb2NhbCBmdW5jdGlvbiBuZWVkc19yZXRyeShJRCkKICAgICAgICBpZiBzZWVuW0lEXSB0aGVuCiAgICAgICAgICAgIHJldHVybiBmYWxzZQogICAgICAgIGVuZAogICAgICAgIHNlZW5bSURdID0gdHJ1ZQogICAgICAgIGlmIG5vdCBzZWxmOlNob3VsZFNob3dGb3JQbGF5ZXIoSUQpIHRoZW4KICAgICAgICAgICAgcmV0dXJuIGZhbHNlCiAgICAgICAgZW5kCiAgICAgICAgcmV0dXJuIG5vdCBzZWxmOlJlc29sdmVIZXJvKElEKQogICAgZW5kCiAgICBpZiBQRCBhbmQgUEQuSURzIHRoZW4KICAgICAgICBmb3IgXywgSUQgaW4gcGFpcnMoUEQuSURzKSBkbwogICAgICAgICAgICBpZiBuZWVkc19yZXRyeShJRCkgdGhlbgogICAgICAgICAgICAgICAgcmV0dXJuIHRydWUKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGlmIFBsYXllclJlc291cmNlIHRoZW4KICAgICAgICBmb3IgSUQgPSAwLCAyMyBkbwogICAgICAgICAgICBpZiBQbGF5ZXJSZXNvdXJjZTpJc1ZhbGlkUGxheWVyKElEKSBvciBQbGF5ZXJSZXNvdXJjZTpJc1ZhbGlkUGxheWVySUQoSUQpIHRoZW4KICAgICAgICAgICAgICAgIGlmIG5lZWRzX3JldHJ5KElEKSB0aGVuCiAgICAgICAgICAgICAgICAgICAgcmV0dXJuIHRydWUKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZAogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gQXR0YWNrRWZmZWN0OlN5bmNBbGwoKQogICAgbG9jYWwgc2VlbiA9IHt9CiAgICBsb2NhbCBmdW5jdGlvbiB0cnlfc3luYyhJRCkKICAgICAgICBpZiBzZWVuW0lEXSB0aGVuCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZAogICAgICAgIHNlZW5bSURdID0gdHJ1ZQogICAgICAgIHNlbGY6U3luY1BsYXllcihJRCkKICAgIGVuZAogICAgaWYgUEQgYW5kIFBELklEcyB0aGVuCiAgICAgICAgZm9yIF8sIElEIGluIHBhaXJzKFBELklEcykgZG8KICAgICAgICAgICAgdHJ5X3N5bmMoSUQpCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGlmIFBsYXllclJlc291cmNlIHRoZW4KICAgICAgICBmb3IgSUQgPSAwLCAyMyBkbwogICAgICAgICAgICBpZiBQbGF5ZXJSZXNvdXJjZTpJc1ZhbGlkUGxheWVyKElEKSBvciBQbGF5ZXJSZXNvdXJjZTpJc1ZhbGlkUGxheWVySUQoSUQpIHRoZW4KICAgICAgICAgICAgICAgIHRyeV9zeW5jKElEKQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZAplbmQKCmZ1bmN0aW9uIEF0dGFja0VmZmVjdDpTY2hlZHVsZVN5bmNSZXRyeShfSUQpCiAgICBsb2NhbCBuYW1lID0gQVRUQUNLX0VGRkVDVF9TWU5DX1JFVFJZX1BSRUZJWCAuLiAiYWxsIgogICAgaWYgVGltZXJzIGFuZCBUaW1lcnMudGltZXJzIGFuZCBUaW1lcnMudGltZXJzW25hbWVdIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgVGltZXJzOkNyZWF0ZVRpbWVyKG5hbWUsIHsKICAgICAgICBlbmRUaW1lID0gQVRUQUNLX0VGRkVDVF9TWU5DX1JFVFJZX1NFQywKICAgICAgICBjYWxsYmFjayA9IGZ1bmN0aW9uKCkKICAgICAgICAgICAgaWYgbm90IEF0dGFja0VmZmVjdCB0aGVuCiAgICAgICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIEF0dGFja0VmZmVjdDpTeW5jQWxsKCkKICAgICAgICAgICAgaWYgQXR0YWNrRWZmZWN0Okhhc1BlbmRpbmdBdHRhY2tFZmZlY3RXaXRob3V0SGVybygpIHRoZW4KICAgICAgICAgICAgICAgIHJldHVybiBBVFRBQ0tfRUZGRUNUX1NZTkNfUkVUUllfU0VDCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICByZXR1cm4gbmlsCiAgICAgICAgZW5kLAogICAgICAgIHVzZUdhbWVUaW1lID0gZmFsc2UsCiAgICB9KQplbmQKCmZ1bmN0aW9uIEF0dGFja0VmZmVjdDpTeW5jRnJvbU91dEJhZyhfSUQpCiAgICBzZWxmOlN5bmNBbGwoKQogICAgaWYgc2VsZjpIYXNQZW5kaW5nQXR0YWNrRWZmZWN0V2l0aG91dEhlcm8oKSB0aGVuCiAgICAgICAgc2VsZjpTY2hlZHVsZVN5bmNSZXRyeShfSUQgb3IgMCkKICAgIGVuZAplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+--- 局外背包佩戴攻击弹道特效 -> modifier_attack_effect
+
+local MODIFIER_ATTACK_EFFECT = "modifier_attack_effect"
+local ATTACK_EFFECT_SYNC_RETRY_PREFIX = "clrb_attack_effect_sync_retry_"
+local ATTACK_EFFECT_SYNC_RETRY_SEC = 0.5
+
+function AttackEffect:ResolveHero(ID)
+    if not ID then
+        return nil
+    end
+    local hero = Util and Util.ID2Hero and Util:ID2Hero(ID)
+    if hero and not hero:IsNull() then
+        return hero
+    end
+    if HeroData and HeroData.GetHero then
+        hero = HeroData:GetHero(ID)
+        if hero and not hero:IsNull() then
+            return hero
+        end
+    end
+    if PlayerResource and PlayerResource.GetSelectedHeroEntity then
+        hero = PlayerResource:GetSelectedHeroEntity(ID)
+        if hero and not hero:IsNull() then
+            return hero
+        end
+    end
+    return nil
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function AttackEffect:ShouldShowForPlayer(ID)
+    if not ID then
+        return false
+    end
+    if Util and Util.IsPseudoPlayerID and Util:IsPseudoPlayerID(ID) then
+        return false
+    end
+    if Shop and Shop.ShouldShowInGameAttackEffect then
+        return Shop:ShouldShowInGameAttackEffect(ID)
+    end
+    return false
+end
+
+function AttackEffect:IsRangedHero(hero)
+    return hero and not hero:IsNull() and hero.IsRangedAttacker and hero:IsRangedAttacker()
+end
+
+function AttackEffect:RemoveAttackEffect(hero)
+    if not hero or hero:IsNull() then
+        return
+    end
+    if hero:HasModifier(MODIFIER_ATTACK_EFFECT) then
+        hero:RemoveModifierByName(MODIFIER_ATTACK_EFFECT)
+    end
+end
+
+function AttackEffect:ApplyAttackEffect(hero, item_key)
+    if not hero or hero:IsNull() or not item_key then
+        return
+    end
+    if not hero:IsHero() or not hero:IsRealHero() then
+        return
+    end
+    if utilex and utilex.IsClrbCourierPet and utilex:IsClrbCourierPet(hero) then
+        return
+    end
+    -- 背包攻击弹道（如流星火矢）仅远程英雄生效
+    if not self:IsRangedHero(hero) then
+        self:RemoveAttackEffect(hero)
+        return
+    end
+    local effect_key = Shop and Shop.GetAttackEffectModifierKey and Shop:GetAttackEffectModifierKey(item_key)
+    if not effect_key or effect_key == "" then
+        return
+    end
+    local mod = hero:FindModifierByName(MODIFIER_ATTACK_EFFECT)
+    if mod and mod.attack_effect_key == effect_key then
+        return
+    end
+    self:RemoveAttackEffect(hero)
+    hero:AddNewModifier(hero, nil, MODIFIER_ATTACK_EFFECT, {
+        attack_effect = effect_key,
+    })
+end
+
+function AttackEffect:SyncPlayer(ID)
+    if not ID then
+        return
+    end
+    local hero = self:ResolveHero(ID)
+    if self:ShouldShowForPlayer(ID) then
+        local key = Shop and Shop.GetEquippedAttackEffectKey and Shop:GetEquippedAttackEffectKey(ID)
+        if key and hero then
+            if self:IsRangedHero(hero) then
+                self:ApplyAttackEffect(hero, key)
+            else
+                self:RemoveAttackEffect(hero)
+            end
+        end
+        return
+    end
+    if hero then
+        self:RemoveAttackEffect(hero)
+    end
+end
+
+function AttackEffect:HasPendingAttackEffectWithoutHero()
+    local seen = {}
+    local function needs_retry(ID)
+        if seen[ID] then
+            return false
+        end
+        seen[ID] = true
+        if not self:ShouldShowForPlayer(ID) then
+            return false
+        end
+        return not self:ResolveHero(ID)
+    end
+    if PD and PD.IDs then
+        for _, ID in pairs(PD.IDs) do
+            if needs_retry(ID) then
+                return true
+            end
+        end
+    end
+    if PlayerResource then
+        for ID = 0, 23 do
+            if PlayerResource:IsValidPlayer(ID) or PlayerResource:IsValidPlayerID(ID) then
+                if needs_retry(ID) then
+                    return true
+                end
+            end
+        end
+    end
+    return false
+end
+
+function AttackEffect:SyncAll()
+    local seen = {}
+    local function try_sync(ID)
+        if seen[ID] then
+            return
+        end
+        seen[ID] = true
+        self:SyncPlayer(ID)
+    end
+    if PD and PD.IDs then
+        for _, ID in pairs(PD.IDs) do
+            try_sync(ID)
+        end
+    end
+    if PlayerResource then
+        for ID = 0, 23 do
+            if PlayerResource:IsValidPlayer(ID) or PlayerResource:IsValidPlayerID(ID) then
+                try_sync(ID)
+            end
+        end
+    end
+end
+
+function AttackEffect:ScheduleSyncRetry(_ID)
+    local name = ATTACK_EFFECT_SYNC_RETRY_PREFIX .. "all"
+    if Timers and Timers.timers and Timers.timers[name] then
+        return
+    end
+    Timers:CreateTimer(name, {
+        endTime = ATTACK_EFFECT_SYNC_RETRY_SEC,
+        callback = function()
+            if not AttackEffect then
+                return
+            end
+            AttackEffect:SyncAll()
+            if AttackEffect:HasPendingAttackEffectWithoutHero() then
+                return ATTACK_EFFECT_SYNC_RETRY_SEC
+            end
+            return nil
+        end,
+        useGameTime = false,
+    })
+end
+
+function AttackEffect:SyncFromOutBag(_ID)
+    self:SyncAll()
+    if self:HasPendingAttackEffectWithoutHero() then
+        self:ScheduleSyncRetry(_ID or 0)
+    end
+end

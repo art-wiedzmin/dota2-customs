@@ -8,22 +8,165 @@
 ]]
 
 
-local encoded=[[LS0g562L5paX5LqR77ya5L+u5LuZ6aOe6KGMIC8g6LiP5LqR6Z205YWx55So77yb5q275Lqh56e76Zmk77yM5aSN5rS75ZCO55SxIENscmJGbHlDbG91ZFN5bmMg6YeN5bu6Ci0tIOacjeWKoeerryBDcmVhdGVQYXJ0aWNsZSArIEFkZFBhcnRpY2xlIOWQjOatpeWIsOWuouaIt+err++8m1RoaW5rZXIg6ZSa54K55o+S5YC86Lef6ZqP77yM6YG/5YWN5L2O6aKR556s56e75Y2h6aG/CgpyZXF1aXJlKCJpbmdhbWUubW9kaWZpZXIuY2xyYl9mbHlfY2xvdWRfdXRpbCIpCgptb2RpZmllcl9jbHJiX2ZseV9jbG91ZCA9IGNsYXNzKHt9KQoKbG9jYWwgRkxZX0NMT1VEX0ZYID0gInBhcnRpY2xlcy9lY29uL2l0ZW1zL21vbmtleV9raW5nL2FyY2FuYS9tb25rZXlfYXJjYW5hX2Nsb3VkLnZwY2YiCmxvY2FsIEZMWV9DTE9VRF9HUk9VTkRfT0ZGU0VUID0gODAKbG9jYWwgRkxZX0NMT1VEX1BPU19JTlRFUlZBTCA9IDAuMDMKLS0gbW9ua2V5X2FyY2FuYV9jbG91ZCDpnZ7lvqrnjq/nspLlrZDvvIzliLDmnJ/liY3ph43lu7oKbG9jYWwgRkxZX0NMT1VEX1JFRlJFU0hfU0VDID0gNQpsb2NhbCBGTFlfQ0xPVURfTEVSUCA9IDAuNTUKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfZmx5X2Nsb3VkOklzSGlkZGVuKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9mbHlfY2xvdWQ6SXNEZWJ1ZmYoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9mbHlfY2xvdWQ6SXNQdXJnYWJsZSgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2ZseV9jbG91ZDpSZW1vdmVPbkRlYXRoKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9mbHlfY2xvdWQ6X0Zvb3RDbG91ZFBvcygpCiAgICBsb2NhbCBwID0gc2VsZjpHZXRQYXJlbnQoKQogICAgaWYgbm90IHAgb3IgcDpJc051bGwoKSB0aGVuCiAgICAgICAgcmV0dXJuIG5pbAogICAgZW5kCiAgICBsb2NhbCBwb3MgPSBwOkdldEFic09yaWdpbigpCiAgICBsb2NhbCBncm91bmQgPSBHZXRHcm91bmRQb3NpdGlvbihWZWN0b3IocG9zLngsIHBvcy55LCBwb3MueiArIDIwNDgpLCBwKQogICAgZ3JvdW5kLnogPSBncm91bmQueiArIEZMWV9DTE9VRF9HUk9VTkRfT0ZGU0VUCiAgICByZXR1cm4gZ3JvdW5kCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9mbHlfY2xvdWQ6X0Rlc3Ryb3lGbHlDbG91ZEFuY2hvcigpCiAgICBpZiBzZWxmLmZseV9jbG91ZF9hbmNob3IgYW5kIG5vdCBzZWxmLmZseV9jbG91ZF9hbmNob3I6SXNOdWxsKCkgdGhlbgogICAgICAgIFVUSUxfUmVtb3ZlKHNlbGYuZmx5X2Nsb3VkX2FuY2hvcikKICAgIGVuZAogICAgc2VsZi5mbHlfY2xvdWRfYW5jaG9yID0gbmlsCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9mbHlfY2xvdWQ6X0Rlc3Ryb3lQYXJ0aWNsZU9ubHkoKQogICAgaWYgc2VsZi5mbHlfY2xvdWRfcGZ4IHRoZW4KICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6RGVzdHJveVBhcnRpY2xlKHNlbGYuZmx5X2Nsb3VkX3BmeCwgZmFsc2UpCiAgICAgICAgUGFydGljbGVNYW5hZ2VyOlJlbGVhc2VQYXJ0aWNsZUluZGV4KHNlbGYuZmx5X2Nsb3VkX3BmeCkKICAgICAgICBzZWxmLmZseV9jbG91ZF9wZnggPSBuaWwKICAgIGVuZAogICAgc2VsZi5fZmx5X2Nsb3VkX3NwYXduX2F0ID0gbmlsCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9mbHlfY2xvdWQ6X0Vuc3VyZUZseUNsb3VkQW5jaG9yKHRhcmdldCkKICAgIGxvY2FsIHAgPSBzZWxmOkdldFBhcmVudCgpCiAgICBpZiBub3QgcCBvciBwOklzTnVsbCgpIG9yIG5vdCB0YXJnZXQgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgaWYgbm90IHNlbGYuZmx5X2Nsb3VkX2FuY2hvciBvciBzZWxmLmZseV9jbG91ZF9hbmNob3I6SXNOdWxsKCkgdGhlbgogICAgICAgIHNlbGYuZmx5X2Nsb3VkX2FuY2hvciA9IENyZWF0ZU1vZGlmaWVyVGhpbmtlcigKICAgICAgICAgICAgcCwKICAgICAgICAgICAgbmlsLAogICAgICAgICAgICAibW9kaWZpZXJfcGhhc2VkIiwKICAgICAgICAgICAge30sCiAgICAgICAgICAgIHRhcmdldCwKICAgICAgICAgICAgcDpHZXRUZWFtTnVtYmVyKCksCiAgICAgICAgICAgIGZhbHNlCiAgICAgICAgKQogICAgICAgIHNlbGYuX2ZseV9jbG91ZF9wb3MgPSB0YXJnZXQKICAgIGVuZAogICAgaWYgbm90IHNlbGYuZmx5X2Nsb3VkX2FuY2hvciBvciBzZWxmLmZseV9jbG91ZF9hbmNob3I6SXNOdWxsKCkgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgbG9jYWwgY3VyID0gc2VsZi5fZmx5X2Nsb3VkX3BvcyBvciB0YXJnZXQKICAgIGxvY2FsIHQgPSBGTFlfQ0xPVURfTEVSUAogICAgbG9jYWwgc21vb3RoID0gVmVjdG9yKAogICAgICAgIGN1ci54ICsgKHRhcmdldC54IC0gY3VyLngpICogdCwKICAgICAgICBjdXIueSArICh0YXJnZXQueSAtIGN1ci55KSAqIHQsCiAgICAgICAgY3VyLnogKyAodGFyZ2V0LnogLSBjdXIueikgKiB0CiAgICApCiAgICBzZWxmLl9mbHlfY2xvdWRfcG9zID0gc21vb3RoCiAgICBzZWxmLmZseV9jbG91ZF9hbmNob3I6U2V0QWJzT3JpZ2luKHNtb290aCkKICAgIHJldHVybiBzZWxmLmZseV9jbG91ZF9hbmNob3IKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2ZseV9jbG91ZDpfU3Bhd25QYXJ0aWNsZSgpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIHAgPSBzZWxmOkdldFBhcmVudCgpCiAgICBpZiBub3QgcCBvciBwOklzTnVsbCgpIG9yIG5vdCBwOklzQWxpdmUoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGdyb3VuZCA9IHNlbGY6X0Zvb3RDbG91ZFBvcygpCiAgICBpZiBub3QgZ3JvdW5kIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgYW5jaG9yID0gc2VsZjpfRW5zdXJlRmx5Q2xvdWRBbmNob3IoZ3JvdW5kKQogICAgaWYgbm90IGFuY2hvciBvciBhbmNob3I6SXNOdWxsKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmOl9EZXN0cm95UGFydGljbGVPbmx5KCkKICAgIHNlbGYuZmx5X2Nsb3VkX3BmeCA9IFBhcnRpY2xlTWFuYWdlcjpDcmVhdGVQYXJ0aWNsZShGTFlfQ0xPVURfRlgsIFBBVFRBQ0hfQUJTT1JJR0lOX0ZPTExPVywgYW5jaG9yKQogICAgUGFydGljbGVNYW5hZ2VyOlNldFBhcnRpY2xlQ29udHJvbChzZWxmLmZseV9jbG91ZF9wZngsIDAsIGFuY2hvcjpHZXRBYnNPcmlnaW4oKSkKICAgIHNlbGY6QWRkUGFydGljbGUoc2VsZi5mbHlfY2xvdWRfcGZ4LCBmYWxzZSwgZmFsc2UsIDEwLCBmYWxzZSwgZmFsc2UpCiAgICBzZWxmLl9mbHlfY2xvdWRfc3Bhd25fYXQgPSBHYW1lUnVsZXM6R2V0R2FtZVRpbWUoKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfZmx5X2Nsb3VkOl9UaWNrRmx5Q2xvdWQoKQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBwID0gc2VsZjpHZXRQYXJlbnQoKQogICAgaWYgbm90IHAgb3IgcDpJc051bGwoKSBvciBub3QgcDpJc0FsaXZlKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBub3QgQ2xyYkhlcm9TaG91bGRTaG93Rmx5Q2xvdWQocCkgdGhlbgogICAgICAgIHNlbGY6RGVzdHJveSgpCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBsb2NhbCB0YXJnZXQgPSBzZWxmOl9Gb290Q2xvdWRQb3MoKQogICAgaWYgdGFyZ2V0IHRoZW4KICAgICAgICBzZWxmOl9FbnN1cmVGbHlDbG91ZEFuY2hvcih0YXJnZXQpCiAgICBlbmQKCiAgICBpZiBzZWxmLmZseV9jbG91ZF9wZnggYW5kIHNlbGYuZmx5X2Nsb3VkX2FuY2hvciBhbmQgbm90IHNlbGYuZmx5X2Nsb3VkX2FuY2hvcjpJc051bGwoKSB0aGVuCiAgICAgICAgUGFydGljbGVNYW5hZ2VyOlNldFBhcnRpY2xlQ29udHJvbChzZWxmLmZseV9jbG91ZF9wZngsIDAsIHNlbGYuZmx5X2Nsb3VkX2FuY2hvcjpHZXRBYnNPcmlnaW4oKSkKICAgIGVuZAoKICAgIGxvY2FsIG5vdyA9IEdhbWVSdWxlczpHZXRHYW1lVGltZSgpCiAgICBpZiBub3Qgc2VsZi5mbHlfY2xvdWRfcGZ4IG9yIG5vdCBzZWxmLl9mbHlfY2xvdWRfc3Bhd25fYXQKICAgICAgICBvciAobm93IC0gc2VsZi5fZmx5X2Nsb3VkX3NwYXduX2F0KSA+PSBGTFlfQ0xPVURfUkVGUkVTSF9TRUMgdGhlbgogICAgICAgIHNlbGY6X1NwYXduUGFydGljbGUoKQogICAgZW5kCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9mbHlfY2xvdWQ6T25DcmVhdGVkKCkKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5fZmx5X2Nsb3VkX3BvcyA9IG5pbAogICAgc2VsZjpfU3Bhd25QYXJ0aWNsZSgpCiAgICBzZWxmOlN0YXJ0SW50ZXJ2YWxUaGluayhGTFlfQ0xPVURfUE9TX0lOVEVSVkFMKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfZmx5X2Nsb3VkOk9uSW50ZXJ2YWxUaGluaygpCiAgICBzZWxmOl9UaWNrRmx5Q2xvdWQoKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfZmx5X2Nsb3VkOk9uRGVzdHJveSgpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGY6X0Rlc3Ryb3lQYXJ0aWNsZU9ubHkoKQogICAgc2VsZjpfRGVzdHJveUZseUNsb3VkQW5jaG9yKCkKICAgIHNlbGYuX2ZseV9jbG91ZF9wb3MgPSBuaWwKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 筋斗云：修仙飞行 / 踏云靴共用；死亡移除，复活后由 ClrbFlyCloudSync 重建
+-- 服务端 CreateParticle + AddParticle 同步到客户端；Thinker 锚点插值跟随，避免低频瞬移卡顿
+
+require("ingame.modifier.clrb_fly_cloud_util")
+
+modifier_clrb_fly_cloud = class({})
+
+local FLY_CLOUD_FX = "particles/econ/items/monkey_king/arcana/monkey_arcana_cloud.vpcf"
+local FLY_CLOUD_GROUND_OFFSET = 80
+local FLY_CLOUD_POS_INTERVAL = 0.03
+-- monkey_arcana_cloud 非循环粒子，到期前重建
+local FLY_CLOUD_REFRESH_SEC = 5
+local FLY_CLOUD_LERP = 0.55
+
+function modifier_clrb_fly_cloud:IsHidden()
+    return true
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function modifier_clrb_fly_cloud:IsDebuff()
+    return false
+end
+
+function modifier_clrb_fly_cloud:IsPurgable()
+    return false
+end
+
+function modifier_clrb_fly_cloud:RemoveOnDeath()
+    return true
+end
+
+function modifier_clrb_fly_cloud:_FootCloudPos()
+    local p = self:GetParent()
+    if not p or p:IsNull() then
+        return nil
+    end
+    local pos = p:GetAbsOrigin()
+    local ground = GetGroundPosition(Vector(pos.x, pos.y, pos.z + 2048), p)
+    ground.z = ground.z + FLY_CLOUD_GROUND_OFFSET
+    return ground
+end
+
+function modifier_clrb_fly_cloud:_DestroyFlyCloudAnchor()
+    if self.fly_cloud_anchor and not self.fly_cloud_anchor:IsNull() then
+        UTIL_Remove(self.fly_cloud_anchor)
+    end
+    self.fly_cloud_anchor = nil
+end
+
+function modifier_clrb_fly_cloud:_DestroyParticleOnly()
+    if self.fly_cloud_pfx then
+        ParticleManager:DestroyParticle(self.fly_cloud_pfx, false)
+        ParticleManager:ReleaseParticleIndex(self.fly_cloud_pfx)
+        self.fly_cloud_pfx = nil
+    end
+    self._fly_cloud_spawn_at = nil
+end
+
+function modifier_clrb_fly_cloud:_EnsureFlyCloudAnchor(target)
+    local p = self:GetParent()
+    if not p or p:IsNull() or not target then
+        return nil
+    end
+    if not self.fly_cloud_anchor or self.fly_cloud_anchor:IsNull() then
+        self.fly_cloud_anchor = CreateModifierThinker(
+            p,
+            nil,
+            "modifier_phased",
+            {},
+            target,
+            p:GetTeamNumber(),
+            false
+        )
+        self._fly_cloud_pos = target
+    end
+    if not self.fly_cloud_anchor or self.fly_cloud_anchor:IsNull() then
+        return nil
+    end
+    local cur = self._fly_cloud_pos or target
+    local t = FLY_CLOUD_LERP
+    local smooth = Vector(
+        cur.x + (target.x - cur.x) * t,
+        cur.y + (target.y - cur.y) * t,
+        cur.z + (target.z - cur.z) * t
+    )
+    self._fly_cloud_pos = smooth
+    self.fly_cloud_anchor:SetAbsOrigin(smooth)
+    return self.fly_cloud_anchor
+end
+
+function modifier_clrb_fly_cloud:_SpawnParticle()
+    if not IsServer() then
+        return
+    end
+    local p = self:GetParent()
+    if not p or p:IsNull() or not p:IsAlive() then
+        return
+    end
+    local ground = self:_FootCloudPos()
+    if not ground then
+        return
+    end
+    local anchor = self:_EnsureFlyCloudAnchor(ground)
+    if not anchor or anchor:IsNull() then
+        return
+    end
+    self:_DestroyParticleOnly()
+    self.fly_cloud_pfx = ParticleManager:CreateParticle(FLY_CLOUD_FX, PATTACH_ABSORIGIN_FOLLOW, anchor)
+    ParticleManager:SetParticleControl(self.fly_cloud_pfx, 0, anchor:GetAbsOrigin())
+    self:AddParticle(self.fly_cloud_pfx, false, false, 10, false, false)
+    self._fly_cloud_spawn_at = GameRules:GetGameTime()
+end
+
+function modifier_clrb_fly_cloud:_TickFlyCloud()
+    if not IsServer() then
+        return
+    end
+    local p = self:GetParent()
+    if not p or p:IsNull() or not p:IsAlive() then
+        return
+    end
+    if not ClrbHeroShouldShowFlyCloud(p) then
+        self:Destroy()
+        return
+    end
+
+    local target = self:_FootCloudPos()
+    if target then
+        self:_EnsureFlyCloudAnchor(target)
+    end
+
+    if self.fly_cloud_pfx and self.fly_cloud_anchor and not self.fly_cloud_anchor:IsNull() then
+        ParticleManager:SetParticleControl(self.fly_cloud_pfx, 0, self.fly_cloud_anchor:GetAbsOrigin())
+    end
+
+    local now = GameRules:GetGameTime()
+    if not self.fly_cloud_pfx or not self._fly_cloud_spawn_at
+        or (now - self._fly_cloud_spawn_at) >= FLY_CLOUD_REFRESH_SEC then
+        self:_SpawnParticle()
+    end
+end
+
+function modifier_clrb_fly_cloud:OnCreated()
+    if not IsServer() then
+        return
+    end
+    self._fly_cloud_pos = nil
+    self:_SpawnParticle()
+    self:StartIntervalThink(FLY_CLOUD_POS_INTERVAL)
+end
+
+function modifier_clrb_fly_cloud:OnIntervalThink()
+    self:_TickFlyCloud()
+end
+
+function modifier_clrb_fly_cloud:OnDestroy()
+    if not IsServer() then
+        return
+    end
+    self:_DestroyParticleOnly()
+    self:_DestroyFlyCloudAnchor()
+    self._fly_cloud_pos = nil
+end

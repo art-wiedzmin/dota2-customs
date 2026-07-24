@@ -8,22 +8,110 @@
 ]]
 
 
-local encoded=[[TGlua0x1YU1vZGlmaWVyKCJtb2RpZmllcl9hdHRhY2tfZWZmZWN0IiwgImluZ2FtZS9tb2RpZmllci9tb2RpZmllcl9hdHRhY2tfZWZmZWN0IiwgTFVBX01PRElGSUVSX01PVElPTl9OT05FKQoKbW9kaWZpZXJfYXR0YWNrX2VmZmVjdCA9IGNsYXNzKHt9KQoKQVRUQUNLX0VGRkVDVF9QQVJUSUNMRVMgPSB7CiAgICBhdHY0ID0gInBhcnRpY2xlcy9lY29uL2V2ZW50cy9kaXJldGlkZV8yMDIwL2F0dGFja19tb2RpZmllci9hdHRhY2tfbW9kaWZpZXJfZmFsbDIwLnZwY2YiLAogICAgYXR2MSA9ICJwYXJ0aWNsZXMvZWNvbi9ldmVudHMvZGlyZXRpZGVfMjAyMC9hdHRhY2tfbW9kaWZpZXIvYXR0YWNrX21vZGlmaWVyX3YxX2ZhbGwyMC52cGNmIiwKICAgIGF0djIgPSAicGFydGljbGVzL2Vjb24vZXZlbnRzL2RpcmV0aWRlXzIwMjAvYXR0YWNrX21vZGlmaWVyL2F0dGFja19tb2RpZmllcl92Ml9mYWxsMjAudnBjZiIsCiAgICBhdHYzID0gInBhcnRpY2xlcy9lY29uL2V2ZW50cy9kaXJldGlkZV8yMDIwL2F0dGFja19tb2RpZmllci9hdHRhY2tfbW9kaWZpZXJfdjNfZmFsbDIwLnZwY2YiLAp9CgpmdW5jdGlvbiBtb2RpZmllcl9hdHRhY2tfZWZmZWN0OklzRGVidWZmKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2F0dGFja19lZmZlY3Q6SXNQdXJnYWJsZSgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9hdHRhY2tfZWZmZWN0OklzSGlkZGVuKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfYXR0YWNrX2VmZmVjdDpSZW1vdmVPbkRlYXRoKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2F0dGFja19lZmZlY3Q6T25DcmVhdGVkKGt2KQogICAgaWYga3YgYW5kIGt2LmF0dGFja19lZmZlY3QgdGhlbgogICAgICAgIHNlbGYuYXR0YWNrX2VmZmVjdF9rZXkgPSBrdi5hdHRhY2tfZWZmZWN0CiAgICBlbmQKICAgIGlmIElzU2VydmVyKCkgdGhlbgogICAgICAgIHNlbGY6Rm9yY2VSZWZyZXNoKCkKICAgIGVuZAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2F0dGFja19lZmZlY3Q6T25SZWZyZXNoKGt2KQogICAgaWYga3YgYW5kIGt2LmF0dGFja19lZmZlY3QgdGhlbgogICAgICAgIHNlbGYuYXR0YWNrX2VmZmVjdF9rZXkgPSBrdi5hdHRhY2tfZWZmZWN0CiAgICBlbmQKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9hdHRhY2tfZWZmZWN0OkdldFBhcnRpY2xlUGF0aCgpCiAgICBpZiBub3Qgc2VsZi5hdHRhY2tfZWZmZWN0X2tleSB0aGVuCiAgICAgICAgcmV0dXJuIG5pbAogICAgZW5kCiAgICByZXR1cm4gQVRUQUNLX0VGRkVDVF9QQVJUSUNMRVNbc2VsZi5hdHRhY2tfZWZmZWN0X2tleV0KZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9hdHRhY2tfZWZmZWN0OklzUmFuZ2VkQXR0YWNrZXJVbml0KHVuaXQpCiAgICByZXR1cm4gdW5pdCBhbmQgbm90IHVuaXQ6SXNOdWxsKCkgYW5kIHVuaXQuSXNSYW5nZWRBdHRhY2tlciBhbmQgdW5pdDpJc1JhbmdlZEF0dGFja2VyKCkKZW5kCgotLS0g6L+c56iL77ya5pu/5o2i5byV5pOO5pmu5pS75by56YGT77yb6L+R5oiY77ya5peg6buY6K6k5by56YGT77yM5pS75Ye75byA5aeL5pe25Y2V54us5pKt5pS+54m55pWICmZ1bmN0aW9uIG1vZGlmaWVyX2F0dGFja19lZmZlY3Q6RGVjbGFyZUZ1bmN0aW9ucygpCiAgICByZXR1cm4gewogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX1BST0pFQ1RJTEVfTkFNRSwKICAgICAgICBNT0RJRklFUl9FVkVOVF9PTl9BVFRBQ0tfU1RBUlQsCiAgICB9CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfYXR0YWNrX2VmZmVjdDpHZXRNb2RpZmllclByb2plY3RpbGVOYW1lKCkKICAgIGxvY2FsIHBhcmVudCA9IHNlbGY6R2V0UGFyZW50KCkKICAgIGlmIG5vdCBzZWxmOklzUmFuZ2VkQXR0YWNrZXJVbml0KHBhcmVudCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICByZXR1cm4gc2VsZjpHZXRQYXJ0aWNsZVBhdGgoKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2F0dGFja19lZmZlY3Q6T25BdHRhY2tTdGFydChrZXlzKQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBrZXlzLmF0dGFja2VyIH49IHNlbGY6R2V0UGFyZW50KCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBub3Qga2V5cy50YXJnZXQgb3Iga2V5cy50YXJnZXQ6SXNOdWxsKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICAtLSDov5znqIvoi7Hpm4Tlt7LnlLEgR2V0TW9kaWZpZXJQcm9qZWN0aWxlTmFtZSDmm7/mjaLlvLnpgZPvvIzpgb/lhY3ph43lpI3mkq3mlL4KICAgIGlmIHNlbGY6SXNSYW5nZWRBdHRhY2tlclVuaXQoa2V5cy5hdHRhY2tlcikgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCgogICAgbG9jYWwgcGFydGljbGVfcGF0aCA9IHNlbGY6R2V0UGFydGljbGVQYXRoKCkKICAgIGlmIG5vdCBwYXJ0aWNsZV9wYXRoIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGxvY2FsIGF0dGFja2VyID0ga2V5cy5hdHRhY2tlcgogICAgbG9jYWwgdGFyZ2V0ID0ga2V5cy50YXJnZXQKICAgIGxvY2FsIHAgPSBQYXJ0aWNsZU1hbmFnZXI6Q3JlYXRlUGFydGljbGUocGFydGljbGVfcGF0aCwgUEFUVEFDSF9DVVNUT01PUklHSU4sIGF0dGFja2VyKQogICAgaWYgbm90IHAgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCgogICAgbG9jYWwgdGFyZ2V0X3BvcyA9IHRhcmdldDpHZXRBYnNPcmlnaW4oKQogICAgUGFydGljbGVNYW5hZ2VyOlNldFBhcnRpY2xlQ29udHJvbChwLCAxLCB0YXJnZXRfcG9zKQogICAgUGFydGljbGVNYW5hZ2VyOlNldFBhcnRpY2xlQ29udHJvbChwLCAyLCAoYXR0YWNrZXI6R2V0QWJzT3JpZ2luKCkgKyB0YXJnZXRfcG9zKSAvIDIpCiAgICBQYXJ0aWNsZU1hbmFnZXI6U2V0UGFydGljbGVDb250cm9sKHAsIDQsIGF0dGFja2VyOkdldEFic09yaWdpbigpKQoKICAgIFRpbWVyczpDcmVhdGVUaW1lcigxLjUsIGZ1bmN0aW9uKCkKICAgICAgICBpZiBwIHRoZW4KICAgICAgICAgICAgUGFydGljbGVNYW5hZ2VyOkRlc3Ryb3lQYXJ0aWNsZShwLCB0cnVlKQogICAgICAgIGVuZAogICAgZW5kKQplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+LinkLuaModifier("modifier_attack_effect", "ingame/modifier/modifier_attack_effect", LUA_MODIFIER_MOTION_NONE)
+
+modifier_attack_effect = class({})
+
+ATTACK_EFFECT_PARTICLES = {
+    atv4 = "particles/econ/events/diretide_2020/attack_modifier/attack_modifier_fall20.vpcf",
+    atv1 = "particles/econ/events/diretide_2020/attack_modifier/attack_modifier_v1_fall20.vpcf",
+    atv2 = "particles/econ/events/diretide_2020/attack_modifier/attack_modifier_v2_fall20.vpcf",
+    atv3 = "particles/econ/events/diretide_2020/attack_modifier/attack_modifier_v3_fall20.vpcf",
+}
+
+function modifier_attack_effect:IsDebuff()
+    return false
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function modifier_attack_effect:IsPurgable()
+    return false
+end
+
+function modifier_attack_effect:IsHidden()
+    return true
+end
+
+function modifier_attack_effect:RemoveOnDeath()
+    return false
+end
+
+function modifier_attack_effect:OnCreated(kv)
+    if kv and kv.attack_effect then
+        self.attack_effect_key = kv.attack_effect
+    end
+    if IsServer() then
+        self:ForceRefresh()
+    end
+end
+
+function modifier_attack_effect:OnRefresh(kv)
+    if kv and kv.attack_effect then
+        self.attack_effect_key = kv.attack_effect
+    end
+end
+
+function modifier_attack_effect:GetParticlePath()
+    if not self.attack_effect_key then
+        return nil
+    end
+    return ATTACK_EFFECT_PARTICLES[self.attack_effect_key]
+end
+
+function modifier_attack_effect:IsRangedAttackerUnit(unit)
+    return unit and not unit:IsNull() and unit.IsRangedAttacker and unit:IsRangedAttacker()
+end
+
+--- 远程：替换引擎普攻弹道；近战：无默认弹道，攻击开始时单独播放特效
+function modifier_attack_effect:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_PROJECTILE_NAME,
+        MODIFIER_EVENT_ON_ATTACK_START,
+    }
+end
+
+function modifier_attack_effect:GetModifierProjectileName()
+    local parent = self:GetParent()
+    if not self:IsRangedAttackerUnit(parent) then
+        return
+    end
+    return self:GetParticlePath()
+end
+
+function modifier_attack_effect:OnAttackStart(keys)
+    if not IsServer() then
+        return
+    end
+    if keys.attacker ~= self:GetParent() then
+        return
+    end
+    if not keys.target or keys.target:IsNull() then
+        return
+    end
+    -- 远程英雄已由 GetModifierProjectileName 替换弹道，避免重复播放
+    if self:IsRangedAttackerUnit(keys.attacker) then
+        return
+    end
+
+    local particle_path = self:GetParticlePath()
+    if not particle_path then
+        return
+    end
+
+    local attacker = keys.attacker
+    local target = keys.target
+    local p = ParticleManager:CreateParticle(particle_path, PATTACH_CUSTOMORIGIN, attacker)
+    if not p then
+        return
+    end
+
+    local target_pos = target:GetAbsOrigin()
+    ParticleManager:SetParticleControl(p, 1, target_pos)
+    ParticleManager:SetParticleControl(p, 2, (attacker:GetAbsOrigin() + target_pos) / 2)
+    ParticleManager:SetParticleControl(p, 4, attacker:GetAbsOrigin())
+
+    Timers:CreateTimer(1.5, function()
+        if p then
+            ParticleManager:DestroyParticle(p, true)
+        end
+    end)
+end

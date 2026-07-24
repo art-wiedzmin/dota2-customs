@@ -8,22 +8,311 @@
 ]]
 
 
-local encoded=[[ZnVuY3Rpb24gU2hvcDpHZXRFcXVpcHBlZFBldEtleShJRCkKICAgIGlmIG5vdCBJRCBvciBub3Qgc2VsZi5EYXRhW0lEXSBvciBub3Qgc2VsZi5EYXRhW0lEXS5iYWcgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgbG9jYWwgbG9hZG91dCA9IHNlbGYuRGF0YVtJRF0uYmFnLmxvYWRvdXQKICAgIGlmIG5vdCBsb2Fkb3V0IHRoZW4KICAgICAgICByZXR1cm4gbmlsCiAgICBlbmQKICAgIGxvY2FsIGtleSA9IGxvYWRvdXQuZXF1aXBwZWRfcGV0CiAgICBpZiBrZXkgPT0gbmlsIG9yIGtleSA9PSAiIiB0aGVuCiAgICAgICAgcmV0dXJuIG5pbAogICAgZW5kCiAgICByZXR1cm4ga2V5CmVuZAoKZnVuY3Rpb24gU2hvcDpHZXRFcXVpcHBlZFBldE1vZGVsUGF0aChJRCkKICAgIGxvY2FsIGtleSA9IHNlbGY6R2V0RXF1aXBwZWRQZXRLZXkoSUQpCiAgICBpZiBub3Qga2V5IHRoZW4KICAgICAgICByZXR1cm4gbmlsCiAgICBlbmQKICAgIGxvY2FsIG1ldGEgPSBzZWxmLkl0ZW1MaXN0IGFuZCBzZWxmLkl0ZW1MaXN0W2tleV0KICAgIGlmIG1ldGEgYW5kIG1ldGEubW9kZWxQYXRoIHRoZW4KICAgICAgICByZXR1cm4gbWV0YS5tb2RlbFBhdGgKICAgIGVuZAogICAgcmV0dXJuIG5pbAplbmQKCmZ1bmN0aW9uIFNob3A6R2V0UGV0UGFydGljbGUoaXRlbV9rZXkpCiAgICBpZiBub3QgaXRlbV9rZXkgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgbG9jYWwgbWV0YSA9IHNlbGYuSXRlbUxpc3QgYW5kIHNlbGYuSXRlbUxpc3RbaXRlbV9rZXldCiAgICBpZiBtZXRhIGFuZCBtZXRhLnBldFBhcnRpY2xlIGFuZCBtZXRhLnBldFBhcnRpY2xlIH49ICIiIHRoZW4KICAgICAgICByZXR1cm4gbWV0YS5wZXRQYXJ0aWNsZQogICAgZW5kCiAgICByZXR1cm4gbmlsCmVuZAoKZnVuY3Rpb24gU2hvcDpHZXRFcXVpcHBlZFBldFBhcnRpY2xlKElEKQogICAgbG9jYWwga2V5ID0gc2VsZjpHZXRFcXVpcHBlZFBldEtleShJRCkKICAgIGlmIG5vdCBrZXkgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgcmV0dXJuIHNlbGY6R2V0UGV0UGFydGljbGUoa2V5KQplbmQKCi0tLSDlsYDlhoXliJvlu7rlrqDnianljZXkvY3lkI3vvIjkuI4gSXRlbUxpc3QucHJldmlld1VuaXQgLyBucGNfdW5pdHNfY3VzdG9tIOS4gOiHtO+8iQpmdW5jdGlvbiBTaG9wOkdldEVxdWlwcGVkUGV0VW5pdE5hbWUoSUQpCiAgICBsb2NhbCBrZXkgPSBzZWxmOkdldEVxdWlwcGVkUGV0S2V5KElEKQogICAgaWYgbm90IGtleSB0aGVuCiAgICAgICAgcmV0dXJuICJDYXJkUGV0IgogICAgZW5kCiAgICBsb2NhbCBtZXRhID0gc2VsZi5JdGVtTGlzdCBhbmQgc2VsZi5JdGVtTGlzdFtrZXldCiAgICBpZiBtZXRhIGFuZCBtZXRhLnByZXZpZXdVbml0IGFuZCBtZXRhLnByZXZpZXdVbml0IH49ICIiIHRoZW4KICAgICAgICByZXR1cm4gbWV0YS5wcmV2aWV3VW5pdAogICAgZW5kCiAgICBpZiBrZXkgPT0gInBldF90aTEwX3Jvc2giIHRoZW4KICAgICAgICByZXR1cm4gIkNhcmRQZXRUaTEwIgogICAgZW5kCiAgICByZXR1cm4gIkNhcmRQZXQiCmVuZAoKZnVuY3Rpb24gU2hvcDpTaG91bGRTaG93SW5HYW1lUGV0KElEKQogICAgbG9jYWwga2V5ID0gc2VsZjpHZXRFcXVpcHBlZFBldEtleShJRCkKICAgIGlmIG5vdCBrZXkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBsb2NhbCBtZXRhID0gc2VsZi5JdGVtTGlzdCBhbmQgc2VsZi5JdGVtTGlzdFtrZXldCiAgICBpZiBtZXRhIGFuZCBtZXRhLnNsb3QgYW5kIG1ldGEuc2xvdCB+PSAicGV0IiB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gU2hvcDpHZXRFcXVpcHBlZFRpdGxlS2V5KElEKQogICAgaWYgbm90IElEIG9yIG5vdCBzZWxmLkRhdGFbSURdIG9yIG5vdCBzZWxmLkRhdGFbSURdLmJhZyB0aGVuCiAgICAgICAgcmV0dXJuIG5pbAogICAgZW5kCiAgICBsb2NhbCBsb2Fkb3V0ID0gc2VsZi5EYXRhW0lEXS5iYWcubG9hZG91dAogICAgaWYgbm90IGxvYWRvdXQgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgbG9jYWwga2V5ID0gbG9hZG91dC5lcXVpcHBlZF90aXRsZQogICAgaWYga2V5ID09IG5pbCBvciBrZXkgPT0gIiIgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgcmV0dXJuIGtleQplbmQKCmZ1bmN0aW9uIFNob3A6U2hvdWxkU2hvd0luR2FtZVRpdGxlKElEKQogICAgbG9jYWwga2V5ID0gc2VsZjpHZXRFcXVpcHBlZFRpdGxlS2V5KElEKQogICAgaWYgbm90IGtleSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGxvY2FsIG1ldGEgPSBzZWxmLkl0ZW1MaXN0IGFuZCBzZWxmLkl0ZW1MaXN0W2tleV0KICAgIGlmIG1ldGEgYW5kIG1ldGEuc2xvdCBhbmQgbWV0YS5zbG90IH49ICJ0aXRsZSIgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIFNob3A6R2V0VGl0bGVQYXJ0aWNsZShpdGVtX2tleSkKICAgIGlmIG5vdCBpdGVtX2tleSB0aGVuCiAgICAgICAgcmV0dXJuIG5pbAogICAgZW5kCiAgICBsb2NhbCBtZXRhID0gc2VsZi5JdGVtTGlzdCBhbmQgc2VsZi5JdGVtTGlzdFtpdGVtX2tleV0KICAgIGlmIG1ldGEgYW5kIG1ldGEudGl0bGVQYXJ0aWNsZSBhbmQgbWV0YS50aXRsZVBhcnRpY2xlIH49ICIiIHRoZW4KICAgICAgICByZXR1cm4gbWV0YS50aXRsZVBhcnRpY2xlCiAgICBlbmQKICAgIGlmIGl0ZW1fa2V5ID09ICJ0aXRsZV9jbHh4IiB0aGVuCiAgICAgICAgcmV0dXJuICJwYXJ0aWNsZXMvY2xyYi9jbHJiX2VxdWlwX3RpdGxlX2NseHhfbG9vcC52cGNmIgogICAgZW5kCiAgICBpZiBpdGVtX2tleSA9PSAidGl0bGVfd3JuZCIgdGhlbgogICAgICAgIHJldHVybiAicGFydGljbGVzL2NscmIvY2xyYl9lcXVpcF90aXRsZV93cm5kX2xvb3AudnBjZiIKICAgIGVuZAogICAgaWYgaXRlbV9rZXkgPT0gInRpdGxlX3doY2wiIHRoZW4KICAgICAgICByZXR1cm4gInBhcnRpY2xlcy9jbHJiL2NscmJfZXF1aXBfdGl0bGVfd2hjbF9sb29wLnZwY2YiCiAgICBlbmQKICAgIGlmIGl0ZW1fa2V5ID09ICJ0aXRsZV9jbHh6IiB0aGVuCiAgICAgICAgcmV0dXJuICJwYXJ0aWNsZXMvY2xyYi9jbHJiX2VxdWlwX3RpdGxlX2NseHpfbG9vcC52cGNmIgogICAgZW5kCiAgICBpZiBpdGVtX2tleSA9PSAidGl0bGVfd3N6cyIgdGhlbgogICAgICAgIHJldHVybiAicGFydGljbGVzL2NscmIvY2xyYl9lcXVpcF90aXRsZV93c3pzX2xvb3AudnBjZiIKICAgIGVuZAogICAgaWYgaXRlbV9rZXkgPT0gInRpdGxlX2hzYmgiIHRoZW4KICAgICAgICByZXR1cm4gInBhcnRpY2xlcy9jbHJiL2NscmJfZXF1aXBfdGl0bGVfaHNiaF9sb29wLnZwY2YiCiAgICBlbmQKICAgIGlmIGl0ZW1fa2V5ID09ICJ0aXRsZV9oZGxtIiB0aGVuCiAgICAgICAgcmV0dXJuICJwYXJ0aWNsZXMvY2xyYi9jbHJiX2VxdWlwX3RpdGxlX2hkbG1fbG9vcC52cGNmIgogICAgZW5kCiAgICBpZiBpdGVtX2tleSA9PSAidGl0bGVfeXNxd2giIHRoZW4KICAgICAgICByZXR1cm4gInBhcnRpY2xlcy9jbHJiL2NscmJfZXF1aXBfdGl0bGVfeXNxd2hfbG9vcC52cGNmIgogICAgZW5kCiAgICBpZiBpdGVtX2tleSA9PSAidGl0bGVfcnpsZiIgdGhlbgogICAgICAgIHJldHVybiAicGFydGljbGVzL2NscmIvY2xyYl9lcXVpcF90aXRsZV9yemxmX2xvb3AudnBjZiIKICAgIGVuZAogICAgaWYgaXRlbV9rZXkgPT0gInRpdGxlX2NsbHMiIHRoZW4KICAgICAgICByZXR1cm4gInBhcnRpY2xlcy9jbHJiL2NscmJfZXF1aXBfdGl0bGVfY2xsc19sb29wLnZwY2YiCiAgICBlbmQKICAgIGlmIGl0ZW1fa2V5ID09ICJ0aXRsZV9jbGxyIiB0aGVuCiAgICAgICAgcmV0dXJuICJwYXJ0aWNsZXMvY2xyYi9jbHJiX2VxdWlwX3RpdGxlX2NsbHJfbG9vcC52cGNmIgogICAgZW5kCiAgICBpZiBpdGVtX2tleSA9PSAidGl0bGVfY2x6dyIgdGhlbgogICAgICAgIHJldHVybiAicGFydGljbGVzL2NscmIvY2xyYl9lcXVpcF90aXRsZV9jbHp3X2xvb3AudnBjZiIKICAgIGVuZAogICAgaWYgaXRlbV9rZXkgPT0gInRpdGxlX2NsbXkiIHRoZW4KICAgICAgICByZXR1cm4gInBhcnRpY2xlcy9jbHJiL2NscmJfZXF1aXBfdGl0bGVfY2xteV9sb29wLnZwY2YiCiAgICBlbmQKICAgIGlmIGl0ZW1fa2V5ID09ICJ0aXRsZV9jbHp5IiB0aGVuCiAgICAgICAgcmV0dXJuICJwYXJ0aWNsZXMvY2xyYi9jbHJiX2VxdWlwX3RpdGxlX2NsenlfbG9vcC52cGNmIgogICAgZW5kCiAgICBpZiBpdGVtX2tleSA9PSAidGl0bGVfeHhxYyIgdGhlbgogICAgICAgIHJldHVybiAicGFydGljbGVzL2NscmIvY2xyYl9lcXVpcF90aXRsZV94eHFjX2xvb3AudnBjZiIKICAgIGVuZAogICAgaWYgaXRlbV9rZXkgPT0gInRpdGxlX3J6emwiIHRoZW4KICAgICAgICByZXR1cm4gInBhcnRpY2xlcy9jbHJiL2NscmJfZXF1aXBfdGl0bGVfcnp6bF9sb29wLnZwY2YiCiAgICBlbmQKICAgIHJldHVybiBuaWwKZW5kCgpmdW5jdGlvbiBTaG9wOkdldEVxdWlwcGVkRWZmZWN0S2V5KElEKQogICAgaWYgbm90IElEIG9yIG5vdCBzZWxmLkRhdGFbSURdIG9yIG5vdCBzZWxmLkRhdGFbSURdLmJhZyB0aGVuCiAgICAgICAgcmV0dXJuIG5pbAogICAgZW5kCiAgICBsb2NhbCBsb2Fkb3V0ID0gc2VsZi5EYXRhW0lEXS5iYWcubG9hZG91dAogICAgaWYgbm90IGxvYWRvdXQgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgbG9jYWwga2V5ID0gbG9hZG91dC5lcXVpcHBlZF9lZmZlY3QKICAgIGlmIGtleSA9PSBuaWwgb3Iga2V5ID09ICIiIHRoZW4KICAgICAgICByZXR1cm4gbmlsCiAgICBlbmQKICAgIHJldHVybiBrZXkKZW5kCgpmdW5jdGlvbiBTaG9wOlNob3VsZFNob3dJbkdhbWVFZmZlY3QoSUQpCiAgICBsb2NhbCBrZXkgPSBzZWxmOkdldEVxdWlwcGVkRWZmZWN0S2V5KElEKQogICAgaWYgbm90IGtleSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGxvY2FsIG1ldGEgPSBzZWxmLkl0ZW1MaXN0IGFuZCBzZWxmLkl0ZW1MaXN0W2tleV0KICAgIGlmIG1ldGEgYW5kIG1ldGEuc2xvdCBhbmQgbWV0YS5zbG90IH49ICJlZmZlY3QiIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgcmV0dXJuIHRydWUKZW5kCgpmdW5jdGlvbiBTaG9wOkdldEVmZmVjdFBhcnRpY2xlKGl0ZW1fa2V5KQogICAgaWYgbm90IGl0ZW1fa2V5IHRoZW4KICAgICAgICByZXR1cm4gbmlsCiAgICBlbmQKICAgIGxvY2FsIG1ldGEgPSBzZWxmLkl0ZW1MaXN0IGFuZCBzZWxmLkl0ZW1MaXN0W2l0ZW1fa2V5XQogICAgaWYgbWV0YSBhbmQgbWV0YS5lZmZlY3RQYXJ0aWNsZSBhbmQgbWV0YS5lZmZlY3RQYXJ0aWNsZSB+PSAiIiB0aGVuCiAgICAgICAgcmV0dXJuIG1ldGEuZWZmZWN0UGFydGljbGUKICAgIGVuZAogICAgaWYgaXRlbV9rZXkgPT0gImVmZmVjdF90eDEiIHRoZW4KICAgICAgICByZXR1cm4gInBhcnRpY2xlcy9lY29uL2NvdXJpZXIvY291cmllcl90cmFpbF9sYXZhL2NvdXJpZXJfdHJhaWxfbGF2YS52cGNmIgogICAgZW5kCiAgICByZXR1cm4gbmlsCmVuZAoKZnVuY3Rpb24gU2hvcDpHZXRFcXVpcHBlZEF0dGFja0VmZmVjdEtleShJRCkKICAgIGlmIG5vdCBJRCBvciBub3Qgc2VsZi5EYXRhW0lEXSBvciBub3Qgc2VsZi5EYXRhW0lEXS5iYWcgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgbG9jYWwgbG9hZG91dCA9IHNlbGYuRGF0YVtJRF0uYmFnLmxvYWRvdXQKICAgIGlmIG5vdCBsb2Fkb3V0IHRoZW4KICAgICAgICByZXR1cm4gbmlsCiAgICBlbmQKICAgIGxvY2FsIGtleSA9IGxvYWRvdXQuZXF1aXBwZWRfYXR0YWNrX2VmZmVjdAogICAgaWYga2V5ID09IG5pbCBvciBrZXkgPT0gIiIgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgcmV0dXJuIGtleQplbmQKCmZ1bmN0aW9uIFNob3A6U2hvdWxkU2hvd0luR2FtZUF0dGFja0VmZmVjdChJRCkKICAgIGxvY2FsIGtleSA9IHNlbGY6R2V0RXF1aXBwZWRBdHRhY2tFZmZlY3RLZXkoSUQpCiAgICBpZiBub3Qga2V5IHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgbWV0YSA9IHNlbGYuSXRlbUxpc3QgYW5kIHNlbGYuSXRlbUxpc3Rba2V5XQogICAgaWYgbWV0YSBhbmQgbWV0YS5zbG90IGFuZCBtZXRhLnNsb3Qgfj0gImF0dGFja19lZmZlY3QiIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgcmV0dXJuIHRydWUKZW5kCgpmdW5jdGlvbiBTaG9wOkdldEF0dGFja0VmZmVjdE1vZGlmaWVyS2V5KGl0ZW1fa2V5KQogICAgaWYgbm90IGl0ZW1fa2V5IHRoZW4KICAgICAgICByZXR1cm4gbmlsCiAgICBlbmQKICAgIGxvY2FsIG1ldGEgPSBzZWxmLkl0ZW1MaXN0IGFuZCBzZWxmLkl0ZW1MaXN0W2l0ZW1fa2V5XQogICAgaWYgbWV0YSBhbmQgbWV0YS5hdHRhY2tFZmZlY3RLZXkgYW5kIG1ldGEuYXR0YWNrRWZmZWN0S2V5IH49ICIiIHRoZW4KICAgICAgICByZXR1cm4gbWV0YS5hdHRhY2tFZmZlY3RLZXkKICAgIGVuZAogICAgaWYgaXRlbV9rZXkgPT0gImF0dGFja19seGhzIiB0aGVuCiAgICAgICAgcmV0dXJuICJhdHYyIgogICAgZW5kCiAgICBpZiBpdGVtX2tleSA9PSAiYXR0YWNrX2F0djMiIHRoZW4KICAgICAgICByZXR1cm4gImF0djEiCiAgICBlbmQKICAgIHJldHVybiBuaWwKZW5kCgotLeaYr+WQpuacieaciOWNoQpmdW5jdGlvbiBTaG9wOklzSGF2ZUNhcmQoSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBzZWxmLkRhdGFbSURdLmNhcmQxID4gMCB0aGVuCiAgICAgICAgcmV0dXJuIHRydWUKICAgIGVuZAplbmQKCi0t5piv5ZCm5pyJ5a2j5Y2hCmZ1bmN0aW9uIFNob3A6SXNIYXZlQ2FyZDIoSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBzZWxmLkRhdGFbSURdLmNhcmQyID4gMCB0aGVuCiAgICAgICAgcmV0dXJuIHRydWUKICAgIGVuZAplbmQKCmZ1bmN0aW9uIFNob3A6R2V0Q2FyZFhwUGVyTGV2ZWwoKQogICAgaWYgc2VsZi5DYXJkU3RhdGljRGF0YSBhbmQgc2VsZi5DYXJkU3RhdGljRGF0YS54cF9wZXJfbGV2ZWwgdGhlbgogICAgICAgIHJldHVybiBzZWxmLkNhcmRTdGF0aWNEYXRhLnhwX3Blcl9sZXZlbAogICAgZW5kCiAgICByZXR1cm4gNTAwCmVuZAoKZnVuY3Rpb24gU2hvcDpHZXRDYXJkTWF4TGV2ZWwoKQogICAgaWYgc2VsZi5DYXJkU3RhdGljRGF0YSBhbmQgc2VsZi5DYXJkU3RhdGljRGF0YS5tYXhfbGV2ZWwgdGhlbgogICAgICAgIHJldHVybiBzZWxmLkNhcmRTdGF0aWNEYXRhLm1heF9sZXZlbAogICAgZW5kCiAgICByZXR1cm4gMjAwCmVuZAoKZnVuY3Rpb24gU2hvcDpHZXRDYXJkTGV2ZWwoY2FyZCkKICAgIGxvY2FsIGV4cCA9IDAKICAgIGlmIGNhcmQgYW5kIGNhcmQuZXhwIH49IG5pbCB0aGVuCiAgICAgICAgZXhwID0gdG9udW1iZXIoY2FyZC5leHApIG9yIDAKICAgIGVuZAogICAgaWYgZXhwIDwgMCB0aGVuCiAgICAgICAgZXhwID0gMAogICAgZW5kCiAgICBsb2NhbCB4cF9wZXIgPSBzZWxmOkdldENhcmRYcFBlckxldmVsKCkKICAgIGlmIHhwX3BlciA8PSAwIHRoZW4KICAgICAgICB4cF9wZXIgPSA1MDAKICAgIGVuZAogICAgcmV0dXJuIG1hdGguZmxvb3IoZXhwIC8geHBfcGVyKSArIDEKZW5kCgotLSDot53mu6Hnuqfov5jlj6/otK3kubDnmoTnrYnnuqfmlbAKZnVuY3Rpb24gU2hvcDpHZXRSZW1haW5pbmdCdXlhYmxlTGV2ZWxzKElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4gMAogICAgZW5kCiAgICBsb2NhbCBjYXJkID0gc2VsZi5EYXRhW0lEXSBhbmQgc2VsZi5EYXRhW0lEXS5jYXJkCiAgICBsb2NhbCBjdXIgPSBzZWxmOkdldENhcmRMZXZlbChjYXJkKQogICAgbG9jYWwgbWF4X2x2ID0gc2VsZjpHZXRDYXJkTWF4TGV2ZWwoKQogICAgbG9jYWwgcmVtID0gbWF4X2x2IC0gY3VyCiAgICBpZiByZW0gPCAwIHRoZW4KICAgICAgICByZW0gPSAwCiAgICBlbmQKICAgIHJldHVybiByZW0KZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+function Shop:GetEquippedPetKey(ID)
+    if not ID or not self.Data[ID] or not self.Data[ID].bag then
+        return nil
+    end
+    local loadout = self.Data[ID].bag.loadout
+    if not loadout then
+        return nil
+    end
+    local key = loadout.equipped_pet
+    if key == nil or key == "" then
+        return nil
+    end
+    return key
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function Shop:GetEquippedPetModelPath(ID)
+    local key = self:GetEquippedPetKey(ID)
+    if not key then
+        return nil
+    end
+    local meta = self.ItemList and self.ItemList[key]
+    if meta and meta.modelPath then
+        return meta.modelPath
+    end
+    return nil
+end
+
+function Shop:GetPetParticle(item_key)
+    if not item_key then
+        return nil
+    end
+    local meta = self.ItemList and self.ItemList[item_key]
+    if meta and meta.petParticle and meta.petParticle ~= "" then
+        return meta.petParticle
+    end
+    return nil
+end
+
+function Shop:GetEquippedPetParticle(ID)
+    local key = self:GetEquippedPetKey(ID)
+    if not key then
+        return nil
+    end
+    return self:GetPetParticle(key)
+end
+
+--- 局内创建宠物单位名（与 ItemList.previewUnit / npc_units_custom 一致）
+function Shop:GetEquippedPetUnitName(ID)
+    local key = self:GetEquippedPetKey(ID)
+    if not key then
+        return "CardPet"
+    end
+    local meta = self.ItemList and self.ItemList[key]
+    if meta and meta.previewUnit and meta.previewUnit ~= "" then
+        return meta.previewUnit
+    end
+    if key == "pet_ti10_rosh" then
+        return "CardPetTi10"
+    end
+    return "CardPet"
+end
+
+function Shop:ShouldShowInGamePet(ID)
+    local key = self:GetEquippedPetKey(ID)
+    if not key then
+        return false
+    end
+    local meta = self.ItemList and self.ItemList[key]
+    if meta and meta.slot and meta.slot ~= "pet" then
+        return false
+    end
+    return true
+end
+
+function Shop:GetEquippedTitleKey(ID)
+    if not ID or not self.Data[ID] or not self.Data[ID].bag then
+        return nil
+    end
+    local loadout = self.Data[ID].bag.loadout
+    if not loadout then
+        return nil
+    end
+    local key = loadout.equipped_title
+    if key == nil or key == "" then
+        return nil
+    end
+    return key
+end
+
+function Shop:ShouldShowInGameTitle(ID)
+    local key = self:GetEquippedTitleKey(ID)
+    if not key then
+        return false
+    end
+    local meta = self.ItemList and self.ItemList[key]
+    if meta and meta.slot and meta.slot ~= "title" then
+        return false
+    end
+    return true
+end
+
+function Shop:GetTitleParticle(item_key)
+    if not item_key then
+        return nil
+    end
+    local meta = self.ItemList and self.ItemList[item_key]
+    if meta and meta.titleParticle and meta.titleParticle ~= "" then
+        return meta.titleParticle
+    end
+    if item_key == "title_clxx" then
+        return "particles/clrb/clrb_equip_title_clxx_loop.vpcf"
+    end
+    if item_key == "title_wrnd" then
+        return "particles/clrb/clrb_equip_title_wrnd_loop.vpcf"
+    end
+    if item_key == "title_whcl" then
+        return "particles/clrb/clrb_equip_title_whcl_loop.vpcf"
+    end
+    if item_key == "title_clxz" then
+        return "particles/clrb/clrb_equip_title_clxz_loop.vpcf"
+    end
+    if item_key == "title_wszs" then
+        return "particles/clrb/clrb_equip_title_wszs_loop.vpcf"
+    end
+    if item_key == "title_hsbh" then
+        return "particles/clrb/clrb_equip_title_hsbh_loop.vpcf"
+    end
+    if item_key == "title_hdlm" then
+        return "particles/clrb/clrb_equip_title_hdlm_loop.vpcf"
+    end
+    if item_key == "title_ysqwh" then
+        return "particles/clrb/clrb_equip_title_ysqwh_loop.vpcf"
+    end
+    if item_key == "title_rzlf" then
+        return "particles/clrb/clrb_equip_title_rzlf_loop.vpcf"
+    end
+    if item_key == "title_clls" then
+        return "particles/clrb/clrb_equip_title_clls_loop.vpcf"
+    end
+    if item_key == "title_cllr" then
+        return "particles/clrb/clrb_equip_title_cllr_loop.vpcf"
+    end
+    if item_key == "title_clzw" then
+        return "particles/clrb/clrb_equip_title_clzw_loop.vpcf"
+    end
+    if item_key == "title_clmy" then
+        return "particles/clrb/clrb_equip_title_clmy_loop.vpcf"
+    end
+    if item_key == "title_clzy" then
+        return "particles/clrb/clrb_equip_title_clzy_loop.vpcf"
+    end
+    if item_key == "title_xxqc" then
+        return "particles/clrb/clrb_equip_title_xxqc_loop.vpcf"
+    end
+    if item_key == "title_rzzl" then
+        return "particles/clrb/clrb_equip_title_rzzl_loop.vpcf"
+    end
+    return nil
+end
+
+function Shop:GetEquippedEffectKey(ID)
+    if not ID or not self.Data[ID] or not self.Data[ID].bag then
+        return nil
+    end
+    local loadout = self.Data[ID].bag.loadout
+    if not loadout then
+        return nil
+    end
+    local key = loadout.equipped_effect
+    if key == nil or key == "" then
+        return nil
+    end
+    return key
+end
+
+function Shop:ShouldShowInGameEffect(ID)
+    local key = self:GetEquippedEffectKey(ID)
+    if not key then
+        return false
+    end
+    local meta = self.ItemList and self.ItemList[key]
+    if meta and meta.slot and meta.slot ~= "effect" then
+        return false
+    end
+    return true
+end
+
+function Shop:GetEffectParticle(item_key)
+    if not item_key then
+        return nil
+    end
+    local meta = self.ItemList and self.ItemList[item_key]
+    if meta and meta.effectParticle and meta.effectParticle ~= "" then
+        return meta.effectParticle
+    end
+    if item_key == "effect_tx1" then
+        return "particles/econ/courier/courier_trail_lava/courier_trail_lava.vpcf"
+    end
+    return nil
+end
+
+function Shop:GetEquippedAttackEffectKey(ID)
+    if not ID or not self.Data[ID] or not self.Data[ID].bag then
+        return nil
+    end
+    local loadout = self.Data[ID].bag.loadout
+    if not loadout then
+        return nil
+    end
+    local key = loadout.equipped_attack_effect
+    if key == nil or key == "" then
+        return nil
+    end
+    return key
+end
+
+function Shop:ShouldShowInGameAttackEffect(ID)
+    local key = self:GetEquippedAttackEffectKey(ID)
+    if not key then
+        return false
+    end
+    local meta = self.ItemList and self.ItemList[key]
+    if meta and meta.slot and meta.slot ~= "attack_effect" then
+        return false
+    end
+    return true
+end
+
+function Shop:GetAttackEffectModifierKey(item_key)
+    if not item_key then
+        return nil
+    end
+    local meta = self.ItemList and self.ItemList[item_key]
+    if meta and meta.attackEffectKey and meta.attackEffectKey ~= "" then
+        return meta.attackEffectKey
+    end
+    if item_key == "attack_lxhs" then
+        return "atv2"
+    end
+    if item_key == "attack_atv3" then
+        return "atv1"
+    end
+    return nil
+end
+
+--是否有月卡
+function Shop:IsHaveCard(ID)
+    if not ID then
+        return
+    end
+    if self.Data[ID].card1 > 0 then
+        return true
+    end
+end
+
+--是否有季卡
+function Shop:IsHaveCard2(ID)
+    if not ID then
+        return
+    end
+    if self.Data[ID].card2 > 0 then
+        return true
+    end
+end
+
+function Shop:GetCardXpPerLevel()
+    if self.CardStaticData and self.CardStaticData.xp_per_level then
+        return self.CardStaticData.xp_per_level
+    end
+    return 500
+end
+
+function Shop:GetCardMaxLevel()
+    if self.CardStaticData and self.CardStaticData.max_level then
+        return self.CardStaticData.max_level
+    end
+    return 200
+end
+
+function Shop:GetCardLevel(card)
+    local exp = 0
+    if card and card.exp ~= nil then
+        exp = tonumber(card.exp) or 0
+    end
+    if exp < 0 then
+        exp = 0
+    end
+    local xp_per = self:GetCardXpPerLevel()
+    if xp_per <= 0 then
+        xp_per = 500
+    end
+    return math.floor(exp / xp_per) + 1
+end
+
+-- 距满级还可购买的等级数
+function Shop:GetRemainingBuyableLevels(ID)
+    if not ID then
+        return 0
+    end
+    local card = self.Data[ID] and self.Data[ID].card
+    local cur = self:GetCardLevel(card)
+    local max_lv = self:GetCardMaxLevel()
+    local rem = max_lv - cur
+    if rem < 0 then
+        rem = 0
+    end
+    return rem
+end

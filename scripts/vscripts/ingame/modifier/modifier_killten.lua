@@ -8,22 +8,74 @@
 ]]
 
 
-local encoded=[[bW9kaWZpZXJfa2lsbHRlbiA9IGNsYXNzKHt9KQoKZnVuY3Rpb24gbW9kaWZpZXJfa2lsbHRlbjpJc0hpZGRlbigpIHJldHVybiBmYWxzZSBlbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2tpbGx0ZW46SXNEZWJ1ZmYoKSByZXR1cm4gZmFsc2UgZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9raWxsdGVuOklzUHVyZ2FibGUoKSByZXR1cm4gZmFsc2UgZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9raWxsdGVuOlJlbW92ZU9uRGVhdGgoKSByZXR1cm4gdHJ1ZSBlbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2tpbGx0ZW46R2V0VGV4dHVyZSgpIHJldHVybiAiYnVmZi9zbGprIiBlbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2tpbGx0ZW46R2V0U3RhdHVzRWZmZWN0TmFtZSgpCiAgICByZXR1cm4gInBhcnRpY2xlcy9zdGF0dXNfZngvc3RhdHVzX2VmZmVjdF9ibG9vZHJhZ2UudnBjZiIKZW5kCgotLSDmj5Dpq5jnirbmgIHnibnmlYjkvJjlhYjnuqfvvIzpgb/lhY3ooqvlhbbku5bnibnmlYjnm5bkvY/miJbkuI3mmL7npLoKZnVuY3Rpb24gbW9kaWZpZXJfa2lsbHRlbjpHZXRTdGF0dXNFZmZlY3RQcmlvcml0eSgpIHJldHVybiA5OSBlbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2tpbGx0ZW46R2V0RWZmZWN0QXR0YWNoVHlwZSgpIHJldHVybiBQQVRUQUNIX1JPT1RCT05FX0ZPTExPVyBlbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2tpbGx0ZW46T25DcmVhdGVkKGtleXMpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuIHJldHVybiBlbmQKICAgIGxvY2FsIGhlcm8gPSBzZWxmOkdldFBhcmVudCgpCiAgICBpZiBub3QgaGVybyBvciBoZXJvOklzTnVsbCgpIHRoZW4gcmV0dXJuIGVuZAogICAgbG9jYWwgSUQgPSBVdGlsOkhlcm8ySUQoaGVybykKICAgIEVtaXRTb3VuZE9uKCJoZXJvX2Jsb29kc2Vla2VyLmJsb29kUmFnZSIsIGhlcm8pCiAgICBpZiBJRCB+PSBuaWwgdGhlbgogICAgICAgIFV0aWw6Qm90dG9tTXNnMklEKElELAogICAgICAgICAgICAgICAgICAgICAgICAgICLmnYDnuqLkuobnnLzvvJrpgKDmiJDkvKTlrrMrMjUl77yM5Y+X5Yiw5Lyk5a6zKzUwJSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgInJlZCIsIDMpCiAgICBlbmQKZW5kCgotLSBmdW5jdGlvbiBtb2RpZmllcl9raWxsdGVuOk9uSW50ZXJ2YWxUaGluaygpCi0tICAgICBpZiBJc1NlcnZlcigpIHRoZW4KLS0gICAgICAgICBsb2NhbCBwYXJlbnQgPSBzZWxmOkdldFBhcmVudCgpCi0tICAgICAgICAgaWYgcGFyZW50OkdldEhlYWx0aFBlcmNlbnQoKSA+IDI1IHRoZW4KLS0gICAgICAgICAgICAgbG9jYWwgYWJpbGl0eSA9IHNlbGY6R2V0QWJpbGl0eSgpCi0tICAgICAgICAgICAgIGxvY2FsIGRhbSA9IHBhcmVudDpHZXRNYXhIZWFsdGgoKSAqIDUgLyAxMDAKLS0gICAgICAgICAgICAgLS0g6YCg5oiQ5ZGo5pyf5Lyk5a6zCi0tICAgICAgICAgICAgIGxvY2FsIGRhbWFnZVRhYmxlID0gewotLSAgICAgICAgICAgICAgICAgdmljdGltID0gcGFyZW50LAotLSAgICAgICAgICAgICAgICAgYXR0YWNrZXIgPSBNYWluR2FtZTpHZXREdW1teSgpLAotLSAgICAgICAgICAgICAgICAgZGFtYWdlID0gZGFtLAotLSAgICAgICAgICAgICAgICAgZGFtYWdlX3R5cGUgPSBEQU1BR0VfVFlQRV9QVVJFLAotLSAgICAgICAgICAgICAgICAgYWJpbGl0eSA9IGFiaWxpdHkKLS0gICAgICAgICAgICAgfQotLSAgICAgICAgICAgICBBcHBseURhbWFnZShkYW1hZ2VUYWJsZSkKLS0gICAgICAgICBlbmQKLS0gICAgIGVuZAotLSBlbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2tpbGx0ZW46T25EZXN0cm95KCkKICAgIGlmIElzU2VydmVyKCkgdGhlbgogICAgICAgIGxvY2FsIHBhcmVudCA9IHNlbGY6R2V0UGFyZW50KCkKICAgICAgICBpZiBwYXJlbnQgdGhlbiBwYXJlbnQuS2lsbENvdW50ID0gMCBlbmQKICAgIGVuZAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2tpbGx0ZW46RGVjbGFyZUZ1bmN0aW9ucygpCiAgICByZXR1cm4ge01PRElGSUVSX1BST1BFUlRZX01PREVMX1NDQUxFLCBNT0RJRklFUl9QUk9QRVJUWV9UT09MVElQMn0KZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9raWxsdGVuOkdldE1vZGlmaWVyTW9kZWxTY2FsZSgpCiAgICAtLSDms6jmhI/vvJrov5nph4zov5Tlm57nmoTmmK/pop3lpJbnvKnmlL7vvIzkuI3mmK/mgLvnvKnmlL4KICAgIC0tIOWunumZhee8qeaUviA9IOWfuuehgOe8qeaUviAqICgxICsg6L+Z6YeM6L+U5Zue55qE5YC8LzEwMCkKICAgIHJldHVybiA1MCAtLSDlop7liqAyMCXvvIjlj5jmiJAxLjLlgI3vvIkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9raWxsdGVuOk9uVG9vbHRpcDIoKSByZXR1cm4gc2VsZjpHZXRTdGFja0NvdW50KCkgZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+modifier_killten = class({})
+
+function modifier_killten:IsHidden() return false end
+
+function modifier_killten:IsDebuff() return false end
+
+function modifier_killten:IsPurgable() return false end
+
+function modifier_killten:RemoveOnDeath() return true end
+
+function modifier_killten:GetTexture() return "buff/sljk" end
+
+function modifier_killten:GetStatusEffectName()
+    return "particles/status_fx/status_effect_bloodrage.vpcf"
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+-- 提高状态特效优先级，避免被其他特效盖住或不显示
+function modifier_killten:GetStatusEffectPriority() return 99 end
+
+function modifier_killten:GetEffectAttachType() return PATTACH_ROOTBONE_FOLLOW end
+
+function modifier_killten:OnCreated(keys)
+    if not IsServer() then return end
+    local hero = self:GetParent()
+    if not hero or hero:IsNull() then return end
+    local ID = Util:Hero2ID(hero)
+    EmitSoundOn("hero_bloodseeker.bloodRage", hero)
+    if ID ~= nil then
+        Util:BottomMsg2ID(ID,
+                          "杀红了眼：造成伤害+25%，受到伤害+50%",
+                          "red", 3)
+    end
+end
+
+-- function modifier_killten:OnIntervalThink()
+--     if IsServer() then
+--         local parent = self:GetParent()
+--         if parent:GetHealthPercent() > 25 then
+--             local ability = self:GetAbility()
+--             local dam = parent:GetMaxHealth() * 5 / 100
+--             -- 造成周期伤害
+--             local damageTable = {
+--                 victim = parent,
+--                 attacker = MainGame:GetDummy(),
+--                 damage = dam,
+--                 damage_type = DAMAGE_TYPE_PURE,
+--                 ability = ability
+--             }
+--             ApplyDamage(damageTable)
+--         end
+--     end
+-- end
+
+function modifier_killten:OnDestroy()
+    if IsServer() then
+        local parent = self:GetParent()
+        if parent then parent.KillCount = 0 end
+    end
+end
+
+function modifier_killten:DeclareFunctions()
+    return {MODIFIER_PROPERTY_MODEL_SCALE, MODIFIER_PROPERTY_TOOLTIP2}
+end
+
+function modifier_killten:GetModifierModelScale()
+    -- 注意：这里返回的是额外缩放，不是总缩放
+    -- 实际缩放 = 基础缩放 * (1 + 这里返回的值/100)
+    return 50 -- 增加20%（变成1.2倍）
+end
+
+function modifier_killten:OnTooltip2() return self:GetStackCount() end

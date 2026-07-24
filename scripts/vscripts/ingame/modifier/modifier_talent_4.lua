@@ -8,22 +8,387 @@
 ]]
 
 
-local encoded=[[LS0g6Zu355S15oif77yIaXRlbV9nb29kc18yNO+8ie+8muaUu+WHu+mZhOW4pumbt+eUteS8pOWusyArIDIwJSDov57plIHpl6rnlLXvvIjmvKnmtqHlvI/pgJDmrrXlvLnot7PvvInvvJvlhajlsZ7mgKfkuLrnu7/lrZcKaWYgbW9kaWZpZXJfdGFsZW50XzQgPT0gbmlsIHRoZW4KICAgIG1vZGlmaWVyX3RhbGVudF80ID0gY2xhc3Moe30pCmVuZAoKTGlua0x1YU1vZGlmaWVyKCJtb2RpZmllcl90YWxlbnRfNF9jaGFpbl9zbG93IiwKICAgICJpbmdhbWUvbW9kaWZpZXIvbW9kaWZpZXJfdGFsZW50XzQiLAogICAgTFVBX01PRElGSUVSX01PVElPTl9OT05FKQoKbG9jYWwgT05fSElUX01BR0lDID0geyAyNSwgNTAsIDc1LCAxMDAsIDEyNSwgMTUwIH0KbG9jYWwgQUxMU1RBVF9QRVJfUkFOSyA9IHsgNiwgNiwgNiwgNiwgNiwgNiB9CmxvY2FsIENIQUlOX0JBU0UgPSB7IDgwLCAxMjAsIDE2MCwgMjAwLCAyNDAsIDMwMCB9CmxvY2FsIENIQUlOX1NUQVRfQ09FRiA9IHsgMC4xLCAwLjIsIDAuMywgMC40LCAwLjUsIDAuNiB9CmxvY2FsIENIQUlOX1JBRElVUyA9IDY1MApsb2NhbCBDSEFJTl9NQVhfVEFSR0VUUyA9IDUKbG9jYWwgQ0hBSU5fUFJPQ19DSEFOQ0UgPSAyMApsb2NhbCBDSEFJTl9NQUlOX1NMT1cgPSAwLjMKbG9jYWwgQ0hBSU5fSlVNUF9ERUxBWSA9IDAuMTIKLS0g6L+e6ZSB6Zeq55S16Kem5Y+R5YaF572u5Ya35Y2077yI56eS77yJCmxvY2FsIENIQUlOX0lDRCA9IDAuMgoKbG9jYWwgUEZYX0NIQUlOID0KICAgICJwYXJ0aWNsZXMvZWNvbi9pdGVtcy9mYWNlbGVzc192b2lkL2ZhY2VsZXNzX3ZvaWRfYXJjYW5hL2ZhY2VsZXNzX3ZvaWRfYXJjYW5hX21hZWxzdHJvbV92Ml9pdGVtLnZwY2YiCmxvY2FsIFBGWF9JTVBBQ1QgPQogICAgInBhcnRpY2xlcy9lY29uL2l0ZW1zL2ZhY2VsZXNzX3ZvaWQvZmFjZWxlc3Nfdm9pZF9hcmNhbmEvZmFjZWxlc3Nfdm9pZF9hcmNhbmFfbWFlbHN0cm9tX3YyX2ltcGFjdC52cGNmIgpsb2NhbCBQRlhfSU1QQUNUX0VOQUJMRUQgPSBmYWxzZSAtLSDmmoLml7bpmpDol4/lkb3kuK3lhrLlh7vnibnmlYgKbG9jYWwgU0ZYX0NIQUlOID0gIkhlcm9fWnV1cy5BcmNMaWdodG5pbmcuQ2FzdCIKCmxvY2FsIGZ1bmN0aW9uIGNscmJfdGFsZW50NF9pc192YWxpZF9lbmVteShhdHRhY2tlciwgdW5pdCwgc2tpcF9zZXQpCiAgICBpZiBub3QgdW5pdCBvciB1bml0OklzTnVsbCgpIG9yIG5vdCB1bml0OklzQWxpdmUoKSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIHVuaXQ6SXNCdWlsZGluZygpIG9yIHVuaXQ6SXNDb3VyaWVyKCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiB1bml0OklzTWFnaWNJbW11bmUoKSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIHVuaXQ6R2V0VGVhbU51bWJlcigpID09IGF0dGFja2VyOkdldFRlYW1OdW1iZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIHNraXBfc2V0IGFuZCBza2lwX3NldFt1bml0XSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzQ6SXNEZWJ1ZmYoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzQ6SXNQdXJnYWJsZSgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfNDpJc0hpZGRlbigpCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF80OlJlbW92ZU9uRGVhdGgoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzQ6QWxsb3dJbGx1c2lvbkR1cGxpY2F0ZSgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfNDpPbkNyZWF0ZWQoa3YpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGY6Rm9yY2VSZWZyZXNoKCkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfNDpfQWxsc3RhdEJvbnVzKCkKICAgIGxvY2FsIGxldmVsID0gc2VsZjpfRXF1aXBMZXZlbCgpCiAgICBsb2NhbCBzdW0gPSAwCiAgICBsb2NhbCBJRCA9IFV0aWw6SGVybzJJRChzZWxmOkdldFBhcmVudCgpKQogICAgZm9yIGx2ID0gMCwgbGV2ZWwgZG8KICAgICAgICBsb2NhbCB2ID0gQUxMU1RBVF9QRVJfUkFOS1tsdiArIDFdIG9yIDAKICAgICAgICBpZiB2ID4gMCBhbmQgSUQgYW5kIENscmJUYWxlbnRCbGFja3NtaXRoU2NhbGVkRXF1aXBBdHRyIHRoZW4KICAgICAgICAgICAgdiA9IENscmJUYWxlbnRCbGFja3NtaXRoU2NhbGVkRXF1aXBBdHRyKElELCAiaXRlbV9nb29kc18yNCIsICJqY2xsIiwgdikKICAgICAgICBlbmQKICAgICAgICBzdW0gPSBzdW0gKyB2CiAgICBlbmQKICAgIHJldHVybiBzdW0KZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfNDpPblJlZnJlc2goa3YpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGhlcm8gPSBzZWxmOkdldFBhcmVudCgpCiAgICBsb2NhbCBJRCA9IFV0aWw6SGVybzJJRChoZXJvKQogICAgaWYgbm90IElEIG9yIG5vdCBIZXJvRGF0YSBvciBub3QgSGVyb0RhdGEuRGF0YSBvciBub3QgSGVyb0RhdGEuRGF0YVtJRF0KICAgICAgICBvciBub3QgSGVyb0RhdGEuRGF0YVtJRF0uaGVyb19hdHRyIHRoZW4KICAgICAgICBzZWxmOlNldFN0YWNrQ291bnQoMCkKICAgICAgICBzZWxmLmFsbHN0YXRfYm9udXMgPSAwCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGYubHFqcyA9IEhlcm9EYXRhLkRhdGFbSURdLmhlcm9fYXR0ci5scWpzIG9yIDAKICAgIHNlbGYuYWxsc3RhdF9ib251cyA9IHNlbGY6X0FsbHN0YXRCb251cygpCiAgICBzZWxmOlNldFN0YWNrQ291bnQoc2VsZi5scWpzKQogICAgaGVybzpDYWxjdWxhdGVTdGF0Qm9udXModHJ1ZSkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfNDpEZWNsYXJlRnVuY3Rpb25zKCkKICAgIHJldHVybiB7CiAgICAgICAgTU9ESUZJRVJfRVZFTlRfT05fQVRUQUNLX0xBTkRFRCwKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9DT09MRE9XTl9QRVJDRU5UQUdFLAogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX1NUQVRTX1NUUkVOR1RIX0JPTlVTLAogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX1NUQVRTX0FHSUxJVFlfQk9OVVMsCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfU1RBVFNfSU5URUxMRUNUX0JPTlVTLAogICAgfQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF80OkdldE1vZGlmaWVyQm9udXNTdGF0c19TdHJlbmd0aCgpCiAgICByZXR1cm4gc2VsZi5hbGxzdGF0X2JvbnVzIG9yIDAKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfNDpHZXRNb2RpZmllckJvbnVzU3RhdHNfQWdpbGl0eSgpCiAgICByZXR1cm4gc2VsZi5hbGxzdGF0X2JvbnVzIG9yIDAKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfNDpHZXRNb2RpZmllckJvbnVzU3RhdHNfSW50ZWxsZWN0KCkKICAgIHJldHVybiBzZWxmLmFsbHN0YXRfYm9udXMgb3IgMAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF80OkdldE1vZGlmaWVyUGVyY2VudGFnZUNvb2xkb3duKCkKICAgIHJldHVybiBzZWxmOkdldFN0YWNrQ291bnQoKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF80Ol9FcXVpcExldmVsKCkKICAgIGxvY2FsIGNhID0gc2VsZjpHZXRQYXJlbnQoKQogICAgbG9jYWwgSUQgPSBVdGlsOkhlcm8ySUQoY2EpCiAgICBpZiBub3QgSUQgb3Igbm90IFRhbGVudCBvciBub3QgVGFsZW50LkRhdGEgb3Igbm90IFRhbGVudC5EYXRhW0lEXSB0aGVuCiAgICAgICAgcmV0dXJuIDAKICAgIGVuZAogICAgcmV0dXJuIFRhbGVudC5EYXRhW0lEXS5sZXZlbCBvciAwCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzQ6X0xldmVsVmFsdWUobGlzdCwgbGV2ZWwpCiAgICBsb2NhbCBpZHggPSAobGV2ZWwgb3IgMCkgKyAxCiAgICBpZiBpZHggPCAxIHRoZW4KICAgICAgICBpZHggPSAxCiAgICBlbmQKICAgIGlmIGlkeCA+ICNsaXN0IHRoZW4KICAgICAgICBpZHggPSAjbGlzdAogICAgZW5kCiAgICByZXR1cm4gbGlzdFtpZHhdCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzQ6T25BdHRhY2tMYW5kZWQoa2V5cykKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYga2V5cy5hdHRhY2tlciB+PSBzZWxmOkdldFBhcmVudCgpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgY2EgPSBzZWxmOkdldFBhcmVudCgpCiAgICBsb2NhbCB0YSA9IGtleXMudGFyZ2V0CiAgICBpZiBub3QgY2xyYl90YWxlbnQ0X2lzX3ZhbGlkX2VuZW15KGNhLCB0YSwgbmlsKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIG5vdCBjYTpJc0hlcm8oKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBsb2NhbCBsZXZlbCA9IHNlbGY6X0VxdWlwTGV2ZWwoKQogICAgbG9jYWwgb25faGl0ID0gc2VsZjpfTGV2ZWxWYWx1ZShPTl9ISVRfTUFHSUMsIGxldmVsKQogICAgdXRpbGV4OlVuaXREYW0oY2EsIHRhLCBvbl9oaXQsICJtZiIsIG5pbCwgdHJ1ZSkKCiAgICBpZiBtYXRoLnJhbmRvbSgxLCAxMDApIDw9IENIQUlOX1BST0NfQ0hBTkNFIHRoZW4KICAgICAgICBsb2NhbCBub3cgPSAoR2FtZVJ1bGVzIGFuZCBHYW1lUnVsZXMuR2V0R2FtZVRpbWUgYW5kIEdhbWVSdWxlczpHZXRHYW1lVGltZSgpKSBvciAwCiAgICAgICAgaWYgbm90IHNlbGYuX2NoYWluX2ljZF91bnRpbCBvciBub3cgPj0gc2VsZi5fY2hhaW5faWNkX3VudGlsIHRoZW4KICAgICAgICAgICAgc2VsZi5fY2hhaW5faWNkX3VudGlsID0gbm93ICsgQ0hBSU5fSUNECiAgICAgICAgICAgIHNlbGY6X1Byb2NDaGFpbkxpZ2h0bmluZyhjYSwgdGEsIGxldmVsKQogICAgICAgIGVuZAogICAgZW5kCmVuZAoKbG9jYWwgZnVuY3Rpb24gY2xyYl90YWxlbnQ0X2JlYW1fcG9zKHVuaXQpCiAgICBpZiBub3QgdW5pdCBvciB1bml0OklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4gVmVjdG9yKDAsIDAsIDApCiAgICBlbmQKICAgIGxvY2FsIHBvcyA9IHVuaXQ6R2V0QWJzT3JpZ2luKCkKICAgIGxvY2FsIG1pbmIgPSB1bml0OkdldEJvdW5kaW5nTWlucygpCiAgICBsb2NhbCBtYXhiID0gdW5pdDpHZXRCb3VuZGluZ01heHMoKQogICAgaWYgbWluYiBhbmQgbWF4YiB0aGVuCiAgICAgICAgcmV0dXJuIFZlY3Rvcihwb3MueCwgcG9zLnksIHBvcy56ICsgKG1heGIueiAtIG1pbmIueikgKiAwLjUpCiAgICBlbmQKICAgIHJldHVybiBwb3MKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfNDpfUGxheUNoYWluQmVhbShmcm9tX3VuaXQsIHRvX3VuaXQpCiAgICBpZiBub3QgZnJvbV91bml0IG9yIGZyb21fdW5pdDpJc051bGwoKSBvciBub3QgdG9fdW5pdCBvciB0b191bml0OklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgZnJvbV9wb3MgPSBjbHJiX3RhbGVudDRfYmVhbV9wb3MoZnJvbV91bml0KQogICAgbG9jYWwgdG9fcG9zID0gY2xyYl90YWxlbnQ0X2JlYW1fcG9zKHRvX3VuaXQpCiAgICBsb2NhbCBmeCA9IFBhcnRpY2xlTWFuYWdlcjpDcmVhdGVQYXJ0aWNsZShQRlhfQ0hBSU4sIFBBVFRBQ0hfQ1VTVE9NT1JJR0lOLCBuaWwpCiAgICBQYXJ0aWNsZU1hbmFnZXI6U2V0UGFydGljbGVDb250cm9sKGZ4LCAwLCBmcm9tX3BvcykKICAgIFBhcnRpY2xlTWFuYWdlcjpTZXRQYXJ0aWNsZUNvbnRyb2woZngsIDEsIHRvX3BvcykKICAgIFBhcnRpY2xlTWFuYWdlcjpTZXRQYXJ0aWNsZUNvbnRyb2woZngsIDIsIFZlY3RvcigxLCAxLCAxKSkKICAgIFRpbWVycygwLjU1LCBmdW5jdGlvbigpCiAgICAgICAgaWYgZnggdGhlbgogICAgICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6RGVzdHJveVBhcnRpY2xlKGZ4LCBmYWxzZSkKICAgICAgICAgICAgUGFydGljbGVNYW5hZ2VyOlJlbGVhc2VQYXJ0aWNsZUluZGV4KGZ4KQogICAgICAgIGVuZAogICAgZW5kKQoKICAgIGlmIFBGWF9JTVBBQ1RfRU5BQkxFRCB0aGVuCiAgICAgICAgbG9jYWwgaW1wYWN0ID0gUGFydGljbGVNYW5hZ2VyOkNyZWF0ZVBhcnRpY2xlKFBGWF9JTVBBQ1QsIFBBVFRBQ0hfQUJTT1JJR0lOX0ZPTExPVywgdG9fdW5pdCkKICAgICAgICBVdGlsOlBhcnRpY2xlU2V0Q29udHJvbEVudEhpdGxvY09yQWJzRm9sbG93KGltcGFjdCwgMSwgdG9fdW5pdCkKICAgICAgICBUaW1lcnMoMC42LCBmdW5jdGlvbigpCiAgICAgICAgICAgIGlmIGltcGFjdCB0aGVuCiAgICAgICAgICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6RGVzdHJveVBhcnRpY2xlKGltcGFjdCwgZmFsc2UpCiAgICAgICAgICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6UmVsZWFzZVBhcnRpY2xlSW5kZXgoaW1wYWN0KQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQpCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfNDpfUGxheUNoYWluU291bmQoZnJvbV91bml0LCB0YXJnZXQpCiAgICBsb2NhbCB1bml0ID0gZnJvbV91bml0CiAgICBpZiBub3QgdW5pdCBvciB1bml0OklzTnVsbCgpIHRoZW4KICAgICAgICB1bml0ID0gdGFyZ2V0CiAgICBlbmQKICAgIGlmIHVuaXQgYW5kIG5vdCB1bml0OklzTnVsbCgpIHRoZW4KICAgICAgICBFbWl0U291bmRPbihTRlhfQ0hBSU4sIHVuaXQpCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfNDpfQXBwbHlDaGFpblNsb3coYXR0YWNrZXIsIHRhcmdldCwgZHVyYXRpb24pCiAgICBpZiBub3QgdGFyZ2V0IG9yIHRhcmdldDpJc051bGwoKSBvciBub3QgdGFyZ2V0OklzQWxpdmUoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIHRhcmdldDpJc01hZ2ljSW1tdW5lKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICB0YXJnZXQ6QWRkTmV3TW9kaWZpZXIoYXR0YWNrZXIsIG5pbCwgIm1vZGlmaWVyX3RhbGVudF80X2NoYWluX3Nsb3ciLCB7IGR1cmF0aW9uID0gZHVyYXRpb24gfSkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfNDpfU3RyaWtlQ2hhaW5UYXJnZXQoYXR0YWNrZXIsIGZyb21fdW5pdCwgdGFyZ2V0LCBkYW1hZ2UsIGlzX21haW4pCiAgICBzZWxmOl9QbGF5Q2hhaW5CZWFtKGZyb21fdW5pdCwgdGFyZ2V0KQogICAgc2VsZjpfUGxheUNoYWluU291bmQoZnJvbV91bml0LCB0YXJnZXQpCiAgICB1dGlsZXg6VW5pdERhbShhdHRhY2tlciwgdGFyZ2V0LCBkYW1hZ2UsICJtZiIsIG5pbCwgdHJ1ZSkKICAgIGlmIGlzX21haW4gdGhlbgogICAgICAgIHNlbGY6X0FwcGx5Q2hhaW5TbG93KGF0dGFja2VyLCB0YXJnZXQsIENIQUlOX01BSU5fU0xPVykKICAgIGVuZAplbmQKCi0tLSDku47lvZPliY3okL3ngrnlr7vmib7kuIvkuIDkuKrlvLnot7Pnm67moIfvvIg2NTAg5YaF5pyA6L+R5LiU5pyq5ZG95Lit77yJCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF80Ol9GaW5kTmV4dENoYWluVGFyZ2V0KGZyb21fdW5pdCwgYXR0YWNrZXIsIGhpdCkKICAgIGlmIG5vdCBmcm9tX3VuaXQgb3IgZnJvbV91bml0OklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4gbmlsCiAgICBlbmQKICAgIGxvY2FsIG9yaWdpbiA9IGZyb21fdW5pdDpHZXRBYnNPcmlnaW4oKQogICAgbG9jYWwgZW5lbWllcyA9IEZpbmRVbml0c0luUmFkaXVzKAogICAgICAgIGF0dGFja2VyOkdldFRlYW1OdW1iZXIoKSwKICAgICAgICBvcmlnaW4sCiAgICAgICAgbmlsLAogICAgICAgIENIQUlOX1JBRElVUywKICAgICAgICBET1RBX1VOSVRfVEFSR0VUX1RFQU1fRU5FTVksCiAgICAgICAgRE9UQV9VTklUX1RBUkdFVF9IRVJPICsgRE9UQV9VTklUX1RBUkdFVF9CQVNJQywKICAgICAgICBET1RBX1VOSVRfVEFSR0VUX0ZMQUdfTk9ORSwKICAgICAgICBGSU5EX0FOWV9PUkRFUiwKICAgICAgICBmYWxzZQogICAgKQoKICAgIGxvY2FsIGJlc3QgPSBuaWwKICAgIGxvY2FsIGJlc3RfZGlzdCA9IG5pbAogICAgZm9yIF8sIGVuZW15IGluIHBhaXJzKGVuZW1pZXMpIGRvCiAgICAgICAgaWYgY2xyYl90YWxlbnQ0X2lzX3ZhbGlkX2VuZW15KGF0dGFja2VyLCBlbmVteSwgaGl0KSB0aGVuCiAgICAgICAgICAgIGxvY2FsIGRpc3QgPSAoZW5lbXk6R2V0QWJzT3JpZ2luKCkgLSBvcmlnaW4pOkxlbmd0aDJEKCkKICAgICAgICAgICAgaWYgbm90IGJlc3Qgb3IgZGlzdCA8IGJlc3RfZGlzdCB0aGVuCiAgICAgICAgICAgICAgICBiZXN0ID0gZW5lbXkKICAgICAgICAgICAgICAgIGJlc3RfZGlzdCA9IGRpc3QKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQKICAgIHJldHVybiBiZXN0CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzQ6X1Byb2NDaGFpbkxpZ2h0bmluZyhhdHRhY2tlciwgcHJpbWFyeSwgbGV2ZWwpCiAgICBpZiBub3QgYXR0YWNrZXIgb3IgYXR0YWNrZXI6SXNOdWxsKCkgb3Igbm90IHByaW1hcnkgb3IgcHJpbWFyeTpJc051bGwoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBsb2NhbCBiYXNlID0gc2VsZjpfTGV2ZWxWYWx1ZShDSEFJTl9CQVNFLCBsZXZlbCkKICAgIGxvY2FsIHN0YXRfY29lZiA9IHNlbGY6X0xldmVsVmFsdWUoQ0hBSU5fU1RBVF9DT0VGLCBsZXZlbCkKICAgIGxvY2FsIHN0YXRzID0gKGF0dGFja2VyOkdldFN0cmVuZ3RoKCkgb3IgMCkgKyAoYXR0YWNrZXI6R2V0QWdpbGl0eSgpIG9yIDApCiAgICAgICAgKyAoYXR0YWNrZXI6R2V0SW50ZWxsZWN0KHRydWUpIG9yIDApCiAgICBsb2NhbCBkYW1hZ2UgPSBtYXRoLmZsb29yKGJhc2UgKyBzdGF0cyAqIHN0YXRfY29lZikKCiAgICBsb2NhbCBoaXQgPSB7fQogICAgbG9jYWwgc3RyaWtlc19sZWZ0ID0gQ0hBSU5fTUFYX1RBUkdFVFMKICAgIGxvY2FsIGZyb21fdW5pdCA9IGF0dGFja2VyCiAgICBsb2NhbCBwZW5kaW5nX3RhcmdldCA9IHByaW1hcnkKICAgIGxvY2FsIG1vZCA9IHNlbGYKICAgIGxvY2FsIGdlbiA9IChzZWxmLl9jaGFpbl9nZW4gb3IgMCkgKyAxCiAgICBzZWxmLl9jaGFpbl9nZW4gPSBnZW4KCiAgICBsb2NhbCBmdW5jdGlvbiBib3VuY2UoZGVsYXkpCiAgICAgICAgVGltZXJzKGRlbGF5LCBmdW5jdGlvbigpCiAgICAgICAgICAgIGlmIG5vdCBtb2QgdGhlbgogICAgICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBpZiBtb2QuX2NoYWluX2dlbiB+PSBnZW4gdGhlbgogICAgICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBpZiBub3QgYXR0YWNrZXIgb3IgYXR0YWNrZXI6SXNOdWxsKCkgb3Igbm90IGF0dGFja2VyOklzQWxpdmUoKSB0aGVuCiAgICAgICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGlmIHN0cmlrZXNfbGVmdCA8PSAwIHRoZW4KICAgICAgICAgICAgICAgIHJldHVybgogICAgICAgICAgICBlbmQKCiAgICAgICAgICAgIGxvY2FsIHRhcmdldCA9IHBlbmRpbmdfdGFyZ2V0CiAgICAgICAgICAgIGlmIG5vdCBjbHJiX3RhbGVudDRfaXNfdmFsaWRfZW5lbXkoYXR0YWNrZXIsIHRhcmdldCwgaGl0KSB0aGVuCiAgICAgICAgICAgICAgICB0YXJnZXQgPSBtb2Q6X0ZpbmROZXh0Q2hhaW5UYXJnZXQoZnJvbV91bml0LCBhdHRhY2tlciwgaGl0KQogICAgICAgICAgICBlbmQKICAgICAgICAgICAgaWYgbm90IHRhcmdldCB0aGVuCiAgICAgICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgZW5kCgogICAgICAgICAgICBoaXRbdGFyZ2V0XSA9IHRydWUKICAgICAgICAgICAgc3RyaWtlc19sZWZ0ID0gc3RyaWtlc19sZWZ0IC0gMQogICAgICAgICAgICBsb2NhbCBpc19tYWluID0gKENIQUlOX01BWF9UQVJHRVRTIC0gc3RyaWtlc19sZWZ0KSA9PSAxCgogICAgICAgICAgICBtb2Q6X1N0cmlrZUNoYWluVGFyZ2V0KGF0dGFja2VyLCBmcm9tX3VuaXQsIHRhcmdldCwgZGFtYWdlLCBpc19tYWluKQoKICAgICAgICAgICAgZnJvbV91bml0ID0gdGFyZ2V0CiAgICAgICAgICAgIHBlbmRpbmdfdGFyZ2V0ID0gbW9kOl9GaW5kTmV4dENoYWluVGFyZ2V0KGZyb21fdW5pdCwgYXR0YWNrZXIsIGhpdCkKCiAgICAgICAgICAgIGlmIHN0cmlrZXNfbGVmdCA+IDAgYW5kIHBlbmRpbmdfdGFyZ2V0IHRoZW4KICAgICAgICAgICAgICAgIGJvdW5jZShDSEFJTl9KVU1QX0RFTEFZKQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQpCiAgICBlbmQKCiAgICBib3VuY2UoMCkKZW5kCgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCi0tIOi/numUgemXqueUtem6u+eXue+8mjkwJSDlh4/pgJ/vvIzmlaPlpLHnirbmgIHnibnmlYgKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQppZiBtb2RpZmllcl90YWxlbnRfNF9jaGFpbl9zbG93ID09IG5pbCB0aGVuCiAgICBtb2RpZmllcl90YWxlbnRfNF9jaGFpbl9zbG93ID0gY2xhc3Moe30pCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzRfY2hhaW5fc2xvdzpJc0hpZGRlbigpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfNF9jaGFpbl9zbG93OklzRGVidWZmKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzRfY2hhaW5fc2xvdzpJc1B1cmdhYmxlKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzRfY2hhaW5fc2xvdzpSZW1vdmVPbkRlYXRoKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzRfY2hhaW5fc2xvdzpHZXRUZXh0dXJlKCkKICAgIHJldHVybiAiaXRlbV9kaWZmdXNhbF9ibGFkZSIKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfNF9jaGFpbl9zbG93OkdldFN0YXR1c0VmZmVjdE5hbWUoKQogICAgcmV0dXJuICJwYXJ0aWNsZXMvZWNvbi9pdGVtcy9mYWNlbGVzc192b2lkL2ZhY2VsZXNzX3ZvaWRfYXJjYW5hL2ZhY2VsZXNzX3ZvaWRfYXJjYW5hX21hZWxzdHJvbV92Ml9pdGVtLnZwY2YiCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzRfY2hhaW5fc2xvdzpEZWNsYXJlRnVuY3Rpb25zKCkKICAgIHJldHVybiB7CiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfTU9WRVNQRUVEX0JPTlVTX1BFUkNFTlRBR0UsCiAgICB9CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzRfY2hhaW5fc2xvdzpHZXRNb2RpZmllck1vdmVTcGVlZEJvbnVzX1BlcmNlbnRhZ2UoKQogICAgcmV0dXJuIC05MAplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 雷电戟（item_goods_24）：攻击附带雷电伤害 + 20% 连锁闪电（漩涡式逐段弹跳）；全属性为绿字
+if modifier_talent_4 == nil then
+    modifier_talent_4 = class({})
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+LinkLuaModifier("modifier_talent_4_chain_slow",
+    "ingame/modifier/modifier_talent_4",
+    LUA_MODIFIER_MOTION_NONE)
+
+local ON_HIT_MAGIC = { 25, 50, 75, 100, 125, 150 }
+local ALLSTAT_PER_RANK = { 6, 6, 6, 6, 6, 6 }
+local CHAIN_BASE = { 80, 120, 160, 200, 240, 300 }
+local CHAIN_STAT_COEF = { 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 }
+local CHAIN_RADIUS = 650
+local CHAIN_MAX_TARGETS = 5
+local CHAIN_PROC_CHANCE = 20
+local CHAIN_MAIN_SLOW = 0.3
+local CHAIN_JUMP_DELAY = 0.12
+-- 连锁闪电触发内置冷却（秒）
+local CHAIN_ICD = 0.2
+
+local PFX_CHAIN =
+    "particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_maelstrom_v2_item.vpcf"
+local PFX_IMPACT =
+    "particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_maelstrom_v2_impact.vpcf"
+local PFX_IMPACT_ENABLED = false -- 暂时隐藏命中冲击特效
+local SFX_CHAIN = "Hero_Zuus.ArcLightning.Cast"
+
+local function clrb_talent4_is_valid_enemy(attacker, unit, skip_set)
+    if not unit or unit:IsNull() or not unit:IsAlive() then
+        return false
+    end
+    if unit:IsBuilding() or unit:IsCourier() then
+        return false
+    end
+    if unit:IsMagicImmune() then
+        return false
+    end
+    if unit:GetTeamNumber() == attacker:GetTeamNumber() then
+        return false
+    end
+    if skip_set and skip_set[unit] then
+        return false
+    end
+    return true
+end
+
+function modifier_talent_4:IsDebuff()
+    return false
+end
+
+function modifier_talent_4:IsPurgable()
+    return false
+end
+
+function modifier_talent_4:IsHidden()
+    return true
+end
+
+function modifier_talent_4:RemoveOnDeath()
+    return false
+end
+
+function modifier_talent_4:AllowIllusionDuplicate()
+    return false
+end
+
+function modifier_talent_4:OnCreated(kv)
+    if not IsServer() then
+        return
+    end
+    self:ForceRefresh()
+end
+
+function modifier_talent_4:_AllstatBonus()
+    local level = self:_EquipLevel()
+    local sum = 0
+    local ID = Util:Hero2ID(self:GetParent())
+    for lv = 0, level do
+        local v = ALLSTAT_PER_RANK[lv + 1] or 0
+        if v > 0 and ID and ClrbTalentBlacksmithScaledEquipAttr then
+            v = ClrbTalentBlacksmithScaledEquipAttr(ID, "item_goods_24", "jcll", v)
+        end
+        sum = sum + v
+    end
+    return sum
+end
+
+function modifier_talent_4:OnRefresh(kv)
+    if not IsServer() then
+        return
+    end
+    local hero = self:GetParent()
+    local ID = Util:Hero2ID(hero)
+    if not ID or not HeroData or not HeroData.Data or not HeroData.Data[ID]
+        or not HeroData.Data[ID].hero_attr then
+        self:SetStackCount(0)
+        self.allstat_bonus = 0
+        return
+    end
+    self.lqjs = HeroData.Data[ID].hero_attr.lqjs or 0
+    self.allstat_bonus = self:_AllstatBonus()
+    self:SetStackCount(self.lqjs)
+    hero:CalculateStatBonus(true)
+end
+
+function modifier_talent_4:DeclareFunctions()
+    return {
+        MODIFIER_EVENT_ON_ATTACK_LANDED,
+        MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
+        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+    }
+end
+
+function modifier_talent_4:GetModifierBonusStats_Strength()
+    return self.allstat_bonus or 0
+end
+
+function modifier_talent_4:GetModifierBonusStats_Agility()
+    return self.allstat_bonus or 0
+end
+
+function modifier_talent_4:GetModifierBonusStats_Intellect()
+    return self.allstat_bonus or 0
+end
+
+function modifier_talent_4:GetModifierPercentageCooldown()
+    return self:GetStackCount()
+end
+
+function modifier_talent_4:_EquipLevel()
+    local ca = self:GetParent()
+    local ID = Util:Hero2ID(ca)
+    if not ID or not Talent or not Talent.Data or not Talent.Data[ID] then
+        return 0
+    end
+    return Talent.Data[ID].level or 0
+end
+
+function modifier_talent_4:_LevelValue(list, level)
+    local idx = (level or 0) + 1
+    if idx < 1 then
+        idx = 1
+    end
+    if idx > #list then
+        idx = #list
+    end
+    return list[idx]
+end
+
+function modifier_talent_4:OnAttackLanded(keys)
+    if not IsServer() then
+        return
+    end
+    if keys.attacker ~= self:GetParent() then
+        return
+    end
+    local ca = self:GetParent()
+    local ta = keys.target
+    if not clrb_talent4_is_valid_enemy(ca, ta, nil) then
+        return
+    end
+    if not ca:IsHero() then
+        return
+    end
+
+    local level = self:_EquipLevel()
+    local on_hit = self:_LevelValue(ON_HIT_MAGIC, level)
+    utilex:UnitDam(ca, ta, on_hit, "mf", nil, true)
+
+    if math.random(1, 100) <= CHAIN_PROC_CHANCE then
+        local now = (GameRules and GameRules.GetGameTime and GameRules:GetGameTime()) or 0
+        if not self._chain_icd_until or now >= self._chain_icd_until then
+            self._chain_icd_until = now + CHAIN_ICD
+            self:_ProcChainLightning(ca, ta, level)
+        end
+    end
+end
+
+local function clrb_talent4_beam_pos(unit)
+    if not unit or unit:IsNull() then
+        return Vector(0, 0, 0)
+    end
+    local pos = unit:GetAbsOrigin()
+    local minb = unit:GetBoundingMins()
+    local maxb = unit:GetBoundingMaxs()
+    if minb and maxb then
+        return Vector(pos.x, pos.y, pos.z + (maxb.z - minb.z) * 0.5)
+    end
+    return pos
+end
+
+function modifier_talent_4:_PlayChainBeam(from_unit, to_unit)
+    if not from_unit or from_unit:IsNull() or not to_unit or to_unit:IsNull() then
+        return
+    end
+    local from_pos = clrb_talent4_beam_pos(from_unit)
+    local to_pos = clrb_talent4_beam_pos(to_unit)
+    local fx = ParticleManager:CreateParticle(PFX_CHAIN, PATTACH_CUSTOMORIGIN, nil)
+    ParticleManager:SetParticleControl(fx, 0, from_pos)
+    ParticleManager:SetParticleControl(fx, 1, to_pos)
+    ParticleManager:SetParticleControl(fx, 2, Vector(1, 1, 1))
+    Timers(0.55, function()
+        if fx then
+            ParticleManager:DestroyParticle(fx, false)
+            ParticleManager:ReleaseParticleIndex(fx)
+        end
+    end)
+
+    if PFX_IMPACT_ENABLED then
+        local impact = ParticleManager:CreateParticle(PFX_IMPACT, PATTACH_ABSORIGIN_FOLLOW, to_unit)
+        Util:ParticleSetControlEntHitlocOrAbsFollow(impact, 1, to_unit)
+        Timers(0.6, function()
+            if impact then
+                ParticleManager:DestroyParticle(impact, false)
+                ParticleManager:ReleaseParticleIndex(impact)
+            end
+        end)
+    end
+end
+
+function modifier_talent_4:_PlayChainSound(from_unit, target)
+    local unit = from_unit
+    if not unit or unit:IsNull() then
+        unit = target
+    end
+    if unit and not unit:IsNull() then
+        EmitSoundOn(SFX_CHAIN, unit)
+    end
+end
+
+function modifier_talent_4:_ApplyChainSlow(attacker, target, duration)
+    if not target or target:IsNull() or not target:IsAlive() then
+        return
+    end
+    if target:IsMagicImmune() then
+        return
+    end
+    target:AddNewModifier(attacker, nil, "modifier_talent_4_chain_slow", { duration = duration })
+end
+
+function modifier_talent_4:_StrikeChainTarget(attacker, from_unit, target, damage, is_main)
+    self:_PlayChainBeam(from_unit, target)
+    self:_PlayChainSound(from_unit, target)
+    utilex:UnitDam(attacker, target, damage, "mf", nil, true)
+    if is_main then
+        self:_ApplyChainSlow(attacker, target, CHAIN_MAIN_SLOW)
+    end
+end
+
+--- 从当前落点寻找下一个弹跳目标（650 内最近且未命中）
+function modifier_talent_4:_FindNextChainTarget(from_unit, attacker, hit)
+    if not from_unit or from_unit:IsNull() then
+        return nil
+    end
+    local origin = from_unit:GetAbsOrigin()
+    local enemies = FindUnitsInRadius(
+        attacker:GetTeamNumber(),
+        origin,
+        nil,
+        CHAIN_RADIUS,
+        DOTA_UNIT_TARGET_TEAM_ENEMY,
+        DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+        DOTA_UNIT_TARGET_FLAG_NONE,
+        FIND_ANY_ORDER,
+        false
+    )
+
+    local best = nil
+    local best_dist = nil
+    for _, enemy in pairs(enemies) do
+        if clrb_talent4_is_valid_enemy(attacker, enemy, hit) then
+            local dist = (enemy:GetAbsOrigin() - origin):Length2D()
+            if not best or dist < best_dist then
+                best = enemy
+                best_dist = dist
+            end
+        end
+    end
+    return best
+end
+
+function modifier_talent_4:_ProcChainLightning(attacker, primary, level)
+    if not attacker or attacker:IsNull() or not primary or primary:IsNull() then
+        return
+    end
+
+    local base = self:_LevelValue(CHAIN_BASE, level)
+    local stat_coef = self:_LevelValue(CHAIN_STAT_COEF, level)
+    local stats = (attacker:GetStrength() or 0) + (attacker:GetAgility() or 0)
+        + (attacker:GetIntellect(true) or 0)
+    local damage = math.floor(base + stats * stat_coef)
+
+    local hit = {}
+    local strikes_left = CHAIN_MAX_TARGETS
+    local from_unit = attacker
+    local pending_target = primary
+    local mod = self
+    local gen = (self._chain_gen or 0) + 1
+    self._chain_gen = gen
+
+    local function bounce(delay)
+        Timers(delay, function()
+            if not mod then
+                return
+            end
+            if mod._chain_gen ~= gen then
+                return
+            end
+            if not attacker or attacker:IsNull() or not attacker:IsAlive() then
+                return
+            end
+            if strikes_left <= 0 then
+                return
+            end
+
+            local target = pending_target
+            if not clrb_talent4_is_valid_enemy(attacker, target, hit) then
+                target = mod:_FindNextChainTarget(from_unit, attacker, hit)
+            end
+            if not target then
+                return
+            end
+
+            hit[target] = true
+            strikes_left = strikes_left - 1
+            local is_main = (CHAIN_MAX_TARGETS - strikes_left) == 1
+
+            mod:_StrikeChainTarget(attacker, from_unit, target, damage, is_main)
+
+            from_unit = target
+            pending_target = mod:_FindNextChainTarget(from_unit, attacker, hit)
+
+            if strikes_left > 0 and pending_target then
+                bounce(CHAIN_JUMP_DELAY)
+            end
+        end)
+    end
+
+    bounce(0)
+end
+
+----------------------------------------------------------------
+-- 连锁闪电麻痹：90% 减速，散失状态特效
+----------------------------------------------------------------
+if modifier_talent_4_chain_slow == nil then
+    modifier_talent_4_chain_slow = class({})
+end
+
+function modifier_talent_4_chain_slow:IsHidden()
+    return false
+end
+
+function modifier_talent_4_chain_slow:IsDebuff()
+    return true
+end
+
+function modifier_talent_4_chain_slow:IsPurgable()
+    return true
+end
+
+function modifier_talent_4_chain_slow:RemoveOnDeath()
+    return true
+end
+
+function modifier_talent_4_chain_slow:GetTexture()
+    return "item_diffusal_blade"
+end
+
+function modifier_talent_4_chain_slow:GetStatusEffectName()
+    return "particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_maelstrom_v2_item.vpcf"
+end
+
+function modifier_talent_4_chain_slow:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+    }
+end
+
+function modifier_talent_4_chain_slow:GetModifierMoveSpeedBonus_Percentage()
+    return -90
+end

@@ -8,22 +8,119 @@
 ]]
 
 
-local encoded=[[LS0g5p6B6YCf56e75YqobW9kaWZpZXIKbW9kaWZpZXJfcnVuID0gY2xhc3Moe30pCgpmdW5jdGlvbiBtb2RpZmllcl9ydW46SXNIaWRkZW4oKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfcnVuOklzUHVyZ2FibGUoKQogICAgcmV0dXJuIHRydWUKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9ydW46SXNEZWJ1ZmYoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfcnVuOkdldFRleHR1cmUoKQogICAgcmV0dXJuICJpdGVtX3BoYXNlX2Jvb3RzIiAtLSDkvb/nlKjnm7jkvY3pnovlm77moIcKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9ydW46T25DcmVhdGVkKGt2KQogICAgaWYgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgLS0g6I635Y+W54i25Y2V5L2N77yI6Iux6ZuE77yJCiAgICAgICAgbG9jYWwgcGFyZW50ID0gc2VsZjpHZXRQYXJlbnQoKQoKICAgICAgICAtLSDmoLnmja7oi7Hpm4Tnsbvlnovorr7nva7mjIHnu63ml7bpl7QKICAgICAgICBpZiBwYXJlbnQ6SXNSYW5nZWRBdHRhY2tlcigpIHRoZW4KICAgICAgICAgICAgLS0g6L+c56iL6Iux6ZuE77yaMuenkgogICAgICAgICAgICBzZWxmOlNldER1cmF0aW9uKDIuNSwgdHJ1ZSkKICAgICAgICBlbHNlCiAgICAgICAgICAgIC0tIOi/keaImOiLsembhO+8mjIuNeenkgogICAgICAgICAgICBzZWxmOlNldER1cmF0aW9uKDIuNSwgdHJ1ZSkKICAgICAgICBlbmQKCiAgICAgICAgLS0g5pKt5pS+54m55pWICiAgICAgICAgc2VsZjpQbGF5RWZmZWN0cygpCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9ydW46T25SZWZyZXNoKGt2KQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbiByZXR1cm4gZW5kCiAgICBzZWxmOk9uQ3JlYXRlZChrdikKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9ydW46T25EZXN0cm95KCkKICAgIGlmIElzU2VydmVyKCkgdGhlbgogICAgICAgIC0tIOenu+mZpOeJueaViAogICAgICAgIGlmIHNlbGYucGFydGljbGUgdGhlbgogICAgICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6RGVzdHJveVBhcnRpY2xlKHNlbGYucGFydGljbGUsIGZhbHNlKQogICAgICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6UmVsZWFzZVBhcnRpY2xlSW5kZXgoc2VsZi5wYXJ0aWNsZSkKICAgICAgICBlbmQKICAgIGVuZAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3J1bjpEZWNsYXJlRnVuY3Rpb25zKCkKICAgIHJldHVybiB7CiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfTU9WRVNQRUVEX0JPTlVTX0NPTlNUQU5ULCAgLS0g5Zu65a6a56e76YCf5Yqg5oiQCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfTU9WRVNQRUVEX0FCU09MVVRFLCAgICAgICAgLS0g57ud5a+556e76YCf77yI5Y+v6YCJ77yJCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfSUdOT1JFX01PVkVTUEVFRF9MSU1JVCwgICAgLS0g5b+955Wl56e76YCf5LiK6ZmQCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfTU9WRVNQRUVEX0xJTUlULCAgICAgICAgICAgLS0g56e76YCf6ZmQ5Yi2CiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfU1RBVFVTX1JFU0lTVEFOQ0VfU1RBQ0tJTkcgLS0g54q25oCB5oqX5oCn77yI55So5LqO5YeP6YCf5oqX5oCn77yJCiAgICB9CmVuZAoKLS0g6K6+572u5Zu65a6a56e76YCf5Yqg5oiQ5YiwODg4CmZ1bmN0aW9uIG1vZGlmaWVyX3J1bjpHZXRNb2RpZmllck1vdmVTcGVlZEJvbnVzX0NvbnN0YW50KCkKICAgIHJldHVybiA4ODgKZW5kCgotLSDmiJbogIXkvb/nlKjnu53lr7nnp7vpgJ/vvIjkuozpgInkuIDvvIkKZnVuY3Rpb24gbW9kaWZpZXJfcnVuOkdldE1vZGlmaWVyTW92ZVNwZWVkX0Fic29sdXRlKCkKICAgIC0tIOWmguaenOS9v+eUqOe7neWvueenu+mAn++8jOWPlua2iOS4iumdoueahOWbuuWumuWKoOaIkAogICAgLS0gcmV0dXJuIDg4OAogICAgcmV0dXJuIDg4OAplbmQKCi0tIOW/veeVpeenu+mAn+S4iumZkApmdW5jdGlvbiBtb2RpZmllcl9ydW46R2V0TW9kaWZpZXJJZ25vcmVNb3Zlc3BlZWRMaW1pdCgpCiAgICByZXR1cm4gMQplbmQKCi0tIOiuvue9ruenu+mAn+mZkOWItu+8iOWPr+mAie+8iQpmdW5jdGlvbiBtb2RpZmllcl9ydW46R2V0TW9kaWZpZXJNb3ZlU3BlZWRfTGltaXQoKQogICAgcmV0dXJuIDg4OAplbmQKCi0tIDEwMCXlh4/pgJ/mipfmgKfvvIjpgJrov4fnirbmgIHmipfmgKflrp7njrDvvIkKZnVuY3Rpb24gbW9kaWZpZXJfcnVuOkdldE1vZGlmaWVyU3RhdHVzUmVzaXN0YW5jZVN0YWNraW5nKCkKICAgIHJldHVybiAxMDAKZW5kCgotLSDnirbmgIHmo4Dmn6UKZnVuY3Rpb24gbW9kaWZpZXJfcnVuOkNoZWNrU3RhdGUoKQogICAgcmV0dXJuIHsKICAgICAgICAtLSDnoa7kv53kuI3kvJrooqvlh4/pgJ/mlYjmnpzlvbHlk40KICAgICAgICBbTU9ESUZJRVJfU1RBVEVfTk9fSEVBTFRIX0JBUl0gPSBmYWxzZSwKICAgICAgICAtLSDlj6/ku6Xmt7vliqDlhbbku5bpnIDopoHnmoTnirbmgIEKICAgIH0KZW5kCgotLSDnibnmlYjmkq3mlL4KZnVuY3Rpb24gbW9kaWZpZXJfcnVuOlBsYXlFZmZlY3RzKCkKICAgIGxvY2FsIHBhcmVudCA9IHNlbGY6R2V0UGFyZW50KCkKCiAgICAtLSDliJvlu7rnp7vliqjnibnmlYgKICAgIHNlbGYucGFydGljbGUgPSBQYXJ0aWNsZU1hbmFnZXI6Q3JlYXRlUGFydGljbGUoInBhcnRpY2xlcy91bml0cy9oZXJvZXMvaGVyb19kYXJrX3NlZXIvZGFya19zZWVyX3N1cmdlLnZwY2YiLCBQQVRUQUNIX0FCU09SSUdJTl9GT0xMT1csCiAgICAgICAgcGFyZW50KQogICAgUGFydGljbGVNYW5hZ2VyOlNldFBhcnRpY2xlQ29udHJvbChzZWxmLnBhcnRpY2xlLCAwLCBwYXJlbnQ6R2V0QWJzT3JpZ2luKCkpCgogICAgLS0g5pKt5pS+6Z+z5pWICiAgICBFbWl0U291bmRPbigiSGVyb19EYXJrX1NlZXIuU3VyZ2UiLCBwYXJlbnQpCmVuZAoKLS0g54q25oCB5qCP5pi+56S65L+h5oGvCmZ1bmN0aW9uIG1vZGlmaWVyX3J1bjpHZXRTdGF0dXNMYWJlbCgpCiAgICByZXR1cm4gInN1cGVyX3NwZWVkIgplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 极速移动modifier
+modifier_run = class({})
+
+function modifier_run:IsHidden()
+    return false
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function modifier_run:IsPurgable()
+    return true
+end
+
+function modifier_run:IsDebuff()
+    return false
+end
+
+function modifier_run:GetTexture()
+    return "item_phase_boots" -- 使用相位鞋图标
+end
+
+function modifier_run:OnCreated(kv)
+    if IsServer() then
+        -- 获取父单位（英雄）
+        local parent = self:GetParent()
+
+        -- 根据英雄类型设置持续时间
+        if parent:IsRangedAttacker() then
+            -- 远程英雄：2秒
+            self:SetDuration(2.5, true)
+        else
+            -- 近战英雄：2.5秒
+            self:SetDuration(2.5, true)
+        end
+
+        -- 播放特效
+        self:PlayEffects()
+    end
+end
+
+function modifier_run:OnRefresh(kv)
+    if not IsServer() then return end
+    self:OnCreated(kv)
+end
+
+function modifier_run:OnDestroy()
+    if IsServer() then
+        -- 移除特效
+        if self.particle then
+            ParticleManager:DestroyParticle(self.particle, false)
+            ParticleManager:ReleaseParticleIndex(self.particle)
+        end
+    end
+end
+
+function modifier_run:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,  -- 固定移速加成
+        MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,        -- 绝对移速（可选）
+        MODIFIER_PROPERTY_IGNORE_MOVESPEED_LIMIT,    -- 忽略移速上限
+        MODIFIER_PROPERTY_MOVESPEED_LIMIT,           -- 移速限制
+        MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING -- 状态抗性（用于减速抗性）
+    }
+end
+
+-- 设置固定移速加成到888
+function modifier_run:GetModifierMoveSpeedBonus_Constant()
+    return 888
+end
+
+-- 或者使用绝对移速（二选一）
+function modifier_run:GetModifierMoveSpeed_Absolute()
+    -- 如果使用绝对移速，取消上面的固定加成
+    -- return 888
+    return 888
+end
+
+-- 忽略移速上限
+function modifier_run:GetModifierIgnoreMovespeedLimit()
+    return 1
+end
+
+-- 设置移速限制（可选）
+function modifier_run:GetModifierMoveSpeed_Limit()
+    return 888
+end
+
+-- 100%减速抗性（通过状态抗性实现）
+function modifier_run:GetModifierStatusResistanceStacking()
+    return 100
+end
+
+-- 状态检查
+function modifier_run:CheckState()
+    return {
+        -- 确保不会被减速效果影响
+        [MODIFIER_STATE_NO_HEALTH_BAR] = false,
+        -- 可以添加其他需要的状态
+    }
+end
+
+-- 特效播放
+function modifier_run:PlayEffects()
+    local parent = self:GetParent()
+
+    -- 创建移动特效
+    self.particle = ParticleManager:CreateParticle("particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf", PATTACH_ABSORIGIN_FOLLOW,
+        parent)
+    ParticleManager:SetParticleControl(self.particle, 0, parent:GetAbsOrigin())
+
+    -- 播放音效
+    EmitSoundOn("Hero_Dark_Seer.Surge", parent)
+end
+
+-- 状态栏显示信息
+function modifier_run:GetStatusLabel()
+    return "super_speed"
+end

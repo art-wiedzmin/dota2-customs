@@ -8,22 +8,52 @@
 ]]
 
 
-local encoded=[[ZnVuY3Rpb24gUGFjazpHZXRVSURhdGEoSUQsIGRhdGEpCiAgICBpZiBub3QgSUQgb3Igbm90IGRhdGEgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICAtLeaaguWBnOemgeatouS8oOaVsOaNrgogICAgaWYgR2FtZVJ1bGVzOklzR2FtZVBhdXNlZCgpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgLS3liJ3lp4vljJbmlbDmja4KICAgIGlmIGRhdGEudHAgPT0gImluaXQiIHRoZW4KICAgICAgICBzZWxmOlNlbmREYXRhKElEKQogICAgZW5kCiAgICBpZiBkYXRhLnRwID09ICJHZXRVbml0IiB0aGVuCiAgICAgICAgc2VsZjpHZXRVbml0KElELCBkYXRhLnRleHQpCiAgICBlbmQKICAgIGlmIGRhdGEudHAgPT0gIkdldEhlcm8iIHRoZW4KICAgICAgICBzZWxmOlNlbGVjdEhlcm8oSUQsIGRhdGEudGV4dCkKICAgIGVuZAogICAgaWYgZGF0YS50cCA9PSAiVGFja0l0ZW0iIHRoZW4KICAgICAgICBzZWxmOlRhY2tJdGVtKElELCBkYXRhLnRleHQpCiAgICBlbmQKICAgIGlmIGRhdGEudHAgPT0gIkNsb3NlUGFnZSIgdGhlbgogICAgICAgIHNlbGY6Q2xvc2VQYWdlKElEKQogICAgZW5kCmVuZAoKLS3nu5nliY3nq6/lj5HmlbDmja4KZnVuY3Rpb24gUGFjazpTZW5kRGF0YShJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGhlcm8gPSBVdGlsOklEMkhlcm8oSUQpCiAgICBpZiBub3QgaGVybyB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIHBhY2tfdHAgPSAiVGVhbSIgLi4gaGVybzpHZXRUZWFtKCkKICAgIHNlbGYuRGF0YVtJRF0ucGFjayA9IHNlbGZbcGFja190cF0KICAgIFV0aWw6U2VuZDJKc0lEKCJVSV9QYWNrIiwgc2VsZi5EYXRhW0lEXSwgSUQpCmVuZAoKLS3lj5HpgIHlhazlhbHmlbDmja4s5ZCM5q2l5Yiw546p5a625Liq5Lq65LuT5bqTCmZ1bmN0aW9uIFBhY2s6U2VuZFB1YmxpY0RhdGEodGVhbSkKICAgIGZvciBrLCB2IGluIHBhaXJzKHV0aWxleDpHZXRBbGxQbGF5ZXIoKSkgZG8KICAgICAgICBsb2NhbCBoZXJvID0gVXRpbDpJRDJIZXJvKHYpCiAgICAgICAgaWYgaGVybyBhbmQgaGVybzpHZXRUZWFtKCkgPT0gdGVhbSBhbmQgc2VsZjpHZXRQYWdlKHYpIHRoZW4KICAgICAgICAgICAgUGFjazpTZW5kRGF0YSh2KQogICAgICAgIGVuZAogICAgZW5kCmVuZAo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+function Pack:GetUIData(ID, data)
+    if not ID or not data then
+        return
+    end
+    --暂停禁止传数据
+    if GameRules:IsGamePaused() then
+        return
+    end
+    --初始化数据
+    if data.tp == "init" then
+        self:SendData(ID)
+    end
+    if data.tp == "GetUnit" then
+        self:GetUnit(ID, data.text)
+    end
+    if data.tp == "GetHero" then
+        self:SelectHero(ID, data.text)
+    end
+    if data.tp == "TackItem" then
+        self:TackItem(ID, data.text)
+    end
+    if data.tp == "ClosePage" then
+        self:ClosePage(ID)
+    end
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--给前端发数据
+function Pack:SendData(ID)
+    if not ID then
+        return
+    end
+    local hero = Util:ID2Hero(ID)
+    if not hero then
+        return
+    end
+    local pack_tp = "Team" .. hero:GetTeam()
+    self.Data[ID].pack = self[pack_tp]
+    Util:Send2JsID("UI_Pack", self.Data[ID], ID)
+end
+
+--发送公共数据,同步到玩家个人仓库
+function Pack:SendPublicData(team)
+    for k, v in pairs(utilex:GetAllPlayer()) do
+        local hero = Util:ID2Hero(v)
+        if hero and hero:GetTeam() == team and self:GetPage(v) then
+            Pack:SendData(v)
+        end
+    end
+end

@@ -8,22 +8,73 @@
 ]]
 
 
-local encoded=[[SXRlbS5EYXRhID0ge30KSXRlbS5UZW1wbGF0ZSA9IHt9Ckl0ZW0uU3RhdGljID0gewogICAgdXNlID0gewogICAgICAgICJpdGVtX2dvb2RzXzEiLCAiaXRlbV9nb29kc18yIiwgIml0ZW1fZ29vZHNfMyIsICJpdGVtX2dvb2RzXzQiLAogICAgICAgICJpdGVtX2dvb2RzXzUiLCAiaXRlbV9nb29kc182IiwgIml0ZW1fZ29vZHNfNyIsICJpdGVtX2dvb2RzXzgiLAogICAgICAgICJpdGVtX2dvb2RzXzkiLCAtLSDmioDog73ngrnvvJrmi77lj5bml7bkv53nlZnkuI3op6blj5EgVXNlSXRlbe+8jOi1sOWghuWPoOmAu+i+ke+8jOmBv+WFjeWuoOeJqeaNoeesrOS6jOS4quaXtiBFamVjdEl0ZW1Gcm9tU3Rhc2gg5a+86Ie05Lik5Liq6YO95LiN5Y+v55SoCiAgICAgICAgIml0ZW1fZ29vZHNfMjAiIC0tIOWIoOmZpOaKgOiDve+8muaLvuWPluaXtuS/neeVmeS4jeinpuWPkSBVc2VJdGVt77yM6LWw5aCG5Y+g6YC76L6R77yM6YG/5YWN5a6g54mp5o2h56ys5LqM5Liq5pe2IEVqZWN0SXRlbUZyb21TdGFzaCDlr7zoh7TkuKTkuKrpg73kuI3lj6/nlKgKICAgIH0KfQpJdGVtLlN0YWNrID0gewogICAgIml0ZW1fZ29vZHNfMyIsICJpdGVtX2dvb2RzXzQiLCAiaXRlbV9nb29kc181IiwgIml0ZW1fZ29vZHNfNiIsCiAgICAiaXRlbV9nb29kc183IiwgIml0ZW1fZ29vZHNfOCIsICJpdGVtX2dvb2RzXzkiLCAiaXRlbV9nb29kc18xNCIsCiAgICAiaXRlbV9nb29kc18xNSIsICJpdGVtX2dvb2RzXzE2IiwgIml0ZW1fZ29vZHNfMjAiLCAiaXRlbV9nb29kc18yMiIsICJpdGVtX2dvb2RzXzIzIiwKICAgICJpdGVtX3NraWxsXzEiLAogICAgIml0ZW1fc2tpbGxfMiIsICJpdGVtX3NraWxsXzMiLCAiaXRlbV9za2lsbF80IiwgIml0ZW1fc2tpbGxfNSIsCiAgICAiaXRlbV9za2lsbF82IiwgIml0ZW1fc2tpbGxfNyIsICJpdGVtX3NraWxsXzgiLCAiaXRlbV9za2lsbF85IiwKICAgIC0tICJpdGVtX3NraWxsXzEwIiwKICAgICJpdGVtX3NraWxsXzExIiwgIml0ZW1fc2tpbGxfMTIiLCAiaXRlbV9za2lsbF8xMyIsICJpdGVtX3NraWxsXzE0IiwKICAgICJpdGVtX3NraWxsXzE1IiwgIml0ZW1fc2tpbGxfMTYiLCAiaXRlbV9za2lsbF8xNyIsICJpdGVtX3NraWxsXzE4IiwKICAgICJpdGVtX3NraWxsXzE5IiwgIml0ZW1fc2tpbGxfMjAiLCAiaXRlbV9za2lsbF8yMSIsICJpdGVtX3NraWxsXzIyIiwKICAgICJpdGVtX3NraWxsXzIzIiwgIml0ZW1fc2tpbGxfMjQiLCAiaXRlbV9za2lsbF8yNSIsICJpdGVtX3NraWxsXzI2IiwKICAgICJpdGVtX3NraWxsXzI3IiwgIml0ZW1fc2tpbGxfMjgiLCAiaXRlbV9za2lsbF8yOSIsIC0tICJpdGVtX3NraWxsXzMwIiwKICAgICJpdGVtX3NraWxsXzMxIiwgIml0ZW1fc2tpbGxfMzIiLCAiaXRlbV9za2lsbF8zMyIsICJpdGVtX3NraWxsXzM0IiwKICAgICJpdGVtX3NraWxsXzM1IiwgIml0ZW1fc2tpbGxfMzYiLCAiaXRlbV9za2lsbF8zNyIsICJpdGVtX3NraWxsXzM4Igp9Ckl0ZW0uU3RhY2tTa2lsbCA9IHsKICAgICJpdGVtX2dvb2RzXzE0IiwgIml0ZW1fZ29vZHNfMTUiLCAiaXRlbV9nb29kc18xNiIsCiAgICAiaXRlbV9za2lsbF8xIiwgIml0ZW1fc2tpbGxfMiIsICJpdGVtX3NraWxsXzMiLCAiaXRlbV9za2lsbF80IiwKICAgICJpdGVtX3NraWxsXzUiLCAiaXRlbV9za2lsbF82IiwgIml0ZW1fc2tpbGxfNyIsICJpdGVtX3NraWxsXzgiLAogICAgIml0ZW1fc2tpbGxfOSIsICJpdGVtX3NraWxsXzEwIiwgIml0ZW1fc2tpbGxfMTEiLCAiaXRlbV9za2lsbF8xMiIsCiAgICAiaXRlbV9za2lsbF8xMyIsICJpdGVtX3NraWxsXzE0IiwgIml0ZW1fc2tpbGxfMTUiLCAiaXRlbV9za2lsbF8xNiIsCiAgICAiaXRlbV9za2lsbF8xNyIsICJpdGVtX3NraWxsXzE4IiwgIml0ZW1fc2tpbGxfMTkiLCAiaXRlbV9za2lsbF8yMCIsCiAgICAiaXRlbV9za2lsbF8yMSIsICJpdGVtX3NraWxsXzIyIiwgIml0ZW1fc2tpbGxfMjMiLCAiaXRlbV9za2lsbF8yNCIsCiAgICAiaXRlbV9za2lsbF8yNSIsICJpdGVtX3NraWxsXzI2IiwgIml0ZW1fc2tpbGxfMjciLCAiaXRlbV9za2lsbF8yOCIsCiAgICAiaXRlbV9za2lsbF8yOSIsICJpdGVtX3NraWxsXzMwIiwgIml0ZW1fc2tpbGxfMzEiLCAiaXRlbV9za2lsbF8zMiIsCiAgICAiaXRlbV9za2lsbF8zMyIsICJpdGVtX3NraWxsXzM0IiwgIml0ZW1fc2tpbGxfMzUiLCAiaXRlbV9za2lsbF8zNiIsCiAgICAiaXRlbV9za2lsbF8zNyIsICJpdGVtX3NraWxsXzM4IiwKfQpJdGVtLlJiID0gewogICAgIml0ZW1fc2tpbGxfMSIsICJpdGVtX3NraWxsXzIiLCAiaXRlbV9za2lsbF8zIiwgLS0gIml0ZW1fc2tpbGxfNCIsCiAgICAiaXRlbV9za2lsbF81IiwgIml0ZW1fc2tpbGxfNiIsICJpdGVtX3NraWxsXzciLCAtLSAiaXRlbV9za2lsbF84IiwKICAgICJpdGVtX3NraWxsXzkiLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tICJpdGVtX3NraWxsXzEwIiwKICAgICJpdGVtX3NraWxsXzExIiwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tICJpdGVtX3NraWxsXzEyIiwKICAgICJpdGVtX3NraWxsXzEzIiwgIml0ZW1fc2tpbGxfMTQiLCAiaXRlbV9za2lsbF8xNSIsICJpdGVtX3NraWxsXzE2IiwKICAgICJpdGVtX3NraWxsXzE3IiwgIml0ZW1fc2tpbGxfMTgiLCAiaXRlbV9za2lsbF8xOSIsICJpdGVtX3NraWxsXzIwIiwKICAgICJpdGVtX3NraWxsXzIxIiwgIml0ZW1fc2tpbGxfMjIiLCAiaXRlbV9za2lsbF8yMyIsICJpdGVtX3NraWxsXzI0IiwKICAgICJpdGVtX3NraWxsXzI1IiwgIml0ZW1fc2tpbGxfMjYiLCAiaXRlbV9za2lsbF8yNyIsICJpdGVtX3NraWxsXzI4IiwKICAgICJpdGVtX3NraWxsXzI5IiwgLS0gIml0ZW1fc2tpbGxfMzAiLCDooYDogonkuLDnopHmmoLml7bpmpDol48KICAgICJpdGVtX3NraWxsXzMxIiwgIml0ZW1fc2tpbGxfMzIiLAogICAgIml0ZW1fc2tpbGxfMzMiLCAiaXRlbV9za2lsbF8zNCIsICJpdGVtX3NraWxsXzM1IiwgIml0ZW1fc2tpbGxfMzYiLAogICAgIml0ZW1fc2tpbGxfMzciLCAiaXRlbV9za2lsbF8zOCIKfQpJdGVtLlR4ID0gewogICAgaXRlbV9nb29kc18xMCA9ICJwYXJ0aWNsZXMvaXRlbV9yYW5rMV9wLnZwY2YiLAogICAgaXRlbV9nb29kc18xMSA9ICJwYXJ0aWNsZXMvaXRlbV9yYW5rMl9wLnZwY2YiLAogICAgaXRlbV9nb29kc18xMiA9ICJwYXJ0aWNsZXMvaXRlbV9yYW5rNV8xLnZwY2YiLAogICAgaXRlbV9nb29kc18xNSA9ICJwYXJ0aWNsZXMvaXRlbV9yYW5rMV9wLnZwY2YiLAogICAgaXRlbV9nb29kc18xNiA9ICJwYXJ0aWNsZXMvaXRlbV9yYW5rNV9wLnZwY2YiLAogICAgaXRlbV9nb29kc18yNSA9ICJwYXJ0aWNsZXMvaXRlbV9yYW5rMV9wLnZwY2YiLAogICAgaXRlbV9nb29kc18yNiA9ICJwYXJ0aWNsZXMvaXRlbV9yYW5rNV8xLnZwY2YiLAp9CgpJdGVtLkdvb2RzMjVGeCA9IHsKICAgIGJvbHQgPSAicGFydGljbGVzL2Vjb24vaXRlbXMvemV1cy9saWdodG5pbmdfd2VhcG9uX2Z4L3p1dXNfbGlnaHRuaW5nX2JvbHRfaW1tb3J0YWxfbGlnaHRuaW5nLnZwY2YiLAogICAgc3RhcnQgPSAicGFydGljbGVzL3VuaXRzL2hlcm9lcy9oZXJvX3p1dXMvenV1c19saWdodG5pbmdfYm9sdF9zdGFydC52cGNmIiwKICAgIGdsb3cgPSAicGFydGljbGVzL3VuaXRzL2hlcm9lcy9oZXJvX3p1dXMvenV1c19saWdodG5pbmdfYm9sdF9nbG93X2Z4LnZwY2YiLAogICAgY2FzdCA9ICJwYXJ0aWNsZXMvZWNvbi9pdGVtcy96ZXVzL2xpZ2h0bmluZ193ZWFwb25fZngvenV1c19sYl9jZnhfaWwudnBjZiIsCiAgICBza3lfeiA9IDIwMDAsCn0K]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
-end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+Item.Data = {}
+Item.Template = {}
+Item.Static = {
+    use = {
+        "item_goods_1", "item_goods_2", "item_goods_3", "item_goods_4",
+        "item_goods_5", "item_goods_6", "item_goods_7", "item_goods_8",
+        "item_goods_9", -- 技能点：拾取时保留不触发 UseItem，走堆叠逻辑，避免宠物捡第二个时 EjectItemFromStash 导致两个都不可用
+        "item_goods_20" -- 删除技能：拾取时保留不触发 UseItem，走堆叠逻辑，避免宠物捡第二个时 EjectItemFromStash 导致两个都不可用
+    }
+}
+Item.Stack = {
+    "item_goods_3", "item_goods_4", "item_goods_5", "item_goods_6",
+    "item_goods_7", "item_goods_8", "item_goods_9", "item_goods_14",
+    "item_goods_15", "item_goods_16", "item_goods_20", "item_goods_22", "item_goods_23",
+    "item_skill_1",
+    "item_skill_2", "item_skill_3", "item_skill_4", "item_skill_5",
+    "item_skill_6", "item_skill_7", "item_skill_8", "item_skill_9",
+    -- "item_skill_10",
+    "item_skill_11", "item_skill_12", "item_skill_13", "item_skill_14",
+    "item_skill_15", "item_skill_16", "item_skill_17", "item_skill_18",
+    "item_skill_19", "item_skill_20", "item_skill_21", "item_skill_22",
+    "item_skill_23", "item_skill_24", "item_skill_25", "item_skill_26",
+    "item_skill_27", "item_skill_28", "item_skill_29", -- "item_skill_30",
+    "item_skill_31", "item_skill_32", "item_skill_33", "item_skill_34",
+    "item_skill_35", "item_skill_36", "item_skill_37", "item_skill_38"
+}
+Item.StackSkill = {
+    "item_goods_14", "item_goods_15", "item_goods_16",
+    "item_skill_1", "item_skill_2", "item_skill_3", "item_skill_4",
+    "item_skill_5", "item_skill_6", "item_skill_7", "item_skill_8",
+    "item_skill_9", "item_skill_10", "item_skill_11", "item_skill_12",
+    "item_skill_13", "item_skill_14", "item_skill_15", "item_skill_16",
+    "item_skill_17", "item_skill_18", "item_skill_19", "item_skill_20",
+    "item_skill_21", "item_skill_22", "item_skill_23", "item_skill_24",
+    "item_skill_25", "item_skill_26", "item_skill_27", "item_skill_28",
+    "item_skill_29", "item_skill_30", "item_skill_31", "item_skill_32",
+    "item_skill_33", "item_skill_34", "item_skill_35", "item_skill_36",
+    "item_skill_37", "item_skill_38",
+}
+Item.Rb = {
+    "item_skill_1", "item_skill_2", "item_skill_3", -- "item_skill_4",
+    "item_skill_5", "item_skill_6", "item_skill_7", -- "item_skill_8",
+    "item_skill_9",                                 -- "item_skill_10",
+    "item_skill_11",                                -- "item_skill_12",
+    "item_skill_13", "item_skill_14", "item_skill_15", "item_skill_16",
+    "item_skill_17", "item_skill_18", "item_skill_19", "item_skill_20",
+    "item_skill_21", "item_skill_22", "item_skill_23", "item_skill_24",
+    "item_skill_25", "item_skill_26", "item_skill_27", "item_skill_28",
+    "item_skill_29", -- "item_skill_30", 血肉丰碑暂时隐藏
+    "item_skill_31", "item_skill_32",
+    "item_skill_33", "item_skill_34", "item_skill_35", "item_skill_36",
+    "item_skill_37", "item_skill_38"
+}
+Item.Tx = {
+    item_goods_10 = "particles/item_rank1_p.vpcf",
+    item_goods_11 = "particles/item_rank2_p.vpcf",
+    item_goods_12 = "particles/item_rank5_1.vpcf",
+    item_goods_15 = "particles/item_rank1_p.vpcf",
+    item_goods_16 = "particles/item_rank5_p.vpcf",
+    item_goods_25 = "particles/item_rank1_p.vpcf",
+    item_goods_26 = "particles/item_rank5_1.vpcf",
+}
+
+Item.Goods25Fx = {
+    bolt = "particles/econ/items/zeus/lightning_weapon_fx/zuus_lightning_bolt_immortal_lightning.vpcf",
+    start = "particles/units/heroes/hero_zuus/zuus_lightning_bolt_start.vpcf",
+    glow = "particles/units/heroes/hero_zuus/zuus_lightning_bolt_glow_fx.vpcf",
+    cast = "particles/econ/items/zeus/lightning_weapon_fx/zuus_lb_cfx_il.vpcf",
+    sky_z = 2000,
+}

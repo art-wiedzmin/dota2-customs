@@ -8,22 +8,90 @@
 ]]
 
 
-local encoded=[[ZnVuY3Rpb24gU2VydmVyOklzV2hpdGVMaXN0KElEKQogICAgcmV0dXJuIFNlcnZlci5EYXRhW0lEXS53aGl0ZWxpc3QKZW5kCgpmdW5jdGlvbiBTZXJ2ZXI6SXNBbGxXaGl0ZUxpc3QoKQogICAgZm9yIGssIHYgaW4gcGFpcnModXRpbGV4OkdldEFsbFBsYXllcigpKSBkbwogICAgICAgIGlmIG5vdCBzZWxmOklzV2hpdGVMaXN0KHYpIHRoZW4KICAgICAgICAgICAgcmV0dXJuIGZhbHNlCiAgICAgICAgZW5kCiAgICBlbmQKZW5kCgotLS0g5paw5LiA5bGA5byA5aeL5pe25riF56m65pys5bGA6ZSZ6K+v5LiK5oql5Y676YeN6KGoCmZ1bmN0aW9uIFNlcnZlcjpSZXNldENsaWVudExvZ0RlZHVwKCkKICAgIHNlbGYuX2NsaWVudF9sb2dfc2VudF9tYXRjaCA9IHt9CmVuZAoKLS0tIOacrOWxgOWOu+mHjemUru+8muS8mOWFiCBzb3VyY2XvvJvml6Agc291cmNlIOaXtueUqOmmluihjOaRmOimgQpmdW5jdGlvbiBTZXJ2ZXI6Q2xpZW50TG9nRGVkdXBLZXkoc291cmNlLCB0ZXh0KQogICAgbG9jYWwgc3JjID0gdG9zdHJpbmcoc291cmNlIG9yICIiKQogICAgaWYgc3JjIH49ICIiIHRoZW4KICAgICAgICByZXR1cm4gc3JjCiAgICBlbmQKICAgIGxvY2FsIGZpcnN0ID0gc3RyaW5nLm1hdGNoKHRleHQsICJeW15cbl0rIikgb3IgdGV4dAogICAgaWYgI2ZpcnN0ID4gMjU2IHRoZW4KICAgICAgICBmaXJzdCA9IHN0cmluZy5zdWIoZmlyc3QsIDEsIDI1NikKICAgIGVuZAogICAgcmV0dXJuIGZpcnN0CmVuZAoKLS0tIOWwhuWuouaIt+erryBMdWEg5byC5bi45qCI5Y+R5Yiw5pyN5Yqh56uv6JC95pel5b+X77yIUE9TVCAvZ2FtZS9jbGllbnRfbG9n77yM5LiOIEh0dHAg5YW25a6D5o6l5Y+j5ZCMIEhlYWRlciBzZWNyZXRrZXnvvIkKLS0tIOavj+WxgOavj+enjemUmeivr++8iOaMiSBzb3VyY2UgLyDpppbooYzvvInlj6rkuIrmiqXkuIDmrKEKLS0tIEBwYXJhbSBlcnJfdGV4dCBzdHJpbmd8YW55IHhwY2FsbCDnrKzkuozov5Tlm57lgLzmiJbku7vmhI/lj68gdG9zdHJpbmcg5YaF5a65Ci0tLSBAcGFyYW0gc291cmNlIHN0cmluZ3xuaWwg5Y+v6YCJ77yM5aaCICJNYWluR2FtZTpTdGFydFRpbWUi44CBIk1haW5HYW1lOkV2ZW50VHJpZ2dlcjptYXAxIgpmdW5jdGlvbiBTZXJ2ZXI6U2VuZEVycm9yKGVycl90ZXh0LCBzb3VyY2UpCiAgICBpZiBlcnJfdGV4dCA9PSBuaWwgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCB0ZXh0ID0gdG9zdHJpbmcoZXJyX3RleHQpCiAgICBpZiB0ZXh0ID09ICIiIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgI3RleHQgPiAxMjAwMCB0aGVuCiAgICAgICAgdGV4dCA9IHN0cmluZy5zdWIodGV4dCwgMSwgMTIwMDApIC4uICJcbi4uLlt0cnVuY2F0ZWRdIgogICAgZW5kCiAgICBsb2NhbCBzcmMgPSB0b3N0cmluZyhzb3VyY2Ugb3IgIiIpCgogICAgc2VsZi5fY2xpZW50X2xvZ19zZW50X21hdGNoID0gc2VsZi5fY2xpZW50X2xvZ19zZW50X21hdGNoIG9yIHt9CiAgICBsb2NhbCBrZXkgPSBzZWxmOkNsaWVudExvZ0RlZHVwS2V5KHNyYywgdGV4dCkKICAgIGlmIHNlbGYuX2NsaWVudF9sb2dfc2VudF9tYXRjaFtrZXldIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5fY2xpZW50X2xvZ19zZW50X21hdGNoW2tleV0gPSB0cnVlCgogICAgbG9jYWwgSUQgPSBQRCBhbmQgUEQuSG9zdAogICAgaWYgbm90IElEIG9yIG5vdCBQbGF5ZXJSZXNvdXJjZTpJc1ZhbGlkUGxheWVySUQoSUQpIHRoZW4KICAgICAgICBsb2NhbCBwbGF5ZXJzID0gdXRpbGV4IGFuZCB1dGlsZXguR2V0QWxsUGxheWVyIGFuZCB1dGlsZXg6R2V0QWxsUGxheWVyKCkKICAgICAgICBpZiBwbGF5ZXJzIHRoZW4KICAgICAgICAgICAgZm9yIF8sIHBpZCBpbiBwYWlycyhwbGF5ZXJzKSBkbwogICAgICAgICAgICAgICAgaWYgcGlkIH49IG5pbCBhbmQgUGxheWVyUmVzb3VyY2U6SXNWYWxpZFBsYXllcklEKHBpZCkgdGhlbgogICAgICAgICAgICAgICAgICAgIElEID0gcGlkCiAgICAgICAgICAgICAgICAgICAgYnJlYWsKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZAogICAgaWYgbm90IElEIG9yIG5vdCBQbGF5ZXJSZXNvdXJjZTpJc1ZhbGlkUGxheWVySUQoSUQpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGxvY2FsIGJvZHkgPSB7CiAgICAgICAgbWVzc2FnZSA9IHRleHQsCiAgICAgICAgc291cmNlID0gc3JjLAogICAgICAgIGxvZ19sZXZlbCA9ICJlcnJvciIsCiAgICB9CiAgICBpZiBNYWluR2FtZSBhbmQgTWFpbkdhbWUuR2V0VGltZSB0aGVuCiAgICAgICAgYm9keS5nYW1lX3RpbWVfc2VjID0gTWFpbkdhbWU6R2V0VGltZSgpCiAgICBlbmQKICAgIGlmIEdldE1hcE5hbWUgdGhlbgogICAgICAgIGJvZHkubWFwX25hbWUgPSBHZXRNYXBOYW1lKCkKICAgIGVuZAogICAgaWYgTWFpbkdhbWUgYW5kIE1haW5HYW1lLkdldEdhbWVUeXBlIHRoZW4KICAgICAgICBib2R5LmdhbWVfdHlwZSA9IE1haW5HYW1lOkdldEdhbWVUeXBlKCkKICAgIGVuZAogICAgSHR0cDpQT1NUKCIvZ2FtZS9jbGllbnRfbG9nIiwgYm9keSwgSUQsIGZ1bmN0aW9uKCkKICAgIGVuZCkKZW5k]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+function Server:IsWhiteList(ID)
+    return Server.Data[ID].whitelist
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function Server:IsAllWhiteList()
+    for k, v in pairs(utilex:GetAllPlayer()) do
+        if not self:IsWhiteList(v) then
+            return false
+        end
+    end
+end
+
+--- 新一局开始时清空本局错误上报去重表
+function Server:ResetClientLogDedup()
+    self._client_log_sent_match = {}
+end
+
+--- 本局去重键：优先 source；无 source 时用首行摘要
+function Server:ClientLogDedupKey(source, text)
+    local src = tostring(source or "")
+    if src ~= "" then
+        return src
+    end
+    local first = string.match(text, "^[^\n]+") or text
+    if #first > 256 then
+        first = string.sub(first, 1, 256)
+    end
+    return first
+end
+
+--- 将客户端 Lua 异常栈发到服务端落日志（POST /game/client_log，与 Http 其它接口同 Header secretkey）
+--- 每局每种错误（按 source / 首行）只上报一次
+--- @param err_text string|any xpcall 第二返回值或任意可 tostring 内容
+--- @param source string|nil 可选，如 "MainGame:StartTime"、"MainGame:EventTrigger:map1"
+function Server:SendError(err_text, source)
+    if err_text == nil then
+        return
+    end
+    local text = tostring(err_text)
+    if text == "" then
+        return
+    end
+    if #text > 12000 then
+        text = string.sub(text, 1, 12000) .. "\n...[truncated]"
+    end
+    local src = tostring(source or "")
+
+    self._client_log_sent_match = self._client_log_sent_match or {}
+    local key = self:ClientLogDedupKey(src, text)
+    if self._client_log_sent_match[key] then
+        return
+    end
+    self._client_log_sent_match[key] = true
+
+    local ID = PD and PD.Host
+    if not ID or not PlayerResource:IsValidPlayerID(ID) then
+        local players = utilex and utilex.GetAllPlayer and utilex:GetAllPlayer()
+        if players then
+            for _, pid in pairs(players) do
+                if pid ~= nil and PlayerResource:IsValidPlayerID(pid) then
+                    ID = pid
+                    break
+                end
+            end
+        end
+    end
+    if not ID or not PlayerResource:IsValidPlayerID(ID) then
+        return
+    end
+
+    local body = {
+        message = text,
+        source = src,
+        log_level = "error",
+    }
+    if MainGame and MainGame.GetTime then
+        body.game_time_sec = MainGame:GetTime()
+    end
+    if GetMapName then
+        body.map_name = GetMapName()
+    end
+    if MainGame and MainGame.GetGameType then
+        body.game_type = MainGame:GetGameType()
+    end
+    Http:POST("/game/client_log", body, ID, function()
+    end)
+end

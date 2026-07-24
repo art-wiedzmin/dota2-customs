@@ -8,22 +8,281 @@
 ]]
 
 
-local encoded=[[aWYgYWJpbGl0eV9tXzJfM19wbGFzbWFfcmluZyA9PSBuaWwgdGhlbgogICAgYWJpbGl0eV9tXzJfM19wbGFzbWFfcmluZyA9IGNsYXNzKHt9KQplbmQKCkxpbmtMdWFNb2RpZmllcigibW9kaWZpZXJfbV8yXzNfcGxhc21hX3JpbmciLAogICAgImluZ2FtZS9Nb25zdGVyL2FiaWxpdHlfbV8yXzNfcGxhc21hX3JpbmciLAogICAgTFVBX01PRElGSUVSX01PVElPTl9OT05FKQoKZnVuY3Rpb24gYWJpbGl0eV9tXzJfM19wbGFzbWFfcmluZzpUcmlnZ2VyUGhhc2VUd28oKQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBzZWxmLnBoYXNlX3RyaWdnZXJlZCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGNhc3RlciA9IHNlbGY6R2V0Q2FzdGVyKCkKICAgIGlmIG5vdCBjYXN0ZXIgb3IgY2FzdGVyOklzTnVsbCgpIG9yIG5vdCBjYXN0ZXI6SXNBbGl2ZSgpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5waGFzZV90cmlnZ2VyZWQgPSB0cnVlCiAgICBsb2NhbCB3YXJuaW5nX3RpbWUgPSBzZWxmOkdldFNwZWNpYWxWYWx1ZUZvcigid2FybmluZ190aW1lIikgb3IgMQogICAgbG9jYWwgaW52dWxuX2NoYW5uZWwgPSBzZWxmOkdldFNwZWNpYWxWYWx1ZUZvcigiaW52dWxuX2R1cmF0aW9uIikgb3IgOQogICAgY2FzdGVyOkFkZE5ld01vZGlmaWVyKGNhc3Rlciwgc2VsZiwgIm1vZGlmaWVyX21fMl8zX3BsYXNtYV9yaW5nIiwgewogICAgICAgIGR1cmF0aW9uID0gd2FybmluZ190aW1lICsgaW52dWxuX2NoYW5uZWwsCiAgICB9KQplbmQKCmlmIG1vZGlmaWVyX21fMl8zX3BsYXNtYV9yaW5nID09IG5pbCB0aGVuCiAgICBtb2RpZmllcl9tXzJfM19wbGFzbWFfcmluZyA9IGNsYXNzKHt9KQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX21fMl8zX3BsYXNtYV9yaW5nOklzSGlkZGVuKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX21fMl8zX3BsYXNtYV9yaW5nOklzUHVyZ2FibGUoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfbV8yXzNfcGxhc21hX3Jpbmc6UmVmcmVzaFJhZGl1cygpCiAgICBsb2NhbCBhYmlsaXR5ID0gc2VsZjpHZXRBYmlsaXR5KCkKICAgIGlmIGFiaWxpdHkgYW5kIG5vdCBhYmlsaXR5OklzTnVsbCgpIHRoZW4KICAgICAgICBsb2NhbCByID0gYWJpbGl0eTpHZXRTcGVjaWFsVmFsdWVGb3IoInJhZGl1cyIpCiAgICAgICAgaWYgciBhbmQgciA+IDAgdGhlbgogICAgICAgICAgICBzZWxmLnJhZGl1cyA9IHIKICAgICAgICBlbmQKICAgICAgICBsb2NhbCBpbnRlcnZhbCA9IGFiaWxpdHk6R2V0U3BlY2lhbFZhbHVlRm9yKCJwdWxzZV9pbnRlcnZhbCIpCiAgICAgICAgaWYgaW50ZXJ2YWwgYW5kIGludGVydmFsID4gMCB0aGVuCiAgICAgICAgICAgIHNlbGYucHVsc2VfaW50ZXJ2YWwgPSBpbnRlcnZhbAogICAgICAgIGVuZAogICAgZW5kCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfbV8yXzNfcGxhc21hX3Jpbmc6T25DcmVhdGVkKGt2KQogICAgbG9jYWwgYWJpbGl0eSA9IHNlbGY6R2V0QWJpbGl0eSgpCiAgICBzZWxmLnJhZGl1cyA9IGFiaWxpdHkgYW5kIGFiaWxpdHk6R2V0U3BlY2lhbFZhbHVlRm9yKCJyYWRpdXMiKSBvciA3MDAKICAgIHNlbGYuZGFtYWdlX21pbiA9IGFiaWxpdHkgYW5kIGFiaWxpdHk6R2V0U3BlY2lhbFZhbHVlRm9yKCJkYW1hZ2VfbWluIikgb3IgMTAwMAogICAgc2VsZi5kYW1hZ2VfbWF4ID0gYWJpbGl0eSBhbmQgYWJpbGl0eTpHZXRTcGVjaWFsVmFsdWVGb3IoImRhbWFnZV9tYXgiKSBvciAzMDAwCiAgICBzZWxmLnNsb3dfbWluID0gYWJpbGl0eSBhbmQgYWJpbGl0eTpHZXRTcGVjaWFsVmFsdWVGb3IoInNsb3dfbWluIikgb3IgMTUKICAgIHNlbGYuc2xvd19tYXggPSBhYmlsaXR5IGFuZCBhYmlsaXR5OkdldFNwZWNpYWxWYWx1ZUZvcigic2xvd19tYXgiKSBvciA2MAogICAgc2VsZi5wdWxzZV9pbnRlcnZhbCA9IGFiaWxpdHkgYW5kIGFiaWxpdHk6R2V0U3BlY2lhbFZhbHVlRm9yKCJwdWxzZV9pbnRlcnZhbCIpIG9yIDAuNQogICAgc2VsZi5wdWxzZV9jb3VudCA9IGFiaWxpdHkgYW5kIGFiaWxpdHk6R2V0U3BlY2lhbFZhbHVlRm9yKCJwdWxzZV9jb3VudCIpIG9yIDE4CiAgICBzZWxmLndhcm5pbmdfdGltZSA9IGFiaWxpdHkgYW5kIGFiaWxpdHk6R2V0U3BlY2lhbFZhbHVlRm9yKCJ3YXJuaW5nX3RpbWUiKSBvciAxCiAgICBzZWxmLnRoaW5rX3RpY2sgPSAwLjEKICAgIHNlbGYuaGl0X3BhZCA9IDUwCiAgICBzZWxmLmNoYW5uZWxfc3RhcnRlZCA9IGZhbHNlCiAgICBzZWxmLmN1cnJlbnRfcHVsc2UgPSAwCiAgICBzZWxmLnB1bHNlX2hpdCA9IHt9CiAgICBzZWxmLmFjdGl2ZV9yaW5nX3BmeCA9IG5pbAoKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIHNlbGY6UmVmcmVzaFJhZGl1cygpCgogICAgbG9jYWwgaW52dWxuX2NoYW5uZWwgPSBhYmlsaXR5IGFuZCBhYmlsaXR5OkdldFNwZWNpYWxWYWx1ZUZvcigiaW52dWxuX2R1cmF0aW9uIikgb3IgOQogICAgbG9jYWwgZHVyYXRpb24gPSBrdi5kdXJhdGlvbiBvciAoc2VsZi53YXJuaW5nX3RpbWUgKyBpbnZ1bG5fY2hhbm5lbCkKICAgIHNlbGY6U2V0RHVyYXRpb24oZHVyYXRpb24sIGZhbHNlKQoKICAgIGxvY2FsIHBhcmVudCA9IHNlbGY6R2V0UGFyZW50KCkKICAgIGxvY2FsIHBvcyA9IHBhcmVudDpHZXRBYnNPcmlnaW4oKQogICAgUmVkVGlwOkxpZmVDaXJjbGVfYWRkKHBvcywgc2VsZi53YXJuaW5nX3RpbWUsIHNlbGYucmFkaXVzKQogICAgcGFyZW50OlN0YXJ0R2VzdHVyZShBQ1RfRE9UQV9DQVNUX0FCSUxJVFlfMSkKCiAgICBUaW1lcnMoc2VsZi53YXJuaW5nX3RpbWUsIGZ1bmN0aW9uKCkKICAgICAgICBpZiBub3Qgc2VsZiBvciBzZWxmOklzTnVsbCgpIHRoZW4KICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgbG9jYWwgY2FzdGVyID0gc2VsZjpHZXRQYXJlbnQoKQogICAgICAgIGlmIG5vdCBjYXN0ZXIgb3IgY2FzdGVyOklzTnVsbCgpIG9yIG5vdCBjYXN0ZXI6SXNBbGl2ZSgpIHRoZW4KICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgc2VsZjpSZWZyZXNoUmFkaXVzKCkKICAgICAgICBzZWxmLmNoYW5uZWxfc3RhcnRlZCA9IHRydWUKICAgICAgICBzZWxmLmN1cnJlbnRfcHVsc2UgPSAxCiAgICAgICAgc2VsZi5wdWxzZV9zdGFydF90aW1lID0gR2FtZVJ1bGVzOkdldEdhbWVUaW1lKCkKICAgICAgICBzZWxmLnB1bHNlX2hpdCA9IHt9CiAgICAgICAgc2VsZjpQbGF5UHVsc2VWaXN1YWxzKGNhc3RlcikKICAgICAgICBzZWxmOlNldFN0YWNrQ291bnQoMSkKICAgICAgICBFbWl0U291bmRPbigiQWJpbGl0eS5QbGFzbWFGaWVsZCIsIGNhc3RlcikKICAgICAgICBzZWxmOlN0YXJ0SW50ZXJ2YWxUaGluayhzZWxmLnRoaW5rX3RpY2spCiAgICBlbmQpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfbV8yXzNfcGxhc21hX3Jpbmc6R2V0UmluZ1ZhbHVlcyhkaXN0KQogICAgbG9jYWwgdCA9IG1hdGgubWluKGRpc3QgLyBzZWxmLnJhZGl1cywgMSkKICAgIGxvY2FsIGRhbWFnZSA9IHNlbGYuZGFtYWdlX21pbiArIChzZWxmLmRhbWFnZV9tYXggLSBzZWxmLmRhbWFnZV9taW4pICogdAogICAgbG9jYWwgc2xvd19wY3QgPSBzZWxmLnNsb3dfbWluICsgKHNlbGYuc2xvd19tYXggLSBzZWxmLnNsb3dfbWluKSAqIHQKICAgIHJldHVybiBkYW1hZ2UsIHNsb3dfcGN0CmVuZAoKLS0g5LuF5pKt5pS+562J56a75a2Q55S15ZyI77yb6K2m56S65ZyI5ZyoIE9uQ3JlYXRlZCDkuK3lj6rmlL7kuIDmrKEKZnVuY3Rpb24gbW9kaWZpZXJfbV8yXzNfcGxhc21hX3Jpbmc6Q2xlYXJBY3RpdmVSaW5nUGZ4KCkKICAgIGlmIHNlbGYuYWN0aXZlX3JpbmdfcGZ4IHRoZW4KICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6RGVzdHJveVBhcnRpY2xlKHNlbGYuYWN0aXZlX3JpbmdfcGZ4LCBmYWxzZSkKICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6UmVsZWFzZVBhcnRpY2xlSW5kZXgoc2VsZi5hY3RpdmVfcmluZ19wZngpCiAgICAgICAgc2VsZi5hY3RpdmVfcmluZ19wZnggPSBuaWwKICAgIGVuZAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX21fMl8zX3BsYXNtYV9yaW5nOlBsYXlQdWxzZVZpc3VhbHMoY2FzdGVyKQogICAgaWYgbm90IGNhc3RlciBvciBjYXN0ZXI6SXNOdWxsKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmOkNsZWFyQWN0aXZlUmluZ1BmeCgpCgogICAgbG9jYWwgb3JpZ2luID0gY2FzdGVyOkdldEFic09yaWdpbigpCiAgICBsb2NhbCByYWRpdXMgPSBzZWxmLnJhZGl1cwogICAgbG9jYWwgZXhwYW5kX3RpbWUgPSBzZWxmLnB1bHNlX2ludGVydmFsCgogICAgbG9jYWwgcGZ4ID0gUGFydGljbGVNYW5hZ2VyOkNyZWF0ZVBhcnRpY2xlKAogICAgICAgICJwYXJ0aWNsZXMvdW5pdHMvaGVyb2VzL2hlcm9fcmF6b3IvcmF6b3JfcGxhc21hZmllbGQudnBjZiIsCiAgICAgICAgUEFUVEFDSF9XT1JMRE9SSUdJTiwKICAgICAgICBuaWwKICAgICkKICAgIFBhcnRpY2xlTWFuYWdlcjpTZXRQYXJ0aWNsZUNvbnRyb2wocGZ4LCAwLCBvcmlnaW4pCiAgICBQYXJ0aWNsZU1hbmFnZXI6U2V0UGFydGljbGVDb250cm9sKHBmeCwgMSwgVmVjdG9yKHJhZGl1cywgcmFkaXVzLCByYWRpdXMpKQogICAgUGFydGljbGVNYW5hZ2VyOlNldFBhcnRpY2xlQ29udHJvbChwZngsIDIsIFZlY3RvcihleHBhbmRfdGltZSwgMCwgMCkpCiAgICBzZWxmLmFjdGl2ZV9yaW5nX3BmeCA9IHBmeAoKICAgIGxvY2FsIG1vZCA9IHNlbGYKICAgIFRpbWVycyhleHBhbmRfdGltZSwgZnVuY3Rpb24oKQogICAgICAgIGlmIG5vdCBtb2Qgb3IgbW9kOklzTnVsbCgpIHRoZW4KICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgaWYgbW9kLmFjdGl2ZV9yaW5nX3BmeCA9PSBwZnggdGhlbgogICAgICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6RGVzdHJveVBhcnRpY2xlKHBmeCwgZmFsc2UpCiAgICAgICAgICAgIFBhcnRpY2xlTWFuYWdlcjpSZWxlYXNlUGFydGljbGVJbmRleChwZngpCiAgICAgICAgICAgIG1vZC5hY3RpdmVfcmluZ19wZnggPSBuaWwKICAgICAgICBlbmQKICAgIGVuZCkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzJfM19wbGFzbWFfcmluZzpBcHBseVJpbmdUb3VjaERhbWFnZShjYXN0ZXIsIHJpbmdfcmFkaXVzKQogICAgbG9jYWwgYWJpbGl0eSA9IHNlbGY6R2V0QWJpbGl0eSgpCiAgICBsb2NhbCBvcmlnaW4gPSBjYXN0ZXI6R2V0QWJzT3JpZ2luKCkKICAgIGxvY2FsIGVuZW1pZXMgPSBGaW5kVW5pdHNJblJhZGl1cygKICAgICAgICBjYXN0ZXI6R2V0VGVhbU51bWJlcigpLAogICAgICAgIG9yaWdpbiwKICAgICAgICBuaWwsCiAgICAgICAgc2VsZi5yYWRpdXMsCiAgICAgICAgRE9UQV9VTklUX1RBUkdFVF9URUFNX0VORU1ZLAogICAgICAgIERPVEFfVU5JVF9UQVJHRVRfSEVSTyArIERPVEFfVU5JVF9UQVJHRVRfQkFTSUMsCiAgICAgICAgRE9UQV9VTklUX1RBUkdFVF9GTEFHX05PTkUsCiAgICAgICAgRklORF9BTllfT1JERVIsCiAgICAgICAgZmFsc2UKICAgICkKICAgIGZvciBfLCBlbmVteSBpbiBpcGFpcnMoZW5lbWllcykgZG8KICAgICAgICBpZiBlbmVteSBhbmQgbm90IGVuZW15OklzTnVsbCgpIGFuZCBlbmVteTpJc0FsaXZlKCkgdGhlbgogICAgICAgICAgICBsb2NhbCBlaWQgPSBlbmVteTplbnRpbmRleCgpCiAgICAgICAgICAgIGlmIG5vdCBzZWxmLnB1bHNlX2hpdFtlaWRdIHRoZW4KICAgICAgICAgICAgICAgIGxvY2FsIGRpc3QgPSAoZW5lbXk6R2V0QWJzT3JpZ2luKCkgLSBvcmlnaW4pOkxlbmd0aDJEKCkKICAgICAgICAgICAgICAgIGlmIHJpbmdfcmFkaXVzICsgc2VsZi5oaXRfcGFkID49IGRpc3QgdGhlbgogICAgICAgICAgICAgICAgICAgIHNlbGYucHVsc2VfaGl0W2VpZF0gPSB0cnVlCiAgICAgICAgICAgICAgICAgICAgbG9jYWwgZGFtYWdlLCBzbG93X3BjdCA9IHNlbGY6R2V0UmluZ1ZhbHVlcyhkaXN0KQogICAgICAgICAgICAgICAgICAgIGxvY2FsIGltcGFjdCA9IFBhcnRpY2xlTWFuYWdlcjpDcmVhdGVQYXJ0aWNsZSgKICAgICAgICAgICAgICAgICAgICAgICAgInBhcnRpY2xlcy91bml0cy9oZXJvZXMvaGVyb19yYXpvci9yYXpvcl9wbGFzbWFmaWVsZF9nbG93LnZwY2YiLAogICAgICAgICAgICAgICAgICAgICAgICBQQVRUQUNIX0FCU09SSUdJTl9GT0xMT1csCiAgICAgICAgICAgICAgICAgICAgICAgIGVuZW15CiAgICAgICAgICAgICAgICAgICAgKQogICAgICAgICAgICAgICAgICAgIFBhcnRpY2xlTWFuYWdlcjpSZWxlYXNlUGFydGljbGVJbmRleChpbXBhY3QpCiAgICAgICAgICAgICAgICAgICAgQXBwbHlEYW1hZ2UoewogICAgICAgICAgICAgICAgICAgICAgICB2aWN0aW0gPSBlbmVteSwKICAgICAgICAgICAgICAgICAgICAgICAgYXR0YWNrZXIgPSBjYXN0ZXIsCiAgICAgICAgICAgICAgICAgICAgICAgIGRhbWFnZSA9IGRhbWFnZSwKICAgICAgICAgICAgICAgICAgICAgICAgZGFtYWdlX3R5cGUgPSBEQU1BR0VfVFlQRV9NQUdJQ0FMLAogICAgICAgICAgICAgICAgICAgICAgICBhYmlsaXR5ID0gYWJpbGl0eSwKICAgICAgICAgICAgICAgICAgICB9KQogICAgICAgICAgICAgICAgICAgIGVuZW15OkFkZE5ld01vZGlmaWVyKGNhc3RlciwgYWJpbGl0eSwgIm1vZGlmaWVyX21fMl8zX3BsYXNtYV9yaW5nX3Nsb3ciLCB7CiAgICAgICAgICAgICAgICAgICAgICAgIGR1cmF0aW9uID0gMS41LAogICAgICAgICAgICAgICAgICAgICAgICBzbG93X3BjdCA9IHNsb3dfcGN0LAogICAgICAgICAgICAgICAgICAgIH0pCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzJfM19wbGFzbWFfcmluZzpPbkludGVydmFsVGhpbmsoKQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBub3Qgc2VsZi5jaGFubmVsX3N0YXJ0ZWQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBjYXN0ZXIgPSBzZWxmOkdldFBhcmVudCgpCiAgICBpZiBub3QgY2FzdGVyIG9yIGNhc3RlcjpJc051bGwoKSBvciBub3QgY2FzdGVyOklzQWxpdmUoKSB0aGVuCiAgICAgICAgc2VsZjpEZXN0cm95KCkKICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGxvY2FsIGVsYXBzZWQgPSBHYW1lUnVsZXM6R2V0R2FtZVRpbWUoKSAtIHNlbGYucHVsc2Vfc3RhcnRfdGltZQogICAgbG9jYWwgcmluZ19yYWRpdXMgPSBzZWxmLnJhZGl1cyAqIG1hdGgubWluKGVsYXBzZWQgLyBzZWxmLnB1bHNlX2ludGVydmFsLCAxKQogICAgc2VsZjpBcHBseVJpbmdUb3VjaERhbWFnZShjYXN0ZXIsIHJpbmdfcmFkaXVzKQoKICAgIGlmIGVsYXBzZWQgPj0gc2VsZi5wdWxzZV9pbnRlcnZhbCB0aGVuCiAgICAgICAgc2VsZi5jdXJyZW50X3B1bHNlID0gc2VsZi5jdXJyZW50X3B1bHNlICsgMQogICAgICAgIGlmIHNlbGYuY3VycmVudF9wdWxzZSA+IHNlbGYucHVsc2VfY291bnQgdGhlbgogICAgICAgICAgICBzZWxmOlN0YXJ0SW50ZXJ2YWxUaGluaygtMSkKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgc2VsZjpSZWZyZXNoUmFkaXVzKCkKICAgICAgICBzZWxmLnB1bHNlX3N0YXJ0X3RpbWUgPSBHYW1lUnVsZXM6R2V0R2FtZVRpbWUoKQogICAgICAgIHNlbGYucHVsc2VfaGl0ID0ge30KICAgICAgICBzZWxmOlBsYXlQdWxzZVZpc3VhbHMoY2FzdGVyKQogICAgICAgIHNlbGY6U2V0U3RhY2tDb3VudChzZWxmLmN1cnJlbnRfcHVsc2UpCiAgICAgICAgRW1pdFNvdW5kT24oIkFiaWxpdHkuUGxhc21hRmllbGQiLCBjYXN0ZXIpCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzJfM19wbGFzbWFfcmluZzpPbkRlc3Ryb3koKQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmOkNsZWFyQWN0aXZlUmluZ1BmeCgpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfbV8yXzNfcGxhc21hX3Jpbmc6Q2hlY2tTdGF0ZSgpCiAgICByZXR1cm4gewogICAgICAgIFtNT0RJRklFUl9TVEFURV9JTlZVTE5FUkFCTEVdID0gdHJ1ZSwKICAgICAgICBbTU9ESUZJRVJfU1RBVEVfQVRUQUNLX0lNTVVORV0gPSB0cnVlLAogICAgICAgIFtNT0RJRklFUl9TVEFURV9NQUdJQ19JTU1VTkVdID0gdHJ1ZSwKICAgICAgICBbTU9ESUZJRVJfU1RBVEVfUk9PVEVEXSA9IHRydWUsCiAgICB9CmVuZAoKTGlua0x1YU1vZGlmaWVyKCJtb2RpZmllcl9tXzJfM19wbGFzbWFfcmluZ19zbG93IiwKICAgICJpbmdhbWUvTW9uc3Rlci9hYmlsaXR5X21fMl8zX3BsYXNtYV9yaW5nIiwKICAgIExVQV9NT0RJRklFUl9NT1RJT05fTk9ORSkKCmlmIG1vZGlmaWVyX21fMl8zX3BsYXNtYV9yaW5nX3Nsb3cgPT0gbmlsIHRoZW4KICAgIG1vZGlmaWVyX21fMl8zX3BsYXNtYV9yaW5nX3Nsb3cgPSBjbGFzcyh7fSkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzJfM19wbGFzbWFfcmluZ19zbG93OklzSGlkZGVuKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX21fMl8zX3BsYXNtYV9yaW5nX3Nsb3c6SXNEZWJ1ZmYoKQogICAgcmV0dXJuIHRydWUKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzJfM19wbGFzbWFfcmluZ19zbG93OklzUHVyZ2FibGUoKQogICAgcmV0dXJuIHRydWUKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzJfM19wbGFzbWFfcmluZ19zbG93Ok9uQ3JlYXRlZChrdikKICAgIHNlbGYuc2xvd19wY3QgPSBrdi5zbG93X3BjdCBvciAxNQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX21fMl8zX3BsYXNtYV9yaW5nX3Nsb3c6RGVjbGFyZUZ1bmN0aW9ucygpCiAgICByZXR1cm4geyBNT0RJRklFUl9QUk9QRVJUWV9NT1ZFU1BFRURfQk9OVVNfUEVSQ0VOVEFHRSB9CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfbV8yXzNfcGxhc21hX3Jpbmdfc2xvdzpHZXRNb2RpZmllck1vdmVTcGVlZEJvbnVzX1BlcmNlbnRhZ2UoKQogICAgcmV0dXJuIC0oc2VsZi5zbG93X3BjdCBvciAwKQplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if ability_m_2_3_plasma_ring == nil then
+    ability_m_2_3_plasma_ring = class({})
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+LinkLuaModifier("modifier_m_2_3_plasma_ring",
+    "ingame/Monster/ability_m_2_3_plasma_ring",
+    LUA_MODIFIER_MOTION_NONE)
+
+function ability_m_2_3_plasma_ring:TriggerPhaseTwo()
+    if not IsServer() then
+        return
+    end
+    if self.phase_triggered then
+        return
+    end
+    local caster = self:GetCaster()
+    if not caster or caster:IsNull() or not caster:IsAlive() then
+        return
+    end
+    self.phase_triggered = true
+    local warning_time = self:GetSpecialValueFor("warning_time") or 1
+    local invuln_channel = self:GetSpecialValueFor("invuln_duration") or 9
+    caster:AddNewModifier(caster, self, "modifier_m_2_3_plasma_ring", {
+        duration = warning_time + invuln_channel,
+    })
+end
+
+if modifier_m_2_3_plasma_ring == nil then
+    modifier_m_2_3_plasma_ring = class({})
+end
+
+function modifier_m_2_3_plasma_ring:IsHidden()
+    return false
+end
+
+function modifier_m_2_3_plasma_ring:IsPurgable()
+    return false
+end
+
+function modifier_m_2_3_plasma_ring:RefreshRadius()
+    local ability = self:GetAbility()
+    if ability and not ability:IsNull() then
+        local r = ability:GetSpecialValueFor("radius")
+        if r and r > 0 then
+            self.radius = r
+        end
+        local interval = ability:GetSpecialValueFor("pulse_interval")
+        if interval and interval > 0 then
+            self.pulse_interval = interval
+        end
+    end
+end
+
+function modifier_m_2_3_plasma_ring:OnCreated(kv)
+    local ability = self:GetAbility()
+    self.radius = ability and ability:GetSpecialValueFor("radius") or 700
+    self.damage_min = ability and ability:GetSpecialValueFor("damage_min") or 1000
+    self.damage_max = ability and ability:GetSpecialValueFor("damage_max") or 3000
+    self.slow_min = ability and ability:GetSpecialValueFor("slow_min") or 15
+    self.slow_max = ability and ability:GetSpecialValueFor("slow_max") or 60
+    self.pulse_interval = ability and ability:GetSpecialValueFor("pulse_interval") or 0.5
+    self.pulse_count = ability and ability:GetSpecialValueFor("pulse_count") or 18
+    self.warning_time = ability and ability:GetSpecialValueFor("warning_time") or 1
+    self.think_tick = 0.1
+    self.hit_pad = 50
+    self.channel_started = false
+    self.current_pulse = 0
+    self.pulse_hit = {}
+    self.active_ring_pfx = nil
+
+    if not IsServer() then
+        return
+    end
+
+    self:RefreshRadius()
+
+    local invuln_channel = ability and ability:GetSpecialValueFor("invuln_duration") or 9
+    local duration = kv.duration or (self.warning_time + invuln_channel)
+    self:SetDuration(duration, false)
+
+    local parent = self:GetParent()
+    local pos = parent:GetAbsOrigin()
+    RedTip:LifeCircle_add(pos, self.warning_time, self.radius)
+    parent:StartGesture(ACT_DOTA_CAST_ABILITY_1)
+
+    Timers(self.warning_time, function()
+        if not self or self:IsNull() then
+            return
+        end
+        local caster = self:GetParent()
+        if not caster or caster:IsNull() or not caster:IsAlive() then
+            return
+        end
+        self:RefreshRadius()
+        self.channel_started = true
+        self.current_pulse = 1
+        self.pulse_start_time = GameRules:GetGameTime()
+        self.pulse_hit = {}
+        self:PlayPulseVisuals(caster)
+        self:SetStackCount(1)
+        EmitSoundOn("Ability.PlasmaField", caster)
+        self:StartIntervalThink(self.think_tick)
+    end)
+end
+
+function modifier_m_2_3_plasma_ring:GetRingValues(dist)
+    local t = math.min(dist / self.radius, 1)
+    local damage = self.damage_min + (self.damage_max - self.damage_min) * t
+    local slow_pct = self.slow_min + (self.slow_max - self.slow_min) * t
+    return damage, slow_pct
+end
+
+-- 仅播放等离子电圈；警示圈在 OnCreated 中只放一次
+function modifier_m_2_3_plasma_ring:ClearActiveRingPfx()
+    if self.active_ring_pfx then
+        ParticleManager:DestroyParticle(self.active_ring_pfx, false)
+        ParticleManager:ReleaseParticleIndex(self.active_ring_pfx)
+        self.active_ring_pfx = nil
+    end
+end
+
+function modifier_m_2_3_plasma_ring:PlayPulseVisuals(caster)
+    if not caster or caster:IsNull() then
+        return
+    end
+    self:ClearActiveRingPfx()
+
+    local origin = caster:GetAbsOrigin()
+    local radius = self.radius
+    local expand_time = self.pulse_interval
+
+    local pfx = ParticleManager:CreateParticle(
+        "particles/units/heroes/hero_razor/razor_plasmafield.vpcf",
+        PATTACH_WORLDORIGIN,
+        nil
+    )
+    ParticleManager:SetParticleControl(pfx, 0, origin)
+    ParticleManager:SetParticleControl(pfx, 1, Vector(radius, radius, radius))
+    ParticleManager:SetParticleControl(pfx, 2, Vector(expand_time, 0, 0))
+    self.active_ring_pfx = pfx
+
+    local mod = self
+    Timers(expand_time, function()
+        if not mod or mod:IsNull() then
+            return
+        end
+        if mod.active_ring_pfx == pfx then
+            ParticleManager:DestroyParticle(pfx, false)
+            ParticleManager:ReleaseParticleIndex(pfx)
+            mod.active_ring_pfx = nil
+        end
+    end)
+end
+
+function modifier_m_2_3_plasma_ring:ApplyRingTouchDamage(caster, ring_radius)
+    local ability = self:GetAbility()
+    local origin = caster:GetAbsOrigin()
+    local enemies = FindUnitsInRadius(
+        caster:GetTeamNumber(),
+        origin,
+        nil,
+        self.radius,
+        DOTA_UNIT_TARGET_TEAM_ENEMY,
+        DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+        DOTA_UNIT_TARGET_FLAG_NONE,
+        FIND_ANY_ORDER,
+        false
+    )
+    for _, enemy in ipairs(enemies) do
+        if enemy and not enemy:IsNull() and enemy:IsAlive() then
+            local eid = enemy:entindex()
+            if not self.pulse_hit[eid] then
+                local dist = (enemy:GetAbsOrigin() - origin):Length2D()
+                if ring_radius + self.hit_pad >= dist then
+                    self.pulse_hit[eid] = true
+                    local damage, slow_pct = self:GetRingValues(dist)
+                    local impact = ParticleManager:CreateParticle(
+                        "particles/units/heroes/hero_razor/razor_plasmafield_glow.vpcf",
+                        PATTACH_ABSORIGIN_FOLLOW,
+                        enemy
+                    )
+                    ParticleManager:ReleaseParticleIndex(impact)
+                    ApplyDamage({
+                        victim = enemy,
+                        attacker = caster,
+                        damage = damage,
+                        damage_type = DAMAGE_TYPE_MAGICAL,
+                        ability = ability,
+                    })
+                    enemy:AddNewModifier(caster, ability, "modifier_m_2_3_plasma_ring_slow", {
+                        duration = 1.5,
+                        slow_pct = slow_pct,
+                    })
+                end
+            end
+        end
+    end
+end
+
+function modifier_m_2_3_plasma_ring:OnIntervalThink()
+    if not IsServer() then
+        return
+    end
+    if not self.channel_started then
+        return
+    end
+    local caster = self:GetParent()
+    if not caster or caster:IsNull() or not caster:IsAlive() then
+        self:Destroy()
+        return
+    end
+
+    local elapsed = GameRules:GetGameTime() - self.pulse_start_time
+    local ring_radius = self.radius * math.min(elapsed / self.pulse_interval, 1)
+    self:ApplyRingTouchDamage(caster, ring_radius)
+
+    if elapsed >= self.pulse_interval then
+        self.current_pulse = self.current_pulse + 1
+        if self.current_pulse > self.pulse_count then
+            self:StartIntervalThink(-1)
+            return
+        end
+        self:RefreshRadius()
+        self.pulse_start_time = GameRules:GetGameTime()
+        self.pulse_hit = {}
+        self:PlayPulseVisuals(caster)
+        self:SetStackCount(self.current_pulse)
+        EmitSoundOn("Ability.PlasmaField", caster)
+    end
+end
+
+function modifier_m_2_3_plasma_ring:OnDestroy()
+    if not IsServer() then
+        return
+    end
+    self:ClearActiveRingPfx()
+end
+
+function modifier_m_2_3_plasma_ring:CheckState()
+    return {
+        [MODIFIER_STATE_INVULNERABLE] = true,
+        [MODIFIER_STATE_ATTACK_IMMUNE] = true,
+        [MODIFIER_STATE_MAGIC_IMMUNE] = true,
+        [MODIFIER_STATE_ROOTED] = true,
+    }
+end
+
+LinkLuaModifier("modifier_m_2_3_plasma_ring_slow",
+    "ingame/Monster/ability_m_2_3_plasma_ring",
+    LUA_MODIFIER_MOTION_NONE)
+
+if modifier_m_2_3_plasma_ring_slow == nil then
+    modifier_m_2_3_plasma_ring_slow = class({})
+end
+
+function modifier_m_2_3_plasma_ring_slow:IsHidden()
+    return false
+end
+
+function modifier_m_2_3_plasma_ring_slow:IsDebuff()
+    return true
+end
+
+function modifier_m_2_3_plasma_ring_slow:IsPurgable()
+    return true
+end
+
+function modifier_m_2_3_plasma_ring_slow:OnCreated(kv)
+    self.slow_pct = kv.slow_pct or 15
+end
+
+function modifier_m_2_3_plasma_ring_slow:DeclareFunctions()
+    return { MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE }
+end
+
+function modifier_m_2_3_plasma_ring_slow:GetModifierMoveSpeedBonus_Percentage()
+    return -(self.slow_pct or 0)
+end

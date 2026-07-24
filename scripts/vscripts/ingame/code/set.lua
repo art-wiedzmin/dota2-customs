@@ -8,22 +8,86 @@
 ]]
 
 
-local encoded=[[ZnVuY3Rpb24gQ29kZTpPcGVuUGFnZShJRCkKICAgIHNlbGYuRGF0YVtJRF0ucGFnZSA9IHRydWUKZW5kCgpmdW5jdGlvbiBDb2RlOkNsb3NlUGFnZShJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIC0tIOS7hemakOiXj+eVjOmdou+8m+S/neeVmeiuouWNleS4jui9ruivou+8jOmBv+WFjeWFs+eql+WQjuaUr+S7mOaIkOWKn+aXoOazleW8ueeqly/liLDotKYKICAgIHNlbGYuRGF0YVtJRF0ucGFnZSA9IGZhbHNlCiAgICBzZWxmOlNlbmREYXRhKElEKQplbmQKCmZ1bmN0aW9uIENvZGU6U2V0UGF5VHAoSUQsIG51bSkKICAgIGlmIG5vdCBJRCBvciBub3QgbnVtIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5EYXRhW0lEXS5wYXlfdHlwZSA9IG51bQplbmQKCmZ1bmN0aW9uIENvZGU6U2V0Q2FyZExldmVsR29vZHMoSUQsIGxldmVsX2NvdW50KQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgbWF4X24gPSBTaG9wOkdldFJlbWFpbmluZ0J1eWFibGVMZXZlbHMoSUQpCiAgICBpZiBtYXhfbiA8PSAwIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgbiA9IHRvbnVtYmVyKGxldmVsX2NvdW50KSBvciAxCiAgICBpZiBuIDwgMSB0aGVuCiAgICAgICAgbiA9IDEKICAgIGVuZAogICAgaWYgbiA+IG1heF9uIHRoZW4KICAgICAgICBuID0gbWF4X24KICAgIGVuZAogICAgc2VsZi5EYXRhW0lEXS5nb29kcyA9IENvZGUuQ2FyZExldmVsUHJvZHVjdAogICAgc2VsZi5EYXRhW0lEXS5jYXJkX2xldmVsX2NvdW50ID0gbgogICAgc2VsZi5EYXRhW0lEXS5wcmljZSA9IG4gKiAoQ29kZS5DYXJkTGV2ZWxQcmljZVl1YW4gb3IgNSkKICAgIHNlbGYuRGF0YVtJRF0uZ29vZHNfbmFtZSA9IENvZGUuR29vZHNOYW1lW0NvZGUuQ2FyZExldmVsUHJvZHVjdF0gb3IgImNhcmRfbGV2ZWwiCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIENvZGU6U2V0R29vZHMoSUQsIGdvb2RzX2lkKQogICAgaWYgbm90IElEIG9yIG5vdCBnb29kc19pZCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGdvb2RzX2tleSA9ICJnb29kc18iIC4uIGdvb2RzX2lkCiAgICBsb2NhbCBnb29kcyA9IHNlbGYuR29vZHNbZ29vZHNfa2V5XQogICAgc2VsZi5EYXRhW0lEXS5nb29kcyA9IGdvb2RzCiAgICBzZWxmLkRhdGFbSURdLnByaWNlID0gc2VsZi5Hb29kc1ByaWNlW2dvb2RzXQogICAgc2VsZi5EYXRhW0lEXS5nb29kc19uYW1lID0gc2VsZi5Hb29kc05hbWVbZ29vZHNdCiAgICBzZWxmLkRhdGFbSURdLmNhcmRfbGV2ZWxfY291bnQgPSAwCmVuZAoKLS0g5Yqo5oCB56S85YyF562J77ya55u05o6l5oyH5a6a5pyN5Yqh56uvIHByb2R1Y3RUeXBlIC8g5Lu35qC8IC8g5bGV56S65ZCNCmZ1bmN0aW9uIENvZGU6U2V0UHJvZHVjdFR5cGUoSUQsIHByb2R1Y3RfdHlwZSwgcHJpY2UsIGdvb2RzX25hbWUpCiAgICBpZiBub3QgSUQgb3Igbm90IHByb2R1Y3RfdHlwZSBvciBwcm9kdWN0X3R5cGUgPT0gIiIgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBzZWxmLkRhdGFbSURdLmdvb2RzID0gdG9zdHJpbmcocHJvZHVjdF90eXBlKQogICAgc2VsZi5EYXRhW0lEXS5wcmljZSA9IHRvbnVtYmVyKHByaWNlKSBvciAwCiAgICBzZWxmLkRhdGFbSURdLmdvb2RzX25hbWUgPSBnb29kc19uYW1lIGFuZCB0b3N0cmluZyhnb29kc19uYW1lKSBvciB0b3N0cmluZyhwcm9kdWN0X3R5cGUpCiAgICBzZWxmLkRhdGFbSURdLmNhcmRfbGV2ZWxfY291bnQgPSAwCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIENvZGU6U2V0RXdtKElELCBkYXRhKQogICAgaWYgbm90IElEIG9yIG5vdCBkYXRhIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgZXdtX2tleSA9ICJld20iIC4uIHNlbGY6R2V0UGF5VHAoSUQpCiAgICBsb2NhbCBvcmRlcl9rZXkgPSAib3JkZXIiIC4uIHNlbGY6R2V0UGF5VHAoSUQpCiAgICBzZWxmLkRhdGFbSURdLnBheV9wYWdlID0gdHJ1ZQogICAgc2VsZi5EYXRhW0lEXVtld21fa2V5XSA9IGRhdGEucXJDb2RlVXJsCiAgICBzZWxmLkRhdGFbSURdW29yZGVyX2tleV0gPSBkYXRhLm91dFRyYWRlTm8KICAgIHNlbGY6U2VuZERhdGEoSUQpCmVuZAoKZnVuY3Rpb24gQ29kZTpTZXRPcmRlcihJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+function Code:OpenPage(ID)
+    self.Data[ID].page = true
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function Code:ClosePage(ID)
+    if not ID then
+        return
+    end
+    -- 仅隐藏界面；保留订单与轮询，避免关窗后支付成功无法弹窗/到账
+    self.Data[ID].page = false
+    self:SendData(ID)
+end
+
+function Code:SetPayTp(ID, num)
+    if not ID or not num then
+        return
+    end
+    self.Data[ID].pay_type = num
+end
+
+function Code:SetCardLevelGoods(ID, level_count)
+    if not ID then
+        return false
+    end
+    local max_n = Shop:GetRemainingBuyableLevels(ID)
+    if max_n <= 0 then
+        return false
+    end
+    local n = tonumber(level_count) or 1
+    if n < 1 then
+        n = 1
+    end
+    if n > max_n then
+        n = max_n
+    end
+    self.Data[ID].goods = Code.CardLevelProduct
+    self.Data[ID].card_level_count = n
+    self.Data[ID].price = n * (Code.CardLevelPriceYuan or 5)
+    self.Data[ID].goods_name = Code.GoodsName[Code.CardLevelProduct] or "card_level"
+    return true
+end
+
+function Code:SetGoods(ID, goods_id)
+    if not ID or not goods_id then
+        return
+    end
+    local goods_key = "goods_" .. goods_id
+    local goods = self.Goods[goods_key]
+    self.Data[ID].goods = goods
+    self.Data[ID].price = self.GoodsPrice[goods]
+    self.Data[ID].goods_name = self.GoodsName[goods]
+    self.Data[ID].card_level_count = 0
+end
+
+-- 动态礼包等：直接指定服务端 productType / 价格 / 展示名
+function Code:SetProductType(ID, product_type, price, goods_name)
+    if not ID or not product_type or product_type == "" then
+        return false
+    end
+    self.Data[ID].goods = tostring(product_type)
+    self.Data[ID].price = tonumber(price) or 0
+    self.Data[ID].goods_name = goods_name and tostring(goods_name) or tostring(product_type)
+    self.Data[ID].card_level_count = 0
+    return true
+end
+
+function Code:SetEwm(ID, data)
+    if not ID or not data then
+        return
+    end
+    local ewm_key = "ewm" .. self:GetPayTp(ID)
+    local order_key = "order" .. self:GetPayTp(ID)
+    self.Data[ID].pay_page = true
+    self.Data[ID][ewm_key] = data.qrCodeUrl
+    self.Data[ID][order_key] = data.outTradeNo
+    self:SendData(ID)
+end
+
+function Code:SetOrder(ID)
+    if not ID then
+        return
+    end
+end

@@ -8,22 +8,164 @@
 ]]
 
 
-local encoded=[[ZnVuY3Rpb24gQm9vazpHZXRIZXJvU3RhdGUobmFtZSkKICAgIGlmIG5vdCBuYW1lIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgZm9yIGssIHYgaW4gcGFpcnMoU2VsZWN0SGVyby5IZXJvTGlzdCkgZG8KICAgICAgICBpZiBuYW1lID09IGsgdGhlbgogICAgICAgICAgICByZXR1cm4gdHJ1ZQogICAgICAgIGVuZAogICAgZW5kCmVuZAoKZnVuY3Rpb24gQm9vazpHZXRIZXJvSUQobmFtZSkKICAgIGlmIG5vdCBuYW1lIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgZm9yIGssIHYgaW4gcGFpcnMoU2VsZWN0SGVyby5IZXJvTGlzdCkgZG8KICAgICAgICBpZiBuYW1lID09IGsgdGhlbgogICAgICAgICAgICByZXR1cm4gdi5pbmRleAogICAgICAgIGVuZAogICAgZW5kCmVuZAoKLS0tIOaMiSBzbG90XzHjgIFzbG90XzLigKYg5Zu65a6a6aG65bqP6YGN5Y6G5bimIHNsb3Qg5YmN57yA55qE6KGoCmZ1bmN0aW9uIEJvb2s6Rm9yRWFjaFNsb3RTb3J0ZWQobWFwLCBjYWxsYmFjaykKICAgIGlmIG5vdCBtYXAgb3Igbm90IGNhbGxiYWNrIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgbWF4X3Nsb3QgPSAwCiAgICBmb3IgayBpbiBwYWlycyhtYXApIGRvCiAgICAgICAgbG9jYWwgaWR4ID0gdG9udW1iZXIodXRpbGV4OnNwbGl0SW5kZXgoaywgIl8iLCAyKSkgb3IgMAogICAgICAgIGlmIGlkeCA+IG1heF9zbG90IHRoZW4KICAgICAgICAgICAgbWF4X3Nsb3QgPSBpZHgKICAgICAgICBlbmQKICAgIGVuZAogICAgZm9yIGkgPSAxLCBtYXhfc2xvdCBkbwogICAgICAgIGxvY2FsIGsgPSAic2xvdF8iIC4uIGkKICAgICAgICBsb2NhbCB2ID0gbWFwW2tdCiAgICAgICAgaWYgdiB+PSBuaWwgdGhlbgogICAgICAgICAgICBjYWxsYmFjayhrLCB2KQogICAgICAgIGVuZAogICAgZW5kCmVuZAoKbG9jYWwgZnVuY3Rpb24gY2xyYl9ib29rX3NraWxsX2hlcm9fYm91bmQoaGVyb19maWVsZCkKICAgIGlmIGhlcm9fZmllbGQgPT0gbmlsIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgaWYgdHlwZShoZXJvX2ZpZWxkKSB+PSAic3RyaW5nIiB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIHJldHVybiBoZXJvX2ZpZWxkIH49ICIiCmVuZAoKZnVuY3Rpb24gQm9vazpCdWlsZFNraWxsU2xvdExpc3Qoc2tpbGxzKQogICAgbG9jYWwgbGlzdCA9IHt9CiAgICBpZiBub3Qgc2tpbGxzIHRoZW4KICAgICAgICByZXR1cm4gbGlzdAogICAgZW5kCiAgICBmb3IgaSwgc2sgaW4gaXBhaXJzKHNraWxscykgZG8KICAgICAgICBsaXN0WyJzbG90XyIgLi4gaV0gPSB7CiAgICAgICAgICAgIHN0YXRlID0gdHJ1ZSwKICAgICAgICAgICAgbmFtZSA9IHNrLm5hbWUsCiAgICAgICAgICAgIGltZyA9IHNrLmtleSwKICAgICAgICAgICAgcmFuayA9IHNrLnJhbmssCiAgICAgICAgfQogICAgZW5kCiAgICByZXR1cm4gbGlzdAplbmQKCi0tLSDmlLbpm4YgU2tpbGwuQWJpbGl0eSDkuK3nu5HlrprliLDmjIflrproi7Hpm4TnmoTlhajpg6jmioDog73vvIjmjIkgaWQg5o6S5bqP77yJCmZ1bmN0aW9uIEJvb2s6Q29sbGVjdFNraWxsc0J5SGVybyhoZXJvX25hbWUpCiAgICBpZiBub3QgaGVyb19uYW1lIG9yIGhlcm9fbmFtZSA9PSAiIiB0aGVuCiAgICAgICAgcmV0dXJuIHt9CiAgICBlbmQKICAgIGxvY2FsIHNraWxscyA9IHt9CiAgICBpZiBub3QgU2tpbGwgb3Igbm90IFNraWxsLkFiaWxpdHkgdGhlbgogICAgICAgIHJldHVybiBza2lsbHMKICAgIGVuZAogICAgZm9yIGtleSwgcm93IGluIHBhaXJzKFNraWxsLkFiaWxpdHkpIGRvCiAgICAgICAgaWYgcm93IGFuZCByb3cubmFtZSBhbmQgcm93Lm5hbWUgfj0gIiIgYW5kIHJvdy5oZXJvID09IGhlcm9fbmFtZSB0aGVuCiAgICAgICAgICAgIHRhYmxlLmluc2VydChza2lsbHMsIHsKICAgICAgICAgICAgICAgIGtleSA9IGtleSwKICAgICAgICAgICAgICAgIG5hbWUgPSByb3cubmFtZSwKICAgICAgICAgICAgICAgIHJhbmsgPSByb3cucmFuayB+PSBuaWwgYW5kIHJvdy5yYW5rIG9yIC0xLAogICAgICAgICAgICAgICAgaWQgPSB0b251bWJlcihyb3cuaWQpIG9yIDAsCiAgICAgICAgICAgIH0pCiAgICAgICAgZW5kCiAgICBlbmQKICAgIHRhYmxlLnNvcnQoc2tpbGxzLCBmdW5jdGlvbihhLCBiKQogICAgICAgIGlmIGEuaWQgfj0gYi5pZCB0aGVuCiAgICAgICAgICAgIHJldHVybiBhLmlkIDwgYi5pZAogICAgICAgIGVuZAogICAgICAgIHJldHVybiAoYS5uYW1lIG9yICIiKSA8IChiLm5hbWUgb3IgIiIpCiAgICBlbmQpCiAgICByZXR1cm4gc2tpbGxzCmVuZAoKLS0tIGhlcm8g5a2X5q615Li656m6IC8g5pyq57uR5a6a55qE5YWs5YWx5oqA6IO9CmZ1bmN0aW9uIEJvb2s6Q29sbGVjdFB1YmxpY1NraWxscygpCiAgICBsb2NhbCBza2lsbHMgPSB7fQogICAgaWYgbm90IFNraWxsIG9yIG5vdCBTa2lsbC5BYmlsaXR5IHRoZW4KICAgICAgICByZXR1cm4gc2tpbGxzCiAgICBlbmQKICAgIGZvciBrZXksIHJvdyBpbiBwYWlycyhTa2lsbC5BYmlsaXR5KSBkbwogICAgICAgIGlmIHJvdyBhbmQgcm93Lm5hbWUgYW5kIHJvdy5uYW1lIH49ICIiIGFuZCBub3QgY2xyYl9ib29rX3NraWxsX2hlcm9fYm91bmQocm93Lmhlcm8pIHRoZW4KICAgICAgICAgICAgdGFibGUuaW5zZXJ0KHNraWxscywgewogICAgICAgICAgICAgICAga2V5ID0ga2V5LAogICAgICAgICAgICAgICAgbmFtZSA9IHJvdy5uYW1lLAogICAgICAgICAgICAgICAgcmFuayA9IHJvdy5yYW5rIH49IG5pbCBhbmQgcm93LnJhbmsgb3IgLTEsCiAgICAgICAgICAgICAgICBpZCA9IHRvbnVtYmVyKHJvdy5pZCkgb3IgMCwKICAgICAgICAgICAgfSkKICAgICAgICBlbmQKICAgIGVuZAogICAgdGFibGUuc29ydChza2lsbHMsIGZ1bmN0aW9uKGEsIGIpCiAgICAgICAgaWYgYS5yYW5rIH49IGIucmFuayB0aGVuCiAgICAgICAgICAgIHJldHVybiBhLnJhbmsgPCBiLnJhbmsKICAgICAgICBlbmQKICAgICAgICBpZiBhLmlkIH49IGIuaWQgdGhlbgogICAgICAgICAgICByZXR1cm4gYS5pZCA8IGIuaWQKICAgICAgICBlbmQKICAgICAgICByZXR1cm4gKGEubmFtZSBvciAiIikgPCAoYi5uYW1lIG9yICIiKQogICAgZW5kKQogICAgcmV0dXJuIHNraWxscwplbmQKCmZ1bmN0aW9uIEJvb2s6R2V0SGVyb1NraWxsTGlzdChuYW1lLCBsaXN0KQogICAgaWYgbm90IG5hbWUgb3Igbm90IGxpc3QgdGhlbgogICAgICAgIHJldHVybiBsaXN0CiAgICBlbmQKICAgIGxvY2FsIHNraWxscyA9IHNlbGY6Q29sbGVjdFNraWxsc0J5SGVybyhuYW1lKQogICAgZm9yIGkgPSAxLCA1IGRvCiAgICAgICAgbG9jYWwgc2xvdF9rZXkgPSAic2xvdF8iIC4uIGkKICAgICAgICBsb2NhbCBzbG90ID0gbGlzdFtzbG90X2tleV0KICAgICAgICBpZiBzbG90IHRoZW4KICAgICAgICAgICAgbG9jYWwgc2sgPSBza2lsbHNbaV0KICAgICAgICAgICAgaWYgc2sgdGhlbgogICAgICAgICAgICAgICAgc2xvdC5zdGF0ZSA9IHRydWUKICAgICAgICAgICAgICAgIHNsb3QubmFtZSA9IHNrLm5hbWUKICAgICAgICAgICAgICAgIHNsb3QuaW1nID0gc2sua2V5CiAgICAgICAgICAgICAgICBzbG90LnJhbmsgPSBzay5yYW5rCiAgICAgICAgICAgIGVsc2UKICAgICAgICAgICAgICAgIHNsb3Quc3RhdGUgPSBmYWxzZQogICAgICAgICAgICAgICAgc2xvdC5uYW1lID0gIiIKICAgICAgICAgICAgICAgIHNsb3QuaW1nID0gIiIKICAgICAgICAgICAgICAgIHNsb3QucmFuayA9IC0xCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCiAgICByZXR1cm4gbGlzdAplbmQKCmZ1bmN0aW9uIEJvb2s6SXNJbkxpc3QobGlzdCwgbmFtZSkKICAgIGlmIG5vdCBsaXN0IG9yIG5vdCBuYW1lIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgZm9yIGssIHYgaW4gcGFpcnMobGlzdCkgZG8KICAgICAgICBpZiB2Lm5hbWUgPT0gbmFtZSB0aGVuCiAgICAgICAgICAgIHJldHVybiB0cnVlCiAgICAgICAgZW5kCiAgICBlbmQKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+function Book:GetHeroState(name)
+    if not name then
+        return
+    end
+    for k, v in pairs(SelectHero.HeroList) do
+        if name == k then
+            return true
+        end
+    end
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function Book:GetHeroID(name)
+    if not name then
+        return
+    end
+    for k, v in pairs(SelectHero.HeroList) do
+        if name == k then
+            return v.index
+        end
+    end
+end
+
+--- 按 slot_1、slot_2… 固定顺序遍历带 slot 前缀的表
+function Book:ForEachSlotSorted(map, callback)
+    if not map or not callback then
+        return
+    end
+    local max_slot = 0
+    for k in pairs(map) do
+        local idx = tonumber(utilex:splitIndex(k, "_", 2)) or 0
+        if idx > max_slot then
+            max_slot = idx
+        end
+    end
+    for i = 1, max_slot do
+        local k = "slot_" .. i
+        local v = map[k]
+        if v ~= nil then
+            callback(k, v)
+        end
+    end
+end
+
+local function clrb_book_skill_hero_bound(hero_field)
+    if hero_field == nil then
+        return false
+    end
+    if type(hero_field) ~= "string" then
+        return false
+    end
+    return hero_field ~= ""
+end
+
+function Book:BuildSkillSlotList(skills)
+    local list = {}
+    if not skills then
+        return list
+    end
+    for i, sk in ipairs(skills) do
+        list["slot_" .. i] = {
+            state = true,
+            name = sk.name,
+            img = sk.key,
+            rank = sk.rank,
+        }
+    end
+    return list
+end
+
+--- 收集 Skill.Ability 中绑定到指定英雄的全部技能（按 id 排序）
+function Book:CollectSkillsByHero(hero_name)
+    if not hero_name or hero_name == "" then
+        return {}
+    end
+    local skills = {}
+    if not Skill or not Skill.Ability then
+        return skills
+    end
+    for key, row in pairs(Skill.Ability) do
+        if row and row.name and row.name ~= "" and row.hero == hero_name then
+            table.insert(skills, {
+                key = key,
+                name = row.name,
+                rank = row.rank ~= nil and row.rank or -1,
+                id = tonumber(row.id) or 0,
+            })
+        end
+    end
+    table.sort(skills, function(a, b)
+        if a.id ~= b.id then
+            return a.id < b.id
+        end
+        return (a.name or "") < (b.name or "")
+    end)
+    return skills
+end
+
+--- hero 字段为空 / 未绑定的公共技能
+function Book:CollectPublicSkills()
+    local skills = {}
+    if not Skill or not Skill.Ability then
+        return skills
+    end
+    for key, row in pairs(Skill.Ability) do
+        if row and row.name and row.name ~= "" and not clrb_book_skill_hero_bound(row.hero) then
+            table.insert(skills, {
+                key = key,
+                name = row.name,
+                rank = row.rank ~= nil and row.rank or -1,
+                id = tonumber(row.id) or 0,
+            })
+        end
+    end
+    table.sort(skills, function(a, b)
+        if a.rank ~= b.rank then
+            return a.rank < b.rank
+        end
+        if a.id ~= b.id then
+            return a.id < b.id
+        end
+        return (a.name or "") < (b.name or "")
+    end)
+    return skills
+end
+
+function Book:GetHeroSkillList(name, list)
+    if not name or not list then
+        return list
+    end
+    local skills = self:CollectSkillsByHero(name)
+    for i = 1, 5 do
+        local slot_key = "slot_" .. i
+        local slot = list[slot_key]
+        if slot then
+            local sk = skills[i]
+            if sk then
+                slot.state = true
+                slot.name = sk.name
+                slot.img = sk.key
+                slot.rank = sk.rank
+            else
+                slot.state = false
+                slot.name = ""
+                slot.img = ""
+                slot.rank = -1
+            end
+        end
+    end
+    return list
+end
+
+function Book:IsInList(list, name)
+    if not list or not name then
+        return
+    end
+    for k, v in pairs(list) do
+        if v.name == name then
+            return true
+        end
+    end
+end

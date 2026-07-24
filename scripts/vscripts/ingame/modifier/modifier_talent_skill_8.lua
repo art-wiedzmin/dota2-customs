@@ -8,22 +8,133 @@
 ]]
 
 
-local encoded=[[LS0g6KKr5Yqo5aSp6LWLIDjvvJrnjI7kurrigJTigJTlr7nkuK3nq4vph47mgKrpop3lpJYgKzMwJSDniannkIbkvKTlrrPvvJvmr4/lh7vmnYDkuK3nq4vph47mgKogKzMg55Sf5ZG95LiK6ZmQ77yI6KeBIFRhbGVudDpLaWxs77yJCi0tIDYgLyAxNSAvIDIxIOWIhumSn+WIhuWIq+iOt+W+l+eLvOeOi+WGheS4ueOAgeiCieWxseW/g+iEj+OAgemjjuaatOaguOW/gwoKbW9kaWZpZXJfdGFsZW50X3NraWxsXzggPSBjbGFzcyh7fSkKCmxvY2FsIEhVTlRFUl9JVEVNX01JTEVTVE9ORVMgPSB7CiAgICB7IG1pbiA9IDYsICBpdGVtID0gIml0ZW1fZ29vZHNfMTAiLCBsYWJlbCA9ICLni7znjovlhoXkuLkiLCBmbGFnID0gIl9ncmFudGVkX3dvbGYiIH0sCiAgICB7IG1pbiA9IDE1LCBpdGVtID0gIml0ZW1fZ29vZHNfMTEiLCBsYWJlbCA9ICLogonlsbHlv4PohI8iLCBmbGFnID0gIl9ncmFudGVkX2JlYXIiIH0sCiAgICB7IG1pbiA9IDIxLCBpdGVtID0gIml0ZW1fZ29vZHNfMjYiLCBsYWJlbCA9ICLpo47mmrTmoLjlv4MiLCBmbGFnID0gIl9ncmFudGVkX2RyYWdvbiIgfSwKfQoKbG9jYWwgZnVuY3Rpb24gaHVudGVyX2dyYW50X2JvbnVzX2NyeXN0YWwocGxheWVyX2lkKQogICAgaWYgbm90IHBsYXllcl9pZCBvciBwbGF5ZXJfaWQgPCAwIG9yIG5vdCBJdGVtIG9yIG5vdCBJdGVtLkFkZEl0ZW0gdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBhZGRlZCA9IEl0ZW06QWRkSXRlbShwbGF5ZXJfaWQsICJpdGVtX2dvb2RzXzI1IikKICAgIGlmIGFkZGVkIGFuZCBVdGlsIGFuZCBVdGlsLkJvdHRvbU1zZzJJRCB0aGVuCiAgICAgICAgVXRpbDpCb3R0b21Nc2cySUQocGxheWVyX2lkLCAi54yO5Lq677ya6aKd5aSW6I635b6XIOmbt+e6uee7k+aZtiIsICJ5ZWxsb3ciLCAzKQogICAgZW5kCmVuZAoKbG9jYWwgZnVuY3Rpb24gaHVudGVyX293bmVyX3BsYXllcl9pZChtb2QpCiAgICBsb2NhbCBoZXJvID0gbW9kIGFuZCBtb2Q6R2V0UGFyZW50KCkKICAgIGlmIG5vdCBoZXJvIG9yIGhlcm86SXNOdWxsKCkgdGhlbgogICAgICAgIHJldHVybiAtMQogICAgZW5kCiAgICBpZiBDbHJiR2V0T3duZXJQbGF5ZXJJZCB0aGVuCiAgICAgICAgcmV0dXJuIENscmJHZXRPd25lclBsYXllcklkKGhlcm8pCiAgICBlbmQKICAgIHJldHVybiBoZXJvOkdldFBsYXllck93bmVySUQoKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF84OklzSGlkZGVuKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzg6SXNEZWJ1ZmYoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzg6SXNQdXJnYWJsZSgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfODpSZW1vdmVPbkRlYXRoKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF84OkRlY2xhcmVGdW5jdGlvbnMoKQogICAgcmV0dXJuIHsgTU9ESUZJRVJfRVZFTlRfT05fQVRUQUNLX0xBTkRFRCwgTU9ESUZJRVJfRVZFTlRfT05fUkVTUEFXTiB9CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzg6T25BdHRhY2tMYW5kZWQoa2V5cykKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYga2V5cy5hdHRhY2tlciB+PSBzZWxmOkdldFBhcmVudCgpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgdCA9IGtleXMudGFyZ2V0CiAgICBpZiBub3QgdCBvciB0OklzTnVsbCgpIG9yIG5vdCB0OklzQWxpdmUoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIHQ6SXNIZXJvKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBiYXNlID0ga2V5cy5vcmlnaW5hbF9kYW1hZ2Ugb3Iga2V5cy5kYW1hZ2Ugb3IgMAogICAgaWYgYmFzZSA8PSAwIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgQXBwbHlEYW1hZ2UoewogICAgICAgIHZpY3RpbSA9IHQsCiAgICAgICAgYXR0YWNrZXIgPSBrZXlzLmF0dGFja2VyLAogICAgICAgIGRhbWFnZSA9IGJhc2UgKiAwLjMsCiAgICAgICAgZGFtYWdlX3R5cGUgPSBEQU1BR0VfVFlQRV9QSFlTSUNBTCwKICAgICAgICBkYW1hZ2VfZmxhZ3MgPSBET1RBX0RBTUFHRV9GTEFHX05PTkUsCiAgICAgICAgYWJpbGl0eSA9IG5pbCwKICAgIH0pCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzg6X1RyeUdyYW50VGltZWRJdGVtcygpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGdhbWVfbWluID0gKE1haW5HYW1lIGFuZCBNYWluR2FtZS5HZXRUaW1lTWluIGFuZCBNYWluR2FtZTpHZXRUaW1lTWluKCkpIG9yIDAKICAgIGxvY2FsIHBpZCA9IGh1bnRlcl9vd25lcl9wbGF5ZXJfaWQoc2VsZikKICAgIGlmIHBpZCA8IDAgb3Igbm90IEl0ZW0gb3Igbm90IEl0ZW0uQWRkSXRlbSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBmb3IgXywgcm93IGluIGlwYWlycyhIVU5URVJfSVRFTV9NSUxFU1RPTkVTKSBkbwogICAgICAgIGlmIGdhbWVfbWluID49IHJvdy5taW4gYW5kIG5vdCBzZWxmW3Jvdy5mbGFnXSB0aGVuCiAgICAgICAgICAgIHNlbGZbcm93LmZsYWddID0gdHJ1ZQogICAgICAgICAgICBsb2NhbCBhZGRlZCA9IEl0ZW06QWRkSXRlbShwaWQsIHJvdy5pdGVtKQogICAgICAgICAgICBpZiBhZGRlZCBhbmQgVXRpbCBhbmQgVXRpbC5Cb3R0b21Nc2cySUQgdGhlbgogICAgICAgICAgICAgICAgVXRpbDpCb3R0b21Nc2cySUQocGlkLCAi54yO5Lq677ya6I635b6XICIgLi4gcm93LmxhYmVsLCAieWVsbG93IiwgMykKICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIC0tIOS7hemAmui/h+Wkqei1i+mHjOeoi+eikeWPkeaUvuaXtumineWklue7membt+e6uee7k+aZtu+8iOWHu+adgOaOieiQveetieS4jeinpuWPke+8iQogICAgICAgICAgICBpZiBhZGRlZCB0aGVuCiAgICAgICAgICAgICAgICBodW50ZXJfZ3JhbnRfYm9udXNfY3J5c3RhbChwaWQpCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzg6T25SZXNwYXduKCkKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZjpfVHJ5R3JhbnRUaW1lZEl0ZW1zKCkKICAgIHNlbGY6U3RhcnRJbnRlcnZhbFRoaW5rKDEpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzg6T25DcmVhdGVkKCkKICAgIGlmIElzU2VydmVyKCkgdGhlbgogICAgICAgIHNlbGY6X1RyeUdyYW50VGltZWRJdGVtcygpCiAgICAgICAgc2VsZjpTdGFydEludGVydmFsVGhpbmsoMSkKICAgIGVuZAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF84Ok9uSW50ZXJ2YWxUaGluaygpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGY6X1RyeUdyYW50VGltZWRJdGVtcygpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzg6R2V0VGV4dHVyZSgpCiAgICByZXR1cm4gIml0ZW1fYmZ1cnkiCmVuZAo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 被动天赋 8：猎人——对中立野怪额外 +30% 物理伤害；每击杀中立野怪 +3 生命上限（见 Talent:Kill）
+-- 6 / 15 / 21 分钟分别获得狼王内丹、肉山心脏、风暴核心
+
+modifier_talent_skill_8 = class({})
+
+local HUNTER_ITEM_MILESTONES = {
+    { min = 6,  item = "item_goods_10", label = "狼王内丹", flag = "_granted_wolf" },
+    { min = 15, item = "item_goods_11", label = "肉山心脏", flag = "_granted_bear" },
+    { min = 21, item = "item_goods_26", label = "风暴核心", flag = "_granted_dragon" },
+}
+
+local function hunter_grant_bonus_crystal(player_id)
+    if not player_id or player_id < 0 or not Item or not Item.AddItem then
+        return
+    end
+    local added = Item:AddItem(player_id, "item_goods_25")
+    if added and Util and Util.BottomMsg2ID then
+        Util:BottomMsg2ID(player_id, "猎人：额外获得 雷纹结晶", "yellow", 3)
+    end
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+local function hunter_owner_player_id(mod)
+    local hero = mod and mod:GetParent()
+    if not hero or hero:IsNull() then
+        return -1
+    end
+    if ClrbGetOwnerPlayerId then
+        return ClrbGetOwnerPlayerId(hero)
+    end
+    return hero:GetPlayerOwnerID()
+end
+
+function modifier_talent_skill_8:IsHidden()
+    return true
+end
+
+function modifier_talent_skill_8:IsDebuff()
+    return false
+end
+
+function modifier_talent_skill_8:IsPurgable()
+    return false
+end
+
+function modifier_talent_skill_8:RemoveOnDeath()
+    return false
+end
+
+function modifier_talent_skill_8:DeclareFunctions()
+    return { MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_EVENT_ON_RESPAWN }
+end
+
+function modifier_talent_skill_8:OnAttackLanded(keys)
+    if not IsServer() then
+        return
+    end
+    if keys.attacker ~= self:GetParent() then
+        return
+    end
+    local t = keys.target
+    if not t or t:IsNull() or not t:IsAlive() then
+        return
+    end
+    if t:IsHero() then
+        return
+    end
+    local base = keys.original_damage or keys.damage or 0
+    if base <= 0 then
+        return
+    end
+    ApplyDamage({
+        victim = t,
+        attacker = keys.attacker,
+        damage = base * 0.3,
+        damage_type = DAMAGE_TYPE_PHYSICAL,
+        damage_flags = DOTA_DAMAGE_FLAG_NONE,
+        ability = nil,
+    })
+end
+
+function modifier_talent_skill_8:_TryGrantTimedItems()
+    if not IsServer() then
+        return
+    end
+    local game_min = (MainGame and MainGame.GetTimeMin and MainGame:GetTimeMin()) or 0
+    local pid = hunter_owner_player_id(self)
+    if pid < 0 or not Item or not Item.AddItem then
+        return
+    end
+
+    for _, row in ipairs(HUNTER_ITEM_MILESTONES) do
+        if game_min >= row.min and not self[row.flag] then
+            self[row.flag] = true
+            local added = Item:AddItem(pid, row.item)
+            if added and Util and Util.BottomMsg2ID then
+                Util:BottomMsg2ID(pid, "猎人：获得 " .. row.label, "yellow", 3)
+            end
+            -- 仅通过天赋里程碑发放时额外给雷纹结晶（击杀掉落等不触发）
+            if added then
+                hunter_grant_bonus_crystal(pid)
+            end
+        end
+    end
+end
+
+function modifier_talent_skill_8:OnRespawn()
+    if not IsServer() then
+        return
+    end
+    self:_TryGrantTimedItems()
+    self:StartIntervalThink(1)
+end
+
+function modifier_talent_skill_8:OnCreated()
+    if IsServer() then
+        self:_TryGrantTimedItems()
+        self:StartIntervalThink(1)
+    end
+end
+
+function modifier_talent_skill_8:OnIntervalThink()
+    if not IsServer() then
+        return
+    end
+    self:_TryGrantTimedItems()
+end
+
+function modifier_talent_skill_8:GetTexture()
+    return "item_bfury"
+end

@@ -8,22 +8,160 @@
 ]]
 
 
-local encoded=[[cmVxdWlyZSgiaW5nYW1lLm1vZGlmaWVyLm1vZGlmaWVyX2NscmJfdGFsZW50cyIpCgpmdW5jdGlvbiBTZWxlY3RIZXJvOkdldFVJRGF0YShJRCwgZGF0YSkKICAgIGlmIG5vdCBJRCBvciBub3QgZGF0YSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIC0t5pqC5YGc56aB5q2i5Lyg5pWw5o2uCiAgICBpZiBHYW1lUnVsZXM6SXNHYW1lUGF1c2VkKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICAtLeWIneWni+WMluaVsOaNrgogICAgaWYgZGF0YS50cCA9PSAiaW5pdCIgdGhlbgogICAgICAgIHNlbGY6U2VuZERhdGEoSUQpCiAgICAgICAgU2VsZWN0SGVybzpTZW5kUHVibGljRGF0YSgpCiAgICBlbmQKICAgIGlmIGRhdGEudHAgPT0gIlJlY29ubmVjdEdvbGRTeW5jIiB0aGVuCiAgICAgICAgbG9jYWwgZCA9IEluaXRQbGF5ZXIgYW5kIEluaXRQbGF5ZXIuR2V0UGxheWVyRGF0YSBhbmQgSW5pdFBsYXllcjpHZXRQbGF5ZXJEYXRhKElEKQogICAgICAgIGlmIGQgYW5kIGQuaGVyb19uYW1lIGFuZCBkLmhlcm9fbmFtZSB+PSAiIiBhbmQgU2VsZWN0SGVyby5BcHBseUVuZ2luZVBpY2tGb3JQbGF5ZXIgdGhlbgogICAgICAgICAgICBTZWxlY3RIZXJvOkFwcGx5RW5naW5lUGlja0ZvclBsYXllcihJRCwgZC5oZXJvX25hbWUsIGZhbHNlKQogICAgICAgIGVuZAogICAgICAgIGlmIFV0aWwgYW5kIFV0aWwuQ2xyYkZvcmNlUGxheWVyR29sZFJlc3luYyB0aGVuCiAgICAgICAgICAgIFV0aWw6Q2xyYkZvcmNlUGxheWVyR29sZFJlc3luYyhJRCkKICAgICAgICBlbmQKICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgZGF0YS50cCA9PSAiT3BlblBhZ2UiIHRoZW4KICAgICAgICBzZWxmOk9wZW5QYWdlKElEKQogICAgZW5kCiAgICBpZiBkYXRhLnRwID09ICJDbG9zZVBhZ2UiIHRoZW4KICAgICAgICBzZWxmOkNsb3NlUGFnZShJRCkKICAgIGVuZAogICAgLS3pgInlsZ7mgKcKICAgIGlmIGRhdGEudHAgPT0gIlNlbGVjdEF0dHIiIHRoZW4KICAgICAgICBzZWxmOlNlbGVjdEF0dHIoSUQsIGRhdGEudGV4dCkKICAgIGVuZAogICAgLS3ph43mlrDpmo/mnLoKICAgIGlmIGRhdGEudHAgPT0gIlJvbGxIZXJvIiB0aGVuCiAgICAgICAgc2VsZjpSb2xsSGVybyhJRCkKICAgIGVuZAogICAgLS3lop7liqDpmo/mnLrmrKHmlbAKICAgIGlmIGRhdGEudHAgPT0gIkFkZFJlZnJlc2giIHRoZW4KICAgICAgICBzZWxmOkFkZFJlZnJlc2goSUQpCiAgICBlbmQKICAgIC0t6YCJ6Iux6ZuECiAgICBpZiBkYXRhLnRwID09ICJTZWxlY3RIZXJvIiB0aGVuCiAgICAgICAgc2VsZjpTZWxlY3RIZXJvKElELCBkYXRhLnRleHQpCiAgICBlbmQKICAgIGlmIGRhdGEudHAgPT0gIlByZXZpZXdTbG90IiB0aGVuCiAgICAgICAgc2VsZjpTZXRQcmV2aWV3U2xvdChJRCwgZGF0YS50ZXh0KQogICAgZW5kCiAgICAtLSDpgInkurrlpKnotYvvvIjku4XlrZggU2VsZWN0SGVyby5EYXRhW0lEXS50YWxlbnRfaW5kZXjvvIkKICAgIGlmIGRhdGEudHAgPT0gIlNlbGVjdFRhbGVudCIgdGhlbgogICAgICAgIGxvY2FsIGlkeCA9IHRvbnVtYmVyKGRhdGEudGFsZW50X2luZGV4KQogICAgICAgIGlmIGlkeCBhbmQgc2VsZi5EYXRhW0lEXSB0aGVuCiAgICAgICAgICAgIGlkeCA9IHNlbGY6U2FuaXRpemVUYWxlbnRJbmRleChpZHgpCiAgICAgICAgICAgIHNlbGYuRGF0YVtJRF0udGFsZW50X2luZGV4ID0gaWR4CiAgICAgICAgICAgIENscmJTeW5jVGFsZW50TmV0dGFibGUoSUQsIGlkeCkKICAgICAgICAgICAgaWYgQ2xyYlRhbGVudFN5bmNFcXVpcFRvb2x0aXBOZXR0YWJsZSB0aGVuCiAgICAgICAgICAgICAgICBDbHJiVGFsZW50U3luY0VxdWlwVG9vbHRpcE5ldHRhYmxlKElEKQogICAgICAgICAgICBlbmQKICAgICAgICAgICAgbG9jYWwgcGQgPSBJbml0UGxheWVyIGFuZCBJbml0UGxheWVyLkdldFBsYXllckRhdGEgYW5kIEluaXRQbGF5ZXI6R2V0UGxheWVyRGF0YShJRCkKICAgICAgICAgICAgaWYgcGQgdGhlbgogICAgICAgICAgICAgICAgcGQudGFsZW50X2luZGV4ID0gaWR4CiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBpZiBJc1NlcnZlcigpIGFuZCBDbHJiVGFsZW50QXBwbHlQYXNzaXZlcyB0aGVuCiAgICAgICAgICAgICAgICBsb2NhbCBoZXJvID0gVXRpbDpJRDJIZXJvKElEKQogICAgICAgICAgICAgICAgaWYgaGVybyBhbmQgbm90IGhlcm86SXNOdWxsKCkgdGhlbgogICAgICAgICAgICAgICAgICAgIENscmJUYWxlbnRBcHBseVBhc3NpdmVzKElELCBoZXJvKQogICAgICAgICAgICAgICAgZWxzZWlmIENscmJUYWxlbnRTY2hlZHVsZUFwcGx5UGFzc2l2ZXMgdGhlbgogICAgICAgICAgICAgICAgICAgIENscmJUYWxlbnRTY2hlZHVsZUFwcGx5UGFzc2l2ZXMoSUQpCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGlmIElzU2VydmVyKCkgYW5kIFRhbGVudCBhbmQgVGFsZW50LkRhdGEgYW5kIFRhbGVudC5EYXRhW0lEXSBhbmQgVGFsZW50LlN0YXRraWxsIHRoZW4KICAgICAgICAgICAgICAgIFRhbGVudDpTdGF0a2lsbChJRCkKICAgICAgICAgICAgICAgIFRhbGVudDpTZW5kS2lsbERhdGEoSUQpCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBpZiBJc1NlcnZlcigpIGFuZCBpZHggPT0gMyBhbmQgVGFsZW50IGFuZCBUYWxlbnQuQXBwbHlCbGFja3NtaXRoRXF1aXBCb251c0NhdGNodXAgdGhlbgogICAgICAgICAgICAgICAgVGFsZW50OkFwcGx5QmxhY2tzbWl0aEVxdWlwQm9udXNDYXRjaHVwKElEKQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZAogICAgaWYgZGF0YS50cCA9PSAiRGV2UmVxdWVzdEhlcm9MaXN0IiB0aGVuCiAgICAgICAgaWYgbm90IHNlbGY6Q2FuVXNlSGVyb1BpY2tGbG93KElEKSB0aGVuCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZAogICAgICAgIGlmIG5vdCBJc0luVG9vbHNNb2RlKCkgdGhlbgogICAgICAgICAgICBsb2NhbCBwaWNrX2NvdW50ID0gU2hvcCBhbmQgU2hvcC5HZXRCYWdJdGVtQ291bnQgYW5kIFNob3A6R2V0QmFnSXRlbUNvdW50KElELCAiaGVyb19waWNrIikgb3IgMAogICAgICAgICAgICBpZiBwaWNrX2NvdW50IDwgMSB0aGVuCiAgICAgICAgICAgICAgICBzZWxmOlB1c2hIZXJvUGlja0hpbnQoSUQsIHNlbGYuSGVyb1BpY2tJbnN1ZmZpY2llbnRNc2csIHRydWUpCiAgICAgICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICAgICAgc2VsZjpTZW5kRGV2SGVyb1BpY2tlckxpc3QoSUQpCiAgICBlbmQKICAgIGlmIGRhdGEudHAgPT0gIkRldlBpY2tIZXJvIiB0aGVuCiAgICAgICAgaWYgbm90IHNlbGY6Q2FuVXNlSGVyb1BpY2tGbG93KElEKSB0aGVuCiAgICAgICAgICAgIGlmIG5vdCBJc0luVG9vbHNNb2RlKCkgdGhlbgogICAgICAgICAgICAgICAgc2VsZjpQdXNoSGVyb1BpY2tIaW50KElELCBzZWxmLkhlcm9QaWNrSW5zdWZmaWNpZW50TXNnLCB0cnVlKQogICAgICAgICAgICBlbmQKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgc2VsZjpEZXZQaWNrSGVyb0J5SW5kZXgoSUQsIGRhdGEuaGVyb19pbmRleCkKICAgIGVuZAplbmQKCi0t57uZ5YmN56uv5Y+R5pWw5o2uCmZ1bmN0aW9uIFNlbGVjdEhlcm86U2VuZERhdGEoSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBkYXRhID0gc2VsZi5EYXRhW0lEXQogICAgaWYgbm90IGRhdGEgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICAtLSDliY3nq6/lj6rorqQgMC8x77yM6YG/5YWNIGJvb2xlYW4gLyBuaWwg5q2n5LmJCiAgICBkYXRhLnRvb2wgPSAodG9udW1iZXIoZGF0YS50b29sKSA9PSAxIG9yIGRhdGEudG9vbCA9PSB0cnVlKSBhbmQgMSBvciAwCiAgICBpZiBTaG9wIGFuZCBTaG9wLkdldEJhZ0l0ZW1Db3VudCB0aGVuCiAgICAgICAgZGF0YS5oZXJvX3BpY2tfY291bnQgPSBTaG9wOkdldEJhZ0l0ZW1Db3VudChJRCwgImhlcm9fcGljayIpCiAgICBlbHNlCiAgICAgICAgZGF0YS5oZXJvX3BpY2tfY291bnQgPSAwCiAgICBlbmQKICAgIGlmIGRhdGEudGFsZW50X2luZGV4IH49IG5pbCB0aGVuCiAgICAgICAgbG9jYWwgc2FuaXRpemVkID0gc2VsZjpTYW5pdGl6ZVRhbGVudEluZGV4KGRhdGEudGFsZW50X2luZGV4KQogICAgICAgIGlmIHNhbml0aXplZCB+PSB0b251bWJlcihkYXRhLnRhbGVudF9pbmRleCkgdGhlbgogICAgICAgICAgICBzZWxmLkRhdGFbSURdLnRhbGVudF9pbmRleCA9IHNhbml0aXplZAogICAgICAgICAgICBDbHJiU3luY1RhbGVudE5ldHRhYmxlKElELCBzYW5pdGl6ZWQpCiAgICAgICAgICAgIGxvY2FsIHBkID0gSW5pdFBsYXllciBhbmQgSW5pdFBsYXllci5HZXRQbGF5ZXJEYXRhIGFuZCBJbml0UGxheWVyOkdldFBsYXllckRhdGEoSUQpCiAgICAgICAgICAgIGlmIHBkIHRoZW4KICAgICAgICAgICAgICAgIHBkLnRhbGVudF9pbmRleCA9IHNhbml0aXplZAogICAgICAgICAgICBlbmQKICAgICAgICAgICAgaWYgSXNTZXJ2ZXIoKSBhbmQgQ2xyYlRhbGVudEFwcGx5UGFzc2l2ZXMgdGhlbgogICAgICAgICAgICAgICAgbG9jYWwgaGVybyA9IFV0aWw6SUQySGVybyhJRCkKICAgICAgICAgICAgICAgIGlmIGhlcm8gYW5kIG5vdCBoZXJvOklzTnVsbCgpIHRoZW4KICAgICAgICAgICAgICAgICAgICBDbHJiVGFsZW50QXBwbHlQYXNzaXZlcyhJRCwgaGVybykKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgICAgICBkYXRhLnRhbGVudF9pbmRleCA9IHNhbml0aXplZAogICAgZW5kCiAgICBkYXRhLmhpZGRlbl90YWxlbnRfaW5kaWNlcyA9IHNlbGY6R2V0SGlkZGVuVGFsZW50SW5kaWNlc0xpc3QoKQogICAgVXRpbDpTZW5kMkpzSUQoIlVJX1NlbGVjdEhlcm8iLCBkYXRhLCBJRCkKZW5kCgpmdW5jdGlvbiBTZWxlY3RIZXJvOlNlbmRQdWJsaWNEYXRhKHJlYWR5KQogICAgbG9jYWwgZGF0YSA9IHsKICAgICAgICByZWFkeSA9IHJlYWR5LAogICAgICAgIHBsYXllcnMgPSBJbml0UGxheWVyLlB1YmxpYy5wbGF5ZXJzLAogICAgICAgIGdhbWVfdHlwZSA9IE1haW5HYW1lOkdldEdhbWVUeXBlKCkKICAgIH0KICAgIFV0aWw6U2VuZDJKc0JvdHNTYWZlKCJVSV9TZWxlY3RIZXJvUGxheWVyIiwgZGF0YSkKZW5kCgpmdW5jdGlvbiBTZWxlY3RIZXJvOlVzZVRhbGVudFNraWxsKF9JRCkKZW5kCgpmdW5jdGlvbiBTZWxlY3RIZXJvOlNlbmRUYWxlbnREYXRhKF9JRCkKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+require("ingame.modifier.modifier_clrb_talents")
+
+function SelectHero:GetUIData(ID, data)
+    if not ID or not data then
+        return
+    end
+    --暂停禁止传数据
+    if GameRules:IsGamePaused() then
+        return
+    end
+    --初始化数据
+    if data.tp == "init" then
+        self:SendData(ID)
+        SelectHero:SendPublicData()
+    end
+    if data.tp == "ReconnectGoldSync" then
+        local d = InitPlayer and InitPlayer.GetPlayerData and InitPlayer:GetPlayerData(ID)
+        if d and d.hero_name and d.hero_name ~= "" and SelectHero.ApplyEnginePickForPlayer then
+            SelectHero:ApplyEnginePickForPlayer(ID, d.hero_name, false)
+        end
+        if Util and Util.ClrbForcePlayerGoldResync then
+            Util:ClrbForcePlayerGoldResync(ID)
+        end
+        return
+    end
+    if data.tp == "OpenPage" then
+        self:OpenPage(ID)
+    end
+    if data.tp == "ClosePage" then
+        self:ClosePage(ID)
+    end
+    --选属性
+    if data.tp == "SelectAttr" then
+        self:SelectAttr(ID, data.text)
+    end
+    --重新随机
+    if data.tp == "RollHero" then
+        self:RollHero(ID)
+    end
+    --增加随机次数
+    if data.tp == "AddRefresh" then
+        self:AddRefresh(ID)
+    end
+    --选英雄
+    if data.tp == "SelectHero" then
+        self:SelectHero(ID, data.text)
+    end
+    if data.tp == "PreviewSlot" then
+        self:SetPreviewSlot(ID, data.text)
+    end
+    -- 选人天赋（仅存 SelectHero.Data[ID].talent_index）
+    if data.tp == "SelectTalent" then
+        local idx = tonumber(data.talent_index)
+        if idx and self.Data[ID] then
+            idx = self:SanitizeTalentIndex(idx)
+            self.Data[ID].talent_index = idx
+            ClrbSyncTalentNettable(ID, idx)
+            if ClrbTalentSyncEquipTooltipNettable then
+                ClrbTalentSyncEquipTooltipNettable(ID)
+            end
+            local pd = InitPlayer and InitPlayer.GetPlayerData and InitPlayer:GetPlayerData(ID)
+            if pd then
+                pd.talent_index = idx
+            end
+            if IsServer() and ClrbTalentApplyPassives then
+                local hero = Util:ID2Hero(ID)
+                if hero and not hero:IsNull() then
+                    ClrbTalentApplyPassives(ID, hero)
+                elseif ClrbTalentScheduleApplyPassives then
+                    ClrbTalentScheduleApplyPassives(ID)
+                end
+            end
+            if IsServer() and Talent and Talent.Data and Talent.Data[ID] and Talent.Statkill then
+                Talent:Statkill(ID)
+                Talent:SendKillData(ID)
+            end
+            if IsServer() and idx == 3 and Talent and Talent.ApplyBlacksmithEquipBonusCatchup then
+                Talent:ApplyBlacksmithEquipBonusCatchup(ID)
+            end
+        end
+    end
+    if data.tp == "DevRequestHeroList" then
+        if not self:CanUseHeroPickFlow(ID) then
+            return
+        end
+        if not IsInToolsMode() then
+            local pick_count = Shop and Shop.GetBagItemCount and Shop:GetBagItemCount(ID, "hero_pick") or 0
+            if pick_count < 1 then
+                self:PushHeroPickHint(ID, self.HeroPickInsufficientMsg, true)
+                return
+            end
+        end
+        self:SendDevHeroPickerList(ID)
+    end
+    if data.tp == "DevPickHero" then
+        if not self:CanUseHeroPickFlow(ID) then
+            if not IsInToolsMode() then
+                self:PushHeroPickHint(ID, self.HeroPickInsufficientMsg, true)
+            end
+            return
+        end
+        self:DevPickHeroByIndex(ID, data.hero_index)
+    end
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--给前端发数据
+function SelectHero:SendData(ID)
+    if not ID then
+        return
+    end
+    local data = self.Data[ID]
+    if not data then
+        return
+    end
+    -- 前端只认 0/1，避免 boolean / nil 歧义
+    data.tool = (tonumber(data.tool) == 1 or data.tool == true) and 1 or 0
+    if Shop and Shop.GetBagItemCount then
+        data.hero_pick_count = Shop:GetBagItemCount(ID, "hero_pick")
+    else
+        data.hero_pick_count = 0
+    end
+    if data.talent_index ~= nil then
+        local sanitized = self:SanitizeTalentIndex(data.talent_index)
+        if sanitized ~= tonumber(data.talent_index) then
+            self.Data[ID].talent_index = sanitized
+            ClrbSyncTalentNettable(ID, sanitized)
+            local pd = InitPlayer and InitPlayer.GetPlayerData and InitPlayer:GetPlayerData(ID)
+            if pd then
+                pd.talent_index = sanitized
+            end
+            if IsServer() and ClrbTalentApplyPassives then
+                local hero = Util:ID2Hero(ID)
+                if hero and not hero:IsNull() then
+                    ClrbTalentApplyPassives(ID, hero)
+                end
+            end
+        end
+        data.talent_index = sanitized
+    end
+    data.hidden_talent_indices = self:GetHiddenTalentIndicesList()
+    Util:Send2JsID("UI_SelectHero", data, ID)
+end
+
+function SelectHero:SendPublicData(ready)
+    local data = {
+        ready = ready,
+        players = InitPlayer.Public.players,
+        game_type = MainGame:GetGameType()
+    }
+    Util:Send2JsBotsSafe("UI_SelectHeroPlayer", data)
+end
+
+function SelectHero:UseTalentSkill(_ID)
+end
+
+function SelectHero:SendTalentData(_ID)
+end

@@ -8,22 +8,156 @@
 ]]
 
 
-local encoded=[[bG9jYWwgZnVuY3Rpb24gc3RhdGVfb2sodikKICAgIHJldHVybiB2ID09IHRydWUgb3IgdiA9PSAxCmVuZAoKbG9jYWwgZnVuY3Rpb24gYXR0cl9pbnQoeCkKICAgIHggPSB0b251bWJlcih4KSBvciAwCiAgICByZXR1cm4gbWF0aC5mbG9vcih4KQplbmQKCi0tIDV2Ne+8mnNpZGUgKyBnaWTvvJsxdjEw77yacm9377yI5LiOIFN0YXQuanMgLyBTdGF0LlB1YmxpYyDkuIDoh7TvvIkKZnVuY3Rpb24gSGVyb0NhcmQ6UmVzb2x2ZVBsYXllcklkRnJvbVNsb3QoZGF0YSkKICAgIGlmIG5vdCBkYXRhIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgZ3QgPSBNYWluR2FtZTpHZXRHYW1lVHlwZSgpCiAgICBpZiBndCA9PSAxIG9yIGd0ID09IDMgdGhlbgogICAgICAgIGxvY2FsIHNpZGUgPSB0b251bWJlcihkYXRhLnNpZGUpCiAgICAgICAgbG9jYWwgZ2lkID0gdG9udW1iZXIoZGF0YS5naWQpCiAgICAgICAgaWYgbm90IHNpZGUgb3Igbm90IGdpZCB0aGVuCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZAogICAgICAgIGxvY2FsIHRlYW0gPSBTdGF0LlB1YmxpYy5saXN0WyJ0ZWFtXyIgLi4gc2lkZV0KICAgICAgICBpZiBub3QgdGVhbSBvciBub3QgdGVhbS5saXN0IHRoZW4KICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgbG9jYWwgcCA9IHRlYW0ubGlzdFsicGxheWVyXyIgLi4gZ2lkXQogICAgICAgIGlmIHAgYW5kIHN0YXRlX29rKHAuc3RhdGUpIGFuZCBwLmlkIGFuZCBwLmlkID49IDAgdGhlbgogICAgICAgICAgICByZXR1cm4gcC5pZAogICAgICAgIGVuZAogICAgZWxzZWlmIGd0ID09IDIgdGhlbgogICAgICAgIGxvY2FsIHJvdyA9IHRvbnVtYmVyKGRhdGEucm93KQogICAgICAgIGlmIG5vdCByb3cgb3Igcm93IDwgMSBvciByb3cgPiAxMCB0aGVuCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZAogICAgICAgIGxvY2FsIHRlYW1zID0ge30KICAgICAgICBmb3IgaSA9IDEsIDEwIGRvCiAgICAgICAgICAgIGxvY2FsIHRrID0gInRlYW1fIiAuLiBpCiAgICAgICAgICAgIGxvY2FsIHRkID0gU3RhdC5QdWJsaWMubGlzdFt0a10KICAgICAgICAgICAgaWYgdGQgYW5kIHN0YXRlX29rKHRkLnN0YXRlKSB0aGVuCiAgICAgICAgICAgICAgICB0YWJsZS5pbnNlcnQodGVhbXMsIHRkKQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgICAgICB0YWJsZS5zb3J0KHRlYW1zLCBmdW5jdGlvbihhLCBiKQogICAgICAgICAgICBsb2NhbCByYSA9IGEucmFuayBvciA5OTkKICAgICAgICAgICAgbG9jYWwgcmIgPSBiLnJhbmsgb3IgOTk5CiAgICAgICAgICAgIGlmIHJhIH49IHJiIHRoZW4KICAgICAgICAgICAgICAgIHJldHVybiByYSA8IHJiCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICByZXR1cm4gKGEudGVhbSBvciAwKSA8IChiLnRlYW0gb3IgMCkKICAgICAgICBlbmQpCiAgICAgICAgbG9jYWwgdGQgPSB0ZWFtc1tyb3ddCiAgICAgICAgaWYgbm90IHRkIG9yIG5vdCB0ZC50ZWFtIG9yIG5vdCB0ZC5saXN0IHRoZW4KICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgbG9jYWwgcCA9IHRkLmxpc3RbInBsYXllcl8iIC4uIHRkLnRlYW1dCiAgICAgICAgaWYgcCBhbmQgc3RhdGVfb2socC5zdGF0ZSkgYW5kIHAuaWQgYW5kIHAuaWQgPj0gMCB0aGVuCiAgICAgICAgICAgIHJldHVybiBwLmlkCiAgICAgICAgZW5kCiAgICBlbmQKZW5kCgotLSDnroDljJbniYjvvJrlj6rlj5HljaHniYflsZXnpLrpnIDopoHnmoTlrZfmrrXvvIzlh4/lsJEgSlNPTiDkvZPnp6/kuI7liY3nq6/lpI3mnYLluqYKZnVuY3Rpb24gSGVyb0NhcmQ6QnVpbGRQYXlsb2FkKHBpZCkKICAgIGlmIHBpZCA9PSBuaWwgb3IgcGlkIDwgMCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGluaXRfZGF0YSA9IEluaXRQbGF5ZXI6R2V0UGxheWVyRGF0YShwaWQpCiAgICBpZiBub3QgaW5pdF9kYXRhIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgaGVybyA9IEhlcm9EYXRhOkdldEhlcm8ocGlkKQogICAgbG9jYWwgdmFsaWRfaGVybyA9IGhlcm8gYW5kIG5vdCBoZXJvOklzTnVsbCgpCgogICAgbG9jYWwgbGV2ZWwgPSAxCiAgICBsb2NhbCBocCwgaHBfbWF4LCBtYW5hLCBtYW5hX21heCA9IDAsIDAsIDAsIDAKICAgIGxvY2FsIGF0aywgYXJtb3IgPSAwLCAwCiAgICBsb2NhbCBzdHIsIGFnaSwgaW50ID0gMCwgMCwgMAogICAgaWYgdmFsaWRfaGVybyB0aGVuCiAgICAgICAgLS0g5YWI5ZCM5q2lIGhlcm9fYXR0ciAtPiBtb2RpZmllcl9hdHRyX2J1ZmbvvIhPblJlZnJlc2gg5YaF5Lya6LCDIEJhc2VHamwg5a+56b2QIGpjZ2ogLyBtb2RpZmllcl9namxqY++8ie+8jOWGjeeul+WKoOaIkOS4juaUu+WHu+WKmwogICAgICAgIEhlcm9EYXRhOlJlZnJlc2hNb2RpZmllcihoZXJvKQogICAgICAgIGhlcm86Q2FsY3VsYXRlU3RhdEJvbnVzKHRydWUpCiAgICAgICAgbGV2ZWwgPSBoZXJvOkdldExldmVsKCkKICAgICAgICBocCA9IGF0dHJfaW50KFV0aWw6R2V0SGVhbHRoKGhlcm8pIG9yIDApCiAgICAgICAgaHBfbWF4ID0gYXR0cl9pbnQoVXRpbDpHZXRNYXhIZWFsdGgoaGVybykgb3IgMCkKICAgICAgICBtYW5hID0gYXR0cl9pbnQoaGVybzpHZXRNYW5hKCkgb3IgMCkKICAgICAgICBtYW5hX21heCA9IGF0dHJfaW50KGhlcm86R2V0TWF4TWFuYSgpIG9yIDApCiAgICAgICAgYXRrID0gYXR0cl9pbnQoVXRpbDpHZXRBdmVyYWdlVHJ1ZUF0dGFja0RhbWFnZShoZXJvKSkKICAgICAgICBhcm1vciA9IGF0dHJfaW50KGhlcm86R2V0UGh5c2ljYWxBcm1vclZhbHVlKGZhbHNlKSBvciAwKQogICAgICAgIHN0ciA9IGF0dHJfaW50KGhlcm86R2V0U3RyZW5ndGgoKSBvciAwKQogICAgICAgIGFnaSA9IGF0dHJfaW50KGhlcm86R2V0QWdpbGl0eSgpIG9yIDApCiAgICAgICAgaW50ID0gYXR0cl9pbnQoaGVybzpHZXRJbnRlbGxlY3QoZmFsc2UpIG9yIDApCiAgICBlbmQKICAgIGxvY2FsIGl0ZW1fbGlzdCA9IHsKICAgICAgICBzbG90XzEgPSAiIiwKICAgICAgICBzbG90XzIgPSAiIiwKICAgICAgICBzbG90XzMgPSAiIiwKICAgICAgICBzbG90XzQgPSAiIiwKICAgICAgICBzbG90XzUgPSAiIiwKICAgICAgICBzbG90XzYgPSAiIiwKCiAgICB9CiAgICBpZiB2YWxpZF9oZXJvIHRoZW4KICAgICAgICBmb3IgaSA9IDAsIDUgZG8KICAgICAgICAgICAgbG9jYWwgbm0gPSAiIgogICAgICAgICAgICBsb2NhbCBpdCA9IGhlcm86R2V0SXRlbUluU2xvdChpKQogICAgICAgICAgICBpZiBpdCBhbmQgbm90IGl0OklzTnVsbCgpIHRoZW4KICAgICAgICAgICAgICAgIG5tID0gaXQ6R2V0TmFtZSgpIG9yICIiCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBsb2NhbCBzbG90X2tleSA9ICJzbG90XyIgLi4gKGkgKyAxKQogICAgICAgICAgICBpdGVtX2xpc3Rbc2xvdF9rZXldID0gbm0KICAgICAgICBlbmQKICAgIGVuZAoKICAgIHJldHVybiB7CiAgICAgICAgaWQgPSBwaWQsCiAgICAgICAgaGVyb19uYW1lID0gaW5pdF9kYXRhLmhlcm9fbmFtZSBvciAiIiwKICAgICAgICBib3QgPSBpbml0X2RhdGEuYm90IGFuZCAxIG9yIDAsCiAgICAgICAgbGV2ZWwgPSBsZXZlbCwKICAgICAgICBocCA9IGhwLAogICAgICAgIGhwX21heCA9IGhwX21heCwKICAgICAgICBtYW5hID0gbWFuYSwKICAgICAgICBtYW5hX21heCA9IG1hbmFfbWF4LAogICAgICAgIGF0ayA9IGF0aywKICAgICAgICBhcm1vciA9IGFybW9yLAogICAgICAgIHN0ciA9IHN0ciwKICAgICAgICBhZ2kgPSBhZ2ksCiAgICAgICAgaW50ID0gaW50LAogICAgICAgIGl0ZW1fbGlzdCA9IGl0ZW1fbGlzdCwKICAgIH0KZW5kCgpmdW5jdGlvbiBIZXJvQ2FyZDpQdXNoUGVlckNhcmRUb1BsYXllcihyZXF1ZXN0ZXJfaWQsIGRhdGEpCiAgICBpZiBub3QgcmVxdWVzdGVyX2lkIG9yIG5vdCBkYXRhIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgZ3QgPSBNYWluR2FtZSBhbmQgTWFpbkdhbWU6R2V0R2FtZVR5cGUoKSBvciAtMQogICAgbG9jYWwgcGlkID0gc2VsZjpSZXNvbHZlUGxheWVySWRGcm9tU2xvdChkYXRhKQogICAgaWYgbm90IHBpZCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIHBheWxvYWQgPSBzZWxmOkJ1aWxkUGF5bG9hZChwaWQpCiAgICBpZiBub3QgcGF5bG9hZCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIG9rLCBlbmMgPSBwY2FsbChmdW5jdGlvbigpCiAgICAgICAgcmV0dXJuIEpTT04uZW5jb2RlKHBheWxvYWQpCiAgICBlbmQpCiAgICBpZiBub3Qgb2sgb3Igbm90IGVuYyBvciBlbmMgPT0gIiIgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCgogICAgVXRpbDpTZW5kMkpzSUQoIlVJX0hlcm9DYXJkIiwgeyBqID0gZW5jIH0sIHJlcXVlc3Rlcl9pZCkKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+local function state_ok(v)
+    return v == true or v == 1
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+local function attr_int(x)
+    x = tonumber(x) or 0
+    return math.floor(x)
+end
+
+-- 5v5：side + gid；1v10：row（与 Stat.js / Stat.Public 一致）
+function HeroCard:ResolvePlayerIdFromSlot(data)
+    if not data then
+        return
+    end
+    local gt = MainGame:GetGameType()
+    if gt == 1 or gt == 3 then
+        local side = tonumber(data.side)
+        local gid = tonumber(data.gid)
+        if not side or not gid then
+            return
+        end
+        local team = Stat.Public.list["team_" .. side]
+        if not team or not team.list then
+            return
+        end
+        local p = team.list["player_" .. gid]
+        if p and state_ok(p.state) and p.id and p.id >= 0 then
+            return p.id
+        end
+    elseif gt == 2 then
+        local row = tonumber(data.row)
+        if not row or row < 1 or row > 10 then
+            return
+        end
+        local teams = {}
+        for i = 1, 10 do
+            local tk = "team_" .. i
+            local td = Stat.Public.list[tk]
+            if td and state_ok(td.state) then
+                table.insert(teams, td)
+            end
+        end
+        table.sort(teams, function(a, b)
+            local ra = a.rank or 999
+            local rb = b.rank or 999
+            if ra ~= rb then
+                return ra < rb
+            end
+            return (a.team or 0) < (b.team or 0)
+        end)
+        local td = teams[row]
+        if not td or not td.team or not td.list then
+            return
+        end
+        local p = td.list["player_" .. td.team]
+        if p and state_ok(p.state) and p.id and p.id >= 0 then
+            return p.id
+        end
+    end
+end
+
+-- 简化版：只发卡片展示需要的字段，减少 JSON 体积与前端复杂度
+function HeroCard:BuildPayload(pid)
+    if pid == nil or pid < 0 then
+        return
+    end
+    local init_data = InitPlayer:GetPlayerData(pid)
+    if not init_data then
+        return
+    end
+    local hero = HeroData:GetHero(pid)
+    local valid_hero = hero and not hero:IsNull()
+
+    local level = 1
+    local hp, hp_max, mana, mana_max = 0, 0, 0, 0
+    local atk, armor = 0, 0
+    local str, agi, int = 0, 0, 0
+    if valid_hero then
+        -- 先同步 hero_attr -> modifier_attr_buff（OnRefresh 内会调 BaseGjl 对齐 jcgj / modifier_gjljc），再算加成与攻击力
+        HeroData:RefreshModifier(hero)
+        hero:CalculateStatBonus(true)
+        level = hero:GetLevel()
+        hp = attr_int(Util:GetHealth(hero) or 0)
+        hp_max = attr_int(Util:GetMaxHealth(hero) or 0)
+        mana = attr_int(hero:GetMana() or 0)
+        mana_max = attr_int(hero:GetMaxMana() or 0)
+        atk = attr_int(Util:GetAverageTrueAttackDamage(hero))
+        armor = attr_int(hero:GetPhysicalArmorValue(false) or 0)
+        str = attr_int(hero:GetStrength() or 0)
+        agi = attr_int(hero:GetAgility() or 0)
+        int = attr_int(hero:GetIntellect(false) or 0)
+    end
+    local item_list = {
+        slot_1 = "",
+        slot_2 = "",
+        slot_3 = "",
+        slot_4 = "",
+        slot_5 = "",
+        slot_6 = "",
+
+    }
+    if valid_hero then
+        for i = 0, 5 do
+            local nm = ""
+            local it = hero:GetItemInSlot(i)
+            if it and not it:IsNull() then
+                nm = it:GetName() or ""
+            end
+            local slot_key = "slot_" .. (i + 1)
+            item_list[slot_key] = nm
+        end
+    end
+
+    return {
+        id = pid,
+        hero_name = init_data.hero_name or "",
+        bot = init_data.bot and 1 or 0,
+        level = level,
+        hp = hp,
+        hp_max = hp_max,
+        mana = mana,
+        mana_max = mana_max,
+        atk = atk,
+        armor = armor,
+        str = str,
+        agi = agi,
+        int = int,
+        item_list = item_list,
+    }
+end
+
+function HeroCard:PushPeerCardToPlayer(requester_id, data)
+    if not requester_id or not data then
+        return
+    end
+    local gt = MainGame and MainGame:GetGameType() or -1
+    local pid = self:ResolvePlayerIdFromSlot(data)
+    if not pid then
+        return
+    end
+    local payload = self:BuildPayload(pid)
+    if not payload then
+        return
+    end
+    local ok, enc = pcall(function()
+        return JSON.encode(payload)
+    end)
+    if not ok or not enc or enc == "" then
+        return
+    end
+
+    Util:Send2JsID("UI_HeroCard", { j = enc }, requester_id)
+end

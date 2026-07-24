@@ -8,22 +8,600 @@
 ]]
 
 
-local encoded=[[LS0gaWYgbW9kaWZpZXJfdGFsZW50XzIgPT0gbmlsIHRoZW4KLS0gICAgIG1vZGlmaWVyX3RhbGVudF8yID0gY2xhc3Moe30pCi0tIGVuZAotLSBmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMjpJc0RlYnVmZigpCi0tICAgICByZXR1cm4gZmFsc2UKLS0gZW5kCgotLSBmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMjpJc0hpZGRlbigpCi0tICAgICByZXR1cm4gdHJ1ZQotLSBlbmQKCi0tIGZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yOlJlbW92ZU9uRGVhdGgoKQotLSAgICAgcmV0dXJuIGZhbHNlCi0tIGVuZAoKLS0gZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzI6SXNQZXJtYW5lbnQoKSByZXR1cm4gdHJ1ZSBlbmQgLS0g56Gu5L+d5a6i5oi356uv5ZCM5q2lCgotLSBmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMjpPbkNyZWF0ZWQoa3YpCi0tICAgICBpZiBJc1NlcnZlcigpIHRoZW4KLS0gICAgICAgICBzZWxmOkZvcmNlUmVmcmVzaCgpCi0tICAgICBlbmQKLS0gZW5kCgotLSAtLSDliLfmlrBtb2RpZmllcgotLSBmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMjpPblJlZnJlc2goa3YpCi0tICAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuIHJldHVybiBlbmQKLS0gICAgIGxvY2FsIGhlcm8gPSBzZWxmOkdldFBhcmVudCgpCi0tICAgICBsb2NhbCBJRCA9IFV0aWw6SGVybzJJRChoZXJvKQotLSAgICAgc2VsZi5scWpzID0gSGVyb0RhdGEuRGF0YVtJRF0uaGVyb19hdHRyLmxxanMKLS0gICAgIHNlbGY6U2V0U3RhY2tDb3VudChzZWxmLmxxanMpCi0tICAgICBoZXJvOkNhbGN1bGF0ZVN0YXRCb251cyh0cnVlKQotLSBlbmQKCi0tIGZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yOkdldE1vZGlmaWVyUGVyY2VudGFnZUNvb2xkb3duKCkKLS0gICAgIGxvY2FsIGNvdW50ID0gc2VsZjpHZXRTdGFja0NvdW50KCkKLS0gICAgIHJldHVybiBjb3VudAotLSBlbmQKCi0tIC0tIOazqOWGjOS8pOWus+ebkeWQrOS6i+S7tgotLSBmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMjpEZWNsYXJlRnVuY3Rpb25zKCkKLS0gICAgIHJldHVybiB7Ci0tICAgICAgICAgTU9ESUZJRVJfRVZFTlRfT05fQVRUQUNLRUQsIC0tIOebkeWQrOWPl+WIsOS8pOWus+S6i+S7tgotLSAgICAgICAgIE1PRElGSUVSX1BST1BFUlRZX0NPT0xET1dOX1BFUkNFTlRBR0UsCi0tICAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfTU9WRVNQRUVEX0JPTlVTX0NPTlNUQU5ULAotLSAgICAgfQotLSBlbmQKCi0tIC0tIOWkhOeQhuS8pOWus+S6i+S7tgotLSBmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMjpPbkF0dGFja2VkKGtleXMpCi0tICAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuIHJldHVybiBlbmQKLS0gICAgIGxvY2FsIHBhcmVudCAgID0gc2VsZjpHZXRQYXJlbnQoKQotLSAgICAgbG9jYWwgYXR0YWNrZXIgPSBrZXlzLmF0dGFja2VyCi0tICAgICBsb2NhbCB0YXJnZXQgICA9IGtleXMudGFyZ2V0Ci0tICAgICAtLSDmo4Dmn6XmmK/lkKbmmK/ooqvmraTljZXkvY3mlLvlh7sKLS0gICAgIGlmIHRhcmdldCB+PSBwYXJlbnQgdGhlbgotLSAgICAgICAgIHJldHVybgotLSAgICAgZW5kCi0tICAgICAtLSDmo4Dmn6XmlLvlh7vogIXmmK/lkKbmnInmlYgKLS0gICAgIGlmIG5vdCBhdHRhY2tlciBvciBhdHRhY2tlcjpJc051bGwoKSBvciBub3QgYXR0YWNrZXI6SXNBbGl2ZSgpIHRoZW4KLS0gICAgICAgICByZXR1cm4KLS0gICAgIGVuZAotLSAgICAgaWYgcGFyZW50OklzSGVybygpIHRoZW4KLS0gICAgICAgICAtLeWmguaenOW8gOS6hmJrYuWwseaXoOS8pAotLSAgICAgICAgIGlmIGF0dGFja2VyOkhhc01vZGlmaWVyKCJtb2RpZmllcl9lcXVpcF8xIikgdGhlbgotLSAgICAgICAgICAgICByZXR1cm4KLS0gICAgICAgICBlbmQKLS0gICAgICAgICBsb2NhbCBJRCA9IFV0aWw6SGVybzJJRChwYXJlbnQpCi0tICAgICAgICAgaWYgSUQgdGhlbgotLSAgICAgICAgICAgICBsb2NhbCBsZXZlbCA9IFRhbGVudC5EYXRhW0lEXS5sZXZlbAotLSAgICAgICAgICAgICBsb2NhbCBkYW0gPSAwCi0tICAgICAgICAgICAgIGxvY2FsIG51bSA9IDAKLS0gICAgICAgICAgICAgaWYgbGV2ZWwgPT0gMCB0aGVuCi0tICAgICAgICAgICAgICAgICBkYW0gPSA0MAotLSAgICAgICAgICAgICAgICAgbnVtID0gMC4yCi0tICAgICAgICAgICAgIGVuZAotLSAgICAgICAgICAgICBpZiBsZXZlbCA9PSAxIHRoZW4KLS0gICAgICAgICAgICAgICAgIGRhbSA9IDYwCi0tICAgICAgICAgICAgICAgICBudW0gPSAwLjI1Ci0tICAgICAgICAgICAgIGVuZAotLSAgICAgICAgICAgICBpZiBsZXZlbCA9PSAyIHRoZW4KLS0gICAgICAgICAgICAgICAgIGRhbSA9IDgwCi0tICAgICAgICAgICAgICAgICBudW0gPSAwLjMKLS0gICAgICAgICAgICAgZW5kCi0tICAgICAgICAgICAgIGlmIGxldmVsID09IDMgdGhlbgotLSAgICAgICAgICAgICAgICAgZGFtID0gMTAwCi0tICAgICAgICAgICAgICAgICBudW0gPSAwLjM1Ci0tICAgICAgICAgICAgIGVuZAotLSAgICAgICAgICAgICBpZiBsZXZlbCA9PSA0IHRoZW4KLS0gICAgICAgICAgICAgICAgIGRhbSA9IDEyMAotLSAgICAgICAgICAgICAgICAgbnVtID0gMC40Ci0tICAgICAgICAgICAgIGVuZAotLSAgICAgICAgICAgICBpZiBsZXZlbCA9PSA1IHRoZW4KLS0gICAgICAgICAgICAgICAgIGRhbSA9IDE1MAotLSAgICAgICAgICAgICAgICAgbnVtID0gMC41Ci0tICAgICAgICAgICAgIGVuZAotLSAgICAgICAgICAgICBsb2NhbCBzdHJfZGFtID0gcGFyZW50OkdldFN0cmVuZ3RoKCkgKiBudW0KLS0gICAgICAgICAgICAgbG9jYWwgdG90YWxfZGFtID0gZGFtICsgc3RyX2RhbQotLSAgICAgICAgICAgICBsb2NhbCBqbnpxID0gdGFyZ2V0OkdldFNwZWxsQW1wbGlmaWNhdGlvbihmYWxzZSkKLS0gICAgICAgICAgICAgbG9jYWwgbnVtMSA9IG1hdGguZmxvb3Ioam56cSAqIDEwMCkKLS0gICAgICAgICAgICAgaWYgbnVtMSA+IDAgdGhlbgotLSAgICAgICAgICAgICAgICAgZGFtID0gZGFtIC8gKDEgKyAobnVtMSAvIDEwMCkpCi0tICAgICAgICAgICAgIGVuZAotLSAgICAgICAgICAgICBsb2NhbCBub19hbXAgPSByYXdnZXQoX0csICJET1RBX0RBTUFHRV9GTEFHX05PX1NQRUxMX0FNUExJRklDQVRJT04iKQotLSAgICAgICAgICAgICBpZiBub3Qgbm9fYW1wIHRoZW4gbm9fYW1wID0gMTAyNCBlbmQKLS0gICAgICAgICAgICAgbG9jYWwgZGFtYWdlX3RhYmxlID0gewotLSAgICAgICAgICAgICAgICAgYXR0YWNrZXIgPSBwYXJlbnQsCi0tICAgICAgICAgICAgICAgICB2aWN0aW0gPSBhdHRhY2tlciwKLS0gICAgICAgICAgICAgICAgIGRhbWFnZSA9IHRvdGFsX2RhbSwKLS0gICAgICAgICAgICAgICAgIGRhbWFnZV90eXBlID0gREFNQUdFX1RZUEVfUFVSRSwKLS0gICAgICAgICAgICAgICAgIGRhbWFnZV9mbGFncyA9IG5vX2FtcCwKLS0gICAgICAgICAgICAgfQotLSAgICAgICAgICAgICBsb2NhbCBmbl9lbnRlciA9IHJhd2dldChfRywgIkNscmJEbWdfRmlsdGVyX1RhbGVudDNBdXJhSXNvbGF0aW9uX0VudGVyIikKLS0gICAgICAgICAgICAgbG9jYWwgZm5fbGVhdmUgPSByYXdnZXQoX0csICJDbHJiRG1nX0ZpbHRlcl9UYWxlbnQzQXVyYUlzb2xhdGlvbl9MZWF2ZSIpCi0tICAgICAgICAgICAgIGlmIGZuX2VudGVyIHRoZW4gZm5fZW50ZXIoKSBlbmQKLS0gICAgICAgICAgICAgbG9jYWwgb2syLCBlcnIyID0gcGNhbGwoZnVuY3Rpb24oKQotLSAgICAgICAgICAgICAgICAgQXBwbHlEYW1hZ2UoZGFtYWdlX3RhYmxlKQotLSAgICAgICAgICAgICBlbmQpCi0tICAgICAgICAgICAgIGlmIGZuX2xlYXZlIHRoZW4gZm5fbGVhdmUoKSBlbmQKLS0gICAgICAgICAgICAgaWYgbm90IG9rMiB0aGVuCi0tICAgICAgICAgICAgICAgICBwcmludCgiW21vZGlmaWVyX3RhbGVudF8yXSBBcHBseURhbWFnZTogIiAuLiB0b3N0cmluZyhlcnIyKSkKLS0gICAgICAgICAgICAgZW5kCi0tICAgICAgICAgZW5kCi0tICAgICBlbmQKLS0gZW5kCgotLSBmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMjpHZXRNb2RpZmllck1vdmVTcGVlZEJvbnVzX0NvbnN0YW50KCkKLS0gICAgIHJldHVybiA1MAotLSBlbmQKCi0tIC0tIOiNhuajmOiAheS5i+eUsu+8mjYwMCDnoIHlhoXpmY3kvY7mlYzkurogMzAlIOWQuOihgOS4jumDqOWIhuayu+eWl+aViOaenO+8iOS4juW8leaTjuaUr+aMgeeahOWinuW5hemhueS4gOiHtO+8iQotLSAtLSDlr7npvZDlhrDnnLwgQ29sZCBBdHRhY2sg77ya5a+544CM55Sf5ZG95YC85oGi5aSN44CN57G75pWI5p6c77yISHBSZWdlbi/mlLvlh7vlkLjooYAv5rOV5pyv5ZC46KGA77yJ55So6LSf5ZCRIEFtcGxpZnnvvIwKLS0gLS0gaXRlbXMudHh0IGl0ZW1fc2thZGkg55qEIHJlc3RvcmF0aW9uX3JlZHVjdGlvbiDlnKjlvJXmk47lhoXlkIzlsZ7mraTnsbvloIblj6Dot6/lvoTjgIIKLS0gZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzI6SXNBdXJhKCkKLS0gICAgIHJldHVybiB0cnVlCi0tIGVuZAoKLS0gZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzI6R2V0QXVyYVJhZGl1cygpCi0tICAgICByZXR1cm4gNjAwCi0tIGVuZAoKLS0gZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzI6R2V0TW9kaWZpZXJBdXJhKCkKLS0gICAgIHJldHVybiAibW9kaWZpZXJfdGFsZW50XzJfYXVyYV9kZWJ1ZmYiCi0tIGVuZAoKLS0gZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzI6R2V0QXVyYVNlYXJjaFRlYW0oKQotLSAgICAgcmV0dXJuIERPVEFfVU5JVF9UQVJHRVRfVEVBTV9FTkVNWQotLSBlbmQKCi0tIGZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yOkdldEF1cmFTZWFyY2hUeXBlKCkKLS0gICAgIHJldHVybiBET1RBX1VOSVRfVEFSR0VUX0hFUk8gKyBET1RBX1VOSVRfVEFSR0VUX0JBU0lDCi0tIGVuZAoKLS0gZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzI6R2V0QXVyYVNlYXJjaEZsYWdzKCkKLS0gICAgIHJldHVybiBET1RBX1VOSVRfVEFSR0VUX0ZMQUdfTk9ORQotLSBlbmQKCi0tIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KLS0gLS0g5YWJ546vIGRlYnVmZu+8mumZjeS9juWQuOihgCAvIOaKgOiDveWQuOihgCAvIOeUn+WRveaBouWkjeS4juWPl+ayu+eWl+ebuOWFs+WinuW5hQotLSAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCi0tIGlmIG1vZGlmaWVyX3RhbGVudF8yX2F1cmFfZGVidWZmID09IG5pbCB0aGVuCi0tICAgICBtb2RpZmllcl90YWxlbnRfMl9hdXJhX2RlYnVmZiA9IGNsYXNzKHt9KQotLSBlbmQKCi0tIGZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yX2F1cmFfZGVidWZmOklzRGVidWZmKCkKLS0gICAgIHJldHVybiB0cnVlCi0tIGVuZAoKLS0gZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzJfYXVyYV9kZWJ1ZmY6SXNIaWRkZW4oKQotLSAgICAgcmV0dXJuIGZhbHNlCi0tIGVuZAoKLS0gZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzJfYXVyYV9kZWJ1ZmY6SXNQdXJnYWJsZSgpCi0tICAgICByZXR1cm4gZmFsc2UKLS0gZW5kCgotLSBmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMl9hdXJhX2RlYnVmZjpSZW1vdmVPbkRlYXRoKCkKLS0gICAgIHJldHVybiB0cnVlCi0tIGVuZAoKLS0gZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzJfYXVyYV9kZWJ1ZmY6RGVjbGFyZUZ1bmN0aW9ucygpCi0tICAgICByZXR1cm4gewotLSAgICAgICAgIE1PRElGSUVSX1BST1BFUlRZX0xJRkVTVEVBTF9BTVBMSUZZX1BFUkNFTlRBR0UsCi0tICAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfU1BFTExfTElGRVNURUFMX0FNUExJRllfUEVSQ0VOVEFHRSwKLS0gICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9IUF9SRUdFTl9BTVBMSUZZX1BFUkNFTlRBR0UsCi0tICAgICB9Ci0tIGVuZAoKLS0gLS0g5b+F6aG75L2/55SoIENET1RBX01vZGlmaWVyX0x1YSDnuqblrprlkI3vvJoKLS0gLS0gTU9ESUZJRVJfUFJPUEVSVFlfTElGRVNURUFMX0FNUExJRllfUEVSQ0VOVEFHRSDihpIgR2V0TW9kaWZpZXJMaWZlc3RlYWxBbXBsaWZ5X1BlcmNlbnRhZ2XvvIjli7/lhpnmiJAgTGlmZXN0ZWFsUmVnZW7igKbvvIkKLS0gLS0gTU9ESUZJRVJfUFJPUEVSVFlfU1BFTExfTElGRVNURUFMX0FNUExJRllfUEVSQ0VOVEFHRSDihpIgR2V0TW9kaWZpZXJTcGVsbExpZmVzdGVhbEFtcGxpZnlfUGVyY2VudGFnZQotLSAtLSBmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMl9hdXJhX2RlYnVmZjpHZXRNb2RpZmllckxpZmVzdGVhbFJlZ2VuQW1wbGlmeV9QZXJjZW50YWdlKCkKLS0gLS0gICAgIHJldHVybiAtMzAKLS0gLS0gZW5kCgotLSAtLSBmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMl9hdXJhX2RlYnVmZjpHZXRNb2RpZmllclNwZWxsTGlmZXN0ZWFsUmVnZW5BbXBsaWZ5X1BlcmNlbnRhZ2VfVW5pcXVlKCkKLS0gLS0gICAgIHJldHVybiAtMzAKLS0gLS0gZW5kCgotLSBmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMl9hdXJhX2RlYnVmZjpHZXRNb2RpZmllckhQUmVnZW5BbXBsaWZ5X1BlcmNlbnRhZ2UoKQotLSAgICAgcmV0dXJuIC0zMAotLSBlbmQKCi0tIGZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yX2F1cmFfZGVidWZmOkdldE1vZGlmaWVyTGlmZXN0ZWFsQW1wbGlmeV9QZXJjZW50YWdlKCkKLS0gICAgIHJldHVybiAtMzAKLS0gZW5kCgotLSBmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMl9hdXJhX2RlYnVmZjpHZXRNb2RpZmllclNwZWxsTGlmZXN0ZWFsQW1wbGlmeV9QZXJjZW50YWdlKCkKLS0gICAgIHJldHVybiAtMzAKLS0gZW5kCmlmIG1vZGlmaWVyX3RhbGVudF8yID09IG5pbCB0aGVuCiAgICBtb2RpZmllcl90YWxlbnRfMiA9IGNsYXNzKHt9KQplbmQKCkxpbmtMdWFNb2RpZmllcigibW9kaWZpZXJfdGFsZW50XzJfbGlmZXN0ZWFsX2F1cmFfZGVidWZmIiwgImluZ2FtZS9tb2RpZmllci9tb2RpZmllcl90YWxlbnRfMiIsIExVQV9NT0RJRklFUl9NT1RJT05fTk9ORSkKTGlua0x1YU1vZGlmaWVyKCJtb2RpZmllcl90YWxlbnRfMl9saWZlc3RlYWxfaGl0X2RlYnVmZiIsICJpbmdhbWUvbW9kaWZpZXIvbW9kaWZpZXJfdGFsZW50XzIiLCBMVUFfTU9ESUZJRVJfTU9USU9OX05PTkUpCgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCi0tIOS4uyBtb2RpZmllcgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yOklzRGVidWZmKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yOklzSGlkZGVuKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzI6UmVtb3ZlT25EZWF0aCgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMjpJc1Blcm1hbmVudCgpCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yOk9uQ3JlYXRlZChrdikKICAgIGlmIElzU2VydmVyKCkgdGhlbgogICAgICAgIHNlbGY6Rm9yY2VSZWZyZXNoKCkKICAgIGVuZAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yOk9uUmVmcmVzaChrdikKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGxvY2FsIGhlcm8gPSBzZWxmOkdldFBhcmVudCgpCiAgICBsb2NhbCBJRCA9IFV0aWw6SGVybzJJRChoZXJvKQoKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBpZiBub3QgSGVyb0RhdGEgb3Igbm90IEhlcm9EYXRhLkRhdGEgb3Igbm90IEhlcm9EYXRhLkRhdGFbSURdIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGlmIG5vdCBIZXJvRGF0YS5EYXRhW0lEXS5oZXJvX2F0dHIgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCgogICAgc2VsZi5scWpzID0gSGVyb0RhdGEuRGF0YVtJRF0uaGVyb19hdHRyLmxxanMgb3IgMAogICAgc2VsZjpTZXRTdGFja0NvdW50KHNlbGYubHFqcykKCiAgICBoZXJvOkNhbGN1bGF0ZVN0YXRCb251cyh0cnVlKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yOkRlY2xhcmVGdW5jdGlvbnMoKQogICAgcmV0dXJuIHtNT0RJRklFUl9FVkVOVF9PTl9BVFRBQ0tFRCwgTU9ESUZJRVJfRVZFTlRfT05fVEFLRURBTUFHRSwgTU9ESUZJRVJfUFJPUEVSVFlfQ09PTERPV05fUEVSQ0VOVEFHRX0KZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMjpHZXRNb2RpZmllclBlcmNlbnRhZ2VDb29sZG93bigpCiAgICByZXR1cm4gc2VsZjpHZXRTdGFja0NvdW50KCkKZW5kCgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCi0tIDYwMCDojIPlm7Tlh4/lkLjooYAgLyDlh4/lm57ooYDlhYnnjq8KLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMjpJc0F1cmEoKQogICAgcmV0dXJuIHRydWUKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMjpHZXRBdXJhUmFkaXVzKCkKICAgIHJldHVybiA2MDAKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMjpHZXRNb2RpZmllckF1cmEoKQogICAgcmV0dXJuICJtb2RpZmllcl90YWxlbnRfMl9saWZlc3RlYWxfYXVyYV9kZWJ1ZmYiCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzI6R2V0QXVyYVNlYXJjaFRlYW0oKQogICAgcmV0dXJuIERPVEFfVU5JVF9UQVJHRVRfVEVBTV9FTkVNWQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yOkdldEF1cmFTZWFyY2hUeXBlKCkKICAgIC0tIOWPque7meaVjOaWueiLsembhO+8jOS4jee7meWwj+WFtSAvIOmHjuaAqiAvIOWPrOWUpOeJqQogICAgcmV0dXJuIERPVEFfVU5JVF9UQVJHRVRfSEVSTwplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yOkdldEF1cmFTZWFyY2hGbGFncygpCiAgICByZXR1cm4gRE9UQV9VTklUX1RBUkdFVF9GTEFHX05PTkUKZW5kCgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCi0tIOiiq+aZrumAmuaUu+WHu+aXtuinpuWPkeWPjeS8pAotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yOk9uQXR0YWNrZWQoa2V5cykKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGxvY2FsIHBhcmVudCA9IHNlbGY6R2V0UGFyZW50KCkKICAgIGxvY2FsIGF0dGFja2VyID0ga2V5cy5hdHRhY2tlcgogICAgbG9jYWwgdGFyZ2V0ID0ga2V5cy50YXJnZXQKCiAgICAtLSDlv4XpobvmmK/oh6rlt7HooqvmlLvlh7sKICAgIGlmIHRhcmdldCB+PSBwYXJlbnQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCgogICAgLS0g5pS75Ye76ICF5peg5pWICiAgICBpZiBub3QgYXR0YWNrZXIgb3IgYXR0YWNrZXI6SXNOdWxsKCkgb3Igbm90IGF0dGFja2VyOklzQWxpdmUoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICAtLSDoh6rlt7HmlLvlh7voh6rlt7HkuI3lpITnkIYKICAgIGlmIGF0dGFja2VyID09IHBhcmVudCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICAtLSDlj6rmnInoi7Hpm4TmjIHmnInor6UgbW9kaWZpZXIg5pe25omN5Y+N5LykCiAgICBpZiBub3QgcGFyZW50OklzSGVybygpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIC0tIOWmguaenOaUu+WHu+iAheW8gOS6hiBia2IgLyBtb2RpZmllcl9lcXVpcF8x77yM5YiZ5LiN5Y+N5LykCiAgICBpZiBhdHRhY2tlcjpIYXNNb2RpZmllcigibW9kaWZpZXJfZXF1aXBfMSIpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGxvY2FsIElEID0gVXRpbDpIZXJvMklEKHBhcmVudCkKCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCgogICAgaWYgbm90IFRhbGVudCBvciBub3QgVGFsZW50LkRhdGEgb3Igbm90IFRhbGVudC5EYXRhW0lEXSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBsb2NhbCBsZXZlbCA9IFRhbGVudC5EYXRhW0lEXS5sZXZlbCBvciAwCiAgICBsb2NhbCBkYW0gPSAwCiAgICBsb2NhbCBudW0gPSAwCgogICAgLS0g5Zu65a6a5Lyk5a6zICsg5Yqb6YePIMOXIOeZvuWIhuavlO+8iDUl4oaSMzAl77yM5q+P57qnICs1Je+8iQogICAgaWYgbGV2ZWwgPT0gMCB0aGVuCiAgICAgICAgZGFtID0gNDAKICAgICAgICBudW0gPSAwLjA1CiAgICBlbHNlaWYgbGV2ZWwgPT0gMSB0aGVuCiAgICAgICAgZGFtID0gNjAKICAgICAgICBudW0gPSAwLjEKICAgIGVsc2VpZiBsZXZlbCA9PSAyIHRoZW4KICAgICAgICBkYW0gPSA4MAogICAgICAgIG51bSA9IDAuMTUKICAgIGVsc2VpZiBsZXZlbCA9PSAzIHRoZW4KICAgICAgICBkYW0gPSAxMDAKICAgICAgICBudW0gPSAwLjIKICAgIGVsc2VpZiBsZXZlbCA9PSA0IHRoZW4KICAgICAgICBkYW0gPSAxMjAKICAgICAgICBudW0gPSAwLjI1CiAgICBlbHNlaWYgbGV2ZWwgPT0gNSB0aGVuCiAgICAgICAgZGFtID0gMTUwCiAgICAgICAgbnVtID0gMC4zCiAgICBlbHNlCiAgICAgICAgZGFtID0gMTUwCiAgICAgICAgbnVtID0gMC4zCiAgICBlbmQKCiAgICBsb2NhbCBzdHJfZGFtID0gcGFyZW50OkdldFN0cmVuZ3RoKCkgKiBudW0KICAgIGxvY2FsIHRvdGFsX2RhbSA9IGRhbSArIHN0cl9kYW0KCiAgICBsb2NhbCBub19hbXAgPSByYXdnZXQoX0csICJET1RBX0RBTUFHRV9GTEFHX05PX1NQRUxMX0FNUExJRklDQVRJT04iKQogICAgaWYgbm90IG5vX2FtcCB0aGVuCiAgICAgICAgbm9fYW1wID0gMTAyNAogICAgZW5kCgogICAgbG9jYWwgcmVmbGVjdGlvbl9mbGFnID0gcmF3Z2V0KF9HLCAiRE9UQV9EQU1BR0VfRkxBR19SRUZMRUNUSU9OIikKICAgIGlmIG5vdCByZWZsZWN0aW9uX2ZsYWcgdGhlbgogICAgICAgIHJlZmxlY3Rpb25fZmxhZyA9IDE2CiAgICBlbmQKCiAgICBsb2NhbCBmaW5hbF9kYW1hZ2VfZmxhZ3MgPSBub19hbXAgKyByZWZsZWN0aW9uX2ZsYWcKCiAgICBsb2NhbCBkYW1hZ2VfdGFibGUgPSB7CiAgICAgICAgYXR0YWNrZXIgPSBwYXJlbnQsCiAgICAgICAgdmljdGltID0gYXR0YWNrZXIsCiAgICAgICAgZGFtYWdlID0gdG90YWxfZGFtLAogICAgICAgIGRhbWFnZV90eXBlID0gREFNQUdFX1RZUEVfUFVSRSwKICAgICAgICBkYW1hZ2VfZmxhZ3MgPSBmaW5hbF9kYW1hZ2VfZmxhZ3MKICAgIH0KCiAgICBsb2NhbCBmbl9lbnRlciA9IHJhd2dldChfRywgIkNscmJEbWdfRmlsdGVyX1RhbGVudDNBdXJhSXNvbGF0aW9uX0VudGVyIikKICAgIGxvY2FsIGZuX2xlYXZlID0gcmF3Z2V0KF9HLCAiQ2xyYkRtZ19GaWx0ZXJfVGFsZW50M0F1cmFJc29sYXRpb25fTGVhdmUiKQoKICAgIGlmIGZuX2VudGVyIHRoZW4KICAgICAgICBmbl9lbnRlcigpCiAgICBlbmQKCiAgICBsb2NhbCBvazIsIGVycjIgPSBwY2FsbChmdW5jdGlvbigpCiAgICAgICAgQXBwbHlEYW1hZ2UoZGFtYWdlX3RhYmxlKQogICAgZW5kKQoKICAgIGlmIGZuX2xlYXZlIHRoZW4KICAgICAgICBmbl9sZWF2ZSgpCiAgICBlbmQKCiAgICBpZiBub3Qgb2syIHRoZW4KICAgICAgICAtLSBwcmludCgiW21vZGlmaWVyX3RhbGVudF8yXSBBcHBseURhbWFnZTogIiAuLiB0b3N0cmluZyhlcnIyKSkKICAgICAgICBpZiBTZXJ2ZXIgYW5kIFNlcnZlci5TZW5kRXJyb3IgdGhlbgogICAgICAgICAgICBTZXJ2ZXI6U2VuZEVycm9yKHRvc3RyaW5nKGVycjIpLCAibW9kaWZpZXJfdGFsZW50XzI6QXBwbHlEYW1hZ2UiKQogICAgICAgIGVuZAogICAgZW5kCmVuZAoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQotLSDoh6rlt7Hlj5fliLDkvKTlrrPml7bvvIznu5nkvKTlrrPmnaXmupDoi7Hpm4Tmt7vliqAgMS41IOenkiBkZWJ1ZmYKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMjpPblRha2VEYW1hZ2Uoa2V5cykKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGxvY2FsIHBhcmVudCA9IHNlbGY6R2V0UGFyZW50KCkKICAgIGxvY2FsIHZpY3RpbSA9IGtleXMudW5pdAogICAgbG9jYWwgYXR0YWNrZXIgPSBrZXlzLmF0dGFja2VyCiAgICBsb2NhbCBkYW1hZ2UgPSBrZXlzLmRhbWFnZSBvciAwCiAgICBsb2NhbCBkYW1hZ2VfZmxhZ3MgPSBrZXlzLmRhbWFnZV9mbGFncyBvciAwCgogICAgLS0g5b+F6aG75piv6Ieq5bex5Y+X5Yiw5Lyk5a6zCiAgICBpZiB2aWN0aW0gfj0gcGFyZW50IHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIC0tIOayoeacieWunumZheS8pOWus+S4jeinpuWPkQogICAgaWYgZGFtYWdlIDw9IDAgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCgogICAgLS0g5pS75Ye76ICF5peg5pWICiAgICBpZiBub3QgYXR0YWNrZXIgb3IgYXR0YWNrZXI6SXNOdWxsKCkgb3Igbm90IGF0dGFja2VyOklzQWxpdmUoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICAtLSDoh6rlt7HpgKDmiJDnmoTkvKTlrrPkuI3op6blj5EKICAgIGlmIGF0dGFja2VyID09IHBhcmVudCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICAtLSDov4fmu6Tlj43kvKTkvKTlrrPvvIzpgb/lhY3lj43kvKTlho3mrKHop6blj5EgT25UYWtlRGFtYWdlCiAgICBsb2NhbCByZWZsZWN0aW9uX2ZsYWcgPSByYXdnZXQoX0csICJET1RBX0RBTUFHRV9GTEFHX1JFRkxFQ1RJT04iKQogICAgaWYgbm90IHJlZmxlY3Rpb25fZmxhZyB0aGVuCiAgICAgICAgcmVmbGVjdGlvbl9mbGFnID0gMTYKICAgIGVuZAoKICAgIGlmIGJpdCBhbmQgYml0LmJhbmQgdGhlbgogICAgICAgIGlmIGJpdC5iYW5kKGRhbWFnZV9mbGFncywgcmVmbGVjdGlvbl9mbGFnKSB+PSAwIHRoZW4KICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICBlbmQKCiAgICAtLSDlpoLmnpzmlLvlh7vogIXlvIDkuoYgYmtiIC8gbW9kaWZpZXJfZXF1aXBfMe+8jOWImeS4jee7mSBkZWJ1ZmYKICAgIGlmIGF0dGFja2VyOkhhc01vZGlmaWVyKCJtb2RpZmllcl9lcXVpcF8xIikgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCgogICAgLS0g5Y+q57uZ6Iux6ZuE5re75YqgIDEuNSDnp5IgZGVidWZmCiAgICBpZiBhdHRhY2tlcjpJc0hlcm8oKSB0aGVuCiAgICAgICAgaWYgYXR0YWNrZXI6SGFzTW9kaWZpZXIoIm1vZGlmaWVyX3RhbGVudF8yX2xpZmVzdGVhbF9hdXJhX2RlYnVmZiIpIHRoZW4KICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCgogICAgICAgIGxvY2FsIGRlYnVmZiA9IGF0dGFja2VyOkZpbmRNb2RpZmllckJ5TmFtZSgibW9kaWZpZXJfdGFsZW50XzJfbGlmZXN0ZWFsX2hpdF9kZWJ1ZmYiKQoKICAgICAgICBpZiBkZWJ1ZmYgdGhlbgogICAgICAgICAgICBkZWJ1ZmY6U2V0RHVyYXRpb24oMS41LCB0cnVlKQogICAgICAgIGVsc2UKICAgICAgICAgICAgYXR0YWNrZXI6QWRkTmV3TW9kaWZpZXIocGFyZW50LCBzZWxmOkdldEFiaWxpdHkoKSwgIm1vZGlmaWVyX3RhbGVudF8yX2xpZmVzdGVhbF9oaXRfZGVidWZmIiwgewogICAgICAgICAgICAgICAgZHVyYXRpb24gPSAxLjUKICAgICAgICAgICAgfSkKICAgICAgICBlbmQKICAgIGVuZAoKZW5kCgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCi0tIDYwMCDnoIHlhYnnjq8gZGVidWZmCi0tIOi0n+i0o+iMg+WbtOWGheaMgee7reWHj+WQuOihgCAvIOWHj+WbnuihgAotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCmlmIG1vZGlmaWVyX3RhbGVudF8yX2xpZmVzdGVhbF9hdXJhX2RlYnVmZiA9PSBuaWwgdGhlbgogICAgbW9kaWZpZXJfdGFsZW50XzJfbGlmZXN0ZWFsX2F1cmFfZGVidWZmID0gY2xhc3Moe30pCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzJfbGlmZXN0ZWFsX2F1cmFfZGVidWZmOklzRGVidWZmKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzJfbGlmZXN0ZWFsX2F1cmFfZGVidWZmOklzSGlkZGVuKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yX2xpZmVzdGVhbF9hdXJhX2RlYnVmZjpHZXRUZXh0dXJlKCkKICAgIHJldHVybiAiaXRlbV9zcGlyaXRfdmVzc2VsIgplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yX2xpZmVzdGVhbF9hdXJhX2RlYnVmZjpJc1B1cmdhYmxlKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yX2xpZmVzdGVhbF9hdXJhX2RlYnVmZjpSZW1vdmVPbkRlYXRoKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzJfbGlmZXN0ZWFsX2F1cmFfZGVidWZmOkRlY2xhcmVGdW5jdGlvbnMoKQogICAgcmV0dXJuIHtNT0RJRklFUl9QUk9QRVJUWV9MSUZFU1RFQUxfQU1QTElGWV9QRVJDRU5UQUdFLCBNT0RJRklFUl9QUk9QRVJUWV9TUEVMTF9MSUZFU1RFQUxfQU1QTElGWV9QRVJDRU5UQUdFLAogICAgICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9IUF9SRUdFTl9BTVBMSUZZX1BFUkNFTlRBR0V9CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzJfbGlmZXN0ZWFsX2F1cmFfZGVidWZmOkdldE1vZGlmaWVyTGlmZXN0ZWFsQW1wbGlmeV9QZXJjZW50YWdlKCkKICAgIHJldHVybiAtMzAKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMl9saWZlc3RlYWxfYXVyYV9kZWJ1ZmY6R2V0TW9kaWZpZXJTcGVsbExpZmVzdGVhbEFtcGxpZnlfUGVyY2VudGFnZSgpCiAgICByZXR1cm4gLTMwCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzJfbGlmZXN0ZWFsX2F1cmFfZGVidWZmOkdldE1vZGlmaWVySFBSZWdlbkFtcGxpZnlfUGVyY2VudGFnZSgpCiAgICByZXR1cm4gLTMwCmVuZAoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQotLSDooqvpgKDmiJDkvKTlrrPml7bop6blj5HnmoQgMS41IOenkiBkZWJ1ZmYKLS0g5rOo5oSP77yaCi0tIOWmguaenOebruagh+i6q+S4iuW3sue7j+aciSA2MDAg56CB5YWJ546vIGRlYnVmZu+8jAotLSDov5nph4zov5Tlm54gMO+8jOmBv+WFjeS4pOS4qiBkZWJ1ZmYg5Y+g5Yqg5oiQIC02MCUKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQppZiBtb2RpZmllcl90YWxlbnRfMl9saWZlc3RlYWxfaGl0X2RlYnVmZiA9PSBuaWwgdGhlbgogICAgbW9kaWZpZXJfdGFsZW50XzJfbGlmZXN0ZWFsX2hpdF9kZWJ1ZmYgPSBjbGFzcyh7fSkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMl9saWZlc3RlYWxfaGl0X2RlYnVmZjpJc0RlYnVmZigpCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yX2xpZmVzdGVhbF9oaXRfZGVidWZmOklzSGlkZGVuKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yX2xpZmVzdGVhbF9oaXRfZGVidWZmOkdldFRleHR1cmUoKQogICAgcmV0dXJuICJpdGVtX3NwaXJpdF92ZXNzZWwiCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzJfbGlmZXN0ZWFsX2hpdF9kZWJ1ZmY6SXNQdXJnYWJsZSgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMl9saWZlc3RlYWxfaGl0X2RlYnVmZjpSZW1vdmVPbkRlYXRoKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzJfbGlmZXN0ZWFsX2hpdF9kZWJ1ZmY6RGVjbGFyZUZ1bmN0aW9ucygpCiAgICByZXR1cm4ge01PRElGSUVSX1BST1BFUlRZX0xJRkVTVEVBTF9BTVBMSUZZX1BFUkNFTlRBR0UsIE1PRElGSUVSX1BST1BFUlRZX1NQRUxMX0xJRkVTVEVBTF9BTVBMSUZZX1BFUkNFTlRBR0UsCiAgICAgICAgICAgIE1PRElGSUVSX1BST1BFUlRZX0hQX1JFR0VOX0FNUExJRllfUEVSQ0VOVEFHRX0KZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMl9saWZlc3RlYWxfaGl0X2RlYnVmZjpHZXRNb2RpZmllckxpZmVzdGVhbEFtcGxpZnlfUGVyY2VudGFnZSgpCiAgICBpZiBzZWxmOkdldFBhcmVudCgpOkhhc01vZGlmaWVyKCJtb2RpZmllcl90YWxlbnRfMl9saWZlc3RlYWxfYXVyYV9kZWJ1ZmYiKSB0aGVuCiAgICAgICAgcmV0dXJuIDAKICAgIGVuZAoKICAgIHJldHVybiAtMzAKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMl9saWZlc3RlYWxfaGl0X2RlYnVmZjpHZXRNb2RpZmllclNwZWxsTGlmZXN0ZWFsQW1wbGlmeV9QZXJjZW50YWdlKCkKICAgIGlmIHNlbGY6R2V0UGFyZW50KCk6SGFzTW9kaWZpZXIoIm1vZGlmaWVyX3RhbGVudF8yX2xpZmVzdGVhbF9hdXJhX2RlYnVmZiIpIHRoZW4KICAgICAgICByZXR1cm4gMAogICAgZW5kCgogICAgcmV0dXJuIC0zMAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8yX2xpZmVzdGVhbF9oaXRfZGVidWZmOkdldE1vZGlmaWVySFBSZWdlbkFtcGxpZnlfUGVyY2VudGFnZSgpCiAgICBpZiBzZWxmOkdldFBhcmVudCgpOkhhc01vZGlmaWVyKCJtb2RpZmllcl90YWxlbnRfMl9saWZlc3RlYWxfYXVyYV9kZWJ1ZmYiKSB0aGVuCiAgICAgICAgcmV0dXJuIDAKICAgIGVuZAoKICAgIHJldHVybiAtMzAKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- if modifier_talent_2 == nil then
+--     modifier_talent_2 = class({})
+-- end
+-- function modifier_talent_2:IsDebuff()
+--     return false
+-- end
+
+-- function modifier_talent_2:IsHidden()
+--     return true
+-- end
+
+-- function modifier_talent_2:RemoveOnDeath()
+--     return false
+-- end
+
+-- function modifier_talent_2:IsPermanent() return true end -- 确保客户端同步
+
+-- function modifier_talent_2:OnCreated(kv)
+--     if IsServer() then
+--         self:ForceRefresh()
+--     end
+-- end
+
+-- -- 刷新modifier
+-- function modifier_talent_2:OnRefresh(kv)
+--     if not IsServer() then return end
+--     local hero = self:GetParent()
+--     local ID = Util:Hero2ID(hero)
+--     self.lqjs = HeroData.Data[ID].hero_attr.lqjs
+--     self:SetStackCount(self.lqjs)
+--     hero:CalculateStatBonus(true)
+-- end
+
+-- function modifier_talent_2:GetModifierPercentageCooldown()
+--     local count = self:GetStackCount()
+--     return count
+-- end
+
+-- -- 注册伤害监听事件
+-- function modifier_talent_2:DeclareFunctions()
+--     return {
+--         MODIFIER_EVENT_ON_ATTACKED, -- 监听受到伤害事件
+--         MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
+--         MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+--     }
+-- end
+
+-- -- 处理伤害事件
+-- function modifier_talent_2:OnAttacked(keys)
+--     if not IsServer() then return end
+--     local parent   = self:GetParent()
+--     local attacker = keys.attacker
+--     local target   = keys.target
+--     -- 检查是否是被此单位攻击
+--     if target ~= parent then
+--         return
+--     end
+--     -- 检查攻击者是否有效
+--     if not attacker or attacker:IsNull() or not attacker:IsAlive() then
+--         return
+--     end
+--     if parent:IsHero() then
+--         --如果开了bkb就无伤
+--         if attacker:HasModifier("modifier_equip_1") then
+--             return
+--         end
+--         local ID = Util:Hero2ID(parent)
+--         if ID then
+--             local level = Talent.Data[ID].level
+--             local dam = 0
+--             local num = 0
+--             if level == 0 then
+--                 dam = 40
+--                 num = 0.2
+--             end
+--             if level == 1 then
+--                 dam = 60
+--                 num = 0.25
+--             end
+--             if level == 2 then
+--                 dam = 80
+--                 num = 0.3
+--             end
+--             if level == 3 then
+--                 dam = 100
+--                 num = 0.35
+--             end
+--             if level == 4 then
+--                 dam = 120
+--                 num = 0.4
+--             end
+--             if level == 5 then
+--                 dam = 150
+--                 num = 0.5
+--             end
+--             local str_dam = parent:GetStrength() * num
+--             local total_dam = dam + str_dam
+--             local jnzq = target:GetSpellAmplification(false)
+--             local num1 = math.floor(jnzq * 100)
+--             if num1 > 0 then
+--                 dam = dam / (1 + (num1 / 100))
+--             end
+--             local no_amp = rawget(_G, "DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION")
+--             if not no_amp then no_amp = 1024 end
+--             local damage_table = {
+--                 attacker = parent,
+--                 victim = attacker,
+--                 damage = total_dam,
+--                 damage_type = DAMAGE_TYPE_PURE,
+--                 damage_flags = no_amp,
+--             }
+--             local fn_enter = rawget(_G, "ClrbDmg_Filter_Talent3AuraIsolation_Enter")
+--             local fn_leave = rawget(_G, "ClrbDmg_Filter_Talent3AuraIsolation_Leave")
+--             if fn_enter then fn_enter() end
+--             local ok2, err2 = pcall(function()
+--                 ApplyDamage(damage_table)
+--             end)
+--             if fn_leave then fn_leave() end
+--             if not ok2 then
+--                 print("[modifier_talent_2] ApplyDamage: " .. tostring(err2))
+--             end
+--         end
+--     end
+-- end
+
+-- function modifier_talent_2:GetModifierMoveSpeedBonus_Constant()
+--     return 50
+-- end
+
+-- -- 荆棘者之甲：600 码内降低敌人 30% 吸血与部分治疗效果（与引擎支持的增幅项一致）
+-- -- 对齐冰眼 Cold Attack ：对「生命值恢复」类效果（HpRegen/攻击吸血/法术吸血）用负向 Amplify，
+-- -- items.txt item_skadi 的 restoration_reduction 在引擎内同属此类堆叠路径。
+-- function modifier_talent_2:IsAura()
+--     return true
+-- end
+
+-- function modifier_talent_2:GetAuraRadius()
+--     return 600
+-- end
+
+-- function modifier_talent_2:GetModifierAura()
+--     return "modifier_talent_2_aura_debuff"
+-- end
+
+-- function modifier_talent_2:GetAuraSearchTeam()
+--     return DOTA_UNIT_TARGET_TEAM_ENEMY
+-- end
+
+-- function modifier_talent_2:GetAuraSearchType()
+--     return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
+-- end
+
+-- function modifier_talent_2:GetAuraSearchFlags()
+--     return DOTA_UNIT_TARGET_FLAG_NONE
+-- end
+
+-- ----------------------------------------------------------------
+-- -- 光环 debuff：降低吸血 / 技能吸血 / 生命恢复与受治疗相关增幅
+-- ----------------------------------------------------------------
+-- if modifier_talent_2_aura_debuff == nil then
+--     modifier_talent_2_aura_debuff = class({})
+-- end
+
+-- function modifier_talent_2_aura_debuff:IsDebuff()
+--     return true
+-- end
+
+-- function modifier_talent_2_aura_debuff:IsHidden()
+--     return false
+-- end
+
+-- function modifier_talent_2_aura_debuff:IsPurgable()
+--     return false
+-- end
+
+-- function modifier_talent_2_aura_debuff:RemoveOnDeath()
+--     return true
+-- end
+
+-- function modifier_talent_2_aura_debuff:DeclareFunctions()
+--     return {
+--         MODIFIER_PROPERTY_LIFESTEAL_AMPLIFY_PERCENTAGE,
+--         MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE,
+--         MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE,
+--     }
+-- end
+
+-- -- 必须使用 CDOTA_Modifier_Lua 约定名：
+-- -- MODIFIER_PROPERTY_LIFESTEAL_AMPLIFY_PERCENTAGE → GetModifierLifestealAmplify_Percentage（勿写成 LifestealRegen…）
+-- -- MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE → GetModifierSpellLifestealAmplify_Percentage
+-- -- function modifier_talent_2_aura_debuff:GetModifierLifestealRegenAmplify_Percentage()
+-- --     return -30
+-- -- end
+
+-- -- function modifier_talent_2_aura_debuff:GetModifierSpellLifestealRegenAmplify_Percentage_Unique()
+-- --     return -30
+-- -- end
+
+-- function modifier_talent_2_aura_debuff:GetModifierHPRegenAmplify_Percentage()
+--     return -30
+-- end
+
+-- function modifier_talent_2_aura_debuff:GetModifierLifestealAmplify_Percentage()
+--     return -30
+-- end
+
+-- function modifier_talent_2_aura_debuff:GetModifierSpellLifestealAmplify_Percentage()
+--     return -30
+-- end
+if modifier_talent_2 == nil then
+    modifier_talent_2 = class({})
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+LinkLuaModifier("modifier_talent_2_lifesteal_aura_debuff", "ingame/modifier/modifier_talent_2", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_talent_2_lifesteal_hit_debuff", "ingame/modifier/modifier_talent_2", LUA_MODIFIER_MOTION_NONE)
+
+----------------------------------------------------------------
+-- 主 modifier
+----------------------------------------------------------------
+function modifier_talent_2:IsDebuff()
+    return false
+end
+
+function modifier_talent_2:IsHidden()
+    return true
+end
+
+function modifier_talent_2:RemoveOnDeath()
+    return false
+end
+
+function modifier_talent_2:IsPermanent()
+    return true
+end
+
+function modifier_talent_2:OnCreated(kv)
+    if IsServer() then
+        self:ForceRefresh()
+    end
+end
+
+function modifier_talent_2:OnRefresh(kv)
+    if not IsServer() then
+        return
+    end
+
+    local hero = self:GetParent()
+    local ID = Util:Hero2ID(hero)
+
+    if not ID then
+        return
+    end
+
+    if not HeroData or not HeroData.Data or not HeroData.Data[ID] then
+        return
+    end
+
+    if not HeroData.Data[ID].hero_attr then
+        return
+    end
+
+    self.lqjs = HeroData.Data[ID].hero_attr.lqjs or 0
+    self:SetStackCount(self.lqjs)
+
+    hero:CalculateStatBonus(true)
+end
+
+function modifier_talent_2:DeclareFunctions()
+    return {MODIFIER_EVENT_ON_ATTACKED, MODIFIER_EVENT_ON_TAKEDAMAGE, MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE}
+end
+
+function modifier_talent_2:GetModifierPercentageCooldown()
+    return self:GetStackCount()
+end
+
+----------------------------------------------------------------
+-- 600 范围减吸血 / 减回血光环
+----------------------------------------------------------------
+function modifier_talent_2:IsAura()
+    return true
+end
+
+function modifier_talent_2:GetAuraRadius()
+    return 600
+end
+
+function modifier_talent_2:GetModifierAura()
+    return "modifier_talent_2_lifesteal_aura_debuff"
+end
+
+function modifier_talent_2:GetAuraSearchTeam()
+    return DOTA_UNIT_TARGET_TEAM_ENEMY
+end
+
+function modifier_talent_2:GetAuraSearchType()
+    -- 只给敌方英雄，不给小兵 / 野怪 / 召唤物
+    return DOTA_UNIT_TARGET_HERO
+end
+
+function modifier_talent_2:GetAuraSearchFlags()
+    return DOTA_UNIT_TARGET_FLAG_NONE
+end
+
+----------------------------------------------------------------
+-- 被普通攻击时触发反伤
+----------------------------------------------------------------
+function modifier_talent_2:OnAttacked(keys)
+    if not IsServer() then
+        return
+    end
+
+    local parent = self:GetParent()
+    local attacker = keys.attacker
+    local target = keys.target
+
+    -- 必须是自己被攻击
+    if target ~= parent then
+        return
+    end
+
+    -- 攻击者无效
+    if not attacker or attacker:IsNull() or not attacker:IsAlive() then
+        return
+    end
+
+    -- 自己攻击自己不处理
+    if attacker == parent then
+        return
+    end
+
+    -- 只有英雄持有该 modifier 时才反伤
+    if not parent:IsHero() then
+        return
+    end
+
+    -- 如果攻击者开了 bkb / modifier_equip_1，则不反伤
+    if attacker:HasModifier("modifier_equip_1") then
+        return
+    end
+
+    local ID = Util:Hero2ID(parent)
+
+    if not ID then
+        return
+    end
+
+    if not Talent or not Talent.Data or not Talent.Data[ID] then
+        return
+    end
+
+    local level = Talent.Data[ID].level or 0
+    local dam = 0
+    local num = 0
+
+    -- 固定伤害 + 力量 × 百分比（5%→30%，每级 +5%）
+    if level == 0 then
+        dam = 40
+        num = 0.05
+    elseif level == 1 then
+        dam = 60
+        num = 0.1
+    elseif level == 2 then
+        dam = 80
+        num = 0.15
+    elseif level == 3 then
+        dam = 100
+        num = 0.2
+    elseif level == 4 then
+        dam = 120
+        num = 0.25
+    elseif level == 5 then
+        dam = 150
+        num = 0.3
+    else
+        dam = 150
+        num = 0.3
+    end
+
+    local str_dam = parent:GetStrength() * num
+    local total_dam = dam + str_dam
+
+    local no_amp = rawget(_G, "DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION")
+    if not no_amp then
+        no_amp = 1024
+    end
+
+    local reflection_flag = rawget(_G, "DOTA_DAMAGE_FLAG_REFLECTION")
+    if not reflection_flag then
+        reflection_flag = 16
+    end
+
+    local final_damage_flags = no_amp + reflection_flag
+
+    local damage_table = {
+        attacker = parent,
+        victim = attacker,
+        damage = total_dam,
+        damage_type = DAMAGE_TYPE_PURE,
+        damage_flags = final_damage_flags
+    }
+
+    local fn_enter = rawget(_G, "ClrbDmg_Filter_Talent3AuraIsolation_Enter")
+    local fn_leave = rawget(_G, "ClrbDmg_Filter_Talent3AuraIsolation_Leave")
+
+    if fn_enter then
+        fn_enter()
+    end
+
+    local ok2, err2 = pcall(function()
+        ApplyDamage(damage_table)
+    end)
+
+    if fn_leave then
+        fn_leave()
+    end
+
+    if not ok2 then
+        -- print("[modifier_talent_2] ApplyDamage: " .. tostring(err2))
+        if Server and Server.SendError then
+            Server:SendError(tostring(err2), "modifier_talent_2:ApplyDamage")
+        end
+    end
+end
+
+----------------------------------------------------------------
+-- 自己受到伤害时，给伤害来源英雄添加 1.5 秒 debuff
+----------------------------------------------------------------
+function modifier_talent_2:OnTakeDamage(keys)
+    if not IsServer() then
+        return
+    end
+
+    local parent = self:GetParent()
+    local victim = keys.unit
+    local attacker = keys.attacker
+    local damage = keys.damage or 0
+    local damage_flags = keys.damage_flags or 0
+
+    -- 必须是自己受到伤害
+    if victim ~= parent then
+        return
+    end
+
+    -- 没有实际伤害不触发
+    if damage <= 0 then
+        return
+    end
+
+    -- 攻击者无效
+    if not attacker or attacker:IsNull() or not attacker:IsAlive() then
+        return
+    end
+
+    -- 自己造成的伤害不触发
+    if attacker == parent then
+        return
+    end
+
+    -- 过滤反伤伤害，避免反伤再次触发 OnTakeDamage
+    local reflection_flag = rawget(_G, "DOTA_DAMAGE_FLAG_REFLECTION")
+    if not reflection_flag then
+        reflection_flag = 16
+    end
+
+    if bit and bit.band then
+        if bit.band(damage_flags, reflection_flag) ~= 0 then
+            return
+        end
+    end
+
+    -- 如果攻击者开了 bkb / modifier_equip_1，则不给 debuff
+    if attacker:HasModifier("modifier_equip_1") then
+        return
+    end
+
+    -- 只给英雄添加 1.5 秒 debuff
+    if attacker:IsHero() then
+        if attacker:HasModifier("modifier_talent_2_lifesteal_aura_debuff") then
+            return
+        end
+
+        local debuff = attacker:FindModifierByName("modifier_talent_2_lifesteal_hit_debuff")
+
+        if debuff then
+            debuff:SetDuration(1.5, true)
+        else
+            attacker:AddNewModifier(parent, self:GetAbility(), "modifier_talent_2_lifesteal_hit_debuff", {
+                duration = 1.5
+            })
+        end
+    end
+
+end
+
+----------------------------------------------------------------
+-- 600 码光环 debuff
+-- 负责范围内持续减吸血 / 减回血
+----------------------------------------------------------------
+if modifier_talent_2_lifesteal_aura_debuff == nil then
+    modifier_talent_2_lifesteal_aura_debuff = class({})
+end
+
+function modifier_talent_2_lifesteal_aura_debuff:IsDebuff()
+    return true
+end
+
+function modifier_talent_2_lifesteal_aura_debuff:IsHidden()
+    return false
+end
+
+function modifier_talent_2_lifesteal_aura_debuff:GetTexture()
+    return "item_spirit_vessel"
+end
+
+function modifier_talent_2_lifesteal_aura_debuff:IsPurgable()
+    return false
+end
+
+function modifier_talent_2_lifesteal_aura_debuff:RemoveOnDeath()
+    return true
+end
+
+function modifier_talent_2_lifesteal_aura_debuff:DeclareFunctions()
+    return {MODIFIER_PROPERTY_LIFESTEAL_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE,
+            MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE}
+end
+
+function modifier_talent_2_lifesteal_aura_debuff:GetModifierLifestealAmplify_Percentage()
+    return -30
+end
+
+function modifier_talent_2_lifesteal_aura_debuff:GetModifierSpellLifestealAmplify_Percentage()
+    return -30
+end
+
+function modifier_talent_2_lifesteal_aura_debuff:GetModifierHPRegenAmplify_Percentage()
+    return -30
+end
+
+----------------------------------------------------------------
+-- 被造成伤害时触发的 1.5 秒 debuff
+-- 注意：
+-- 如果目标身上已经有 600 码光环 debuff，
+-- 这里返回 0，避免两个 debuff 叠加成 -60%
+----------------------------------------------------------------
+if modifier_talent_2_lifesteal_hit_debuff == nil then
+    modifier_talent_2_lifesteal_hit_debuff = class({})
+end
+
+function modifier_talent_2_lifesteal_hit_debuff:IsDebuff()
+    return true
+end
+
+function modifier_talent_2_lifesteal_hit_debuff:IsHidden()
+    return false
+end
+
+function modifier_talent_2_lifesteal_hit_debuff:GetTexture()
+    return "item_spirit_vessel"
+end
+
+function modifier_talent_2_lifesteal_hit_debuff:IsPurgable()
+    return false
+end
+
+function modifier_talent_2_lifesteal_hit_debuff:RemoveOnDeath()
+    return true
+end
+
+function modifier_talent_2_lifesteal_hit_debuff:DeclareFunctions()
+    return {MODIFIER_PROPERTY_LIFESTEAL_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE,
+            MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE}
+end
+
+function modifier_talent_2_lifesteal_hit_debuff:GetModifierLifestealAmplify_Percentage()
+    if self:GetParent():HasModifier("modifier_talent_2_lifesteal_aura_debuff") then
+        return 0
+    end
+
+    return -30
+end
+
+function modifier_talent_2_lifesteal_hit_debuff:GetModifierSpellLifestealAmplify_Percentage()
+    if self:GetParent():HasModifier("modifier_talent_2_lifesteal_aura_debuff") then
+        return 0
+    end
+
+    return -30
+end
+
+function modifier_talent_2_lifesteal_hit_debuff:GetModifierHPRegenAmplify_Percentage()
+    if self:GetParent():HasModifier("modifier_talent_2_lifesteal_aura_debuff") then
+        return 0
+    end
+
+    return -30
+end

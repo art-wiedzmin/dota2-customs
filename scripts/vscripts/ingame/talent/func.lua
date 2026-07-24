@@ -8,22 +8,72 @@
 ]]
 
 
-local encoded=[[LS0tIOW3sumAieWFiOWkqeijheWkh+eahOeOqeWutu+8muS/neivgeWvueW6lCB0YWxlbnQgbW9kaWZpZXIg5a2Y5Zyo77yI5Lii5aSx5pe26KGl5Yqg77yM5a2Y5Zyo5YiZ5Yi35paw77yJCmZ1bmN0aW9uIFRhbGVudDpFbnN1cmVUYWxlbnRFcXVpcE1vZGlmaWVyKElEKQogICAgaWYgbm90IElEIG9yIG5vdCBzZWxmLkRhdGEgb3Igbm90IHNlbGYuRGF0YVtJRF0gdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCByb3cgPSBzZWxmLkRhdGFbSURdCiAgICBpZiByb3cuc2VsZWN0X3RhbGVudCB+PSB0cnVlIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgaXRlbV9uYW1lID0gcm93Lml0ZW1fbmFtZQogICAgaWYgbm90IGl0ZW1fbmFtZSBvciBpdGVtX25hbWUgPT0gIiIgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBidWZmX25hbWUKICAgIGlmIGl0ZW1fbmFtZSA9PSAiaXRlbV9nb29kc18xNyIgdGhlbgogICAgICAgIGJ1ZmZfbmFtZSA9ICJtb2RpZmllcl90YWxlbnRfMSIKICAgIGVsc2VpZiBpdGVtX25hbWUgPT0gIml0ZW1fZ29vZHNfMTgiIHRoZW4KICAgICAgICBidWZmX25hbWUgPSAibW9kaWZpZXJfdGFsZW50XzIiCiAgICBlbHNlaWYgaXRlbV9uYW1lID09ICJpdGVtX2dvb2RzXzE5IiB0aGVuCiAgICAgICAgYnVmZl9uYW1lID0gIm1vZGlmaWVyX3RhbGVudF8zIgogICAgZWxzZWlmIGl0ZW1fbmFtZSA9PSAiaXRlbV9nb29kc18yNCIgdGhlbgogICAgICAgIGJ1ZmZfbmFtZSA9ICJtb2RpZmllcl90YWxlbnRfNCIKICAgIGVsc2UKICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgaGVybyA9IFV0aWw6SUQySGVybyhJRCkKICAgIGlmIG5vdCBoZXJvIG9yIGhlcm86SXNOdWxsKCkgb3Igbm90IGhlcm86SXNBbGl2ZSgpIG9yIG5vdCBoZXJvOklzUmVhbEhlcm8oKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIGl0ZW1fbmFtZSA9PSAiaXRlbV9nb29kc18xNyIgdGhlbgogICAgICAgIExpbmtMdWFNb2RpZmllcigibW9kaWZpZXJfdGFsZW50XzEiLCAiaW5nYW1lL21vZGlmaWVyL21vZGlmaWVyX3RhbGVudF8xIiwgTFVBX01PRElGSUVSX01PVElPTl9OT05FKQogICAgICAgIExpbmtMdWFNb2RpZmllcigibW9kaWZpZXJfdGFsZW50XzFfZGFtYWdlX2FtcF9kZWJ1ZmYiLAogICAgICAgICAgICAiaW5nYW1lL21vZGlmaWVyL21vZGlmaWVyX3RhbGVudF8xX2RhbWFnZV9hbXBfZGVidWZmIiwgTFVBX01PRElGSUVSX01PVElPTl9OT05FKQogICAgZWxzZWlmIGl0ZW1fbmFtZSA9PSAiaXRlbV9nb29kc18xOCIgdGhlbgogICAgICAgIExpbmtMdWFNb2RpZmllcigibW9kaWZpZXJfdGFsZW50XzIiLCAiaW5nYW1lL21vZGlmaWVyL21vZGlmaWVyX3RhbGVudF8yIiwgTFVBX01PRElGSUVSX01PVElPTl9OT05FKQogICAgICAgIExpbmtMdWFNb2RpZmllcigibW9kaWZpZXJfdGFsZW50XzJfYXVyYV9kZWJ1ZmYiLCAiaW5nYW1lL21vZGlmaWVyL21vZGlmaWVyX3RhbGVudF8yIiwgTFVBX01PRElGSUVSX01PVElPTl9OT05FKQogICAgZWxzZWlmIGl0ZW1fbmFtZSA9PSAiaXRlbV9nb29kc18yNCIgdGhlbgogICAgICAgIExpbmtMdWFNb2RpZmllcigibW9kaWZpZXJfdGFsZW50XzQiLCAiaW5nYW1lL21vZGlmaWVyL21vZGlmaWVyX3RhbGVudF80IiwgTFVBX01PRElGSUVSX01PVElPTl9OT05FKQogICAgZWxzZQogICAgICAgIExpbmtMdWFNb2RpZmllcigibW9kaWZpZXJfdGFsZW50XzMiLCAiaW5nYW1lL21vZGlmaWVyL21vZGlmaWVyX3RhbGVudF8zIiwgTFVBX01PRElGSUVSX01PVElPTl9OT05FKQogICAgZW5kCiAgICBsb2NhbCBtb2RpZmllciA9IGhlcm86RmluZE1vZGlmaWVyQnlOYW1lKGJ1ZmZfbmFtZSkKICAgIGlmIG1vZGlmaWVyIHRoZW4KICAgICAgICBtb2RpZmllcjpGb3JjZVJlZnJlc2goKQogICAgZWxzZQogICAgICAgIGhlcm86QWRkTmV3TW9kaWZpZXIoaGVybywgbmlsLCBidWZmX25hbWUsIHt9KQogICAgZW5kCmVuZAoKZnVuY3Rpb24gVGFsZW50OlJlZnJlc2hCdWZmKElEKQogICAgc2VsZjpFbnN1cmVUYWxlbnRFcXVpcE1vZGlmaWVyKElEKQplbmQKCmZ1bmN0aW9uIFRhbGVudDpBdXRvUGFnZShJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIFRpbWVycygxMCwgZnVuY3Rpb24oKQogICAgICAgIGlmIHNlbGYuRGF0YVtJRF0uc2VsZWN0X3RhbGVudCA9PSB0cnVlIHRoZW4KICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgaWYgc2VsZi5EYXRhW0lEXS5wYWdlID09IHRydWUgdGhlbgogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgICAgICBpZiBzZWxmLkRhdGFbSURdLnNlbGVjdF90YWxlbnQgPT0gZmFsc2UgdGhlbgogICAgICAgICAgICBzZWxmOk9wZW5QYWdlKElEKQogICAgICAgIGVuZAogICAgZW5kKQplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+--- 已选先天装备的玩家：保证对应 talent modifier 存在（丢失时补加，存在则刷新）
+function Talent:EnsureTalentEquipModifier(ID)
+    if not ID or not self.Data or not self.Data[ID] then
+        return
+    end
+    local row = self.Data[ID]
+    if row.select_talent ~= true then
+        return
+    end
+    local item_name = row.item_name
+    if not item_name or item_name == "" then
+        return
+    end
+    local buff_name
+    if item_name == "item_goods_17" then
+        buff_name = "modifier_talent_1"
+    elseif item_name == "item_goods_18" then
+        buff_name = "modifier_talent_2"
+    elseif item_name == "item_goods_19" then
+        buff_name = "modifier_talent_3"
+    elseif item_name == "item_goods_24" then
+        buff_name = "modifier_talent_4"
+    else
+        return
+    end
+    local hero = Util:ID2Hero(ID)
+    if not hero or hero:IsNull() or not hero:IsAlive() or not hero:IsRealHero() then
+        return
+    end
+    if item_name == "item_goods_17" then
+        LinkLuaModifier("modifier_talent_1", "ingame/modifier/modifier_talent_1", LUA_MODIFIER_MOTION_NONE)
+        LinkLuaModifier("modifier_talent_1_damage_amp_debuff",
+            "ingame/modifier/modifier_talent_1_damage_amp_debuff", LUA_MODIFIER_MOTION_NONE)
+    elseif item_name == "item_goods_18" then
+        LinkLuaModifier("modifier_talent_2", "ingame/modifier/modifier_talent_2", LUA_MODIFIER_MOTION_NONE)
+        LinkLuaModifier("modifier_talent_2_aura_debuff", "ingame/modifier/modifier_talent_2", LUA_MODIFIER_MOTION_NONE)
+    elseif item_name == "item_goods_24" then
+        LinkLuaModifier("modifier_talent_4", "ingame/modifier/modifier_talent_4", LUA_MODIFIER_MOTION_NONE)
+    else
+        LinkLuaModifier("modifier_talent_3", "ingame/modifier/modifier_talent_3", LUA_MODIFIER_MOTION_NONE)
+    end
+    local modifier = hero:FindModifierByName(buff_name)
+    if modifier then
+        modifier:ForceRefresh()
+    else
+        hero:AddNewModifier(hero, nil, buff_name, {})
+    end
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function Talent:RefreshBuff(ID)
+    self:EnsureTalentEquipModifier(ID)
+end
+
+function Talent:AutoPage(ID)
+    if not ID then
+        return
+    end
+    Timers(10, function()
+        if self.Data[ID].select_talent == true then
+            return
+        end
+        if self.Data[ID].page == true then
+            return
+        end
+        if self.Data[ID].select_talent == false then
+            self:OpenPage(ID)
+        end
+    end)
+end

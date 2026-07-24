@@ -8,22 +8,265 @@
 ]]
 
 
-local encoded=[[LS0g5aSp6LWLIDLjgIzor4bnoLTjgI3vvJrlh6/mi5vmnrbnqpflj6PvvIjplIHmnJ3lkJEgKyAxIOaKgOiDveaWveazleWKqOS9nCArIOagvOaMoeato+mdouWNiuWMuummluasoeaZruaUu++8ieKGkiDlipvkuLjpl6rooq3nu5XlkI7nnKnmmZUKCm1vZGlmaWVyX2NscmJfaW5zaWdodCA9IGNsYXNzKHt9KQoKbG9jYWwgUEFSUllfVkZYID0gInBhcnRpY2xlcy91bml0cy9oZXJvZXMvaGVyb19rZXova2V6X3BhcnJ5LnZwY2YiCmxvY2FsIEJMSU5LX1ZGWCA9ICJwYXJ0aWNsZXMvdW5pdHMvaGVyb2VzL2hlcm9fcmlraS9yaWtpX2JsaW5rX3N0cmlrZS52cGNmIgpsb2NhbCBNQVhfQkxJTksgPSAyMDAwCmxvY2FsIEJFSElORF9ESVNUID0gNTYKLS0tIOS4gOaKgOiDveWKqOS9nOi+g+efre+8jOWumuaXtuihpeaSreS7peWFjeivhuegtOaMgee7reeql+WPo+WGheaUtuaLmwpsb2NhbCBHRVNUVVJFX0lOVEVSVkFMID0gMC40NQpsb2NhbCBUSElOSyA9IDEgLyAzMApsb2NhbCBJTlNJR0hUX0dFU1RVUkUgPSBBQ1RfRE9UQV9DQVNUX0FCSUxJVFlfMQotLS0ga2V6X3BhcnJ5IOacneWQkeWkmuS+nei1liBDUDDihpJDUDHvvJvkvJjlhYjmjIIgYXR0YWNoX2F0dGFjazEg5LiO5LiA5oqA6IO95pyd5ZCR5LiA6Ie0CmxvY2FsIFBBUlJZX1ZGWF9GT1JXQVJEID0gOTUKbG9jYWwgUEFSUllfVkZYX1pfRkFMTEJBQ0sgPSA4Mgpsb2NhbCBQQVJSWV9WRlhfQ1AxX0RJU1QgPSAyMjAKCmxvY2FsIGZ1bmN0aW9uIENscmJQYXJyeUZ3ZDMoZndkX3h5KQogICAgcmV0dXJuIFZlY3Rvcihmd2RfeHkueCwgZndkX3h5LnksIDApOk5vcm1hbGl6ZWQoKQplbmQKCmxvY2FsIGZ1bmN0aW9uIENscmJQYXJyeVZmeFdvcmxkUG9zKGhlcm8sIGZ3ZF94eSkKICAgIGxvY2FsIGF0dCA9IGhlcm86U2NyaXB0TG9va3VwQXR0YWNobWVudCgiYXR0YWNoX2hpdGxvYyIpCiAgICBpZiBhdHQgYW5kIGF0dCA+IDAgdGhlbgogICAgICAgIHJldHVybiBoZXJvOkdldEF0dGFjaG1lbnRPcmlnaW4oYXR0KSArIGZ3ZF94eSAqIFBBUlJZX1ZGWF9GT1JXQVJECiAgICBlbmQKICAgIGxvY2FsIG8gPSBoZXJvOkdldEFic09yaWdpbigpCiAgICByZXR1cm4gbyArIGZ3ZF94eSAqIFBBUlJZX1ZGWF9GT1JXQVJEICsgVmVjdG9yKDAsIDAsIFBBUlJZX1ZGWF9aX0ZBTExCQUNLKQplbmQKCi0tLSDor4bnoLTku4Xmi5vmnrbjgIzmraPpnaIgMTgwwrDjgI3vvJrmsLTlubPpnaLlhoXvvIzmjIflkJHmlLvlh7vogIUg5LiOIGxvY2tfZndkIOeCueenryDiiaUgMO+8m+iDjOmdouWNiuWMuui/lOWbniBmYWxzZeOAggpsb2NhbCBmdW5jdGlvbiBJbnNpZ2h0QXR0YWNrZXJJbkZyb250QXJjKGRlZmVuZGVyLCBhdHRhY2tlciwgbG9ja19md2RfeHkpCiAgICBpZiBub3QgZGVmZW5kZXIgb3IgZGVmZW5kZXI6SXNOdWxsKCkgb3Igbm90IGF0dGFja2VyIG9yIGF0dGFja2VyOklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgZndkID0gbG9ja19md2RfeHkKICAgIGlmIG5vdCBmd2QgdGhlbgogICAgICAgIGZ3ZCA9IGRlZmVuZGVyOkdldEZvcndhcmRWZWN0b3IoKQogICAgICAgIGZ3ZCA9IFZlY3Rvcihmd2QueCwgZndkLnksIDApCiAgICAgICAgaWYgZndkOkxlbmd0aDJEKCkgPCAxZS00IHRoZW4KICAgICAgICAgICAgcmV0dXJuIHRydWUKICAgICAgICBlbmQKICAgICAgICBmd2QgPSBmd2Q6Tm9ybWFsaXplZCgpCiAgICBlbmQKICAgIGxvY2FsIHRvX2EgPSBhdHRhY2tlcjpHZXRBYnNPcmlnaW4oKSAtIGRlZmVuZGVyOkdldEFic09yaWdpbigpCiAgICB0b19hID0gVmVjdG9yKHRvX2EueCwgdG9fYS55LCAwKQogICAgbG9jYWwgbGVuID0gdG9fYTpMZW5ndGgyRCgpCiAgICBpZiBsZW4gPCAxZS00IHRoZW4KICAgICAgICByZXR1cm4gdHJ1ZQogICAgZW5kCiAgICB0b19hID0gdG9fYSAvIGxlbgogICAgcmV0dXJuIGZ3ZDpEb3QodG9fYSkgPj0gMAplbmQKCi0tLSDnu5PmnZ/or4bnoLTml7bmuIUgMSDmioDog73mlr3ms5XmiYvlir/vvIzlkKbliJnmmJPlr7zoh7Tmma7mlLsv6L2s6Lqr5Y2h5L2PCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfaW5zaWdodC5DbGVhckluc2lnaHRHZXN0dXJlcyh1bml0KQogICAgaWYgbm90IHVuaXQgb3IgdW5pdDpJc051bGwoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIHVuaXQuRmFkZUdlc3R1cmUgdGhlbgogICAgICAgIHVuaXQ6RmFkZUdlc3R1cmUoSU5TSUdIVF9HRVNUVVJFKQogICAgZWxzZWlmIHVuaXQuUmVtb3ZlR2VzdHVyZSB0aGVuCiAgICAgICAgdW5pdDpSZW1vdmVHZXN0dXJlKElOU0lHSFRfR0VTVFVSRSkKICAgIGVuZAogICAgaWYgdW5pdC5Gb3JjZVBsYXlBY3Rpdml0eU9uY2UgdGhlbgogICAgICAgIHVuaXQ6Rm9yY2VQbGF5QWN0aXZpdHlPbmNlKEFDVF9ET1RBX0lETEUpCiAgICBlbmQKZW5kCgotLS1AcGFyYW0gc2VsZiBtb2RpZmllcl9jbHJiX2luc2lnaHQKbG9jYWwgZnVuY3Rpb24gQ2xyYlBhcnJ5UGZ4UmVmcmVzaENvbnRyb2xzKHNlbGYsIGhlcm8sIGZ3ZF94eSkKICAgIGxvY2FsIHBmeCA9IHNlbGYucGZ4CiAgICBpZiBub3QgcGZ4IG9yIG5vdCBoZXJvIG9yIGhlcm86SXNOdWxsKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBmMyA9IENscmJQYXJyeUZ3ZDMoZndkX3h5KQogICAgaWYgc2VsZi5wYXJyeV9wZnhfb25fYXR0YWNrMSB0aGVuCiAgICAgICAgUGFydGljbGVNYW5hZ2VyOlNldFBhcnRpY2xlQ29udHJvbEZvcndhcmQocGZ4LCAxLCBmMykKICAgICAgICBsb2NhbCBvID0gaGVybzpHZXRBYnNPcmlnaW4oKQogICAgICAgIFBhcnRpY2xlTWFuYWdlcjpTZXRQYXJ0aWNsZUNvbnRyb2wocGZ4LCAxLCBvICsgZndkX3h5ICogUEFSUllfVkZYX0NQMV9ESVNUKQogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBwb3MgPSBDbHJiUGFycnlWZnhXb3JsZFBvcyhoZXJvLCBmd2RfeHkpCiAgICBQYXJ0aWNsZU1hbmFnZXI6U2V0UGFydGljbGVDb250cm9sKHBmeCwgMCwgcG9zKQogICAgUGFydGljbGVNYW5hZ2VyOlNldFBhcnRpY2xlQ29udHJvbChwZngsIDEsIHBvcyArIGZ3ZF94eSAqIFBBUlJZX1ZGWF9DUDFfRElTVCkKICAgIFBhcnRpY2xlTWFuYWdlcjpTZXRQYXJ0aWNsZUNvbnRyb2xGb3J3YXJkKHBmeCwgMSwgZjMpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9pbnNpZ2h0OklzSGlkZGVuKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfaW5zaWdodDpJc0RlYnVmZigpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2luc2lnaHQ6SXNQdXJnYWJsZSgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2luc2lnaHQ6UmVtb3ZlT25EZWF0aCgpCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfaW5zaWdodDpHZXRUZXh0dXJlKCkKICAgIHJldHVybiAia2V6X3Nob2RvX3NhaSIKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2luc2lnaHQ6Q2hlY2tTdGF0ZSgpCiAgICByZXR1cm4gewogICAgICAgIFtNT0RJRklFUl9TVEFURV9ESVNBUk1FRF0gPSB0cnVlLAogICAgICAgIFtNT0RJRklFUl9TVEFURV9TSUxFTkNFRF0gPSB0cnVlLAogICAgfQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfaW5zaWdodDpPbkNyZWF0ZWQoKQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmLnBhcnJ5X3NwZW50ID0gZmFsc2UKICAgIGxvY2FsIHAgPSBzZWxmOkdldFBhcmVudCgpCiAgICBpZiBub3QgcCBvciBwOklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5sb2NrX2Z3ZCA9IHA6R2V0Rm9yd2FyZFZlY3RvcigpCiAgICBzZWxmLmxvY2tfZndkID0gVmVjdG9yKHNlbGYubG9ja19md2QueCwgc2VsZi5sb2NrX2Z3ZC55LCAwKQogICAgaWYgc2VsZi5sb2NrX2Z3ZDpMZW5ndGgyRCgpIDwgMC4wMSB0aGVuCiAgICAgICAgc2VsZi5sb2NrX2Z3ZCA9IFZlY3RvcigxLCAwLCAwKQogICAgZWxzZQogICAgICAgIHNlbGYubG9ja19md2QgPSBzZWxmLmxvY2tfZndkOk5vcm1hbGl6ZWQoKQogICAgZW5kCgogICAgc2VsZi5wZnggPSBQYXJ0aWNsZU1hbmFnZXI6Q3JlYXRlUGFydGljbGUoUEFSUllfVkZYLCBQQVRUQUNIX0NVU1RPTU9SSUdJTiwgcCkKICAgIHNlbGYucGFycnlfcGZ4X29uX2F0dGFjazEgPSBmYWxzZQogICAgbG9jYWwgYTEgPSBwOlNjcmlwdExvb2t1cEF0dGFjaG1lbnQoImF0dGFjaF9hdHRhY2sxIikKICAgIGlmIGExIGFuZCBhMSA+IDAgdGhlbgogICAgICAgIFBhcnRpY2xlTWFuYWdlcjpTZXRQYXJ0aWNsZUNvbnRyb2xFbnQoc2VsZi5wZngsIDAsIHAsIFBBVFRBQ0hfUE9JTlRfRk9MTE9XLCAiYXR0YWNoX2F0dGFjazEiLAogICAgICAgICAgICBwOkdldEFic09yaWdpbigpLCBmYWxzZSkKICAgICAgICBzZWxmLnBhcnJ5X3BmeF9vbl9hdHRhY2sxID0gdHJ1ZQogICAgZW5kCiAgICBDbHJiUGFycnlQZnhSZWZyZXNoQ29udHJvbHMoc2VsZiwgcCwgc2VsZi5sb2NrX2Z3ZCkKICAgIEVtaXRTb3VuZE9uKCJIZXJvX0tlei5TYWkuUHJvYyIsIHApCgogICAgc2VsZi5nZXN0dXJlX2FjY3VtID0gMAogICAgaWYgcC5TdGFydEdlc3R1cmUgdGhlbgogICAgICAgIHA6U3RhcnRHZXN0dXJlKElOU0lHSFRfR0VTVFVSRSkKICAgIGVuZAogICAgc2VsZjpTdGFydEludGVydmFsVGhpbmsoVEhJTkspCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9pbnNpZ2h0Ok9uSW50ZXJ2YWxUaGluaygpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIHAgPSBzZWxmOkdldFBhcmVudCgpCiAgICBpZiBub3QgcCBvciBwOklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgcDpTZXRGb3J3YXJkVmVjdG9yKHNlbGYubG9ja19md2QpCiAgICBDbHJiUGFycnlQZnhSZWZyZXNoQ29udHJvbHMoc2VsZiwgcCwgc2VsZi5sb2NrX2Z3ZCkKICAgIHNlbGYuZ2VzdHVyZV9hY2N1bSA9IChzZWxmLmdlc3R1cmVfYWNjdW0gb3IgMCkgKyBUSElOSwogICAgaWYgc2VsZi5nZXN0dXJlX2FjY3VtID49IEdFU1RVUkVfSU5URVJWQUwgdGhlbgogICAgICAgIHNlbGYuZ2VzdHVyZV9hY2N1bSA9IDAKICAgICAgICBpZiBwLlN0YXJ0R2VzdHVyZSB0aGVuCiAgICAgICAgICAgIHA6U3RhcnRHZXN0dXJlKElOU0lHSFRfR0VTVFVSRSkKICAgICAgICBlbmQKICAgIGVuZAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfaW5zaWdodDpPbkRlc3Ryb3koKQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBwID0gc2VsZjpHZXRQYXJlbnQoKQogICAgaWYgcCBhbmQgbm90IHA6SXNOdWxsKCkgdGhlbgogICAgICAgIG1vZGlmaWVyX2NscmJfaW5zaWdodC5DbGVhckluc2lnaHRHZXN0dXJlcyhwKQogICAgZW5kCiAgICBpZiBzZWxmLnBmeCB0aGVuCiAgICAgICAgUGFydGljbGVNYW5hZ2VyOkRlc3Ryb3lQYXJ0aWNsZShzZWxmLnBmeCwgZmFsc2UpCiAgICAgICAgUGFydGljbGVNYW5hZ2VyOlJlbGVhc2VQYXJ0aWNsZUluZGV4KHNlbGYucGZ4KQogICAgICAgIHNlbGYucGZ4ID0gbmlsCiAgICBlbmQKZW5kCgotLS0g55SxIERhbWFnZV9GaWx0ZXIg6LCD55So77ya5oq15raI5pys5qyh5pmu5pS75Lyk5a6z5bm25LiL5LiA5bin57uV5ZCOCi0tLUByZXR1cm4gYm9vbGVhbiB0cnVlIOihqOekuuW3suWujOWFqOagvOaMoeatpOasoeeJqeeQhuaZruaUuwpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2luc2lnaHQ6Q2xyYlRyeVBhcnJ5UGh5c2ljYWxBdHRhY2soYXR0YWNrZXIpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuIHJldHVybiBlbmQKICAgIGlmIHNlbGYucGFycnlfc3BlbnQgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBub3QgYXR0YWNrZXIgb3IgYXR0YWNrZXI6SXNOdWxsKCkgb3Igbm90IGF0dGFja2VyOklzQWxpdmUoKSBvciBub3QgYXR0YWNrZXI6SXNIZXJvKCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBsb2NhbCBoZXJvID0gc2VsZjpHZXRQYXJlbnQoKQogICAgaWYgbm90IGhlcm8gb3IgaGVybzpJc051bGwoKSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIGF0dGFja2VyID09IGhlcm8gdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBub3QgSW5zaWdodEF0dGFja2VySW5Gcm9udEFyYyhoZXJvLCBhdHRhY2tlciwgc2VsZi5sb2NrX2Z3ZCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCgogICAgc2VsZi5wYXJyeV9zcGVudCA9IHRydWUKCiAgICBUaW1lcnMoMCwgZnVuY3Rpb24oKQogICAgICAgIGlmIGhlcm86SXNOdWxsKCkgb3Igbm90IGhlcm86SXNBbGl2ZSgpIHRoZW4KICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgaWYgYXR0YWNrZXI6SXNOdWxsKCkgb3Igbm90IGF0dGFja2VyOklzQWxpdmUoKSB0aGVuCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZAogICAgICAgIG1vZGlmaWVyX2NscmJfaW5zaWdodC5QYXJyeUJsaW5rQW5kU3R1bihoZXJvLCBhdHRhY2tlcikKICAgICAgICBsb2NhbCBtID0gaGVybzpGaW5kTW9kaWZpZXJCeU5hbWUoIm1vZGlmaWVyX2NscmJfaW5zaWdodCIpCiAgICAgICAgaWYgbSB0aGVuCiAgICAgICAgICAgIG06RGVzdHJveSgpCiAgICAgICAgZW5kCiAgICBlbmQpCgogICAgcmV0dXJuIHRydWUKZW5kCgotLS1AcGFyYW0gaGVybyBDRE9UQV9CYXNlTlBDX0hlcm8KLS0tQHBhcmFtIHRhcmdldCBDRE9UQV9CYXNlTlBDCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfaW5zaWdodC5QYXJyeUJsaW5rQW5kU3R1bihoZXJvLCB0YXJnZXQpCiAgICBsb2NhbCBmd2QgPSB0YXJnZXQ6R2V0Rm9yd2FyZFZlY3RvcigpCiAgICBmd2QgPSBWZWN0b3IoZndkLngsIGZ3ZC55LCAwKQogICAgaWYgZndkOkxlbmd0aDJEKCkgPCAwLjAxIHRoZW4KICAgICAgICBmd2QgPSBoZXJvOkdldEZvcndhcmRWZWN0b3IoKQogICAgICAgIGZ3ZCA9IFZlY3Rvcihmd2QueCwgZndkLnksIDApOk5vcm1hbGl6ZWQoKQogICAgZWxzZQogICAgICAgIGZ3ZCA9IGZ3ZDpOb3JtYWxpemVkKCkKICAgIGVuZAoKICAgIGxvY2FsIGRlc3QgPSB0YXJnZXQ6R2V0QWJzT3JpZ2luKCkgLSBmd2QgKiBCRUhJTkRfRElTVAogICAgZGVzdC56ID0gR2V0R3JvdW5kUG9zaXRpb24oZGVzdCwgaGVybykuegoKICAgIGxvY2FsIGZyb20gPSBoZXJvOkdldEFic09yaWdpbigpCiAgICBsb2NhbCBkZWx0YSA9IGRlc3QgLSBmcm9tCiAgICBsb2NhbCBkaXN0ID0gZGVsdGE6TGVuZ3RoMkQoKQogICAgaWYgZGlzdCA+IE1BWF9CTElOSyB0aGVuCiAgICAgICAgZGVzdCA9IGZyb20gKyBkZWx0YTpOb3JtYWxpemVkKCkgKiBNQVhfQkxJTksKICAgICAgICBkZXN0LnogPSBHZXRHcm91bmRQb3NpdGlvbihkZXN0LCBoZXJvKS56CiAgICBlbmQKCiAgICBsb2NhbCBwID0gUGFydGljbGVNYW5hZ2VyOkNyZWF0ZVBhcnRpY2xlKEJMSU5LX1ZGWCwgUEFUVEFDSF9DVVNUT01PUklHSU4sIG5pbCkKICAgIFBhcnRpY2xlTWFuYWdlcjpTZXRQYXJ0aWNsZUNvbnRyb2wocCwgMCwgZnJvbSkKICAgIFBhcnRpY2xlTWFuYWdlcjpTZXRQYXJ0aWNsZUNvbnRyb2wocCwgMSwgZGVzdCkKICAgIFBhcnRpY2xlTWFuYWdlcjpSZWxlYXNlUGFydGljbGVJbmRleChwKQoKICAgIEVtaXRTb3VuZE9uKCJIZXJvX1Jpa2kuQmxpbmtfU3RyaWtlIiwgaGVybykKCiAgICBoZXJvOlNldEFic09yaWdpbihkZXN0KQogICAgRmluZENsZWFyU3BhY2VGb3JVbml0KGhlcm8sIGRlc3QsIHRydWUpCiAgICBoZXJvOlNldEZvcndhcmRWZWN0b3IoZndkKQoKICAgIGlmIHRhcmdldDpJc0hlcm8oKSBhbmQgdGFyZ2V0OklzQWxpdmUoKSBhbmQgdGFyZ2V0OkdldFRlYW1OdW1iZXIoKSB+PSBoZXJvOkdldFRlYW1OdW1iZXIoKSB0aGVuCiAgICAgICAgdGFyZ2V0OkFkZE5ld01vZGlmaWVyKGhlcm8sIG5pbCwgIm1vZGlmaWVyX2NscmJfaW5zaWdodF9wYXJyeV9zdHVuIiwgeyBkdXJhdGlvbiA9IDEgfSkKICAgIGVuZAplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 天赋 2「识破」：凯招架窗口（锁朝向 + 1 技能施法动作 + 格挡正面半区首次普攻）→ 力丸闪袭绕后眩晕
+
+modifier_clrb_insight = class({})
+
+local PARRY_VFX = "particles/units/heroes/hero_kez/kez_parry.vpcf"
+local BLINK_VFX = "particles/units/heroes/hero_riki/riki_blink_strike.vpcf"
+local MAX_BLINK = 2000
+local BEHIND_DIST = 56
+--- 一技能动作较短，定时补播以免识破持续窗口内收招
+local GESTURE_INTERVAL = 0.45
+local THINK = 1 / 30
+local INSIGHT_GESTURE = ACT_DOTA_CAST_ABILITY_1
+--- kez_parry 朝向多依赖 CP0→CP1；优先挂 attach_attack1 与一技能朝向一致
+local PARRY_VFX_FORWARD = 95
+local PARRY_VFX_Z_FALLBACK = 82
+local PARRY_VFX_CP1_DIST = 220
+
+local function ClrbParryFwd3(fwd_xy)
+    return Vector(fwd_xy.x, fwd_xy.y, 0):Normalized()
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+local function ClrbParryVfxWorldPos(hero, fwd_xy)
+    local att = hero:ScriptLookupAttachment("attach_hitloc")
+    if att and att > 0 then
+        return hero:GetAttachmentOrigin(att) + fwd_xy * PARRY_VFX_FORWARD
+    end
+    local o = hero:GetAbsOrigin()
+    return o + fwd_xy * PARRY_VFX_FORWARD + Vector(0, 0, PARRY_VFX_Z_FALLBACK)
+end
+
+--- 识破仅招架「正面 180°」：水平面内，指向攻击者 与 lock_fwd 点积 ≥ 0；背面半区返回 false。
+local function InsightAttackerInFrontArc(defender, attacker, lock_fwd_xy)
+    if not defender or defender:IsNull() or not attacker or attacker:IsNull() then
+        return false
+    end
+    local fwd = lock_fwd_xy
+    if not fwd then
+        fwd = defender:GetForwardVector()
+        fwd = Vector(fwd.x, fwd.y, 0)
+        if fwd:Length2D() < 1e-4 then
+            return true
+        end
+        fwd = fwd:Normalized()
+    end
+    local to_a = attacker:GetAbsOrigin() - defender:GetAbsOrigin()
+    to_a = Vector(to_a.x, to_a.y, 0)
+    local len = to_a:Length2D()
+    if len < 1e-4 then
+        return true
+    end
+    to_a = to_a / len
+    return fwd:Dot(to_a) >= 0
+end
+
+--- 结束识破时清 1 技能施法手势，否则易导致普攻/转身卡住
+function modifier_clrb_insight.ClearInsightGestures(unit)
+    if not unit or unit:IsNull() then
+        return
+    end
+    if unit.FadeGesture then
+        unit:FadeGesture(INSIGHT_GESTURE)
+    elseif unit.RemoveGesture then
+        unit:RemoveGesture(INSIGHT_GESTURE)
+    end
+    if unit.ForcePlayActivityOnce then
+        unit:ForcePlayActivityOnce(ACT_DOTA_IDLE)
+    end
+end
+
+---@param self modifier_clrb_insight
+local function ClrbParryPfxRefreshControls(self, hero, fwd_xy)
+    local pfx = self.pfx
+    if not pfx or not hero or hero:IsNull() then
+        return
+    end
+    local f3 = ClrbParryFwd3(fwd_xy)
+    if self.parry_pfx_on_attack1 then
+        ParticleManager:SetParticleControlForward(pfx, 1, f3)
+        local o = hero:GetAbsOrigin()
+        ParticleManager:SetParticleControl(pfx, 1, o + fwd_xy * PARRY_VFX_CP1_DIST)
+        return
+    end
+    local pos = ClrbParryVfxWorldPos(hero, fwd_xy)
+    ParticleManager:SetParticleControl(pfx, 0, pos)
+    ParticleManager:SetParticleControl(pfx, 1, pos + fwd_xy * PARRY_VFX_CP1_DIST)
+    ParticleManager:SetParticleControlForward(pfx, 1, f3)
+end
+
+function modifier_clrb_insight:IsHidden()
+    return false
+end
+
+function modifier_clrb_insight:IsDebuff()
+    return false
+end
+
+function modifier_clrb_insight:IsPurgable()
+    return false
+end
+
+function modifier_clrb_insight:RemoveOnDeath()
+    return true
+end
+
+function modifier_clrb_insight:GetTexture()
+    return "kez_shodo_sai"
+end
+
+function modifier_clrb_insight:CheckState()
+    return {
+        [MODIFIER_STATE_DISARMED] = true,
+        [MODIFIER_STATE_SILENCED] = true,
+    }
+end
+
+function modifier_clrb_insight:OnCreated()
+    if not IsServer() then
+        return
+    end
+    self.parry_spent = false
+    local p = self:GetParent()
+    if not p or p:IsNull() then
+        return
+    end
+    self.lock_fwd = p:GetForwardVector()
+    self.lock_fwd = Vector(self.lock_fwd.x, self.lock_fwd.y, 0)
+    if self.lock_fwd:Length2D() < 0.01 then
+        self.lock_fwd = Vector(1, 0, 0)
+    else
+        self.lock_fwd = self.lock_fwd:Normalized()
+    end
+
+    self.pfx = ParticleManager:CreateParticle(PARRY_VFX, PATTACH_CUSTOMORIGIN, p)
+    self.parry_pfx_on_attack1 = false
+    local a1 = p:ScriptLookupAttachment("attach_attack1")
+    if a1 and a1 > 0 then
+        ParticleManager:SetParticleControlEnt(self.pfx, 0, p, PATTACH_POINT_FOLLOW, "attach_attack1",
+            p:GetAbsOrigin(), false)
+        self.parry_pfx_on_attack1 = true
+    end
+    ClrbParryPfxRefreshControls(self, p, self.lock_fwd)
+    EmitSoundOn("Hero_Kez.Sai.Proc", p)
+
+    self.gesture_accum = 0
+    if p.StartGesture then
+        p:StartGesture(INSIGHT_GESTURE)
+    end
+    self:StartIntervalThink(THINK)
+end
+
+function modifier_clrb_insight:OnIntervalThink()
+    if not IsServer() then
+        return
+    end
+    local p = self:GetParent()
+    if not p or p:IsNull() then
+        return
+    end
+    p:SetForwardVector(self.lock_fwd)
+    ClrbParryPfxRefreshControls(self, p, self.lock_fwd)
+    self.gesture_accum = (self.gesture_accum or 0) + THINK
+    if self.gesture_accum >= GESTURE_INTERVAL then
+        self.gesture_accum = 0
+        if p.StartGesture then
+            p:StartGesture(INSIGHT_GESTURE)
+        end
+    end
+end
+
+function modifier_clrb_insight:OnDestroy()
+    if not IsServer() then
+        return
+    end
+    local p = self:GetParent()
+    if p and not p:IsNull() then
+        modifier_clrb_insight.ClearInsightGestures(p)
+    end
+    if self.pfx then
+        ParticleManager:DestroyParticle(self.pfx, false)
+        ParticleManager:ReleaseParticleIndex(self.pfx)
+        self.pfx = nil
+    end
+end
+
+--- 由 Damage_Filter 调用：抵消本次普攻伤害并下一帧绕后
+---@return boolean true 表示已完全格挡此次物理普攻
+function modifier_clrb_insight:ClrbTryParryPhysicalAttack(attacker)
+    if not IsServer() then return end
+    if self.parry_spent then
+        return false
+    end
+    if not attacker or attacker:IsNull() or not attacker:IsAlive() or not attacker:IsHero() then
+        return false
+    end
+    local hero = self:GetParent()
+    if not hero or hero:IsNull() then
+        return false
+    end
+    if attacker == hero then
+        return false
+    end
+    if not InsightAttackerInFrontArc(hero, attacker, self.lock_fwd) then
+        return false
+    end
+
+    self.parry_spent = true
+
+    Timers(0, function()
+        if hero:IsNull() or not hero:IsAlive() then
+            return
+        end
+        if attacker:IsNull() or not attacker:IsAlive() then
+            return
+        end
+        modifier_clrb_insight.ParryBlinkAndStun(hero, attacker)
+        local m = hero:FindModifierByName("modifier_clrb_insight")
+        if m then
+            m:Destroy()
+        end
+    end)
+
+    return true
+end
+
+---@param hero CDOTA_BaseNPC_Hero
+---@param target CDOTA_BaseNPC
+function modifier_clrb_insight.ParryBlinkAndStun(hero, target)
+    local fwd = target:GetForwardVector()
+    fwd = Vector(fwd.x, fwd.y, 0)
+    if fwd:Length2D() < 0.01 then
+        fwd = hero:GetForwardVector()
+        fwd = Vector(fwd.x, fwd.y, 0):Normalized()
+    else
+        fwd = fwd:Normalized()
+    end
+
+    local dest = target:GetAbsOrigin() - fwd * BEHIND_DIST
+    dest.z = GetGroundPosition(dest, hero).z
+
+    local from = hero:GetAbsOrigin()
+    local delta = dest - from
+    local dist = delta:Length2D()
+    if dist > MAX_BLINK then
+        dest = from + delta:Normalized() * MAX_BLINK
+        dest.z = GetGroundPosition(dest, hero).z
+    end
+
+    local p = ParticleManager:CreateParticle(BLINK_VFX, PATTACH_CUSTOMORIGIN, nil)
+    ParticleManager:SetParticleControl(p, 0, from)
+    ParticleManager:SetParticleControl(p, 1, dest)
+    ParticleManager:ReleaseParticleIndex(p)
+
+    EmitSoundOn("Hero_Riki.Blink_Strike", hero)
+
+    hero:SetAbsOrigin(dest)
+    FindClearSpaceForUnit(hero, dest, true)
+    hero:SetForwardVector(fwd)
+
+    if target:IsHero() and target:IsAlive() and target:GetTeamNumber() ~= hero:GetTeamNumber() then
+        target:AddNewModifier(hero, nil, "modifier_clrb_insight_parry_stun", { duration = 1 })
+    end
+end

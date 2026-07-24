@@ -8,22 +8,64 @@
 ]]
 
 
-local encoded=[[Qm9vdC5EYXRhID0ge30KQm9vdC5Db25maWcgPSB7CiAgICAtLSDov5vlhaXpgInkurrliY3mmK/lkKblkK/nlKjmnLrlmajkurrvvIjnlLHpmJ/kvI3nlYzpnaLlvIDlkK/ku7vkuIDpmr7luqbml7boh6rliqjkuLogdHJ1Ze+8iQogICAgZW5hYmxlX2JvdF9wbGF5ZXJzID0gZmFsc2UsCiAgICAtLSDmnLrlmajkurrpmr7luqbvvJowIOacqumAieS6uuacuu+8jDEg566A5Y2V55S16ISR77yMMiDlm7Dpmr7nlLXohJHvvIwzIOS7pOS6uuWPkeeLgu+8iOaVsOWAvOingSBpbmdhbWUvQm90QUkvQ29uZmlnLmx1YSDlhoUgQk9UQUlfUFJFU0VUXyrvvIkKICAgIGJvdF9kaWZmaWN1bHR5ID0gMCwKICAgIC0tIGJvdF9wYXNzaXZlX21vZGXvvJrlt7Llup/lvIPvvIzmnI3liqHnq6/lm7rlrprkuLogZmFsc2XvvIjlhbzlrrnml6flrZfmrrXvvIkKICAgIGJvdF9wYXNzaXZlX21vZGUgPSBmYWxzZSwKICAgIC0tIOWQr+eUqOacuuWZqOS6uuaXtu+8jOihpem9kOWIsOeahOaAu+eOqeWutuaVsOmHj++8iOWQq+ecn+S6uuWSjOacuuWZqOS6uu+8iQogICAgYXV0b19maWxsX3BsYXllcl9jb3VudCA9IDEwCn0KLS3lnKjov5nph4xBSeiLsembhOagueaNruiHqui6q+e0ouW8leWIpOaWreiHquW3seaYr+S7gOS5iOexu+Wei+eahOiLsembhApCb290LkJvb3RUeXBlID0gewogICAgdHAxID0gewogICAgICAgIC0tIOWKm+mHjwogICAgICAgIDEsIDIsIDMsIDYsIDcsIDgsIDksIDM2LCAzNywgMzgsIDM5LCA0MCwgNDEsIDQyLCA0MywgNDQsCiAgICAgICAgNDcsIDY4LCA3NCwgNzUsIDc2LCA3NywgNzgsIDgwLCA4MywgOTAsIDkxLCA5MiwgOTMsIDk5LCAxMDUsIDEwNywgMTExLCA0NQogICAgICAgIC0tIDIKICAgIH0sCiAgICB0cDIgPSB7CiAgICAgICAgLS0g5pWP5o23CiAgICAgICAgMTEsIDE0LCAxNSwgMTcsIDE5LCAyMCwgMjEsIDIyLCAyMywgNDgsIDQ5LCA1MCwgNTEsIDUyLCA1MywgNTQsCiAgICAgICAgNTUsIDY5LCA3MSwgODEsIDgyLCA4NCwgODksIDk0LCAxMDEsIDEwMiwgMTA4LCAxMDkKICAgICAgICAtLTIwCiAgICB9LAogICAgdHAzID0gewogICAgICAgIC0tIOaZuuWKmwogICAgICAgIDI0LCAyNSwgMjksIDMwLCA1NywgNTgsIDU5LCA2MCwgNjEsIDYzLCA2NCwgNjUsIDY3LCA3MCwKICAgICAgICA3MywgNzksIDI2LCA4NSwgODYsIDg4LCA5NSwgOTYsIDEwMywgMTA0LCAxMDYsIDExMCwKICAgICAgICA4NywgNjYKICAgICAgICAtLSAzMwogICAgfQp9Ci0t5Lq65py66LSt5Lmw54mp5ZOB55qE6aG65bqPCkJvb3QuSXRlbU9yZGVyID0gewogICAgLS3lipvph48KICAgIHRwMSA9IHsKICAgICAgICBzbG90MSA9ICJpdGVtX3BoYXNlX2Jvb3RzIiwKICAgICAgICBzbG90MiA9ICJpdGVtX2JsYWRlX21haWwiLAogICAgICAgIHNsb3QzID0gIml0ZW1fc2FuZ2VfYW5kX3lhc2hhIiwKICAgICAgICBzbG90NCA9ICJpdGVtX2Fzc2F1bHQiLAogICAgICAgIHNsb3Q1ID0gIml0ZW1faGVhcnQiLAogICAgICAgIHNsb3Q2ID0gIml0ZW1fYmxhY2tfa2luZ19iYXIiLAogICAgfSwKICAgIHRwMiA9IHsKICAgICAgICBzbG90MSA9ICJpdGVtX3BoYXNlX2Jvb3RzIiwKICAgICAgICBzbG90MiA9ICJpdGVtX3NhbmdlX2FuZF95YXNoYSIsCiAgICAgICAgc2xvdDMgPSAiaXRlbV9zYXRhbmljIiwKICAgICAgICBzbG90NCA9ICJpdGVtX2J1dHRlcmZseSIsCiAgICAgICAgc2xvdDUgPSAiaXRlbV9tb25rZXlfa2luZ19iYXIiLAogICAgICAgIHNsb3Q2ID0gIml0ZW1fYmxhY2tfa2luZ19iYXIiLAogICAgfSwKICAgIHRwMyA9IHsKICAgICAgICBzbG90MSA9ICJpdGVtX3BoYXNlX2Jvb3RzIiwKICAgICAgICBzbG90MiA9ICJpdGVtX3lhc2hhX2FuZF9rYXlhIiwKICAgICAgICBzbG90MyA9ICJpdGVtX2hlYXZlbnNfaGFsYmVyZCIsCiAgICAgICAgc2xvdDQgPSAiaXRlbV9zaGl2YXNfZ3VhcmQiLAogICAgICAgIHNsb3Q1ID0gIml0ZW1fYmxvb2RzdG9uZSIsCiAgICAgICAgc2xvdDYgPSAiaXRlbV9ibGFja19raW5nX2JhciIsCiAgICB9Cn0K]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
-end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+Boot.Data = {}
+Boot.Config = {
+    -- 进入选人前是否启用机器人（由队伍界面开启任一难度时自动为 true）
+    enable_bot_players = false,
+    -- 机器人难度：0 未选人机，1 简单电脑，2 困难电脑，3 令人发狂（数值见 ingame/BotAI/Config.lua 内 BOTAI_PRESET_*）
+    bot_difficulty = 0,
+    -- bot_passive_mode：已废弃，服务端固定为 false（兼容旧字段）
+    bot_passive_mode = false,
+    -- 启用机器人时，补齐到的总玩家数量（含真人和机器人）
+    auto_fill_player_count = 10
+}
+--在这里AI英雄根据自身索引判断自己是什么类型的英雄
+Boot.BootType = {
+    tp1 = {
+        -- 力量
+        1, 2, 3, 6, 7, 8, 9, 36, 37, 38, 39, 40, 41, 42, 43, 44,
+        47, 68, 74, 75, 76, 77, 78, 80, 83, 90, 91, 92, 93, 99, 105, 107, 111, 45
+        -- 2
+    },
+    tp2 = {
+        -- 敏捷
+        11, 14, 15, 17, 19, 20, 21, 22, 23, 48, 49, 50, 51, 52, 53, 54,
+        55, 69, 71, 81, 82, 84, 89, 94, 101, 102, 108, 109
+        --20
+    },
+    tp3 = {
+        -- 智力
+        24, 25, 29, 30, 57, 58, 59, 60, 61, 63, 64, 65, 67, 70,
+        73, 79, 26, 85, 86, 88, 95, 96, 103, 104, 106, 110,
+        87, 66
+        -- 33
+    }
+}
+--人机购买物品的顺序
+Boot.ItemOrder = {
+    --力量
+    tp1 = {
+        slot1 = "item_phase_boots",
+        slot2 = "item_blade_mail",
+        slot3 = "item_sange_and_yasha",
+        slot4 = "item_assault",
+        slot5 = "item_heart",
+        slot6 = "item_black_king_bar",
+    },
+    tp2 = {
+        slot1 = "item_phase_boots",
+        slot2 = "item_sange_and_yasha",
+        slot3 = "item_satanic",
+        slot4 = "item_butterfly",
+        slot5 = "item_monkey_king_bar",
+        slot6 = "item_black_king_bar",
+    },
+    tp3 = {
+        slot1 = "item_phase_boots",
+        slot2 = "item_yasha_and_kaya",
+        slot3 = "item_heavens_halberd",
+        slot4 = "item_shivas_guard",
+        slot5 = "item_bloodstone",
+        slot6 = "item_black_king_bar",
+    }
+}

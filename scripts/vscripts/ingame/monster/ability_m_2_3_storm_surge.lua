@@ -8,22 +8,149 @@
 ]]
 
 
-local encoded=[[aWYgYWJpbGl0eV9tXzJfM19zdG9ybV9zdXJnZSA9PSBuaWwgdGhlbgogICAgYWJpbGl0eV9tXzJfM19zdG9ybV9zdXJnZSA9IGNsYXNzKHt9KQplbmQKCkxpbmtMdWFNb2RpZmllcigibW9kaWZpZXJfbV8yXzNfc3Rvcm1fc3VyZ2UiLAogICAgImluZ2FtZS9Nb25zdGVyL2FiaWxpdHlfbV8yXzNfc3Rvcm1fc3VyZ2UiLAogICAgTFVBX01PRElGSUVSX01PVElPTl9OT05FKQoKTGlua0x1YU1vZGlmaWVyKCJtb2RpZmllcl9tXzJfM19zdG9ybV9zdXJnZV9zbG93IiwKICAgICJpbmdhbWUvTW9uc3Rlci9hYmlsaXR5X21fMl8zX3N0b3JtX3N1cmdlIiwKICAgIExVQV9NT0RJRklFUl9NT1RJT05fTk9ORSkKCmZ1bmN0aW9uIGFiaWxpdHlfbV8yXzNfc3Rvcm1fc3VyZ2U6R2V0SW50cmluc2ljTW9kaWZpZXJOYW1lKCkKICAgIHJldHVybiAibW9kaWZpZXJfbV8yXzNfc3Rvcm1fc3VyZ2UiCmVuZAoKaWYgbW9kaWZpZXJfbV8yXzNfc3Rvcm1fc3VyZ2UgPT0gbmlsIHRoZW4KICAgIG1vZGlmaWVyX21fMl8zX3N0b3JtX3N1cmdlID0gY2xhc3Moe30pCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfbV8yXzNfc3Rvcm1fc3VyZ2U6SXNIaWRkZW4oKQogICAgcmV0dXJuIHRydWUKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzJfM19zdG9ybV9zdXJnZTpJc1B1cmdhYmxlKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX21fMl8zX3N0b3JtX3N1cmdlOkRlY2xhcmVGdW5jdGlvbnMoKQogICAgcmV0dXJuIHsgTU9ESUZJRVJfRVZFTlRfT05fVEFLRURBTUFHRSB9CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfbV8yXzNfc3Rvcm1fc3VyZ2U6T25UYWtlRGFtYWdlKHBhcmFtcykKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgcGFyYW1zLnVuaXQgfj0gc2VsZjpHZXRQYXJlbnQoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIHBhcmFtcy5kYW1hZ2UgPD0gMCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGFiaWxpdHkgPSBzZWxmOkdldEFiaWxpdHkoKQogICAgaWYgbm90IGFiaWxpdHkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBub3cgPSBHYW1lUnVsZXM6R2V0R2FtZVRpbWUoKQogICAgbG9jYWwgaW50ZXJuYWxfY2QgPSBhYmlsaXR5OkdldFNwZWNpYWxWYWx1ZUZvcigic3RyaWtlX2ludGVybmFsX2NkIikgb3IgMC4zCiAgICBpZiBzZWxmLmxhc3Rfc3RyaWtlX3RpbWUgYW5kIChub3cgLSBzZWxmLmxhc3Rfc3RyaWtlX3RpbWUpIDwgaW50ZXJuYWxfY2QgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBjaGFuY2UgPSBhYmlsaXR5OkdldFNwZWNpYWxWYWx1ZUZvcigic3RyaWtlX3BjdF9jaGFuY2UiKSBvciAzMAogICAgaWYgUmFuZG9tSW50KDEsIDEwMCkgPiBjaGFuY2UgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmLmxhc3Rfc3RyaWtlX3RpbWUgPSBub3cKICAgIHNlbGY6UHJvY1N0b3JtU3VyZ2UoYWJpbGl0eSkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzJfM19zdG9ybV9zdXJnZTpQcm9jU3Rvcm1TdXJnZShhYmlsaXR5KQogICAgbG9jYWwgY2FzdGVyID0gc2VsZjpHZXRQYXJlbnQoKQogICAgaWYgbm90IGNhc3RlciBvciBjYXN0ZXI6SXNOdWxsKCkgb3Igbm90IGNhc3RlcjpJc0FsaXZlKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCByYWRpdXMgPSBhYmlsaXR5OkdldFNwZWNpYWxWYWx1ZUZvcigic3RyaWtlX3NlYXJjaF9yYWRpdXMiKSBvciA2MDAKICAgIGxvY2FsIG1heF90YXJnZXRzID0gYWJpbGl0eTpHZXRTcGVjaWFsVmFsdWVGb3IoInN0cmlrZV90YXJnZXRfY291bnQiKSBvciAzCiAgICBsb2NhbCBkYW1hZ2UgPSBhYmlsaXR5OkdldFNwZWNpYWxWYWx1ZUZvcigic3RyaWtlX2RhbWFnZSIpIG9yIDEwMDAKICAgIGxvY2FsIHNsb3dfZHVyYXRpb24gPSBhYmlsaXR5OkdldFNwZWNpYWxWYWx1ZUZvcigic3RyaWtlX3Nsb3dfZHVyYXRpb24iKSBvciAyCgogICAgbG9jYWwgZW5lbWllcyA9IEZpbmRVbml0c0luUmFkaXVzKAogICAgICAgIGNhc3RlcjpHZXRUZWFtTnVtYmVyKCksCiAgICAgICAgY2FzdGVyOkdldEFic09yaWdpbigpLAogICAgICAgIG5pbCwKICAgICAgICByYWRpdXMsCiAgICAgICAgRE9UQV9VTklUX1RBUkdFVF9URUFNX0VORU1ZLAogICAgICAgIERPVEFfVU5JVF9UQVJHRVRfSEVSTyArIERPVEFfVU5JVF9UQVJHRVRfQkFTSUMsCiAgICAgICAgRE9UQV9VTklUX1RBUkdFVF9GTEFHX05PTkUsCiAgICAgICAgRklORF9DTE9TRVNULAogICAgICAgIGZhbHNlCiAgICApCiAgICBsb2NhbCBoaXQgPSAwCiAgICBmb3IgXywgZW5lbXkgaW4gaXBhaXJzKGVuZW1pZXMpIGRvCiAgICAgICAgaWYgaGl0ID49IG1heF90YXJnZXRzIHRoZW4KICAgICAgICAgICAgYnJlYWsKICAgICAgICBlbmQKICAgICAgICBpZiBlbmVteSBhbmQgbm90IGVuZW15OklzTnVsbCgpIGFuZCBlbmVteTpJc0FsaXZlKCkgdGhlbgogICAgICAgICAgICBoaXQgPSBoaXQgKyAxCiAgICAgICAgICAgIGxvY2FsIHBmeCA9IFBhcnRpY2xlTWFuYWdlcjpDcmVhdGVQYXJ0aWNsZSgKICAgICAgICAgICAgICAgICJwYXJ0aWNsZXMvdW5pdHMvaGVyb2VzL2hlcm9fcmF6b3IvcmF6b3Jfc3Rvcm1fc2Vjb25kYXJ5X2FyY19hLnZwY2YiLAogICAgICAgICAgICAgICAgUEFUVEFDSF9BQlNPUklHSU5fRk9MTE9XLAogICAgICAgICAgICAgICAgY2FzdGVyCiAgICAgICAgICAgICkKICAgICAgICAgICAgUGFydGljbGVNYW5hZ2VyOlNldFBhcnRpY2xlQ29udHJvbEVudCgKICAgICAgICAgICAgICAgIHBmeCwgMCwgY2FzdGVyLCBQQVRUQUNIX1BPSU5UX0ZPTExPVywgImF0dGFjaF9oaXRsb2MiLCBjYXN0ZXI6R2V0QWJzT3JpZ2luKCksIHRydWUKICAgICAgICAgICAgKQogICAgICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6U2V0UGFydGljbGVDb250cm9sRW50KAogICAgICAgICAgICAgICAgcGZ4LCAxLCBlbmVteSwgUEFUVEFDSF9QT0lOVF9GT0xMT1csICJhdHRhY2hfaGl0bG9jIiwgZW5lbXk6R2V0QWJzT3JpZ2luKCksIHRydWUKICAgICAgICAgICAgKQogICAgICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6UmVsZWFzZVBhcnRpY2xlSW5kZXgocGZ4KQogICAgICAgICAgICBFbWl0U291bmRPbigiSGVyb19SYXpvci5VbnN0YWJsZUN1cnJlbnQuVGFyZ2V0IiwgZW5lbXkpCgogICAgICAgICAgICBBcHBseURhbWFnZSh7CiAgICAgICAgICAgICAgICB2aWN0aW0gPSBlbmVteSwKICAgICAgICAgICAgICAgIGF0dGFja2VyID0gY2FzdGVyLAogICAgICAgICAgICAgICAgZGFtYWdlID0gZGFtYWdlLAogICAgICAgICAgICAgICAgZGFtYWdlX3R5cGUgPSBEQU1BR0VfVFlQRV9NQUdJQ0FMLAogICAgICAgICAgICAgICAgYWJpbGl0eSA9IGFiaWxpdHksCiAgICAgICAgICAgIH0pCiAgICAgICAgICAgIGVuZW15OkFkZE5ld01vZGlmaWVyKGNhc3RlciwgYWJpbGl0eSwgIm1vZGlmaWVyX21fMl8zX3N0b3JtX3N1cmdlX3Nsb3ciLCB7CiAgICAgICAgICAgICAgICBkdXJhdGlvbiA9IHNsb3dfZHVyYXRpb24sCiAgICAgICAgICAgIH0pCiAgICAgICAgZW5kCiAgICBlbmQKZW5kCgppZiBtb2RpZmllcl9tXzJfM19zdG9ybV9zdXJnZV9zbG93ID09IG5pbCB0aGVuCiAgICBtb2RpZmllcl9tXzJfM19zdG9ybV9zdXJnZV9zbG93ID0gY2xhc3Moe30pCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfbV8yXzNfc3Rvcm1fc3VyZ2Vfc2xvdzpJc0hpZGRlbigpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzJfM19zdG9ybV9zdXJnZV9zbG93OklzRGVidWZmKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfbV8yXzNfc3Rvcm1fc3VyZ2Vfc2xvdzpJc1B1cmdhYmxlKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfbV8yXzNfc3Rvcm1fc3VyZ2Vfc2xvdzpEZWNsYXJlRnVuY3Rpb25zKCkKICAgIHJldHVybiB7IE1PRElGSUVSX1BST1BFUlRZX01PVkVTUEVFRF9CT05VU19QRVJDRU5UQUdFIH0KZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzJfM19zdG9ybV9zdXJnZV9zbG93OkdldE1vZGlmaWVyTW92ZVNwZWVkQm9udXNfUGVyY2VudGFnZSgpCiAgICByZXR1cm4gLTUwCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfbV8yXzNfc3Rvcm1fc3VyZ2Vfc2xvdzpHZXRFZmZlY3ROYW1lKCkKICAgIHJldHVybiAicGFydGljbGVzL3VuaXRzL2hlcm9lcy9oZXJvX3Jhem9yL3Jhem9yX3Vuc3RhYmxlX2N1cnJlbnQudnBjZiIKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzJfM19zdG9ybV9zdXJnZV9zbG93OkdldEVmZmVjdEF0dGFjaFR5cGUoKQogICAgcmV0dXJuIFBBVFRBQ0hfQUJTT1JJR0lOX0ZPTExPVwplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if ability_m_2_3_storm_surge == nil then
+    ability_m_2_3_storm_surge = class({})
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+LinkLuaModifier("modifier_m_2_3_storm_surge",
+    "ingame/Monster/ability_m_2_3_storm_surge",
+    LUA_MODIFIER_MOTION_NONE)
+
+LinkLuaModifier("modifier_m_2_3_storm_surge_slow",
+    "ingame/Monster/ability_m_2_3_storm_surge",
+    LUA_MODIFIER_MOTION_NONE)
+
+function ability_m_2_3_storm_surge:GetIntrinsicModifierName()
+    return "modifier_m_2_3_storm_surge"
+end
+
+if modifier_m_2_3_storm_surge == nil then
+    modifier_m_2_3_storm_surge = class({})
+end
+
+function modifier_m_2_3_storm_surge:IsHidden()
+    return true
+end
+
+function modifier_m_2_3_storm_surge:IsPurgable()
+    return false
+end
+
+function modifier_m_2_3_storm_surge:DeclareFunctions()
+    return { MODIFIER_EVENT_ON_TAKEDAMAGE }
+end
+
+function modifier_m_2_3_storm_surge:OnTakeDamage(params)
+    if not IsServer() then
+        return
+    end
+    if params.unit ~= self:GetParent() then
+        return
+    end
+    if params.damage <= 0 then
+        return
+    end
+    local ability = self:GetAbility()
+    if not ability then
+        return
+    end
+    local now = GameRules:GetGameTime()
+    local internal_cd = ability:GetSpecialValueFor("strike_internal_cd") or 0.3
+    if self.last_strike_time and (now - self.last_strike_time) < internal_cd then
+        return
+    end
+    local chance = ability:GetSpecialValueFor("strike_pct_chance") or 30
+    if RandomInt(1, 100) > chance then
+        return
+    end
+    self.last_strike_time = now
+    self:ProcStormSurge(ability)
+end
+
+function modifier_m_2_3_storm_surge:ProcStormSurge(ability)
+    local caster = self:GetParent()
+    if not caster or caster:IsNull() or not caster:IsAlive() then
+        return
+    end
+    local radius = ability:GetSpecialValueFor("strike_search_radius") or 600
+    local max_targets = ability:GetSpecialValueFor("strike_target_count") or 3
+    local damage = ability:GetSpecialValueFor("strike_damage") or 1000
+    local slow_duration = ability:GetSpecialValueFor("strike_slow_duration") or 2
+
+    local enemies = FindUnitsInRadius(
+        caster:GetTeamNumber(),
+        caster:GetAbsOrigin(),
+        nil,
+        radius,
+        DOTA_UNIT_TARGET_TEAM_ENEMY,
+        DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+        DOTA_UNIT_TARGET_FLAG_NONE,
+        FIND_CLOSEST,
+        false
+    )
+    local hit = 0
+    for _, enemy in ipairs(enemies) do
+        if hit >= max_targets then
+            break
+        end
+        if enemy and not enemy:IsNull() and enemy:IsAlive() then
+            hit = hit + 1
+            local pfx = ParticleManager:CreateParticle(
+                "particles/units/heroes/hero_razor/razor_storm_secondary_arc_a.vpcf",
+                PATTACH_ABSORIGIN_FOLLOW,
+                caster
+            )
+            ParticleManager:SetParticleControlEnt(
+                pfx, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true
+            )
+            ParticleManager:SetParticleControlEnt(
+                pfx, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true
+            )
+            ParticleManager:ReleaseParticleIndex(pfx)
+            EmitSoundOn("Hero_Razor.UnstableCurrent.Target", enemy)
+
+            ApplyDamage({
+                victim = enemy,
+                attacker = caster,
+                damage = damage,
+                damage_type = DAMAGE_TYPE_MAGICAL,
+                ability = ability,
+            })
+            enemy:AddNewModifier(caster, ability, "modifier_m_2_3_storm_surge_slow", {
+                duration = slow_duration,
+            })
+        end
+    end
+end
+
+if modifier_m_2_3_storm_surge_slow == nil then
+    modifier_m_2_3_storm_surge_slow = class({})
+end
+
+function modifier_m_2_3_storm_surge_slow:IsHidden()
+    return false
+end
+
+function modifier_m_2_3_storm_surge_slow:IsDebuff()
+    return true
+end
+
+function modifier_m_2_3_storm_surge_slow:IsPurgable()
+    return true
+end
+
+function modifier_m_2_3_storm_surge_slow:DeclareFunctions()
+    return { MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE }
+end
+
+function modifier_m_2_3_storm_surge_slow:GetModifierMoveSpeedBonus_Percentage()
+    return -50
+end
+
+function modifier_m_2_3_storm_surge_slow:GetEffectName()
+    return "particles/units/heroes/hero_razor/razor_unstable_current.vpcf"
+end
+
+function modifier_m_2_3_storm_surge_slow:GetEffectAttachType()
+    return PATTACH_ABSORIGIN_FOLLOW
+end

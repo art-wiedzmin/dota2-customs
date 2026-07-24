@@ -8,22 +8,418 @@
 ]]
 
 
-local encoded=[[LS1bWwoJ5YWo5bGA5byn5bqm6L+Q5Yqo5o6n5Yi25ZmoCgoJa3Yg5pWw5o2uICjpu5jorqQpKToKCS0tIOaWueWQkSwg5o+Q5L6b5LiA5LiqICjkuI3mj5DkvpvlsLHpu5jorqTpnaLmnJ3mlrnlkJEpOgoJCWRpcl94L3kgKGZvcndhcmQpLCBmb3Ig5Y2V5L2N5pa55ZCRCgkJdGFyZ2V0X3gveSAoZm9yd2FyZCksIGZvciDnm67moIfmlrnlkJEKCS0tIOi/kOWKqOaOp+WItiwg5o+Q5L6bIDIgLSAzLCBkdXJhdGlvbi1vbmx5IChmb3IgdmVydGljYWwgYXJjKSwgb3IgYWxsIDMKCQlzcGVlZCAoMCkJCemAn+W6pgoJCWR1cmF0aW9uICgwKQnmjIHnu63ml7bpl7QKCQlkaXN0YW5jZSAoMCk6IAkw6KGo56S65LiN5L2N56e7CgktLSB2ZXJ0aWNhbCBtb3Rpb24uCgkJaGVpZ2h0ICgwKTogbWF4IGhlaWdodC4gemVybyBtZWFucyBubyB2ZXJ0aWNhbCBtb3Rpb24KCQlzdGFydF9vZmZzZXQgKDApLCBoZWlnaHQgb2Zmc2V0IGZyb20gZ3JvdW5kIGF0IHN0YXJ0IG9mIGp1bXAKCQllbmRfb2Zmc2V0ICgwKSwgaGVpZ2h0IG9mZnNldCBmcm9tIGdyb3VuZCBhdCBlbmQgb2YganVtcAoJLS0gYXJjIHR5cGVzCgkJZml4X2VuZCAodHJ1ZSk6IGlmIHRydWUsIGxhbmRpbmcgei1wb3MgaXMgdGhlIHNhbWUgYXMganVtcGluZyB6LXBvcywgbm90IHJlc3BlY3Rpbmcgb24gbGFuZGluZyB0ZXJyYWluIGhlaWdodCAoUG91bmNlKQoJCWZpeF9kdXJhdGlvbiAodHJ1ZSk6IGlmIGZhbHNlLCBhcmMgZW5kcyB3aGVuIHVuaXQgdG91Y2hlcyBncm91bmQsIG5vdCByZXNwZWN0aW5nIGR1cmF0aW9uIChTaGllbGQgQ3Jhc2gpCgkJZml4X2hlaWdodCAodHJ1ZSk6IGlmIGZhbHNlLCBhcmMgbWF4IGhlaWdodCBkZXBlbmRzIG9uIGp1bXAgZGlzdGFuY2UsIGhlaWdodCBwcm92aWRlZCBpcyBtYXgtaGVpZ2h0IChUcmVlIERhbmNlKQoJLS0gb3RoZXIKCQlpc1N0dW4gKGZhbHNlKSwgcGFyZW50IGlzIHN0dW5uZWQKCQlpc1Jlc3RyaWN0ZWQgKGZhbHNlKSwgcGFyZW50IGlzIGNvbW1hbmQgcmVzdHJpY3RlZAoJCWlzRm9yd2FyZCAoZmFsc2UpLCBsb2NrIHBhcmVudCBmb3J3YXJkIGZhY2luZwoJCWFjdGl2aXR5IChub25lKSwgYWN0aXZpdHkgd2hlbiBsZWFwaW5nCiAgIOWbnuiwgwogICBhcmM6U2V0RW5kQ2FsbGJhY2soZnVuY3Rpb24gKCkgZW5kKQpdXQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQptb2RpZmllcl9nZW5lcmljX2FyYyA9IGNsYXNzKHt9KQoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KLS0g5Z+65pys6K6+572uCmZ1bmN0aW9uIG1vZGlmaWVyX2dlbmVyaWNfYXJjOklzSGlkZGVuKCkKCXJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZ2VuZXJpY19hcmM6SXNEZWJ1ZmYoKQoJcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZ2VuZXJpY19hcmM6SXNTdHVuRGVidWZmKCkKCXJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2dlbmVyaWNfYXJjOklzUHVyZ2FibGUoKQoJcmV0dXJuIHRydWUKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9nZW5lcmljX2FyYzpHZXRBdHRyaWJ1dGVzKCkKCXJldHVybiBNT0RJRklFUl9BVFRSSUJVVEVfTVVMVElQTEUKZW5kCgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQotLSDliJ3lp4vljJYKZnVuY3Rpb24gbW9kaWZpZXJfZ2VuZXJpY19hcmM6T25DcmVhdGVkKGt2KQoJaWYgbm90IElzU2VydmVyKCkgdGhlbiByZXR1cm4gZW5kCglzZWxmLmludGVycnVwdGVkID0gZmFsc2UKCXNlbGY6U2V0SnVtcFBhcmFtZXRlcnMoa3YpCglzZWxmOkp1bXAoKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2dlbmVyaWNfYXJjOk9uUmVmcmVzaChrdikKCXNlbGY6T25DcmVhdGVkKGt2KQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2dlbmVyaWNfYXJjOk9uUmVtb3ZlZCgpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZ2VuZXJpY19hcmM6T25EZXN0cm95KCkKCWlmIG5vdCBJc1NlcnZlcigpIHRoZW4gcmV0dXJuIGVuZAoKCWlmIHNlbGYubW90aW9uX21hbnVhbCB0aGVuCgkJc2VsZjpTdGFydEludGVydmFsVGhpbmsoLTEpCgllbmQKCglsb2NhbCBwYXJlbnQgPSBzZWxmOkdldFBhcmVudCgpCglsb2NhbCBwb3MgPSBuaWwKCWlmIHBhcmVudCBhbmQgbm90IHBhcmVudDpJc051bGwoKSB0aGVuCgkJcG9zID0gcGFyZW50OkdldE9yaWdpbigpCgkJaWYgbm90IHNlbGYubW90aW9uX21hbnVhbCB0aGVuCgkJCWlmIHBhcmVudC5SZW1vdmVIb3Jpem9udGFsTW90aW9uQ29udHJvbGxlciB0aGVuCgkJCQlwYXJlbnQ6UmVtb3ZlSG9yaXpvbnRhbE1vdGlvbkNvbnRyb2xsZXIoc2VsZikKCQkJZW5kCgkJCWlmIHBhcmVudC5SZW1vdmVWZXJ0aWNhbE1vdGlvbkNvbnRyb2xsZXIgdGhlbgoJCQkJcGFyZW50OlJlbW92ZVZlcnRpY2FsTW90aW9uQ29udHJvbGxlcihzZWxmKQoJCQllbmQKCQllbmQKCWVuZAoKCS0tIOmrmOW6puS/neaMgSDlvZPmnInnu5PmnZ/kvY3nva7kv53mjIEKCWlmIHBvcyBhbmQgc2VsZi5lbmRfb2Zmc2V0IH49IDAgYW5kIHBhcmVudCBhbmQgbm90IHBhcmVudDpJc051bGwoKSB0aGVuCgkJcGFyZW50OlNldE9yaWdpbihwb3MpCgllbmQKCglpZiBzZWxmLmVuZENhbGxiYWNrIHRoZW4KCQlzZWxmLmVuZENhbGxiYWNrKHNlbGYuaW50ZXJydXB0ZWQpCgllbmQKZW5kCgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQotLSBNb2RpZmllciDmlYjmnpwKZnVuY3Rpb24gbW9kaWZpZXJfZ2VuZXJpY19hcmM6RGVjbGFyZUZ1bmN0aW9ucygpCglsb2NhbCBmdW5jcyA9IHsKCQlNT0RJRklFUl9QUk9QRVJUWV9ESVNBQkxFX1RVUk5JTkcsCgl9CglpZiBzZWxmOkdldFN0YWNrQ291bnQoKSA+IDAgdGhlbgoJCXRhYmxlLmluc2VydChmdW5jcywgTU9ESUZJRVJfUFJPUEVSVFlfT1ZFUlJJREVfQU5JTUFUSU9OKQoJZW5kCgoJcmV0dXJuIGZ1bmNzCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZ2VuZXJpY19hcmM6R2V0TW9kaWZpZXJEaXNhYmxlVHVybmluZygpCglpZiBub3Qgc2VsZi5pc0ZvcndhcmQgdGhlbiByZXR1cm4gZW5kCglyZXR1cm4gMQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2dlbmVyaWNfYXJjOkdldE92ZXJyaWRlQW5pbWF0aW9uKCkKCXJldHVybiBzZWxmOkdldFN0YWNrQ291bnQoKQplbmQKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCi0tIOeKtuaAgeaViOaenApmdW5jdGlvbiBtb2RpZmllcl9nZW5lcmljX2FyYzpDaGVja1N0YXRlKCkKCWxvY2FsIHN0YXRlID0gewoJCVtNT0RJRklFUl9TVEFURV9TVFVOTkVEXSA9IHNlbGYuaXNTdHVuIG9yIGZhbHNlLAoJCVtNT0RJRklFUl9TVEFURV9DT01NQU5EX1JFU1RSSUNURURdID0gc2VsZi5pc1Jlc3RyaWN0ZWQgb3IgZmFsc2UsCgkJW01PRElGSUVSX1NUQVRFX05PX1VOSVRfQ09MTElTSU9OXSA9IHRydWUsCgl9CgoJcmV0dXJuIHN0YXRlCmVuZAoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KLS0g6L+Q5Yqo5pWI5p6cCmZ1bmN0aW9uIG1vZGlmaWVyX2dlbmVyaWNfYXJjOlVwZGF0ZUhvcml6b250YWxNb3Rpb24obWUsIGR0KQoJaWYgc2VsZi5maXhfZHVyYXRpb24gYW5kIHNlbGY6R2V0RWxhcHNlZFRpbWUoKSA+PSBzZWxmLmR1cmF0aW9uIHRoZW4gcmV0dXJuIGVuZAoKCS0tIOiuvue9ruebuOWvueS9jee9rgoJbG9jYWwgcG9zID0gbWU6R2V0T3JpZ2luKCkgKyBzZWxmLmRpcmVjdGlvbiAqIHNlbGYuc3BlZWQgKiBkdAoJbWU6U2V0T3JpZ2luKHBvcykKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9nZW5lcmljX2FyYzpVcGRhdGVWZXJ0aWNhbE1vdGlvbihtZSwgZHQpCglpZiBzZWxmLmZpeF9kdXJhdGlvbiBhbmQgc2VsZjpHZXRFbGFwc2VkVGltZSgpID49IHNlbGYuZHVyYXRpb24gdGhlbiByZXR1cm4gZW5kCgoJbG9jYWwgcG9zID0gbWU6R2V0T3JpZ2luKCkKCWxvY2FsIHRpbWUgPSBzZWxmOkdldEVsYXBzZWRUaW1lKCkKCgktLSDorr7nva7nm7jlr7nkvY3nva4KCWxvY2FsIGhlaWdodCA9IHBvcy56Cglsb2NhbCBzcGVlZCA9IHNlbGY6R2V0VmVydGljYWxTcGVlZCh0aW1lKQoJcG9zLnogPSBoZWlnaHQgKyBzcGVlZCAqIGR0CgltZTpTZXRPcmlnaW4ocG9zKQoKCWlmIG5vdCBzZWxmLmZpeF9kdXJhdGlvbiB0aGVuCgkJbG9jYWwgZ3JvdW5kID0gR2V0R3JvdW5kSGVpZ2h0KHBvcywgbWUpICsgc2VsZi5lbmRfb2Zmc2V0CgkJaWYgcG9zLnogPD0gZ3JvdW5kIHRoZW4KCQkJLS0g5Zyo5Zyw6Z2i5Lul5LiL77yM5bCG6auY5bqm6K6+572u5Li65Zyw6Z2i77yM54S25ZCO6ZSA5q+BCgkJCXBvcy56ID0gZ3JvdW5kCgkJCW1lOlNldE9yaWdpbihwb3MpCgkJCXNlbGY6RGVzdHJveSgpCgkJZW5kCgllbmQKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9nZW5lcmljX2FyYzpPbkhvcml6b250YWxNb3Rpb25JbnRlcnJ1cHRlZCgpCglzZWxmLmludGVycnVwdGVkID0gdHJ1ZQoJc2VsZjpEZXN0cm95KCkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9nZW5lcmljX2FyYzpPblZlcnRpY2FsTW90aW9uSW50ZXJydXB0ZWQoKQoJc2VsZi5pbnRlcnJ1cHRlZCA9IHRydWUKCXNlbGY6RGVzdHJveSgpCmVuZAoKLS0g6YOo5YiG5a6i5oi356uvL+Wuv+S4u+eOr+Wig+WNleS9jeaXoCBBcHBseSpNb3Rpb25Db250cm9sbGVy77yM5Zue6YCA5Li655SoIEludGVydmFsVGhpbmsg6amx5YqoIFVwZGF0ZSpNb3Rpb27jgIIKbG9jYWwgZnVuY3Rpb24gdHJ5X2FwcGx5X2hvcml6b250YWxfY29udHJvbGxlcihtb2RpZmllciwgcGFyZW50KQoJaWYgcGFyZW50LkFwcGx5SG9yaXpvbnRhbE1vdGlvbkNvbnRyb2xsZXIgdGhlbgoJCWxvY2FsIG9rID0gcGFyZW50OkFwcGx5SG9yaXpvbnRhbE1vdGlvbkNvbnRyb2xsZXIobW9kaWZpZXIpCgkJaWYgb2sgfj0gZmFsc2UgdGhlbgoJCQlyZXR1cm4gdHJ1ZQoJCWVuZAoJZW5kCglpZiBtb2RpZmllci5BcHBseUhvcml6b250YWxNb3Rpb25Db250cm9sbGVyIHRoZW4KCQlsb2NhbCBvayA9IG1vZGlmaWVyOkFwcGx5SG9yaXpvbnRhbE1vdGlvbkNvbnRyb2xsZXIoKQoJCWlmIG9rIH49IGZhbHNlIHRoZW4KCQkJcmV0dXJuIHRydWUKCQllbmQKCWVuZAoJcmV0dXJuIGZhbHNlCmVuZAoKbG9jYWwgZnVuY3Rpb24gdHJ5X2FwcGx5X3ZlcnRpY2FsX2NvbnRyb2xsZXIobW9kaWZpZXIsIHBhcmVudCkKCWlmIHBhcmVudC5BcHBseVZlcnRpY2FsTW90aW9uQ29udHJvbGxlciB0aGVuCgkJbG9jYWwgb2sgPSBwYXJlbnQ6QXBwbHlWZXJ0aWNhbE1vdGlvbkNvbnRyb2xsZXIobW9kaWZpZXIpCgkJaWYgb2sgfj0gZmFsc2UgdGhlbgoJCQlyZXR1cm4gdHJ1ZQoJCWVuZAoJZW5kCglpZiBtb2RpZmllci5BcHBseVZlcnRpY2FsTW90aW9uQ29udHJvbGxlciB0aGVuCgkJbG9jYWwgb2sgPSBtb2RpZmllcjpBcHBseVZlcnRpY2FsTW90aW9uQ29udHJvbGxlcigpCgkJaWYgb2sgfj0gZmFsc2UgdGhlbgoJCQlyZXR1cm4gdHJ1ZQoJCWVuZAoJZW5kCglyZXR1cm4gZmFsc2UKZW5kCgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQotLSDov5DliqjliqnmiYsKZnVuY3Rpb24gbW9kaWZpZXJfZ2VuZXJpY19hcmM6U2V0SnVtcFBhcmFtZXRlcnMoa3YpCglzZWxmLnBhcmVudCA9IHNlbGY6R2V0UGFyZW50KCkKCgktLSBsb2FkIHR5cGVzCglzZWxmLmZpeF9lbmQgPSB0cnVlCglzZWxmLmZpeF9kdXJhdGlvbiA9IHRydWUKCXNlbGYuZml4X2hlaWdodCA9IHRydWUKCWlmIGt2LmZpeF9lbmQgdGhlbgoJCXNlbGYuZml4X2VuZCA9IGt2LmZpeF9lbmQgPT0gMQoJZW5kCglpZiBrdi5maXhfZHVyYXRpb24gdGhlbgoJCXNlbGYuZml4X2R1cmF0aW9uID0ga3YuZml4X2R1cmF0aW9uID09IDEKCWVuZAoJaWYga3YuZml4X2hlaWdodCB0aGVuCgkJc2VsZi5maXhfaGVpZ2h0ID0ga3YuZml4X2hlaWdodCA9PSAxCgllbmQKCgktLSBsb2FkIG90aGVyIHR5cGVzCglzZWxmLmlzU3R1biA9IGt2LmlzU3R1biA9PSAxCglzZWxmLmlzUmVzdHJpY3RlZCA9IGt2LmlzUmVzdHJpY3RlZCA9PSAxCglzZWxmLmlzRm9yd2FyZCA9IGt2LmlzRm9yd2FyZCA9PSAxCglzZWxmLmFjdGl2aXR5ID0ga3YuYWN0aXZpdHkgb3IgMAoJc2VsZjpTZXRTdGFja0NvdW50KHNlbGYuYWN0aXZpdHkpCgoJLS0gbG9hZCBkaXJlY3Rpb24KCWlmIGt2LnRhcmdldF94IGFuZCBrdi50YXJnZXRfeSB0aGVuCgkJbG9jYWwgb3JpZ2luID0gc2VsZi5wYXJlbnQ6R2V0T3JpZ2luKCkKCQlsb2NhbCBkaXIgPSBWZWN0b3Ioa3YudGFyZ2V0X3gsIGt2LnRhcmdldF95LCAwKSAtIG9yaWdpbgoJCWRpci56ID0gMAoJCWRpciA9IGRpcjpOb3JtYWxpemVkKCkKCQlzZWxmLmRpcmVjdGlvbiA9IGRpcgoJZW5kCglpZiBrdi5kaXJfeCBhbmQga3YuZGlyX3kgdGhlbgoJCXNlbGYuZGlyZWN0aW9uID0gVmVjdG9yKGt2LmRpcl94LCBrdi5kaXJfeSwgMCk6Tm9ybWFsaXplZCgpCgllbmQKCWlmIG5vdCBzZWxmLmRpcmVjdGlvbiB0aGVuCgkJc2VsZi5kaXJlY3Rpb24gPSBzZWxmLnBhcmVudDpHZXRGb3J3YXJkVmVjdG9yKCkKCWVuZAoKCS0tIGxvYWQgaG9yaXpvbnRhbCBkYXRhCglzZWxmLmR1cmF0aW9uID0ga3YuZHVyYXRpb24KCXNlbGYuZGlzdGFuY2UgPSBrdi5kaXN0YW5jZQoJc2VsZi5zcGVlZCA9IGt2LnNwZWVkCglpZiBub3Qgc2VsZi5kdXJhdGlvbiB0aGVuCgkJc2VsZi5kdXJhdGlvbiA9IHNlbGYuZGlzdGFuY2UgLyBzZWxmLnNwZWVkCgllbmQKCWlmIG5vdCBzZWxmLmRpc3RhbmNlIHRoZW4KCQlzZWxmLnNwZWVkID0gc2VsZi5zcGVlZCBvciAwCgkJc2VsZi5kaXN0YW5jZSA9IHNlbGYuc3BlZWQgKiBzZWxmLmR1cmF0aW9uCgllbmQKCWlmIG5vdCBzZWxmLnNwZWVkIHRoZW4KCQlzZWxmLmRpc3RhbmNlID0gc2VsZi5kaXN0YW5jZSBvciAwCgkJc2VsZi5zcGVlZCA9IHNlbGYuZGlzdGFuY2UgLyBzZWxmLmR1cmF0aW9uCgllbmQKCgktLSBsb2FkIHZlcnRpY2FsIGRhdGEKCXNlbGYuaGVpZ2h0ID0ga3YuaGVpZ2h0IG9yIDAKCXNlbGYuc3RhcnRfb2Zmc2V0ID0ga3Yuc3RhcnRfb2Zmc2V0IG9yIDAKCXNlbGYuZW5kX29mZnNldCA9IGt2LmVuZF9vZmZzZXQgb3IgMAoKCS0tIGNhbGN1bGF0ZSBoZWlnaHQgcG9zaXRpb25zCglsb2NhbCBwb3Nfc3RhcnQgPSBzZWxmLnBhcmVudDpHZXRPcmlnaW4oKQoJbG9jYWwgcG9zX2VuZCA9IHBvc19zdGFydCArIHNlbGYuZGlyZWN0aW9uICogc2VsZi5kaXN0YW5jZQoJbG9jYWwgaGVpZ2h0X3N0YXJ0ID0gR2V0R3JvdW5kSGVpZ2h0KHBvc19zdGFydCwgc2VsZi5wYXJlbnQpICsgc2VsZi5zdGFydF9vZmZzZXQKCWxvY2FsIGhlaWdodF9lbmQgPSBHZXRHcm91bmRIZWlnaHQocG9zX2VuZCwgc2VsZi5wYXJlbnQpICsgc2VsZi5lbmRfb2Zmc2V0Cglsb2NhbCBoZWlnaHRfbWF4CgoJLS0gZGV0ZXJtaW5lIGp1bXBpbmcgaGVpZ2h0IGlmIG5vdCBmaXhlZAoJaWYgbm90IHNlbGYuZml4X2hlaWdodCB0aGVuCgkJLS0gaWRlYWwgaGVpZ2h0IGlzIHByb3BvcnRpb25hbCB0byBtYXggZGlzdGFuY2UKCQlzZWxmLmhlaWdodCA9IG1hdGgubWluKHNlbGYuaGVpZ2h0LCBzZWxmLmRpc3RhbmNlIC8gNCkKCWVuZAoKCS0tIGRldGVybWluZSBoZWlnaHQgbWF4CglpZiBzZWxmLmZpeF9lbmQgdGhlbgoJCWhlaWdodF9lbmQgPSBoZWlnaHRfc3RhcnQKCQloZWlnaHRfbWF4ID0gaGVpZ2h0X3N0YXJ0ICsgc2VsZi5oZWlnaHQKCWVsc2UKCQktLSBjYWxjdWxhdGUgaGVpZ2h0CgkJbG9jYWwgdGVtcG1pbiwgdGVtcG1heCA9IGhlaWdodF9zdGFydCwgaGVpZ2h0X2VuZAoJCWlmIHRlbXBtaW4gPiB0ZW1wbWF4IHRoZW4KCQkJdGVtcG1pbiwgdGVtcG1heCA9IHRlbXBtYXgsIHRlbXBtaW4KCQllbmQKCQlsb2NhbCBkZWx0YSA9ICh0ZW1wbWF4IC0gdGVtcG1pbikgKiAyIC8gMwoKCQloZWlnaHRfbWF4ID0gdGVtcG1pbiArIGRlbHRhICsgc2VsZi5oZWlnaHQKCWVuZAoKCS0tIHNldCBkdXJhdGlvbgoJaWYgbm90IHNlbGYuZml4X2R1cmF0aW9uIHRoZW4KCQlzZWxmOlNldER1cmF0aW9uKC0xLCBmYWxzZSkKCWVsc2UKCQlzZWxmOlNldER1cmF0aW9uKHNlbGYuZHVyYXRpb24sIHRydWUpCgllbmQKCgktLSBjYWxjdWxhdGUgYXJjCglzZWxmOkluaXRWZXJ0aWNhbEFyYyhoZWlnaHRfc3RhcnQsIGhlaWdodF9tYXgsIGhlaWdodF9lbmQsIHNlbGYuZHVyYXRpb24pCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZ2VuZXJpY19hcmM6SnVtcCgpCglsb2NhbCBwYXJlbnQgPSBzZWxmOkdldFBhcmVudCgpCglpZiBub3QgcGFyZW50IG9yIHBhcmVudDpJc051bGwoKSB0aGVuCgkJc2VsZjpEZXN0cm95KCkKCQlyZXR1cm4KCWVuZAoKCXNlbGYubW90aW9uX21hbnVhbCA9IGZhbHNlCglsb2NhbCBuZWVkX2ggPSBzZWxmLmRpc3RhbmNlID4gMAoJbG9jYWwgbmVlZF92ID0gc2VsZi5oZWlnaHQgPiAwCglsb2NhbCBva19oID0gbm90IG5lZWRfaAoJbG9jYWwgb2tfdiA9IG5vdCBuZWVkX3YKCglpZiBuZWVkX2ggdGhlbgoJCW9rX2ggPSB0cnlfYXBwbHlfaG9yaXpvbnRhbF9jb250cm9sbGVyKHNlbGYsIHBhcmVudCkKCWVuZAoJaWYgbmVlZF92IHRoZW4KCQlva192ID0gdHJ5X2FwcGx5X3ZlcnRpY2FsX2NvbnRyb2xsZXIoc2VsZiwgcGFyZW50KQoJZW5kCgoJaWYgKG5lZWRfaCBhbmQgbm90IG9rX2gpIG9yIChuZWVkX3YgYW5kIG5vdCBva192KSB0aGVuCgkJaWYgbmVlZF9oIGFuZCBva19oIGFuZCBwYXJlbnQuUmVtb3ZlSG9yaXpvbnRhbE1vdGlvbkNvbnRyb2xsZXIgdGhlbgoJCQlwYXJlbnQ6UmVtb3ZlSG9yaXpvbnRhbE1vdGlvbkNvbnRyb2xsZXIoc2VsZikKCQllbmQKCQlpZiBuZWVkX3YgYW5kIG9rX3YgYW5kIHBhcmVudC5SZW1vdmVWZXJ0aWNhbE1vdGlvbkNvbnRyb2xsZXIgdGhlbgoJCQlwYXJlbnQ6UmVtb3ZlVmVydGljYWxNb3Rpb25Db250cm9sbGVyKHNlbGYpCgkJZW5kCgkJc2VsZi5tb3Rpb25fbWFudWFsID0gdHJ1ZQoJCWxvY2FsIGR0ID0gRnJhbWVUaW1lKCkKCQlpZiBub3QgZHQgb3IgZHQgPD0gMCB0aGVuCgkJCWR0ID0gMSAvIDQ1CgkJZW5kCgkJc2VsZjpTdGFydEludGVydmFsVGhpbmsoZHQpCgllbmQKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9nZW5lcmljX2FyYzpPbkludGVydmFsVGhpbmsoKQoJaWYgbm90IElzU2VydmVyKCkgdGhlbgoJCXJldHVybgoJZW5kCglpZiBub3Qgc2VsZi5tb3Rpb25fbWFudWFsIHRoZW4KCQlyZXR1cm4KCWVuZAoJbG9jYWwgcGFyZW50ID0gc2VsZjpHZXRQYXJlbnQoKQoJaWYgbm90IHBhcmVudCBvciBwYXJlbnQ6SXNOdWxsKCkgdGhlbgoJCXNlbGY6RGVzdHJveSgpCgkJcmV0dXJuCgllbmQKCglsb2NhbCBkdCA9IEZyYW1lVGltZSgpCglpZiBub3QgZHQgb3IgZHQgPD0gMCB0aGVuCgkJZHQgPSAxIC8gNDUKCWVuZAoKCWlmIHNlbGYuZml4X2R1cmF0aW9uIGFuZCBzZWxmOkdldEVsYXBzZWRUaW1lKCkgPj0gc2VsZi5kdXJhdGlvbiB0aGVuCgkJcmV0dXJuCgllbmQKCglpZiBzZWxmLmRpc3RhbmNlID4gMCB0aGVuCgkJc2VsZjpVcGRhdGVIb3Jpem9udGFsTW90aW9uKHBhcmVudCwgZHQpCgllbmQKCWlmIHNlbGYuaGVpZ2h0ID4gMCB0aGVuCgkJc2VsZjpVcGRhdGVWZXJ0aWNhbE1vdGlvbihwYXJlbnQsIGR0KQoJZW5kCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZ2VuZXJpY19hcmM6SW5pdFZlcnRpY2FsQXJjKGhlaWdodF9zdGFydCwgaGVpZ2h0X21heCwgaGVpZ2h0X2VuZCwgZHVyYXRpb24pCglsb2NhbCBoZWlnaHRfZW5kID0gaGVpZ2h0X2VuZCAtIGhlaWdodF9zdGFydAoJbG9jYWwgaGVpZ2h0X21heCA9IGhlaWdodF9tYXggLSBoZWlnaHRfc3RhcnQKCgktLSBmYWlsLXNhZmUxOiBoZWlnaHRfbWF4IGNhbm5vdCBiZSBzbWFsbGVyIHRoYW4gaGVpZ2h0IGRlbHRhCglpZiBoZWlnaHRfbWF4IDwgaGVpZ2h0X2VuZCB0aGVuCgkJaGVpZ2h0X21heCA9IGhlaWdodF9lbmQgKyAwLjAxCgllbmQKCgktLSBmYWlsLXNhZmUyOiBoZWlnaHQtbWF4IG11c3QgYmUgcG9zaXRpdmUKCWlmIGhlaWdodF9tYXggPD0gMCB0aGVuCgkJaGVpZ2h0X21heCA9IDAuMDEKCWVuZAoKCS0tIG1hdGggbWFnaWMKCWxvY2FsIGR1cmF0aW9uX2VuZCA9ICgxICsgbWF0aC5zcXJ0KDEgLSBoZWlnaHRfZW5kIC8gaGVpZ2h0X21heCkpIC8gMgoJc2VsZi5jb25zdDEgPSA0ICogaGVpZ2h0X21heCAqIGR1cmF0aW9uX2VuZCAvIGR1cmF0aW9uCglzZWxmLmNvbnN0MiA9IDQgKiBoZWlnaHRfbWF4ICogZHVyYXRpb25fZW5kICogZHVyYXRpb25fZW5kIC8gKGR1cmF0aW9uICogZHVyYXRpb24pCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZ2VuZXJpY19hcmM6R2V0VmVydGljYWxQb3ModGltZSkKCXJldHVybiBzZWxmLmNvbnN0MSAqIHRpbWUgLSBzZWxmLmNvbnN0MiAqIHRpbWUgKiB0aW1lCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZ2VuZXJpY19hcmM6R2V0VmVydGljYWxTcGVlZCh0aW1lKQoJcmV0dXJuIHNlbGYuY29uc3QxIC0gMiAqIHNlbGYuY29uc3QyICogdGltZQplbmQKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCi0tIEhlbHBlcgpmdW5jdGlvbiBtb2RpZmllcl9nZW5lcmljX2FyYzpTZXRFbmRDYWxsYmFjayhmdW5jKQoJc2VsZi5lbmRDYWxsYmFjayA9IGZ1bmMKZW5kCgotLVtbCkxpbmtMdWFNb2RpZmllcigibW9kaWZpZXJfZ2VuZXJpY19hcmMiLCAiaW5nYW1lL21vZGlmaWVyL2dlbmVyaWMvbW9kaWZpZXJfZ2VuZXJpY19hcmMiLExVQV9NT0RJRklFUl9NT1RJT05fQk9USCkKbG9jYWwgYXJjPWNhOkFkZE5ld01vZGlmaWVyKGNhLHNlbGYsIm1vZGlmaWVyX2dlbmVyaWNfYXJjIix7ZHVyYXRpb249dGltZSxoZWlnaHQ9aGlnLGRpcl94PS1meC54LGRpcl95PS1meC55LGRpc3RhbmNlPWxlbn0pCiAgICBhcmM6U2V0RW5kQ2FsbGJhY2soZnVuY3Rpb24oKSBlbmQpCl1dCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+--[[
+	全局弧度运动控制器
+
+	kv 数据 (默认)):
+	-- 方向, 提供一个 (不提供就默认面朝方向):
+		dir_x/y (forward), for 单位方向
+		target_x/y (forward), for 目标方向
+	-- 运动控制, 提供 2 - 3, duration-only (for vertical arc), or all 3
+		speed (0)		速度
+		duration (0)	持续时间
+		distance (0): 	0表示不位移
+	-- vertical motion.
+		height (0): max height. zero means no vertical motion
+		start_offset (0), height offset from ground at start of jump
+		end_offset (0), height offset from ground at end of jump
+	-- arc types
+		fix_end (true): if true, landing z-pos is the same as jumping z-pos, not respecting on landing terrain height (Pounce)
+		fix_duration (true): if false, arc ends when unit touches ground, not respecting duration (Shield Crash)
+		fix_height (true): if false, arc max height depends on jump distance, height provided is max-height (Tree Dance)
+	-- other
+		isStun (false), parent is stunned
+		isRestricted (false), parent is command restricted
+		isForward (false), lock parent forward facing
+		activity (none), activity when leaping
+   回调
+   arc:SetEndCallback(function () end)
+]]
+--------------------------------------------------------------------------------
+modifier_generic_arc = class({})
+
+--------------------------------------------------------------------------------
+-- 基本设置
+function modifier_generic_arc:IsHidden()
+	return true
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function modifier_generic_arc:IsDebuff()
+	return false
+end
+
+function modifier_generic_arc:IsStunDebuff()
+	return false
+end
+
+function modifier_generic_arc:IsPurgable()
+	return true
+end
+
+function modifier_generic_arc:GetAttributes()
+	return MODIFIER_ATTRIBUTE_MULTIPLE
+end
+
+--------------------------------------------------------------------------------
+-- 初始化
+function modifier_generic_arc:OnCreated(kv)
+	if not IsServer() then return end
+	self.interrupted = false
+	self:SetJumpParameters(kv)
+	self:Jump()
+end
+
+function modifier_generic_arc:OnRefresh(kv)
+	self:OnCreated(kv)
+end
+
+function modifier_generic_arc:OnRemoved()
+end
+
+function modifier_generic_arc:OnDestroy()
+	if not IsServer() then return end
+
+	if self.motion_manual then
+		self:StartIntervalThink(-1)
+	end
+
+	local parent = self:GetParent()
+	local pos = nil
+	if parent and not parent:IsNull() then
+		pos = parent:GetOrigin()
+		if not self.motion_manual then
+			if parent.RemoveHorizontalMotionController then
+				parent:RemoveHorizontalMotionController(self)
+			end
+			if parent.RemoveVerticalMotionController then
+				parent:RemoveVerticalMotionController(self)
+			end
+		end
+	end
+
+	-- 高度保持 当有结束位置保持
+	if pos and self.end_offset ~= 0 and parent and not parent:IsNull() then
+		parent:SetOrigin(pos)
+	end
+
+	if self.endCallback then
+		self.endCallback(self.interrupted)
+	end
+end
+
+--------------------------------------------------------------------------------
+-- Modifier 效果
+function modifier_generic_arc:DeclareFunctions()
+	local funcs = {
+		MODIFIER_PROPERTY_DISABLE_TURNING,
+	}
+	if self:GetStackCount() > 0 then
+		table.insert(funcs, MODIFIER_PROPERTY_OVERRIDE_ANIMATION)
+	end
+
+	return funcs
+end
+
+function modifier_generic_arc:GetModifierDisableTurning()
+	if not self.isForward then return end
+	return 1
+end
+
+function modifier_generic_arc:GetOverrideAnimation()
+	return self:GetStackCount()
+end
+
+--------------------------------------------------------------------------------
+-- 状态效果
+function modifier_generic_arc:CheckState()
+	local state = {
+		[MODIFIER_STATE_STUNNED] = self.isStun or false,
+		[MODIFIER_STATE_COMMAND_RESTRICTED] = self.isRestricted or false,
+		[MODIFIER_STATE_NO_UNIT_COLLISION] = true,
+	}
+
+	return state
+end
+
+--------------------------------------------------------------------------------
+-- 运动效果
+function modifier_generic_arc:UpdateHorizontalMotion(me, dt)
+	if self.fix_duration and self:GetElapsedTime() >= self.duration then return end
+
+	-- 设置相对位置
+	local pos = me:GetOrigin() + self.direction * self.speed * dt
+	me:SetOrigin(pos)
+end
+
+function modifier_generic_arc:UpdateVerticalMotion(me, dt)
+	if self.fix_duration and self:GetElapsedTime() >= self.duration then return end
+
+	local pos = me:GetOrigin()
+	local time = self:GetElapsedTime()
+
+	-- 设置相对位置
+	local height = pos.z
+	local speed = self:GetVerticalSpeed(time)
+	pos.z = height + speed * dt
+	me:SetOrigin(pos)
+
+	if not self.fix_duration then
+		local ground = GetGroundHeight(pos, me) + self.end_offset
+		if pos.z <= ground then
+			-- 在地面以下，将高度设置为地面，然后销毁
+			pos.z = ground
+			me:SetOrigin(pos)
+			self:Destroy()
+		end
+	end
+end
+
+function modifier_generic_arc:OnHorizontalMotionInterrupted()
+	self.interrupted = true
+	self:Destroy()
+end
+
+function modifier_generic_arc:OnVerticalMotionInterrupted()
+	self.interrupted = true
+	self:Destroy()
+end
+
+-- 部分客户端/宿主环境单位无 Apply*MotionController，回退为用 IntervalThink 驱动 Update*Motion。
+local function try_apply_horizontal_controller(modifier, parent)
+	if parent.ApplyHorizontalMotionController then
+		local ok = parent:ApplyHorizontalMotionController(modifier)
+		if ok ~= false then
+			return true
+		end
+	end
+	if modifier.ApplyHorizontalMotionController then
+		local ok = modifier:ApplyHorizontalMotionController()
+		if ok ~= false then
+			return true
+		end
+	end
+	return false
+end
+
+local function try_apply_vertical_controller(modifier, parent)
+	if parent.ApplyVerticalMotionController then
+		local ok = parent:ApplyVerticalMotionController(modifier)
+		if ok ~= false then
+			return true
+		end
+	end
+	if modifier.ApplyVerticalMotionController then
+		local ok = modifier:ApplyVerticalMotionController()
+		if ok ~= false then
+			return true
+		end
+	end
+	return false
+end
+
+--------------------------------------------------------------------------------
+-- 运动助手
+function modifier_generic_arc:SetJumpParameters(kv)
+	self.parent = self:GetParent()
+
+	-- load types
+	self.fix_end = true
+	self.fix_duration = true
+	self.fix_height = true
+	if kv.fix_end then
+		self.fix_end = kv.fix_end == 1
+	end
+	if kv.fix_duration then
+		self.fix_duration = kv.fix_duration == 1
+	end
+	if kv.fix_height then
+		self.fix_height = kv.fix_height == 1
+	end
+
+	-- load other types
+	self.isStun = kv.isStun == 1
+	self.isRestricted = kv.isRestricted == 1
+	self.isForward = kv.isForward == 1
+	self.activity = kv.activity or 0
+	self:SetStackCount(self.activity)
+
+	-- load direction
+	if kv.target_x and kv.target_y then
+		local origin = self.parent:GetOrigin()
+		local dir = Vector(kv.target_x, kv.target_y, 0) - origin
+		dir.z = 0
+		dir = dir:Normalized()
+		self.direction = dir
+	end
+	if kv.dir_x and kv.dir_y then
+		self.direction = Vector(kv.dir_x, kv.dir_y, 0):Normalized()
+	end
+	if not self.direction then
+		self.direction = self.parent:GetForwardVector()
+	end
+
+	-- load horizontal data
+	self.duration = kv.duration
+	self.distance = kv.distance
+	self.speed = kv.speed
+	if not self.duration then
+		self.duration = self.distance / self.speed
+	end
+	if not self.distance then
+		self.speed = self.speed or 0
+		self.distance = self.speed * self.duration
+	end
+	if not self.speed then
+		self.distance = self.distance or 0
+		self.speed = self.distance / self.duration
+	end
+
+	-- load vertical data
+	self.height = kv.height or 0
+	self.start_offset = kv.start_offset or 0
+	self.end_offset = kv.end_offset or 0
+
+	-- calculate height positions
+	local pos_start = self.parent:GetOrigin()
+	local pos_end = pos_start + self.direction * self.distance
+	local height_start = GetGroundHeight(pos_start, self.parent) + self.start_offset
+	local height_end = GetGroundHeight(pos_end, self.parent) + self.end_offset
+	local height_max
+
+	-- determine jumping height if not fixed
+	if not self.fix_height then
+		-- ideal height is proportional to max distance
+		self.height = math.min(self.height, self.distance / 4)
+	end
+
+	-- determine height max
+	if self.fix_end then
+		height_end = height_start
+		height_max = height_start + self.height
+	else
+		-- calculate height
+		local tempmin, tempmax = height_start, height_end
+		if tempmin > tempmax then
+			tempmin, tempmax = tempmax, tempmin
+		end
+		local delta = (tempmax - tempmin) * 2 / 3
+
+		height_max = tempmin + delta + self.height
+	end
+
+	-- set duration
+	if not self.fix_duration then
+		self:SetDuration(-1, false)
+	else
+		self:SetDuration(self.duration, true)
+	end
+
+	-- calculate arc
+	self:InitVerticalArc(height_start, height_max, height_end, self.duration)
+end
+
+function modifier_generic_arc:Jump()
+	local parent = self:GetParent()
+	if not parent or parent:IsNull() then
+		self:Destroy()
+		return
+	end
+
+	self.motion_manual = false
+	local need_h = self.distance > 0
+	local need_v = self.height > 0
+	local ok_h = not need_h
+	local ok_v = not need_v
+
+	if need_h then
+		ok_h = try_apply_horizontal_controller(self, parent)
+	end
+	if need_v then
+		ok_v = try_apply_vertical_controller(self, parent)
+	end
+
+	if (need_h and not ok_h) or (need_v and not ok_v) then
+		if need_h and ok_h and parent.RemoveHorizontalMotionController then
+			parent:RemoveHorizontalMotionController(self)
+		end
+		if need_v and ok_v and parent.RemoveVerticalMotionController then
+			parent:RemoveVerticalMotionController(self)
+		end
+		self.motion_manual = true
+		local dt = FrameTime()
+		if not dt or dt <= 0 then
+			dt = 1 / 45
+		end
+		self:StartIntervalThink(dt)
+	end
+end
+
+function modifier_generic_arc:OnIntervalThink()
+	if not IsServer() then
+		return
+	end
+	if not self.motion_manual then
+		return
+	end
+	local parent = self:GetParent()
+	if not parent or parent:IsNull() then
+		self:Destroy()
+		return
+	end
+
+	local dt = FrameTime()
+	if not dt or dt <= 0 then
+		dt = 1 / 45
+	end
+
+	if self.fix_duration and self:GetElapsedTime() >= self.duration then
+		return
+	end
+
+	if self.distance > 0 then
+		self:UpdateHorizontalMotion(parent, dt)
+	end
+	if self.height > 0 then
+		self:UpdateVerticalMotion(parent, dt)
+	end
+end
+
+function modifier_generic_arc:InitVerticalArc(height_start, height_max, height_end, duration)
+	local height_end = height_end - height_start
+	local height_max = height_max - height_start
+
+	-- fail-safe1: height_max cannot be smaller than height delta
+	if height_max < height_end then
+		height_max = height_end + 0.01
+	end
+
+	-- fail-safe2: height-max must be positive
+	if height_max <= 0 then
+		height_max = 0.01
+	end
+
+	-- math magic
+	local duration_end = (1 + math.sqrt(1 - height_end / height_max)) / 2
+	self.const1 = 4 * height_max * duration_end / duration
+	self.const2 = 4 * height_max * duration_end * duration_end / (duration * duration)
+end
+
+function modifier_generic_arc:GetVerticalPos(time)
+	return self.const1 * time - self.const2 * time * time
+end
+
+function modifier_generic_arc:GetVerticalSpeed(time)
+	return self.const1 - 2 * self.const2 * time
+end
+
+--------------------------------------------------------------------------------
+-- Helper
+function modifier_generic_arc:SetEndCallback(func)
+	self.endCallback = func
+end
+
+--[[
+LinkLuaModifier("modifier_generic_arc", "ingame/modifier/generic/modifier_generic_arc",LUA_MODIFIER_MOTION_BOTH)
+local arc=ca:AddNewModifier(ca,self,"modifier_generic_arc",{duration=time,height=hig,dir_x=-fx.x,dir_y=-fx.y,distance=len})
+    arc:SetEndCallback(function() end)
+]]

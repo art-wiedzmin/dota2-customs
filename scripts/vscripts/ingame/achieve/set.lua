@@ -8,22 +8,64 @@
 ]]
 
 
-local encoded=[[LS0tIOeZu+W9lSAvIOWFheWAvOWIt+aWsOWQjuWGmeWFpeacrOWcsOaIkOWwsee8k+WtmO+8iOS4jumAmuihjOivgSBjYXJkIOWQjOeQhu+8jOS7heWGheWtmO+8iQpmdW5jdGlvbiBBY2hpZXZlTW9kdWxlOkFwcGx5TG9naW5QYXlsb2FkKElELCBkYXRhKQogICAgaWYgbm90IElEIG9yIG5vdCBkYXRhIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgZCA9IHNlbGYuRGF0YVtJRF0KICAgIGlmIG5vdCBkIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGlmIGRhdGEudXNlciBhbmQgZGF0YS51c2VyLnJlY2hhcmdlIH49IG5pbCB0aGVuCiAgICAgICAgZC5yZWNoYXJnZV90b3RhbCA9IG1hdGgubWF4KDAsIHRvbnVtYmVyKGRhdGEudXNlci5yZWNoYXJnZSkgb3IgMCkKICAgIGVuZAoKICAgIGlmIGRhdGEuYWNoaWV2ZV9lbmFibGVkID09IHRydWUgYW5kIGRhdGEuYWNoaWV2ZSB0aGVuCiAgICAgICAgZC5lbmFibGVkID0gdHJ1ZQogICAgICAgIGQuYWNoaWV2ZSA9IGRhdGEuYWNoaWV2ZQogICAgZWxzZWlmIGRhdGEuYWNoaWV2ZV9lbmFibGVkID09IGZhbHNlIHRoZW4KICAgICAgICBkLmVuYWJsZWQgPSBmYWxzZQogICAgICAgIGQuYWNoaWV2ZSA9IG5pbAogICAgZW5kCgogICAgc2VsZjpTZW5kRGF0YShJRCkKZW5kCgotLS0g6aKG5Y+W5oiQ5Yqf5ZCO5ZCI5bm25pyN5Yqh56uv6L+U5Zue55qE5oiQ5bCxIC8g6YeR6LGGIC8g6IOM5YyF77yM5bm25by55Ye65aWW5Yqx6KGM77yI5LiO5YWF5YC8L+mAmuihjOivgeS4gOiHtO+8iQpmdW5jdGlvbiBBY2hpZXZlTW9kdWxlOkFwcGx5Q2xhaW1SZXN1bHQoSUQsIGRhdGEsIHRpdGxlKQogICAgaWYgbm90IElEIG9yIG5vdCBkYXRhIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgZCA9IHNlbGYuRGF0YVtJRF0KICAgIGlmIG5vdCBkIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGlmIGRhdGEuYWNoaWV2ZSB0aGVuCiAgICAgICAgZC5hY2hpZXZlID0gZGF0YS5hY2hpZXZlCiAgICBlbmQKCiAgICBpZiBkYXRhLnVzZXJfZ29sZCB+PSBuaWwgYW5kIFNob3AgYW5kIFNob3AuRGF0YVtJRF0gdGhlbgogICAgICAgIFNob3AuRGF0YVtJRF0uZ29sZCA9IHRvbnVtYmVyKGRhdGEudXNlcl9nb2xkKSBvciBTaG9wLkRhdGFbSURdLmdvbGQKICAgICAgICBTaG9wOlNlbmREYXRhKElEKQogICAgZW5kCgogICAgaWYgZGF0YS5iYWcgYW5kIFNob3AgYW5kIFNob3AuU2V0QmFnU2VydmVyRGF0YSB0aGVuCiAgICAgICAgU2hvcDpTZXRCYWdTZXJ2ZXJEYXRhKElELCBkYXRhLmJhZykKICAgICAgICBpZiBTaG9wLlNlbmRPdXRCYWdEYXRhIHRoZW4KICAgICAgICAgICAgU2hvcDpTZW5kT3V0QmFnRGF0YShJRCkKICAgICAgICBlbmQKICAgIGVuZAoKICAgIHNlbGY6U2VuZERhdGEoSUQpCgogICAgbG9jYWwgcm93cyA9IHt9CiAgICBpZiBTaG9wIGFuZCBTaG9wLkNhcmRSZWRlZW1Sb3dzRnJvbVNlcnZlciB0aGVuCiAgICAgICAgcm93cyA9IFNob3A6Q2FyZFJlZGVlbVJvd3NGcm9tU2VydmVyKGRhdGEucmVkZWVtX3Jvd3MpCiAgICBlbmQKICAgIGlmIE1zZ3MgYW5kIE1zZ3MuUG9wUmVkZWVtU3VjY2VzcyB0aGVuCiAgICAgICAgTXNnczpQb3BSZWRlZW1TdWNjZXNzKElELCB0aXRsZSBvciAi6aKG5Y+W5oiQ5YqfIiwgcm93cykKICAgIGVuZAplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+--- 登录 / 充值刷新后写入本地成就缓存（与通行证 card 同理，仅内存）
+function AchieveModule:ApplyLoginPayload(ID, data)
+    if not ID or not data then
+        return
+    end
+    local d = self.Data[ID]
+    if not d then
+        return
+    end
+
+    if data.user and data.user.recharge ~= nil then
+        d.recharge_total = math.max(0, tonumber(data.user.recharge) or 0)
+    end
+
+    if data.achieve_enabled == true and data.achieve then
+        d.enabled = true
+        d.achieve = data.achieve
+    elseif data.achieve_enabled == false then
+        d.enabled = false
+        d.achieve = nil
+    end
+
+    self:SendData(ID)
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--- 领取成功后合并服务端返回的成就 / 金豆 / 背包，并弹出奖励行（与充值/通行证一致）
+function AchieveModule:ApplyClaimResult(ID, data, title)
+    if not ID or not data then
+        return
+    end
+    local d = self.Data[ID]
+    if not d then
+        return
+    end
+
+    if data.achieve then
+        d.achieve = data.achieve
+    end
+
+    if data.user_gold ~= nil and Shop and Shop.Data[ID] then
+        Shop.Data[ID].gold = tonumber(data.user_gold) or Shop.Data[ID].gold
+        Shop:SendData(ID)
+    end
+
+    if data.bag and Shop and Shop.SetBagServerData then
+        Shop:SetBagServerData(ID, data.bag)
+        if Shop.SendOutBagData then
+            Shop:SendOutBagData(ID)
+        end
+    end
+
+    self:SendData(ID)
+
+    local rows = {}
+    if Shop and Shop.CardRedeemRowsFromServer then
+        rows = Shop:CardRedeemRowsFromServer(data.redeem_rows)
+    end
+    if Msgs and Msgs.PopRedeemSuccess then
+        Msgs:PopRedeemSuccess(ID, title or "领取成功", rows)
+    end
+end

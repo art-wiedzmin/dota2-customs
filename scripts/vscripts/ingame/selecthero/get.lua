@@ -8,22 +8,270 @@
 ]]
 
 
-local encoded=[[LS0g6Iux6ZuEIGluZGV4IOKGkiDmiJjmlpfnsbvlnovplK4gYnRwMe+9nmJ0cDTvvIjmnKrlkb3kuK3ml7bpu5jorqTniannkIbvvIkKZnVuY3Rpb24gU2VsZWN0SGVybzpHZXRCYXR0bGVUeXBlS2V5Rm9ySGVyb0luZGV4KGluZGV4KQogICAgaWYgbm90IGluZGV4IHRoZW4KICAgICAgICByZXR1cm4gImJ0cDIiCiAgICBlbmQKICAgIGZvciBidHBfa2V5LCB0YWIgaW4gcGFpcnMoc2VsZi5CYXR0bGVUeXBlKSBkbwogICAgICAgIGlmIHRhYiB0aGVuCiAgICAgICAgICAgIGZvciBfLCB2IGluIGlwYWlycyh0YWIpIGRvCiAgICAgICAgICAgICAgICBpZiB2ID09IGluZGV4IHRoZW4KICAgICAgICAgICAgICAgICAgICByZXR1cm4gYnRwX2tleQogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCiAgICByZXR1cm4gImJ0cDIiCmVuZAoKLS0g5o6o6I2Q6IKJ5pCP5oqA6IO9IGFiaWxpdHkg5ZCN5YiX6KGo77yaYWJpbGl0eV9pdGVtXyArIFJNQkxpc3Qg5Lit55qE57Si5byVCmZ1bmN0aW9uIFNlbGVjdEhlcm86R2V0Uk1CQWJpbGl0eUxpc3RGb3JIZXJvSW5kZXgoaW5kZXgpCiAgICBsb2NhbCBrZXkgPSBzZWxmOkdldEJhdHRsZVR5cGVLZXlGb3JIZXJvSW5kZXgoaW5kZXgpCiAgICBsb2NhbCBudW1zID0gc2VsZi5STUJMaXN0W2tleV0KICAgIGxvY2FsIG91dCA9IHt9CiAgICBpZiBudW1zIHRoZW4KICAgICAgICBmb3IgXywgbiBpbiBpcGFpcnMobnVtcykgZG8KICAgICAgICAgICAgb3V0WyNvdXQgKyAxXSA9ICJhYmlsaXR5X2l0ZW1fIiAuLiB0b3N0cmluZyhuKQogICAgICAgIGVuZAogICAgZW5kCiAgICByZXR1cm4gb3V0CmVuZAoKLS0g5Lq65py66IKJ5pCP5a2m5Lmg55m95ZCN5Y2V77yIaXRlbV9za2lsbF8qIC8gaXRlbV9za2lsbF8qX3Vw77yJ77yM5LiOIEJhdHRsZVR5cGUgKyBSTUJMaXN0IOWNleS4gOaVsOaNrua6kOS4gOiHtApmdW5jdGlvbiBTZWxlY3RIZXJvOkdldE1lbGVlTGVhcm5XaGl0ZWxpc3RGb3JIZXJvSW5kZXgoaW5kZXgpCiAgICBsb2NhbCBhYmlsaXRpZXMgPSBzZWxmOkdldFJNQkFiaWxpdHlMaXN0Rm9ySGVyb0luZGV4KGluZGV4KQogICAgbG9jYWwgd2wgPSB7fQogICAgZm9yIF8sIGFiIGluIGlwYWlycyhhYmlsaXRpZXMpIGRvCiAgICAgICAgbG9jYWwgaWR4ID0gc3RyaW5nLm1hdGNoKGFiLCAiXmFiaWxpdHlfaXRlbV8oJWQrKSQiKQogICAgICAgIGlmIGlkeCB0aGVuCiAgICAgICAgICAgIHdsWyJpdGVtX3NraWxsXyIgLi4gaWR4XSA9IHRydWUKICAgICAgICAgICAgd2xbIml0ZW1fc2tpbGxfIiAuLiBpZHggLi4gIl91cCJdID0gdHJ1ZQogICAgICAgIGVuZAogICAgZW5kCiAgICByZXR1cm4gd2wKZW5kCgpmdW5jdGlvbiBTZWxlY3RIZXJvOkdldEhlcm9OYW1lKGluZGV4KQogICAgaWYgbm90IGluZGV4IHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgZm9yIGssIHYgaW4gcGFpcnMoc2VsZi5IZXJvTGlzdCkgZG8KICAgICAgICBpZiBpbmRleCA9PSB2LmluZGV4IHRoZW4KICAgICAgICAgICAgcmV0dXJuIGsKICAgICAgICBlbmQKICAgIGVuZAplbmQKCi0tLSDlhajoi7Hpm4Toh6rpgInvvJrku4UgUmFyZW5lc3MgcmFua18xICsgcmFua18yIOaxoOWGheiLsembhOWPr+mAiQpmdW5jdGlvbiBTZWxlY3RIZXJvOkVuc3VyZVJhcmVuZXNzUGlja2FibGVIZXJvU2V0KCkKICAgIGlmIHNlbGYuX3JhcmVuZXNzX3BpY2thYmxlX3NldCB0aGVuCiAgICAgICAgcmV0dXJuIHNlbGYuX3JhcmVuZXNzX3BpY2thYmxlX3NldAogICAgZW5kCiAgICBsb2NhbCBzZXQgPSB7fQogICAgbG9jYWwgcmFyZW5lc3MgPSBzZWxmLlJhcmVuZXNzCiAgICBpZiByYXJlbmVzcyB0aGVuCiAgICAgICAgZm9yIF8sIHJhbmsgaW4gcGFpcnMocmFyZW5lc3MpIGRvCiAgICAgICAgICAgIGlmIHR5cGUocmFuaykgPT0gInRhYmxlIiB0aGVuCiAgICAgICAgICAgICAgICBmb3IgXywgcG9vbCBpbiBwYWlycyhyYW5rKSBkbwogICAgICAgICAgICAgICAgICAgIGlmIHR5cGUocG9vbCkgPT0gInRhYmxlIiB0aGVuCiAgICAgICAgICAgICAgICAgICAgICAgIGZvciBfLCBpZHggaW4gaXBhaXJzKHBvb2wpIGRvCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBsb2NhbCBuID0gdG9udW1iZXIoaWR4KQogICAgICAgICAgICAgICAgICAgICAgICAgICAgaWYgbiB0aGVuCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc2V0W25dID0gdHJ1ZQogICAgICAgICAgICAgICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCiAgICBzZWxmLl9yYXJlbmVzc19waWNrYWJsZV9zZXQgPSBzZXQKICAgIHJldHVybiBzZXQKZW5kCgpmdW5jdGlvbiBTZWxlY3RIZXJvOklzSGVyb1BpY2thYmxlSW5SYXJlbmVzcyhpbmRleCkKICAgIGlmIG5vdCBpbmRleCB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGxvY2FsIG4gPSB0b251bWJlcihpbmRleCkKICAgIGlmIG5vdCBuIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgcmV0dXJuIHNlbGY6RW5zdXJlUmFyZW5lc3NQaWNrYWJsZUhlcm9TZXQoKVtuXSA9PSB0cnVlCmVuZAoKZnVuY3Rpb24gU2VsZWN0SGVybzpHZXRIZXJvQWJMaXN0KGluZGV4KQogICAgaWYgbm90IGluZGV4IHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgaGVyb25hbWUgPSBTZWxlY3RIZXJvOkdldEhlcm9OYW1lKGluZGV4KQogICAgbG9jYWwgYWJfbGlzdCA9IHsKICAgICAgICBzbG90XzEgPSAiIiwKICAgICAgICBzbG90XzIgPSAiIiwKICAgICAgICBzbG90XzMgPSAiIiwKICAgICAgICBzbG90XzQgPSAiIiwKICAgIH0KICAgIGxvY2FsIG51bSA9IDEKICAgIGZvciBrLCB2IGluIHBhaXJzKFNraWxsLkFiaWxpdHkpIGRvCiAgICAgICAgLS0g6YCJ5Lq66Z2i5p2/5oqA6IO95Zu+5qCH77ya5pyA5aSaIDQg5Liq77yI5LiOIFBhbm9yYW1hIHNsb3RfMe+9njQg5LiA6Ie077yJCiAgICAgICAgaWYgbnVtIDw9IDQgYW5kIGhlcm9uYW1lID09IHYuaGVybyB0aGVuCiAgICAgICAgICAgIGxvY2FsIG51bV9rZXkgPSAic2xvdF8iIC4uIG51bQogICAgICAgICAgICBsb2NhbCBhYl9uYW1lID0gdi5uYW1lCiAgICAgICAgICAgIGFiX2xpc3RbbnVtX2tleV0gPSBhYl9uYW1lCiAgICAgICAgICAgIG51bSA9IG51bSArIDEKICAgICAgICBlbmQKICAgIGVuZAogICAgcmV0dXJuIGFiX2xpc3QKZW5kCgotLS0g6Iux6ZuEIGluZGV4IOKGkiDlipvph48v5pWP5o23L+aZuuWKmy/lhajmiY3vvIgxLzIvMy8077yJ77yM5LiOIEhlcm9UeXBl44CB5Zu+6Ym0IEJvb2suSGVyb0xpc3Qg5LiA6Ie0CmZ1bmN0aW9uIFNlbGVjdEhlcm86RW5zdXJlSGVyb0F0dHJUeXBlTWFwKCkKICAgIGlmIHNlbGYuX2hlcm9fYXR0cl90eXBlX21hcCB0aGVuCiAgICAgICAgcmV0dXJuIHNlbGYuX2hlcm9fYXR0cl90eXBlX21hcAogICAgZW5kCiAgICBsb2NhbCBtYXAgPSB7fQogICAgbG9jYWwgaHQgPSBzZWxmLkhlcm9UeXBlCiAgICBpZiBodCB0aGVuCiAgICAgICAgZm9yIF8sIGkgaW4gaXBhaXJzKGh0LnRwMSBvciB7fSkgZG8KICAgICAgICAgICAgbWFwW2ldID0gMQogICAgICAgIGVuZAogICAgICAgIGZvciBfLCBpIGluIGlwYWlycyhodC50cDIgb3Ige30pIGRvCiAgICAgICAgICAgIG1hcFtpXSA9IDIKICAgICAgICBlbmQKICAgICAgICBmb3IgXywgaSBpbiBpcGFpcnMoaHQudHAzIG9yIHt9KSBkbwogICAgICAgICAgICBtYXBbaV0gPSAzCiAgICAgICAgZW5kCiAgICAgICAgZm9yIF8sIGkgaW4gaXBhaXJzKGh0LnRwNCBvciB7fSkgZG8KICAgICAgICAgICAgbWFwW2ldID0gNAogICAgICAgIGVuZAogICAgZW5kCiAgICBpZiBCb29rIGFuZCBCb29rLkhlcm9MaXN0IHRoZW4KICAgICAgICBmb3IgdHBfa2V5LCBzbG90cyBpbiBwYWlycyhCb29rLkhlcm9MaXN0KSBkbwogICAgICAgICAgICBsb2NhbCB0cF9udW0gPSB0b251bWJlcihzdHJpbmcubWF0Y2godG9zdHJpbmcodHBfa2V5KSwgIl50cCglZCkkIikpCiAgICAgICAgICAgIGlmIHRwX251bSBhbmQgdHBfbnVtID49IDEgYW5kIHRwX251bSA8PSA0IHRoZW4KICAgICAgICAgICAgICAgIGZvciBfLCBoZXJvX25hbWUgaW4gcGFpcnMoc2xvdHMpIGRvCiAgICAgICAgICAgICAgICAgICAgaWYgdHlwZShoZXJvX25hbWUpID09ICJzdHJpbmciIHRoZW4KICAgICAgICAgICAgICAgICAgICAgICAgZm9yIG5hbWUsIGRlZiBpbiBwYWlycyhzZWxmLkhlcm9MaXN0KSBkbwogICAgICAgICAgICAgICAgICAgICAgICAgICAgaWYgbmFtZSA9PSBoZXJvX25hbWUgYW5kIHR5cGUoZGVmLmluZGV4KSA9PSAibnVtYmVyIiB0aGVuCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbWFwW2RlZi5pbmRleF0gPSB0cF9udW0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZAogICAgc2VsZi5faGVyb19hdHRyX3R5cGVfbWFwID0gbWFwCiAgICByZXR1cm4gbWFwCmVuZAoKZnVuY3Rpb24gU2VsZWN0SGVybzpHZXRIZXJvQXR0clR5cGVCeUluZGV4KGluZGV4LCBkZWYpCiAgICBsb2NhbCBpZHggPSB0b251bWJlcihpbmRleCkKICAgIGlmIG5vdCBpZHggdGhlbgogICAgICAgIHJldHVybiAxCiAgICBlbmQKICAgIGxvY2FsIG1hcCA9IHNlbGY6RW5zdXJlSGVyb0F0dHJUeXBlTWFwKCkKICAgIGxvY2FsIHRwID0gbWFwW2lkeF0KICAgIGlmIHRwIHRoZW4KICAgICAgICByZXR1cm4gdHAKICAgIGVuZAogICAgaWYgZGVmIGFuZCB0eXBlKGRlZi50cCkgPT0gIm51bWJlciIgdGhlbgogICAgICAgIHJldHVybiBkZWYudHAKICAgIGVuZAogICAgcmV0dXJuIDEKZW5kCgpmdW5jdGlvbiBTZWxlY3RIZXJvOklzVGFsZW50SGlkZGVuKHRhbGVudF9pbmRleCkKICAgIGxvY2FsIHQgPSB0b251bWJlcih0YWxlbnRfaW5kZXgpCiAgICBpZiBub3QgdCB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIHJldHVybiBzZWxmLkhpZGRlblRhbGVudEluZGljZXMgYW5kIHNlbGYuSGlkZGVuVGFsZW50SW5kaWNlc1t0XSA9PSB0cnVlCmVuZAoKZnVuY3Rpb24gU2VsZWN0SGVybzpTYW5pdGl6ZVRhbGVudEluZGV4KHRhbGVudF9pbmRleCkKICAgIGxvY2FsIHQgPSB0b251bWJlcih0YWxlbnRfaW5kZXgpIG9yIChzZWxmLkRlZmF1bHRUYWxlbnRJbmRleCBvciAxKQogICAgaWYgdCA8IDEgdGhlbgogICAgICAgIHQgPSAxCiAgICBlbmQKICAgIGlmIHQgPiA5IHRoZW4KICAgICAgICB0ID0gOQogICAgZW5kCiAgICBpZiBzZWxmOklzVGFsZW50SGlkZGVuKHQpIHRoZW4KICAgICAgICB0ID0gc2VsZi5EZWZhdWx0VGFsZW50SW5kZXggb3IgMQogICAgZW5kCiAgICByZXR1cm4gdAplbmQKCmZ1bmN0aW9uIFNlbGVjdEhlcm86UmFuZG9tVmlzaWJsZVRhbGVudEluZGV4KCkKICAgIGxvY2FsIGhpZGRlbiA9IHNlbGYuSGlkZGVuVGFsZW50SW5kaWNlcyBvciB7fQogICAgbG9jYWwgY2FuZGlkYXRlcyA9IHt9CiAgICBmb3IgaSA9IDEsIDkgZG8KICAgICAgICBpZiBub3QgaGlkZGVuW2ldIHRoZW4KICAgICAgICAgICAgY2FuZGlkYXRlc1sjY2FuZGlkYXRlcyArIDFdID0gaQogICAgICAgIGVuZAogICAgZW5kCiAgICBpZiAjY2FuZGlkYXRlcyA9PSAwIHRoZW4KICAgICAgICByZXR1cm4gc2VsZi5EZWZhdWx0VGFsZW50SW5kZXggb3IgMQogICAgZW5kCiAgICByZXR1cm4gY2FuZGlkYXRlc1ttYXRoLnJhbmRvbSgxLCAjY2FuZGlkYXRlcyldCmVuZAoKZnVuY3Rpb24gU2VsZWN0SGVybzpHZXRIaWRkZW5UYWxlbnRJbmRpY2VzTGlzdCgpCiAgICBsb2NhbCBvdXQgPSB7fQogICAgbG9jYWwgaGlkZGVuID0gc2VsZi5IaWRkZW5UYWxlbnRJbmRpY2VzIG9yIHt9CiAgICBmb3IgaSA9IDEsIDkgZG8KICAgICAgICBpZiBoaWRkZW5baV0gdGhlbgogICAgICAgICAgICBvdXRbI291dCArIDFdID0gaQogICAgICAgIGVuZAogICAgZW5kCiAgICByZXR1cm4gb3V0CmVuZAoKZnVuY3Rpb24gU2VsZWN0SGVybzpJc1RhbGVudEhpZGRlbih0YWxlbnRfaW5kZXgpCiAgICBsb2NhbCB0ID0gdG9udW1iZXIodGFsZW50X2luZGV4KQogICAgaWYgbm90IHQgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICByZXR1cm4gc2VsZi5IaWRkZW5UYWxlbnRJbmRpY2VzIGFuZCBzZWxmLkhpZGRlblRhbGVudEluZGljZXNbdF0gPT0gdHJ1ZQplbmQKCmZ1bmN0aW9uIFNlbGVjdEhlcm86U2FuaXRpemVUYWxlbnRJbmRleCh0YWxlbnRfaW5kZXgpCiAgICBsb2NhbCB0ID0gdG9udW1iZXIodGFsZW50X2luZGV4KSBvciAoc2VsZi5EZWZhdWx0VGFsZW50SW5kZXggb3IgMSkKICAgIGlmIHQgPCAxIHRoZW4KICAgICAgICB0ID0gMQogICAgZW5kCiAgICBpZiB0ID4gOSB0aGVuCiAgICAgICAgdCA9IDkKICAgIGVuZAogICAgaWYgc2VsZjpJc1RhbGVudEhpZGRlbih0KSB0aGVuCiAgICAgICAgdCA9IHNlbGYuRGVmYXVsdFRhbGVudEluZGV4IG9yIDEKICAgIGVuZAogICAgcmV0dXJuIHQKZW5kCgpmdW5jdGlvbiBTZWxlY3RIZXJvOlJhbmRvbVZpc2libGVUYWxlbnRJbmRleCgpCiAgICBsb2NhbCBoaWRkZW4gPSBzZWxmLkhpZGRlblRhbGVudEluZGljZXMgb3Ige30KICAgIGxvY2FsIGNhbmRpZGF0ZXMgPSB7fQogICAgZm9yIGkgPSAxLCA5IGRvCiAgICAgICAgaWYgbm90IGhpZGRlbltpXSB0aGVuCiAgICAgICAgICAgIGNhbmRpZGF0ZXNbI2NhbmRpZGF0ZXMgKyAxXSA9IGkKICAgICAgICBlbmQKICAgIGVuZAogICAgaWYgI2NhbmRpZGF0ZXMgPT0gMCB0aGVuCiAgICAgICAgcmV0dXJuIHNlbGYuRGVmYXVsdFRhbGVudEluZGV4IG9yIDEKICAgIGVuZAogICAgcmV0dXJuIGNhbmRpZGF0ZXNbbWF0aC5yYW5kb20oMSwgI2NhbmRpZGF0ZXMpXQplbmQKCmZ1bmN0aW9uIFNlbGVjdEhlcm86R2V0SGlkZGVuVGFsZW50SW5kaWNlc0xpc3QoKQogICAgbG9jYWwgb3V0ID0ge30KICAgIGxvY2FsIGhpZGRlbiA9IHNlbGYuSGlkZGVuVGFsZW50SW5kaWNlcyBvciB7fQogICAgZm9yIGkgPSAxLCA5IGRvCiAgICAgICAgaWYgaGlkZGVuW2ldIHRoZW4KICAgICAgICAgICAgb3V0WyNvdXQgKyAxXSA9IGkKICAgICAgICBlbmQKICAgIGVuZAogICAgcmV0dXJuIG91dAplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 英雄 index → 战斗类型键 btp1～btp4（未命中时默认物理）
+function SelectHero:GetBattleTypeKeyForHeroIndex(index)
+    if not index then
+        return "btp2"
+    end
+    for btp_key, tab in pairs(self.BattleType) do
+        if tab then
+            for _, v in ipairs(tab) do
+                if v == index then
+                    return btp_key
+                end
+            end
+        end
+    end
+    return "btp2"
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+-- 推荐肉搏技能 ability 名列表：ability_item_ + RMBList 中的索引
+function SelectHero:GetRMBAbilityListForHeroIndex(index)
+    local key = self:GetBattleTypeKeyForHeroIndex(index)
+    local nums = self.RMBList[key]
+    local out = {}
+    if nums then
+        for _, n in ipairs(nums) do
+            out[#out + 1] = "ability_item_" .. tostring(n)
+        end
+    end
+    return out
+end
+
+-- 人机肉搏学习白名单（item_skill_* / item_skill_*_up），与 BattleType + RMBList 单一数据源一致
+function SelectHero:GetMeleeLearnWhitelistForHeroIndex(index)
+    local abilities = self:GetRMBAbilityListForHeroIndex(index)
+    local wl = {}
+    for _, ab in ipairs(abilities) do
+        local idx = string.match(ab, "^ability_item_(%d+)$")
+        if idx then
+            wl["item_skill_" .. idx] = true
+            wl["item_skill_" .. idx .. "_up"] = true
+        end
+    end
+    return wl
+end
+
+function SelectHero:GetHeroName(index)
+    if not index then
+        return
+    end
+    for k, v in pairs(self.HeroList) do
+        if index == v.index then
+            return k
+        end
+    end
+end
+
+--- 全英雄自选：仅 Rareness rank_1 + rank_2 池内英雄可选
+function SelectHero:EnsureRarenessPickableHeroSet()
+    if self._rareness_pickable_set then
+        return self._rareness_pickable_set
+    end
+    local set = {}
+    local rareness = self.Rareness
+    if rareness then
+        for _, rank in pairs(rareness) do
+            if type(rank) == "table" then
+                for _, pool in pairs(rank) do
+                    if type(pool) == "table" then
+                        for _, idx in ipairs(pool) do
+                            local n = tonumber(idx)
+                            if n then
+                                set[n] = true
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+    self._rareness_pickable_set = set
+    return set
+end
+
+function SelectHero:IsHeroPickableInRareness(index)
+    if not index then
+        return false
+    end
+    local n = tonumber(index)
+    if not n then
+        return false
+    end
+    return self:EnsureRarenessPickableHeroSet()[n] == true
+end
+
+function SelectHero:GetHeroAbList(index)
+    if not index then
+        return
+    end
+    local heroname = SelectHero:GetHeroName(index)
+    local ab_list = {
+        slot_1 = "",
+        slot_2 = "",
+        slot_3 = "",
+        slot_4 = "",
+    }
+    local num = 1
+    for k, v in pairs(Skill.Ability) do
+        -- 选人面板技能图标：最多 4 个（与 Panorama slot_1～4 一致）
+        if num <= 4 and heroname == v.hero then
+            local num_key = "slot_" .. num
+            local ab_name = v.name
+            ab_list[num_key] = ab_name
+            num = num + 1
+        end
+    end
+    return ab_list
+end
+
+--- 英雄 index → 力量/敏捷/智力/全才（1/2/3/4），与 HeroType、图鉴 Book.HeroList 一致
+function SelectHero:EnsureHeroAttrTypeMap()
+    if self._hero_attr_type_map then
+        return self._hero_attr_type_map
+    end
+    local map = {}
+    local ht = self.HeroType
+    if ht then
+        for _, i in ipairs(ht.tp1 or {}) do
+            map[i] = 1
+        end
+        for _, i in ipairs(ht.tp2 or {}) do
+            map[i] = 2
+        end
+        for _, i in ipairs(ht.tp3 or {}) do
+            map[i] = 3
+        end
+        for _, i in ipairs(ht.tp4 or {}) do
+            map[i] = 4
+        end
+    end
+    if Book and Book.HeroList then
+        for tp_key, slots in pairs(Book.HeroList) do
+            local tp_num = tonumber(string.match(tostring(tp_key), "^tp(%d)$"))
+            if tp_num and tp_num >= 1 and tp_num <= 4 then
+                for _, hero_name in pairs(slots) do
+                    if type(hero_name) == "string" then
+                        for name, def in pairs(self.HeroList) do
+                            if name == hero_name and type(def.index) == "number" then
+                                map[def.index] = tp_num
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+    self._hero_attr_type_map = map
+    return map
+end
+
+function SelectHero:GetHeroAttrTypeByIndex(index, def)
+    local idx = tonumber(index)
+    if not idx then
+        return 1
+    end
+    local map = self:EnsureHeroAttrTypeMap()
+    local tp = map[idx]
+    if tp then
+        return tp
+    end
+    if def and type(def.tp) == "number" then
+        return def.tp
+    end
+    return 1
+end
+
+function SelectHero:IsTalentHidden(talent_index)
+    local t = tonumber(talent_index)
+    if not t then
+        return false
+    end
+    return self.HiddenTalentIndices and self.HiddenTalentIndices[t] == true
+end
+
+function SelectHero:SanitizeTalentIndex(talent_index)
+    local t = tonumber(talent_index) or (self.DefaultTalentIndex or 1)
+    if t < 1 then
+        t = 1
+    end
+    if t > 9 then
+        t = 9
+    end
+    if self:IsTalentHidden(t) then
+        t = self.DefaultTalentIndex or 1
+    end
+    return t
+end
+
+function SelectHero:RandomVisibleTalentIndex()
+    local hidden = self.HiddenTalentIndices or {}
+    local candidates = {}
+    for i = 1, 9 do
+        if not hidden[i] then
+            candidates[#candidates + 1] = i
+        end
+    end
+    if #candidates == 0 then
+        return self.DefaultTalentIndex or 1
+    end
+    return candidates[math.random(1, #candidates)]
+end
+
+function SelectHero:GetHiddenTalentIndicesList()
+    local out = {}
+    local hidden = self.HiddenTalentIndices or {}
+    for i = 1, 9 do
+        if hidden[i] then
+            out[#out + 1] = i
+        end
+    end
+    return out
+end
+
+function SelectHero:IsTalentHidden(talent_index)
+    local t = tonumber(talent_index)
+    if not t then
+        return false
+    end
+    return self.HiddenTalentIndices and self.HiddenTalentIndices[t] == true
+end
+
+function SelectHero:SanitizeTalentIndex(talent_index)
+    local t = tonumber(talent_index) or (self.DefaultTalentIndex or 1)
+    if t < 1 then
+        t = 1
+    end
+    if t > 9 then
+        t = 9
+    end
+    if self:IsTalentHidden(t) then
+        t = self.DefaultTalentIndex or 1
+    end
+    return t
+end
+
+function SelectHero:RandomVisibleTalentIndex()
+    local hidden = self.HiddenTalentIndices or {}
+    local candidates = {}
+    for i = 1, 9 do
+        if not hidden[i] then
+            candidates[#candidates + 1] = i
+        end
+    end
+    if #candidates == 0 then
+        return self.DefaultTalentIndex or 1
+    end
+    return candidates[math.random(1, #candidates)]
+end
+
+function SelectHero:GetHiddenTalentIndicesList()
+    local out = {}
+    local hidden = self.HiddenTalentIndices or {}
+    for i = 1, 9 do
+        if hidden[i] then
+            out[#out + 1] = i
+        end
+    end
+    return out
+end

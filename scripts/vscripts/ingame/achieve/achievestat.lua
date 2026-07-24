@@ -8,22 +8,184 @@
 ]]
 
 
-local encoded=[[LS0g5pel5bi45oiQ5bCx5bGA5YaF5Lya6K+d57yT5a2Y77yI5LuF5YaF5a2Y77yM5LiN5YaZ5pyN5Yqh56uv77yJCi0tIOWxgOWGheS8pOWusy/lh7vmnYAv5o6g5aS6562J5Zyo5q2k57Sv6K6h77ybT3ZlckRhdGE6TG9nR2FtZSDnu5PnrpfkuIrmiqUgY3VzdG9tX2RhdGEuYWNoaWV2ZV9kYXlfc3RhdO+8mwotLSDmnI3liqHnq6/ku4XlnKggL2dhbWUvc3VibWl0IOaIkOWKn+WQjuaJjSBtZXJnZSDliLAgYWNoaWV2ZS5kYXlzdGF044CCCmlmIEFjaGlldmVTdGF0ID09IG5pbCB0aGVuCiAgICBBY2hpZXZlU3RhdCA9IGNsYXNzKHt9KQplbmQKCi0tLSDmnKzlsYDkvJror53orqHmlbDvvIhBY2hpZXZlU3RhdC5EYXRhW3BsYXllcklEXe+8ie+8jOmdnuaMgeS5heWMlgpBY2hpZXZlU3RhdC5EYXRhID0gQWNoaWV2ZVN0YXQuRGF0YSBvciB7fQoKQWNoaWV2ZVN0YXQuU3RhdFRlbXBsYXRlID0gewogICAgZG1nX3N1aWNpZGUgPSAwLAogICAgZG1nX2xpZ2h0bmluZyA9IDAsCiAgICBkbWdfY3J1c2ggPSAwLAogICAgYmFzaF9lbmVteSA9IDAsCiAgICBkbWdfZmxhbWUgPSAwLAogICAgcGx1bmRlcl9nb2xkID0gMCwKICAgIGtpbGxfbmV1dHJhbCA9IDAsCiAgICBraWxsX2hlcm8gPSAwLAp9CgpBY2hpZXZlU3RhdC5EbWdBYmlsaXR5TWFwID0gewogICAgYWJpbGl0eV9pdGVtXzIwID0gImRtZ19saWdodG5pbmciLAogICAgYWJpbGl0eV9pdGVtXzIwX3VwID0gImRtZ19saWdodG5pbmciLAogICAgLS0gYWJpbGl0eV9pdGVtXzEzIOe6r+eyueS8pOWus+WcqOaZruaUu+W4p+aXoCBpbmZsaWN0b3LvvIzop4EgVHJhY2tTa2lsbERhbWFnZSAvIG1vZGlmaWVyX2FiaWxpdHlfaXRlbV8xMwogICAgYWJpbGl0eV9pdGVtXzE0ID0gImRtZ19jcnVzaCIsCiAgICBhYmlsaXR5X2l0ZW1fMTRfdXAgPSAiZG1nX2NydXNoIiwKICAgIGFiaWxpdHlfaXRlbV8zNiA9ICJkbWdfZmxhbWUiLAp9CgotLS0g5LuFIG1vZGlmaWVyIOWGhee0r+iuoeeahOaKgOiDvSDihpIgZGF5c3RhdCDplK7vvIjkuI4gYWNoaWV2ZURheUNvbmZpZyBiYXNoX2VuZW15XzUwMC5zdGF0S2V5IOS4gOiHtO+8iQpBY2hpZXZlU3RhdC5Nb2RpZmllck9ubHlEbWdBYmlsaXR5TWFwID0gewogICAgYWJpbGl0eV9pdGVtXzEzID0gImJhc2hfZW5lbXkiLAp9CgpmdW5jdGlvbiBBY2hpZXZlU3RhdDpJc0h1bWFuUGxheWVyKElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgaW5pdF9kYXRhID0gSW5pdFBsYXllcjpHZXRQbGF5ZXJEYXRhKElEKQogICAgcmV0dXJuIGluaXRfZGF0YSBhbmQgbm90IGluaXRfZGF0YS5ib3QKZW5kCgotLS0g5LiO6YCa6KGM6K+B5Lu75Yqh55u45ZCM77ya5LuF5ZCI5qC85a+55bGA5omN57Sv6K6h5pys5Lya6K+d77yI5LiN5ZCI5qC85bGA5Y2z5L2/5bGA5YaF5pyJ5pWw5o2u5Lmf5LiN5Lya5LiK5oql5YWl5bqT77yJCmZ1bmN0aW9uIEFjaGlldmVTdGF0OklzU2Vzc2lvbkVsaWdpYmxlKElEKQogICAgaWYgbm90IHNlbGY6SXNIdW1hblBsYXllcihJRCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBPdmVyRGF0YSBhbmQgT3ZlckRhdGEuU2hvdWxkQ291bnRDYXJkVGFza1N0YXRzIHRoZW4KICAgICAgICByZXR1cm4gT3ZlckRhdGE6U2hvdWxkQ291bnRDYXJkVGFza1N0YXRzKElEKSA9PSB0cnVlCiAgICBlbmQKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gQWNoaWV2ZVN0YXQ6SW5pdChJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGYuRGF0YVtJRF0gPSBVdGlsOkRlZXBDb3B5VGFiKHNlbGYuU3RhdFRlbXBsYXRlKQplbmQKCmZ1bmN0aW9uIEFjaGlldmVTdGF0OkFkZChJRCwga2V5LCBhbW91bnQpCiAgICBpZiBub3QgSUQgb3Igbm90IGtleSBvciBub3Qgc2VsZjpJc1Nlc3Npb25FbGlnaWJsZShJRCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBub3Qgc2VsZi5TdGF0VGVtcGxhdGVba2V5XSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIHJvdyA9IHNlbGYuRGF0YVtJRF0KICAgIGlmIG5vdCByb3cgdGhlbgogICAgICAgIHNlbGY6SW5pdChJRCkKICAgICAgICByb3cgPSBzZWxmLkRhdGFbSURdCiAgICBlbmQKICAgIGxvY2FsIGFkZCA9IG1hdGguZmxvb3IodG9udW1iZXIoYW1vdW50KSBvciAwKQogICAgaWYgYWRkIDw9IDAgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICByb3dba2V5XSA9ICh0b251bWJlcihyb3dba2V5XSkgb3IgMCkgKyBhZGQKZW5kCgotLS0g6IKJ5pCP5pS75Ye76Kem5Y+R57G75Lyk5a6z77ya57qv57K55Lyk5a6z5ZyoIE9uQXR0YWNrTGFuZGVkIOW4p+WGheW+gOW+gOayoeaciSBpbmZsaWN0b3LvvIzov4fmu6Tlmajml6Dms5Xor4bliKvvvIzpobvlnKggbW9kaWZpZXIg5YaF55u05o6l57Sv6K6hCmZ1bmN0aW9uIEFjaGlldmVTdGF0OlRyYWNrU2tpbGxEYW1hZ2UoYXR0YWNrZXIsIGFiaWxpdHksIGRhbWFnZSkKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgbm90IGF0dGFja2VyIG9yIGF0dGFja2VyOklzTnVsbCgpIG9yIG5vdCBhYmlsaXR5IG9yIGFiaWxpdHk6SXNOdWxsKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBJRCA9IFV0aWw6SGVybzJJRChhdHRhY2tlcikKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGFiX25hbWUgPSBhYmlsaXR5OkdldEFiaWxpdHlOYW1lKCkKICAgIGlmIChub3QgYWJfbmFtZSBvciBhYl9uYW1lID09ICIiKSBhbmQgdHlwZShhYmlsaXR5LkdldE5hbWUpID09ICJmdW5jdGlvbiIgdGhlbgogICAgICAgIGFiX25hbWUgPSBhYmlsaXR5OkdldE5hbWUoKQogICAgZW5kCiAgICBpZiBub3QgYWJfbmFtZSBvciBhYl9uYW1lID09ICIiIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgc3RhdF9rZXkgPSBzZWxmLk1vZGlmaWVyT25seURtZ0FiaWxpdHlNYXBbYWJfbmFtZV0gb3Igc2VsZi5EbWdBYmlsaXR5TWFwW2FiX25hbWVdCiAgICBpZiBzdGF0X2tleSB0aGVuCiAgICAgICAgc2VsZjpBZGQoSUQsIHN0YXRfa2V5LCBkYW1hZ2UpCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBBY2hpZXZlU3RhdDpPbkRhbWFnZURlYWx0KGF0dGFja2VyLCBpbmZsaWN0b3JfZW50LCB2aWN0aW0sIGRhbWFnZSkKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgbm90IGF0dGFja2VyIG9yIGF0dGFja2VyOklzTnVsbCgpIG9yIG5vdCBhdHRhY2tlcjpJc0hlcm8oKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIElEID0gVXRpbDpIZXJvMklEKGF0dGFja2VyKQogICAgaWYgbm90IElEIG9yIG5vdCBzZWxmOklzU2Vzc2lvbkVsaWdpYmxlKElEKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGRtZyA9IG1hdGguZmxvb3IodG9udW1iZXIoZGFtYWdlKSBvciAwKQogICAgaWYgZG1nIDw9IDAgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCgogICAgbG9jYWwgYWJfbmFtZSA9IG5pbAogICAgaWYgaW5mbGljdG9yX2VudCBhbmQgbm90IGluZmxpY3Rvcl9lbnQ6SXNOdWxsKCkgdGhlbgogICAgICAgIGlmIHR5cGUoaW5mbGljdG9yX2VudC5HZXRBYmlsaXR5TmFtZSkgPT0gImZ1bmN0aW9uIiB0aGVuCiAgICAgICAgICAgIGFiX25hbWUgPSBpbmZsaWN0b3JfZW50OkdldEFiaWxpdHlOYW1lKCkKICAgICAgICBlbmQKICAgICAgICBpZiAobm90IGFiX25hbWUgb3IgYWJfbmFtZSA9PSAiIikgYW5kIHR5cGUoaW5mbGljdG9yX2VudC5HZXROYW1lKSA9PSAiZnVuY3Rpb24iIHRoZW4KICAgICAgICAgICAgYWJfbmFtZSA9IGluZmxpY3Rvcl9lbnQ6R2V0TmFtZSgpCiAgICAgICAgZW5kCiAgICBlbmQKCiAgICBpZiBhYl9uYW1lIGFuZCBzZWxmLkRtZ0FiaWxpdHlNYXBbYWJfbmFtZV0gdGhlbgogICAgICAgIHNlbGY6QWRkKElELCBzZWxmLkRtZ0FiaWxpdHlNYXBbYWJfbmFtZV0sIGRtZykKICAgIGVuZAplbmQKCmZ1bmN0aW9uIEFjaGlldmVTdGF0Ok9uTmV1dHJhbEtpbGwoSUQpCiAgICBzZWxmOkFkZChJRCwgImtpbGxfbmV1dHJhbCIsIDEpCmVuZAoKZnVuY3Rpb24gQWNoaWV2ZVN0YXQ6T25IZXJvS2lsbChJRCkKICAgIHNlbGY6QWRkKElELCAia2lsbF9oZXJvIiwgMSkKZW5kCgotLS0g57uT566X5LiK5oql55So77ya5Y+W5Ye65pys5Lya6K+d5aKe6YeP77yI5LuFIExvZ0dhbWUg6LCD55So77yM5LiN5Zyo5bGA5YaFIEhUVFDvvIkKZnVuY3Rpb24gQWNoaWV2ZVN0YXQ6QnVpbGRGb3JMb2coSUQpCiAgICBpZiBub3Qgc2VsZjpJc1Nlc3Npb25FbGlnaWJsZShJRCkgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgbG9jYWwgcm93ID0gc2VsZi5EYXRhW0lEXQogICAgaWYgbm90IHJvdyB0aGVuCiAgICAgICAgcmV0dXJuIG5pbAogICAgZW5kCiAgICBsb2NhbCBvdXQgPSB7fQogICAgbG9jYWwgaGFzID0gZmFsc2UKICAgIGZvciBrZXksIF8gaW4gcGFpcnMoc2VsZi5TdGF0VGVtcGxhdGUpIGRvCiAgICAgICAgbG9jYWwgdiA9IG1hdGguZmxvb3IodG9udW1iZXIocm93W2tleV0pIG9yIDApCiAgICAgICAgaWYgdiA+IDAgdGhlbgogICAgICAgICAgICBvdXRba2V5XSA9IHYKICAgICAgICAgICAgaGFzID0gdHJ1ZQogICAgICAgIGVuZAogICAgZW5kCiAgICAtLSDlhbzlrrnml6fkvJror53plK4gZG1nX2Jhc2gg4oaSIGJhc2hfZW5lbXnvvIjnur/kuIogZGF5c3RhdCDku4UgbWVyZ2UgYmFzaF9lbmVtee+8iQogICAgbG9jYWwgbGVnYWN5X2Jhc2ggPSBtYXRoLmZsb29yKHRvbnVtYmVyKHJvdy5kbWdfYmFzaCkgb3IgMCkKICAgIGlmIGxlZ2FjeV9iYXNoID4gMCB0aGVuCiAgICAgICAgb3V0LmJhc2hfZW5lbXkgPSAob3V0LmJhc2hfZW5lbXkgb3IgMCkgKyBsZWdhY3lfYmFzaAogICAgICAgIGhhcyA9IHRydWUKICAgIGVuZAogICAgaWYgaGFzIHRoZW4KICAgICAgICByZXR1cm4gb3V0CiAgICBlbmQKICAgIHJldHVybiBuaWwKZW5kCgotLS0g57uT566X5YWl5bqT5oiQ5Yqf5ZCO5riF56m65pys5Lya6K+d57yT5a2Y77yM6YG/5YWN6YeN5aSN6K6h5YWl5LiL5LiA5bGACmZ1bmN0aW9uIEFjaGlldmVTdGF0OkNsZWFyU2Vzc2lvbihJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGYuRGF0YVtJRF0gPSBuaWwKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 日常成就局内会话缓存（仅内存，不写服务端）
+-- 局内伤害/击杀/掠夺等在此累计；OverData:LogGame 结算上报 custom_data.achieve_day_stat；
+-- 服务端仅在 /game/submit 成功后才 merge 到 achieve.daystat。
+if AchieveStat == nil then
+    AchieveStat = class({})
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--- 本局会话计数（AchieveStat.Data[playerID]），非持久化
+AchieveStat.Data = AchieveStat.Data or {}
+
+AchieveStat.StatTemplate = {
+    dmg_suicide = 0,
+    dmg_lightning = 0,
+    dmg_crush = 0,
+    bash_enemy = 0,
+    dmg_flame = 0,
+    plunder_gold = 0,
+    kill_neutral = 0,
+    kill_hero = 0,
+}
+
+AchieveStat.DmgAbilityMap = {
+    ability_item_20 = "dmg_lightning",
+    ability_item_20_up = "dmg_lightning",
+    -- ability_item_13 纯粹伤害在普攻帧无 inflictor，见 TrackSkillDamage / modifier_ability_item_13
+    ability_item_14 = "dmg_crush",
+    ability_item_14_up = "dmg_crush",
+    ability_item_36 = "dmg_flame",
+}
+
+--- 仅 modifier 内累计的技能 → daystat 键（与 achieveDayConfig bash_enemy_500.statKey 一致）
+AchieveStat.ModifierOnlyDmgAbilityMap = {
+    ability_item_13 = "bash_enemy",
+}
+
+function AchieveStat:IsHumanPlayer(ID)
+    if not ID then
+        return false
+    end
+    local init_data = InitPlayer:GetPlayerData(ID)
+    return init_data and not init_data.bot
+end
+
+--- 与通行证任务相同：仅合格对局才累计本会话（不合格局即使局内有数据也不会上报入库）
+function AchieveStat:IsSessionEligible(ID)
+    if not self:IsHumanPlayer(ID) then
+        return false
+    end
+    if OverData and OverData.ShouldCountCardTaskStats then
+        return OverData:ShouldCountCardTaskStats(ID) == true
+    end
+    return true
+end
+
+function AchieveStat:Init(ID)
+    if not ID then
+        return
+    end
+    self.Data[ID] = Util:DeepCopyTab(self.StatTemplate)
+end
+
+function AchieveStat:Add(ID, key, amount)
+    if not ID or not key or not self:IsSessionEligible(ID) then
+        return
+    end
+    if not self.StatTemplate[key] then
+        return
+    end
+    local row = self.Data[ID]
+    if not row then
+        self:Init(ID)
+        row = self.Data[ID]
+    end
+    local add = math.floor(tonumber(amount) or 0)
+    if add <= 0 then
+        return
+    end
+    row[key] = (tonumber(row[key]) or 0) + add
+end
+
+--- 肉搏攻击触发类伤害：纯粹伤害在 OnAttackLanded 帧内往往没有 inflictor，过滤器无法识别，须在 modifier 内直接累计
+function AchieveStat:TrackSkillDamage(attacker, ability, damage)
+    if not IsServer() then
+        return
+    end
+    if not attacker or attacker:IsNull() or not ability or ability:IsNull() then
+        return
+    end
+    local ID = Util:Hero2ID(attacker)
+    if not ID then
+        return
+    end
+    local ab_name = ability:GetAbilityName()
+    if (not ab_name or ab_name == "") and type(ability.GetName) == "function" then
+        ab_name = ability:GetName()
+    end
+    if not ab_name or ab_name == "" then
+        return
+    end
+    local stat_key = self.ModifierOnlyDmgAbilityMap[ab_name] or self.DmgAbilityMap[ab_name]
+    if stat_key then
+        self:Add(ID, stat_key, damage)
+    end
+end
+
+function AchieveStat:OnDamageDealt(attacker, inflictor_ent, victim, damage)
+    if not IsServer() then
+        return
+    end
+    if not attacker or attacker:IsNull() or not attacker:IsHero() then
+        return
+    end
+    local ID = Util:Hero2ID(attacker)
+    if not ID or not self:IsSessionEligible(ID) then
+        return
+    end
+    local dmg = math.floor(tonumber(damage) or 0)
+    if dmg <= 0 then
+        return
+    end
+
+    local ab_name = nil
+    if inflictor_ent and not inflictor_ent:IsNull() then
+        if type(inflictor_ent.GetAbilityName) == "function" then
+            ab_name = inflictor_ent:GetAbilityName()
+        end
+        if (not ab_name or ab_name == "") and type(inflictor_ent.GetName) == "function" then
+            ab_name = inflictor_ent:GetName()
+        end
+    end
+
+    if ab_name and self.DmgAbilityMap[ab_name] then
+        self:Add(ID, self.DmgAbilityMap[ab_name], dmg)
+    end
+end
+
+function AchieveStat:OnNeutralKill(ID)
+    self:Add(ID, "kill_neutral", 1)
+end
+
+function AchieveStat:OnHeroKill(ID)
+    self:Add(ID, "kill_hero", 1)
+end
+
+--- 结算上报用：取出本会话增量（仅 LogGame 调用，不在局内 HTTP）
+function AchieveStat:BuildForLog(ID)
+    if not self:IsSessionEligible(ID) then
+        return nil
+    end
+    local row = self.Data[ID]
+    if not row then
+        return nil
+    end
+    local out = {}
+    local has = false
+    for key, _ in pairs(self.StatTemplate) do
+        local v = math.floor(tonumber(row[key]) or 0)
+        if v > 0 then
+            out[key] = v
+            has = true
+        end
+    end
+    -- 兼容旧会话键 dmg_bash → bash_enemy（线上 daystat 仅 merge bash_enemy）
+    local legacy_bash = math.floor(tonumber(row.dmg_bash) or 0)
+    if legacy_bash > 0 then
+        out.bash_enemy = (out.bash_enemy or 0) + legacy_bash
+        has = true
+    end
+    if has then
+        return out
+    end
+    return nil
+end
+
+--- 结算入库成功后清空本会话缓存，避免重复计入下一局
+function AchieveStat:ClearSession(ID)
+    if not ID then
+        return
+    end
+    self.Data[ID] = nil
+end

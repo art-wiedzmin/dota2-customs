@@ -8,22 +8,97 @@
 ]]
 
 
-local encoded=[[bW9kaWZpZXJfcmJ6ZiA9IGNsYXNzKHt9KQoKZnVuY3Rpb24gbW9kaWZpZXJfcmJ6ZjpJc0hpZGRlbigpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9yYnpmOklzRGVidWZmKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3JiemY6SXNQdXJnYWJsZSgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgotLeatu+S6oeaXtuaYr+WQpuenu+mZpApmdW5jdGlvbiBtb2RpZmllcl9yYnpmOlJlbW92ZU9uRGVhdGgoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfcmJ6ZjpHZXRUZXh0dXJlKCkKICAgIHJldHVybiAic2Nyb2xsL3JiemYiCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfcmJ6ZjpBbGxvd0lsbHVzaW9uRHVwbGljYXRlKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3JiemY6T25DcmVhdGVkKGt2KQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbiByZXR1cm4gZW5kCiAgICAtLSBwcmludCgiYnVmZua3u+WKoOaIkOWKnyIpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfcmJ6ZjpEZWNsYXJlRnVuY3Rpb25zKCkKICAgIHJldHVybiB7CiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfU1RBVFVTX1JFU0lTVEFOQ0VfU1RBQ0tJTkcsCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfTUFOQUNPU1RfUEVSQ0VOVEFHRV9TVEFDS0lORywKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9NT1ZFU1BFRURfQk9OVVNfQ09OU1RBTlQsCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfTUFOQUNPU1RfUkVEVUNUSU9OX0NPTlNUQU5ULAogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX01BTkFfUkVHRU5fQ09OU1RBTlQsCiAgICAgICAgTU9ESUZJRVJfRVZFTlRfT05fQVRUQUNLX0xBTkRFRCwKICAgICAgICAtLSBNT0RJRklFUl9FVkVOVF9PTl9UQUtFREFNQUdFLAogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX01BR0lDQUxfUkVTSVNUQU5DRV9ESVJFQ1RfTU9ESUZJQ0FUSU9OCiAgICB9CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfcmJ6ZjpHZXRNb2RpZmllck1hZ2ljYWxSZXNpc3RhbmNlRGlyZWN0TW9kaWZpY2F0aW9uKCkKICAgIGxvY2FsIHBhcmVudCA9IHNlbGY6R2V0UGFyZW50KCkKICAgIGlmIG5vdCBwYXJlbnQgb3IgcGFyZW50OklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4gMAogICAgZW5kCiAgICByZXR1cm4gcGFyZW50OkdldEludGVsbGVjdCh0cnVlKSAqICgtMC4wNikKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9yYnpmOkdldE1vZGlmaWVyU3RhdHVzUmVzaXN0YW5jZVN0YWNraW5nKCkKICAgIHJldHVybiAyNQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3JiemY6R2V0TW9kaWZpZXJNb3ZlU3BlZWRCb251c19Db25zdGFudCgpCiAgICByZXR1cm4gMzAKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9yYnpmOkdldE1vZGlmaWVyQ29uc3RhbnRNYW5hUmVnZW4oKQogICAgcmV0dXJuIDEwCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfcmJ6ZjpPbkF0dGFja0xhbmRlZChwYXJhbXMpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuIHJldHVybiBlbmQKICAgIGxvY2FsIGF0dGFja2VyID0gcGFyYW1zLmF0dGFja2VyCiAgICBsb2NhbCB0YXJnZXQgPSBwYXJhbXMudGFyZ2V0CiAgICBpZiBhdHRhY2tlciB+PSBzZWxmOkdldFBhcmVudCgpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgbm90IGF0dGFja2VyOklzSGVybygpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgSUQgPSBVdGlsOkhlcm8ySUQoYXR0YWNrZXIpCiAgICBpZiBJRCB0aGVuCiAgICAgICAgbG9jYWwgbWZnaiA9IEhlcm9EYXRhOkdldFNYKElELCAibWZnaiIpCiAgICAgICAgaWYgbWZnaiA+IDAgdGhlbgogICAgICAgICAgICB1dGlsZXg6VW5pdERhbShhdHRhY2tlciwgdGFyZ2V0LCBtZmdqLCAibWYiLCBuaWwsIHRydWUpCiAgICAgICAgZW5kCgogICAgICAgIGxvY2FsIGRhbWFnZSA9IHBhcmFtcy5kYW1hZ2UKICAgICAgICBsb2NhbCBudW0xID0gSGVyb0RhdGE6R2V0U1goSUQsICJnanh4IikKICAgICAgICBpZiBudW0xIDw9IDAgdGhlbgogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgICAgICBsb2NhbCBoZWFsID0gbWF0aC5mbG9vcigoZGFtYWdlICogbnVtMSAvIDEwMCkpCiAgICAgICAgLS0gcHJpbnQoIuWQuOihgCIgLi4gaGVhbCkKICAgICAgICBhdHRhY2tlcjpIZWFsKGhlYWwsIG5pbCkKICAgIGVuZAplbmQKCgo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+modifier_rbzf = class({})
+
+function modifier_rbzf:IsHidden()
+    return false
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function modifier_rbzf:IsDebuff()
+    return false
+end
+
+function modifier_rbzf:IsPurgable()
+    return false
+end
+
+--死亡时是否移除
+function modifier_rbzf:RemoveOnDeath()
+    return false
+end
+
+function modifier_rbzf:GetTexture()
+    return "scroll/rbzf"
+end
+
+function modifier_rbzf:AllowIllusionDuplicate()
+    return false
+end
+
+function modifier_rbzf:OnCreated(kv)
+    if not IsServer() then return end
+    -- print("buff添加成功")
+end
+
+function modifier_rbzf:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING,
+        MODIFIER_PROPERTY_MANACOST_PERCENTAGE_STACKING,
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+        MODIFIER_PROPERTY_MANACOST_REDUCTION_CONSTANT,
+        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+        MODIFIER_EVENT_ON_ATTACK_LANDED,
+        -- MODIFIER_EVENT_ON_TAKEDAMAGE,
+        MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION
+    }
+end
+
+function modifier_rbzf:GetModifierMagicalResistanceDirectModification()
+    local parent = self:GetParent()
+    if not parent or parent:IsNull() then
+        return 0
+    end
+    return parent:GetIntellect(true) * (-0.06)
+end
+
+function modifier_rbzf:GetModifierStatusResistanceStacking()
+    return 25
+end
+
+function modifier_rbzf:GetModifierMoveSpeedBonus_Constant()
+    return 30
+end
+
+function modifier_rbzf:GetModifierConstantManaRegen()
+    return 10
+end
+
+function modifier_rbzf:OnAttackLanded(params)
+    if not IsServer() then return end
+    local attacker = params.attacker
+    local target = params.target
+    if attacker ~= self:GetParent() then
+        return
+    end
+    if not attacker:IsHero() then
+        return
+    end
+    local ID = Util:Hero2ID(attacker)
+    if ID then
+        local mfgj = HeroData:GetSX(ID, "mfgj")
+        if mfgj > 0 then
+            utilex:UnitDam(attacker, target, mfgj, "mf", nil, true)
+        end
+
+        local damage = params.damage
+        local num1 = HeroData:GetSX(ID, "gjxx")
+        if num1 <= 0 then
+            return
+        end
+        local heal = math.floor((damage * num1 / 100))
+        -- print("吸血" .. heal)
+        attacker:Heal(heal, nil)
+    end
+end
+
+

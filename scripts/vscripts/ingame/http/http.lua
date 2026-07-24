@@ -8,22 +8,169 @@
 ]]
 
 
-local encoded=[[aWYgSHR0cCA9PSBuaWwgdGhlbgogICAgSHR0cCA9IGNsYXNzKHt9KQogICAgcmVxdWlyZSgiaW5nYW1lLkh0dHAuQ29uZmlnIikKICAgIHJlcXVpcmUoImluZ2FtZS5IdHRwLkdldCIpCiAgICByZXF1aXJlKCJpbmdhbWUuSHR0cC5TZXQiKQogICAgCmVuZAoKLS3liJ3lp4vljJYKZnVuY3Rpb24gSHR0cDpJbml0KCkKICAgIC0tIHByaW50KCLorr7nva7nvZHnu5wiKQogICAgLS0gVG9vbHNNb2RlIOS5n+i1sOe6v+S4iuacje+8iOS4jiBDb25maWcudHA9MiAvIHNlcnZlcmlwIOS4gOiHtO+8ie+8m+WLv+iHquWKqOWIhyAxMjcuMC4wLjEKICAgIC0tc2VsZjpTZXRUcCgpCiAgICBzZWxmOlNldFNlY3JldEtleSgpCiAgICBzZWxmOlNldElwKCkKICAgIHNlbGY6U2V0UG9ydCgpCiAgICBzZWxmOlNldFVybCgpCmVuZAoKLS0g5pyN5Yqh56uvIEpXVO+8iEdBTUVfSldUX1NFQ1JFVO+8ie+8mi91c2VyL2xvZ2luIOS4i+WPkeeahCBhY2Nlc3NUb2tlbu+8jOaMieeOqeWutuanveS9jeS/neWtmApmdW5jdGlvbiBIdHRwOlNldFBsYXllckFjY2Vzc1Rva2VuKElELCB0b2tlbikKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGYuX2FjY2Vzc1Rva2VuID0gc2VsZi5fYWNjZXNzVG9rZW4gb3Ige30KICAgIHNlbGYuX2FjY2Vzc1Rva2VuW0lEXSA9IHRva2VuCmVuZAoKZnVuY3Rpb24gSHR0cDpHZXRQbGF5ZXJBY2Nlc3NUb2tlbihJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuIG5pbAogICAgZW5kCiAgICBzZWxmLl9hY2Nlc3NUb2tlbiA9IHNlbGYuX2FjY2Vzc1Rva2VuIG9yIHt9CiAgICByZXR1cm4gc2VsZi5fYWNjZXNzVG9rZW5bSURdCmVuZAoKLS3orr7nva7or7fmsYLlpLQKZnVuY3Rpb24gSHR0cDpTZXRIZWFkZXJzKElELCByZXEpCiAgICByZXE6U2V0SFRUUFJlcXVlc3RIZWFkZXJWYWx1ZSgic2VjcmV0a2V5Iiwgc2VsZjpHZXRTZWNyZXRLZXkoKSkKICAgIGxvY2FsIHRva2VuID0gc2VsZjpHZXRQbGF5ZXJBY2Nlc3NUb2tlbihJRCkKICAgIGlmIHRva2VuIGFuZCB0b2tlbiB+PSAiIiB0aGVuCiAgICAgICAgcmVxOlNldEhUVFBSZXF1ZXN0SGVhZGVyVmFsdWUoIkF1dGhvcml6YXRpb24iLCAiQmVhcmVyICIgLi4gdG9rZW4pCiAgICBlbmQKICAgIC0tcmVxOlNldEhUVFBSZXF1ZXN0SGVhZGVyVmFsdWUoIm1vZGVsdHAiLCBzZWxmOkdldFRwKCkpCmVuZAoKLS1HRVQKZnVuY3Rpb24gSHR0cDpHRVQocm91dGVyLCB0YWIsIElELCBmdW4pCiAgICAtLeW/hemhu+WKoOWFpeacieaViOeOqeWutkFJRAogICAgLS10YWIgPSBzZWxmOkFkZFBsYXllcklEKHRhYiwgSUQpCiAgICBpZiBub3QgdGFiIHRoZW4gcmV0dXJuIGVuZAogICAgLS3mi7zmjqXot6/nlLEKICAgIGxvY2FsIHVybCA9IHNlbGY6R2V0VXJsKCkgLi4gcm91dGVyCiAgICAtLXByaW50KHVybCkKICAgIGlmIG5vdCB1cmwgdGhlbiByZXR1cm4gZW5kCiAgICBsb2NhbCByZXEgPSBDcmVhdGVIVFRQUmVxdWVzdCgiR0VUIiwgdXJsKQogICAgLS1yZXEuaGVhZGVycyjlr4bpkqUr5ri45oiP54mI5pysKQogICAgc2VsZjpTZXRIZWFkZXJzKElELCByZXEpCiAgICAtLXJlcS5xdWVyeQogICAgaWYgdGFiIHRoZW4KICAgICAgICBmb3IgaywgdiBpbiBwYWlycyh0YWIpIGRvCiAgICAgICAgICAgIHJlcTpTZXRIVFRQUmVxdWVzdEdldE9yUG9zdFBhcmFtZXRlcihrLCB0b3N0cmluZyh2KSkKICAgICAgICBlbmQKICAgIGVuZAogICAgLS02MOenkui2heaXtgogICAgcmVxOlNldEhUVFBSZXF1ZXN0QWJzb2x1dGVUaW1lb3V0TVMoNjAwMDApCiAgICAtLeWbnuiwgwogICAgcmVxOlNlbmQoZnVuY3Rpb24oa2V5cykKICAgICAgICAtLSBwcmludCgiLS0tLS0tLS0tLS0tLS0tLS0tIikKICAgICAgICBzZWxmOlNldmVyQ2FsbEJhY2soa2V5cywgSUQsIGZ1bikKICAgIGVuZCkKZW5kCgotLVBPU1QKLS0gb3B0cy5hbGxvd19ub19waWTvvJrnmb3lkI3ljZUv6Iux6ZuE5by65bqm562J5YWs5byA5o6l5Y+j77yMSG9zdCDlsJrml6AgU3RlYW1JRCDml7bku43lj6/or7fmsYIKZnVuY3Rpb24gSHR0cDpQT1NUKHJvdXRlciwgdGFiLCBJRCwgZnVuLCBvcHRzKQogICAgb3B0cyA9IG9wdHMgb3Ige30KICAgIHRhYiA9IHRhYiBvciB7fQogICAgaWYgdHlwZSh0YWIpIH49ICJ0YWJsZSIgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBvcHRzLmFsbG93X25vX3BpZCB0aGVuCiAgICAgICAgaWYgSUQgYW5kIFBsYXllclJlc291cmNlOklzVmFsaWRQbGF5ZXIoSUQpIHRoZW4KICAgICAgICAgICAgbG9jYWwgYWlkID0gUGxheWVyUmVzb3VyY2U6R2V0U3RlYW1BY2NvdW50SUQoSUQpCiAgICAgICAgICAgIGlmIGFpZCBhbmQgYWlkIH49IDAgdGhlbgogICAgICAgICAgICAgICAgdGFiLnBpZCA9IGFpZAogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVsc2UKICAgICAgICB0YWIgPSBzZWxmOkFkZFBsYXllcklEKHRhYiwgSUQpCiAgICAgICAgaWYgbm90IHRhYiB0aGVuIHJldHVybiBlbmQKICAgIGVuZAogICAgLS0g5pyN5Yqh56uv5byA5ZCvIEpXVCDml7bpmo8gSlNPTiDkuIDlubbkvKAgYWNjZXNzVG9rZW7vvIjkuI4gQXV0aG9yaXphdGlvbiDlpLTkuozpgInkuIDljbPlj6/vvIkKICAgIGxvY2FsIHRva2VuID0gc2VsZjpHZXRQbGF5ZXJBY2Nlc3NUb2tlbihJRCkKICAgIGlmIHRva2VuIGFuZCB0b2tlbiB+PSAiIiB0aGVuCiAgICAgICAgdGFiLmFjY2Vzc1Rva2VuID0gdG9rZW4KICAgIGVuZAogICAgLS3mi7zmjqXot6/nlLEKICAgIGxvY2FsIHVybCA9IHNlbGY6R2V0VXJsKCkgLi4gcm91dGVyCiAgICBpZiBub3QgdXJsIHRoZW4gcmV0dXJuIGVuZAogICAgbG9jYWwgcmVxID0gQ3JlYXRlSFRUUFJlcXVlc3QoIlBPU1QiLCB1cmwpCiAgICAtLXJlcS5oZWFkZXJzKOWvhumSpSvmuLjmiI/niYjmnKwpCiAgICBzZWxmOlNldEhlYWRlcnMoSUQsIHJlcSkKICAgIC0tcmVxLmJvZHkKICAgIHJlcTpTZXRIVFRQUmVxdWVzdFJhd1Bvc3RCb2R5KCJhcHBsaWNhdGlvbi9qc29uIiwgSlNPTi5lbmNvZGUodGFiKSkKICAgIC0tNjDnp5LotoXml7YKICAgIHJlcTpTZXRIVFRQUmVxdWVzdEFic29sdXRlVGltZW91dE1TKDYwMDAwKQogICAgLS3lm57osIMKICAgIHJlcTpTZW5kKGZ1bmN0aW9uKGtleXMpCiAgICAgICAgc2VsZjpTZXZlckNhbGxCYWNrKGtleXMsIElELCBmdW4pCiAgICBlbmQpCmVuZAoKLS3lm57osIPlpITnkIYKZnVuY3Rpb24gSHR0cDpTZXZlckNhbGxCYWNrKGtleXMsIElELCBmdW4pCiAgICAtLXByaW50KGtleXMpCiAgICBsb2NhbCBib2R5ID0ga2V5cy5Cb2R5CiAgICBsb2NhbCBzY29kZSA9IGtleXMuU3RhdHVzQ29kZQogICAgLS1wcmludChib2R5KQogICAgLS1wcmludChzY29kZSkKICAgIC0t55u05o6l5aSx6LSlCiAgICBpZiBub3QgYm9keSBvciBub3Qgc2NvZGUgdGhlbgogICAgICAgIHBjYWxsKGZ1bmN0aW9uKCkgZnVuKHsgY29kZSA9IDAgfSkgZW5kKQogICAgICAgIHJldHVybgogICAgZW5kCgogICAgLS1ET1RB57O757uf5Yik5a6a5q2k5qyh6L+e5o6l5aSx6LSlCiAgICBpZiBub3Qgc2NvZGUgb3Igc2NvZGUgfj0gMjAwIHRoZW4KICAgICAgICBwY2FsbChmdW5jdGlvbigpIGZ1bih7IGNvZGUgPSAwIH0pIGVuZCkKICAgICAgICByZXR1cm4KICAgIGVuZAogICAgLS3lk43lupTmiJDlip8g5YiZ6L2s56CB6YCB5YWl5Zue6LCDCiAgICBsb2NhbCB0YWIgPSB7fQogICAgbG9jYWwgc3VjY2VzcywganNvbiA9IHBjYWxsKGZ1bmN0aW9uKCkgcmV0dXJuIEpTT04uZGVjb2RlKGJvZHkpIGVuZCkKICAgIGlmIHN1Y2Nlc3MgdGhlbiB0YWIgPSBqc29uIGVuZAogICAgaWYgdGFiID09IG5pbCB0aGVuCiAgICAgICAgdGFiID0ge30KICAgIGVuZAogICAgLS0gcHJpbnQoIj09PT09PT09PT09PSIpCiAgICAtLeaJp+ihjOato+ehruWbnuiwgwogICAgaWYgdHlwZShmdW4pID09ICJmdW5jdGlvbiIgdGhlbgogICAgICAgIHBjYWxsKGZ1bmN0aW9uKCkgZnVuKHRhYikgZW5kKQogICAgZW5kCmVuZAoKLS3mr4/mrKHnu5nmlbDmja7pu5jorqTliqDlhaXnjqnlrrZJRApmdW5jdGlvbiBIdHRwOkFkZFBsYXllcklEKHRhYiwgSUQpCiAgICBpZiBub3QgdGFiIG9yIG5vdCBJRCB0aGVuIHJldHVybiBlbmQKICAgIGlmIG5vdCBQbGF5ZXJSZXNvdXJjZTpJc1ZhbGlkUGxheWVyKElEKSB0aGVuIHJldHVybiBlbmQKICAgIGlmIHR5cGUodGFiKSB+PSAidGFibGUiIHRoZW4gcmV0dXJuIGVuZAogICAgbG9jYWwgYWlkID0gUGxheWVyUmVzb3VyY2U6R2V0U3RlYW1BY2NvdW50SUQoSUQpCiAgICBpZiBub3QgYWlkIG9yIGFpZCA9PSAwIHRoZW4gcmV0dXJuIGVuZAogICAgdGFiLnBpZCA9IGFpZAogICAgcmV0dXJuIHRhYgplbmQKCi0t6L6D6aqM5pys5p2h5pWw5o2u55qEQUlE5piv5ZCm5Yy56YWNCmZ1bmN0aW9uIEh0dHA6VmVyaWZ5QWlkKElELCBhaWQpCiAgICBpZiBub3QgSUQgb3Igbm90IGFpZCB0aGVuIHJldHVybiBlbmQKICAgIGlmIHR5cGUoSUQpIH49ICJudW1iZXIiIG9yIHR5cGUoYWlkKSB+PSAibnVtYmVyIiB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIG5vdCBQbGF5ZXJSZXNvdXJjZTpJc1ZhbGlkUGxheWVyKElEKSB0aGVuIHJldHVybiBlbmQKICAgIGxvY2FsIGxvY2FsYWlkID0gUGxheWVyUmVzb3VyY2U6R2V0U3RlYW1BY2NvdW50SUQoSUQpCiAgICBpZiBhaWQgPT0gbG9jYWxhaWQgdGhlbiByZXR1cm4gdHJ1ZSBlbmQKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if Http == nil then
+    Http = class({})
+    require("ingame.Http.Config")
+    require("ingame.Http.Get")
+    require("ingame.Http.Set")
+    
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--初始化
+function Http:Init()
+    -- print("设置网络")
+    -- ToolsMode 也走线上服（与 Config.tp=2 / serverip 一致）；勿自动切 127.0.0.1
+    --self:SetTp()
+    self:SetSecretKey()
+    self:SetIp()
+    self:SetPort()
+    self:SetUrl()
+end
+
+-- 服务端 JWT（GAME_JWT_SECRET）：/user/login 下发的 accessToken，按玩家槽位保存
+function Http:SetPlayerAccessToken(ID, token)
+    if not ID then
+        return
+    end
+    self._accessToken = self._accessToken or {}
+    self._accessToken[ID] = token
+end
+
+function Http:GetPlayerAccessToken(ID)
+    if not ID then
+        return nil
+    end
+    self._accessToken = self._accessToken or {}
+    return self._accessToken[ID]
+end
+
+--设置请求头
+function Http:SetHeaders(ID, req)
+    req:SetHTTPRequestHeaderValue("secretkey", self:GetSecretKey())
+    local token = self:GetPlayerAccessToken(ID)
+    if token and token ~= "" then
+        req:SetHTTPRequestHeaderValue("Authorization", "Bearer " .. token)
+    end
+    --req:SetHTTPRequestHeaderValue("modeltp", self:GetTp())
+end
+
+--GET
+function Http:GET(router, tab, ID, fun)
+    --必须加入有效玩家AID
+    --tab = self:AddPlayerID(tab, ID)
+    if not tab then return end
+    --拼接路由
+    local url = self:GetUrl() .. router
+    --print(url)
+    if not url then return end
+    local req = CreateHTTPRequest("GET", url)
+    --req.headers(密钥+游戏版本)
+    self:SetHeaders(ID, req)
+    --req.query
+    if tab then
+        for k, v in pairs(tab) do
+            req:SetHTTPRequestGetOrPostParameter(k, tostring(v))
+        end
+    end
+    --60秒超时
+    req:SetHTTPRequestAbsoluteTimeoutMS(60000)
+    --回调
+    req:Send(function(keys)
+        -- print("------------------")
+        self:SeverCallBack(keys, ID, fun)
+    end)
+end
+
+--POST
+-- opts.allow_no_pid：白名单/英雄强度等公开接口，Host 尚无 SteamID 时仍可请求
+function Http:POST(router, tab, ID, fun, opts)
+    opts = opts or {}
+    tab = tab or {}
+    if type(tab) ~= "table" then
+        return
+    end
+    if opts.allow_no_pid then
+        if ID and PlayerResource:IsValidPlayer(ID) then
+            local aid = PlayerResource:GetSteamAccountID(ID)
+            if aid and aid ~= 0 then
+                tab.pid = aid
+            end
+        end
+    else
+        tab = self:AddPlayerID(tab, ID)
+        if not tab then return end
+    end
+    -- 服务端开启 JWT 时随 JSON 一并传 accessToken（与 Authorization 头二选一即可）
+    local token = self:GetPlayerAccessToken(ID)
+    if token and token ~= "" then
+        tab.accessToken = token
+    end
+    --拼接路由
+    local url = self:GetUrl() .. router
+    if not url then return end
+    local req = CreateHTTPRequest("POST", url)
+    --req.headers(密钥+游戏版本)
+    self:SetHeaders(ID, req)
+    --req.body
+    req:SetHTTPRequestRawPostBody("application/json", JSON.encode(tab))
+    --60秒超时
+    req:SetHTTPRequestAbsoluteTimeoutMS(60000)
+    --回调
+    req:Send(function(keys)
+        self:SeverCallBack(keys, ID, fun)
+    end)
+end
+
+--回调处理
+function Http:SeverCallBack(keys, ID, fun)
+    --print(keys)
+    local body = keys.Body
+    local scode = keys.StatusCode
+    --print(body)
+    --print(scode)
+    --直接失败
+    if not body or not scode then
+        pcall(function() fun({ code = 0 }) end)
+        return
+    end
+
+    --DOTA系统判定此次连接失败
+    if not scode or scode ~= 200 then
+        pcall(function() fun({ code = 0 }) end)
+        return
+    end
+    --响应成功 则转码送入回调
+    local tab = {}
+    local success, json = pcall(function() return JSON.decode(body) end)
+    if success then tab = json end
+    if tab == nil then
+        tab = {}
+    end
+    -- print("============")
+    --执行正确回调
+    if type(fun) == "function" then
+        pcall(function() fun(tab) end)
+    end
+end
+
+--每次给数据默认加入玩家ID
+function Http:AddPlayerID(tab, ID)
+    if not tab or not ID then return end
+    if not PlayerResource:IsValidPlayer(ID) then return end
+    if type(tab) ~= "table" then return end
+    local aid = PlayerResource:GetSteamAccountID(ID)
+    if not aid or aid == 0 then return end
+    tab.pid = aid
+    return tab
+end
+
+--较验本条数据的AID是否匹配
+function Http:VerifyAid(ID, aid)
+    if not ID or not aid then return end
+    if type(ID) ~= "number" or type(aid) ~= "number" then
+        return
+    end
+    if not PlayerResource:IsValidPlayer(ID) then return end
+    local localaid = PlayerResource:GetSteamAccountID(ID)
+    if aid == localaid then return true end
+end

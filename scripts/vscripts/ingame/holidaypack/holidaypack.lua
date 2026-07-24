@@ -8,22 +8,281 @@
 ]]
 
 
-local encoded=[[aWYgSG9saWRheVBhY2sgPT0gbmlsIHRoZW4KICAgIEhvbGlkYXlQYWNrID0gY2xhc3Moe30pCiAgICByZXF1aXJlKCJpbmdhbWUuSG9saWRheVBhY2suQ29uZmlnIikKICAgIHJlcXVpcmUoImluZ2FtZS5Ib2xpZGF5UGFjay5TZXQiKQogICAgcmVxdWlyZSgiaW5nYW1lLkhvbGlkYXlQYWNrLlVpIikKZW5kCgpmdW5jdGlvbiBIb2xpZGF5UGFjazpJbml0KElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5EYXRhW0lEXSA9IFV0aWw6RGVlcENvcHlUYWIoc2VsZi5UZW1wbGF0ZSkKICAgIHNlbGY6TG9hZEdpZnRQYWNrcyhJRCkKZW5kCgpmdW5jdGlvbiBIb2xpZGF5UGFjazpGcmVlKElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgLS0g5LiO56uv5Y2I5YWN6LS556S85YyF5ZCM5LiA5p2h6ZO+6Lev77yaL3VzZXIvZnJlZSB0eXBlPTQKICAgIC0tIOW3suWPlua2iOa0u+WKqOaXtumXtOeql++8m+S7heaMiSBkd19mcmVlX2RheSDmr4/ml6UgMSDmrKEKICAgIGlmIHRvbnVtYmVyKHNlbGYuRGF0YVtJRF0uZHdfZnJlZV9kYXkpIH49IDEgdGhlbgogICAgICAgIE1zZ3M6UG9wKElELCAi5LuK5pel5bey6aKG5Y+W6IqC5pel56S85YyFIikKICAgICAgICByZXR1cm4KICAgIGVuZAogICAgSHR0cDpQT1NUKCIvdXNlci9mcmVlIiwgeyB0eXBlID0gNCB9LCBJRCwgZnVuY3Rpb24oa2V5cykKICAgICAgICBpZiBrZXlzLmNvZGUgPT0gMjAwIGFuZCBrZXlzLmRhdGEgYW5kIGtleXMuZGF0YS5jYW5DbGFpbSB+PSBmYWxzZSB0aGVuCiAgICAgICAgICAgIGxvY2FsIHJvd3MgPSB7fQogICAgICAgICAgICBpZiBTaG9wIGFuZCBTaG9wLkNhcmRSZWRlZW1Sb3dzRnJvbVNlcnZlciBhbmQga2V5cy5kYXRhLnJlZGVlbV9yb3dzIHRoZW4KICAgICAgICAgICAgICAgIHJvd3MgPSBTaG9wOkNhcmRSZWRlZW1Sb3dzRnJvbVNlcnZlcihrZXlzLmRhdGEucmVkZWVtX3Jvd3MpCiAgICAgICAgICAgIGVsc2VpZiBzZWxmLkJ1aWxkUmVkZWVtUm93cyB0aGVuCiAgICAgICAgICAgICAgICByb3dzID0gc2VsZjpCdWlsZFJlZGVlbVJvd3MoImR3X2ZyZWUiKQogICAgICAgICAgICBlbmQKICAgICAgICAgICAgTXNnczpQb3BSZWRlZW1TdWNjZXNzKElELCAi6IqC5pel56S85YyF6aKG5Y+W5oiQ5YqfIiwgcm93cykKICAgICAgICAgICAgLS0g5pys5Zyw5qCH6K6w5LuK5pel5bey6aKG77yM5Yi35pawIFVJCiAgICAgICAgICAgIGlmIHNlbGYuRGF0YVtJRF0gdGhlbgogICAgICAgICAgICAgICAgc2VsZi5EYXRhW0lEXS5kd19mcmVlX2RheSA9IDAKICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGlmIFNob3AgYW5kIFNob3AuRGF0YSBhbmQgU2hvcC5EYXRhW0lEXSB0aGVuCiAgICAgICAgICAgICAgICBTaG9wLkRhdGFbSURdLmR3X2ZyZWVfZGF5ID0gMAogICAgICAgICAgICBlbmQKICAgICAgICAgICAgaWYgU2hvcCBhbmQgU2hvcC5Mb2FkU2hvcCB0aGVuCiAgICAgICAgICAgICAgICBTaG9wOkxvYWRTaG9wKElEKQogICAgICAgICAgICBlbmQKICAgICAgICAgICAgc2VsZjpTZW5kRGF0YShJRCkKICAgICAgICBlbHNlaWYga2V5cy5jb2RlID09IDIwMCB0aGVuCiAgICAgICAgICAgIGxvY2FsIG1zZyA9ICLku4rml6Xlt7Lpooblj5boioLml6XnpLzljIUiCiAgICAgICAgICAgIGlmIGtleXMuZGF0YSBhbmQga2V5cy5kYXRhLm1lc3NhZ2UgYW5kIGtleXMuZGF0YS5tZXNzYWdlIH49ICIiIHRoZW4KICAgICAgICAgICAgICAgIG1zZyA9IGtleXMuZGF0YS5tZXNzYWdlCiAgICAgICAgICAgIGVsc2VpZiBrZXlzLmRhdGEgYW5kIGtleXMuZGF0YS5yZWFzb24gPT0gImV2ZW50X2Nsb3NlZCIgdGhlbgogICAgICAgICAgICAgICAgbXNnID0gIuiKguaXpeWFjei0ueekvOWMhea0u+WKqOW3sue7k+adnyIKICAgICAgICAgICAgZWxzZWlmIGtleXMuZGF0YSBhbmQga2V5cy5kYXRhLnJlYXNvbiA9PSAiZXZlbnRfbm90X3N0YXJ0ZWQiIHRoZW4KICAgICAgICAgICAgICAgIG1zZyA9ICLoioLml6XlhY3otLnnpLzljIXmtLvliqjmnKrlvIDlp4siCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBNc2dzOlBvcChJRCwgbXNnKQogICAgICAgICAgICBpZiBzZWxmLkRhdGFbSURdIHRoZW4KICAgICAgICAgICAgICAgIHNlbGYuRGF0YVtJRF0uZHdfZnJlZV9kYXkgPSAwCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBzZWxmOlNlbmREYXRhKElEKQogICAgICAgICAgICBpZiBTaG9wIGFuZCBTaG9wLkxvYWRTaG9wIHRoZW4KICAgICAgICAgICAgICAgIFNob3A6TG9hZFNob3AoSUQpCiAgICAgICAgICAgIGVuZAogICAgICAgIGVsc2UKICAgICAgICAgICAgbG9jYWwgbXNnID0gbmlsCiAgICAgICAgICAgIGlmIGtleXMgYW5kIGtleXMuZGF0YSBhbmQga2V5cy5kYXRhLm1lc3NhZ2UgdGhlbgogICAgICAgICAgICAgICAgbXNnID0ga2V5cy5kYXRhLm1lc3NhZ2UKICAgICAgICAgICAgZWxzZWlmIGtleXMgYW5kIGtleXMubWVzc2FnZSBhbmQga2V5cy5tZXNzYWdlIH49ICIiIHRoZW4KICAgICAgICAgICAgICAgIG1zZyA9IGtleXMubWVzc2FnZQogICAgICAgICAgICBlbmQKICAgICAgICAgICAgTXNnczpQb3AoSUQsIG1zZyBvciAi572R57uc5byC5bi4IikKICAgICAgICBlbmQKICAgIGVuZCkKZW5kCgpmdW5jdGlvbiBIb2xpZGF5UGFjazpHZXRCdXlDb3VudChJRCwga2V5KQogICAgaWYgbm90IElEIG9yIG5vdCBzZWxmLkRhdGFbSURdIG9yIG5vdCBrZXkgdGhlbgogICAgICAgIHJldHVybiAwCiAgICBlbmQKICAgIHJldHVybiB0b251bWJlcihzZWxmLkRhdGFbSURdW2tleV0pIG9yIDAKZW5kCgpmdW5jdGlvbiBIb2xpZGF5UGFjazpDYW5CdXkoSUQsIGtleSkKICAgIHJldHVybiBzZWxmOkdldEJ1eUNvdW50KElELCBrZXkpIDwgc2VsZi5CVVlfTElNSVQKZW5kCgpmdW5jdGlvbiBIb2xpZGF5UGFjazpQYXkoSUQsIGdvb2RzX251bSkKICAgIGlmIG5vdCBJRCBvciBub3QgZ29vZHNfbnVtIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgbnVtID0gdG9udW1iZXIoZ29vZHNfbnVtKQogICAgaWYgbnVtID09IDExIHRoZW4KICAgICAgICBpZiBub3Qgc2VsZjpDYW5CdXkoSUQsICJkd18zMF9idXkiKSB0aGVuCiAgICAgICAgICAgIE1zZ3M6UG9wKElELCAi6K+l56S85YyF5bey6L6+6LSt5Lmw5LiK6ZmQIikKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICBlbHNlaWYgbnVtID09IDEyIHRoZW4KICAgICAgICBpZiBub3Qgc2VsZjpDYW5CdXkoSUQsICJkd182OF9idXkiKSB0aGVuCiAgICAgICAgICAgIE1zZ3M6UG9wKElELCAi6K+l56S85YyF5bey6L6+6LSt5Lmw5LiK6ZmQIikKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICBlbHNlaWYgbnVtID09IDEzIHRoZW4KICAgICAgICBpZiBub3Qgc2VsZjpDYW5CdXkoSUQsICJkd18xMjhfYnV5IikgdGhlbgogICAgICAgICAgICBNc2dzOlBvcChJRCwgIuivpeekvOWMheW3sui+vui0reS5sOS4iumZkCIpCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZAogICAgZWxzZQogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBub3QgQ29kZSBvciBub3QgQ29kZS5TZXRHb29kcyBvciBub3QgQ29kZS5QYXkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBDb2RlOlNldEdvb2RzKElELCBudW0pCiAgICBDb2RlOlBheShJRCwgMSkKZW5kCgotLSDliqjmgIHnpLzljIXvvJrmjIkgcGFja19rZXkg54K55Ye7CmZ1bmN0aW9uIEhvbGlkYXlQYWNrOlBhcnNlRnJlZUZsYWcocCkKICAgIGlmIG5vdCBwIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgZiA9IHAuaXNfZnJlZQogICAgaWYgZiA9PSB0cnVlIG9yIGYgPT0gMSBvciBmID09ICIxIiBvciBmID09ICJ0cnVlIiB0aGVuCiAgICAgICAgcmV0dXJuIHRydWUKICAgIGVuZAogICAgaWYgdG9udW1iZXIoZikgPT0gMSB0aGVuCiAgICAgICAgcmV0dXJuIHRydWUKICAgIGVuZAogICAgLS0g5biD5bCUIHRydWUg5Zyo6YOo5YiG5bqP5YiX5YyW5LiLIHRvbnVtYmVyIOS4uiBuaWzvvIzkuIrpnaLlt7Lopobnm5bvvJvlho3lhZzlupXlrZfnrKbkuLIKICAgIGlmIHRvc3RyaW5nKGYpID09ICJ0cnVlIiB0aGVuCiAgICAgICAgcmV0dXJuIHRydWUKICAgIGVuZAogICAgaWYgKHRvbnVtYmVyKHAucHJpY2VfeXVhbikgb3IgLTEpID09IDAgdGhlbgogICAgICAgIHJldHVybiB0cnVlCiAgICBlbmQKICAgIGxvY2FsIHB0ID0gc3RyaW5nLnVwcGVyKHRvc3RyaW5nKHAucHJvZHVjdF90eXBlIG9yICIiKSkKICAgIGlmIHN0cmluZy5zdWIocHQsIDEsIDUpID09ICJGUkVFXyIgdGhlbgogICAgICAgIHJldHVybiB0cnVlCiAgICBlbmQKICAgIGlmIHN0cmluZy5maW5kKHN0cmluZy5sb3dlcihwdCksICJmcmVlIiwgMSwgdHJ1ZSkgdGhlbgogICAgICAgIHJldHVybiB0cnVlCiAgICBlbmQKICAgIGxvY2FsIGtleSA9IHN0cmluZy5sb3dlcih0b3N0cmluZyhwLnBhY2tfa2V5IG9yICIiKSkKICAgIGlmIHN0cmluZy5maW5kKGtleSwgImZyZWUiLCAxLCB0cnVlKSB0aGVuCiAgICAgICAgcmV0dXJuIHRydWUKICAgIGVuZAogICAgbG9jYWwgaW1nID0gc3RyaW5nLmxvd2VyKHRvc3RyaW5nKHAuaW1hZ2Vfa2V5IG9yICIiKSkKICAgIGlmIHN0cmluZy5maW5kKGltZywgImZyZWUiLCAxLCB0cnVlKSB0aGVuCiAgICAgICAgcmV0dXJuIHRydWUKICAgIGVuZAogICAgbG9jYWwgbmFtZSA9IHRvc3RyaW5nKHAubmFtZSBvciAiIikKICAgIGlmIHN0cmluZy5maW5kKG5hbWUsICLlhY3otLkiLCAxLCB0cnVlKSB0aGVuCiAgICAgICAgcmV0dXJuIHRydWUKICAgIGVuZAogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gSG9saWRheVBhY2s6SXNQYWNrRnJlZShwYWNrKQogICAgcmV0dXJuIHNlbGY6UGFyc2VGcmVlRmxhZyhwYWNrKQplbmQKCi0tIOeCueWHu+ekvOWMhe+8muWFjei0uei1sOerr+WNiCBGcmVl77yIL3VzZXIvZnJlZe+8ie+8m+S7mOi0ueaJjeaUr+S7mOOAggpmdW5jdGlvbiBIb2xpZGF5UGFjazpQYXlHaWZ0KElELCBwYWNrX2tleSkKICAgIGlmIG5vdCBJRCBvciBub3QgcGFja19rZXkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBwYWNrX2tleSA9IHRvc3RyaW5nKHBhY2tfa2V5KQogICAgbG9jYWwgcGFjayA9IHNlbGY6RmluZEdpZnRQYWNrQnlLZXkoSUQsIHBhY2tfa2V5KQogICAgaWYgbm90IHBhY2sgdGhlbgogICAgICAgIE1zZ3M6UG9wKElELCAi56S85YyF5LiN5a2Y5Zyo5oiW5bey5LiL5p62IikKICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgc2VsZjpJc1BhY2tGcmVlKHBhY2spIHRoZW4KICAgICAgICBzZWxmOkZyZWUoSUQpCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGY6UGF5R2lmdFBhaWRPbmx5KElELCBwYWNrX2tleSwgcGFjaykKZW5kCgpmdW5jdGlvbiBIb2xpZGF5UGFjazpQYXlHaWZ0UGFpZE9ubHkoSUQsIHBhY2tfa2V5LCBwYWNrKQogICAgaWYgbm90IHBhY2sgdGhlbgogICAgICAgIHBhY2sgPSBzZWxmOkZpbmRHaWZ0UGFja0J5S2V5KElELCBwYWNrX2tleSkKICAgIGVuZAogICAgaWYgbm90IHBhY2sgdGhlbgogICAgICAgIE1zZ3M6UG9wKElELCAi56S85YyF5LiN5a2Y5Zyo5oiW5bey5LiL5p62IikKICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgc2VsZjpJc1BhY2tGcmVlKHBhY2spIHRoZW4KICAgICAgICBzZWxmOkZyZWUoSUQpCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIHByb2R1Y3RfdHlwZSA9IHRvc3RyaW5nKHBhY2sucHJvZHVjdF90eXBlIG9yICIiKQogICAgaWYgcHJvZHVjdF90eXBlID09ICIiIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgc3RyaW5nLnN1YihzdHJpbmcudXBwZXIocHJvZHVjdF90eXBlKSwgMSwgNSkgPT0gIkZSRUVfIiB0aGVuCiAgICAgICAgc2VsZjpGcmVlKElEKQogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiAodG9udW1iZXIocGFjay5wcmljZV95dWFuKSBvciAwKSA8PSAwIHRoZW4KICAgICAgICBzZWxmOkZyZWUoSUQpCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIG5vdCBzZWxmOkNhbkJ1eUdpZnQoSUQsIHBhY2spIHRoZW4KICAgICAgICBNc2dzOlBvcChJRCwgIuivpeekvOWMheW3sui+vui0reS5sOS4iumZkCIpCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIG5vdCBDb2RlIG9yIG5vdCBDb2RlLlNldFByb2R1Y3RUeXBlIG9yIG5vdCBDb2RlLlBheSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIENvZGU6U2V0UHJvZHVjdFR5cGUoSUQsIHByb2R1Y3RfdHlwZSwgcGFjay5wcmljZV95dWFuLCBwYWNrLnBhY2tfa2V5KQogICAgQ29kZTpQYXkoSUQsIDEpCmVuZAoKLS0g5byA5bGAIC8g6LSt5Lmw5ZCO77ya5LuO5pyN5Yqh56uv5ouJ5Y+W5Yqo5oCB56S85YyF55uu5b2VICsg6LSt5Lmw5qyh5pWwCmZ1bmN0aW9uIEhvbGlkYXlQYWNrOkxvYWRHaWZ0UGFja3MoSUQpCiAgICBpZiBub3QgSUQgb3Igbm90IHNlbGYuRGF0YVtJRF0gdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBIdHRwOlBPU1QoIi9naWZ0UGFjay9saXN0Iiwge30sIElELCBmdW5jdGlvbihrZXlzKQogICAgICAgIGlmIG5vdCBzZWxmLkRhdGFbSURdIHRoZW4KICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgaWYga2V5cyBhbmQga2V5cy5jb2RlID09IDIwMCBhbmQga2V5cy5kYXRhIHRoZW4KICAgICAgICAgICAgbG9jYWwgcGFja3MgPSBrZXlzLmRhdGEucGFja3Mgb3Ige30KICAgICAgICAgICAgbG9jYWwgYnV5X2NvdW50cyA9IGtleXMuZGF0YS5idXlfY291bnRzIG9yIHt9CiAgICAgICAgICAgIGxvY2FsIGxpc3QgPSB7fQogICAgICAgICAgICBpZiB0eXBlKHBhY2tzKSA9PSAidGFibGUiIHRoZW4KICAgICAgICAgICAgICAgIGZvciBfLCBwIGluIHBhaXJzKHBhY2tzKSBkbwogICAgICAgICAgICAgICAgICAgIGlmIHAgYW5kIHAucGFja19rZXkgYW5kIHAucHJvZHVjdF90eXBlIHRoZW4KICAgICAgICAgICAgICAgICAgICAgICAgbGlzdFsjbGlzdCArIDFdID0gewogICAgICAgICAgICAgICAgICAgICAgICAgICAgcGFja19rZXkgPSB0b3N0cmluZyhwLnBhY2tfa2V5KSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHByb2R1Y3RfdHlwZSA9IHRvc3RyaW5nKHAucHJvZHVjdF90eXBlKSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIG5hbWUgPSB0b3N0cmluZyhwLm5hbWUgb3IgIiIpLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgcHJpY2VfeXVhbiA9IHRvbnVtYmVyKHAucHJpY2VfeXVhbikgb3IgMCwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlzX2ZyZWUgPSBzZWxmOlBhcnNlRnJlZUZsYWcocCkgYW5kIDEgb3IgMCwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlzX2xpbWl0ZWQgPSAocC5pc19saW1pdGVkID09IHRydWUgb3IgcC5pc19saW1pdGVkID09IDEgb3IgcC5pc19saW1pdGVkID09ICIxIikgYW5kIDEgb3IgMCwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxpbWl0X2NvdW50ID0gdG9udW1iZXIocC5saW1pdF9jb3VudCkgb3IgMCwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGltYWdlX2tleSA9IHRvc3RyaW5nKHAuaW1hZ2Vfa2V5IG9yICIiKSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGdvbGQgPSB0b251bWJlcihwLmdvbGQpIG9yIDAsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBoZXJvX3BpY2sgPSB0b251bWJlcihwLmhlcm9fcGljaykgb3IgMCwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHByb3BoZWN5X2NhcmQgPSB0b251bWJlcihwLnByb3BoZWN5X2NhcmQpIG9yIDAsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBzb3J0X29yZGVyID0gdG9udW1iZXIocC5zb3J0X29yZGVyKSBvciAwLAogICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgIHRhYmxlLnNvcnQobGlzdCwgZnVuY3Rpb24oYSwgYikKICAgICAgICAgICAgICAgICAgICBpZiBhLnNvcnRfb3JkZXIgPT0gYi5zb3J0X29yZGVyIHRoZW4KICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIHRvc3RyaW5nKGEucGFja19rZXkpIDwgdG9zdHJpbmcoYi5wYWNrX2tleSkKICAgICAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgICAgICByZXR1cm4gYS5zb3J0X29yZGVyIDwgYi5zb3J0X29yZGVyCiAgICAgICAgICAgICAgICBlbmQpCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBsb2NhbCBjb3VudHMgPSB7fQogICAgICAgICAgICBpZiB0eXBlKGJ1eV9jb3VudHMpID09ICJ0YWJsZSIgdGhlbgogICAgICAgICAgICAgICAgZm9yIGssIHYgaW4gcGFpcnMoYnV5X2NvdW50cykgZG8KICAgICAgICAgICAgICAgICAgICBjb3VudHNbdG9zdHJpbmcoayldID0gdG9udW1iZXIodikgb3IgMAogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBsb2NhbCBmcmVlX2NsYWltZWQgPSB7fQogICAgICAgICAgICBsb2NhbCBmcmVlX21hcCA9IGtleXMuZGF0YS5mcmVlX2NsYWltZWRfdG9kYXkgb3Ige30KICAgICAgICAgICAgaWYgdHlwZShmcmVlX21hcCkgPT0gInRhYmxlIiB0aGVuCiAgICAgICAgICAgICAgICBmb3IgaywgdiBpbiBwYWlycyhmcmVlX21hcCkgZG8KICAgICAgICAgICAgICAgICAgICBmcmVlX2NsYWltZWRbdG9zdHJpbmcoayldID0gKHYgPT0gdHJ1ZSBvciB2ID09IDEgb3IgdiA9PSAiMSIpIGFuZCAxIG9yIDAKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICBlbmQKICAgICAgICAgICAgc2VsZi5EYXRhW0lEXS5naWZ0X3BhY2tzID0gbGlzdAogICAgICAgICAgICBzZWxmLkRhdGFbSURdLmdpZnRfYnV5X2NvdW50cyA9IGNvdW50cwogICAgICAgICAgICBzZWxmLkRhdGFbSURdLmdpZnRfZnJlZV9jbGFpbWVkID0gZnJlZV9jbGFpbWVkCiAgICAgICAgICAgIC0tIOaLieWPluaIkOWKn+WQjuWIt+aWsCBVSe+8iOaJk+W8gOmhteaIluW3sue8k+WtmOaJk+W8gOeKtuaAge+8iQogICAgICAgICAgICBzZWxmOlNlbmREYXRhKElEKQogICAgICAgIGVuZAogICAgZW5kKQplbmQKCi0tIOWKqOaAgeWFjei0ueekvOWMhe+8muebtOaOpeWkjeeUqOerr+WNiCBGcmVl77yIL3VzZXIvZnJlZSB0eXBlPTTvvInvvIzkuI3otbDmlK/ku5jjgIHkuI3otbAgL2dpZnRQYWNrL2NsYWltCmZ1bmN0aW9uIEhvbGlkYXlQYWNrOkNsYWltRnJlZUdpZnQoSUQsIHBhY2tfa2V5KQogICAgc2VsZjpGcmVlKElEKQplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if HolidayPack == nil then
+    HolidayPack = class({})
+    require("ingame.HolidayPack.Config")
+    require("ingame.HolidayPack.Set")
+    require("ingame.HolidayPack.Ui")
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function HolidayPack:Init(ID)
+    if not ID then
+        return
+    end
+    self.Data[ID] = Util:DeepCopyTab(self.Template)
+    self:LoadGiftPacks(ID)
+end
+
+function HolidayPack:Free(ID)
+    if not ID then
+        return
+    end
+    -- 与端午免费礼包同一条链路：/user/free type=4
+    -- 已取消活动时间窗；仅按 dw_free_day 每日 1 次
+    if tonumber(self.Data[ID].dw_free_day) ~= 1 then
+        Msgs:Pop(ID, "今日已领取节日礼包")
+        return
+    end
+    Http:POST("/user/free", { type = 4 }, ID, function(keys)
+        if keys.code == 200 and keys.data and keys.data.canClaim ~= false then
+            local rows = {}
+            if Shop and Shop.CardRedeemRowsFromServer and keys.data.redeem_rows then
+                rows = Shop:CardRedeemRowsFromServer(keys.data.redeem_rows)
+            elseif self.BuildRedeemRows then
+                rows = self:BuildRedeemRows("dw_free")
+            end
+            Msgs:PopRedeemSuccess(ID, "节日礼包领取成功", rows)
+            -- 本地标记今日已领，刷新 UI
+            if self.Data[ID] then
+                self.Data[ID].dw_free_day = 0
+            end
+            if Shop and Shop.Data and Shop.Data[ID] then
+                Shop.Data[ID].dw_free_day = 0
+            end
+            if Shop and Shop.LoadShop then
+                Shop:LoadShop(ID)
+            end
+            self:SendData(ID)
+        elseif keys.code == 200 then
+            local msg = "今日已领取节日礼包"
+            if keys.data and keys.data.message and keys.data.message ~= "" then
+                msg = keys.data.message
+            elseif keys.data and keys.data.reason == "event_closed" then
+                msg = "节日免费礼包活动已结束"
+            elseif keys.data and keys.data.reason == "event_not_started" then
+                msg = "节日免费礼包活动未开始"
+            end
+            Msgs:Pop(ID, msg)
+            if self.Data[ID] then
+                self.Data[ID].dw_free_day = 0
+            end
+            self:SendData(ID)
+            if Shop and Shop.LoadShop then
+                Shop:LoadShop(ID)
+            end
+        else
+            local msg = nil
+            if keys and keys.data and keys.data.message then
+                msg = keys.data.message
+            elseif keys and keys.message and keys.message ~= "" then
+                msg = keys.message
+            end
+            Msgs:Pop(ID, msg or "网络异常")
+        end
+    end)
+end
+
+function HolidayPack:GetBuyCount(ID, key)
+    if not ID or not self.Data[ID] or not key then
+        return 0
+    end
+    return tonumber(self.Data[ID][key]) or 0
+end
+
+function HolidayPack:CanBuy(ID, key)
+    return self:GetBuyCount(ID, key) < self.BUY_LIMIT
+end
+
+function HolidayPack:Pay(ID, goods_num)
+    if not ID or not goods_num then
+        return
+    end
+    local num = tonumber(goods_num)
+    if num == 11 then
+        if not self:CanBuy(ID, "dw_30_buy") then
+            Msgs:Pop(ID, "该礼包已达购买上限")
+            return
+        end
+    elseif num == 12 then
+        if not self:CanBuy(ID, "dw_68_buy") then
+            Msgs:Pop(ID, "该礼包已达购买上限")
+            return
+        end
+    elseif num == 13 then
+        if not self:CanBuy(ID, "dw_128_buy") then
+            Msgs:Pop(ID, "该礼包已达购买上限")
+            return
+        end
+    else
+        return
+    end
+    if not Code or not Code.SetGoods or not Code.Pay then
+        return
+    end
+    Code:SetGoods(ID, num)
+    Code:Pay(ID, 1)
+end
+
+-- 动态礼包：按 pack_key 点击
+function HolidayPack:ParseFreeFlag(p)
+    if not p then
+        return false
+    end
+    local f = p.is_free
+    if f == true or f == 1 or f == "1" or f == "true" then
+        return true
+    end
+    if tonumber(f) == 1 then
+        return true
+    end
+    -- 布尔 true 在部分序列化下 tonumber 为 nil，上面已覆盖；再兜底字符串
+    if tostring(f) == "true" then
+        return true
+    end
+    if (tonumber(p.price_yuan) or -1) == 0 then
+        return true
+    end
+    local pt = string.upper(tostring(p.product_type or ""))
+    if string.sub(pt, 1, 5) == "FREE_" then
+        return true
+    end
+    if string.find(string.lower(pt), "free", 1, true) then
+        return true
+    end
+    local key = string.lower(tostring(p.pack_key or ""))
+    if string.find(key, "free", 1, true) then
+        return true
+    end
+    local img = string.lower(tostring(p.image_key or ""))
+    if string.find(img, "free", 1, true) then
+        return true
+    end
+    local name = tostring(p.name or "")
+    if string.find(name, "免费", 1, true) then
+        return true
+    end
+    return false
+end
+
+function HolidayPack:IsPackFree(pack)
+    return self:ParseFreeFlag(pack)
+end
+
+-- 点击礼包：免费走端午 Free（/user/free）；付费才支付。
+function HolidayPack:PayGift(ID, pack_key)
+    if not ID or not pack_key then
+        return
+    end
+    pack_key = tostring(pack_key)
+    local pack = self:FindGiftPackByKey(ID, pack_key)
+    if not pack then
+        Msgs:Pop(ID, "礼包不存在或已下架")
+        return
+    end
+    if self:IsPackFree(pack) then
+        self:Free(ID)
+        return
+    end
+    self:PayGiftPaidOnly(ID, pack_key, pack)
+end
+
+function HolidayPack:PayGiftPaidOnly(ID, pack_key, pack)
+    if not pack then
+        pack = self:FindGiftPackByKey(ID, pack_key)
+    end
+    if not pack then
+        Msgs:Pop(ID, "礼包不存在或已下架")
+        return
+    end
+    if self:IsPackFree(pack) then
+        self:Free(ID)
+        return
+    end
+    local product_type = tostring(pack.product_type or "")
+    if product_type == "" then
+        return
+    end
+    if string.sub(string.upper(product_type), 1, 5) == "FREE_" then
+        self:Free(ID)
+        return
+    end
+    if (tonumber(pack.price_yuan) or 0) <= 0 then
+        self:Free(ID)
+        return
+    end
+    if not self:CanBuyGift(ID, pack) then
+        Msgs:Pop(ID, "该礼包已达购买上限")
+        return
+    end
+    if not Code or not Code.SetProductType or not Code.Pay then
+        return
+    end
+    Code:SetProductType(ID, product_type, pack.price_yuan, pack.pack_key)
+    Code:Pay(ID, 1)
+end
+
+-- 开局 / 购买后：从服务端拉取动态礼包目录 + 购买次数
+function HolidayPack:LoadGiftPacks(ID)
+    if not ID or not self.Data[ID] then
+        return
+    end
+    Http:POST("/giftPack/list", {}, ID, function(keys)
+        if not self.Data[ID] then
+            return
+        end
+        if keys and keys.code == 200 and keys.data then
+            local packs = keys.data.packs or {}
+            local buy_counts = keys.data.buy_counts or {}
+            local list = {}
+            if type(packs) == "table" then
+                for _, p in pairs(packs) do
+                    if p and p.pack_key and p.product_type then
+                        list[#list + 1] = {
+                            pack_key = tostring(p.pack_key),
+                            product_type = tostring(p.product_type),
+                            name = tostring(p.name or ""),
+                            price_yuan = tonumber(p.price_yuan) or 0,
+                            is_free = self:ParseFreeFlag(p) and 1 or 0,
+                            is_limited = (p.is_limited == true or p.is_limited == 1 or p.is_limited == "1") and 1 or 0,
+                            limit_count = tonumber(p.limit_count) or 0,
+                            image_key = tostring(p.image_key or ""),
+                            gold = tonumber(p.gold) or 0,
+                            hero_pick = tonumber(p.hero_pick) or 0,
+                            prophecy_card = tonumber(p.prophecy_card) or 0,
+                            sort_order = tonumber(p.sort_order) or 0,
+                        }
+                    end
+                end
+                table.sort(list, function(a, b)
+                    if a.sort_order == b.sort_order then
+                        return tostring(a.pack_key) < tostring(b.pack_key)
+                    end
+                    return a.sort_order < b.sort_order
+                end)
+            end
+            local counts = {}
+            if type(buy_counts) == "table" then
+                for k, v in pairs(buy_counts) do
+                    counts[tostring(k)] = tonumber(v) or 0
+                end
+            end
+            local free_claimed = {}
+            local free_map = keys.data.free_claimed_today or {}
+            if type(free_map) == "table" then
+                for k, v in pairs(free_map) do
+                    free_claimed[tostring(k)] = (v == true or v == 1 or v == "1") and 1 or 0
+                end
+            end
+            self.Data[ID].gift_packs = list
+            self.Data[ID].gift_buy_counts = counts
+            self.Data[ID].gift_free_claimed = free_claimed
+            -- 拉取成功后刷新 UI（打开页或已缓存打开状态）
+            self:SendData(ID)
+        end
+    end)
+end
+
+-- 动态免费礼包：直接复用端午 Free（/user/free type=4），不走支付、不走 /giftPack/claim
+function HolidayPack:ClaimFreeGift(ID, pack_key)
+    self:Free(ID)
+end

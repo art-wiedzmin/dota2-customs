@@ -8,22 +8,305 @@
 ]]
 
 
-local encoded=[[LS0g57uT566X56ew5Y+3CmZ1bmN0aW9uIE1haW5HYW1lOlNldFRhZygpCiAgICAtLSBNdnAKICAgIHNlbGY6U2V0VGFnMSgpCiAgICBzZWxmOlNldFRhZzQoKQogICAgc2VsZjpTZXRUYWc2KCkKICAgIHNlbGY6U2V0VGFnOCgpCiAgICBzZWxmOlNldFRhZzkoKQogICAgc2VsZjpTZXRUYWcxMCgpCiAgICBzZWxmOlNldFRhZzExKCkKICAgIHNlbGY6U2V0VGFnMTMoKQogICAgc2VsZjpTZXRUYWcxNCgpCiAgICBzZWxmOlNldFRhZzE1KCkKZW5kCgotLSBtdnAKZnVuY3Rpb24gTWFpbkdhbWU6U2V0VGFnMSgpCiAgICBpZiBNYWluR2FtZTpHZXRHYW1lVHlwZSgpID09IDEgb3IgTWFpbkdhbWU6R2V0R2FtZVR5cGUoKSA9PSAzIHRoZW4KICAgICAgICBsb2NhbCB3aW5fdGVhbSA9IHNlbGYuRGF0YS53aW5fdGVhbQogICAgICAgIGxvY2FsIHdpbl90ZWFtX2tleSA9ICJ0ZWFtXyIgLi4gd2luX3RlYW0KICAgICAgICBsb2NhbCBsaXN0ID0ge30KICAgICAgICBmb3IgaywgdiBpbiBwYWlycyhTdGF0LlB1YmxpYy5saXN0W3dpbl90ZWFtX2tleV0ubGlzdCkgZG8KICAgICAgICAgICAgaWYgdiB0aGVuCiAgICAgICAgICAgICAgICBsb2NhbCBJRCA9IHYuaWQKICAgICAgICAgICAgICAgIGxvY2FsIHBfaWQgPSAicF8iIC4uIElECiAgICAgICAgICAgICAgICBsb2NhbCBrayA9IFBsYXllclJlc291cmNlOkdldEtpbGxzKElEKQogICAgICAgICAgICAgICAgbG9jYWwgZGQgPSBQbGF5ZXJSZXNvdXJjZTpHZXREZWF0aHMoSUQpCiAgICAgICAgICAgICAgICBsb2NhbCBhYSA9IFBsYXllclJlc291cmNlOkdldEFzc2lzdHMoSUQpCiAgICAgICAgICAgICAgICBpZiBkZCA8PSAwIHRoZW4gZGQgPSAxIGVuZAogICAgICAgICAgICAgICAgbG9jYWwga2RhX251bSA9ICgoa2sgKyBhYSkgLyBkZCkKICAgICAgICAgICAgICAgIGxvY2FsIGtkYSA9IHV0aWxleDpGbG9hdFNldChrZGFfbnVtLCAxKQogICAgICAgICAgICAgICAgbGlzdFtwX2lkXSA9IGtkYQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgICAgICAtLSBwcmludChsaXN0KQogICAgICAgIGxvY2FsIG1heF9pZCA9IHV0aWxleDpHZXRNYXhLZXlJblRhYihsaXN0KQogICAgICAgIGxvY2FsIG12cF9pZCA9IHRvbnVtYmVyKHV0aWxleDpzcGxpdEluZGV4KG1heF9pZCwgIl8iLCAyKSkKICAgICAgICBIZXJvRGF0YS5EYXRhW212cF9pZF0udGFnLnRhZzEgPSB0cnVlCiAgICBlbmQKICAgIGlmIE1haW5HYW1lOkdldEdhbWVUeXBlKCkgPT0gMiB0aGVuCiAgICAgICAgZm9yIGssIHYgaW4gcGFpcnMoUEQuSURzKSBkbwogICAgICAgICAgICBpZiB2IHRoZW4KICAgICAgICAgICAgICAgIGxvY2FsIElEID0gdgogICAgICAgICAgICAgICAgbG9jYWwgcmFuayA9IFN0YXQ6R2V0VGVhbVJhbmsoSUQpCiAgICAgICAgICAgICAgICBpZiByYW5rID09IDEgdGhlbgogICAgICAgICAgICAgICAgICAgIEhlcm9EYXRhLkRhdGFbSURdLnRhZy50YWcxID0gdHJ1ZQogICAgICAgICAgICAgICAgICAgIHJldHVybgogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCmVuZAoKLS0g56WeCi0tIOaatAotLSDnoawKZnVuY3Rpb24gTWFpbkdhbWU6U2V0VGFnNCgpCiAgICBsb2NhbCBsaXN0ID0ge30KICAgIGZvciBrLCB2IGluIHBhaXJzKFBELklEcykgZG8KICAgICAgICBsb2NhbCBwX2lkID0gInBfIiAuLiB2CiAgICAgICAgbGlzdFtwX2lkXSA9IEhlcm9EYXRhLkRhdGFbdl0udGFuawogICAgZW5kCiAgICBsb2NhbCBtYXhfaWQgPSB1dGlsZXg6R2V0TWF4S2V5SW5UYWIobGlzdCkKICAgIGxvY2FsIG12cF9pZCA9IHRvbnVtYmVyKHV0aWxleDpzcGxpdEluZGV4KG1heF9pZCwgIl8iLCAyKSkKICAgIEhlcm9EYXRhLkRhdGFbbXZwX2lkXS50YWcudGFnNCA9IHRydWUKZW5kCgotLSDmnYAKLS0g5YO1CmZ1bmN0aW9uIE1haW5HYW1lOlNldFRhZzYoKQogICAgbG9jYWwgbGlzdCA9IHt9CiAgICBmb3IgaywgdiBpbiBwYWlycyhQRC5JRHMpIGRvCiAgICAgICAgbG9jYWwgcF9pZCA9ICJwXyIgLi4gdgogICAgICAgIGxvY2FsIGtrID0gUGxheWVyUmVzb3VyY2U6R2V0S2lsbHModikKICAgICAgICBsb2NhbCBkZCA9IFBsYXllclJlc291cmNlOkdldERlYXRocyh2KQogICAgICAgIGxvY2FsIGFhID0gUGxheWVyUmVzb3VyY2U6R2V0QXNzaXN0cyh2KQogICAgICAgIGlmIGRkIDw9IDAgdGhlbiBkZCA9IDEgZW5kCiAgICAgICAgbG9jYWwga2RhX251bSA9ICgoa2sgKyBhYSkgLyBkZCkKICAgICAgICBsb2NhbCBrZGEgPSB1dGlsZXg6RmxvYXRTZXQoa2RhX251bSwgMSkKICAgICAgICBsaXN0W3BfaWRdID0ga2RhCiAgICBlbmQKICAgIGxvY2FsIG1heF9pZCA9IHV0aWxleDpHZXRNaW5LZXlJblRhYihsaXN0KQogICAgbG9jYWwgbXZwX2lkID0gdG9udW1iZXIodXRpbGV4OnNwbGl0SW5kZXgobWF4X2lkLCAiXyIsIDIpKQogICAgSGVyb0RhdGEuRGF0YVttdnBfaWRdLnRhZy50YWc2ID0gdHJ1ZQplbmQKCi0tIOmAgwotLSDkvJDmnKgKZnVuY3Rpb24gTWFpbkdhbWU6U2V0VGFnOCgpCiAgICBsb2NhbCBsaXN0ID0ge30KICAgIGZvciBrLCB2IGluIHBhaXJzKFBELklEcykgZG8KICAgICAgICBpZiB2IHRoZW4KICAgICAgICAgICAgbG9jYWwgcF9pZCA9ICJwXyIgLi4gdgogICAgICAgICAgICBsaXN0W3BfaWRdID0gVGFsZW50LkRhdGFbdl0ua2lsbAogICAgICAgIGVuZAogICAgZW5kCiAgICBsb2NhbCBtYXhfaWQgPSB1dGlsZXg6R2V0TWF4S2V5SW5UYWIobGlzdCkKICAgIGxvY2FsIG12cF9pZCA9IHRvbnVtYmVyKHV0aWxleDpzcGxpdEluZGV4KG1heF9pZCwgIl8iLCAyKSkKICAgIEhlcm9EYXRhLkRhdGFbbXZwX2lkXS50YWcudGFnOCA9IHRydWUKZW5kCgotLSDlipsKZnVuY3Rpb24gTWFpbkdhbWU6U2V0VGFnOSgpCiAgICBsb2NhbCBsaXN0ID0ge30KICAgIGZvciBrLCB2IGluIHBhaXJzKFBELklEcykgZG8KICAgICAgICBpZiB2IHRoZW4KICAgICAgICAgICAgbG9jYWwgaGVybyA9IFV0aWw6SUQySGVybyh2KQogICAgICAgICAgICBpZiBoZXJvIHRoZW4KICAgICAgICAgICAgICAgIGxvY2FsIHBfaWQgPSAicF8iIC4uIHYKICAgICAgICAgICAgICAgIGxvY2FsIG51bSA9IGhlcm86R2V0U3RyZW5ndGgoKQogICAgICAgICAgICAgICAgbGlzdFtwX2lkXSA9IG51bQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZAogICAgbG9jYWwgbWF4X2lkID0gdXRpbGV4OkdldE1heEtleUluVGFiKGxpc3QpCiAgICBsb2NhbCBtdnBfaWQgPSB0b251bWJlcih1dGlsZXg6c3BsaXRJbmRleChtYXhfaWQsICJfIiwgMikpCiAgICBIZXJvRGF0YS5EYXRhW212cF9pZF0udGFnLnRhZzkgPSB0cnVlCmVuZAoKLS0g5pWPCmZ1bmN0aW9uIE1haW5HYW1lOlNldFRhZzEwKCkKICAgIGxvY2FsIGxpc3QgPSB7fQogICAgZm9yIGssIHYgaW4gcGFpcnMoUEQuSURzKSBkbwogICAgICAgIGlmIHYgdGhlbgogICAgICAgICAgICBsb2NhbCBoZXJvID0gVXRpbDpJRDJIZXJvKHYpCiAgICAgICAgICAgIGlmIGhlcm8gdGhlbgogICAgICAgICAgICAgICAgbG9jYWwgcF9pZCA9ICJwXyIgLi4gdgogICAgICAgICAgICAgICAgbG9jYWwgbnVtID0gaGVybzpHZXRBZ2lsaXR5KCkKICAgICAgICAgICAgICAgIGxpc3RbcF9pZF0gPSBudW0KICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGxvY2FsIG1heF9pZCA9IHV0aWxleDpHZXRNYXhLZXlJblRhYihsaXN0KQogICAgbG9jYWwgbXZwX2lkID0gdG9udW1iZXIodXRpbGV4OnNwbGl0SW5kZXgobWF4X2lkLCAiXyIsIDIpKQogICAgSGVyb0RhdGEuRGF0YVttdnBfaWRdLnRhZy50YWcxMCA9IHRydWUKZW5kCgotLSDmmboKZnVuY3Rpb24gTWFpbkdhbWU6U2V0VGFnMTEoKQogICAgbG9jYWwgbGlzdCA9IHt9CiAgICBmb3IgaywgdiBpbiBwYWlycyhQRC5JRHMpIGRvCiAgICAgICAgaWYgdiB0aGVuCiAgICAgICAgICAgIGxvY2FsIGhlcm8gPSBVdGlsOklEMkhlcm8odikKICAgICAgICAgICAgaWYgaGVybyB0aGVuCiAgICAgICAgICAgICAgICBsb2NhbCBwX2lkID0gInBfIiAuLiB2CiAgICAgICAgICAgICAgICBsb2NhbCBudW0gPSBoZXJvOkdldEludGVsbGVjdChmYWxzZSkKICAgICAgICAgICAgICAgIGxpc3RbcF9pZF0gPSBudW0KICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGxvY2FsIG1heF9pZCA9IHV0aWxleDpHZXRNYXhLZXlJblRhYihsaXN0KQogICAgbG9jYWwgbXZwX2lkID0gdG9udW1iZXIodXRpbGV4OnNwbGl0SW5kZXgobWF4X2lkLCAiXyIsIDIpKQogICAgSGVyb0RhdGEuRGF0YVttdnBfaWRdLnRhZy50YWcxMSA9IHRydWUKZW5kCgotLSDotKoKZnVuY3Rpb24gTWFpbkdhbWU6SXNTdGFyMTYoSUQsIHN0YXIpCiAgICBpZiBzZWxmLkRhdGEuc3Rhcl9tYXhfc3RhdGUgPT0gdHJ1ZSB0aGVuIHJldHVybiBlbmQKICAgIC0tIOaYvuekuiAxNiDmmJ8gPSDnnJ/lrp4gMTPvvIjlkKsgMyDpopflgYfmmJ/mmJ/vvIkKICAgIGxvY2FsIGJvbnVzID0gKEhlcm9EYXRhLlN0YXRpYyBhbmQgSGVyb0RhdGEuU3RhdGljLnN0YXJfZGlzcGxheV9ib251cykgb3IgMwogICAgaWYgc3RhciArIGJvbnVzID49IDE2IHRoZW4KICAgICAgICBIZXJvRGF0YS5EYXRhW0lEXS50YWcudGFnMTIgPSB0cnVlCiAgICAgICAgc2VsZi5EYXRhLnN0YXJfbWF4X3N0YXRlID0gdHJ1ZQogICAgZW5kCmVuZAoKLS0g5peg5Y+MCmZ1bmN0aW9uIE1haW5HYW1lOlNldFRhZzEzKCkKICAgIGxvY2FsIGxpc3QgPSB7fQogICAgZm9yIGssIHYgaW4gcGFpcnMoUEQuSURzKSBkbwogICAgICAgIGxvY2FsIHBfaWQgPSAicF8iIC4uIHYKICAgICAgICBsb2NhbCBrayA9IFBsYXllclJlc291cmNlOkdldEtpbGxzKHYpCiAgICAgICAgbG9jYWwgZGQgPSBQbGF5ZXJSZXNvdXJjZTpHZXREZWF0aHModikKICAgICAgICBsb2NhbCBhYSA9IFBsYXllclJlc291cmNlOkdldEFzc2lzdHModikKICAgICAgICBsb2NhbCBrZGFfbnVtID0gKChrayArIGFhKSAvIGRkKQogICAgICAgIGxvY2FsIGtkYSA9IHV0aWxleDpGbG9hdFNldChrZGFfbnVtLCAxKQogICAgICAgIGlmIGtkYSA+IDE1IHRoZW4gSGVyb0RhdGEuRGF0YVt2XS50YWcudGFnMTMgPSB0cnVlIGVuZAogICAgZW5kCmVuZAoKLS0g5aSvCmZ1bmN0aW9uIE1haW5HYW1lOlNldFRhZzE0KCkKICAgIGZvciBrLCB2IGluIHBhaXJzKFBELklEcykgZG8KICAgICAgICBsb2NhbCBkYW1hZ2UgPSBIZXJvRGF0YS5EYXRhW3ZdLmRhbWFnZQogICAgICAgIGlmIGRhbWFnZSA+IDY2NjY2NiB0aGVuIEhlcm9EYXRhLkRhdGFbdl0udGFnLnRhZzE0ID0gdHJ1ZSBlbmQKICAgIGVuZAplbmQKCi0tIOeLggpmdW5jdGlvbiBNYWluR2FtZTpTZXRUYWcxNSgpCiAgICBsb2NhbCBsaXN0ID0ge30KICAgIGZvciBrLCB2IGluIHBhaXJzKFBELklEcykgZG8KICAgICAgICBsb2NhbCBwX2lkID0gInBfIiAuLiB2CiAgICAgICAgbG9jYWwga2sgPSBQbGF5ZXJSZXNvdXJjZTpHZXRLaWxscyh2KQogICAgICAgIGxvY2FsIGRkID0gUGxheWVyUmVzb3VyY2U6R2V0RGVhdGhzKHYpCiAgICAgICAgbG9jYWwga2RhID0ga2sgKyBkZAogICAgICAgIGxpc3RbcF9pZF0gPSBrZGEKICAgIGVuZAogICAgbG9jYWwgbWF4X2lkID0gdXRpbGV4OkdldE1heEtleUluVGFiKGxpc3QpCiAgICBsb2NhbCBtdnBfaWQgPSB0b251bWJlcih1dGlsZXg6c3BsaXRJbmRleChtYXhfaWQsICJfIiwgMikpCiAgICBIZXJvRGF0YS5EYXRhW212cF9pZF0udGFnLnRhZzE1ID0gdHJ1ZQplbmQKCi0tIOaJk+W8gOS8oOmAgemXqApmdW5jdGlvbiBNYWluR2FtZTpPcGVuRG9vcihkb29yc2tleSkKICAgIGlmIG5vdCBkb29yc2tleSB0aGVuIHJldHVybiBlbmQKICAgIGxvY2FsIHR4ID0gc2VsZi5TdGF0aWMuZG9vcnNfdHgKICAgIGZvciBrLCB2IGluIHBhaXJzKHNlbGYuRGF0YS5kb29yW2Rvb3Jza2V5XSkgZG8KICAgICAgICBpZiB2IHRoZW4KICAgICAgICAgICAgbG9jYWwgbmFtZSA9IHYubmFtZQogICAgICAgICAgICBsb2NhbCBwb3MgPSB2LnBvcwogICAgICAgICAgICBsb2NhbCB0eF9pbmRleCA9IHV0aWxleDpBZGRQYXJ0aWNsbGVzUG9zKHR4LCBwb3MsIDk5OTkpCiAgICAgICAgICAgIHYudHggPSB0eF9pbmRleAogICAgICAgICAgICB2LnN0YXRlID0gdHJ1ZQogICAgICAgICAgICBzZWxmOkRvb3JzVGhpbmsoZG9vcnNrZXksIG5hbWUsIHBvcykKICAgICAgICBlbmQKICAgIGVuZAplbmQKCmZ1bmN0aW9uIE1haW5HYW1lOkRvb3JzVGhpbmsoZG9vcnMsIG5hbWUsIHBvcykKICAgIGlmIG5vdCBuYW1lIHRoZW4gcmV0dXJuIGVuZAogICAgVGltZXJzKDAuMiwgZnVuY3Rpb24oKQogICAgICAgIGlmIHNlbGYuRGF0YS5kb29yW2Rvb3JzXVtuYW1lXS5zdGF0ZSA9PSB0cnVlIHRoZW4KICAgICAgICAgICAgbG9jYWwgdW5pdHMgPQogICAgICAgICAgICAgICAgRmluZFVuaXRzSW5SYWRpdXMoRE9UQV9URUFNX05PVEVBTSwgLS0g55u45a+56Zif5LyN77yM6K6+5Li6RE9UQV9URUFNX05PTkXooajnpLrkuI3pmZDliLbnm7jlr7nlhbPns7vvvIznlLF0YXJnZXRUZWFt5o6n5Yi2CiAgICAgICAgICAgICAgICAgICAgcG9zLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDmkJzntKLkuK3lv4PngrkKICAgICAgICAgICAgICAgICAgICBuaWwsICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOe8k+WtmOWNleS9je+8jOmAmuW4uOWhq25pbAogICAgICAgICAgICAgICAgICAgIDM1MCwgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g5pCc57Si5Y2K5b6ECiAgICAgICAgICAgICAgICAgICAgRE9UQV9VTklUX1RBUkdFVF9URUFNX0JPVEgsICAgICAtLSDnm67moIfpmJ/kvI3vvIjmlYzmlrkv5Y+L5pa5L+WPjOaWue+8iQogICAgICAgICAgICAgICAgICAgIERPVEFfVU5JVF9UQVJHRVRfSEVSTywgICAgICAgICAgLS0g55uu5qCH57G75Z6L77ya6Iux6ZuECiAgICAgICAgICAgICAgICAgICAgRE9UQV9VTklUX1RBUkdFVF9GTEFHX05PTkUsICAgICAtLSDpop3lpJbmoIflv5cKICAgICAgICAgICAgICAgICAgICBGSU5EX0FOWV9PUkRFUiwgICAgICAgICAgICAgICAgIC0tIOmhuuW6jwogICAgICAgICAgICAgICAgICAgIGZhbHNlICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g5piv5ZCm57yT5a2YCiAgICAgICAgICAgICAgICApCiAgICAgICAgICAgIGlmICN1bml0cyA+IDAgdGhlbgogICAgICAgICAgICAgICAgZm9yIGssIHYgaW4gcGFpcnModW5pdHMpIGRvCiAgICAgICAgICAgICAgICAgICAgaWYgdiBhbmQgbm90IHY6SXNOdWxsKCkgYW5kIHY6SXNIZXJvKCkKICAgICAgICAgICAgICAgICAgICAgICAgYW5kIFV0aWwgYW5kIFV0aWwuSXNQbGF5ZXJIZXJvRm9yRGF0YSBhbmQgVXRpbDpJc1BsYXllckhlcm9Gb3JEYXRhKHYpIHRoZW4KICAgICAgICAgICAgICAgICAgICAgICAgbG9jYWwgaGVybyA9IHYKICAgICAgICAgICAgICAgICAgICAgICAgbG9jYWwgSUQgPSBVdGlsOkhlcm8ySUQoaGVybykKICAgICAgICAgICAgICAgICAgICAgICAgbG9jYWwgdGFyZ2V0X3BvcyA9IHNlbGY6R2V0RG9vclRhcmdldChuYW1lKQogICAgICAgICAgICAgICAgICAgICAgICBoZXJvOlNldEFic09yaWdpbih0YXJnZXRfcG9zKQogICAgICAgICAgICAgICAgICAgICAgICBGaW5kQ2xlYXJTcGFjZUZvclVuaXQoaGVybywgdGFyZ2V0X3BvcywgdHJ1ZSkKICAgICAgICAgICAgICAgICAgICAgICAgbG9jYWwgaW52ID0gKHNlbGYuU3RhdGljIGFuZCBzZWxmLlN0YXRpYy5kb29yX3RlbGVwb3J0X2ludnVsbikgb3IgMC4xCiAgICAgICAgICAgICAgICAgICAgICAgIGhlcm86UmVtb3ZlTW9kaWZpZXJCeU5hbWUoIm1vZGlmaWVyX2NscmJfZG9vcl90ZWxlcG9ydF9pbnZ1bG4iKQogICAgICAgICAgICAgICAgICAgICAgICBoZXJvOkFkZE5ld01vZGlmaWVyKGhlcm8sIG5pbCwgIm1vZGlmaWVyX2NscmJfZG9vcl90ZWxlcG9ydF9pbnZ1bG4iLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgeyBkdXJhdGlvbiA9IGludiB9KQogICAgICAgICAgICAgICAgICAgICAgICBFbWl0U291bmRPbigiTG9uZURydWlkX1NwaXJpdEJlYXIuUmV0dXJuU3RhcnQiLCBoZXJvKQogICAgICAgICAgICAgICAgICAgICAgICAtLSDku4XnnJ/kurrmnKzkvZPoi7Hpm4Tnp7vliqjplZzlpLTvvIhJRCDpobvkuLrmnInmlYggUGxheWVySUTvvIkKICAgICAgICAgICAgICAgICAgICAgICAgaWYgSUQgfj0gbmlsIGFuZCB0eXBlKElEKSA9PSAibnVtYmVyIiBhbmQgSUQgPj0gMAogICAgICAgICAgICAgICAgICAgICAgICAgICAgYW5kIFBsYXllclJlc291cmNlIGFuZCBQbGF5ZXJSZXNvdXJjZS5Jc1ZhbGlkUGxheWVyCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBhbmQgUGxheWVyUmVzb3VyY2U6SXNWYWxpZFBsYXllcihJRCkKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGFuZCBub3QgVXRpbDpJc1BzZXVkb1BsYXllcklEKElEKSB0aGVuCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBsb2NhbCBpbml0X2RhdGEgPSBJbml0UGxheWVyIGFuZCBJbml0UGxheWVyLkdldFBsYXllckRhdGEKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBhbmQgSW5pdFBsYXllcjpHZXRQbGF5ZXJEYXRhKElEKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgaWYgaW5pdF9kYXRhIGFuZCBub3QgaW5pdF9kYXRhLmJvdCB0aGVuCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgUGxheWVyUmVzb3VyY2U6U2V0Q2FtZXJhVGFyZ2V0KElELCBoZXJvKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxvY2FsIGNhbV9pZCA9IElECiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVGltZXJzKDAuNSwgZnVuY3Rpb24oKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBpZiBQbGF5ZXJSZXNvdXJjZSBhbmQgY2FtX2lkIH49IG5pbCB0aGVuCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBQbGF5ZXJSZXNvdXJjZTpTZXRDYW1lcmFUYXJnZXQoY2FtX2lkLCBuaWwpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGVuZCkKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgc2VsZjpDbG9zZURvb3IoZG9vcnMpCiAgICAgICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICAgICAgcmV0dXJuIDEKICAgIGVuZCkKZW5kCgotLSDlhbPpl63kvKDpgIHpl6gKZnVuY3Rpb24gTWFpbkdhbWU6Q2xvc2VEb29yKGRvb3Jza2V5KQogICAgZm9yIGssIHYgaW4gcGFpcnMoc2VsZi5EYXRhLmRvb3JbZG9vcnNrZXldKSBkbwogICAgICAgIGlmIHYgdGhlbgogICAgICAgICAgICB2LnN0YXRlID0gZmFsc2UKICAgICAgICAgICAgbG9jYWwgdHggPSB2LnR4CiAgICAgICAgICAgIHV0aWxleDpDbGVhclR4KHR4KQogICAgICAgICAgICB2LnR4ID0gLTEKICAgICAgICBlbmQKICAgIGVuZAogICAgVGltZXJzKHNlbGYuU3RhdGljLmRvb3JzX2NkLCBmdW5jdGlvbigpIHNlbGY6T3BlbkRvb3IoZG9vcnNrZXkpIGVuZCkKZW5kCgotLSDmuIXnkIbkvKDpgIHku6wKZnVuY3Rpb24gTWFpbkdhbWU6Q2xlYXJEb29yKCkKICAgIGZvciBrLCB2IGluIHBhaXJzKHNlbGYuRGF0YS5kb29yKSBkbwogICAgICAgIGlmIHYgdGhlbgogICAgICAgICAgICBmb3IgazIsIHYyIGluIHBhaXJzKHYpIGRvCiAgICAgICAgICAgICAgICBpZiB2MiB0aGVuCiAgICAgICAgICAgICAgICAgICAgdjIuc3RhdGUgPSBmYWxzZQogICAgICAgICAgICAgICAgICAgIHV0aWxleDpDbGVhclR4KHYyLnR4KQogICAgICAgICAgICAgICAgICAgIHYyLnR4ID0gLTEKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZAplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 结算称号
+function MainGame:SetTag()
+    -- Mvp
+    self:SetTag1()
+    self:SetTag4()
+    self:SetTag6()
+    self:SetTag8()
+    self:SetTag9()
+    self:SetTag10()
+    self:SetTag11()
+    self:SetTag13()
+    self:SetTag14()
+    self:SetTag15()
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+-- mvp
+function MainGame:SetTag1()
+    if MainGame:GetGameType() == 1 or MainGame:GetGameType() == 3 then
+        local win_team = self.Data.win_team
+        local win_team_key = "team_" .. win_team
+        local list = {}
+        for k, v in pairs(Stat.Public.list[win_team_key].list) do
+            if v then
+                local ID = v.id
+                local p_id = "p_" .. ID
+                local kk = PlayerResource:GetKills(ID)
+                local dd = PlayerResource:GetDeaths(ID)
+                local aa = PlayerResource:GetAssists(ID)
+                if dd <= 0 then dd = 1 end
+                local kda_num = ((kk + aa) / dd)
+                local kda = utilex:FloatSet(kda_num, 1)
+                list[p_id] = kda
+            end
+        end
+        -- print(list)
+        local max_id = utilex:GetMaxKeyInTab(list)
+        local mvp_id = tonumber(utilex:splitIndex(max_id, "_", 2))
+        HeroData.Data[mvp_id].tag.tag1 = true
+    end
+    if MainGame:GetGameType() == 2 then
+        for k, v in pairs(PD.IDs) do
+            if v then
+                local ID = v
+                local rank = Stat:GetTeamRank(ID)
+                if rank == 1 then
+                    HeroData.Data[ID].tag.tag1 = true
+                    return
+                end
+            end
+        end
+    end
+end
+
+-- 神
+-- 暴
+-- 硬
+function MainGame:SetTag4()
+    local list = {}
+    for k, v in pairs(PD.IDs) do
+        local p_id = "p_" .. v
+        list[p_id] = HeroData.Data[v].tank
+    end
+    local max_id = utilex:GetMaxKeyInTab(list)
+    local mvp_id = tonumber(utilex:splitIndex(max_id, "_", 2))
+    HeroData.Data[mvp_id].tag.tag4 = true
+end
+
+-- 杀
+-- 僵
+function MainGame:SetTag6()
+    local list = {}
+    for k, v in pairs(PD.IDs) do
+        local p_id = "p_" .. v
+        local kk = PlayerResource:GetKills(v)
+        local dd = PlayerResource:GetDeaths(v)
+        local aa = PlayerResource:GetAssists(v)
+        if dd <= 0 then dd = 1 end
+        local kda_num = ((kk + aa) / dd)
+        local kda = utilex:FloatSet(kda_num, 1)
+        list[p_id] = kda
+    end
+    local max_id = utilex:GetMinKeyInTab(list)
+    local mvp_id = tonumber(utilex:splitIndex(max_id, "_", 2))
+    HeroData.Data[mvp_id].tag.tag6 = true
+end
+
+-- 逃
+-- 伐木
+function MainGame:SetTag8()
+    local list = {}
+    for k, v in pairs(PD.IDs) do
+        if v then
+            local p_id = "p_" .. v
+            list[p_id] = Talent.Data[v].kill
+        end
+    end
+    local max_id = utilex:GetMaxKeyInTab(list)
+    local mvp_id = tonumber(utilex:splitIndex(max_id, "_", 2))
+    HeroData.Data[mvp_id].tag.tag8 = true
+end
+
+-- 力
+function MainGame:SetTag9()
+    local list = {}
+    for k, v in pairs(PD.IDs) do
+        if v then
+            local hero = Util:ID2Hero(v)
+            if hero then
+                local p_id = "p_" .. v
+                local num = hero:GetStrength()
+                list[p_id] = num
+            end
+        end
+    end
+    local max_id = utilex:GetMaxKeyInTab(list)
+    local mvp_id = tonumber(utilex:splitIndex(max_id, "_", 2))
+    HeroData.Data[mvp_id].tag.tag9 = true
+end
+
+-- 敏
+function MainGame:SetTag10()
+    local list = {}
+    for k, v in pairs(PD.IDs) do
+        if v then
+            local hero = Util:ID2Hero(v)
+            if hero then
+                local p_id = "p_" .. v
+                local num = hero:GetAgility()
+                list[p_id] = num
+            end
+        end
+    end
+    local max_id = utilex:GetMaxKeyInTab(list)
+    local mvp_id = tonumber(utilex:splitIndex(max_id, "_", 2))
+    HeroData.Data[mvp_id].tag.tag10 = true
+end
+
+-- 智
+function MainGame:SetTag11()
+    local list = {}
+    for k, v in pairs(PD.IDs) do
+        if v then
+            local hero = Util:ID2Hero(v)
+            if hero then
+                local p_id = "p_" .. v
+                local num = hero:GetIntellect(false)
+                list[p_id] = num
+            end
+        end
+    end
+    local max_id = utilex:GetMaxKeyInTab(list)
+    local mvp_id = tonumber(utilex:splitIndex(max_id, "_", 2))
+    HeroData.Data[mvp_id].tag.tag11 = true
+end
+
+-- 贪
+function MainGame:IsStar16(ID, star)
+    if self.Data.star_max_state == true then return end
+    -- 显示 16 星 = 真实 13（含 3 颗假星星）
+    local bonus = (HeroData.Static and HeroData.Static.star_display_bonus) or 3
+    if star + bonus >= 16 then
+        HeroData.Data[ID].tag.tag12 = true
+        self.Data.star_max_state = true
+    end
+end
+
+-- 无双
+function MainGame:SetTag13()
+    local list = {}
+    for k, v in pairs(PD.IDs) do
+        local p_id = "p_" .. v
+        local kk = PlayerResource:GetKills(v)
+        local dd = PlayerResource:GetDeaths(v)
+        local aa = PlayerResource:GetAssists(v)
+        local kda_num = ((kk + aa) / dd)
+        local kda = utilex:FloatSet(kda_num, 1)
+        if kda > 15 then HeroData.Data[v].tag.tag13 = true end
+    end
+end
+
+-- 夯
+function MainGame:SetTag14()
+    for k, v in pairs(PD.IDs) do
+        local damage = HeroData.Data[v].damage
+        if damage > 666666 then HeroData.Data[v].tag.tag14 = true end
+    end
+end
+
+-- 狂
+function MainGame:SetTag15()
+    local list = {}
+    for k, v in pairs(PD.IDs) do
+        local p_id = "p_" .. v
+        local kk = PlayerResource:GetKills(v)
+        local dd = PlayerResource:GetDeaths(v)
+        local kda = kk + dd
+        list[p_id] = kda
+    end
+    local max_id = utilex:GetMaxKeyInTab(list)
+    local mvp_id = tonumber(utilex:splitIndex(max_id, "_", 2))
+    HeroData.Data[mvp_id].tag.tag15 = true
+end
+
+-- 打开传送门
+function MainGame:OpenDoor(doorskey)
+    if not doorskey then return end
+    local tx = self.Static.doors_tx
+    for k, v in pairs(self.Data.door[doorskey]) do
+        if v then
+            local name = v.name
+            local pos = v.pos
+            local tx_index = utilex:AddParticllesPos(tx, pos, 9999)
+            v.tx = tx_index
+            v.state = true
+            self:DoorsThink(doorskey, name, pos)
+        end
+    end
+end
+
+function MainGame:DoorsThink(doors, name, pos)
+    if not name then return end
+    Timers(0.2, function()
+        if self.Data.door[doors][name].state == true then
+            local units =
+                FindUnitsInRadius(DOTA_TEAM_NOTEAM, -- 相对队伍，设为DOTA_TEAM_NONE表示不限制相对关系，由targetTeam控制
+                    pos,                            -- 搜索中心点
+                    nil,                            -- 缓存单位，通常填nil
+                    350,                            -- 搜索半径
+                    DOTA_UNIT_TARGET_TEAM_BOTH,     -- 目标队伍（敌方/友方/双方）
+                    DOTA_UNIT_TARGET_HERO,          -- 目标类型：英雄
+                    DOTA_UNIT_TARGET_FLAG_NONE,     -- 额外标志
+                    FIND_ANY_ORDER,                 -- 顺序
+                    false                           -- 是否缓存
+                )
+            if #units > 0 then
+                for k, v in pairs(units) do
+                    if v and not v:IsNull() and v:IsHero()
+                        and Util and Util.IsPlayerHeroForData and Util:IsPlayerHeroForData(v) then
+                        local hero = v
+                        local ID = Util:Hero2ID(hero)
+                        local target_pos = self:GetDoorTarget(name)
+                        hero:SetAbsOrigin(target_pos)
+                        FindClearSpaceForUnit(hero, target_pos, true)
+                        local inv = (self.Static and self.Static.door_teleport_invuln) or 0.1
+                        hero:RemoveModifierByName("modifier_clrb_door_teleport_invuln")
+                        hero:AddNewModifier(hero, nil, "modifier_clrb_door_teleport_invuln",
+                            { duration = inv })
+                        EmitSoundOn("LoneDruid_SpiritBear.ReturnStart", hero)
+                        -- 仅真人本体英雄移动镜头（ID 须为有效 PlayerID）
+                        if ID ~= nil and type(ID) == "number" and ID >= 0
+                            and PlayerResource and PlayerResource.IsValidPlayer
+                            and PlayerResource:IsValidPlayer(ID)
+                            and not Util:IsPseudoPlayerID(ID) then
+                            local init_data = InitPlayer and InitPlayer.GetPlayerData
+                                and InitPlayer:GetPlayerData(ID)
+                            if init_data and not init_data.bot then
+                                PlayerResource:SetCameraTarget(ID, hero)
+                                local cam_id = ID
+                                Timers(0.5, function()
+                                    if PlayerResource and cam_id ~= nil then
+                                        PlayerResource:SetCameraTarget(cam_id, nil)
+                                    end
+                                end)
+                            end
+                        end
+                    end
+                end
+                self:CloseDoor(doors)
+                return
+            end
+        end
+        return 1
+    end)
+end
+
+-- 关闭传送门
+function MainGame:CloseDoor(doorskey)
+    for k, v in pairs(self.Data.door[doorskey]) do
+        if v then
+            v.state = false
+            local tx = v.tx
+            utilex:ClearTx(tx)
+            v.tx = -1
+        end
+    end
+    Timers(self.Static.doors_cd, function() self:OpenDoor(doorskey) end)
+end
+
+-- 清理传送们
+function MainGame:ClearDoor()
+    for k, v in pairs(self.Data.door) do
+        if v then
+            for k2, v2 in pairs(v) do
+                if v2 then
+                    v2.state = false
+                    utilex:ClearTx(v2.tx)
+                    v2.tx = -1
+                end
+            end
+        end
+    end
+end

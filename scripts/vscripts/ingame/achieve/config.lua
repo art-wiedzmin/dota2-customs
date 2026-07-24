@@ -8,22 +8,109 @@
 ]]
 
 
-local encoded=[[LS0g5oiQ5bCx57O757uf6YWN572u77yI5LiO5pyN5Yqh56uvIGFjaGlldmVDb25maWcuanMgLyBhY2hpZXZlIOihqOWtl+auteS4gOiHtO+8iQoKQWNoaWV2ZSA9IEFjaGlldmUgb3Ige30KCkFjaGlldmUuU3RhdHVzID0gewogICAgQ0xBSU1BQkxFID0gMSwgICAtLSDlt7LlrozmiJDlj6/pooblj5YKICAgIElOQ09NUExFVEUgPSAyLCAgLS0g5pyq5a6M5oiQCiAgICBDTEFJTUVEID0gMywgICAgIC0tIOW3sumihuWPlgp9CgpBY2hpZXZlLkhlcm9SZXdhcmRHb2xkID0gNTAKCkFjaGlldmUuUGF5VGllckFtb3VudHMgPSB7IDMwLCA5OCwgMTk4LCAzMjgsIDY0OCwgMTI4MCwgMzI4MCB9CgotLSDntK/orqHlhYXlgLzmoaPkvY3lpZblirHvvIjkuI7mnI3liqHnq68gUEFZX1RJRVJfUkVXQVJEUyDkuIDoh7TvvIkKQWNoaWV2ZS5QYXlUaWVyUmV3YXJkcyA9IHsKICAgIFszMF0gPSB7IGdvbGQgPSAxMDAsIGhlcm9fcGljayA9IDEgfSwKICAgIFs5OF0gPSB7IGdvbGQgPSAzMDAsIGhlcm9fcGljayA9IDIgfSwKICAgIFsxOThdID0geyBnb2xkID0gNjAwLCBoZXJvX3BpY2sgPSAzIH0sCiAgICBbMzI4XSA9IHsgZ29sZCA9IDEwMDAsIGhlcm9fcGljayA9IDUgfSwKICAgIFs2NDhdID0geyBnb2xkID0gMjAwMCwgaGVyb19waWNrID0gNSwgcGV0ID0gInBldF90aTEwX3Jvc2giIH0sCiAgICBbMTI4MF0gPSB7IGdvbGQgPSA0MDAwLCBoZXJvX3BpY2sgPSAxMCwgcHJvcGhlY3lfY2FyZCA9IDIgfSwKICAgIFszMjgwXSA9IHsgZ29sZCA9IDEwMDAwLCBoZXJvX3BpY2sgPSAxNSwgdGl0bGUgPSAidGl0bGVfd2hjbCIgfSwKfQoKLS0g5pel5bi45oiQ5bCx57Si5byV5ZCN77yI5LiO5pyN5Yqh56uvIERBWV9BQ0hJRVZFX0lOREVYX05BTUVTIOS4gOiHtO+8iQpBY2hpZXZlLkRheUluZGV4TmFtZXMgPSB7CiAgICAiZ2FtZXNfaGVyb19waWNrX3JlcGVhdCIsCiAgICAidGltZV9wcm9waGVjeV9yZXBlYXQiLAogICAgInRlYW1fZmlyc3RfMyIsCiAgICAidGl0bGVfc2hlbl8zIiwKICAgICJ0aXRsZV9iYW9fMyIsCiAgICAidGl0bGVfeWluZ18zIiwKICAgICJ0aXRsZV9mYW11XzMiLAogICAgInRpdGxlX2xpXzMiLAogICAgInRpdGxlX21pbl8zIiwKICAgICJ0aXRsZV96aGlfMyIsCiAgICAidGl0bGVfaGFuZ18zIiwKICAgICJ0aXRsZV9rdWFuZ18zIiwKICAgICJ0aXRsZV93dXNodWFuZ18xIiwKICAgICJkbWdfc3VpY2lkZV81bSIsCiAgICAiZG1nX2xpZ2h0bmluZ181bSIsCiAgICAiZG1nX2NydXNoXzVtIiwKICAgICJiYXNoX2VuZW15XzUwMCIsCiAgICAiZG1nX2ZsYW1lXzVtIiwKICAgICJwbHVuZGVyX2dvbGRfMjAwayIsCiAgICAia2lsbF9uZXV0cmFsXzUwMDAiLAogICAgImtpbGxfaGVyb181MDAiLAp9CgotLSDmiJDlsLHmnaHnm67mqKHmnb/vvIjov5DooYzml7bnlLHnjqnlrrbov5vluqbloavlhYUgY3VycmVudCAvIHN0YXR1c++8iQpBY2hpZXZlTW9kdWxlLlRlbXBsYXRlID0gewogICAgcGFnZSA9IDAsCiAgICB0YWIgPSAiaGVybyIsCiAgICBlbmFibGVkID0gZmFsc2UsCiAgICBhY2hpZXZlID0gbmlsLAogICAgcmVjaGFyZ2VfdG90YWwgPSAwLAogICAgY2xhaW1faW5mbGlnaHQgPSBmYWxzZSwKICAgIGNsYWltX3F1ZXVlID0ge30sCiAgICBjbGFpbV9jb29sZG93bl91bnRpbCA9IDAsCn0KCi0tLSDmnI3liqHnq68gc3RhdHVzIDEvMi8zIC0+IFVJIGxvY2tlZCAvIGNsYWltYWJsZSAvIGNsYWltZWQKZnVuY3Rpb24gQWNoaWV2ZTpTdGF0dXNUb1VpKHN0YXR1cykKICAgIGxvY2FsIG4gPSB0b251bWJlcihzdGF0dXMpCiAgICBpZiBuID09IHNlbGYuU3RhdHVzLkNMQUlNQUJMRSB0aGVuCiAgICAgICAgcmV0dXJuICJjbGFpbWFibGUiCiAgICBlbmQKICAgIGlmIG4gPT0gc2VsZi5TdGF0dXMuQ0xBSU1FRCB0aGVuCiAgICAgICAgcmV0dXJuICJjbGFpbWVkIgogICAgZW5kCiAgICByZXR1cm4gImxvY2tlZCIKZW5kCgotLS0g6Iux6ZuE5oiQ5bCx6L+b5bqm77ya5a6M5oiQIDEvMe+8jOacquWujOaIkCAwLzEKZnVuY3Rpb24gQWNoaWV2ZTpIZXJvUHJvZ3Jlc3NGcm9tU3RhdHVzKHN0YXR1cykKICAgIGxvY2FsIG4gPSB0b251bWJlcihzdGF0dXMpCiAgICBpZiBuID09IHNlbGYuU3RhdHVzLkNMQUlNQUJMRSBvciBuID09IHNlbGYuU3RhdHVzLkNMQUlNRUQgdGhlbgogICAgICAgIHJldHVybiAxLCAxCiAgICBlbmQKICAgIHJldHVybiAwLCAxCmVuZAoKLS0tIOaXpeW4uOaIkOWwsei/m+W6pu+8mmN1cnJlbnQg5p2l6IeqIGRheXN0YXRbc3RhdEtleV3vvIx0YXJnZXQg5Li65qGj5L2N55uu5qCHCmZ1bmN0aW9uIEFjaGlldmU6RGF5UHJvZ3Jlc3NGcm9tU3RhdChkYXlzdGF0LCBzdGF0S2V5LCB0YXJnZXQsIHN0YXR1cykKICAgIGxvY2FsIHRhciA9IG1hdGgubWF4KDAsIHRvbnVtYmVyKHRhcmdldCkgb3IgMCkKICAgIGxvY2FsIGN1ciA9IDAKICAgIGlmIGRheXN0YXQgYW5kIHN0YXRLZXkgdGhlbgogICAgICAgIGN1ciA9IG1hdGgubWF4KDAsIG1hdGguZmxvb3IodG9udW1iZXIoZGF5c3RhdFtzdGF0S2V5XSkgb3IgMCkpCiAgICBlbmQKICAgIGxvY2FsIG4gPSB0b251bWJlcihzdGF0dXMpCiAgICBpZiBuID09IHNlbGYuU3RhdHVzLkNMQUlNRUQgdGhlbgogICAgICAgIHJldHVybiB0YXIsIHRhcgogICAgZW5kCiAgICBpZiBuID09IHNlbGYuU3RhdHVzLkNMQUlNQUJMRSBhbmQgY3VyIDwgdGFyIHRoZW4KICAgICAgICBjdXIgPSB0YXIKICAgIGVuZAogICAgcmV0dXJuIGN1ciwgdGFyCmVuZAoKLS0tIOe0r+iuoeWFheWAvOi/m+W6pu+8mmN1cnJlbnQg5Li6546p5a6257Sv6K6h5YWF5YC85oC76aKd77yMdGFyZ2V0IOS4uuaho+S9jemHkeminQpmdW5jdGlvbiBBY2hpZXZlOlBheVByb2dyZXNzRnJvbVN0YXR1cyhzdGF0dXMsIHJlY2hhcmdlVG90YWwsIHRpZXJBbW91bnQpCiAgICBsb2NhbCB0YXJnZXQgPSB0b251bWJlcih0aWVyQW1vdW50KSBvciAwCiAgICBsb2NhbCB0b3RhbCA9IG1hdGgubWF4KDAsIHRvbnVtYmVyKHJlY2hhcmdlVG90YWwpIG9yIDApCiAgICByZXR1cm4gdG90YWwsIHRhcmdldAplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 成就系统配置（与服务端 achieveConfig.js / achieve 表字段一致）
+
+Achieve = Achieve or {}
+
+Achieve.Status = {
+    CLAIMABLE = 1,   -- 已完成可领取
+    INCOMPLETE = 2,  -- 未完成
+    CLAIMED = 3,     -- 已领取
+}
+
+Achieve.HeroRewardGold = 50
+
+Achieve.PayTierAmounts = { 30, 98, 198, 328, 648, 1280, 3280 }
+
+-- 累计充值档位奖励（与服务端 PAY_TIER_REWARDS 一致）
+Achieve.PayTierRewards = {
+    [30] = { gold = 100, hero_pick = 1 },
+    [98] = { gold = 300, hero_pick = 2 },
+    [198] = { gold = 600, hero_pick = 3 },
+    [328] = { gold = 1000, hero_pick = 5 },
+    [648] = { gold = 2000, hero_pick = 5, pet = "pet_ti10_rosh" },
+    [1280] = { gold = 4000, hero_pick = 10, prophecy_card = 2 },
+    [3280] = { gold = 10000, hero_pick = 15, title = "title_whcl" },
+}
+
+-- 日常成就索引名（与服务端 DAY_ACHIEVE_INDEX_NAMES 一致）
+Achieve.DayIndexNames = {
+    "games_hero_pick_repeat",
+    "time_prophecy_repeat",
+    "team_first_3",
+    "title_shen_3",
+    "title_bao_3",
+    "title_ying_3",
+    "title_famu_3",
+    "title_li_3",
+    "title_min_3",
+    "title_zhi_3",
+    "title_hang_3",
+    "title_kuang_3",
+    "title_wushuang_1",
+    "dmg_suicide_5m",
+    "dmg_lightning_5m",
+    "dmg_crush_5m",
+    "bash_enemy_500",
+    "dmg_flame_5m",
+    "plunder_gold_200k",
+    "kill_neutral_5000",
+    "kill_hero_500",
+}
+
+-- 成就条目模板（运行时由玩家进度填充 current / status）
+AchieveModule.Template = {
+    page = 0,
+    tab = "hero",
+    enabled = false,
+    achieve = nil,
+    recharge_total = 0,
+    claim_inflight = false,
+    claim_queue = {},
+    claim_cooldown_until = 0,
+}
+
+--- 服务端 status 1/2/3 -> UI locked / claimable / claimed
+function Achieve:StatusToUi(status)
+    local n = tonumber(status)
+    if n == self.Status.CLAIMABLE then
+        return "claimable"
+    end
+    if n == self.Status.CLAIMED then
+        return "claimed"
+    end
+    return "locked"
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--- 英雄成就进度：完成 1/1，未完成 0/1
+function Achieve:HeroProgressFromStatus(status)
+    local n = tonumber(status)
+    if n == self.Status.CLAIMABLE or n == self.Status.CLAIMED then
+        return 1, 1
+    end
+    return 0, 1
+end
+
+--- 日常成就进度：current 来自 daystat[statKey]，target 为档位目标
+function Achieve:DayProgressFromStat(daystat, statKey, target, status)
+    local tar = math.max(0, tonumber(target) or 0)
+    local cur = 0
+    if daystat and statKey then
+        cur = math.max(0, math.floor(tonumber(daystat[statKey]) or 0))
+    end
+    local n = tonumber(status)
+    if n == self.Status.CLAIMED then
+        return tar, tar
+    end
+    if n == self.Status.CLAIMABLE and cur < tar then
+        cur = tar
+    end
+    return cur, tar
+end
+
+--- 累计充值进度：current 为玩家累计充值总额，target 为档位金额
+function Achieve:PayProgressFromStatus(status, rechargeTotal, tierAmount)
+    local target = tonumber(tierAmount) or 0
+    local total = math.max(0, tonumber(rechargeTotal) or 0)
+    return total, target
+end

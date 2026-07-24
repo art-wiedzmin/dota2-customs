@@ -8,22 +8,131 @@
 ]]
 
 
-local encoded=[[aWYgbW9kaWZpZXJfdGFsZW50XzEgPT0gbmlsIHRoZW4KICAgIG1vZGlmaWVyX3RhbGVudF8xID0gY2xhc3Moe30pCmVuZAoKLS3or6Vtb2RpZmllcuaYr+WQpuaYr+i0n+mdoueahApmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMTpJc0RlYnVmZigpCiAgICByZXR1cm4gZmFsc2UKZW5kCgotLeivpW1vZGlmaWVy6IO95ZCm6KKr5riF6ZmkCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8xOklzUHVyZ2FibGUoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKLS3or6Vtb2RpZmllcuaYr+WQpumakOiXjwpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMTpJc0hpZGRlbigpCiAgICByZXR1cm4gdHJ1ZQplbmQKCi0t5q275Lqh5pe25piv5ZCm56e76ZmkCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8xOlJlbW92ZU9uRGVhdGgoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50XzE6T25DcmVhdGVkKGt2KQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbiByZXR1cm4gZW5kCiAgICAtLXByaW50KCLmt7vliqDmlLvlh7tidWZmIikKICAgIHNlbGY6Rm9yY2VSZWZyZXNoKCkKZW5kCgotLSDliLfmlrBtb2RpZmllcgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMTpPblJlZnJlc2goa3YpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuIHJldHVybiBlbmQKICAgIGxvY2FsIGhlcm8gPSBzZWxmOkdldFBhcmVudCgpCiAgICBsb2NhbCBJRCA9IFV0aWw6SGVybzJJRChoZXJvKQogICAgc2VsZi5scWpzID0gSGVyb0RhdGEuRGF0YVtJRF0uaGVyb19hdHRyLmxxanMKICAgIHNlbGY6U2V0U3RhY2tDb3VudChzZWxmLmxxanMpCiAgICBoZXJvOkNhbGN1bGF0ZVN0YXRCb251cyh0cnVlKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF8xOkRlY2xhcmVGdW5jdGlvbnMoKQogICAgcmV0dXJuIHsKICAgICAgICBNT0RJRklFUl9FVkVOVF9PTl9BVFRBQ0tfTEFOREVELCAtLSDmlLvlh7vlkb3kuK3ml7YKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9DT09MRE9XTl9QRVJDRU5UQUdFLAogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX0FPRV9CT05VU19QRVJDRU5UQUdFLAoKICAgIH0KZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMTpPbkF0dGFja0xhbmRlZChrZXlzKQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbiByZXR1cm4gZW5kCiAgICBpZiBrZXlzLmF0dGFja2VyID09IHNlbGY6R2V0UGFyZW50KCkgdGhlbgogICAgICAgIC0tcHJpbnQoIuaUu+WHu+WRveS4rSIpCiAgICAgICAgLS0g5ZG95Lit5pe26Kem5Y+R5oqA6IO95pWI5p6cCiAgICAgICAgbG9jYWwgY2EgPSBzZWxmOkdldFBhcmVudCgpCiAgICAgICAgbG9jYWwgdGEgPSBrZXlzLnRhcmdldAogICAgICAgIGlmIG5vdCB0YSBvciB0YTpJc051bGwoKSBvciBub3QgdGE6SXNBbGl2ZSgpIHRoZW4gcmV0dXJuIGVuZAogICAgICAgIGlmIGNhOklzSGVybygpIHRoZW4KICAgICAgICAgICAgbG9jYWwgZG1nX2FtcF9uYW1lID0gIm1vZGlmaWVyX3RhbGVudF8xX2RhbWFnZV9hbXBfZGVidWZmIgogICAgICAgICAgICBsb2NhbCBkbWdfYW1wX2R1ciA9IDMKICAgICAgICAgICAgaWYgdGE6R2V0VGVhbU51bWJlcigpIH49IGNhOkdldFRlYW1OdW1iZXIoKQogICAgICAgICAgICAgICAgYW5kIG5vdCB0YTpJc01hZ2ljSW1tdW5lKCkKICAgICAgICAgICAgICAgIGFuZCBub3QgdGE6SXNCdWlsZGluZygpCiAgICAgICAgICAgICAgICBhbmQgbm90IHRhOklzQ291cmllcigpIHRoZW4KICAgICAgICAgICAgICAgIGxvY2FsIG0gPSB0YTpGaW5kTW9kaWZpZXJCeU5hbWUoZG1nX2FtcF9uYW1lKQogICAgICAgICAgICAgICAgaWYgbSB0aGVuCiAgICAgICAgICAgICAgICAgICAgbTpTZXRTdGFja0NvdW50KG1hdGgubWluKDk5OSwgbTpHZXRTdGFja0NvdW50KCkgKyAxKSkKICAgICAgICAgICAgICAgICAgICBtOlNldER1cmF0aW9uKGRtZ19hbXBfZHVyLCB0cnVlKQogICAgICAgICAgICAgICAgZWxzZQogICAgICAgICAgICAgICAgICAgIHRhOkFkZE5ld01vZGlmaWVyKGNhLCBuaWwsIGRtZ19hbXBfbmFtZSwgeyBkdXJhdGlvbiA9IGRtZ19hbXBfZHVyIH0pCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGxvY2FsIElEID0gVXRpbDpIZXJvMklEKGNhKQogICAgICAgICAgICBpZiBJRCB0aGVuCiAgICAgICAgICAgICAgICBsb2NhbCBsZXZlbCA9IFRhbGVudC5EYXRhW0lEXS5sZXZlbAogICAgICAgICAgICAgICAgbG9jYWwgbnVtID0gMQogICAgICAgICAgICAgICAgbG9jYWwgaGogPSAwCiAgICAgICAgICAgICAgICBpZiBsZXZlbCA9PSAwIHRoZW4KICAgICAgICAgICAgICAgICAgICBudW0gPSAwLjYKICAgICAgICAgICAgICAgICAgICBoaiA9IC0zCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgIGlmIGxldmVsID09IDEgdGhlbgogICAgICAgICAgICAgICAgICAgIG51bSA9IDAuOAogICAgICAgICAgICAgICAgICAgIGhqID0gLTQKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgaWYgbGV2ZWwgPT0gMiB0aGVuCiAgICAgICAgICAgICAgICAgICAgbnVtID0gMQogICAgICAgICAgICAgICAgICAgIGhqID0gLTUKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgaWYgbGV2ZWwgPT0gMyB0aGVuCiAgICAgICAgICAgICAgICAgICAgbnVtID0gMS4yCiAgICAgICAgICAgICAgICAgICAgaGogPSAtNgogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgICAgICBpZiBsZXZlbCA9PSA0IHRoZW4KICAgICAgICAgICAgICAgICAgICBudW0gPSAxLjQKICAgICAgICAgICAgICAgICAgICBoaiA9IC03CiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgIGlmIGxldmVsID09IDUgdGhlbgogICAgICAgICAgICAgICAgICAgIG51bSA9IDEuNgogICAgICAgICAgICAgICAgICAgIGhqID0gLTgKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgaWYgbWF0aC5yYW5kb20oMSwgMTAwKSA8PSAxNSB0aGVuCiAgICAgICAgICAgICAgICAgICAgbG9jYWwgZGFtID0gY2E6R2V0QXR0YWNrRGFtYWdlKCkgKiBudW0KICAgICAgICAgICAgICAgICAgICAtLSBwcmludChkYW0pCiAgICAgICAgICAgICAgICAgICAgdXRpbGV4OlVuaXREYW0oY2EsIHRhLCBkYW0sICJ3bCIpCiAgICAgICAgICAgICAgICAgICAgbG9jYWwgdHgxID0gInBhcnRpY2xlcy91bml0cy9oZXJvZXMvaGVyb19waGFudG9tX2Fzc2Fzc2luX3BlcnNvbmEvcGFfcGVyc29uYV9hdHRhY2tfYmx1cl9jcml0LnZwY2YiCiAgICAgICAgICAgICAgICAgICAgdXRpbGV4OkFkZFR4KHR4MSwgdGEsIDEpCiAgICAgICAgICAgICAgICAgICAgLS1waGFudG9tX2Fzc2Fzc2luX2NvdXBfZGVfZ3JhY2VfcG5nCiAgICAgICAgICAgICAgICAgICAgRW1pdFNvdW5kT24oIkhlcm9fUGhhbnRvbUFzc2Fzc2luLkNvdXBEZUdyYWNlIiwgY2EpCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgIC0tIExpbmtMdWFNb2RpZmllcigibW9kaWZpZXJfdGFsZW50XzFfYnVmZiIsICJpbmdhbWUvbW9kaWZpZXIvbW9kaWZpZXJfdGFsZW50XzFfYnVmZiIsCiAgICAgICAgICAgICAgICAtLSAgICAgTFVBX01PRElGSUVSX01PVElPTl9OT05FKQogICAgICAgICAgICAgICAgLS0gdGE6QWRkTmV3TW9kaWZpZXIoCiAgICAgICAgICAgICAgICAtLSAgICAgdGEsICAgICAgICAgICAgICAgICAgICAgICAtLSDmlr3ms5XogIUKICAgICAgICAgICAgICAgIC0tICAgICBuaWwsICAgICAgICAgICAgICAgICAgICAgIC0tIOaKgOiDvQogICAgICAgICAgICAgICAgLS0gICAgICJtb2RpZmllcl90YWxlbnRfMV9idWZmIiwgLS0g5L+u6aWw5Zmo5ZCN56ewCiAgICAgICAgICAgICAgICAtLSAgICAgeyBkdXIgPSA3LCBoaiA9IGhqIH0gICAgICAtLSDlj4LmlbAKICAgICAgICAgICAgICAgIC0tICkKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfMTpHZXRNb2RpZmllclBlcmNlbnRhZ2VDb29sZG93bihrdikKICAgIGxvY2FsIGNvdW50ID0gc2VsZjpHZXRTdGFja0NvdW50KCkKICAgIHJldHVybiBjb3VudAplbmQKCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if modifier_talent_1 == nil then
+    modifier_talent_1 = class({})
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--该modifier是否是负面的
+function modifier_talent_1:IsDebuff()
+    return false
+end
+
+--该modifier能否被清除
+function modifier_talent_1:IsPurgable()
+    return false
+end
+
+--该modifier是否隐藏
+function modifier_talent_1:IsHidden()
+    return true
+end
+
+--死亡时是否移除
+function modifier_talent_1:RemoveOnDeath()
+    return false
+end
+
+function modifier_talent_1:OnCreated(kv)
+    if not IsServer() then return end
+    --print("添加攻击buff")
+    self:ForceRefresh()
+end
+
+-- 刷新modifier
+function modifier_talent_1:OnRefresh(kv)
+    if not IsServer() then return end
+    local hero = self:GetParent()
+    local ID = Util:Hero2ID(hero)
+    self.lqjs = HeroData.Data[ID].hero_attr.lqjs
+    self:SetStackCount(self.lqjs)
+    hero:CalculateStatBonus(true)
+end
+
+function modifier_talent_1:DeclareFunctions()
+    return {
+        MODIFIER_EVENT_ON_ATTACK_LANDED, -- 攻击命中时
+        MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
+        MODIFIER_PROPERTY_AOE_BONUS_PERCENTAGE,
+
+    }
+end
+
+function modifier_talent_1:OnAttackLanded(keys)
+    if not IsServer() then return end
+    if keys.attacker == self:GetParent() then
+        --print("攻击命中")
+        -- 命中时触发技能效果
+        local ca = self:GetParent()
+        local ta = keys.target
+        if not ta or ta:IsNull() or not ta:IsAlive() then return end
+        if ca:IsHero() then
+            local dmg_amp_name = "modifier_talent_1_damage_amp_debuff"
+            local dmg_amp_dur = 3
+            if ta:GetTeamNumber() ~= ca:GetTeamNumber()
+                and not ta:IsMagicImmune()
+                and not ta:IsBuilding()
+                and not ta:IsCourier() then
+                local m = ta:FindModifierByName(dmg_amp_name)
+                if m then
+                    m:SetStackCount(math.min(999, m:GetStackCount() + 1))
+                    m:SetDuration(dmg_amp_dur, true)
+                else
+                    ta:AddNewModifier(ca, nil, dmg_amp_name, { duration = dmg_amp_dur })
+                end
+            end
+            local ID = Util:Hero2ID(ca)
+            if ID then
+                local level = Talent.Data[ID].level
+                local num = 1
+                local hj = 0
+                if level == 0 then
+                    num = 0.6
+                    hj = -3
+                end
+                if level == 1 then
+                    num = 0.8
+                    hj = -4
+                end
+                if level == 2 then
+                    num = 1
+                    hj = -5
+                end
+                if level == 3 then
+                    num = 1.2
+                    hj = -6
+                end
+                if level == 4 then
+                    num = 1.4
+                    hj = -7
+                end
+                if level == 5 then
+                    num = 1.6
+                    hj = -8
+                end
+                if math.random(1, 100) <= 15 then
+                    local dam = ca:GetAttackDamage() * num
+                    -- print(dam)
+                    utilex:UnitDam(ca, ta, dam, "wl")
+                    local tx1 = "particles/units/heroes/hero_phantom_assassin_persona/pa_persona_attack_blur_crit.vpcf"
+                    utilex:AddTx(tx1, ta, 1)
+                    --phantom_assassin_coup_de_grace_png
+                    EmitSoundOn("Hero_PhantomAssassin.CoupDeGrace", ca)
+                end
+                -- LinkLuaModifier("modifier_talent_1_buff", "ingame/modifier/modifier_talent_1_buff",
+                --     LUA_MODIFIER_MOTION_NONE)
+                -- ta:AddNewModifier(
+                --     ta,                       -- 施法者
+                --     nil,                      -- 技能
+                --     "modifier_talent_1_buff", -- 修饰器名称
+                --     { dur = 7, hj = hj }      -- 参数
+                -- )
+            end
+        end
+    end
+end
+
+function modifier_talent_1:GetModifierPercentageCooldown(kv)
+    local count = self:GetStackCount()
+    return count
+end
+

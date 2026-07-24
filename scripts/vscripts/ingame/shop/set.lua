@@ -8,22 +8,308 @@
 ]]
 
 
-local encoded=[[ZnVuY3Rpb24gU2hvcDpPcGVuUGFnZShJRCkKICAgIHNlbGYuRGF0YVtJRF0ucGFnZSA9IHRydWUKICAgIHNlbGY6U2VuZERhdGEoSUQpCmVuZAoKLS0tIOaJk+W8gOmAmuihjOivge+8muWFiOaOqOacrOWcsOe8k+WtmO+8jOWGjeWQkeacjeWKoeerr+WQjOatpSBjYXJkCmZ1bmN0aW9uIFNob3A6T3BlbkJhdHRsZVBhc3NQYWdlKElEKQogICAgaWYgbm90IElEIG9yIG5vdCBzZWxmLkRhdGFbSURdIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5EYXRhW0lEXS5wYWdlID0gdHJ1ZQogICAgc2VsZjpTZW5kRGF0YShJRCkKICAgIGlmIHNlbGYuUHVzaFBhc3NTZWFzb25Ub0NsaWVudCB0aGVuCiAgICAgICAgc2VsZjpQdXNoUGFzc1NlYXNvblRvQ2xpZW50KElEKQogICAgZW5kCiAgICBzZWxmOlJlZnJlc2hDYXJkKElEKQplbmQKCmZ1bmN0aW9uIFNob3A6Q2xvc2VQYWdlKElEKQogICAgc2VsZi5EYXRhW0lEXS5wYWdlID0gZmFsc2UKICAgIGlmIHNlbGYuRmx1c2hQZW5kaW5nT3V0QmFnTG9hZG91dCB0aGVuCiAgICAgICAgc2VsZjpGbHVzaFBlbmRpbmdPdXRCYWdMb2Fkb3V0KElEKQogICAgZW5kCiAgICBzZWxmOlNlbmREYXRhKElEKQplbmQKCmZ1bmN0aW9uIFNob3A6U2V0U2hvcFNlcnZlckRhdGEoSUQsIGRhdGEsIGZpcnN0X3JlY2hhcmdlX2RvdWJsZV9vcGVuKQogICAgaWYgbm90IElEIG9yIG5vdCBkYXRhIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgLS1wcmludChkYXRhKQogICAgc2VsZi5EYXRhW0lEXS5nb2xkID0gZGF0YS5nb2xkCiAgICBzZWxmLkRhdGFbSURdLmNhcmQxID0gZGF0YS5jYXJkMQogICAgc2VsZi5EYXRhW0lEXS5jYXJkMiA9IGRhdGEuY2FyZDIKICAgIHNlbGYuRGF0YVtJRF0uY2FyZDFkYXkgPSBkYXRhLmdvbGRfZGF5CiAgICBzZWxmLkRhdGFbSURdLmNhcmQyZGF5ID0gZGF0YS5jYXJkMl9kYXkKICAgIHNlbGYuRGF0YVtJRF0uZnJlZWRheSA9IGRhdGEuZnJlZV9kYXkKICAgIHNlbGYuRGF0YVtJRF0uZHdfZnJlZV9kYXkgPSBkYXRhLmR3X2ZyZWVfZGF5IH49IG5pbCBhbmQgZGF0YS5kd19mcmVlX2RheSBvciAxCiAgICBzZWxmLkRhdGFbSURdLmR3X2ZyZWVfb3BlbiA9IGRhdGEuZHdfZnJlZV9vcGVuID09IHRydWUgb3IgZGF0YS5kd19mcmVlX29wZW4gPT0gMQogICAgaWYgZGF0YS5kd19mcmVlX2V2ZW50X3N0YXR1cyB+PSBuaWwgdGhlbgogICAgICAgIHNlbGYuRGF0YVtJRF0uZHdfZnJlZV9ldmVudF9zdGF0dXMgPSBkYXRhLmR3X2ZyZWVfZXZlbnRfc3RhdHVzCiAgICBlbmQKICAgIHNlbGYuRGF0YVtJRF0uZHdfMzBfYnV5ID0gZGF0YS5kd18zMF9idXkgb3IgMAogICAgc2VsZi5EYXRhW0lEXS5kd182OF9idXkgPSBkYXRhLmR3XzY4X2J1eSBvciAwCiAgICBzZWxmLkRhdGFbSURdLmR3XzEyOF9idXkgPSBkYXRhLmR3XzEyOF9idXkgb3IgMAogICAgaWYgSG9saWRheVBhY2sgYW5kIEhvbGlkYXlQYWNrLk9uU2hvcERhdGFVcGRhdGVkIHRoZW4KICAgICAgICBIb2xpZGF5UGFjazpPblNob3BEYXRhVXBkYXRlZChJRCkKICAgIGVuZAoKICAgIGlmIGZpcnN0X3JlY2hhcmdlX2RvdWJsZV9vcGVuID09IG5pbCB0aGVuCiAgICAgICAgZmlyc3RfcmVjaGFyZ2VfZG91YmxlX29wZW4gPSB0cnVlCiAgICBlbmQKICAgIHNlbGYuRGF0YVtJRF0uZmlyc3RfcmVjaGFyZ2VfZG91YmxlX29wZW4gPSBmaXJzdF9yZWNoYXJnZV9kb3VibGVfb3BlbgoKICAgIC0tIOWFqOacjeaXoOmZkOmmluWFheW8gO+8muWQhOaho+aMiemmluWFheS7jeWcqOWxleekuigz5YCN5Zu+Ke+8m+WFs+mXre+8mueUqOW6k+WGhSBnb2xkNuKApiDmoIforrAoMD3pppblhYXlnKgsMT3lt7LnlKjotbAy5YCNKQogICAgaWYgZmlyc3RfcmVjaGFyZ2VfZG91YmxlX29wZW4gdGhlbgogICAgICAgIHNlbGYuRGF0YVtJRF0uZG91YmxlLmdvbGQ2ID0gMAogICAgICAgIHNlbGYuRGF0YVtJRF0uZG91YmxlLmdvbGQzMCA9IDAKICAgICAgICBzZWxmLkRhdGFbSURdLmRvdWJsZS5nb2xkNjggPSAwCiAgICAgICAgc2VsZi5EYXRhW0lEXS5kb3VibGUuZ29sZDEyOCA9IDAKICAgICAgICBzZWxmLkRhdGFbSURdLmRvdWJsZS5nb2xkMzI4ID0gMAogICAgICAgIHNlbGYuRGF0YVtJRF0uZG91YmxlLmdvbGQ2NDggPSAwCiAgICAgICAgc2VsZi5EYXRhW0lEXS5kb3VibGUuZ29sZDEyODAgPSAwCiAgICBlbHNlCiAgICAgICAgc2VsZi5EYXRhW0lEXS5kb3VibGUuZ29sZDYgPSBkYXRhLmdvbGQ2CiAgICAgICAgc2VsZi5EYXRhW0lEXS5kb3VibGUuZ29sZDMwID0gZGF0YS5nb2xkMzAKICAgICAgICBzZWxmLkRhdGFbSURdLmRvdWJsZS5nb2xkNjggPSBkYXRhLmdvbGQ2OAogICAgICAgIHNlbGYuRGF0YVtJRF0uZG91YmxlLmdvbGQxMjggPSBkYXRhLmdvbGQxMjgKICAgICAgICBzZWxmLkRhdGFbSURdLmRvdWJsZS5nb2xkMzI4ID0gZGF0YS5nb2xkMzI4CiAgICAgICAgc2VsZi5EYXRhW0lEXS5kb3VibGUuZ29sZDY0OCA9IGRhdGEuZ29sZDY0OAogICAgICAgIHNlbGYuRGF0YVtJRF0uZG91YmxlLmdvbGQxMjgwID0gZGF0YS5nb2xkMTI4MAogICAgZW5kCiAgICBpZiBQZXJzb24gYW5kIFBlcnNvbi5BcHBseURhaWx5R2FtZUJvbnVzRnJvbVVzZXIgdGhlbgogICAgICAgIFBlcnNvbjpBcHBseURhaWx5R2FtZUJvbnVzRnJvbVVzZXIoSUQsIGRhdGEpCiAgICBlbmQKICAgIC0tIOmAieS6uiBVSSDlj6/og73mr5QgL3VzZXIvbG9naW4g5pep5byA77ya5Yiw6LSm5ZCO5Yi35paw5pyI5Y2hL+Wto+WNoeWFjei0ueaho+S9jQogICAgaWYgU2VsZWN0SGVybyBhbmQgU2VsZWN0SGVyby5PblNob3BEYXRhVXBkYXRlZCB0aGVuCiAgICAgICAgU2VsZWN0SGVybzpPblNob3BEYXRhVXBkYXRlZChJRCkKICAgIGVuZAplbmQKCi0tIOWQjOatpeacjeWKoeerryBjYXJkIOihqOaVsOaNruWIsOWxgOWGhSBTaG9wLkRhdGFbSURdLmNhcmQKZnVuY3Rpb24gU2hvcDpTZXRDYXJkU2VydmVyRGF0YShJRCwgZGF0YSkKICAgIGlmIG5vdCBJRCBvciBub3QgZGF0YSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGNhcmQgPSBzZWxmLkRhdGFbSURdIGFuZCBzZWxmLkRhdGFbSURdLmNhcmQKICAgIGlmIG5vdCBjYXJkIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgZGF0YS5zdGF0ZSB+PSBuaWwgdGhlbiBjYXJkLnN0YXRlID0gZGF0YS5zdGF0ZSBlbmQKICAgIGlmIGRhdGEuZXhwIH49IG5pbCB0aGVuIGNhcmQuZXhwID0gZGF0YS5leHAgZW5kCiAgICBpZiBkYXRhLmdldF9sZXZlbCB+PSBuaWwgdGhlbiBjYXJkLmdldF9sZXZlbCA9IGRhdGEuZ2V0X2xldmVsIGVuZAogICAgaWYgZGF0YS5nZXRfbGV2ZWxfcHJlbWl1bSB+PSBuaWwgdGhlbiBjYXJkLmdldF9sZXZlbF9wcmVtaXVtID0gZGF0YS5nZXRfbGV2ZWxfcHJlbWl1bSBlbmQKICAgIGlmIGRhdGEuZGF5Z2FtZWNvdW50IH49IG5pbCB0aGVuIGNhcmQuZGF5Z2FtZWNvdW50ID0gZGF0YS5kYXlnYW1lY291bnQgZW5kCiAgICBpZiBkYXRhLmRheWtpbGxjb3VudCB+PSBuaWwgdGhlbiBjYXJkLmRheWtpbGxjb3VudCA9IGRhdGEuZGF5a2lsbGNvdW50IGVuZAogICAgaWYgZGF0YS5kYXl0b3AxY291bnQgfj0gbmlsIHRoZW4gY2FyZC5kYXl0b3AxY291bnQgPSBkYXRhLmRheXRvcDFjb3VudCBlbmQKICAgIGlmIGRhdGEud2Vla3RvcDFjb3VudCB+PSBuaWwgdGhlbiBjYXJkLndlZWt0b3AxY291bnQgPSBkYXRhLndlZWt0b3AxY291bnQgZW5kCiAgICBpZiBkYXRhLndlZWtraWxsY291bnQgfj0gbmlsIHRoZW4gY2FyZC53ZWVra2lsbGNvdW50ID0gZGF0YS53ZWVra2lsbGNvdW50IGVuZAogICAgaWYgZGF0YS53ZWVrbWFwMXRvcDEgfj0gbmlsIHRoZW4gY2FyZC53ZWVrbWFwMXRvcDEgPSBkYXRhLndlZWttYXAxdG9wMSBlbmQKICAgIGlmIGRhdGEud2Vla21hcDJ0b3AxIH49IG5pbCB0aGVuIGNhcmQud2Vla21hcDJ0b3AxID0gZGF0YS53ZWVrbWFwMnRvcDEgZW5kCiAgICBpZiBkYXRhLndlZWttYXAzdG9wMSB+PSBuaWwgdGhlbiBjYXJkLndlZWttYXAzdG9wMSA9IGRhdGEud2Vla21hcDN0b3AxIGVuZAogICAgaWYgZGF0YS50YXNrZGF5MSB+PSBuaWwgdGhlbiBjYXJkLnRhc2tkYXkxID0gZGF0YS50YXNrZGF5MSBlbmQKICAgIGlmIGRhdGEudGFza2RheTIgfj0gbmlsIHRoZW4gY2FyZC50YXNrZGF5MiA9IGRhdGEudGFza2RheTIgZW5kCiAgICBpZiBkYXRhLnRhc2tkYXkzIH49IG5pbCB0aGVuIGNhcmQudGFza2RheTMgPSBkYXRhLnRhc2tkYXkzIGVuZAogICAgaWYgZGF0YS50YXNrZGF5NCB+PSBuaWwgdGhlbiBjYXJkLnRhc2tkYXk0ID0gZGF0YS50YXNrZGF5NCBlbmQKICAgIGlmIGRhdGEudGFza2RheTUgfj0gbmlsIHRoZW4gY2FyZC50YXNrZGF5NSA9IGRhdGEudGFza2RheTUgZW5kCiAgICBpZiBkYXRhLnRhc2tkYXk2IH49IG5pbCB0aGVuIGNhcmQudGFza2RheTYgPSBkYXRhLnRhc2tkYXk2IGVuZAogICAgaWYgZGF0YS50YXNrd2VlZDEgfj0gbmlsIHRoZW4gY2FyZC50YXNrd2VlZDEgPSBkYXRhLnRhc2t3ZWVkMSBlbmQKICAgIGlmIGRhdGEudGFza3dlZWQyIH49IG5pbCB0aGVuIGNhcmQudGFza3dlZWQyID0gZGF0YS50YXNrd2VlZDIgZW5kCiAgICBpZiBkYXRhLnRhc2t3ZWVkMyB+PSBuaWwgdGhlbiBjYXJkLnRhc2t3ZWVkMyA9IGRhdGEudGFza3dlZWQzIGVuZAogICAgaWYgZGF0YS50YXNrd2VlZDQgfj0gbmlsIHRoZW4gY2FyZC50YXNrd2VlZDQgPSBkYXRhLnRhc2t3ZWVkNCBlbmQKICAgIGlmIGRhdGEudGFza3dlZWQ1IH49IG5pbCB0aGVuIGNhcmQudGFza3dlZWQ1ID0gZGF0YS50YXNrd2VlZDUgZW5kCiAgICBpZiBkYXRhLnRhc2t3ZWVkNiB+PSBuaWwgdGhlbiBjYXJkLnRhc2t3ZWVkNiA9IGRhdGEudGFza3dlZWQ2IGVuZAogICAgc2VsZjpTZW5kRGF0YShJRCkKZW5kCgotLS0g5bqU55So5pyN5Yqh56uv6YCa6KGM6K+B6LWb5a2j54Ot5pu05paw55qE56ew5Y+3L+eJueaViOWxleekuu+8iOmHkeixhuinhOWImeS4jeWPmO+8iQotLS0g5pyN5Yqh56uv5Y+q5LiL5Y+RIGl0ZW1LZXnvvJvlm77moIfotbDmnKzlnLAgSXRlbUxpc3TvvIjkuI7npLzljIUgaW1hZ2Vfa2V5IOWQjOeQhu+8iQpmdW5jdGlvbiBTaG9wOkFwcGx5UGFzc0Nvc21ldGljcyhJRCwgY29zbWV0aWNzKQogICAgaWYgbm90IGNvc21ldGljcyBvciB0eXBlKGNvc21ldGljcykgfj0gInRhYmxlIiB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGZ1bmN0aW9uIHBpY2sodCwgYSwgYiwgYykKICAgICAgICBpZiBub3QgdCB0aGVuCiAgICAgICAgICAgIHJldHVybiBuaWwKICAgICAgICBlbmQKICAgICAgICByZXR1cm4gdFthXSBvciB0W2JdIG9yIHRbY10KICAgIGVuZAogICAgbG9jYWwgTE9DQUxfU0VBU09OID0gewogICAgICAgIGxlZ2FjeSA9IHsKICAgICAgICAgICAgZnJlZSA9ICJ0aXRsZV9jbHh6IiwKICAgICAgICAgICAgcHJlbSA9ICJ0aXRsZV9oc2JoIiwKICAgICAgICAgICAgZnggPSAiYXR0YWNrX2x4aHMiLAogICAgICAgICAgICBraW5kID0gImF0dGFjayIsCiAgICAgICAgICAgIGRlYWRsaW5lID0gIuaIquatouaXpeacn++8mjIwMjYuMDguMDciLAogICAgICAgIH0sCiAgICAgICAgWyIyMDI2LTA4Il0gPSB7CiAgICAgICAgICAgIGZyZWUgPSAidGl0bGVfY2xscyIsCiAgICAgICAgICAgIHByZW0gPSAidGl0bGVfaGRsbSIsCiAgICAgICAgICAgIGZ4ID0gImVmZmVjdF9senF6IiwKICAgICAgICAgICAga2luZCA9ICJlZmZlY3QiLAogICAgICAgICAgICBkZWFkbGluZSA9ICLmiKrmraLml6XmnJ/vvJoyMDI2LjA5LjA3IiwKICAgICAgICB9LAogICAgICAgIFsiMjAyNi0wOSJdID0gewogICAgICAgICAgICBmcmVlID0gInRpdGxlX2NsbXkiLAogICAgICAgICAgICBwcmVtID0gInRpdGxlX3h4cWMiLAogICAgICAgICAgICBmeCA9ICJhdHRhY2tfYXR2MyIsCiAgICAgICAgICAgIGtpbmQgPSAiYXR0YWNrIiwKICAgICAgICAgICAgZGVhZGxpbmUgPSAi5oiq5q2i5pel5pyf77yaMjAyNi4xMC4wNyIsCiAgICAgICAgfSwKICAgICAgICBbIjIwMjYtMTAiXSA9IHsKICAgICAgICAgICAgZnJlZSA9ICJ0aXRsZV9jbHp3IiwKICAgICAgICAgICAgcHJlbSA9ICJ0aXRsZV9yenpsIiwKICAgICAgICAgICAgZnggPSAiZWZmZWN0X3R4aGIiLAogICAgICAgICAgICBraW5kID0gImVmZmVjdCIsCiAgICAgICAgICAgIGRlYWRsaW5lID0gIuaIquatouaXpeacn++8mjIwMjYuMTEuMDciLAogICAgICAgIH0sCiAgICB9CiAgICBsb2NhbCBzZWFzb25JZCA9IHBpY2soY29zbWV0aWNzLCAic2Vhc29uSWQiLCAic2Vhc29uX2lkIiwgInNlYXNvbmlkIikKICAgIGxvY2FsIGxvY2FsUm93ID0gc2Vhc29uSWQgYW5kIExPQ0FMX1NFQVNPTlt0b3N0cmluZyhzZWFzb25JZCldIG9yIG5pbAogICAgLS0g5omB5bmz6ZSu5LyY5YWI77yb57y655yB5pe255So5pys5Zyw6LWb5a2j6KGo6KGl5YWo77yI5LiO56S85YyFIGltYWdlX2tleSDlkIznkIbvvIkKICAgIGxvY2FsIGZyZWVLZXkgPSBjb3NtZXRpY3MuZnJlZV90aXRsZV9rZXkgb3IgY29zbWV0aWNzLnBhc3NfZnJlZV90aXRsZV9rZXkKICAgICAgICBvciAobG9jYWxSb3cgYW5kIGxvY2FsUm93LmZyZWUpCiAgICBsb2NhbCBwcmVtS2V5ID0gY29zbWV0aWNzLnByZW1pdW1fdGl0bGVfa2V5IG9yIGNvc21ldGljcy5wYXNzX3ByZW1pdW1fdGl0bGVfa2V5CiAgICAgICAgb3IgKGxvY2FsUm93IGFuZCBsb2NhbFJvdy5wcmVtKQogICAgbG9jYWwgZnhLZXkgPSBjb3NtZXRpY3MucHJlbWl1bV9lZmZlY3Rfa2V5IG9yIGNvc21ldGljcy5wYXNzX3ByZW1pdW1fZWZmZWN0X2tleQogICAgICAgIG9yIChsb2NhbFJvdyBhbmQgbG9jYWxSb3cuZngpCiAgICBsb2NhbCBmcmVlVGl0bGUgPSBwaWNrKGNvc21ldGljcywgImZyZWVUaXRsZSIsICJmcmVlX3RpdGxlIiwgImZyZWV0aXRsZSIpCiAgICBsb2NhbCBwcmVtVGl0bGUgPSBwaWNrKGNvc21ldGljcywgInByZW1pdW1UaXRsZSIsICJwcmVtaXVtX3RpdGxlIiwgInByZW1pdW10aXRsZSIpCiAgICBsb2NhbCBwcmVtRnggPSBwaWNrKGNvc21ldGljcywgInByZW1pdW1FZmZlY3QiLCAicHJlbWl1bV9lZmZlY3QiLCAicHJlbWl1bWVmZmVjdCIpCiAgICBpZiBmcmVlS2V5IHRoZW4KICAgICAgICBmcmVlVGl0bGUgPSBmcmVlVGl0bGUgb3Ige30KICAgICAgICBmcmVlVGl0bGUuaXRlbUtleSA9IGZyZWVLZXkKICAgICAgICBmcmVlVGl0bGUubGV2ZWwgPSB0b251bWJlcihjb3NtZXRpY3MuZnJlZV90aXRsZV9sZXZlbCkgb3IgZnJlZVRpdGxlLmxldmVsIG9yIDMwCiAgICAgICAgZnJlZVRpdGxlLm5hbWUgPSBjb3NtZXRpY3MuZnJlZV90aXRsZV9uYW1lIG9yIGZyZWVUaXRsZS5uYW1lCiAgICBlbmQKICAgIGlmIHByZW1LZXkgdGhlbgogICAgICAgIHByZW1UaXRsZSA9IHByZW1UaXRsZSBvciB7fQogICAgICAgIHByZW1UaXRsZS5pdGVtS2V5ID0gcHJlbUtleQogICAgICAgIHByZW1UaXRsZS5sZXZlbCA9IHRvbnVtYmVyKGNvc21ldGljcy5wcmVtaXVtX3RpdGxlX2xldmVsKSBvciBwcmVtVGl0bGUubGV2ZWwgb3IgMzAKICAgICAgICBwcmVtVGl0bGUubmFtZSA9IGNvc21ldGljcy5wcmVtaXVtX3RpdGxlX25hbWUgb3IgcHJlbVRpdGxlLm5hbWUKICAgIGVuZAogICAgaWYgZnhLZXkgdGhlbgogICAgICAgIHByZW1GeCA9IHByZW1GeCBvciB7fQogICAgICAgIHByZW1GeC5pdGVtS2V5ID0gZnhLZXkKICAgICAgICBwcmVtRngubGV2ZWwgPSB0b251bWJlcihjb3NtZXRpY3MucHJlbWl1bV9lZmZlY3RfbGV2ZWwpIG9yIHByZW1GeC5sZXZlbCBvciAxCiAgICAgICAgcHJlbUZ4Lm5hbWUgPSBjb3NtZXRpY3MucHJlbWl1bV9lZmZlY3RfbmFtZSBvciBwcmVtRngubmFtZQogICAgICAgIHByZW1GeC5raW5kID0gY29zbWV0aWNzLnByZW1pdW1fZWZmZWN0X2tpbmQgb3IgcHJlbUZ4LmtpbmQKICAgICAgICAgICAgb3IgKGxvY2FsUm93IGFuZCBsb2NhbFJvdy5raW5kKSBvciAiYXR0YWNrIgogICAgZW5kCiAgICAtLSDku47mnKzlnLAgSXRlbUxpc3Qg6KGl5ZCN56ew77yI5LiN5L6d6LWW5pyN5Yqh56uvIGljb27vvIkKICAgIGxvY2FsIGZ1bmN0aW9uIGZpbGxfZnJvbV9pdGVtbGlzdChlbnRyeSkKICAgICAgICBpZiBub3QgZW50cnkgdGhlbgogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgICAgICBsb2NhbCBpdGVtS2V5ID0gZW50cnkuaXRlbUtleSBvciBlbnRyeS5pdGVtX2tleQogICAgICAgIGlmIG5vdCBpdGVtS2V5IHRoZW4KICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgZW50cnkuaXRlbUtleSA9IGl0ZW1LZXkKICAgICAgICBsb2NhbCBtZXRhID0gc2VsZi5JdGVtTGlzdCBhbmQgc2VsZi5JdGVtTGlzdFtpdGVtS2V5XQogICAgICAgIGlmIG1ldGEgdGhlbgogICAgICAgICAgICBpZiAobm90IGVudHJ5Lm5hbWUgb3IgZW50cnkubmFtZSA9PSAiIikgYW5kIG1ldGEubmFtZSB0aGVuCiAgICAgICAgICAgICAgICBlbnRyeS5uYW1lID0gbWV0YS5uYW1lCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCiAgICBmaWxsX2Zyb21faXRlbWxpc3QoZnJlZVRpdGxlKQogICAgZmlsbF9mcm9tX2l0ZW1saXN0KHByZW1UaXRsZSkKICAgIGZpbGxfZnJvbV9pdGVtbGlzdChwcmVtRngpCgogICAgY29zbWV0aWNzLmZyZWVUaXRsZSA9IGZyZWVUaXRsZQogICAgY29zbWV0aWNzLnByZW1pdW1UaXRsZSA9IHByZW1UaXRsZQogICAgY29zbWV0aWNzLnByZW1pdW1FZmZlY3QgPSBwcmVtRngKICAgIGNvc21ldGljcy5zZWFzb25JZCA9IHNlYXNvbklkIG9yIGNvc21ldGljcy5zZWFzb25JZAogICAgY29zbWV0aWNzLnNlYXNvbl9pZCA9IGNvc21ldGljcy5zZWFzb25JZAogICAgY29zbWV0aWNzLmRlYWRsaW5lVGV4dCA9IHBpY2soY29zbWV0aWNzLCAiZGVhZGxpbmVUZXh0IiwgImRlYWRsaW5lX3RleHQiLCAiZGVhZGxpbmV0ZXh0IikKICAgICAgICBvciAobG9jYWxSb3cgYW5kIGxvY2FsUm93LmRlYWRsaW5lKQogICAgICAgIG9yIGNvc21ldGljcy5kZWFkbGluZVRleHQKICAgIGNvc21ldGljcy5kZWFkbGluZV90ZXh0ID0gY29zbWV0aWNzLmRlYWRsaW5lVGV4dAogICAgY29zbWV0aWNzLmZyZWVfdGl0bGVfa2V5ID0gZnJlZVRpdGxlIGFuZCBmcmVlVGl0bGUuaXRlbUtleQogICAgY29zbWV0aWNzLnByZW1pdW1fdGl0bGVfa2V5ID0gcHJlbVRpdGxlIGFuZCBwcmVtVGl0bGUuaXRlbUtleQogICAgY29zbWV0aWNzLnByZW1pdW1fZWZmZWN0X2tleSA9IHByZW1GeCBhbmQgcHJlbUZ4Lml0ZW1LZXkKICAgIGNvc21ldGljcy5wcmVtaXVtX2VmZmVjdF9raW5kID0gcHJlbUZ4IGFuZCBwcmVtRngua2luZAoKICAgIHNlbGYuUGFzc0Nvc21ldGljcyA9IGNvc21ldGljcwogICAgaWYgc2VsZi5EYXRhW0lEXSB0aGVuCiAgICAgICAgc2VsZi5EYXRhW0lEXS5wYXNzX2Nvc21ldGljcyA9IGNvc21ldGljcwogICAgZW5kCgogICAgbG9jYWwgc3RhdGljID0gc2VsZi5DYXJkU3RhdGljRGF0YQogICAgaWYgc3RhdGljIGFuZCBzdGF0aWMuZnJlZSBhbmQgc3RhdGljLnByZW1pdW0gdGhlbgogICAgICAgIGlmIGZyZWVUaXRsZSBhbmQgZnJlZVRpdGxlLm5hbWUgYW5kIGZyZWVUaXRsZS5sZXZlbCB0aGVuCiAgICAgICAgICAgIHN0YXRpYy5mcmVlLnRpdGxlX2J5X2xldmVsID0gewogICAgICAgICAgICAgICAgW3RvbnVtYmVyKGZyZWVUaXRsZS5sZXZlbCkgb3IgMzBdID0gZnJlZVRpdGxlLm5hbWUsCiAgICAgICAgICAgIH0KICAgICAgICBlbmQKICAgICAgICBpZiBwcmVtVGl0bGUgYW5kIHByZW1UaXRsZS5uYW1lIGFuZCBwcmVtVGl0bGUubGV2ZWwgdGhlbgogICAgICAgICAgICBzdGF0aWMucHJlbWl1bS50aXRsZV9ieV9sZXZlbCA9IHsKICAgICAgICAgICAgICAgIFt0b251bWJlcihwcmVtVGl0bGUubGV2ZWwpIG9yIDMwXSA9IHByZW1UaXRsZS5uYW1lLAogICAgICAgICAgICB9CiAgICAgICAgZW5kCiAgICAgICAgaWYgcHJlbUZ4IGFuZCBwcmVtRngubmFtZSBhbmQgcHJlbUZ4LmxldmVsIHRoZW4KICAgICAgICAgICAgc3RhdGljLnByZW1pdW0uZWZmZWN0X2J5X2xldmVsID0gewogICAgICAgICAgICAgICAgW3RvbnVtYmVyKHByZW1GeC5sZXZlbCkgb3IgMV0gPSBwcmVtRngubmFtZSwKICAgICAgICAgICAgfQogICAgICAgIGVuZAogICAgZW5kCgogICAgLS0g54us56uL5bCP5YyF5o6o6YCB77yI6YG/5YWN5aGe6L+b6LaF5aSnIFVJX1Nob3Ag6KKr5oiq5pat77yJCiAgICBpZiBzZWxmLlB1c2hQYXNzU2Vhc29uVG9DbGllbnQgdGhlbgogICAgICAgIHNlbGY6UHVzaFBhc3NTZWFzb25Ub0NsaWVudChJRCkKICAgIGVuZAplbmQKCi0tLSDku4XmjqjpgIHotZvlraPplK7nu5npgJrooYzor4EgVUnvvIjlsI8gcGF5bG9hZCArIE5ldFRhYmxl77yJCmZ1bmN0aW9uIFNob3A6UHVzaFBhc3NTZWFzb25Ub0NsaWVudChJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGNvc21ldGljcyA9IHNlbGYuUGFzc0Nvc21ldGljcwogICAgICAgIG9yIChzZWxmLkRhdGFbSURdIGFuZCBzZWxmLkRhdGFbSURdLnBhc3NfY29zbWV0aWNzKQogICAgaWYgbm90IGNvc21ldGljcyBvciB0eXBlKGNvc21ldGljcykgfj0gInRhYmxlIiB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIHNlYXNvbl9pZCA9IHRvc3RyaW5nKAogICAgICAgIGNvc21ldGljcy5zZWFzb25faWQgb3IgY29zbWV0aWNzLnNlYXNvbklkIG9yIGNvc21ldGljcy5zZWFzb25pZCBvciAibGVnYWN5IgogICAgKQogICAgbG9jYWwgZnJlZV9rZXkgPSB0b3N0cmluZygKICAgICAgICBjb3NtZXRpY3MuZnJlZV90aXRsZV9rZXkKICAgICAgICAgICAgb3IgKGNvc21ldGljcy5mcmVlVGl0bGUgYW5kIGNvc21ldGljcy5mcmVlVGl0bGUuaXRlbUtleSkKICAgICAgICAgICAgb3IgIiIKICAgICkKICAgIGxvY2FsIHByZW1fa2V5ID0gdG9zdHJpbmcoCiAgICAgICAgY29zbWV0aWNzLnByZW1pdW1fdGl0bGVfa2V5CiAgICAgICAgICAgIG9yIChjb3NtZXRpY3MucHJlbWl1bVRpdGxlIGFuZCBjb3NtZXRpY3MucHJlbWl1bVRpdGxlLml0ZW1LZXkpCiAgICAgICAgICAgIG9yICIiCiAgICApCiAgICBsb2NhbCBmeF9rZXkgPSB0b3N0cmluZygKICAgICAgICBjb3NtZXRpY3MucHJlbWl1bV9lZmZlY3Rfa2V5CiAgICAgICAgICAgIG9yIChjb3NtZXRpY3MucHJlbWl1bUVmZmVjdCBhbmQgY29zbWV0aWNzLnByZW1pdW1FZmZlY3QuaXRlbUtleSkKICAgICAgICAgICAgb3IgIiIKICAgICkKICAgIGxvY2FsIGZ4X2tpbmQgPSB0b3N0cmluZygKICAgICAgICBjb3NtZXRpY3MucHJlbWl1bV9lZmZlY3Rfa2luZAogICAgICAgICAgICBvciAoY29zbWV0aWNzLnByZW1pdW1FZmZlY3QgYW5kIGNvc21ldGljcy5wcmVtaXVtRWZmZWN0LmtpbmQpCiAgICAgICAgICAgIG9yICJhdHRhY2siCiAgICApCiAgICBsb2NhbCBkZWFkbGluZV90ZXh0ID0gdG9zdHJpbmcoCiAgICAgICAgY29zbWV0aWNzLmRlYWRsaW5lX3RleHQgb3IgY29zbWV0aWNzLmRlYWRsaW5lVGV4dCBvciAiIgogICAgKQogICAgbG9jYWwgcGF5bG9hZCA9IHsKICAgICAgICBzZWFzb25faWQgPSBzZWFzb25faWQsCiAgICAgICAgZnJlZV90aXRsZV9rZXkgPSBmcmVlX2tleSwKICAgICAgICBwcmVtaXVtX3RpdGxlX2tleSA9IHByZW1fa2V5LAogICAgICAgIHByZW1pdW1fZWZmZWN0X2tleSA9IGZ4X2tleSwKICAgICAgICBwcmVtaXVtX2VmZmVjdF9raW5kID0gZnhfa2luZCwKICAgICAgICBkZWFkbGluZV90ZXh0ID0gZGVhZGxpbmVfdGV4dCwKICAgIH0KICAgIFV0aWw6U2VuZDJKc0lEKCJVSV9QYXNzU2Vhc29uIiwgcGF5bG9hZCwgSUQpCiAgICBpZiBDdXN0b21OZXRUYWJsZXMgdGhlbgogICAgICAgIEN1c3RvbU5ldFRhYmxlczpTZXRUYWJsZVZhbHVlKCJjbHJiX3Bhc3Nfc2Vhc29uIiwgdG9zdHJpbmcoSUQpLCBwYXlsb2FkKQogICAgZW5kCmVuZAo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+function Shop:OpenPage(ID)
+    self.Data[ID].page = true
+    self:SendData(ID)
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--- 打开通行证：先推本地缓存，再向服务端同步 card
+function Shop:OpenBattlePassPage(ID)
+    if not ID or not self.Data[ID] then
+        return
+    end
+    self.Data[ID].page = true
+    self:SendData(ID)
+    if self.PushPassSeasonToClient then
+        self:PushPassSeasonToClient(ID)
+    end
+    self:RefreshCard(ID)
+end
+
+function Shop:ClosePage(ID)
+    self.Data[ID].page = false
+    if self.FlushPendingOutBagLoadout then
+        self:FlushPendingOutBagLoadout(ID)
+    end
+    self:SendData(ID)
+end
+
+function Shop:SetShopServerData(ID, data, first_recharge_double_open)
+    if not ID or not data then
+        return
+    end
+    --print(data)
+    self.Data[ID].gold = data.gold
+    self.Data[ID].card1 = data.card1
+    self.Data[ID].card2 = data.card2
+    self.Data[ID].card1day = data.gold_day
+    self.Data[ID].card2day = data.card2_day
+    self.Data[ID].freeday = data.free_day
+    self.Data[ID].dw_free_day = data.dw_free_day ~= nil and data.dw_free_day or 1
+    self.Data[ID].dw_free_open = data.dw_free_open == true or data.dw_free_open == 1
+    if data.dw_free_event_status ~= nil then
+        self.Data[ID].dw_free_event_status = data.dw_free_event_status
+    end
+    self.Data[ID].dw_30_buy = data.dw_30_buy or 0
+    self.Data[ID].dw_68_buy = data.dw_68_buy or 0
+    self.Data[ID].dw_128_buy = data.dw_128_buy or 0
+    if HolidayPack and HolidayPack.OnShopDataUpdated then
+        HolidayPack:OnShopDataUpdated(ID)
+    end
+
+    if first_recharge_double_open == nil then
+        first_recharge_double_open = true
+    end
+    self.Data[ID].first_recharge_double_open = first_recharge_double_open
+
+    -- 全服无限首充开：各档按首充仍在展示(3倍图)；关闭：用库内 gold6… 标记(0=首充在,1=已用走2倍)
+    if first_recharge_double_open then
+        self.Data[ID].double.gold6 = 0
+        self.Data[ID].double.gold30 = 0
+        self.Data[ID].double.gold68 = 0
+        self.Data[ID].double.gold128 = 0
+        self.Data[ID].double.gold328 = 0
+        self.Data[ID].double.gold648 = 0
+        self.Data[ID].double.gold1280 = 0
+    else
+        self.Data[ID].double.gold6 = data.gold6
+        self.Data[ID].double.gold30 = data.gold30
+        self.Data[ID].double.gold68 = data.gold68
+        self.Data[ID].double.gold128 = data.gold128
+        self.Data[ID].double.gold328 = data.gold328
+        self.Data[ID].double.gold648 = data.gold648
+        self.Data[ID].double.gold1280 = data.gold1280
+    end
+    if Person and Person.ApplyDailyGameBonusFromUser then
+        Person:ApplyDailyGameBonusFromUser(ID, data)
+    end
+    -- 选人 UI 可能比 /user/login 早开：到账后刷新月卡/季卡免费档位
+    if SelectHero and SelectHero.OnShopDataUpdated then
+        SelectHero:OnShopDataUpdated(ID)
+    end
+end
+
+-- 同步服务端 card 表数据到局内 Shop.Data[ID].card
+function Shop:SetCardServerData(ID, data)
+    if not ID or not data then
+        return
+    end
+    local card = self.Data[ID] and self.Data[ID].card
+    if not card then
+        return
+    end
+    if data.state ~= nil then card.state = data.state end
+    if data.exp ~= nil then card.exp = data.exp end
+    if data.get_level ~= nil then card.get_level = data.get_level end
+    if data.get_level_premium ~= nil then card.get_level_premium = data.get_level_premium end
+    if data.daygamecount ~= nil then card.daygamecount = data.daygamecount end
+    if data.daykillcount ~= nil then card.daykillcount = data.daykillcount end
+    if data.daytop1count ~= nil then card.daytop1count = data.daytop1count end
+    if data.weektop1count ~= nil then card.weektop1count = data.weektop1count end
+    if data.weekkillcount ~= nil then card.weekkillcount = data.weekkillcount end
+    if data.weekmap1top1 ~= nil then card.weekmap1top1 = data.weekmap1top1 end
+    if data.weekmap2top1 ~= nil then card.weekmap2top1 = data.weekmap2top1 end
+    if data.weekmap3top1 ~= nil then card.weekmap3top1 = data.weekmap3top1 end
+    if data.taskday1 ~= nil then card.taskday1 = data.taskday1 end
+    if data.taskday2 ~= nil then card.taskday2 = data.taskday2 end
+    if data.taskday3 ~= nil then card.taskday3 = data.taskday3 end
+    if data.taskday4 ~= nil then card.taskday4 = data.taskday4 end
+    if data.taskday5 ~= nil then card.taskday5 = data.taskday5 end
+    if data.taskday6 ~= nil then card.taskday6 = data.taskday6 end
+    if data.taskweed1 ~= nil then card.taskweed1 = data.taskweed1 end
+    if data.taskweed2 ~= nil then card.taskweed2 = data.taskweed2 end
+    if data.taskweed3 ~= nil then card.taskweed3 = data.taskweed3 end
+    if data.taskweed4 ~= nil then card.taskweed4 = data.taskweed4 end
+    if data.taskweed5 ~= nil then card.taskweed5 = data.taskweed5 end
+    if data.taskweed6 ~= nil then card.taskweed6 = data.taskweed6 end
+    self:SendData(ID)
+end
+
+--- 应用服务端通行证赛季热更新的称号/特效展示（金豆规则不变）
+--- 服务端只下发 itemKey；图标走本地 ItemList（与礼包 image_key 同理）
+function Shop:ApplyPassCosmetics(ID, cosmetics)
+    if not cosmetics or type(cosmetics) ~= "table" then
+        return
+    end
+    local function pick(t, a, b, c)
+        if not t then
+            return nil
+        end
+        return t[a] or t[b] or t[c]
+    end
+    local LOCAL_SEASON = {
+        legacy = {
+            free = "title_clxz",
+            prem = "title_hsbh",
+            fx = "attack_lxhs",
+            kind = "attack",
+            deadline = "截止日期：2026.08.07",
+        },
+        ["2026-08"] = {
+            free = "title_clls",
+            prem = "title_hdlm",
+            fx = "effect_lzqz",
+            kind = "effect",
+            deadline = "截止日期：2026.09.07",
+        },
+        ["2026-09"] = {
+            free = "title_clmy",
+            prem = "title_xxqc",
+            fx = "attack_atv3",
+            kind = "attack",
+            deadline = "截止日期：2026.10.07",
+        },
+        ["2026-10"] = {
+            free = "title_clzw",
+            prem = "title_rzzl",
+            fx = "effect_txhb",
+            kind = "effect",
+            deadline = "截止日期：2026.11.07",
+        },
+    }
+    local seasonId = pick(cosmetics, "seasonId", "season_id", "seasonid")
+    local localRow = seasonId and LOCAL_SEASON[tostring(seasonId)] or nil
+    -- 扁平键优先；缺省时用本地赛季表补全（与礼包 image_key 同理）
+    local freeKey = cosmetics.free_title_key or cosmetics.pass_free_title_key
+        or (localRow and localRow.free)
+    local premKey = cosmetics.premium_title_key or cosmetics.pass_premium_title_key
+        or (localRow and localRow.prem)
+    local fxKey = cosmetics.premium_effect_key or cosmetics.pass_premium_effect_key
+        or (localRow and localRow.fx)
+    local freeTitle = pick(cosmetics, "freeTitle", "free_title", "freetitle")
+    local premTitle = pick(cosmetics, "premiumTitle", "premium_title", "premiumtitle")
+    local premFx = pick(cosmetics, "premiumEffect", "premium_effect", "premiumeffect")
+    if freeKey then
+        freeTitle = freeTitle or {}
+        freeTitle.itemKey = freeKey
+        freeTitle.level = tonumber(cosmetics.free_title_level) or freeTitle.level or 30
+        freeTitle.name = cosmetics.free_title_name or freeTitle.name
+    end
+    if premKey then
+        premTitle = premTitle or {}
+        premTitle.itemKey = premKey
+        premTitle.level = tonumber(cosmetics.premium_title_level) or premTitle.level or 30
+        premTitle.name = cosmetics.premium_title_name or premTitle.name
+    end
+    if fxKey then
+        premFx = premFx or {}
+        premFx.itemKey = fxKey
+        premFx.level = tonumber(cosmetics.premium_effect_level) or premFx.level or 1
+        premFx.name = cosmetics.premium_effect_name or premFx.name
+        premFx.kind = cosmetics.premium_effect_kind or premFx.kind
+            or (localRow and localRow.kind) or "attack"
+    end
+    -- 从本地 ItemList 补名称（不依赖服务端 icon）
+    local function fill_from_itemlist(entry)
+        if not entry then
+            return
+        end
+        local itemKey = entry.itemKey or entry.item_key
+        if not itemKey then
+            return
+        end
+        entry.itemKey = itemKey
+        local meta = self.ItemList and self.ItemList[itemKey]
+        if meta then
+            if (not entry.name or entry.name == "") and meta.name then
+                entry.name = meta.name
+            end
+        end
+    end
+    fill_from_itemlist(freeTitle)
+    fill_from_itemlist(premTitle)
+    fill_from_itemlist(premFx)
+
+    cosmetics.freeTitle = freeTitle
+    cosmetics.premiumTitle = premTitle
+    cosmetics.premiumEffect = premFx
+    cosmetics.seasonId = seasonId or cosmetics.seasonId
+    cosmetics.season_id = cosmetics.seasonId
+    cosmetics.deadlineText = pick(cosmetics, "deadlineText", "deadline_text", "deadlinetext")
+        or (localRow and localRow.deadline)
+        or cosmetics.deadlineText
+    cosmetics.deadline_text = cosmetics.deadlineText
+    cosmetics.free_title_key = freeTitle and freeTitle.itemKey
+    cosmetics.premium_title_key = premTitle and premTitle.itemKey
+    cosmetics.premium_effect_key = premFx and premFx.itemKey
+    cosmetics.premium_effect_kind = premFx and premFx.kind
+
+    self.PassCosmetics = cosmetics
+    if self.Data[ID] then
+        self.Data[ID].pass_cosmetics = cosmetics
+    end
+
+    local static = self.CardStaticData
+    if static and static.free and static.premium then
+        if freeTitle and freeTitle.name and freeTitle.level then
+            static.free.title_by_level = {
+                [tonumber(freeTitle.level) or 30] = freeTitle.name,
+            }
+        end
+        if premTitle and premTitle.name and premTitle.level then
+            static.premium.title_by_level = {
+                [tonumber(premTitle.level) or 30] = premTitle.name,
+            }
+        end
+        if premFx and premFx.name and premFx.level then
+            static.premium.effect_by_level = {
+                [tonumber(premFx.level) or 1] = premFx.name,
+            }
+        end
+    end
+
+    -- 独立小包推送（避免塞进超大 UI_Shop 被截断）
+    if self.PushPassSeasonToClient then
+        self:PushPassSeasonToClient(ID)
+    end
+end
+
+--- 仅推送赛季键给通行证 UI（小 payload + NetTable）
+function Shop:PushPassSeasonToClient(ID)
+    if not ID then
+        return
+    end
+    local cosmetics = self.PassCosmetics
+        or (self.Data[ID] and self.Data[ID].pass_cosmetics)
+    if not cosmetics or type(cosmetics) ~= "table" then
+        return
+    end
+    local season_id = tostring(
+        cosmetics.season_id or cosmetics.seasonId or cosmetics.seasonid or "legacy"
+    )
+    local free_key = tostring(
+        cosmetics.free_title_key
+            or (cosmetics.freeTitle and cosmetics.freeTitle.itemKey)
+            or ""
+    )
+    local prem_key = tostring(
+        cosmetics.premium_title_key
+            or (cosmetics.premiumTitle and cosmetics.premiumTitle.itemKey)
+            or ""
+    )
+    local fx_key = tostring(
+        cosmetics.premium_effect_key
+            or (cosmetics.premiumEffect and cosmetics.premiumEffect.itemKey)
+            or ""
+    )
+    local fx_kind = tostring(
+        cosmetics.premium_effect_kind
+            or (cosmetics.premiumEffect and cosmetics.premiumEffect.kind)
+            or "attack"
+    )
+    local deadline_text = tostring(
+        cosmetics.deadline_text or cosmetics.deadlineText or ""
+    )
+    local payload = {
+        season_id = season_id,
+        free_title_key = free_key,
+        premium_title_key = prem_key,
+        premium_effect_key = fx_key,
+        premium_effect_kind = fx_kind,
+        deadline_text = deadline_text,
+    }
+    Util:Send2JsID("UI_PassSeason", payload, ID)
+    if CustomNetTables then
+        CustomNetTables:SetTableValue("clrb_pass_season", tostring(ID), payload)
+    end
+end

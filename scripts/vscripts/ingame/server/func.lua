@@ -8,22 +8,96 @@
 ]]
 
 
-local encoded=[[LS3lpoLmnpzlnKjmuLjmiI/nu5PnrpfkuYvliY3vvIzmiYDmnInnjqnlrrblhajpg6jmjonnur/vvIzlubbkuJTmmK/pnZ7kurrmnLrlsYDvvIzlsLHov5Tov5jnjqnlrrbmnKzlsYDmtojogJfnmoTmiYDmnInosYblrZDvvIzvvIjmraTmlrnms5XlnKjnoa7orqTmiYDmnInnjqnlrrbmjonnur/lkI7lj6rmiafooYzkuIDmrKHvvIkKZnVuY3Rpb24gU2VydmVyOlJldHVybkFsbEdvbGQoKQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCgogICAgaWYgbm90IE1haW5HYW1lIG9yIG5vdCBNYWluR2FtZS5EYXRhIG9yIE1haW5HYW1lLkRhdGEub3ZlciA9PSB0cnVlIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgbm90IEluaXRQbGF5ZXIgb3Igbm90IEluaXRQbGF5ZXIuUHVibGljIG9yIG5vdCBJbml0UGxheWVyLlB1YmxpYy5wbGF5ZXJzIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgbm90IFNob3Agb3Igbm90IFNob3AuRGF0YSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBsb2NhbCBhbnlfYm90ID0gZmFsc2UKICAgIGxvY2FsIGh1bWFuX2lkcyA9IHt9CiAgICBmb3IgXywgcm93IGluIHBhaXJzKEluaXRQbGF5ZXIuUHVibGljLnBsYXllcnMpIGRvCiAgICAgICAgaWYgcm93IGFuZCByb3cuaWQgfj0gbmlsIGFuZCB0eXBlKHJvdy5pZCkgPT0gIm51bWJlciIgdGhlbgogICAgICAgICAgICBpZiByb3cuYm90IHRoZW4KICAgICAgICAgICAgICAgIGFueV9ib3QgPSB0cnVlCiAgICAgICAgICAgIGVsc2UKICAgICAgICAgICAgICAgIGh1bWFuX2lkc1sjaHVtYW5faWRzICsgMV0gPSByb3cuaWQKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQKCiAgICAtLSDpnZ7kurrmnLrlsYDvvJrmnKzlsYDml6Dku7vkvZUgYm90IOanveS9jQogICAgaWYgYW55X2JvdCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmICNodW1hbl9pZHMgPT0gMCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIC0tIOWFqOmDqOecn+S6uueOqeWutuWdh+S4jeWcqOe6v++8iENPTk5FQ1RFRCDop4bkuLrku43lnKjnur/vvIkKICAgIGZvciBfLCBoaWQgaW4gaXBhaXJzKGh1bWFuX2lkcykgZG8KICAgICAgICBpZiBVdGlsOklEMklmT25saW5lKGhpZCkgdGhlbgogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgIGVuZAogICAgaWYgc2VsZi5fcmV0dXJuX2FsbF9nb2xkX2RvbmUgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBmb3IgXywgaGlkIGluIGlwYWlycyhodW1hbl9pZHMpIGRvCiAgICAgICAgbG9jYWwgc2QgPSBTaG9wLkRhdGFbaGlkXQogICAgICAgIGlmIHNkIHRoZW4KICAgICAgICAgICAgbG9jYWwgY29zdCA9IHRvbnVtYmVyKHNkLmNvc3QpIG9yIDAKICAgICAgICAgICAgaWYgY29zdCA+IDAgdGhlbgogICAgICAgICAgICAgICAgY29zdCA9IG1hdGguZmxvb3IoY29zdCArIDAuNSkKICAgICAgICAgICAgICAgIHNkLmdvbGQgPSAodG9udW1iZXIoc2QuZ29sZCkgb3IgMCkgKyBjb3N0CiAgICAgICAgICAgICAgICBzZC5jb3N0ID0gMAogICAgICAgICAgICAgICAgU2hvcDpTeW5jR29sZChoaWQpCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCiAgICBzZWxmLl9yZXR1cm5fYWxsX2dvbGRfZG9uZSA9IHRydWUKCiAgICAtLSDkuIrkvKDnroDmiqXvvJpTa2lsbC5Ta2lsbDEg5qe95L2N5Lit55qEIGRvdGEg5oqA6IO9IGlk77ybbWovc3o96a2U5pm244CB56We5p2WIDAvMQogICAgdGFibGUuc29ydChodW1hbl9pZHMpCiAgICBsb2NhbCBzZWdzID0geyAiW0dhbWVCcmVha10iIH0KICAgIGZvciBfLCBoaWQgaW4gaXBhaXJzKGh1bWFuX2lkcykgZG8KICAgICAgICBsb2NhbCBtaiA9IDAKICAgICAgICBsb2NhbCBzeiA9IDAKICAgICAgICBsb2NhbCBoZXJvID0gSGVyb0RhdGEgYW5kIEhlcm9EYXRhLkdldEhlcm8gYW5kIEhlcm9EYXRhOkdldEhlcm8oaGlkKQogICAgICAgIGlmIGhlcm8gYW5kIG5vdCBoZXJvOklzTnVsbCgpIHRoZW4KICAgICAgICAgICAgaWYgaGVybzpIYXNNb2RpZmllcigibW9kaWZpZXJfaXRlbV9hZ2hhbmltc19zaGFyZCIpIHRoZW4KICAgICAgICAgICAgICAgIG1qID0gMQogICAgICAgICAgICBlbmQKICAgICAgICAgICAgaWYgaGVybzpIYXNNb2RpZmllcigibW9kaWZpZXJfaXRlbV91bHRpbWF0ZV9zY2VwdGVyIikgdGhlbgogICAgICAgICAgICAgICAgc3ogPSAxCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgICAgIGxvY2FsIGlkcyA9IHt9CiAgICAgICAgbG9jYWwgczEgPSBTa2lsbCBhbmQgU2tpbGwuRGF0YSBhbmQgU2tpbGwuRGF0YVtoaWRdIGFuZCBTa2lsbC5EYXRhW2hpZF0uU2tpbGwxCiAgICAgICAgaWYgczEgdGhlbgogICAgICAgICAgICBmb3IgXywga2V5IGluIGlwYWlycyh7ICJzbG90XzEiLCAic2xvdF8yIiwgInNsb3RfMyIsICJzbG90XzQiIH0pIGRvCiAgICAgICAgICAgICAgICBsb2NhbCBzbCA9IHMxW2tleV0KICAgICAgICAgICAgICAgIGlmIHNsIGFuZCBzbC5pZCB+PSBuaWwgdGhlbgogICAgICAgICAgICAgICAgICAgIGxvY2FsIGlkbiA9IHRvbnVtYmVyKHNsLmlkKQogICAgICAgICAgICAgICAgICAgIGlmIGlkbiBhbmQgaWRuID4gLTEgdGhlbgogICAgICAgICAgICAgICAgICAgICAgICBpZHNbI2lkcyArIDFdID0gdG9zdHJpbmcoaWRuKQogICAgICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgICAgIGxvY2FsIGlkX3N0ciA9ICNpZHMgPiAwIGFuZCB0YWJsZS5jb25jYXQoaWRzLCAiLCIpIG9yICIiCiAgICAgICAgbG9jYWwgdGFpbCA9IGlkX3N0ciB+PSAiIiBhbmQgKCIgIiAuLiBpZF9zdHIpIG9yICIiCiAgICAgICAgc2Vnc1sjc2VncyArIDFdID0gc3RyaW5nLmZvcm1hdCgicCVkIG1qJWQgc3olZCVzIiwgaGlkLCBtaiwgc3osIHRhaWwpCiAgICBlbmQKICAgIGxvY2FsIGVycl90ZXh0ID0gdGFibGUuY29uY2F0KHNlZ3MsICIgIikKICAgIFNlcnZlcjpTZW5kRXJyb3IoZXJyX3RleHQsICJHYW1lQnJlYWsiKQplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+--如果在游戏结算之前，所有玩家全部掉线，并且是非人机局，就返还玩家本局消耗的所有豆子，（此方法在确认所有玩家掉线后只执行一次）
+function Server:ReturnAllGold()
+    if not IsServer() then
+        return
+    end
+
+    if not MainGame or not MainGame.Data or MainGame.Data.over == true then
+        return
+    end
+    if not InitPlayer or not InitPlayer.Public or not InitPlayer.Public.players then
+        return
+    end
+    if not Shop or not Shop.Data then
+        return
+    end
+
+    local any_bot = false
+    local human_ids = {}
+    for _, row in pairs(InitPlayer.Public.players) do
+        if row and row.id ~= nil and type(row.id) == "number" then
+            if row.bot then
+                any_bot = true
+            else
+                human_ids[#human_ids + 1] = row.id
+            end
+        end
+    end
+
+    -- 非人机局：本局无任何 bot 槽位
+    if any_bot then
+        return
+    end
+    if #human_ids == 0 then
+        return
+    end
+    -- 全部真人玩家均不在线（CONNECTED 视为仍在线）
+    for _, hid in ipairs(human_ids) do
+        if Util:ID2IfOnline(hid) then
+            return
+        end
+    end
+    if self._return_all_gold_done then
+        return
+    end
+    for _, hid in ipairs(human_ids) do
+        local sd = Shop.Data[hid]
+        if sd then
+            local cost = tonumber(sd.cost) or 0
+            if cost > 0 then
+                cost = math.floor(cost + 0.5)
+                sd.gold = (tonumber(sd.gold) or 0) + cost
+                sd.cost = 0
+                Shop:SyncGold(hid)
+            end
+        end
+    end
+    self._return_all_gold_done = true
+
+    -- 上传简报：Skill.Skill1 槽位中的 dota 技能 id；mj/sz=魔晶、神杖 0/1
+    table.sort(human_ids)
+    local segs = { "[GameBreak]" }
+    for _, hid in ipairs(human_ids) do
+        local mj = 0
+        local sz = 0
+        local hero = HeroData and HeroData.GetHero and HeroData:GetHero(hid)
+        if hero and not hero:IsNull() then
+            if hero:HasModifier("modifier_item_aghanims_shard") then
+                mj = 1
+            end
+            if hero:HasModifier("modifier_item_ultimate_scepter") then
+                sz = 1
+            end
+        end
+        local ids = {}
+        local s1 = Skill and Skill.Data and Skill.Data[hid] and Skill.Data[hid].Skill1
+        if s1 then
+            for _, key in ipairs({ "slot_1", "slot_2", "slot_3", "slot_4" }) do
+                local sl = s1[key]
+                if sl and sl.id ~= nil then
+                    local idn = tonumber(sl.id)
+                    if idn and idn > -1 then
+                        ids[#ids + 1] = tostring(idn)
+                    end
+                end
+            end
+        end
+        local id_str = #ids > 0 and table.concat(ids, ",") or ""
+        local tail = id_str ~= "" and (" " .. id_str) or ""
+        segs[#segs + 1] = string.format("p%d mj%d sz%d%s", hid, mj, sz, tail)
+    end
+    local err_text = table.concat(segs, " ")
+    Server:SendError(err_text, "GameBreak")
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end

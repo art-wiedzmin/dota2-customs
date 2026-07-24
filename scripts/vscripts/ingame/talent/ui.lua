@@ -8,22 +8,101 @@
 ]]
 
 
-local encoded=[[ZnVuY3Rpb24gVGFsZW50OkdldFVJRGF0YShJRCwgZGF0YSkKICAgIC0tIHByaW50KCIyMjIyMiIpCiAgICBpZiBub3QgSUQgb3Igbm90IGRhdGEgdGhlbiByZXR1cm4gZW5kCiAgICAtLSDmmoLlgZznpoHmraLkvKDmlbDmja4KICAgIGlmIEdhbWVSdWxlczpJc0dhbWVQYXVzZWQoKSB0aGVuIHJldHVybiBlbmQKICAgIC0tIOinguaImOiAheaIluacquWIneWni+WMlueOqeWutuaXoCBUYWxlbnQg5pWw5o2u77ya5by65Yi25LiL5Y+R6ZqQ6JePIHRvb2x0aXDvvIzpgb/lhY3op4LmiJjmqKHlvI/kuIsgdG9vbHRpcCDluLjpqbvmmL7npLoKICAgIGlmIG5vdCBzZWxmLkRhdGFbSURdIHRoZW4KICAgICAgICBVdGlsOlNlbmQySnNJRCgiVUlfVGlwRGF0YSIsIHsgcGFnZSA9IGZhbHNlIH0sIElEKQogICAgICAgIHJldHVybgogICAgZW5kCiAgICAtLSDliJ3lp4vljJbmlbDmja4KICAgIGlmIGRhdGEudHAgPT0gImluaXQiIHRoZW4KICAgICAgICAtLSBwcmludCgiMTExMTEiKQogICAgICAgIFRhbGVudDpTZW5kRGF0YShJRCkKICAgICAgICBUYWxlbnQ6U2VuZEtpbGxEYXRhKElEKQogICAgICAgIFRhbGVudDpTZW5kQmFnRGF0YShJRCkKICAgICAgICBUYWxlbnQ6U2VuZFRpcERhdGEoSUQpCiAgICBlbmQKICAgIC0tIOaJk+W8gOmhtemdogogICAgaWYgZGF0YS50cCA9PSAiT3BlblBhZ2UiIHRoZW4gc2VsZjpPcGVuUGFnZShJRCkgZW5kCiAgICAtLSDlhbPpl63pobXpnaIKICAgIGlmIGRhdGEudHAgPT0gIkNsb3NlUGFnZSIgdGhlbiBzZWxmOkNsb3NlUGFnZShJRCkgZW5kCiAgICBpZiBkYXRhLnRwID09ICJTZWxlY3RUYWxlbnQiIHRoZW4gc2VsZjpTZWxlY3RUYWxlbnQoSUQsIGRhdGEudGV4dCkgZW5kCiAgICBpZiBkYXRhLnRwID09ICJkcmFnIiB0aGVuIHNlbGY6RHJhcChJRCkgZW5kCiAgICBpZiBkYXRhLnRwID09ICJMZXZlbFVwIiB0aGVuIHNlbGY6TGV2ZWxVcChJRCkgZW5kCiAgICAtLSDpmo/mnLrlsZ7mgKcKICAgIGlmIGRhdGEudHAgPT0gIlJvbGxBdHRyIiB0aGVuIHNlbGY6Um9sbEF0dHIoSUQpIGVuZAogICAgLS0g5YWz6Zet5bGe5oCn6aG16Z2iCiAgICBpZiBkYXRhLnRwID09ICJDbG9zZUF0dHIiIHRoZW4gc2VsZjpDbG9zZUF0dHIoSUQpIGVuZAogICAgLS0g6YCJ5oup5bGe5oCnCiAgICBpZiBkYXRhLnRwID09ICJTZWxlY3RBdHRyIiB0aGVuIHNlbGY6U2VsZWN0QXR0cihJRCwgZGF0YS50ZXh0KSBlbmQKICAgIC0tIOaYvuekunRpcAogICAgaWYgZGF0YS50cCA9PSAic2hvd190aXAiIHRoZW4gc2VsZjpTaG93VGlwKElEKSBlbmQKICAgIC0tIOmakOiXj3RpcAogICAgaWYgZGF0YS50cCA9PSAiY2xvc2VfdGlwIiB0aGVuIHNlbGY6Q2xvc2VUaXAoSUQpIGVuZAogICAgLS0g5bGA5YaF5aSp6LWL5oqA6IO95Zu+5qCH54K55Ye7IOKGkiDkuI7kvb/nlKjlm57ln47moLwgaXRlbV90cHNjcm9sbCDnm7jlkIwKICAgIGlmIGRhdGEudHAgPT0gImNhc3RfdGFsZW50X3NraWxsIiB0aGVuIHNlbGY6Q2FzdFRhbGVudFNraWxsSXRlbShJRCkgZW5kCmVuZAoKLS0g57uZ5YmN56uv5Y+R5pWw5o2uCmZ1bmN0aW9uIFRhbGVudDpTZW5kRGF0YShJRCkKICAgIGlmIG5vdCBJRCB0aGVuIHJldHVybiBlbmQKICAgIC0tIHByaW50KHNlbGYuRGF0YVtJRF0pCiAgICBsb2NhbCBoZXJvX25hbWUgPSBIZXJvRGF0YTpHZXRIZXJvTmFtZShJRCkKICAgIGlmIGhlcm9fbmFtZSB0aGVuCiAgICAgICAgc2VsZi5EYXRhW0lEXS5oZXJvX25hbWUgPSBoZXJvX25hbWUKICAgIGVuZAogICAgVXRpbDpTZW5kMkpzSUQoIlVJX1RhbGVudCIsIHNlbGYuRGF0YVtJRF0sIElEKQplbmQKCi0tIOe7meiDjOWMheWPkemAgea2iOaBr++8jOabtOaWsOiDjOWMheanveS9jQpmdW5jdGlvbiBUYWxlbnQ6U2VuZEJhZ0RhdGEoSUQsIHNsb3QpCiAgICBsb2NhbCBsaXN0ID0geyBzbG90ID0gc2xvdCB9CiAgICBVdGlsOlNlbmQySnNJRCgiVUlfQmFnU2xvdCIsIGxpc3QsIElEKQplbmQKCi0tIOabtOaWsOadgOaVjOaVsOWSjOWNh+e6pwpmdW5jdGlvbiBUYWxlbnQ6U2VuZEtpbGxEYXRhKElEKQogICAgbG9jYWwgbGlzdCA9IHsKICAgICAgICBiYWdfcGFnZSA9IHNlbGYuRGF0YVtJRF0uYmFnX3BhZ2UsCiAgICAgICAgdXAgPSBzZWxmLkRhdGFbSURdLnVwLAogICAgICAgIHN5ID0gc2VsZi5EYXRhW0lEXS5zeSwKICAgICAgICB0ZXh0X3BhZ2UgPSBzZWxmLkRhdGFbSURdLnRleHRfcGFnZQogICAgfQogICAgVXRpbDpTZW5kMkpzSUQoIlVJX0JhZ0tpbGwiLCBsaXN0LCBJRCkKICAgIFRhbGVudDpTZW5kRGF0YShJRCkKZW5kCgotLSDmm7TmlrDlsZ7mgKfkv6Hmga8KZnVuY3Rpb24gVGFsZW50OlNlbmRBdHRyRGF0YShJRCkKICAgIC0tIHByaW50KCI0NDQ0IikKICAgIGxvY2FsIGxpc3QgPSB7CiAgICAgICAgcGFnZSA9IHNlbGYuRGF0YVtJRF0uYXR0cl9wYWdlLAogICAgICAgIGxpc3QgPSBzZWxmLkRhdGFbSURdLmF0dHJfbGlzdCwKICAgICAgICByb2xsX251bSA9IHNlbGYuRGF0YVtJRF0ucm9sbF9udW0sCiAgICAgICAgY29zdCA9IHNlbGYuRGF0YVtJRF0uY29zdCwKICAgICAgICByZWZyZXNoX3N0YXRlID0gc2VsZi5EYXRhW0lEXS5yZWZyZXNoX3N0YXRlCiAgICB9CiAgICBVdGlsOlNlbmQySnNJRCgiVUlfQXR0ckRhdGEiLCBsaXN0LCBJRCkKICAgIFRhbGVudDpTZW5kRGF0YShJRCkKZW5kCgotLSDmm7TmlrB0aXDkv6Hmga8KZnVuY3Rpb24gVGFsZW50OlNlbmRUaXBEYXRhKElEKQogICAgaWYgbm90IHNlbGYuRGF0YVtJRF0gdGhlbgogICAgICAgIC0tIOinguaImOiAheetieaXoOaVsOaNrueOqeWutu+8muWPquS4i+WPkemakOiXj++8jOmBv+WFjeaKpemUmeS4jiB0b29sdGlwIOW4uOmpuwogICAgICAgIFV0aWw6U2VuZDJKc0lEKCJVSV9UaXBEYXRhIiwgeyBwYWdlID0gZmFsc2UgfSwgSUQpCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGxpc3QgPSB7CiAgICAgICAgcGFnZSA9IHNlbGYuRGF0YVtJRF0udGlwX3BhZ2UsCiAgICAgICAgaXRlbV9uYW1lID0gc2VsZi5EYXRhW0lEXS5pdGVtX25hbWUsCiAgICAgICAgYXR0ciA9IHNlbGYuRGF0YVtJRF0uZXF1aXBfYXR0ci5hdHRyLAogICAgICAgIGxldmVsID0gc2VsZi5EYXRhW0lEXS5sZXZlbAogICAgfQogICAgVXRpbDpTZW5kMkpzSUQoIlVJX1RpcERhdGEiLCBsaXN0LCBJRCkKICAgIFRhbGVudDpTZW5kRGF0YShJRCkKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+function Talent:GetUIData(ID, data)
+    -- print("22222")
+    if not ID or not data then return end
+    -- 暂停禁止传数据
+    if GameRules:IsGamePaused() then return end
+    -- 观战者或未初始化玩家无 Talent 数据：强制下发隐藏 tooltip，避免观战模式下 tooltip 常驻显示
+    if not self.Data[ID] then
+        Util:Send2JsID("UI_TipData", { page = false }, ID)
+        return
+    end
+    -- 初始化数据
+    if data.tp == "init" then
+        -- print("11111")
+        Talent:SendData(ID)
+        Talent:SendKillData(ID)
+        Talent:SendBagData(ID)
+        Talent:SendTipData(ID)
+    end
+    -- 打开页面
+    if data.tp == "OpenPage" then self:OpenPage(ID) end
+    -- 关闭页面
+    if data.tp == "ClosePage" then self:ClosePage(ID) end
+    if data.tp == "SelectTalent" then self:SelectTalent(ID, data.text) end
+    if data.tp == "drag" then self:Drap(ID) end
+    if data.tp == "LevelUp" then self:LevelUp(ID) end
+    -- 随机属性
+    if data.tp == "RollAttr" then self:RollAttr(ID) end
+    -- 关闭属性页面
+    if data.tp == "CloseAttr" then self:CloseAttr(ID) end
+    -- 选择属性
+    if data.tp == "SelectAttr" then self:SelectAttr(ID, data.text) end
+    -- 显示tip
+    if data.tp == "show_tip" then self:ShowTip(ID) end
+    -- 隐藏tip
+    if data.tp == "close_tip" then self:CloseTip(ID) end
+    -- 局内天赋技能图标点击 → 与使用回城格 item_tpscroll 相同
+    if data.tp == "cast_talent_skill" then self:CastTalentSkillItem(ID) end
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+-- 给前端发数据
+function Talent:SendData(ID)
+    if not ID then return end
+    -- print(self.Data[ID])
+    local hero_name = HeroData:GetHeroName(ID)
+    if hero_name then
+        self.Data[ID].hero_name = hero_name
+    end
+    Util:Send2JsID("UI_Talent", self.Data[ID], ID)
+end
+
+-- 给背包发送消息，更新背包槽位
+function Talent:SendBagData(ID, slot)
+    local list = { slot = slot }
+    Util:Send2JsID("UI_BagSlot", list, ID)
+end
+
+-- 更新杀敌数和升级
+function Talent:SendKillData(ID)
+    local list = {
+        bag_page = self.Data[ID].bag_page,
+        up = self.Data[ID].up,
+        sy = self.Data[ID].sy,
+        text_page = self.Data[ID].text_page
+    }
+    Util:Send2JsID("UI_BagKill", list, ID)
+    Talent:SendData(ID)
+end
+
+-- 更新属性信息
+function Talent:SendAttrData(ID)
+    -- print("4444")
+    local list = {
+        page = self.Data[ID].attr_page,
+        list = self.Data[ID].attr_list,
+        roll_num = self.Data[ID].roll_num,
+        cost = self.Data[ID].cost,
+        refresh_state = self.Data[ID].refresh_state
+    }
+    Util:Send2JsID("UI_AttrData", list, ID)
+    Talent:SendData(ID)
+end
+
+-- 更新tip信息
+function Talent:SendTipData(ID)
+    if not self.Data[ID] then
+        -- 观战者等无数据玩家：只下发隐藏，避免报错与 tooltip 常驻
+        Util:Send2JsID("UI_TipData", { page = false }, ID)
+        return
+    end
+    local list = {
+        page = self.Data[ID].tip_page,
+        item_name = self.Data[ID].item_name,
+        attr = self.Data[ID].equip_attr.attr,
+        level = self.Data[ID].level
+    }
+    Util:Send2JsID("UI_TipData", list, ID)
+    Talent:SendData(ID)
+end

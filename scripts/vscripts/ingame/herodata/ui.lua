@@ -8,22 +8,53 @@
 ]]
 
 
-local encoded=[[ZnVuY3Rpb24gSGVyb0RhdGE6R2V0VUlEYXRhKElELCBkYXRhKQogICAgaWYgbm90IElEIG9yIG5vdCBkYXRhIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgLS3mmoLlgZznpoHmraLkvKDmlbDmja4KICAgIGlmIEdhbWVSdWxlczpJc0dhbWVQYXVzZWQoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIC0t5Yid5aeL5YyW5pWw5o2uCiAgICBpZiBkYXRhLnRwID09ICJpbml0IiB0aGVuCiAgICAgICAgc2VsZjpTZW5kRGF0YShJRCkKICAgIGVuZAoKICAgIGlmIGRhdGEudHAgPT0gIlJvbGxTdGFyIiB0aGVuCiAgICAgICAgLS0gcHJpbnQoSW5pdFBsYXllci5QdWJsaWMucGxheWVycykKICAgICAgICAtLSBwcmludCgi6ZqP5py65Y2H5pifIikKICAgICAgICAKICAgICAgICBzZWxmOlJvbGxTdGFyKElEKQogICAgZW5kCiAgICBpZiBkYXRhLnRwID09ICJMZXZlbFN0YXIiIHRoZW4KICAgICAgICBzZWxmOkxldmVsU3RhcihJRCkKICAgIGVuZAogICAgLS3lsZ7mgKfovazmjaIKICAgIC0t5Yqb6YeP6L2s5pWP5o23IDEgIOS7t+agvDEwMAogICAgLS3lipvph4/ovazmmbrlipsgMiAg5Lu35qC8MTAwCiAgICAtLeaVj+aNt+i9rOWKm+mHjyAzICDku7fmoLwxMDAKICAgIC0t5pWP5o236L2s5pm65YqbIDQgIOS7t+agvDEwMAogICAgLS3mmbrlipvovazlipvph48gNSAg5Lu35qC8MTAwCiAgICAtLeaZuuWKm+i9rOaVj+aNtyA2ICDku7fmoLwxMDAKICAgIC0t5Yig6Zmk5oqA6IO9IDcgICAg5Lu35qC8NTAwCiAgICAtLeaKgOiDveeCuSA4ICAgICAg5Lu35qC8MzUwCiAgICBpZiBkYXRhLnRwID09ICJBdHRyQ2hhbmdlIiB0aGVuCiAgICAgICAgc2VsZjpBdHRyQ2hhbmdlKElELCBkYXRhLnRleHQpCiAgICBlbmQKZW5kCgotLee7meWJjeerr+WPkeaVsOaNrgpmdW5jdGlvbiBIZXJvRGF0YTpTZW5kRGF0YShJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGRhdGEgPSBzZWxmLkRhdGFbSURdCiAgICAtLXByaW50KGRhdGEpCiAgICBVdGlsOlNlbmQySnNJRCgiVUlfSGVyb0RhdGEiLCBkYXRhLCBJRCkKZW5kCgotLeWkjea0u+aVsOaNrgpmdW5jdGlvbiBIZXJvRGF0YTpTZW5kUmVib3JuRGF0YShJRCkKCmVuZAo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+function HeroData:GetUIData(ID, data)
+    if not ID or not data then
+        return
+    end
+    --暂停禁止传数据
+    if GameRules:IsGamePaused() then
+        return
+    end
+    --初始化数据
+    if data.tp == "init" then
+        self:SendData(ID)
+    end
+
+    if data.tp == "RollStar" then
+        -- print(InitPlayer.Public.players)
+        -- print("随机升星")
+        
+        self:RollStar(ID)
+    end
+    if data.tp == "LevelStar" then
+        self:LevelStar(ID)
+    end
+    --属性转换
+    --力量转敏捷 1  价格100
+    --力量转智力 2  价格100
+    --敏捷转力量 3  价格100
+    --敏捷转智力 4  价格100
+    --智力转力量 5  价格100
+    --智力转敏捷 6  价格100
+    --删除技能 7    价格500
+    --技能点 8      价格350
+    if data.tp == "AttrChange" then
+        self:AttrChange(ID, data.text)
+    end
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--给前端发数据
+function HeroData:SendData(ID)
+    if not ID then
+        return
+    end
+    local data = self.Data[ID]
+    --print(data)
+    Util:Send2JsID("UI_HeroData", data, ID)
+end
+
+--复活数据
+function HeroData:SendRebornData(ID)
+
+end

@@ -8,22 +8,210 @@
 ]]
 
 
-local encoded=[[LS0tIOWxgOWkluiDjOWMheS9qeaItOWRqOi6q+eJueaViCAtPiBtb2RpZmllciArIHZwY2YKCmxvY2FsIE1PRElGSUVSX0VGRkVDVCA9ICJtb2RpZmllcl9jbHJiX2VmZmVjdCIKbG9jYWwgRUZGRUNUX1NZTkNfUkVUUllfUFJFRklYID0gImNscmJfZWZmZWN0X3N5bmNfcmV0cnlfIgpsb2NhbCBFRkZFQ1RfU1lOQ19SRVRSWV9TRUMgPSAwLjUKCmZ1bmN0aW9uIEVmZmVjdDpSZXNvbHZlSGVybyhJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuIG5pbAogICAgZW5kCiAgICBsb2NhbCBoZXJvID0gVXRpbCBhbmQgVXRpbC5JRDJIZXJvIGFuZCBVdGlsOklEMkhlcm8oSUQpCiAgICBpZiBoZXJvIGFuZCBub3QgaGVybzpJc051bGwoKSB0aGVuCiAgICAgICAgcmV0dXJuIGhlcm8KICAgIGVuZAogICAgaWYgSGVyb0RhdGEgYW5kIEhlcm9EYXRhLkdldEhlcm8gdGhlbgogICAgICAgIGhlcm8gPSBIZXJvRGF0YTpHZXRIZXJvKElEKQogICAgICAgIGlmIGhlcm8gYW5kIG5vdCBoZXJvOklzTnVsbCgpIHRoZW4KICAgICAgICAgICAgcmV0dXJuIGhlcm8KICAgICAgICBlbmQKICAgIGVuZAogICAgaWYgUGxheWVyUmVzb3VyY2UgYW5kIFBsYXllclJlc291cmNlLkdldFNlbGVjdGVkSGVyb0VudGl0eSB0aGVuCiAgICAgICAgaGVybyA9IFBsYXllclJlc291cmNlOkdldFNlbGVjdGVkSGVyb0VudGl0eShJRCkKICAgICAgICBpZiBoZXJvIGFuZCBub3QgaGVybzpJc051bGwoKSB0aGVuCiAgICAgICAgICAgIHJldHVybiBoZXJvCiAgICAgICAgZW5kCiAgICBlbmQKICAgIHJldHVybiBuaWwKZW5kCgpmdW5jdGlvbiBFZmZlY3Q6U2hvdWxkU2hvd0ZvclBsYXllcihJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIFV0aWwgYW5kIFV0aWwuSXNQc2V1ZG9QbGF5ZXJJRCBhbmQgVXRpbDpJc1BzZXVkb1BsYXllcklEKElEKSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIFNob3AgYW5kIFNob3AuU2hvdWxkU2hvd0luR2FtZUVmZmVjdCB0aGVuCiAgICAgICAgcmV0dXJuIFNob3A6U2hvdWxkU2hvd0luR2FtZUVmZmVjdChJRCkKICAgIGVuZAogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gRWZmZWN0OlJlbW92ZUVmZmVjdChoZXJvKQogICAgaWYgbm90IGhlcm8gb3IgaGVybzpJc051bGwoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIGhlcm86SGFzTW9kaWZpZXIoTU9ESUZJRVJfRUZGRUNUKSB0aGVuCiAgICAgICAgaGVybzpSZW1vdmVNb2RpZmllckJ5TmFtZShNT0RJRklFUl9FRkZFQ1QpCiAgICBlbmQKZW5kCgotLS0g5bel5YW36aKE6KeI6Lev5b6E77ya6IOM5YyF5pyq5L2p5oi05pe2IFN5bmMg5LiN5bqU5riF5o6J6aKE6KeICkVmZmVjdC5QcmV2aWV3RnhCeUlEID0gRWZmZWN0LlByZXZpZXdGeEJ5SUQgb3Ige30KCmZ1bmN0aW9uIEVmZmVjdDpTZXRUb29sc1ByZXZpZXcoSUQsIGZ4KQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgZnggYW5kIGZ4IH49ICIiIHRoZW4KICAgICAgICBzZWxmLlByZXZpZXdGeEJ5SURbSURdID0gZngKICAgIGVsc2UKICAgICAgICBzZWxmLlByZXZpZXdGeEJ5SURbSURdID0gbmlsCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBFZmZlY3Q6Q2xlYXJUb29sc1ByZXZpZXcoSUQpCiAgICBpZiBJRCB0aGVuCiAgICAgICAgc2VsZi5QcmV2aWV3RnhCeUlEW0lEXSA9IG5pbAogICAgZW5kCmVuZAoKLS0tIOebtOaOpeaMieeykuWtkOi3r+W+hOaMguWRqOi6q+eJueaViO+8m+WFiOa4heaXpyBtb2RpZmllcu+8jOmBv+WFjeWPoOWKoApmdW5jdGlvbiBFZmZlY3Q6QXBwbHlFZmZlY3RGeChoZXJvLCBmeCkKICAgIGlmIG5vdCBoZXJvIG9yIGhlcm86SXNOdWxsKCkgb3Igbm90IGZ4IG9yIGZ4ID09ICIiIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgbm90IGhlcm86SXNIZXJvKCkgb3Igbm90IGhlcm86SXNSZWFsSGVybygpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgdXRpbGV4IGFuZCB1dGlsZXguSXNDbHJiQ291cmllclBldCBhbmQgdXRpbGV4OklzQ2xyYkNvdXJpZXJQZXQoaGVybykgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBtb2QgPSBoZXJvOkZpbmRNb2RpZmllckJ5TmFtZShNT0RJRklFUl9FRkZFQ1QpCiAgICBpZiBtb2QgYW5kIG1vZC5lZmZlY3RfZnggPT0gZnggdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmOlJlbW92ZUVmZmVjdChoZXJvKQogICAgaGVybzpBZGROZXdNb2RpZmllcihoZXJvLCBuaWwsIE1PRElGSUVSX0VGRkVDVCwgeyBlZmZlY3RfZnggPSBmeCB9KQplbmQKCmZ1bmN0aW9uIEVmZmVjdDpBcHBseUVmZmVjdChoZXJvLCBpdGVtX2tleSkKICAgIGlmIG5vdCBoZXJvIG9yIGhlcm86SXNOdWxsKCkgb3Igbm90IGl0ZW1fa2V5IHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgZnggPSBTaG9wIGFuZCBTaG9wLkdldEVmZmVjdFBhcnRpY2xlIGFuZCBTaG9wOkdldEVmZmVjdFBhcnRpY2xlKGl0ZW1fa2V5KQogICAgaWYgbm90IGZ4IG9yIGZ4ID09ICIiIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZjpBcHBseUVmZmVjdEZ4KGhlcm8sIGZ4KQplbmQKCmZ1bmN0aW9uIEVmZmVjdDpTeW5jUGxheWVyKElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgaGVybyA9IHNlbGY6UmVzb2x2ZUhlcm8oSUQpCiAgICBpZiBzZWxmOlNob3VsZFNob3dGb3JQbGF5ZXIoSUQpIHRoZW4KICAgICAgICAtLSDog4zljIXkvanmiLTkvJjlhYjvvIzmuIXmjonlt6XlhbfpooTop4jmoIforrAKICAgICAgICBzZWxmOkNsZWFyVG9vbHNQcmV2aWV3KElEKQogICAgICAgIGxvY2FsIGtleSA9IFNob3AgYW5kIFNob3AuR2V0RXF1aXBwZWRFZmZlY3RLZXkgYW5kIFNob3A6R2V0RXF1aXBwZWRFZmZlY3RLZXkoSUQpCiAgICAgICAgaWYga2V5IGFuZCBoZXJvIHRoZW4KICAgICAgICAgICAgc2VsZjpBcHBseUVmZmVjdChoZXJvLCBrZXkpCiAgICAgICAgZW5kCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIC0tIOW3peWFt+mihOiniO+8muayoeacieiDjOWMheS9qeaItOaXtuS/neeVmS/ph43mjILpooTop4jnspLlrZDvvIzpgb/lhY0gVW5lcXVpcC9TeW5jIOaKiumihOiniOa4heaOiQogICAgbG9jYWwgcHJldmlldyA9IHNlbGYuUHJldmlld0Z4QnlJRCBhbmQgc2VsZi5QcmV2aWV3RnhCeUlEW0lEXQogICAgaWYgcHJldmlldyBhbmQgcHJldmlldyB+PSAiIiBhbmQgaGVybyBhbmQgbm90IGhlcm86SXNOdWxsKCkgdGhlbgogICAgICAgIHNlbGY6QXBwbHlFZmZlY3RGeChoZXJvLCBwcmV2aWV3KQogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBoZXJvIHRoZW4KICAgICAgICBzZWxmOlJlbW92ZUVmZmVjdChoZXJvKQogICAgZW5kCmVuZAoKZnVuY3Rpb24gRWZmZWN0Okhhc1BlbmRpbmdFZmZlY3RXaXRob3V0SGVybygpCiAgICBsb2NhbCBzZWVuID0ge30KICAgIGxvY2FsIGZ1bmN0aW9uIG5lZWRzX3JldHJ5KElEKQogICAgICAgIGlmIHNlZW5bSURdIHRoZW4KICAgICAgICAgICAgcmV0dXJuIGZhbHNlCiAgICAgICAgZW5kCiAgICAgICAgc2VlbltJRF0gPSB0cnVlCiAgICAgICAgaWYgbm90IHNlbGY6U2hvdWxkU2hvd0ZvclBsYXllcihJRCkgdGhlbgogICAgICAgICAgICByZXR1cm4gZmFsc2UKICAgICAgICBlbmQKICAgICAgICByZXR1cm4gbm90IHNlbGY6UmVzb2x2ZUhlcm8oSUQpCiAgICBlbmQKICAgIGlmIFBEIGFuZCBQRC5JRHMgdGhlbgogICAgICAgIGZvciBfLCBJRCBpbiBwYWlycyhQRC5JRHMpIGRvCiAgICAgICAgICAgIGlmIG5lZWRzX3JldHJ5KElEKSB0aGVuCiAgICAgICAgICAgICAgICByZXR1cm4gdHJ1ZQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZAogICAgaWYgUGxheWVyUmVzb3VyY2UgdGhlbgogICAgICAgIGZvciBJRCA9IDAsIDIzIGRvCiAgICAgICAgICAgIGlmIFBsYXllclJlc291cmNlOklzVmFsaWRQbGF5ZXIoSUQpIG9yIFBsYXllclJlc291cmNlOklzVmFsaWRQbGF5ZXJJRChJRCkgdGhlbgogICAgICAgICAgICAgICAgaWYgbmVlZHNfcmV0cnkoSUQpIHRoZW4KICAgICAgICAgICAgICAgICAgICByZXR1cm4gdHJ1ZQogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBFZmZlY3Q6U3luY0FsbCgpCiAgICBsb2NhbCBzZWVuID0ge30KICAgIGxvY2FsIGZ1bmN0aW9uIHRyeV9zeW5jKElEKQogICAgICAgIGlmIHNlZW5bSURdIHRoZW4KICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgc2VlbltJRF0gPSB0cnVlCiAgICAgICAgc2VsZjpTeW5jUGxheWVyKElEKQogICAgZW5kCiAgICBpZiBQRCBhbmQgUEQuSURzIHRoZW4KICAgICAgICBmb3IgXywgSUQgaW4gcGFpcnMoUEQuSURzKSBkbwogICAgICAgICAgICB0cnlfc3luYyhJRCkKICAgICAgICBlbmQKICAgIGVuZAogICAgaWYgUGxheWVyUmVzb3VyY2UgdGhlbgogICAgICAgIGZvciBJRCA9IDAsIDIzIGRvCiAgICAgICAgICAgIGlmIFBsYXllclJlc291cmNlOklzVmFsaWRQbGF5ZXIoSUQpIG9yIFBsYXllclJlc291cmNlOklzVmFsaWRQbGF5ZXJJRChJRCkgdGhlbgogICAgICAgICAgICAgICAgdHJ5X3N5bmMoSUQpCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCmVuZAoKZnVuY3Rpb24gRWZmZWN0OlNjaGVkdWxlU3luY1JldHJ5KF9JRCkKICAgIGxvY2FsIG5hbWUgPSBFRkZFQ1RfU1lOQ19SRVRSWV9QUkVGSVggLi4gImFsbCIKICAgIGlmIFRpbWVycyBhbmQgVGltZXJzLnRpbWVycyBhbmQgVGltZXJzLnRpbWVyc1tuYW1lXSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIFRpbWVyczpDcmVhdGVUaW1lcihuYW1lLCB7CiAgICAgICAgZW5kVGltZSA9IEVGRkVDVF9TWU5DX1JFVFJZX1NFQywKICAgICAgICBjYWxsYmFjayA9IGZ1bmN0aW9uKCkKICAgICAgICAgICAgaWYgbm90IEVmZmVjdCB0aGVuCiAgICAgICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIEVmZmVjdDpTeW5jQWxsKCkKICAgICAgICAgICAgaWYgRWZmZWN0Okhhc1BlbmRpbmdFZmZlY3RXaXRob3V0SGVybygpIHRoZW4KICAgICAgICAgICAgICAgIHJldHVybiBFRkZFQ1RfU1lOQ19SRVRSWV9TRUMKICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIHJldHVybiBuaWwKICAgICAgICBlbmQsCiAgICAgICAgdXNlR2FtZVRpbWUgPSBmYWxzZSwKICAgIH0pCmVuZAoKZnVuY3Rpb24gRWZmZWN0OlN5bmNGcm9tT3V0QmFnKF9JRCkKICAgIHNlbGY6U3luY0FsbCgpCiAgICBpZiBzZWxmOkhhc1BlbmRpbmdFZmZlY3RXaXRob3V0SGVybygpIHRoZW4KICAgICAgICBzZWxmOlNjaGVkdWxlU3luY1JldHJ5KF9JRCBvciAwKQogICAgZW5kCmVuZAo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+--- 局外背包佩戴周身特效 -> modifier + vpcf
+
+local MODIFIER_EFFECT = "modifier_clrb_effect"
+local EFFECT_SYNC_RETRY_PREFIX = "clrb_effect_sync_retry_"
+local EFFECT_SYNC_RETRY_SEC = 0.5
+
+function Effect:ResolveHero(ID)
+    if not ID then
+        return nil
+    end
+    local hero = Util and Util.ID2Hero and Util:ID2Hero(ID)
+    if hero and not hero:IsNull() then
+        return hero
+    end
+    if HeroData and HeroData.GetHero then
+        hero = HeroData:GetHero(ID)
+        if hero and not hero:IsNull() then
+            return hero
+        end
+    end
+    if PlayerResource and PlayerResource.GetSelectedHeroEntity then
+        hero = PlayerResource:GetSelectedHeroEntity(ID)
+        if hero and not hero:IsNull() then
+            return hero
+        end
+    end
+    return nil
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function Effect:ShouldShowForPlayer(ID)
+    if not ID then
+        return false
+    end
+    if Util and Util.IsPseudoPlayerID and Util:IsPseudoPlayerID(ID) then
+        return false
+    end
+    if Shop and Shop.ShouldShowInGameEffect then
+        return Shop:ShouldShowInGameEffect(ID)
+    end
+    return false
+end
+
+function Effect:RemoveEffect(hero)
+    if not hero or hero:IsNull() then
+        return
+    end
+    if hero:HasModifier(MODIFIER_EFFECT) then
+        hero:RemoveModifierByName(MODIFIER_EFFECT)
+    end
+end
+
+--- 工具预览路径：背包未佩戴时 Sync 不应清掉预览
+Effect.PreviewFxByID = Effect.PreviewFxByID or {}
+
+function Effect:SetToolsPreview(ID, fx)
+    if not ID then
+        return
+    end
+    if fx and fx ~= "" then
+        self.PreviewFxByID[ID] = fx
+    else
+        self.PreviewFxByID[ID] = nil
+    end
+end
+
+function Effect:ClearToolsPreview(ID)
+    if ID then
+        self.PreviewFxByID[ID] = nil
+    end
+end
+
+--- 直接按粒子路径挂周身特效；先清旧 modifier，避免叠加
+function Effect:ApplyEffectFx(hero, fx)
+    if not hero or hero:IsNull() or not fx or fx == "" then
+        return
+    end
+    if not hero:IsHero() or not hero:IsRealHero() then
+        return
+    end
+    if utilex and utilex.IsClrbCourierPet and utilex:IsClrbCourierPet(hero) then
+        return
+    end
+    local mod = hero:FindModifierByName(MODIFIER_EFFECT)
+    if mod and mod.effect_fx == fx then
+        return
+    end
+    self:RemoveEffect(hero)
+    hero:AddNewModifier(hero, nil, MODIFIER_EFFECT, { effect_fx = fx })
+end
+
+function Effect:ApplyEffect(hero, item_key)
+    if not hero or hero:IsNull() or not item_key then
+        return
+    end
+    local fx = Shop and Shop.GetEffectParticle and Shop:GetEffectParticle(item_key)
+    if not fx or fx == "" then
+        return
+    end
+    self:ApplyEffectFx(hero, fx)
+end
+
+function Effect:SyncPlayer(ID)
+    if not ID then
+        return
+    end
+    local hero = self:ResolveHero(ID)
+    if self:ShouldShowForPlayer(ID) then
+        -- 背包佩戴优先，清掉工具预览标记
+        self:ClearToolsPreview(ID)
+        local key = Shop and Shop.GetEquippedEffectKey and Shop:GetEquippedEffectKey(ID)
+        if key and hero then
+            self:ApplyEffect(hero, key)
+        end
+        return
+    end
+    -- 工具预览：没有背包佩戴时保留/重挂预览粒子，避免 Unequip/Sync 把预览清掉
+    local preview = self.PreviewFxByID and self.PreviewFxByID[ID]
+    if preview and preview ~= "" and hero and not hero:IsNull() then
+        self:ApplyEffectFx(hero, preview)
+        return
+    end
+    if hero then
+        self:RemoveEffect(hero)
+    end
+end
+
+function Effect:HasPendingEffectWithoutHero()
+    local seen = {}
+    local function needs_retry(ID)
+        if seen[ID] then
+            return false
+        end
+        seen[ID] = true
+        if not self:ShouldShowForPlayer(ID) then
+            return false
+        end
+        return not self:ResolveHero(ID)
+    end
+    if PD and PD.IDs then
+        for _, ID in pairs(PD.IDs) do
+            if needs_retry(ID) then
+                return true
+            end
+        end
+    end
+    if PlayerResource then
+        for ID = 0, 23 do
+            if PlayerResource:IsValidPlayer(ID) or PlayerResource:IsValidPlayerID(ID) then
+                if needs_retry(ID) then
+                    return true
+                end
+            end
+        end
+    end
+    return false
+end
+
+function Effect:SyncAll()
+    local seen = {}
+    local function try_sync(ID)
+        if seen[ID] then
+            return
+        end
+        seen[ID] = true
+        self:SyncPlayer(ID)
+    end
+    if PD and PD.IDs then
+        for _, ID in pairs(PD.IDs) do
+            try_sync(ID)
+        end
+    end
+    if PlayerResource then
+        for ID = 0, 23 do
+            if PlayerResource:IsValidPlayer(ID) or PlayerResource:IsValidPlayerID(ID) then
+                try_sync(ID)
+            end
+        end
+    end
+end
+
+function Effect:ScheduleSyncRetry(_ID)
+    local name = EFFECT_SYNC_RETRY_PREFIX .. "all"
+    if Timers and Timers.timers and Timers.timers[name] then
+        return
+    end
+    Timers:CreateTimer(name, {
+        endTime = EFFECT_SYNC_RETRY_SEC,
+        callback = function()
+            if not Effect then
+                return
+            end
+            Effect:SyncAll()
+            if Effect:HasPendingEffectWithoutHero() then
+                return EFFECT_SYNC_RETRY_SEC
+            end
+            return nil
+        end,
+        useGameTime = false,
+    })
+end
+
+function Effect:SyncFromOutBag(_ID)
+    self:SyncAll()
+    if self:HasPendingEffectWithoutHero() then
+        self:ScheduleSyncRetry(_ID or 0)
+    end
+end

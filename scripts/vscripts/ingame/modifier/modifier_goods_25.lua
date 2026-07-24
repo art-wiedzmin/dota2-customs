@@ -8,22 +8,132 @@
 ]]
 
 
-local encoded=[[LS0tIOmbt+e6uee7k+aZtu+8iGl0ZW1fZ29vZHNfMjXvvInntK/orqHpo5/nlKjliqDmiJDvvJrnirbmgIHmoI/lsZXnpLrvvIzlm77moIflkIznianlk4EKbW9kaWZpZXJfZ29vZHNfMjUgPSBjbGFzcyh7fSkKCmxvY2FsIFBFUl9BUFBMWV9NRkdKID0gMTUKbG9jYWwgUEVSX0FQUExZX1NNSkMgPSAyMDAKbG9jYWwgTUlMRVNUT05FXzVfQUxMU1RBVCA9IDE1CmxvY2FsIE1JTEVTVE9ORV8xMF9KTlpRID0gMTUKbG9jYWwgTUlMRVNUT05FXzEwX0dKSkMgPSAyMAoKZnVuY3Rpb24gbW9kaWZpZXJfZ29vZHNfMjU6SXNIaWRkZW4oKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZ29vZHNfMjU6SXNEZWJ1ZmYoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZ29vZHNfMjU6SXNQdXJnYWJsZSgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9nb29kc18yNTpSZW1vdmVPbkRlYXRoKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2dvb2RzXzI1OklzUGVybWFuZW50KCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZ29vZHNfMjU6QWxsb3dJbGx1c2lvbkR1cGxpY2F0ZSgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9nb29kc18yNTpHZXRUZXh0dXJlKCkKICAgIHJldHVybiAic2Nyb2xsL2l0ZW1fZ29vZHNfMjUiCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZ29vZHNfMjU6UmVzb2x2ZVBsYXllcklkKCkKICAgIGlmIHNlbGYucGxheWVyX2lkIH49IG5pbCB0aGVuCiAgICAgICAgcmV0dXJuIHRvbnVtYmVyKHNlbGYucGxheWVyX2lkKQogICAgZW5kCiAgICByZXR1cm4gVXRpbDpIZXJvMklEKHNlbGY6R2V0UGFyZW50KCkpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZ29vZHNfMjU6T25DcmVhdGVkKGt2KQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmLnBsYXllcl9pZCA9IHRvbnVtYmVyKGt2IGFuZCBrdi5wbGF5ZXJfaWQpIG9yIFV0aWw6SGVybzJJRChzZWxmOkdldFBhcmVudCgpKQogICAgbG9jYWwgbiA9IHRvbnVtYmVyKGt2IGFuZCBrdi5zdGFja19jb3VudCkgb3IgMAogICAgaWYgbiA+IDAgdGhlbgogICAgICAgIHNlbGY6U2V0U3RhY2tDb3VudChuKQogICAgZWxzZQogICAgICAgIHNlbGY6U3luY0Zyb21IZXJvRGF0YSgpCiAgICBlbmQKICAgIHNlbGY6U2VuZEJ1ZmZSZWZyZXNoVG9DbGllbnRzKCkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9nb29kc18yNTpPblJlZnJlc2goa3YpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGY6U3luY0Zyb21IZXJvRGF0YSgpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZ29vZHNfMjU6U3luY0Zyb21IZXJvRGF0YSgpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIHBpZCA9IHNlbGY6UmVzb2x2ZVBsYXllcklkKCkKICAgIHNlbGYucGxheWVyX2lkID0gcGlkCiAgICBsb2NhbCBuID0gMAogICAgaWYgcGlkIGFuZCBIZXJvRGF0YSBhbmQgSGVyb0RhdGEuRGF0YSB0aGVuCiAgICAgICAgbG9jYWwgcm93ID0gSGVyb0RhdGEuRGF0YVtwaWRdCiAgICAgICAgaWYgcm93IHRoZW4KICAgICAgICAgICAgbiA9IHRvbnVtYmVyKHJvdy5nb29kc18yNV9hcHBsaWVzKSBvciAwCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGlmIG4gPD0gMCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGY6U2V0U3RhY2tDb3VudChuKQogICAgc2VsZjpTZW5kQnVmZlJlZnJlc2hUb0NsaWVudHMoKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2dvb2RzXzI1Ol9BcHBseUNvdW50KCkKICAgIHJldHVybiBzZWxmOkdldFN0YWNrQ291bnQoKSBvciAwCmVuZAoKLS0tIOS7peS4i+WxnuaApyBnZXR0ZXIg5LuF5Zyo5a6i5oi356uv55So5LqOIHRvb2x0aXAg5bGV56S677yb5pyN5Yqh56uv5oGS5Li6IDDvvIzlrp7pmYXliqDmiJDnlLEgSGVyb0RhdGEg5YaZ5YWlCmZ1bmN0aW9uIG1vZGlmaWVyX2dvb2RzXzI1Ol9Ub29sdGlwT25seSh2YWx1ZSkKICAgIGlmIElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybiAwCiAgICBlbmQKICAgIHJldHVybiB2YWx1ZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2dvb2RzXzI1OkRlY2xhcmVGdW5jdGlvbnMoKQogICAgcmV0dXJuIHsKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9UT09MVElQLAogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX1RPT0xUSVAyLAogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX1NUQVRTX1NUUkVOR1RIX0JPTlVTLAogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX1NQRUxMX0FNUExJRllfUEVSQ0VOVEFHRSwKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9CQVNFREFNQUdFT1VUR09JTkdfUEVSQ0VOVEFHRSwKICAgIH0KZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9nb29kc18yNTpPblRvb2x0aXAoKQogICAgcmV0dXJuIHNlbGY6X0FwcGx5Q291bnQoKSAqIFBFUl9BUFBMWV9NRkdKCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZ29vZHNfMjU6T25Ub29sdGlwMigpCiAgICByZXR1cm4gc2VsZjpfQXBwbHlDb3VudCgpICogUEVSX0FQUExZX1NNSkMKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9nb29kc18yNTpHZXRNb2RpZmllckJvbnVzU3RhdHNfU3RyZW5ndGgoKQogICAgbG9jYWwgbiA9IHNlbGY6X0FwcGx5Q291bnQoKQogICAgcmV0dXJuIHNlbGY6X1Rvb2x0aXBPbmx5KG4gPj0gNSBhbmQgTUlMRVNUT05FXzVfQUxMU1RBVCBvciAwKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2dvb2RzXzI1OkdldE1vZGlmaWVyU3BlbGxBbXBsaWZ5X1BlcmNlbnRhZ2UoKQogICAgbG9jYWwgbiA9IHNlbGY6X0FwcGx5Q291bnQoKQogICAgcmV0dXJuIHNlbGY6X1Rvb2x0aXBPbmx5KG4gPj0gMTAgYW5kIE1JTEVTVE9ORV8xMF9KTlpRIG9yIDApCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfZ29vZHNfMjU6R2V0TW9kaWZpZXJCYXNlRGFtYWdlT3V0Z29pbmdfUGVyY2VudGFnZSgpCiAgICBsb2NhbCBuID0gc2VsZjpfQXBwbHlDb3VudCgpCiAgICByZXR1cm4gc2VsZjpfVG9vbHRpcE9ubHkobiA+PSAxMCBhbmQgTUlMRVNUT05FXzEwX0dKSkMgb3IgMCkKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+--- 雷纹结晶（item_goods_25）累计食用加成：状态栏展示，图标同物品
+modifier_goods_25 = class({})
+
+local PER_APPLY_MFGJ = 15
+local PER_APPLY_SMJC = 200
+local MILESTONE_5_ALLSTAT = 15
+local MILESTONE_10_JNZQ = 15
+local MILESTONE_10_GJJC = 20
+
+function modifier_goods_25:IsHidden()
+    return false
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function modifier_goods_25:IsDebuff()
+    return false
+end
+
+function modifier_goods_25:IsPurgable()
+    return false
+end
+
+function modifier_goods_25:RemoveOnDeath()
+    return false
+end
+
+function modifier_goods_25:IsPermanent()
+    return true
+end
+
+function modifier_goods_25:AllowIllusionDuplicate()
+    return false
+end
+
+function modifier_goods_25:GetTexture()
+    return "scroll/item_goods_25"
+end
+
+function modifier_goods_25:ResolvePlayerId()
+    if self.player_id ~= nil then
+        return tonumber(self.player_id)
+    end
+    return Util:Hero2ID(self:GetParent())
+end
+
+function modifier_goods_25:OnCreated(kv)
+    if not IsServer() then
+        return
+    end
+    self.player_id = tonumber(kv and kv.player_id) or Util:Hero2ID(self:GetParent())
+    local n = tonumber(kv and kv.stack_count) or 0
+    if n > 0 then
+        self:SetStackCount(n)
+    else
+        self:SyncFromHeroData()
+    end
+    self:SendBuffRefreshToClients()
+end
+
+function modifier_goods_25:OnRefresh(kv)
+    if not IsServer() then
+        return
+    end
+    self:SyncFromHeroData()
+end
+
+function modifier_goods_25:SyncFromHeroData()
+    if not IsServer() then
+        return
+    end
+    local pid = self:ResolvePlayerId()
+    self.player_id = pid
+    local n = 0
+    if pid and HeroData and HeroData.Data then
+        local row = HeroData.Data[pid]
+        if row then
+            n = tonumber(row.goods_25_applies) or 0
+        end
+    end
+    if n <= 0 then
+        return
+    end
+    self:SetStackCount(n)
+    self:SendBuffRefreshToClients()
+end
+
+function modifier_goods_25:_ApplyCount()
+    return self:GetStackCount() or 0
+end
+
+--- 以下属性 getter 仅在客户端用于 tooltip 展示；服务端恒为 0，实际加成由 HeroData 写入
+function modifier_goods_25:_TooltipOnly(value)
+    if IsServer() then
+        return 0
+    end
+    return value
+end
+
+function modifier_goods_25:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_TOOLTIP,
+        MODIFIER_PROPERTY_TOOLTIP2,
+        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+        MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
+        MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,
+    }
+end
+
+function modifier_goods_25:OnTooltip()
+    return self:_ApplyCount() * PER_APPLY_MFGJ
+end
+
+function modifier_goods_25:OnTooltip2()
+    return self:_ApplyCount() * PER_APPLY_SMJC
+end
+
+function modifier_goods_25:GetModifierBonusStats_Strength()
+    local n = self:_ApplyCount()
+    return self:_TooltipOnly(n >= 5 and MILESTONE_5_ALLSTAT or 0)
+end
+
+function modifier_goods_25:GetModifierSpellAmplify_Percentage()
+    local n = self:_ApplyCount()
+    return self:_TooltipOnly(n >= 10 and MILESTONE_10_JNZQ or 0)
+end
+
+function modifier_goods_25:GetModifierBaseDamageOutgoing_Percentage()
+    local n = self:_ApplyCount()
+    return self:_TooltipOnly(n >= 10 and MILESTONE_10_GJJC or 0)
+end

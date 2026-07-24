@@ -8,22 +8,337 @@
 ]]
 
 
-local encoded=[[LS3lkIzmraXmlbDmja7nu5nnjqnlrrYKZnVuY3Rpb24gU3RhdDpVcERhdGFMaXN0KElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5EYXRhW0lEXS5saXN0ID0gc2VsZi5SYW5rTGlzdC5saXN0CmVuZAoKLS0tIOa4heepuuamnOanve+8jOmBv+WFjSBMaXRlIOabtOaWsOaIluaOkuWQjeWPmOWKqOWQjuaui+eVmeS4iuS4gOeOqeWutueahOiLsembhC/mioDog70v5aS05YOPCmZ1bmN0aW9uIFN0YXQ6X0NsZWFyUmFua1Nsb3QoZGF0YSkKICAgIGlmIG5vdCBkYXRhIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgZGF0YS5zdGF0ZSA9IGZhbHNlCiAgICBkYXRhLmlkID0gLTEKICAgIGRhdGEucGlkID0gLTEKICAgIGRhdGEudGVhbSA9IC0xCiAgICBkYXRhLmhlcm8gPSAiIgogICAgZGF0YS53ZWFwb24gPSAiIgogICAgZGF0YS5sZXZlbCA9IDEKICAgIGRhdGEuZ29sZCA9IDAKICAgIGRhdGEuc3RhciA9IDAKICAgIGRhdGEua2lsbCA9IDAKICAgIGRhdGEuZGVhdGggPSAwCiAgICBkYXRhLmFzc2l0ID0gMAogICAgaWYgZGF0YS5za2lsbCB0aGVuCiAgICAgICAgZm9yIGogPSAxLCAxMCBkbwogICAgICAgICAgICBsb2NhbCBzayA9IGRhdGEuc2tpbGxbInNraWxsXyIgLi4gal0KICAgICAgICAgICAgaWYgc2sgdGhlbgogICAgICAgICAgICAgICAgc2suc3RhdGUgPSBmYWxzZQogICAgICAgICAgICAgICAgc2submFtZSA9ICIiCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCmVuZAoKLS0tIOaUtumbhuWPr+aOkuW6j+eOqeWutiBLL0TvvIhVcERhdGFSYW5rIC8gVXBEYXRhUmFua0xpdGUg5YWx55So77yJCmZ1bmN0aW9uIFN0YXQ6X0NvbGxlY3RSYW5rUGxheWVycygpCiAgICBsb2NhbCByYW5rX3BsYXllcnMgPSB7fQogICAgZm9yIF8sIElEIGluIHBhaXJzKFBELklEcyBvciB7fSkgZG8KICAgICAgICBsb2NhbCBpbml0X2RhdGEgPSBJbml0UGxheWVyOkdldFBsYXllckRhdGEoSUQpCiAgICAgICAgaWYgaW5pdF9kYXRhIGFuZCBpbml0X2RhdGEuc3RhdGUgdGhlbgogICAgICAgICAgICBsb2NhbCBraWxsID0gMAogICAgICAgICAgICBsb2NhbCBkZWF0aCA9IDAKICAgICAgICAgICAgaWYgaW5pdF9kYXRhLmJvdCB0aGVuCiAgICAgICAgICAgICAgICBraWxsID0gSGVyb0RhdGEuRGF0YVtJRF0gYW5kIEhlcm9EYXRhLkRhdGFbSURdLmtpbGwgb3IgMAogICAgICAgICAgICAgICAgZGVhdGggPSBIZXJvRGF0YS5EYXRhW0lEXSBhbmQgSGVyb0RhdGEuRGF0YVtJRF0uZGVhdGhfbnVtIG9yIDAKICAgICAgICAgICAgZWxzZQogICAgICAgICAgICAgICAga2lsbCA9IFBsYXllclJlc291cmNlOkdldEtpbGxzKElEKQogICAgICAgICAgICAgICAgZGVhdGggPSBQbGF5ZXJSZXNvdXJjZTpHZXREZWF0aHMoSUQpCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICB0YWJsZS5pbnNlcnQocmFua19wbGF5ZXJzLCB7CiAgICAgICAgICAgICAgICBpZCA9IElELAogICAgICAgICAgICAgICAga2lsbCA9IGtpbGwgb3IgMCwKICAgICAgICAgICAgICAgIGRlYXRoID0gZGVhdGggb3IgMCwKICAgICAgICAgICAgfSkKICAgICAgICBlbmQKICAgIGVuZAogICAgdGFibGUuc29ydChyYW5rX3BsYXllcnMsIGZ1bmN0aW9uKGEsIGIpCiAgICAgICAgaWYgYS5raWxsIH49IGIua2lsbCB0aGVuCiAgICAgICAgICAgIHJldHVybiBhLmtpbGwgPiBiLmtpbGwKICAgICAgICBlbmQKICAgICAgICBpZiBhLmRlYXRoIH49IGIuZGVhdGggdGhlbgogICAgICAgICAgICByZXR1cm4gYS5kZWF0aCA8IGIuZGVhdGgKICAgICAgICBlbmQKICAgICAgICByZXR1cm4gYS5pZCA8IGIuaWQKICAgIGVuZCkKICAgIGxvY2FsIGNhcCA9IDEwCiAgICBpZiBNYWluR2FtZTpHZXRHYW1lVHlwZSgpID09IDMgdGhlbgogICAgICAgIGNhcCA9IDEyCiAgICBlbmQKICAgIHJldHVybiByYW5rX3BsYXllcnMsIGNhcAplbmQKCi0tLUBwYXJhbSBsaXRlIGJvb2xlYW58bmlsIDF2MSDlh7vmnYDng63ot6/lvoTvvJrlj6rlhpkgSy9EL3RlYW0vaGVyb++8jOS4jeWIt+aKgOiDveS4juW3puS+p+iuoeWIhuadv+mHjeWtl+autQpmdW5jdGlvbiBTdGF0Ol9SdW5SYW5rVXBkYXRlKGxpdGUpCiAgICBzZWxmLlJhbmtMaXN0LnVwZGF0YSA9IGZhbHNlCiAgICBUaW1lcnMoMC4zLCBmdW5jdGlvbigpCiAgICAgICAgc2VsZi5SYW5rTGlzdC51cGRhdGEgPSB0cnVlCiAgICBlbmQpCiAgICBmb3IgaywgdiBpbiBwYWlycyhzZWxmLlJhbmtMaXN0Lmxpc3QpIGRvCiAgICAgICAgc2VsZjpfQ2xlYXJSYW5rU2xvdCh2KQogICAgZW5kCiAgICBsb2NhbCByYW5rX3BsYXllcnMsIGNhcCA9IHNlbGY6X0NvbGxlY3RSYW5rUGxheWVycygpCiAgICBmb3IgaSA9IDEsIG1hdGgubWluKGNhcCwgI3JhbmtfcGxheWVycykgZG8KICAgICAgICBsb2NhbCByYW5rID0gInJhbmtfIiAuLiBpCiAgICAgICAgbG9jYWwgcm93ID0gcmFua19wbGF5ZXJzW2ldCiAgICAgICAgaWYgbGl0ZSB0aGVuCiAgICAgICAgICAgIHNlbGY6U2V0UGxheWVyRGF0YUxpdGUocm93LmlkLCByYW5rLCByb3cpCiAgICAgICAgZWxzZQogICAgICAgICAgICBzZWxmOlNldFBsYXllckRhdGEocm93LmlkLCByYW5rKQogICAgICAgIGVuZAogICAgZW5kCiAgICBTdGF0OlRvcExpc3RVcERhdGEoKQplbmQKCi0tLSDpmLLmipbmjpLpmJ/vvJtsaXRlIOS4uiB0cnVlIOaXtui1sOi9u+mHj+amnO+8jOiLpeacn+mXtOaciSBmdWxsIOivt+axguWImeWNh+e6p+S4uiBmdWxsCmZ1bmN0aW9uIFN0YXQ6X1F1ZXVlUmFua1VwZGF0ZShsaXRlKQogICAgaWYgc2VsZi5fcmFua1VwZGF0ZVBlbmRpbmcgdGhlbgogICAgICAgIGlmIG5vdCBsaXRlIHRoZW4KICAgICAgICAgICAgc2VsZi5fcmFua1VwZGF0ZUxpdGUgPSBmYWxzZQogICAgICAgIGVuZAogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmLl9yYW5rVXBkYXRlUGVuZGluZyA9IHRydWUKICAgIHNlbGYuX3JhbmtVcGRhdGVMaXRlID0gbGl0ZSA9PSB0cnVlIGFuZCBNYWluR2FtZTpHZXRHYW1lVHlwZSgpID09IDIKICAgIFRpbWVycygwLjMsIGZ1bmN0aW9uKCkKICAgICAgICBzZWxmLl9yYW5rVXBkYXRlUGVuZGluZyA9IG5pbAogICAgICAgIHNlbGYuUmFua0xpc3QudXBkYXRhID0gdHJ1ZQogICAgICAgIGxvY2FsIHVzZV9saXRlID0gc2VsZi5fcmFua1VwZGF0ZUxpdGUgPT0gdHJ1ZQogICAgICAgIHNlbGYuX3JhbmtVcGRhdGVMaXRlID0gZmFsc2UKICAgICAgICBTdGF0Ol9SdW5SYW5rVXBkYXRlKHVzZV9saXRlKQogICAgICAgIFN0YXQ6U2VuZFB1YmxpY0RhdGEoKQogICAgZW5kKQplbmQKCmZ1bmN0aW9uIFN0YXQ6VXBEYXRhUmFuaygpCiAgICBpZiBzZWxmLlJhbmtMaXN0LnVwZGF0YSA9PSBmYWxzZSB0aGVuCiAgICAgICAgc2VsZjpfUXVldWVSYW5rVXBkYXRlKGZhbHNlKQogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmOl9SdW5SYW5rVXBkYXRlKGZhbHNlKQplbmQKCi0tLSAxdjEg5Ye75p2A6ZO+77ya5Y+q5pu05paw5o6S5ZCNL0svRCDkuI7pobbmoI/vvIzmioDog73nrYnnlZnnu5kgT3BlblBhZ2UgLyBJbml0U3lTIOWFqOmHj+WIt+aWsApmdW5jdGlvbiBTdGF0OlVwRGF0YVJhbmtMaXRlKCkKICAgIGlmIE1haW5HYW1lOkdldEdhbWVUeXBlKCkgfj0gMiB0aGVuCiAgICAgICAgU3RhdDpVcERhdGFSYW5rKCkKICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgc2VsZi5SYW5rTGlzdC51cGRhdGEgPT0gZmFsc2UgdGhlbgogICAgICAgIHNlbGY6X1F1ZXVlUmFua1VwZGF0ZSh0cnVlKQogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmOl9SdW5SYW5rVXBkYXRlKHRydWUpCmVuZAoKLS0tIDF2MSDng63ot6/lvoTvvJrpobbmoI/kuI4gVG9wTGlzdFVwRGF0YSDmiYDpnIDlrZfmrrXvvJtyb3cg5ZCrIGtpbGwvZGVhdGgKZnVuY3Rpb24gU3RhdDpTZXRQbGF5ZXJEYXRhTGl0ZShJRCwgcmFuaywgcm93KQogICAgbG9jYWwgZGF0YSA9IHNlbGYuUmFua0xpc3QubGlzdFtyYW5rXQogICAgbG9jYWwgaW5pdF9kYXRhID0gSW5pdFBsYXllcjpHZXRQbGF5ZXJEYXRhKElEKQogICAgaWYgbm90IGRhdGEgb3Igbm90IGluaXRfZGF0YSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGRhdGEuc3RhdGUgPSB0cnVlCiAgICBkYXRhLmlkID0gSUQKICAgIGRhdGEudGVhbSA9IHNlbGY6R2V0VGVhbShpbml0X2RhdGEudGVhbSkKICAgIGRhdGEuaGVybyA9IGluaXRfZGF0YS5oZXJvX25hbWUgb3IgIiIKICAgIGlmIHJvdyB0aGVuCiAgICAgICAgZGF0YS5raWxsID0gcm93LmtpbGwgb3IgMAogICAgICAgIGRhdGEuZGVhdGggPSByb3cuZGVhdGggb3IgMAogICAgZW5kCmVuZAoKZnVuY3Rpb24gU3RhdDpTZXRQbGF5ZXJEYXRhKElELCByYW5rKQogICAgbG9jYWwgaGVybyA9IEhlcm9EYXRhOkdldEhlcm8oSUQpCiAgICBsb2NhbCBkYXRhID0gc2VsZi5SYW5rTGlzdC5saXN0W3JhbmtdCiAgICBsb2NhbCBpbml0X2RhdGEgPSBJbml0UGxheWVyOkdldFBsYXllckRhdGEoSUQpCiAgICBpZiBub3QgaW5pdF9kYXRhIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgZGF0YS5zdGF0ZSA9IHRydWUKICAgIGRhdGEuaWQgPSBJRAogICAgaWYgaW5pdF9kYXRhLmJvdCB0aGVuCiAgICAgICAgZGF0YS5waWQgPSBuaWwKICAgIGVsc2UKICAgICAgICBsb2NhbCBzdGVhbV9pZCA9IFBsYXllclJlc291cmNlOkdldFN0ZWFtQWNjb3VudElEKElEKQogICAgICAgIGRhdGEucGlkID0gdXRpbGV4OkNvbnZlcnRTdGVhbUlEMzJUbzY0X1NhZmUoc3RlYW1faWQpCiAgICBlbmQKICAgIGRhdGEudGVhbSA9IHNlbGY6R2V0VGVhbShpbml0X2RhdGEudGVhbSkKICAgIGRhdGEuaGVybyA9IGluaXRfZGF0YS5oZXJvX25hbWUKICAgIGlmIGhlcm8gdGhlbgogICAgICAgIGRhdGEubGV2ZWwgPSBoZXJvOkdldExldmVsKCkKICAgIGVuZAogICAgaWYgVGFsZW50LkRhdGFbSURdIHRoZW4KICAgICAgICBkYXRhLndlYXBvbiA9IFRhbGVudC5EYXRhW0lEXS5pdGVtX25hbWUKICAgIGVuZAogICAgaWYgbm90IEhlcm9EYXRhLkRhdGFbSURdIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgZGF0YS5nb2xkID0gSGVyb0RhdGEuRGF0YVtJRF0uZ29sZAogICAgZGF0YS5zdGFyID0gSGVyb0RhdGE6R2V0U3RhcihJRCkKICAgIGlmIGluaXRfZGF0YS5ib3QgdGhlbgogICAgICAgIGRhdGEua2lsbCA9IEhlcm9EYXRhLkRhdGFbSURdLmtpbGwgb3IgMAogICAgICAgIGRhdGEuZGVhdGggPSBIZXJvRGF0YS5EYXRhW0lEXS5kZWF0aF9udW0gb3IgMAogICAgICAgIGRhdGEuYXNzaXQgPSAwCiAgICBlbHNlCiAgICAgICAgZGF0YS5raWxsID0gUGxheWVyUmVzb3VyY2U6R2V0S2lsbHMoSUQpCiAgICAgICAgZGF0YS5kZWF0aCA9IFBsYXllclJlc291cmNlOkdldERlYXRocyhJRCkKICAgICAgICBkYXRhLmFzc2l0ID0gUGxheWVyUmVzb3VyY2U6R2V0QXNzaXN0cyhJRCkKICAgIGVuZAoKICAgIGlmIFNraWxsLkRhdGFbSURdIGFuZCBTa2lsbC5EYXRhW0lEXS5Ta2lsbDEgdGhlbgogICAgICAgIGZvciBrLCB2IGluIHBhaXJzKFNraWxsLkRhdGFbSURdLlNraWxsMSkgZG8KICAgICAgICAgICAgaWYgdiB0aGVuCiAgICAgICAgICAgICAgICBsb2NhbCBza2lsbF9pZCA9IHYuaWQKICAgICAgICAgICAgICAgIGxvY2FsIGluZGV4ID0gdi5zbG90CiAgICAgICAgICAgICAgICBsb2NhbCBza2lsbF9rZXkgPSAic2tpbGxfIiAuLiBpbmRleAogICAgICAgICAgICAgICAgaWYgc2tpbGxfaWQgPT0gLTEgdGhlbgogICAgICAgICAgICAgICAgICAgIGRhdGEuc2tpbGxbc2tpbGxfa2V5XS5zdGF0ZSA9IGZhbHNlCiAgICAgICAgICAgICAgICBlbHNlCiAgICAgICAgICAgICAgICAgICAgZGF0YS5za2lsbFtza2lsbF9rZXldLnN0YXRlID0gdHJ1ZQogICAgICAgICAgICAgICAgICAgIGRhdGEuc2tpbGxbc2tpbGxfa2V5XS5uYW1lID0gU2tpbGw6R2V0QWJTa2lsbE5hbWUodi5uYW1lKQogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCiAgICBpZiBTa2lsbC5EYXRhW0lEXSBhbmQgU2tpbGwuRGF0YVtJRF0uU2tpbGwyIHRoZW4KICAgICAgICBmb3IgaywgdiBpbiBwYWlycyhTa2lsbC5EYXRhW0lEXS5Ta2lsbDIpIGRvCiAgICAgICAgICAgIGlmIHYgdGhlbgogICAgICAgICAgICAgICAgbG9jYWwgc2tpbGxfc3RhdGUgPSB2LnN0YXRlCiAgICAgICAgICAgICAgICBsb2NhbCBpbmRleCA9IHYuc2xvdAogICAgICAgICAgICAgICAgbG9jYWwgc2tpbGxfa2V5ID0gInNraWxsXyIgLi4gaW5kZXgKICAgICAgICAgICAgICAgIGlmIHNraWxsX3N0YXRlID09IGZhbHNlIHRoZW4KICAgICAgICAgICAgICAgICAgICBkYXRhLnNraWxsW3NraWxsX2tleV0uc3RhdGUgPSBmYWxzZQogICAgICAgICAgICAgICAgZWxzZQogICAgICAgICAgICAgICAgICAgIGRhdGEuc2tpbGxbc2tpbGxfa2V5XS5zdGF0ZSA9IHRydWUKICAgICAgICAgICAgICAgICAgICBkYXRhLnNraWxsW3NraWxsX2tleV0ubmFtZSA9IHYubmFtZQogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCiAgICAtLSBwcmludCgiPT09PT09PT09PT09PT09PT09IikKICAgIC0tIHByaW50KCLlvZPliY3mjpLlkI0iIC4uIHJhbmspCiAgICAtLSBwcmludCgi5Yqg6L295ZCO5oqA6IO95pWw5o2uIikKICAgIC0tIHByaW50KGRhdGEuc2tpbGwpCmVuZAoKZnVuY3Rpb24gU3RhdDpJc0luUmFua0xpc3QoSUQpCiAgICBmb3IgaywgdiBpbiBwYWlycyhzZWxmLlJhbmtMaXN0Lmxpc3QpIGRvCiAgICAgICAgaWYgdiBhbmQgdi5zdGF0ZSA9PSB0cnVlIGFuZCB2LmlkID09IElEIHRoZW4KICAgICAgICAgICAgcmV0dXJuIHRydWUKICAgICAgICBlbmQKICAgIGVuZAplbmQKCmZ1bmN0aW9uIFN0YXQ6R2V0VG9wUmFua0lEKCkKICAgIGxvY2FsIGxpc3QxID0ge30KICAgIGZvciBrLCB2IGluIHBhaXJzKFBELklEcykgZG8KICAgICAgICBpZiB2IHRoZW4KICAgICAgICAgICAgbG9jYWwgSUQgPSB2CiAgICAgICAgICAgIGlmIG5vdCBzZWxmOklzSW5SYW5rTGlzdChJRCkgdGhlbgogICAgICAgICAgICAgICAgbG9jYWwga2V5ID0gInBfIiAuLiB2CiAgICAgICAgICAgICAgICBsb2NhbCBpbml0X2RhdGEgPSBJbml0UGxheWVyOkdldFBsYXllckRhdGEoSUQpCiAgICAgICAgICAgICAgICBsb2NhbCBraWxsID0gMAogICAgICAgICAgICAgICAgaWYgaW5pdF9kYXRhIGFuZCBpbml0X2RhdGEuYm90IHRoZW4KICAgICAgICAgICAgICAgICAgICBraWxsID0gSGVyb0RhdGEuRGF0YVtJRF0gYW5kIEhlcm9EYXRhLkRhdGFbSURdLmtpbGwgb3IgMAogICAgICAgICAgICAgICAgZWxzZQogICAgICAgICAgICAgICAgICAgIGtpbGwgPSBQbGF5ZXJSZXNvdXJjZTpHZXRLaWxscyhJRCkKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgbGlzdDFba2V5XSA9IGtpbGwKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGlmIFV0aWw6VGFiQ291bnQobGlzdDEpID09IDAgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBsaXN0MiA9IHt9CiAgICBsb2NhbCB0b3BrZXkgPSB1dGlsZXg6R2V0TWF4S2V5SW5UYWIobGlzdDEpCiAgICBsb2NhbCBtYXhfa2lsbCA9IGxpc3QxW3RvcGtleV0KICAgIGZvciBrLCB2IGluIHBhaXJzKGxpc3QxKSBkbwogICAgICAgIGlmIHYgYW5kIHYgPT0gbWF4X2tpbGwgdGhlbgogICAgICAgICAgICBsaXN0MltrXSA9IHYKICAgICAgICBlbmQKICAgIGVuZAogICAgLS3lpoLmnpzmnIDpq5jlh7vmnYDogIXlsLHkuIDkuKoKICAgIGlmIFV0aWw6VGFiQ291bnQobGlzdDIpID09IDEgdGhlbgogICAgICAgIGxvY2FsIElEID0gdG9udW1iZXIodXRpbGV4OnNwbGl0SW5kZXgodG9wa2V5LCAiXyIsIDIpKQogICAgICAgIHJldHVybiBJRAogICAgZW5kCiAgICAtLSBwcmludCgiPT09PT09PT09PT0iKQogICAgLS0gcHJpbnQobGlzdDIpCiAgICAtLeWmguaenOacieWkmuS4qgogICAgbG9jYWwgbGlzdDMgPSB7fQogICAgZm9yIGssIHYgaW4gcGFpcnMobGlzdDIpIGRvCiAgICAgICAgaWYgdiB0aGVuCiAgICAgICAgICAgIGxvY2FsIElEID0gdG9udW1iZXIodXRpbGV4OnNwbGl0SW5kZXgoaywgIl8iLCAyKSkKICAgICAgICAgICAgbG9jYWwgaW5pdF9kYXRhID0gSW5pdFBsYXllcjpHZXRQbGF5ZXJEYXRhKElEKQogICAgICAgICAgICBsb2NhbCBkZWF0aCA9IDAKICAgICAgICAgICAgaWYgaW5pdF9kYXRhIGFuZCBpbml0X2RhdGEuYm90IHRoZW4KICAgICAgICAgICAgICAgIGRlYXRoID0gSGVyb0RhdGEuRGF0YVtJRF0gYW5kIEhlcm9EYXRhLkRhdGFbSURdLmRlYXRoX251bSBvciAwCiAgICAgICAgICAgIGVsc2UKICAgICAgICAgICAgICAgIGRlYXRoID0gUGxheWVyUmVzb3VyY2U6R2V0RGVhdGhzKElEKQogICAgICAgICAgICBlbmQKICAgICAgICAgICAgbGlzdDNba10gPSBkZWF0aAogICAgICAgIGVuZAogICAgZW5kCiAgICBsb2NhbCBtaW5rZXkgPSB1dGlsZXg6R2V0TWluS2V5SW5UYWIobGlzdDMpCiAgICAtLSBwcmludCgiPT09PT09PT09PT0iKQogICAgLS0gcHJpbnQobGlzdDMpCiAgICBsb2NhbCBJRCA9IHRvbnVtYmVyKHV0aWxleDpzcGxpdEluZGV4KG1pbmtleSwgIl8iLCAyKSkKICAgIHJldHVybiBJRAplbmQKCi0t6aG26YOo6K6h5YiG5p2/5o6S5L2N5Y+Y5YqoCmZ1bmN0aW9uIFN0YXQ6VG9wTGlzdFVwRGF0YSgpCiAgICAtLSA1djUgLyByYW5rXzN4NO+8mumhtumDqOS7pemYteiQpeWHu+adgOS4uuS4u++8jOS4jeaKiuWFqOWxgCBLL0Qg5ZCN5qyh5YaZ5ZueIFB1YmxpYy5saXN0CiAgICBpZiBNYWluR2FtZTpHZXRHYW1lVHlwZSgpID09IDEgb3IgTWFpbkdhbWU6R2V0R2FtZVR5cGUoKSA9PSAzIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgY2FwID0gMTAKICAgIGlmIE1haW5HYW1lOkdldEdhbWVUeXBlKCkgPT0gMyB0aGVuCiAgICAgICAgY2FwID0gMTIKICAgIGVuZAogICAgbG9jYWwgbGh6Zl9jaGFuZ2VkID0ge30KICAgIGZvciBpID0gMSwgY2FwIGRvCiAgICAgICAgbG9jYWwgcmFuayA9ICJyYW5rXyIgLi4gaQogICAgICAgIGlmIHNlbGYuUmFua0xpc3QubGlzdFtyYW5rXS5zdGF0ZSB0aGVuCiAgICAgICAgICAgIGxvY2FsIElEID0gc2VsZi5SYW5rTGlzdC5saXN0W3JhbmtdLmlkCiAgICAgICAgICAgIGxvY2FsIHRlYW0gPSBzZWxmLlJhbmtMaXN0Lmxpc3RbcmFua10udGVhbQogICAgICAgICAgICBpZiBub3QgdGVhbSB0aGVuCiAgICAgICAgICAgICAgICBnb3RvIGNvbnRpbnVlCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBsb2NhbCB0ZWFtX2tleSA9ICJ0ZWFtXyIgLi4gdGVhbQogICAgICAgICAgICBsb2NhbCB0ZWFtX2RhdGEgPSBzZWxmLlB1YmxpYy5saXN0W3RlYW1fa2V5XQogICAgICAgICAgICBpZiBub3QgdGVhbV9kYXRhIG9yIG5vdCB0ZWFtX2RhdGEubGlzdCB0aGVuCiAgICAgICAgICAgICAgICBnb3RvIGNvbnRpbnVlCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBmb3IgaywgdiBpbiBwYWlycyh0ZWFtX2RhdGEubGlzdCkgZG8KICAgICAgICAgICAgICAgIGlmIHYgYW5kIHYuc3RhdGUgPT0gdHJ1ZSBhbmQgdi5pZCA9PSBJRCB0aGVuCiAgICAgICAgICAgICAgICAgICAgbG9jYWwgcHJldl9yYW5rID0gdGVhbV9kYXRhLnJhbmsKICAgICAgICAgICAgICAgICAgICBzZWxmLlB1YmxpYy5saXN0W3RlYW1fa2V5XS5yYW5rID0gaQogICAgICAgICAgICAgICAgICAgIGlmIHByZXZfcmFuayB+PSBpIGFuZCBDbHJiTGh6ZklzSHVtYW5QbGF5ZXIgYW5kIENscmJMaHpmSXNIdW1hblBsYXllcihJRCkgdGhlbgogICAgICAgICAgICAgICAgICAgICAgICBsaHpmX2NoYW5nZWRbI2xoemZfY2hhbmdlZCArIDFdID0gSUQKICAgICAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgICAgICA6OmNvbnRpbnVlOjoKICAgIGVuZAogICAgaWYgQ2xyYkxoemZPblJhbmtVcGRhdGVkIHRoZW4KICAgICAgICBDbHJiTGh6Zk9uUmFua1VwZGF0ZWQobGh6Zl9jaGFuZ2VkKQogICAgZW5kCmVuZAo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+--同步数据给玩家
+function Stat:UpDataList(ID)
+    if not ID then
+        return
+    end
+    self.Data[ID].list = self.RankList.list
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--- 清空榜槽，避免 Lite 更新或排名变动后残留上一玩家的英雄/技能/头像
+function Stat:_ClearRankSlot(data)
+    if not data then
+        return
+    end
+    data.state = false
+    data.id = -1
+    data.pid = -1
+    data.team = -1
+    data.hero = ""
+    data.weapon = ""
+    data.level = 1
+    data.gold = 0
+    data.star = 0
+    data.kill = 0
+    data.death = 0
+    data.assit = 0
+    if data.skill then
+        for j = 1, 10 do
+            local sk = data.skill["skill_" .. j]
+            if sk then
+                sk.state = false
+                sk.name = ""
+            end
+        end
+    end
+end
+
+--- 收集可排序玩家 K/D（UpDataRank / UpDataRankLite 共用）
+function Stat:_CollectRankPlayers()
+    local rank_players = {}
+    for _, ID in pairs(PD.IDs or {}) do
+        local init_data = InitPlayer:GetPlayerData(ID)
+        if init_data and init_data.state then
+            local kill = 0
+            local death = 0
+            if init_data.bot then
+                kill = HeroData.Data[ID] and HeroData.Data[ID].kill or 0
+                death = HeroData.Data[ID] and HeroData.Data[ID].death_num or 0
+            else
+                kill = PlayerResource:GetKills(ID)
+                death = PlayerResource:GetDeaths(ID)
+            end
+            table.insert(rank_players, {
+                id = ID,
+                kill = kill or 0,
+                death = death or 0,
+            })
+        end
+    end
+    table.sort(rank_players, function(a, b)
+        if a.kill ~= b.kill then
+            return a.kill > b.kill
+        end
+        if a.death ~= b.death then
+            return a.death < b.death
+        end
+        return a.id < b.id
+    end)
+    local cap = 10
+    if MainGame:GetGameType() == 3 then
+        cap = 12
+    end
+    return rank_players, cap
+end
+
+---@param lite boolean|nil 1v1 击杀热路径：只写 K/D/team/hero，不刷技能与左侧计分板重字段
+function Stat:_RunRankUpdate(lite)
+    self.RankList.updata = false
+    Timers(0.3, function()
+        self.RankList.updata = true
+    end)
+    for k, v in pairs(self.RankList.list) do
+        self:_ClearRankSlot(v)
+    end
+    local rank_players, cap = self:_CollectRankPlayers()
+    for i = 1, math.min(cap, #rank_players) do
+        local rank = "rank_" .. i
+        local row = rank_players[i]
+        if lite then
+            self:SetPlayerDataLite(row.id, rank, row)
+        else
+            self:SetPlayerData(row.id, rank)
+        end
+    end
+    Stat:TopListUpData()
+end
+
+--- 防抖排队；lite 为 true 时走轻量榜，若期间有 full 请求则升级为 full
+function Stat:_QueueRankUpdate(lite)
+    if self._rankUpdatePending then
+        if not lite then
+            self._rankUpdateLite = false
+        end
+        return
+    end
+    self._rankUpdatePending = true
+    self._rankUpdateLite = lite == true and MainGame:GetGameType() == 2
+    Timers(0.3, function()
+        self._rankUpdatePending = nil
+        self.RankList.updata = true
+        local use_lite = self._rankUpdateLite == true
+        self._rankUpdateLite = false
+        Stat:_RunRankUpdate(use_lite)
+        Stat:SendPublicData()
+    end)
+end
+
+function Stat:UpDataRank()
+    if self.RankList.updata == false then
+        self:_QueueRankUpdate(false)
+        return
+    end
+    self:_RunRankUpdate(false)
+end
+
+--- 1v1 击杀链：只更新排名/K/D 与顶栏，技能等留给 OpenPage / InitSyS 全量刷新
+function Stat:UpDataRankLite()
+    if MainGame:GetGameType() ~= 2 then
+        Stat:UpDataRank()
+        return
+    end
+    if self.RankList.updata == false then
+        self:_QueueRankUpdate(true)
+        return
+    end
+    self:_RunRankUpdate(true)
+end
+
+--- 1v1 热路径：顶栏与 TopListUpData 所需字段；row 含 kill/death
+function Stat:SetPlayerDataLite(ID, rank, row)
+    local data = self.RankList.list[rank]
+    local init_data = InitPlayer:GetPlayerData(ID)
+    if not data or not init_data then
+        return
+    end
+    data.state = true
+    data.id = ID
+    data.team = self:GetTeam(init_data.team)
+    data.hero = init_data.hero_name or ""
+    if row then
+        data.kill = row.kill or 0
+        data.death = row.death or 0
+    end
+end
+
+function Stat:SetPlayerData(ID, rank)
+    local hero = HeroData:GetHero(ID)
+    local data = self.RankList.list[rank]
+    local init_data = InitPlayer:GetPlayerData(ID)
+    if not init_data then
+        return
+    end
+    data.state = true
+    data.id = ID
+    if init_data.bot then
+        data.pid = nil
+    else
+        local steam_id = PlayerResource:GetSteamAccountID(ID)
+        data.pid = utilex:ConvertSteamID32To64_Safe(steam_id)
+    end
+    data.team = self:GetTeam(init_data.team)
+    data.hero = init_data.hero_name
+    if hero then
+        data.level = hero:GetLevel()
+    end
+    if Talent.Data[ID] then
+        data.weapon = Talent.Data[ID].item_name
+    end
+    if not HeroData.Data[ID] then
+        return
+    end
+    data.gold = HeroData.Data[ID].gold
+    data.star = HeroData:GetStar(ID)
+    if init_data.bot then
+        data.kill = HeroData.Data[ID].kill or 0
+        data.death = HeroData.Data[ID].death_num or 0
+        data.assit = 0
+    else
+        data.kill = PlayerResource:GetKills(ID)
+        data.death = PlayerResource:GetDeaths(ID)
+        data.assit = PlayerResource:GetAssists(ID)
+    end
+
+    if Skill.Data[ID] and Skill.Data[ID].Skill1 then
+        for k, v in pairs(Skill.Data[ID].Skill1) do
+            if v then
+                local skill_id = v.id
+                local index = v.slot
+                local skill_key = "skill_" .. index
+                if skill_id == -1 then
+                    data.skill[skill_key].state = false
+                else
+                    data.skill[skill_key].state = true
+                    data.skill[skill_key].name = Skill:GetAbSkillName(v.name)
+                end
+            end
+        end
+    end
+    if Skill.Data[ID] and Skill.Data[ID].Skill2 then
+        for k, v in pairs(Skill.Data[ID].Skill2) do
+            if v then
+                local skill_state = v.state
+                local index = v.slot
+                local skill_key = "skill_" .. index
+                if skill_state == false then
+                    data.skill[skill_key].state = false
+                else
+                    data.skill[skill_key].state = true
+                    data.skill[skill_key].name = v.name
+                end
+            end
+        end
+    end
+    -- print("==================")
+    -- print("当前排名" .. rank)
+    -- print("加载后技能数据")
+    -- print(data.skill)
+end
+
+function Stat:IsInRankList(ID)
+    for k, v in pairs(self.RankList.list) do
+        if v and v.state == true and v.id == ID then
+            return true
+        end
+    end
+end
+
+function Stat:GetTopRankID()
+    local list1 = {}
+    for k, v in pairs(PD.IDs) do
+        if v then
+            local ID = v
+            if not self:IsInRankList(ID) then
+                local key = "p_" .. v
+                local init_data = InitPlayer:GetPlayerData(ID)
+                local kill = 0
+                if init_data and init_data.bot then
+                    kill = HeroData.Data[ID] and HeroData.Data[ID].kill or 0
+                else
+                    kill = PlayerResource:GetKills(ID)
+                end
+                list1[key] = kill
+            end
+        end
+    end
+    if Util:TabCount(list1) == 0 then
+        return
+    end
+    local list2 = {}
+    local topkey = utilex:GetMaxKeyInTab(list1)
+    local max_kill = list1[topkey]
+    for k, v in pairs(list1) do
+        if v and v == max_kill then
+            list2[k] = v
+        end
+    end
+    --如果最高击杀者就一个
+    if Util:TabCount(list2) == 1 then
+        local ID = tonumber(utilex:splitIndex(topkey, "_", 2))
+        return ID
+    end
+    -- print("===========")
+    -- print(list2)
+    --如果有多个
+    local list3 = {}
+    for k, v in pairs(list2) do
+        if v then
+            local ID = tonumber(utilex:splitIndex(k, "_", 2))
+            local init_data = InitPlayer:GetPlayerData(ID)
+            local death = 0
+            if init_data and init_data.bot then
+                death = HeroData.Data[ID] and HeroData.Data[ID].death_num or 0
+            else
+                death = PlayerResource:GetDeaths(ID)
+            end
+            list3[k] = death
+        end
+    end
+    local minkey = utilex:GetMinKeyInTab(list3)
+    -- print("===========")
+    -- print(list3)
+    local ID = tonumber(utilex:splitIndex(minkey, "_", 2))
+    return ID
+end
+
+--顶部计分板排位变动
+function Stat:TopListUpData()
+    -- 5v5 / rank_3x4：顶部以阵营击杀为主，不把全局 K/D 名次写回 Public.list
+    if MainGame:GetGameType() == 1 or MainGame:GetGameType() == 3 then
+        return
+    end
+    local cap = 10
+    if MainGame:GetGameType() == 3 then
+        cap = 12
+    end
+    local lhzf_changed = {}
+    for i = 1, cap do
+        local rank = "rank_" .. i
+        if self.RankList.list[rank].state then
+            local ID = self.RankList.list[rank].id
+            local team = self.RankList.list[rank].team
+            if not team then
+                goto continue
+            end
+            local team_key = "team_" .. team
+            local team_data = self.Public.list[team_key]
+            if not team_data or not team_data.list then
+                goto continue
+            end
+            for k, v in pairs(team_data.list) do
+                if v and v.state == true and v.id == ID then
+                    local prev_rank = team_data.rank
+                    self.Public.list[team_key].rank = i
+                    if prev_rank ~= i and ClrbLhzfIsHumanPlayer and ClrbLhzfIsHumanPlayer(ID) then
+                        lhzf_changed[#lhzf_changed + 1] = ID
+                    end
+                end
+            end
+        end
+        ::continue::
+    end
+    if ClrbLhzfOnRankUpdated then
+        ClrbLhzfOnRankUpdated(lhzf_changed)
+    end
+end

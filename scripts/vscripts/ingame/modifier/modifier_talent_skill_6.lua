@@ -8,22 +8,168 @@
 ]]
 
 
-local encoded=[[LS0g6KKr5Yqo5aSp6LWLIDbvvJrkv67ku5nigJTigJTkv67kuLrloIblj6Dmr4/liIbpkp8gKzHvvIjmjInlr7nlsYDml7bpl7TvvIzmrbvkuqHmnJ/pl7TlkIzmoLfntK/orqHvvInvvJvnu7/lrZfkuInnu7Qv55Sf5ZG9562J55SxIERlY2xhcmVGdW5jdGlvbnMg5o+Q5L6bCi0tIFRvb2x0aXAg5pys5Zyw5YyW6ZSu5b+F6aG75Li6IERPVEFfVG9vbHRpcF9tb2RpZmllcl90YWxlbnRfc2tpbGxfNu+8iEx1YSDnsbvlkI0gbW9kaWZpZXJfdGFsZW50X3NraWxsXzYg5Y675o6J5LiA5LiqIG1vZGlmaWVyX++8ie+8jOWLv+WGmeaIkCBtb2RpZmllcl9tb2RpZmllcl90YWxlbnRfc2tpbGxfNgotLSDmrbvkuqHkuI3np7vpmaQgbW9kaWZpZXLvvJvlpI3mtLvlkI7ph43lkK8gSW50ZXJ2YWxUaGlua++8m+eti+aWl+S6keingSBtb2RpZmllcl9jbHJiX2ZseV9jbG91ZAoKcmVxdWlyZSgiaW5nYW1lLm1vZGlmaWVyLmNscmJfZmx5X2Nsb3VkX3V0aWwiKQoKbW9kaWZpZXJfdGFsZW50X3NraWxsXzYgPSBjbGFzcyh7fSkKCmxvY2FsIFhJVVdFSV9JTlRFUlZBTCA9IDYwCmxvY2FsIEZMWUlOR19VTkxPQ0sgPSBDbHJiRmx5Q2xvdWRYaXVXZWlVbmxvY2sgb3IgMjQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF82OklzSGlkZGVuKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF82OklzRGVidWZmKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF82OklzUHVyZ2FibGUoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzY6UmVtb3ZlT25EZWF0aCgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNjpJc1Blcm1hbmVudCgpCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF82OkRlY2xhcmVGdW5jdGlvbnMoKQogICAgcmV0dXJuIHsKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9TVEFUU19TVFJFTkdUSF9CT05VUywKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9TVEFUU19BR0lMSVRZX0JPTlVTLAogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX1NUQVRTX0lOVEVMTEVDVF9CT05VUywKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9IRUFMVEhfQk9OVVMsCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfUEhZU0lDQUxfQVJNT1JfQk9OVVMsCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfTUFHSUNBTF9SRVNJU1RBTkNFX0JPTlVTLAogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX01PVkVTUEVFRF9CT05VU19DT05TVEFOVCwKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9UT09MVElQLAogICAgICAgIE1PRElGSUVSX0VWRU5UX09OX1JFU1BBV04sCiAgICB9CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzY6X1hpdVdlaSgpCiAgICByZXR1cm4gc2VsZjpHZXRTdGFja0NvdW50KCkgb3IgMAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF82OkdldE1vZGlmaWVyQm9udXNTdGF0c19TdHJlbmd0aCgpCiAgICByZXR1cm4gc2VsZjpfWGl1V2VpKCkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNjpHZXRNb2RpZmllckJvbnVzU3RhdHNfQWdpbGl0eSgpCiAgICByZXR1cm4gc2VsZjpfWGl1V2VpKCkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNjpHZXRNb2RpZmllckJvbnVzU3RhdHNfSW50ZWxsZWN0KCkKICAgIHJldHVybiBzZWxmOl9YaXVXZWkoKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF82OkdldE1vZGlmaWVySGVhbHRoQm9udXMoKQogICAgcmV0dXJuIHNlbGY6X1hpdVdlaSgpICogNTAKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNjpHZXRNb2RpZmllclBoeXNpY2FsQXJtb3JCb251cygpCiAgICByZXR1cm4gc2VsZjpfWGl1V2VpKCkgPj0gMTYgYW5kIDEwIG9yIDAKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNjpHZXRNb2RpZmllck1hZ2ljYWxSZXNpc3RhbmNlQm9udXMoKQogICAgcmV0dXJuIHNlbGY6X1hpdVdlaSgpID49IDE2IGFuZCAxNSBvciAwCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzY6R2V0TW9kaWZpZXJNb3ZlU3BlZWRCb251c19Db25zdGFudCgpCiAgICByZXR1cm4gc2VsZjpfWGl1V2VpKCkgPj0gRkxZSU5HX1VOTE9DSyBhbmQgOTAgb3IgMAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF82OkNoZWNrU3RhdGUoKQogICAgaWYgc2VsZjpfWGl1V2VpKCkgPCBGTFlJTkdfVU5MT0NLIHRoZW4KICAgICAgICByZXR1cm4ge30KICAgIGVuZAogICAgcmV0dXJuIHsKICAgICAgICBbTU9ESUZJRVJfU1RBVEVfRkxZSU5HXSA9IHRydWUsCiAgICAgICAgW01PRElGSUVSX1NUQVRFX0ZMWUlOR19GT1JfUEFUSElOR19QVVJQT1NFU19PTkxZXSA9IHRydWUsCiAgICB9CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzY6X1N5bmNGbHlDbG91ZCgpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIHAgPSBzZWxmOkdldFBhcmVudCgpCiAgICBpZiBwIGFuZCBub3QgcDpJc051bGwoKSB0aGVuCiAgICAgICAgQ2xyYkZseUNsb3VkU2NoZWR1bGVTeW5jKHApCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNjpfVHJ5QWRkWGl1V2VpKCkKICAgIGxvY2FsIHAgPSBzZWxmOkdldFBhcmVudCgpCiAgICBpZiBub3QgcCBvciBwOklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGxvY2FsIG5vdyA9IEdhbWVSdWxlczpHZXRHYW1lVGltZSgpCiAgICBpZiBub3Qgc2VsZi5fbGFzdF94aXV3ZWlfdGltZSB0aGVuCiAgICAgICAgc2VsZi5fbGFzdF94aXV3ZWlfdGltZSA9IG5vdwogICAgICAgIHJldHVybgogICAgZW5kCgogICAgbG9jYWwgZ2FpbmVkID0gMAogICAgd2hpbGUgKG5vdyAtIHNlbGYuX2xhc3RfeGl1d2VpX3RpbWUpID49IFhJVVdFSV9JTlRFUlZBTCBkbwogICAgICAgIGdhaW5lZCA9IGdhaW5lZCArIDEKICAgICAgICBzZWxmLl9sYXN0X3hpdXdlaV90aW1lID0gc2VsZi5fbGFzdF94aXV3ZWlfdGltZSArIFhJVVdFSV9JTlRFUlZBTAogICAgZW5kCgogICAgaWYgZ2FpbmVkID4gMCB0aGVuCiAgICAgICAgc2VsZjpTZXRTdGFja0NvdW50KHNlbGY6R2V0U3RhY2tDb3VudCgpICsgZ2FpbmVkKQogICAgICAgIHA6Q2FsY3VsYXRlU3RhdEJvbnVzKHRydWUpCiAgICAgICAgc2VsZjpfU3luY0ZseUNsb3VkKCkKICAgIGVuZAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF82Ok9uRGVzdHJveSgpCiAgICBpZiBJc1NlcnZlcigpIHRoZW4KICAgICAgICBzZWxmOl9TeW5jRmx5Q2xvdWQoKQogICAgZW5kCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzY6T25SZXNwYXduKCkKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZjpfVHJ5QWRkWGl1V2VpKCkKICAgIHNlbGY6X1N5bmNGbHlDbG91ZCgpCiAgICBzZWxmOlN0YXJ0SW50ZXJ2YWxUaGluaygxKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF82Ok9uQ3JlYXRlZCgpCiAgICBpZiBJc1NlcnZlcigpIHRoZW4KICAgICAgICBzZWxmLl9sYXN0X3hpdXdlaV90aW1lID0gR2FtZVJ1bGVzOkdldEdhbWVUaW1lKCkKICAgICAgICBzZWxmOlN0YXJ0SW50ZXJ2YWxUaGluaygxKQogICAgICAgIFRpbWVycygwLCBmdW5jdGlvbigpCiAgICAgICAgICAgIGlmIG5vdCBzZWxmIG9yIHNlbGY6SXNOdWxsKCkgdGhlbgogICAgICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBzZWxmOl9UcnlBZGRYaXVXZWkoKQogICAgICAgICAgICBzZWxmOl9TeW5jRmx5Q2xvdWQoKQogICAgICAgIGVuZCkKICAgIGVuZAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF82Ok9uSW50ZXJ2YWxUaGluaygpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGY6X1RyeUFkZFhpdVdlaSgpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzY6T25Ub29sdGlwKCkKICAgIHJldHVybiBzZWxmOl9YaXVXZWkoKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF82OkdldFRleHR1cmUoKQogICAgcmV0dXJuICJidWZmL3RhbGVudF82IgplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 被动天赋 6：修仙——修为堆叠每分钟 +1（按对局时间，死亡期间同样累计）；绿字三维/生命等由 DeclareFunctions 提供
+-- Tooltip 本地化键必须为 DOTA_Tooltip_modifier_talent_skill_6（Lua 类名 modifier_talent_skill_6 去掉一个 modifier_），勿写成 modifier_modifier_talent_skill_6
+-- 死亡不移除 modifier；复活后重启 IntervalThink；筋斗云见 modifier_clrb_fly_cloud
+
+require("ingame.modifier.clrb_fly_cloud_util")
+
+modifier_talent_skill_6 = class({})
+
+local XIUWEI_INTERVAL = 60
+local FLYING_UNLOCK = ClrbFlyCloudXiuWeiUnlock or 24
+
+function modifier_talent_skill_6:IsHidden()
+    return false
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function modifier_talent_skill_6:IsDebuff()
+    return false
+end
+
+function modifier_talent_skill_6:IsPurgable()
+    return false
+end
+
+function modifier_talent_skill_6:RemoveOnDeath()
+    return false
+end
+
+function modifier_talent_skill_6:IsPermanent()
+    return true
+end
+
+function modifier_talent_skill_6:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+        MODIFIER_PROPERTY_HEALTH_BONUS,
+        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+        MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+        MODIFIER_PROPERTY_TOOLTIP,
+        MODIFIER_EVENT_ON_RESPAWN,
+    }
+end
+
+function modifier_talent_skill_6:_XiuWei()
+    return self:GetStackCount() or 0
+end
+
+function modifier_talent_skill_6:GetModifierBonusStats_Strength()
+    return self:_XiuWei()
+end
+
+function modifier_talent_skill_6:GetModifierBonusStats_Agility()
+    return self:_XiuWei()
+end
+
+function modifier_talent_skill_6:GetModifierBonusStats_Intellect()
+    return self:_XiuWei()
+end
+
+function modifier_talent_skill_6:GetModifierHealthBonus()
+    return self:_XiuWei() * 50
+end
+
+function modifier_talent_skill_6:GetModifierPhysicalArmorBonus()
+    return self:_XiuWei() >= 16 and 10 or 0
+end
+
+function modifier_talent_skill_6:GetModifierMagicalResistanceBonus()
+    return self:_XiuWei() >= 16 and 15 or 0
+end
+
+function modifier_talent_skill_6:GetModifierMoveSpeedBonus_Constant()
+    return self:_XiuWei() >= FLYING_UNLOCK and 90 or 0
+end
+
+function modifier_talent_skill_6:CheckState()
+    if self:_XiuWei() < FLYING_UNLOCK then
+        return {}
+    end
+    return {
+        [MODIFIER_STATE_FLYING] = true,
+        [MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true,
+    }
+end
+
+function modifier_talent_skill_6:_SyncFlyCloud()
+    if not IsServer() then
+        return
+    end
+    local p = self:GetParent()
+    if p and not p:IsNull() then
+        ClrbFlyCloudScheduleSync(p)
+    end
+end
+
+function modifier_talent_skill_6:_TryAddXiuWei()
+    local p = self:GetParent()
+    if not p or p:IsNull() then
+        return
+    end
+
+    local now = GameRules:GetGameTime()
+    if not self._last_xiuwei_time then
+        self._last_xiuwei_time = now
+        return
+    end
+
+    local gained = 0
+    while (now - self._last_xiuwei_time) >= XIUWEI_INTERVAL do
+        gained = gained + 1
+        self._last_xiuwei_time = self._last_xiuwei_time + XIUWEI_INTERVAL
+    end
+
+    if gained > 0 then
+        self:SetStackCount(self:GetStackCount() + gained)
+        p:CalculateStatBonus(true)
+        self:_SyncFlyCloud()
+    end
+end
+
+function modifier_talent_skill_6:OnDestroy()
+    if IsServer() then
+        self:_SyncFlyCloud()
+    end
+end
+
+function modifier_talent_skill_6:OnRespawn()
+    if not IsServer() then
+        return
+    end
+    self:_TryAddXiuWei()
+    self:_SyncFlyCloud()
+    self:StartIntervalThink(1)
+end
+
+function modifier_talent_skill_6:OnCreated()
+    if IsServer() then
+        self._last_xiuwei_time = GameRules:GetGameTime()
+        self:StartIntervalThink(1)
+        Timers(0, function()
+            if not self or self:IsNull() then
+                return
+            end
+            self:_TryAddXiuWei()
+            self:_SyncFlyCloud()
+        end)
+    end
+end
+
+function modifier_talent_skill_6:OnIntervalThink()
+    if not IsServer() then
+        return
+    end
+    self:_TryAddXiuWei()
+end
+
+function modifier_talent_skill_6:OnTooltip()
+    return self:_XiuWei()
+end
+
+function modifier_talent_skill_6:GetTexture()
+    return "buff/talent_6"
+end

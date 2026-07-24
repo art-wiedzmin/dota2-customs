@@ -8,22 +8,170 @@
 ]]
 
 
-local encoded=[[bW9kaWZpZXJfY2xyYl9lZmZlY3QgPSBjbGFzcyh7fSkKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfZWZmZWN0OklzSGlkZGVuKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9lZmZlY3Q6SXNEZWJ1ZmYoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9lZmZlY3Q6SXNQdXJnYWJsZSgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2VmZmVjdDpSZW1vdmVPbkRlYXRoKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9lZmZlY3Q6T25DcmVhdGVkKGt2KQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmLmVmZmVjdF9meCA9IChrdiBhbmQga3YuZWZmZWN0X2Z4KQogICAgICAgIG9yICJwYXJ0aWNsZXMvZWNvbi9jb3VyaWVyL2NvdXJpZXJfdHJhaWxfbGF2YS9jb3VyaWVyX3RyYWlsX2xhdmEudnBjZiIKICAgIHNlbGY6X1VwZGF0ZVBhcnRpY2xlKCkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2VmZmVjdDpPblJlZnJlc2goa3YpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIGt2IGFuZCBrdi5lZmZlY3RfZnggYW5kIGt2LmVmZmVjdF9meCB+PSAiIiB0aGVuCiAgICAgICAgc2VsZi5lZmZlY3RfZnggPSBrdi5lZmZlY3RfZngKICAgIGVuZAogICAgc2VsZjpfVXBkYXRlUGFydGljbGUoKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfZWZmZWN0Ok9uRGVzdHJveSgpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGY6X0Rlc3Ryb3lQYXJ0aWNsZSgpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9lZmZlY3Q6T25SZW1vdmVkKCkKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZjpfRGVzdHJveVBhcnRpY2xlKCkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2VmZmVjdDpfRGVzdHJveVBhcnRpY2xlKCkKICAgIGlmIHNlbGYucGFydGljbGUgdGhlbgogICAgICAgIFBhcnRpY2xlTWFuYWdlcjpEZXN0cm95UGFydGljbGUoc2VsZi5wYXJ0aWNsZSwgdHJ1ZSkKICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6UmVsZWFzZVBhcnRpY2xlSW5kZXgoc2VsZi5wYXJ0aWNsZSkKICAgICAgICBzZWxmLnBhcnRpY2xlID0gbmlsCiAgICBlbmQKZW5kCgotLS0g5L+h5L2/5p+T6ImyIENQMTXvvJvpk4Lph5HogonlsbEgYW1iaWVudCDpnIDopoHmmL7lvI/mn5PoibIKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9lZmZlY3Q6X05lZWRzQ291cmllclRpbnQoZngpCiAgICBpZiBub3QgZnggdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICByZXR1cm4gc3RyaW5nLmZpbmQoZngsICJwbGF0aW51bV9yb3NoYW5fYW1iaWVudCIsIDEsIHRydWUpIH49IG5pbAplbmQKCi0tLSDmgKXpm6rmi5blsL7mlbTljIXvvJrlj6rmjILniLbnuqcgY291cmllcl90cmFpbF9mbHVycnnvvIzlrZDnuqcgX2Ig6Ieq5Yqo5bim5LiKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfZWZmZWN0Ol9Jc0ZsdXJyeVBhY2soZngpCiAgICBpZiBub3QgZnggdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICByZXR1cm4gc3RyaW5nLmZpbmQoZngsICJjb3VyaWVyX3RyYWlsX2ZsdXJyeSIsIDEsIHRydWUpIH49IG5pbAplbmQKCi0tLSDpk4Lph5HogonlsbHmlbTljIXvvIhhbWJpZW50IOeItue6p++8iemcgOimgSBDUDAvMS8yIOe7keecvOedm+aMgueCue+8jOWtkOeJueaViOS8muiHquWKqOi3n+majwpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2VmZmVjdDpfSXNQbGF0aW51bVJvc2hhblBhY2soZngpCiAgICBpZiBub3QgZnggdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICByZXR1cm4gc3RyaW5nLmZpbmQoZngsICJwbGF0aW51bV9yb3NoYW5fYW1iaWVudCIsIDEsIHRydWUpIH49IG5pbAogICAgICAgIG9yIHN0cmluZy5maW5kKGZ4LCAicGxhdGludW1fcm9zaGFuX2V5ZSIsIDEsIHRydWUpIH49IG5pbAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfZWZmZWN0Ol9IYXNBdHRhY2htZW50KHBhcmVudCwgbmFtZSkKICAgIGlmIG5vdCBwYXJlbnQgb3IgcGFyZW50OklzTnVsbCgpIG9yIG5vdCBuYW1lIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgaWQgPSBwYXJlbnQ6U2NyaXB0TG9va3VwQXR0YWNobWVudChuYW1lKQogICAgcmV0dXJuIGlkIGFuZCBpZCA+IDAKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2VmZmVjdDpfUGlja0JvZHlBdHRhY2gocGFyZW50KQogICAgZm9yIF8sIG5hbWUgaW4gaXBhaXJzKHsgImF0dGFjaF9oaXRsb2MiLCAiYXR0YWNoX2hlYWQiLCAiYXR0YWNoX2F0dGFjazEiLCAiYXR0YWNoX29yaWdpbiIgfSkgZG8KICAgICAgICBpZiBzZWxmOl9IYXNBdHRhY2htZW50KHBhcmVudCwgbmFtZSkgdGhlbgogICAgICAgICAgICByZXR1cm4gbmFtZQogICAgICAgIGVuZAogICAgZW5kCiAgICByZXR1cm4gImF0dGFjaF9oaXRsb2MiCmVuZAoKLS0tIOiCieWxseWOn+ijhe+8mkNQMC8xLzIgPSBhdHRhY2hfZXllX2wvbS9y77yb6Iux6ZuE5peg5q2k5oyC54K55pe26JC95Yiw5aS06YOo5Yy65Z+f5bm25bem5Y+z6ZSZ5byACmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfZWZmZWN0Ol9CaW5kUGxhdGludW1Sb3NoYW5Db250cm9sUG9pbnRzKHAsIHBhcmVudCkKICAgIGxvY2FsIGhhc19sID0gc2VsZjpfSGFzQXR0YWNobWVudChwYXJlbnQsICJhdHRhY2hfZXllX2wiKQogICAgbG9jYWwgaGFzX20gPSBzZWxmOl9IYXNBdHRhY2htZW50KHBhcmVudCwgImF0dGFjaF9leWVfbSIpCiAgICBsb2NhbCBoYXNfciA9IHNlbGY6X0hhc0F0dGFjaG1lbnQocGFyZW50LCAiYXR0YWNoX2V5ZV9yIikKCiAgICBpZiBoYXNfbCBhbmQgaGFzX20gYW5kIGhhc19yIHRoZW4KICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6U2V0UGFydGljbGVDb250cm9sRW50KHAsIDAsIHBhcmVudCwgUEFUVEFDSF9QT0lOVF9GT0xMT1csICJhdHRhY2hfZXllX2wiLCBWZWN0b3IoMCwgMCwgMCksIHRydWUpCiAgICAgICAgUGFydGljbGVNYW5hZ2VyOlNldFBhcnRpY2xlQ29udHJvbEVudChwLCAxLCBwYXJlbnQsIFBBVFRBQ0hfUE9JTlRfRk9MTE9XLCAiYXR0YWNoX2V5ZV9tIiwgVmVjdG9yKDAsIDAsIDApLCB0cnVlKQogICAgICAgIFBhcnRpY2xlTWFuYWdlcjpTZXRQYXJ0aWNsZUNvbnRyb2xFbnQocCwgMiwgcGFyZW50LCBQQVRUQUNIX1BPSU5UX0ZPTExPVywgImF0dGFjaF9leWVfciIsIFZlY3RvcigwLCAwLCAwKSwgdHJ1ZSkKICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGxvY2FsIGJvZHkgPSAiYXR0YWNoX2hpdGxvYyIKICAgIGlmIHNlbGY6X0hhc0F0dGFjaG1lbnQocGFyZW50LCAiYXR0YWNoX2hlYWQiKSB0aGVuCiAgICAgICAgYm9keSA9ICJhdHRhY2hfaGVhZCIKICAgIGVsc2VpZiBzZWxmOl9IYXNBdHRhY2htZW50KHBhcmVudCwgImF0dGFjaF9oaXRsb2MiKSB0aGVuCiAgICAgICAgYm9keSA9ICJhdHRhY2hfaGl0bG9jIgogICAgZWxzZQogICAgICAgIGJvZHkgPSBzZWxmOl9QaWNrQm9keUF0dGFjaChwYXJlbnQpCiAgICBlbmQKCiAgICAtLSDmnKzlnLDlgY/np7vvvJrlt6YgLyDkuK0gLyDlj7PvvIzov5HkvLzkuInlj6rnnLzlnKjoi7Hpm4TlpLTog7jkvY3nva4KICAgIFBhcnRpY2xlTWFuYWdlcjpTZXRQYXJ0aWNsZUNvbnRyb2xFbnQocCwgMCwgcGFyZW50LCBQQVRUQUNIX1BPSU5UX0ZPTExPVywgYm9keSwgVmVjdG9yKC0xNCwgMiwgOCksIHRydWUpCiAgICBQYXJ0aWNsZU1hbmFnZXI6U2V0UGFydGljbGVDb250cm9sRW50KHAsIDEsIHBhcmVudCwgUEFUVEFDSF9QT0lOVF9GT0xMT1csIGJvZHksIFZlY3RvcigwLCA0LCAxMiksIHRydWUpCiAgICBQYXJ0aWNsZU1hbmFnZXI6U2V0UGFydGljbGVDb250cm9sRW50KHAsIDIsIHBhcmVudCwgUEFUVEFDSF9QT0lOVF9GT0xMT1csIGJvZHksIFZlY3RvcigxNCwgMiwgOCksIHRydWUpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9lZmZlY3Q6X1VwZGF0ZVBhcnRpY2xlKCkKICAgIHNlbGY6X0Rlc3Ryb3lQYXJ0aWNsZSgpCiAgICBsb2NhbCBwYXJlbnQgPSBzZWxmOkdldFBhcmVudCgpCiAgICBpZiBub3QgcGFyZW50IG9yIHBhcmVudDpJc051bGwoKSBvciBub3Qgc2VsZi5lZmZlY3RfZnggb3Igc2VsZi5lZmZlY3RfZnggPT0gIiIgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBmeCA9IHNlbGYuZWZmZWN0X2Z4CgogICAgLS0gQUJTT1JJR0lOX0ZPTExPV++8mueItueykuWtkCBDcmVhdGVPbk1vZGVsIOaJjeiDvei0tOiLsembhOaooeWei++8m+WtkOeykuWtkOeUseeItue6p+iHquWKqOWIm+W7ugogICAgc2VsZi5wYXJ0aWNsZSA9IFBhcnRpY2xlTWFuYWdlcjpDcmVhdGVQYXJ0aWNsZShmeCwgUEFUVEFDSF9BQlNPUklHSU5fRk9MTE9XLCBwYXJlbnQpCiAgICBpZiBub3Qgc2VsZi5wYXJ0aWNsZSBvciBzZWxmLnBhcnRpY2xlIDwgMCB0aGVuCiAgICAgICAgc2VsZi5wYXJ0aWNsZSA9IG5pbAogICAgICAgIHJldHVybgogICAgZW5kCgogICAgaWYgc2VsZjpfSXNQbGF0aW51bVJvc2hhblBhY2soZngpIHRoZW4KICAgICAgICBzZWxmOl9CaW5kUGxhdGludW1Sb3NoYW5Db250cm9sUG9pbnRzKHNlbGYucGFydGljbGUsIHBhcmVudCkKICAgIGVsc2VpZiBzZWxmOl9Jc0ZsdXJyeVBhY2soZngpIHRoZW4KICAgICAgICAtLSDot5/ohJrlupXljbPlj6/vvJvpopzoibLlt7Llhpnov5vnspLlrZDvvIzkuI3kvp3otZYgQ1AxNSBSZW1hcO+8iOaYk+aKiuaViOaenOafk+ayoe+8iQogICAgICAgIFBhcnRpY2xlTWFuYWdlcjpTZXRQYXJ0aWNsZUNvbnRyb2xFbnQoCiAgICAgICAgICAgIHNlbGYucGFydGljbGUsIDAsIHBhcmVudCwgUEFUVEFDSF9BQlNPUklHSU5fRk9MTE9XLCAiIiwgVmVjdG9yKDAsIDAsIDApLCB0cnVlCiAgICAgICAgKQogICAgZW5kCgogICAgaWYgc2VsZjpfTmVlZHNDb3VyaWVyVGludChmeCkgdGhlbgogICAgICAgIC0tIOemu+WtkOS5i+awlO+8iGNvdXJpZXJfcGxhdGludW1fcm9zaGFu77yJ57qi6Imy77yb6ZOC6YeR6IKJ5bGx5ZGo6Lqr77yIY2xyYu+8ieiTneiJsuWKoOW8ugogICAgICAgIGlmIHN0cmluZy5maW5kKGZ4LCAiY291cmllcl9wbGF0aW51bV9yb3NoYW4iLCAxLCB0cnVlKSB0aGVuCiAgICAgICAgICAgIFBhcnRpY2xlTWFuYWdlcjpTZXRQYXJ0aWNsZUNvbnRyb2woc2VsZi5wYXJ0aWNsZSwgMTUsIFZlY3RvcigyNTUsIDQ4LCAzMikpCiAgICAgICAgZWxzZQogICAgICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6U2V0UGFydGljbGVDb250cm9sKHNlbGYucGFydGljbGUsIDE1LCBWZWN0b3IoNjQsIDE3MCwgMjU1KSkKICAgICAgICBlbmQKICAgICAgICBQYXJ0aWNsZU1hbmFnZXI6U2V0UGFydGljbGVDb250cm9sKHNlbGYucGFydGljbGUsIDE2LCBWZWN0b3IoMSwgMCwgMCkpCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2VmZmVjdDpHZXRTdGF0dXNFZmZlY3RQcmlvcml0eSgpCiAgICByZXR1cm4gMTAKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+modifier_clrb_effect = class({})
+
+function modifier_clrb_effect:IsHidden()
+    return true
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function modifier_clrb_effect:IsDebuff()
+    return false
+end
+
+function modifier_clrb_effect:IsPurgable()
+    return false
+end
+
+function modifier_clrb_effect:RemoveOnDeath()
+    return true
+end
+
+function modifier_clrb_effect:OnCreated(kv)
+    if not IsServer() then
+        return
+    end
+    self.effect_fx = (kv and kv.effect_fx)
+        or "particles/econ/courier/courier_trail_lava/courier_trail_lava.vpcf"
+    self:_UpdateParticle()
+end
+
+function modifier_clrb_effect:OnRefresh(kv)
+    if not IsServer() then
+        return
+    end
+    if kv and kv.effect_fx and kv.effect_fx ~= "" then
+        self.effect_fx = kv.effect_fx
+    end
+    self:_UpdateParticle()
+end
+
+function modifier_clrb_effect:OnDestroy()
+    if not IsServer() then
+        return
+    end
+    self:_DestroyParticle()
+end
+
+function modifier_clrb_effect:OnRemoved()
+    if not IsServer() then
+        return
+    end
+    self:_DestroyParticle()
+end
+
+function modifier_clrb_effect:_DestroyParticle()
+    if self.particle then
+        ParticleManager:DestroyParticle(self.particle, true)
+        ParticleManager:ReleaseParticleIndex(self.particle)
+        self.particle = nil
+    end
+end
+
+--- 信使染色 CP15；铂金肉山 ambient 需要显式染色
+function modifier_clrb_effect:_NeedsCourierTint(fx)
+    if not fx then
+        return false
+    end
+    return string.find(fx, "platinum_roshan_ambient", 1, true) ~= nil
+end
+
+--- 急雪拖尾整包：只挂父级 courier_trail_flurry，子级 _b 自动带上
+function modifier_clrb_effect:_IsFlurryPack(fx)
+    if not fx then
+        return false
+    end
+    return string.find(fx, "courier_trail_flurry", 1, true) ~= nil
+end
+
+--- 铂金肉山整包（ambient 父级）需要 CP0/1/2 绑眼睛挂点，子特效会自动跟随
+function modifier_clrb_effect:_IsPlatinumRoshanPack(fx)
+    if not fx then
+        return false
+    end
+    return string.find(fx, "platinum_roshan_ambient", 1, true) ~= nil
+        or string.find(fx, "platinum_roshan_eye", 1, true) ~= nil
+end
+
+function modifier_clrb_effect:_HasAttachment(parent, name)
+    if not parent or parent:IsNull() or not name then
+        return false
+    end
+    local id = parent:ScriptLookupAttachment(name)
+    return id and id > 0
+end
+
+function modifier_clrb_effect:_PickBodyAttach(parent)
+    for _, name in ipairs({ "attach_hitloc", "attach_head", "attach_attack1", "attach_origin" }) do
+        if self:_HasAttachment(parent, name) then
+            return name
+        end
+    end
+    return "attach_hitloc"
+end
+
+--- 肉山原装：CP0/1/2 = attach_eye_l/m/r；英雄无此挂点时落到头部区域并左右错开
+function modifier_clrb_effect:_BindPlatinumRoshanControlPoints(p, parent)
+    local has_l = self:_HasAttachment(parent, "attach_eye_l")
+    local has_m = self:_HasAttachment(parent, "attach_eye_m")
+    local has_r = self:_HasAttachment(parent, "attach_eye_r")
+
+    if has_l and has_m and has_r then
+        ParticleManager:SetParticleControlEnt(p, 0, parent, PATTACH_POINT_FOLLOW, "attach_eye_l", Vector(0, 0, 0), true)
+        ParticleManager:SetParticleControlEnt(p, 1, parent, PATTACH_POINT_FOLLOW, "attach_eye_m", Vector(0, 0, 0), true)
+        ParticleManager:SetParticleControlEnt(p, 2, parent, PATTACH_POINT_FOLLOW, "attach_eye_r", Vector(0, 0, 0), true)
+        return
+    end
+
+    local body = "attach_hitloc"
+    if self:_HasAttachment(parent, "attach_head") then
+        body = "attach_head"
+    elseif self:_HasAttachment(parent, "attach_hitloc") then
+        body = "attach_hitloc"
+    else
+        body = self:_PickBodyAttach(parent)
+    end
+
+    -- 本地偏移：左 / 中 / 右，近似三只眼在英雄头胸位置
+    ParticleManager:SetParticleControlEnt(p, 0, parent, PATTACH_POINT_FOLLOW, body, Vector(-14, 2, 8), true)
+    ParticleManager:SetParticleControlEnt(p, 1, parent, PATTACH_POINT_FOLLOW, body, Vector(0, 4, 12), true)
+    ParticleManager:SetParticleControlEnt(p, 2, parent, PATTACH_POINT_FOLLOW, body, Vector(14, 2, 8), true)
+end
+
+function modifier_clrb_effect:_UpdateParticle()
+    self:_DestroyParticle()
+    local parent = self:GetParent()
+    if not parent or parent:IsNull() or not self.effect_fx or self.effect_fx == "" then
+        return
+    end
+    local fx = self.effect_fx
+
+    -- ABSORIGIN_FOLLOW：父粒子 CreateOnModel 才能贴英雄模型；子粒子由父级自动创建
+    self.particle = ParticleManager:CreateParticle(fx, PATTACH_ABSORIGIN_FOLLOW, parent)
+    if not self.particle or self.particle < 0 then
+        self.particle = nil
+        return
+    end
+
+    if self:_IsPlatinumRoshanPack(fx) then
+        self:_BindPlatinumRoshanControlPoints(self.particle, parent)
+    elseif self:_IsFlurryPack(fx) then
+        -- 跟脚底即可；颜色已写进粒子，不依赖 CP15 Remap（易把效果染没）
+        ParticleManager:SetParticleControlEnt(
+            self.particle, 0, parent, PATTACH_ABSORIGIN_FOLLOW, "", Vector(0, 0, 0), true
+        )
+    end
+
+    if self:_NeedsCourierTint(fx) then
+        -- 离子之气（courier_platinum_roshan）红色；铂金肉山周身（clrb）蓝色加强
+        if string.find(fx, "courier_platinum_roshan", 1, true) then
+            ParticleManager:SetParticleControl(self.particle, 15, Vector(255, 48, 32))
+        else
+            ParticleManager:SetParticleControl(self.particle, 15, Vector(64, 170, 255))
+        end
+        ParticleManager:SetParticleControl(self.particle, 16, Vector(1, 0, 0))
+    end
+end
+
+function modifier_clrb_effect:GetStatusEffectPriority()
+    return 10
+end

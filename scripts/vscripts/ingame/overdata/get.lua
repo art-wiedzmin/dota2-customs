@@ -8,22 +8,194 @@
 ]]
 
 
-local encoded=[[LS0tIHJhbmtfM3g077ya5oyJ6Zi16JCl5oC75Ye75p2A44CB5oC75Lyk5a6z5o6S5bqP5b6X5Yiw5ZCN5qyhIDHvvZ4077yI5LiOIHRwXzMudGVhbV8x772edGVhbV80IOWvueW6lO+8iQpmdW5jdGlvbiBPdmVyRGF0YTpHZXRGb3VyVGVhbVBsYWNlbWVudFJhbmsoc3RhdF90ZWFtX2luZGV4KQogICAgaWYgbm90IHN0YXRfdGVhbV9pbmRleCBvciBzdGF0X3RlYW1faW5kZXggPCAxIG9yIHN0YXRfdGVhbV9pbmRleCA+IDQgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgaWYgbm90IE1haW5HYW1lIG9yIG5vdCBNYWluR2FtZS5EYXRhIG9yIG5vdCBNYWluR2FtZS5EYXRhLmtpbGwgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgbG9jYWwga2YgPSB7ICJUZWFtMiIsICJUZWFtMyIsICJUZWFtNiIsICJUZWFtNyIgfQogICAgbG9jYWwgcm93cyA9IHt9CiAgICBmb3Igc2kgPSAxLCA0IGRvCiAgICAgICAgbG9jYWwga2V5ID0ga2Zbc2ldCiAgICAgICAgbG9jYWwgayA9IE1haW5HYW1lLkRhdGEua2lsbFtrZXldIG9yIDAKICAgICAgICBsb2NhbCBkc3VtID0gMAogICAgICAgIGxvY2FsIHRrID0gInRlYW1fIiAuLiBzaQogICAgICAgIGxvY2FsIGxzdCA9IFN0YXQuUHVibGljLmxpc3RbdGtdIGFuZCBTdGF0LlB1YmxpYy5saXN0W3RrXS5saXN0CiAgICAgICAgaWYgbHN0IHRoZW4KICAgICAgICAgICAgZm9yIF8sIHYgaW4gcGFpcnMobHN0KSBkbwogICAgICAgICAgICAgICAgaWYgdiBhbmQgdi5pZCBhbmQgSGVyb0RhdGEuRGF0YVt2LmlkXSB0aGVuCiAgICAgICAgICAgICAgICAgICAgZHN1bSA9IGRzdW0gKyAoSGVyb0RhdGEuRGF0YVt2LmlkXS5kYW1hZ2Ugb3IgMCkKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgICAgICByb3dzWyNyb3dzICsgMV0gPSB7IHNpID0gc2ksIGsgPSBrLCBkID0gZHN1bSB9CiAgICBlbmQKICAgIHRhYmxlLnNvcnQocm93cywgZnVuY3Rpb24oYSwgYikKICAgICAgICBpZiBhLmsgfj0gYi5rIHRoZW4KICAgICAgICAgICAgcmV0dXJuIGEuayA+IGIuawogICAgICAgIGVuZAogICAgICAgIGlmIGEuZCB+PSBiLmQgdGhlbgogICAgICAgICAgICByZXR1cm4gYS5kID4gYi5kCiAgICAgICAgZW5kCiAgICAgICAgcmV0dXJuIGEuc2kgPCBiLnNpCiAgICBlbmQpCiAgICBmb3IgcGxhY2UgPSAxLCA0IGRvCiAgICAgICAgaWYgcm93c1twbGFjZV0uc2kgPT0gc3RhdF90ZWFtX2luZGV4IHRoZW4KICAgICAgICAgICAgcmV0dXJuIHBsYWNlCiAgICAgICAgZW5kCiAgICBlbmQKICAgIHJldHVybiBuaWwKZW5kCgotLS0g55yf5a6e546p5a625pWw6YeP77yI5LiOIC9nYW1lL3N1Ym1pdCDmnI3liqHnq68gY291bnRSZWFsSHVtYW5QbGF5ZXJzIOS4gOiHtO+8mumdniBib3Qg5Y2z6K6h5YWl77yJCmZ1bmN0aW9uIE92ZXJEYXRhOkNvdW50UmVhbEh1bWFuUGxheWVycygpCiAgICBsb2NhbCBuID0gMAogICAgZm9yIF8sIElEIGluIHBhaXJzKFBELklEcyBvciB7fSkgZG8KICAgICAgICBsb2NhbCBpbml0X2RhdGEgPSBJbml0UGxheWVyOkdldFBsYXllckRhdGEoSUQpCiAgICAgICAgaWYgaW5pdF9kYXRhIGFuZCBub3QgaW5pdF9kYXRhLmJvdCB0aGVuCiAgICAgICAgICAgIG4gPSBuICsgMQogICAgICAgIGVuZAogICAgZW5kCiAgICByZXR1cm4gbgplbmQKCi0tLSDlvZPliY3mqKHlvI/lpKnmoq/mjpLkvY3miYDpnIDnnJ/kurrmlbDph4/vvIgzeDQ9MTLvvJs1djUvMXYxPTEw77yJCmZ1bmN0aW9uIE92ZXJEYXRhOkdldExhZGRlclJhbmtlZEh1bWFuUmVxdWlyZW1lbnQoKQogICAgaWYgbm90IE1haW5HYW1lIG9yIG5vdCBNYWluR2FtZS5HZXRHYW1lVHlwZSB0aGVuCiAgICAgICAgcmV0dXJuIG5pbAogICAgZW5kCiAgICBsb2NhbCBndCA9IE1haW5HYW1lOkdldEdhbWVUeXBlKCkKICAgIGlmIGd0ID09IDMgdGhlbgogICAgICAgIHJldHVybiAxMgogICAgZW5kCiAgICBpZiBndCA9PSAxIG9yIGd0ID09IDIgdGhlbgogICAgICAgIHJldHVybiAxMAogICAgZW5kCiAgICByZXR1cm4gbmlsCmVuZAoKLS0tIOaYr+WQpuS4uuWkqeair+aOkuS9jeWxgO+8iOa7oeWRmOecn+S6uuOAgeaXoOWNleS6uuS6uuacuuWhq+WFhe+8m+S4jiBjbHJiX3NlcnZlciBpc0xhZGRlclJhbmtlZEdhbWUg5a+56b2Q77yJCmZ1bmN0aW9uIE92ZXJEYXRhOklzTGFkZGVyUmFua2VkTG9iYnkoKQogICAgaWYgc2VsZjpTb2xvSHVtYW5Wc0JvdHMxdjEoKSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGxvY2FsIG5lZWQgPSBzZWxmOkdldExhZGRlclJhbmtlZEh1bWFuUmVxdWlyZW1lbnQoKQogICAgaWYgbm90IG5lZWQgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICByZXR1cm4gc2VsZjpDb3VudFJlYWxIdW1hblBsYXllcnMoKSA+PSBuZWVkCmVuZAoKLS0g6K+l546p5a625piv5ZCm5Y+C5LiO5aSp5qKv5YiG5Y+Y5Yqo77yI55yf5Lq6ICsg5ruh5ZGY5o6S5L2N5bGA77yJCmZ1bmN0aW9uIE92ZXJEYXRhOklzUG9pbnRDaGFuZ2UoSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBsb2NhbCBpbml0X2RhdGEgPSBJbml0UGxheWVyOkdldFBsYXllckRhdGEoSUQpCiAgICBpZiBub3QgaW5pdF9kYXRhIG9yIGluaXRfZGF0YS5ib3QgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICByZXR1cm4gc2VsZjpJc0xhZGRlclJhbmtlZExvYmJ5KCkKZW5kCgotLS0g5pys5bGA5piv5ZCm6ZyA6KaB5ZCR5pyN5Yqh56uvIC9nYW1lL3N1Ym1pdCDkuIrmiqXvvIjkuI7pgJrooYzor4Ev5aSp5qKv57uf6K6h5Y+j5b6E5LiA6Ie077ybYmVpZG9uZ+OAgeS6uuacuuWhq+WFhemdnuernumAn+WxgOetieS4jeS4iuaKpe+8iQpmdW5jdGlvbiBPdmVyRGF0YTpTaG91bGRTdWJtaXRMb2dHYW1lKCkKICAgIGlmIElzSW5Ub29sc01vZGUoKSB0aGVuCiAgICAgICAgcmV0dXJuIHRydWUKICAgIGVuZAogICAgaWYgR2V0TWFwTmFtZSgpID09ICJiZWlkb25nIiB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIE1haW5HYW1lIGFuZCBNYWluR2FtZS5HZXRQYXNzaXZlTW9kZSBhbmQgTWFpbkdhbWU6R2V0UGFzc2l2ZU1vZGUoKSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIHNlbGY6U29sb0h1bWFuVnNCb3RzMXYxKCkgdGhlbgogICAgICAgIHJldHVybiB0cnVlCiAgICBlbmQKICAgIHJldHVybiBzZWxmOklzTGFkZGVyUmFua2VkTG9iYnkoKQplbmQKCi0tLSDmmK/lkKblj6/kvZzkuLogSFRUUCDnu5PnrpfkuIrmiqXouqvku73vvIjnnJ/kurrjgIHmnInmlYggU3RlYW0gSUTvvIkKZnVuY3Rpb24gT3ZlckRhdGE6SXNIdHRwU3VibWl0UmVwb3J0ZXJJRChJRCkKICAgIGlmIElEID09IG5pbCBvciBub3QgUGxheWVyUmVzb3VyY2Ugb3Igbm90IFBsYXllclJlc291cmNlLklzVmFsaWRQbGF5ZXIgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBub3QgUGxheWVyUmVzb3VyY2U6SXNWYWxpZFBsYXllcihJRCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBVdGlsIGFuZCBVdGlsLklzUHNldWRvUGxheWVySUQgYW5kIFV0aWw6SXNQc2V1ZG9QbGF5ZXJJRChJRCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBJbml0UGxheWVyIGFuZCBJbml0UGxheWVyLkdldFBsYXllckRhdGEgdGhlbgogICAgICAgIGxvY2FsIGluaXRfZGF0YSA9IEluaXRQbGF5ZXI6R2V0UGxheWVyRGF0YShJRCkKICAgICAgICBpZiBpbml0X2RhdGEgYW5kIGluaXRfZGF0YS5ib3QgdGhlbgogICAgICAgICAgICByZXR1cm4gZmFsc2UKICAgICAgICBlbmQKICAgIGVuZAogICAgbG9jYWwgYWlkID0gUGxheWVyUmVzb3VyY2U6R2V0U3RlYW1BY2NvdW50SUQoSUQpCiAgICByZXR1cm4gYWlkIH49IG5pbCBhbmQgYWlkID4gMAplbmQKCi0tLSDmlLbpm4blj6/nlKjkuo4gL2dhbWUvc3VibWl0IOeahOeOqeWutuanveS9je+8iOS8mOWFiOaIv+S4u++8jOWFtuasoeWcqOe6v+S4lOW3sueZu+W9le+8jOWGjeWFtuS9meecn+S6uu+8iQpmdW5jdGlvbiBPdmVyRGF0YTpDb2xsZWN0SHR0cFN1Ym1pdFBsYXllcklEcyhwcmVmZXJfaWQpCiAgICBsb2NhbCBjb25uID0gRE9UQV9DT05ORUNUSU9OX1NUQVRFX0NPTk5FQ1RFRAogICAgbG9jYWwgd2l0aF90b2tlbiA9IHt9CiAgICBsb2NhbCBjb25uZWN0ZWQgPSB7fQogICAgbG9jYWwgb2ZmbGluZSA9IHt9CiAgICBsb2NhbCBzZWVuID0ge30KCiAgICBsb2NhbCBmdW5jdGlvbiBidWNrZXQoaWQpCiAgICAgICAgaWYgc2VlbltpZF0gb3Igbm90IHNlbGY6SXNIdHRwU3VibWl0UmVwb3J0ZXJJRChpZCkgdGhlbgogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgICAgICBzZWVuW2lkXSA9IHRydWUKICAgICAgICBsb2NhbCB0b2tlbiA9IEh0dHAgYW5kIEh0dHAuR2V0UGxheWVyQWNjZXNzVG9rZW4gYW5kIEh0dHA6R2V0UGxheWVyQWNjZXNzVG9rZW4oaWQpCiAgICAgICAgbG9jYWwgaGFzX3Rva2VuID0gdG9rZW4gfj0gbmlsIGFuZCB0b2tlbiB+PSAiIgogICAgICAgIGxvY2FsIGlzX2Nvbm4gPSBQbGF5ZXJSZXNvdXJjZTpHZXRDb25uZWN0aW9uU3RhdGUoaWQpID09IGNvbm4KICAgICAgICBpZiBoYXNfdG9rZW4gYW5kIGlzX2Nvbm4gdGhlbgogICAgICAgICAgICB3aXRoX3Rva2VuWyN3aXRoX3Rva2VuICsgMV0gPSBpZAogICAgICAgIGVsc2VpZiBoYXNfdG9rZW4gdGhlbgogICAgICAgICAgICBjb25uZWN0ZWRbI2Nvbm5lY3RlZCArIDFdID0gaWQKICAgICAgICBlbHNlaWYgaXNfY29ubiB0aGVuCiAgICAgICAgICAgIGNvbm5lY3RlZFsjY29ubmVjdGVkICsgMV0gPSBpZAogICAgICAgIGVsc2UKICAgICAgICAgICAgb2ZmbGluZVsjb2ZmbGluZSArIDFdID0gaWQKICAgICAgICBlbmQKICAgIGVuZAoKICAgIGlmIHByZWZlcl9pZCB+PSBuaWwgdGhlbgogICAgICAgIGJ1Y2tldChwcmVmZXJfaWQpCiAgICBlbmQKICAgIGlmIFBEIGFuZCBQRC5JRHMgdGhlbgogICAgICAgIGZvciBfLCBpZCBpbiBwYWlycyhQRC5JRHMpIGRvCiAgICAgICAgICAgIGJ1Y2tldChpZCkKICAgICAgICBlbmQKICAgIGVuZAogICAgZm9yIGlkID0gMCwgRE9UQV9NQVhfUExBWUVSUyBkbwogICAgICAgIGJ1Y2tldChpZCkKICAgIGVuZAoKICAgIGxvY2FsIG9yZGVyZWQgPSB7fQogICAgbG9jYWwgZnVuY3Rpb24gYXBwZW5kKGxpc3QpCiAgICAgICAgZm9yIF8sIGlkIGluIGlwYWlycyhsaXN0KSBkbwogICAgICAgICAgICBvcmRlcmVkWyNvcmRlcmVkICsgMV0gPSBpZAogICAgICAgIGVuZAogICAgZW5kCiAgICBhcHBlbmQod2l0aF90b2tlbikKICAgIGFwcGVuZChjb25uZWN0ZWQpCiAgICBhcHBlbmQob2ZmbGluZSkKCiAgICBpZiBwcmVmZXJfaWQgfj0gbmlsIGFuZCBzZWxmOklzSHR0cFN1Ym1pdFJlcG9ydGVySUQocHJlZmVyX2lkKSB0aGVuCiAgICAgICAgbG9jYWwgb3V0ID0geyBwcmVmZXJfaWQgfQogICAgICAgIGZvciBfLCBpZCBpbiBpcGFpcnMob3JkZXJlZCkgZG8KICAgICAgICAgICAgaWYgaWQgfj0gcHJlZmVyX2lkIHRoZW4KICAgICAgICAgICAgICAgIG91dFsjb3V0ICsgMV0gPSBpZAogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgICAgICByZXR1cm4gb3V0CiAgICBlbmQKICAgIHJldHVybiBvcmRlcmVkCmVuZAo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+--- rank_3x4：按阵营总击杀、总伤害排序得到名次 1～4（与 tp_3.team_1～team_4 对应）
+function OverData:GetFourTeamPlacementRank(stat_team_index)
+    if not stat_team_index or stat_team_index < 1 or stat_team_index > 4 then
+        return nil
+    end
+    if not MainGame or not MainGame.Data or not MainGame.Data.kill then
+        return nil
+    end
+    local kf = { "Team2", "Team3", "Team6", "Team7" }
+    local rows = {}
+    for si = 1, 4 do
+        local key = kf[si]
+        local k = MainGame.Data.kill[key] or 0
+        local dsum = 0
+        local tk = "team_" .. si
+        local lst = Stat.Public.list[tk] and Stat.Public.list[tk].list
+        if lst then
+            for _, v in pairs(lst) do
+                if v and v.id and HeroData.Data[v.id] then
+                    dsum = dsum + (HeroData.Data[v.id].damage or 0)
+                end
+            end
+        end
+        rows[#rows + 1] = { si = si, k = k, d = dsum }
+    end
+    table.sort(rows, function(a, b)
+        if a.k ~= b.k then
+            return a.k > b.k
+        end
+        if a.d ~= b.d then
+            return a.d > b.d
+        end
+        return a.si < b.si
+    end)
+    for place = 1, 4 do
+        if rows[place].si == stat_team_index then
+            return place
+        end
+    end
+    return nil
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--- 真实玩家数量（与 /game/submit 服务端 countRealHumanPlayers 一致：非 bot 即计入）
+function OverData:CountRealHumanPlayers()
+    local n = 0
+    for _, ID in pairs(PD.IDs or {}) do
+        local init_data = InitPlayer:GetPlayerData(ID)
+        if init_data and not init_data.bot then
+            n = n + 1
+        end
+    end
+    return n
+end
+
+--- 当前模式天梯排位所需真人数量（3x4=12；5v5/1v1=10）
+function OverData:GetLadderRankedHumanRequirement()
+    if not MainGame or not MainGame.GetGameType then
+        return nil
+    end
+    local gt = MainGame:GetGameType()
+    if gt == 3 then
+        return 12
+    end
+    if gt == 1 or gt == 2 then
+        return 10
+    end
+    return nil
+end
+
+--- 是否为天梯排位局（满员真人、无单人人机填充；与 clrb_server isLadderRankedGame 对齐）
+function OverData:IsLadderRankedLobby()
+    if self:SoloHumanVsBots1v1() then
+        return false
+    end
+    local need = self:GetLadderRankedHumanRequirement()
+    if not need then
+        return false
+    end
+    return self:CountRealHumanPlayers() >= need
+end
+
+-- 该玩家是否参与天梯分变动（真人 + 满员排位局）
+function OverData:IsPointChange(ID)
+    if not ID then
+        return false
+    end
+    local init_data = InitPlayer:GetPlayerData(ID)
+    if not init_data or init_data.bot then
+        return false
+    end
+    return self:IsLadderRankedLobby()
+end
+
+--- 本局是否需要向服务端 /game/submit 上报（与通行证/天梯统计口径一致；beidong、人机填充非竞速局等不上报）
+function OverData:ShouldSubmitLogGame()
+    if IsInToolsMode() then
+        return true
+    end
+    if GetMapName() == "beidong" then
+        return false
+    end
+    if MainGame and MainGame.GetPassiveMode and MainGame:GetPassiveMode() then
+        return false
+    end
+    if self:SoloHumanVsBots1v1() then
+        return true
+    end
+    return self:IsLadderRankedLobby()
+end
+
+--- 是否可作为 HTTP 结算上报身份（真人、有效 Steam ID）
+function OverData:IsHttpSubmitReporterID(ID)
+    if ID == nil or not PlayerResource or not PlayerResource.IsValidPlayer then
+        return false
+    end
+    if not PlayerResource:IsValidPlayer(ID) then
+        return false
+    end
+    if Util and Util.IsPseudoPlayerID and Util:IsPseudoPlayerID(ID) then
+        return false
+    end
+    if InitPlayer and InitPlayer.GetPlayerData then
+        local init_data = InitPlayer:GetPlayerData(ID)
+        if init_data and init_data.bot then
+            return false
+        end
+    end
+    local aid = PlayerResource:GetSteamAccountID(ID)
+    return aid ~= nil and aid > 0
+end
+
+--- 收集可用于 /game/submit 的玩家槽位（优先房主，其次在线且已登录，再其余真人）
+function OverData:CollectHttpSubmitPlayerIDs(prefer_id)
+    local conn = DOTA_CONNECTION_STATE_CONNECTED
+    local with_token = {}
+    local connected = {}
+    local offline = {}
+    local seen = {}
+
+    local function bucket(id)
+        if seen[id] or not self:IsHttpSubmitReporterID(id) then
+            return
+        end
+        seen[id] = true
+        local token = Http and Http.GetPlayerAccessToken and Http:GetPlayerAccessToken(id)
+        local has_token = token ~= nil and token ~= ""
+        local is_conn = PlayerResource:GetConnectionState(id) == conn
+        if has_token and is_conn then
+            with_token[#with_token + 1] = id
+        elseif has_token then
+            connected[#connected + 1] = id
+        elseif is_conn then
+            connected[#connected + 1] = id
+        else
+            offline[#offline + 1] = id
+        end
+    end
+
+    if prefer_id ~= nil then
+        bucket(prefer_id)
+    end
+    if PD and PD.IDs then
+        for _, id in pairs(PD.IDs) do
+            bucket(id)
+        end
+    end
+    for id = 0, DOTA_MAX_PLAYERS do
+        bucket(id)
+    end
+
+    local ordered = {}
+    local function append(list)
+        for _, id in ipairs(list) do
+            ordered[#ordered + 1] = id
+        end
+    end
+    append(with_token)
+    append(connected)
+    append(offline)
+
+    if prefer_id ~= nil and self:IsHttpSubmitReporterID(prefer_id) then
+        local out = { prefer_id }
+        for _, id in ipairs(ordered) do
+            if id ~= prefer_id then
+                out[#out + 1] = id
+            end
+        end
+        return out
+    end
+    return ordered
+end

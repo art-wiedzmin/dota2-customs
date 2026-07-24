@@ -8,22 +8,214 @@
 ]]
 
 
-local encoded=[[ZnVuY3Rpb24gUGV0OkdldFBpY2soSUQpCiAgICByZXR1cm4gc2VsZi5EYXRhW0lEXS5waWNrCmVuZAoKLS0tIOaUuemUri/lrqDnianorr7nva7ph4zngrnkuq7nmoTogonmkI/nianlk4HvvIhJdGVtLlJiIOWPiuWvueW6lCAqX3VwIOi/m+mYtuS5pu+8ieS5n+WFgeiuuOWuoOeJqeaLvuWPlgotLS0g5bey5Yig6Zmk6K+l6IKJ5pCP5oqA44CB5oiW5bey5bCG6K+l5ZCN6IKJ5pCP5Lmm5Y2W5bqX5pe277yM5LiN5YaN5ou+5Y+W5a+55bqU5Lmm77yI5a2m5ZueL+WVhuW6l+aWsOi0reS8mua4heemge+8iQpmdW5jdGlvbiBQZXQ6SXNNZWxlZUJvb2tCYW5uZWRBZnRlckRlbGV0ZShJRCwgaXRlbV9uYW1lKQogICAgaWYgbm90IElEIG9yIG5vdCBpdGVtX25hbWUgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBub3QgU2tpbGwgb3Igbm90IFNraWxsLkRhdGEgb3Igbm90IFNraWxsLkRhdGFbSURdIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgdCA9IFNraWxsLkRhdGFbSURdLm1lbGVlX3BldF9iYW4KICAgIGlmIG5vdCB0IG9yIG5vdCB0W2l0ZW1fbmFtZV0gdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIFBldDpJc0tleVNldFBldFBpY2t1cEVuYWJsZWQoSUQsIGl0ZW1fbmFtZSkKICAgIGlmIG5vdCBJRCBvciBub3QgaXRlbV9uYW1lIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgaWYgbm90IEtleVNldCBvciBub3QgS2V5U2V0LkRhdGFbSURdIG9yIG5vdCBLZXlTZXQuRGF0YVtJRF0ucGV0IHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgcGV0ID0gS2V5U2V0LkRhdGFbSURdLnBldAogICAgaWYgcGV0W2l0ZW1fbmFtZV0gPT0gdHJ1ZSB0aGVuCiAgICAgICAgcmV0dXJuIHRydWUKICAgIGVuZAogICAgbG9jYWwgYmFzZSA9IHN0cmluZy5tYXRjaChpdGVtX25hbWUsICJeKGl0ZW1fc2tpbGxfJWQrKV91cCQiKQogICAgaWYgYmFzZSBhbmQgcGV0W2Jhc2VdID09IHRydWUgdGhlbgogICAgICAgIHJldHVybiB0cnVlCiAgICBlbmQKICAgIHJldHVybiBmYWxzZQplbmQKCi0tLSDlt7LlrabkvJrlr7nlupTlvLrljJbniYjogonmkI/mioDvvIhhYmlsaXR5X2l0ZW1fTl91cO+8ieaXtu+8jOWfuuehgCBpdGVtX3NraWxsX04g5peg5oSP5LmJ77yM5a6g54mp5LiN5bqU5Y675o2hCmZ1bmN0aW9uIFBldDpTaG91bGRCbG9ja1BldE1lbGVlQmFzZUJvb2tXaGVuSGFzVXBWZXJzaW9uKElELCBpdGVtX25hbWUpCiAgICBpZiBub3QgSUQgb3Igbm90IGl0ZW1fbmFtZSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGxvY2FsIGlkeCA9IHN0cmluZy5tYXRjaChpdGVtX25hbWUsICJeaXRlbV9za2lsbF8oJWQrKSQiKQogICAgaWYgbm90IGlkeCB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGxvY2FsIGhlcm8gPSBVdGlsOklEMkhlcm8oSUQpCiAgICBpZiBub3QgaGVybyBvciBoZXJvOklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgaWYgaGVybzpIYXNBYmlsaXR5KCJhYmlsaXR5X2l0ZW1fIiAuLiBpZHggLi4gIl91cCIpIHRoZW4KICAgICAgICByZXR1cm4gdHJ1ZQogICAgZW5kCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBQZXQ6SXNIYXZlUmIoSUQsIGl0ZW1fbmFtZSkKICAgIGlmIG5vdCBJRCBvciBub3QgaXRlbV9uYW1lIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgaGVybyA9IFV0aWw6SUQySGVybyhJRCkKICAgIGlmIG5vdCBoZXJvIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5EYXRhW0lEXS5waWNrX2xpc3QgPSB7fQogICAgZm9yIGssIHYgaW4gcGFpcnMoU2tpbGwuRGF0YVtJRF0uU2tpbGwyKSBkbwogICAgICAgIGlmIHYuc3RhdGUgdGhlbgogICAgICAgICAgICBsb2NhbCBuYW1lID0gdi5uYW1lCiAgICAgICAgICAgIGlmIGhlcm86SGFzQWJpbGl0eShuYW1lKSB0aGVuCiAgICAgICAgICAgICAgICAtLSBwcmludCgi5oul5pyJ5oqA6IO9IiAuLiBuYW1lKQogICAgICAgICAgICAgICAgbG9jYWwgYWIgPSBoZXJvOkZpbmRBYmlsaXR5QnlOYW1lKG5hbWUpCiAgICAgICAgICAgICAgICBsb2NhbCBsZXZlbCA9IGFiOkdldExldmVsKCkKICAgICAgICAgICAgICAgIC0tIHByaW50KCLmioDog73nrYnnuqciIC4uIGxldmVsKQogICAgICAgICAgICAgICAgaWYgbGV2ZWwgPCAxMCB0aGVuCiAgICAgICAgICAgICAgICAgICAgLS0gcHJpbnQoIuaKgOiDveetiee6p+Wwj+S6jjEwIikKICAgICAgICAgICAgICAgICAgICBsb2NhbCBpbmRleCA9IHRvbnVtYmVyKHV0aWxleDpzcGxpdEluZGV4KG5hbWUsICJfIiwgMykpCiAgICAgICAgICAgICAgICAgICAgaWYgbm90IGluZGV4IHRoZW4KICAgICAgICAgICAgICAgICAgICAgICAgLS0gc2tpcAogICAgICAgICAgICAgICAgICAgIGVsc2UKICAgICAgICAgICAgICAgICAgICAgICAgLS0g5by65YyW54mI5qe95L2N5Li6IGFiaWxpdHlfaXRlbV9OX3Vw77yM5ou+5Y+W55uu5qCH5bqU5Li6IGl0ZW1fc2tpbGxfTl91cAogICAgICAgICAgICAgICAgICAgICAgICBsb2NhbCBza2lsbF9uYW1lID0gKHV0aWxleDpzcGxpdEluZGV4KG5hbWUsICJfIiwgNCkgPT0gInVwIikKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGFuZCAoIml0ZW1fc2tpbGxfIiAuLiBpbmRleCAuLiAiX3VwIikKICAgICAgICAgICAgICAgICAgICAgICAgICAgIG9yICgiaXRlbV9za2lsbF8iIC4uIGluZGV4KQogICAgICAgICAgICAgICAgICAgICAgICB0YWJsZS5pbnNlcnQoUGV0LkRhdGFbSURdLnBpY2tfbGlzdCwgc2tpbGxfbmFtZSkKICAgICAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZAogICAgZm9yIGssIHYgaW4gcGFpcnMoc2VsZi5EYXRhW0lEXS5waWNrX2xpc3QpIGRvCiAgICAgICAgaWYgaXRlbV9uYW1lID09IHYgdGhlbgogICAgICAgICAgICByZXR1cm4gdHJ1ZQogICAgICAgIGVuZAogICAgZW5kCmVuZAoKLS0g5a6g54mp5ou+5Y+W5pe277ya5LuF5b2T6Iux6ZuE5bey5oul5pyJ5a+55bqU6IKJ5pCP5oqA6IO977yI5Y2H57qn5LmmIC8g6L+b6Zi25Lmm77yJ5omN6Ieq5Yqo5raI6ICX5Lmm5pys77yM6YC76L6R5LiO5omL5YqoIFVzZVNraWxsIOS4gOiHtApmdW5jdGlvbiBQZXQ6Q2FuUGV0QXV0b0NvbnN1bWVNZWxlZVNraWxsQm9vayhJRCwgaXRlbV9uYW1lKQogICAgaWYgbm90IElEIG9yIG5vdCBpdGVtX25hbWUgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBsb2NhbCBoZXJvID0gVXRpbDpJRDJIZXJvKElEKQogICAgaWYgbm90IGhlcm8gdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBsb2NhbCBwYXJ0cyA9IHV0aWxleDpzcGxpdChpdGVtX25hbWUsICJfIikKICAgIGlmIHBhcnRzWzFdIH49ICJpdGVtIiBvciBwYXJ0c1syXSB+PSAic2tpbGwiIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgaWR4ID0gdG9udW1iZXIocGFydHNbM10pCiAgICBpZiBub3QgaWR4IHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgYmFzZSA9ICJhYmlsaXR5X2l0ZW1fIiAuLiBpZHgKICAgIGlmIHBhcnRzWzRdID09ICJ1cCIgdGhlbgogICAgICAgIGlmIG5vdCBoZXJvOkhhc0FiaWxpdHkoYmFzZSkgdGhlbgogICAgICAgICAgICByZXR1cm4gZmFsc2UKICAgICAgICBlbmQKICAgICAgICBsb2NhbCBhYiA9IGhlcm86RmluZEFiaWxpdHlCeU5hbWUoYmFzZSkKICAgICAgICByZXR1cm4gYWIgYW5kIGFiOkdldExldmVsKCkgPT0gMTAKICAgIGVuZAogICAgaWYgI3BhcnRzIH49IDMgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBub3QgaGVybzpIYXNBYmlsaXR5KGJhc2UpIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgYWIgPSBoZXJvOkZpbmRBYmlsaXR5QnlOYW1lKGJhc2UpCiAgICBpZiBub3QgYWIgb3IgYWI6R2V0TGV2ZWwoKSA+PSAxMCB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIC0tIOS4jiBTa2lsbDpBZGRTa2lsbDIg5LiA6Ie077ya5b2T5YmN5oqA6IO9562J57qn5bey6L6+L+i2hei/h+iLsembhOetiee6p+aXtuS4jeiDveWNh+e6p++8jOS5puacrOW6lOi/m+iDjOWMheiAjOmdnuiHquWKqOa2iOiAlwogICAgaWYgaGVybzpHZXRMZXZlbCgpIDw9IGFiOkdldExldmVsKCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICByZXR1cm4gdHJ1ZQplbmQKCmxvY2FsIE1FTEVFX1NLSUxMX0JPT0tfTUFYX0xFVkVMID0gMTAKCmxvY2FsIGZ1bmN0aW9uIHBldF9hYmlsaXR5X21lbGVlX2F0X21heF9sZXZlbChoZXJvLCBhYl9uYW1lKQogICAgaWYgbm90IGhlcm8gb3Igbm90IGFiX25hbWUgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBub3QgaGVybzpIYXNBYmlsaXR5KGFiX25hbWUpIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgYWIgPSBoZXJvOkZpbmRBYmlsaXR5QnlOYW1lKGFiX25hbWUpCiAgICBpZiBub3QgYWIgb3IgYWI6SXNOdWxsKCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBsb2NhbCBsdiA9IGFiOkdldExldmVsKCkKICAgIGxvY2FsIG1heF9sdiA9IGFiLkdldE1heExldmVsIGFuZCBhYjpHZXRNYXhMZXZlbCgpIG9yIDAKICAgIGlmIG1heF9sdiBhbmQgbWF4X2x2ID4gMCB0aGVuCiAgICAgICAgcmV0dXJuIGx2ID49IG1heF9sdgogICAgZW5kCiAgICByZXR1cm4gbHYgPj0gTUVMRUVfU0tJTExfQk9PS19NQVhfTEVWRUwKZW5kCgotLS0g6IKJ5pCP5oqA6IO95Lmm77ya5a+55bqUIGFiaWxpdHnlt7Lmu6HnuqfvvIjln7rnoYDkuabihpJhYmlsaXR5X2l0ZW1fTu+8m+i/m+mYtuS5puKGkmFiaWxpdHlfaXRlbV9OX3Vw77yJCmZ1bmN0aW9uIFBldDpJc01lbGVlU2tpbGxCb29rU2tpbGxNYXhlZChJRCwgaXRlbV9uYW1lKQogICAgaWYgbm90IElEIG9yIG5vdCBpdGVtX25hbWUgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBsb2NhbCBoZXJvID0gVXRpbDpJRDJIZXJvKElEKQogICAgaWYgbm90IGhlcm8gdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBsb2NhbCBwYXJ0cyA9IHV0aWxleDpzcGxpdChpdGVtX25hbWUsICJfIikKICAgIGlmIHBhcnRzWzFdIH49ICJpdGVtIiBvciBwYXJ0c1syXSB+PSAic2tpbGwiIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgaWR4ID0gdG9udW1iZXIocGFydHNbM10pCiAgICBpZiBub3QgaWR4IHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgaWYgcGFydHNbNF0gPT0gInVwIiB0aGVuCiAgICAgICAgcmV0dXJuIHBldF9hYmlsaXR5X21lbGVlX2F0X21heF9sZXZlbChoZXJvLCAiYWJpbGl0eV9pdGVtXyIgLi4gaWR4IC4uICJfdXAiKQogICAgZW5kCiAgICBpZiAjcGFydHMgfj0gMyB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIHJldHVybiBwZXRfYWJpbGl0eV9tZWxlZV9hdF9tYXhfbGV2ZWwoaGVybywgImFiaWxpdHlfaXRlbV8iIC4uIGlkeCkKZW5kCgpmdW5jdGlvbiBQZXQ6VHJ5QXV0b0NvbnN1bWVNZWxlZVNraWxsQm9va09uUGV0UGlja3VwKElELCBpdGVtLCBpdGVtX25hbWUpCiAgICBpZiBub3QgSUQgb3Igbm90IGl0ZW0gb3Igbm90IGl0ZW1fbmFtZSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIHNlbGY6SXNNZWxlZVNraWxsQm9va1NraWxsTWF4ZWQoSUQsIGl0ZW1fbmFtZSkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBub3Qgc2VsZjpDYW5QZXRBdXRvQ29uc3VtZU1lbGVlU2tpbGxCb29rKElELCBpdGVtX25hbWUpIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgaWYgbm90IFNraWxsOkFkZFNraWxsMihJRCwgaXRlbV9uYW1lKSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGxvY2FsIGhlcm8gPSBVdGlsOklEMkhlcm8oSUQpCiAgICBpZiBub3QgaGVybyB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIGl0ZW06R2V0Q3VycmVudENoYXJnZXMoKSA+IDEgdGhlbgogICAgICAgIGl0ZW06U2V0Q3VycmVudENoYXJnZXMoaXRlbTpHZXRDdXJyZW50Q2hhcmdlcygpIC0gMSkKICAgICAgICBoZXJvOkFkZEl0ZW0oaXRlbSkKICAgIGVsc2UKICAgICAgICBVVElMX1JlbW92ZShpdGVtKQogICAgZW5kCiAgICByZXR1cm4gdHJ1ZQplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+function Pet:GetPick(ID)
+    return self.Data[ID].pick
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--- 改键/宠物设置里点亮的肉搏物品（Item.Rb 及对应 *_up 进阶书）也允许宠物拾取
+--- 已删除该肉搏技、或已将该名肉搏书卖店时，不再拾取对应书（学回/商店新购会清禁）
+function Pet:IsMeleeBookBannedAfterDelete(ID, item_name)
+    if not ID or not item_name then
+        return false
+    end
+    if not Skill or not Skill.Data or not Skill.Data[ID] then
+        return false
+    end
+    local t = Skill.Data[ID].melee_pet_ban
+    if not t or not t[item_name] then
+        return false
+    end
+    return true
+end
+
+function Pet:IsKeySetPetPickupEnabled(ID, item_name)
+    if not ID or not item_name then
+        return false
+    end
+    if not KeySet or not KeySet.Data[ID] or not KeySet.Data[ID].pet then
+        return false
+    end
+    local pet = KeySet.Data[ID].pet
+    if pet[item_name] == true then
+        return true
+    end
+    local base = string.match(item_name, "^(item_skill_%d+)_up$")
+    if base and pet[base] == true then
+        return true
+    end
+    return false
+end
+
+--- 已学会对应强化版肉搏技（ability_item_N_up）时，基础 item_skill_N 无意义，宠物不应去捡
+function Pet:ShouldBlockPetMeleeBaseBookWhenHasUpVersion(ID, item_name)
+    if not ID or not item_name then
+        return false
+    end
+    local idx = string.match(item_name, "^item_skill_(%d+)$")
+    if not idx then
+        return false
+    end
+    local hero = Util:ID2Hero(ID)
+    if not hero or hero:IsNull() then
+        return false
+    end
+    if hero:HasAbility("ability_item_" .. idx .. "_up") then
+        return true
+    end
+    return false
+end
+
+function Pet:IsHaveRb(ID, item_name)
+    if not ID or not item_name then
+        return
+    end
+    local hero = Util:ID2Hero(ID)
+    if not hero then
+        return
+    end
+    self.Data[ID].pick_list = {}
+    for k, v in pairs(Skill.Data[ID].Skill2) do
+        if v.state then
+            local name = v.name
+            if hero:HasAbility(name) then
+                -- print("拥有技能" .. name)
+                local ab = hero:FindAbilityByName(name)
+                local level = ab:GetLevel()
+                -- print("技能等级" .. level)
+                if level < 10 then
+                    -- print("技能等级小于10")
+                    local index = tonumber(utilex:splitIndex(name, "_", 3))
+                    if not index then
+                        -- skip
+                    else
+                        -- 强化版槽位为 ability_item_N_up，拾取目标应为 item_skill_N_up
+                        local skill_name = (utilex:splitIndex(name, "_", 4) == "up")
+                            and ("item_skill_" .. index .. "_up")
+                            or ("item_skill_" .. index)
+                        table.insert(Pet.Data[ID].pick_list, skill_name)
+                    end
+                end
+            end
+        end
+    end
+    for k, v in pairs(self.Data[ID].pick_list) do
+        if item_name == v then
+            return true
+        end
+    end
+end
+
+-- 宠物拾取时：仅当英雄已拥有对应肉搏技能（升级书 / 进阶书）才自动消耗书本，逻辑与手动 UseSkill 一致
+function Pet:CanPetAutoConsumeMeleeSkillBook(ID, item_name)
+    if not ID or not item_name then
+        return false
+    end
+    local hero = Util:ID2Hero(ID)
+    if not hero then
+        return false
+    end
+    local parts = utilex:split(item_name, "_")
+    if parts[1] ~= "item" or parts[2] ~= "skill" then
+        return false
+    end
+    local idx = tonumber(parts[3])
+    if not idx then
+        return false
+    end
+    local base = "ability_item_" .. idx
+    if parts[4] == "up" then
+        if not hero:HasAbility(base) then
+            return false
+        end
+        local ab = hero:FindAbilityByName(base)
+        return ab and ab:GetLevel() == 10
+    end
+    if #parts ~= 3 then
+        return false
+    end
+    if not hero:HasAbility(base) then
+        return false
+    end
+    local ab = hero:FindAbilityByName(base)
+    if not ab or ab:GetLevel() >= 10 then
+        return false
+    end
+    -- 与 Skill:AddSkill2 一致：当前技能等级已达/超过英雄等级时不能升级，书本应进背包而非自动消耗
+    if hero:GetLevel() <= ab:GetLevel() then
+        return false
+    end
+    return true
+end
+
+local MELEE_SKILL_BOOK_MAX_LEVEL = 10
+
+local function pet_ability_melee_at_max_level(hero, ab_name)
+    if not hero or not ab_name then
+        return false
+    end
+    if not hero:HasAbility(ab_name) then
+        return false
+    end
+    local ab = hero:FindAbilityByName(ab_name)
+    if not ab or ab:IsNull() then
+        return false
+    end
+    local lv = ab:GetLevel()
+    local max_lv = ab.GetMaxLevel and ab:GetMaxLevel() or 0
+    if max_lv and max_lv > 0 then
+        return lv >= max_lv
+    end
+    return lv >= MELEE_SKILL_BOOK_MAX_LEVEL
+end
+
+--- 肉搏技能书：对应 ability已满级（基础书→ability_item_N；进阶书→ability_item_N_up）
+function Pet:IsMeleeSkillBookSkillMaxed(ID, item_name)
+    if not ID or not item_name then
+        return false
+    end
+    local hero = Util:ID2Hero(ID)
+    if not hero then
+        return false
+    end
+    local parts = utilex:split(item_name, "_")
+    if parts[1] ~= "item" or parts[2] ~= "skill" then
+        return false
+    end
+    local idx = tonumber(parts[3])
+    if not idx then
+        return false
+    end
+    if parts[4] == "up" then
+        return pet_ability_melee_at_max_level(hero, "ability_item_" .. idx .. "_up")
+    end
+    if #parts ~= 3 then
+        return false
+    end
+    return pet_ability_melee_at_max_level(hero, "ability_item_" .. idx)
+end
+
+function Pet:TryAutoConsumeMeleeSkillBookOnPetPickup(ID, item, item_name)
+    if not ID or not item or not item_name then
+        return false
+    end
+    if self:IsMeleeSkillBookSkillMaxed(ID, item_name) then
+        return false
+    end
+    if not self:CanPetAutoConsumeMeleeSkillBook(ID, item_name) then
+        return false
+    end
+    if not Skill:AddSkill2(ID, item_name) then
+        return false
+    end
+    local hero = Util:ID2Hero(ID)
+    if not hero then
+        return false
+    end
+    if item:GetCurrentCharges() > 1 then
+        item:SetCurrentCharges(item:GetCurrentCharges() - 1)
+        hero:AddItem(item)
+    else
+        UTIL_Remove(item)
+    end
+    return true
+end

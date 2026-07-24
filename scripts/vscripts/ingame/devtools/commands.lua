@@ -8,22 +8,336 @@
 ]]
 
 
-local encoded=[[ZnVuY3Rpb24gRGV2VG9vbHM6SW5pdEJ1aWx0aW5Db21tYW5kcygpCiAgICBsb2NhbCBmdW5jdGlvbiBzeChpZCwga2V5LCB2YWwpCiAgICAgICAgSGVyb0RhdGE6QWRkU1goaWQsIGtleSwgdmFsKQogICAgZW5kCgogICAgc2VsZjpSZWdpc3RlclRvb2woInl5IiwgIumihOiogOeVjOmdoiIsIGZ1bmN0aW9uKElEKQogICAgICAgIGlmIFByb3BoZWN5IGFuZCBQcm9waGVjeS5Gb3JjZVRyeU9wZW4gdGhlbgogICAgICAgICAgICBpZiBub3QgUHJvcGhlY3k6Rm9yY2VUcnlPcGVuKElEKSB0aGVuCiAgICAgICAgICAgICAgICBVdGlsOkJvdHRvbU1zZzJJRChJRCwgIumihOiogOeVjOmdouaJk+W8gOWksei0pe+8iOWPr+iDveW3suWuo+W4g+aIluaXtumXtOW3sui/h++8iSIsICJyZWQiLCAzKQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZCwgeyBncm91cCA9ICLpooToqIAiIH0pCgogICAgc2VsZjpSZWdpc3RlclRvb2woIi15eSIsICLpooToqIDnlYzpnaIiLCBmdW5jdGlvbihJRCkKICAgICAgICBEZXZUb29sczpSdW5Db21tYW5kKElELCAieXkiKQogICAgZW5kLCB7IGdyb3VwID0gIumihOiogCIsIHNob3dfaW5fcGFuZWwgPSBmYWxzZSB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJ5eWsiLCAi6aKE6KiA5Y2heDEwIiwgZnVuY3Rpb24oSUQpCiAgICAgICAgaWYgU2hvcCBhbmQgU2hvcC5HcmFudEJhZ0l0ZW1TZXJ2ZXIgdGhlbgogICAgICAgICAgICBTaG9wOkdyYW50QmFnSXRlbVNlcnZlcihJRCwgInByb3BoZWN5X2NhcmQiLCAxMCwgZnVuY3Rpb24ob2ssIGtleXMpCiAgICAgICAgICAgICAgICBpZiBvayB0aGVuCiAgICAgICAgICAgICAgICAgICAgbG9jYWwgbiA9IFNob3A6R2V0QmFnSXRlbUNvdW50KElELCAicHJvcGhlY3lfY2FyZCIpCiAgICAgICAgICAgICAgICAgICAgVXRpbDpCb3R0b21Nc2cySUQoSUQsICLojrflvpfpooToqIDljaEgeDEw77yI5b2T5YmNICIgLi4gdG9zdHJpbmcobikgLi4gIu+8iSIsICJ5ZWxsb3ciLCAzKQogICAgICAgICAgICAgICAgICAgIGlmIFByb3BoZWN5IGFuZCBQcm9waGVjeS5PbkJhZ1JlYWR5IHRoZW4KICAgICAgICAgICAgICAgICAgICAgICAgUHJvcGhlY3k6T25CYWdSZWFkeShJRCkKICAgICAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgIGVsc2VpZiBrZXlzID09ICJub190b2tlbiIgdGhlbgogICAgICAgICAgICAgICAgICAgIFV0aWw6Qm90dG9tTXNnMklEKElELCAi6K+35YWI55m75b2V6LSm5Y+35ZCO5YaN5L2/55SoIHl5ayIsICJyZWQiLCAzKQogICAgICAgICAgICAgICAgZWxzZQogICAgICAgICAgICAgICAgICAgIFV0aWw6Qm90dG9tTXNnMklEKElELCAi6aKE6KiA5Y2h5Y+R5pS+5aSx6LSlIiwgInJlZCIsIDMpCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgZW5kKQogICAgICAgIGVuZAogICAgZW5kLCB7IGdyb3VwID0gIumihOiogCIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgiLXl5ayIsICLpooToqIDljaF4MTAiLCBmdW5jdGlvbihJRCkKICAgICAgICBEZXZUb29sczpSdW5Db21tYW5kKElELCAieXlrIikKICAgIGVuZCwgeyBncm91cCA9ICLpooToqIAiLCBzaG93X2luX3BhbmVsID0gZmFsc2UgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgieHJzYiIsICLot6jnuqzluqbogonlsbHlrp3lrp0iLCBmdW5jdGlvbihJRCkKICAgICAgICBsb2NhbCBpdGVtS2V5ID0gInBldF90aTEwX3Jvc2giCiAgICAgICAgbG9jYWwgZnVuY3Rpb24gb25HcmFudGVkKCkKICAgICAgICAgICAgaWYgU2hvcDpPdXRCYWdPd25zSXRlbShJRCwgaXRlbUtleSkgdGhlbgogICAgICAgICAgICAgICAgVXRpbDpCb3R0b21Nc2cySUQoSUQsICLojrflvpfot6jnuqzluqbogonlsbHlrp3lrp3vvIjlj6/lnKjog4zljIXkvanmiLTvvIkiLCAieWVsbG93IiwgMykKICAgICAgICAgICAgZWxzZQogICAgICAgICAgICAgICAgVXRpbDpCb3R0b21Nc2cySUQoSUQsICLojrflvpfot6jnuqzluqbogonlsbHlrp3lrp0iLCAieWVsbG93IiwgMykKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICAgICAgaWYgU2hvcCBhbmQgU2hvcC5HcmFudEJhZ0l0ZW1TZXJ2ZXIgdGhlbgogICAgICAgICAgICBTaG9wOkdyYW50QmFnSXRlbVNlcnZlcihJRCwgaXRlbUtleSwgMSwgZnVuY3Rpb24ob2ssIGtleXMpCiAgICAgICAgICAgICAgICBpZiBvayB0aGVuCiAgICAgICAgICAgICAgICAgICAgb25HcmFudGVkKCkKICAgICAgICAgICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgaWYga2V5cyA9PSAibm9fdG9rZW4iIGFuZCBJc0luVG9vbHNNb2RlKCkgYW5kIFNob3AuQWRkQmFnSXRlbUxvY2FsIHRoZW4KICAgICAgICAgICAgICAgICAgICBpZiBub3QgU2hvcC5EYXRhW0lEXSBhbmQgU2hvcC5Jbml0IHRoZW4KICAgICAgICAgICAgICAgICAgICAgICAgU2hvcDpJbml0KElEKQogICAgICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgICAgIGlmIFNob3A6QWRkQmFnSXRlbUxvY2FsKElELCBpdGVtS2V5LCAxKSB0aGVuCiAgICAgICAgICAgICAgICAgICAgICAgIG9uR3JhbnRlZCgpCiAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybgogICAgICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgICAgIFV0aWw6Qm90dG9tTXNnMklEKElELCAi6K+35YWI55m75b2V6LSm5Y+35ZCO5YaN5L2/55SoIHhyc2IiLCAicmVkIiwgMykKICAgICAgICAgICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgVXRpbDpCb3R0b21Nc2cySUQoSUQsICLot6jnuqzluqbogonlsbHlrp3lrp3lj5HmlL7lpLHotKUiLCAicmVkIiwgMykKICAgICAgICAgICAgZW5kKQogICAgICAgIGVuZAogICAgZW5kLCB7IGdyb3VwID0gIuiDjOWMhSIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgiLXhyc2IiLCAi6Leo57qs5bqm6IKJ5bGx5a6d5a6dIiwgZnVuY3Rpb24oSUQpCiAgICAgICAgRGV2VG9vbHM6UnVuQ29tbWFuZChJRCwgInhyc2IiKQogICAgZW5kLCB7IGdyb3VwID0gIuiDjOWMhSIsIHNob3dfaW5fcGFuZWwgPSBmYWxzZSB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCLmiJHmmK/okIzmlrAiLCAi5oiR5piv6JCM5pawIiwgZnVuY3Rpb24oSUQpCiAgICAgICAgaWYgTWFpbkdhbWU6R2V0VGltZSgpIDw9IDYwIGFuZCBQZXJzb246R2V0UG9pbnQoSUQpIDwgMTEwMCB0aGVuCiAgICAgICAgICAgIEl0ZW06QWRkSXRlbShJRCwgIml0ZW1fZ29vZHNfMTQiKQogICAgICAgIGVuZAogICAgZW5kLCB7IGdyb3VwID0gIuemj+WIqSIsIHRvb2xzX29ubHkgPSBmYWxzZSB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCLmiJHmmK/oj5zpuJ8iLCAi5oiR5piv6I+c6bifIiwgZnVuY3Rpb24oSUQpCiAgICAgICAgaWYgTWFpbkdhbWU6R2V0VGltZSgpIDw9IDYwIGFuZCBQZXJzb246R2V0UG9pbnQoSUQpIDwgNTAwIHRoZW4KICAgICAgICAgICAgSXRlbTpBZGRJdGVtKElELCAiaXRlbV9nb29kc18xNCIpCiAgICAgICAgICAgIEl0ZW06QWRkSXRlbShJRCwgIml0ZW1fZ29vZHNfMTQiKQogICAgICAgIGVuZAogICAgZW5kLCB7IGdyb3VwID0gIuemj+WIqSIsIHRvb2xzX29ubHkgPSBmYWxzZSB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCItenMiLCAi6Ieq5p2AKOmZkDHmrKEpIiwgZnVuY3Rpb24oSUQsIGhlcm8pCiAgICAgICAgaWYgbm90IERldlRvb2xzLkNoYXRDbWRac1VzZWRbSURdIGFuZCBoZXJvOklzQWxpdmUoKSB0aGVuCiAgICAgICAgICAgIERldlRvb2xzLkNoYXRDbWRac1VzZWRbSURdID0gdHJ1ZQogICAgICAgICAgICBsb2NhbCBkYW0gPSBoZXJvOkdldE1heEhlYWx0aCgpICogMTAKICAgICAgICAgICAgdXRpbGV4OlVuaXREYW0oaGVybywgaGVybywgZGFtLCAiY2MiKQogICAgICAgIGVuZAogICAgZW5kLCB7IGdyb3VwID0gIuaImOaWlyIsIHRvb2xzX29ubHkgPSBmYWxzZSB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJ3eiIsICLmiZPljbDlnZDmoIciLCBmdW5jdGlvbihfLCBoZXJvKQogICAgICAgIHByaW50KGhlcm86R2V0QWJzT3JpZ2luKCkpCiAgICBlbmQsIHsgZ3JvdXAgPSAi6LCD6K+VIiB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJ3ZCIsICLml6DmlYwiLCBmdW5jdGlvbihfLCBoZXJvKQogICAgICAgIExpbmtMdWFNb2RpZmllcigibW9kaWZpZXJfd2QiLCAiaW5nYW1lL21vZGlmaWVyL21vZGlmaWVyX3dkIiwgTFVBX01PRElGSUVSX01PVElPTl9OT05FKQogICAgICAgIGhlcm86QWRkTmV3TW9kaWZpZXIoaGVybywgbmlsLCAibW9kaWZpZXJfd2QiLCB7fSkKICAgIGVuZCwgeyBncm91cCA9ICLosIPor5UiIH0pCgogICAgc2VsZjpSZWdpc3RlclRvb2woImdiIiwgIuWFs+mXreaXoOaVjCIsIGZ1bmN0aW9uKF8sIGhlcm8pCiAgICAgICAgaGVybzpSZW1vdmVNb2RpZmllckJ5TmFtZSgibW9kaWZpZXJfd2QiKQogICAgZW5kLCB7IGdyb3VwID0gIuiwg+ivlSIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgiZnkiLCAi5peg5pWMKOS/rumlsOWZqCkiLCBmdW5jdGlvbihfLCBoZXJvKQogICAgICAgIExpbmtMdWFNb2RpZmllcigibW9kaWZpZXJfd3VkaSIsICJpbmdhbWUvbW9kaWZpZXIvbW9kaWZpZXJfd3VkaSIsIExVQV9NT0RJRklFUl9NT1RJT05fTk9ORSkKICAgICAgICBoZXJvOkFkZE5ld01vZGlmaWVyKGhlcm8sIG5pbCwgIm1vZGlmaWVyX3d1ZGkiLCB7fSkKICAgIGVuZCwgeyBncm91cCA9ICLosIPor5UiIH0pCgogICAgc2VsZjpSZWdpc3RlclRvb2woImpubGIiLCAi5omT5Y2w5oqA6IO95qe9IiwgZnVuY3Rpb24oXywgaGVybykKICAgICAgICBsb2NhbCBhYmlsaXR5Q291bnQgPSBoZXJvOkdldEFiaWxpdHlDb3VudCgpCiAgICAgICAgcHJpbnQoIuiLsembhOaKgOiDveanveaAu+aVsDoiLCBhYmlsaXR5Q291bnQpCiAgICAgICAgZm9yIGkgPSAwLCBhYmlsaXR5Q291bnQgLSAxIGRvCiAgICAgICAgICAgIGxvY2FsIGFiaWxpdHkgPSBoZXJvOkdldEFiaWxpdHlCeUluZGV4KGkpCiAgICAgICAgICAgIGlmIGFiaWxpdHkgdGhlbgogICAgICAgICAgICAgICAgcHJpbnQoc3RyaW5nLmZvcm1hdCgi5aSp6LWL5qe95L2NWyVkXe+8miVzIOetiee6pz0lZCIsIGksCiAgICAgICAgICAgICAgICAgICAgYWJpbGl0eTpHZXRBYmlsaXR5TmFtZSgpLCBhYmlsaXR5OkdldExldmVsKCkpKQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZCwgeyBncm91cCA9ICLosIPor5UiIH0pCgogICAgc2VsZjpSZWdpc3RlclRvb2woIm1hcCIsICLlhbPpl63miJjkuonov7fpm74iLCBmdW5jdGlvbigpCiAgICAgICAgbG9jYWwgbW9kZSA9IEdhbWVSdWxlczpHZXRHYW1lTW9kZUVudGl0eSgpCiAgICAgICAgbW9kZTpTZXRGb2dPZldhckRpc2FibGVkKHRydWUpCiAgICBlbmQsIHsgZ3JvdXAgPSAi6LCD6K+VIiB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJjZW50ZXIiLCAi5Lyg6YCB5Zyw5Zu+5Lit5b+DIiwgZnVuY3Rpb24oXywgaGVybykKICAgICAgICBoZXJvOlNldEFic09yaWdpbihNb25zdGVyLlN0YXRpYy5tYXBfY2VudGVyKQogICAgZW5kLCB7IGdyb3VwID0gIuiwg+ivlSIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgiYm9vayIsICLnmb7mnKzmioDog73kuaYiLCBmdW5jdGlvbihfLCBoZXJvKQogICAgICAgIGZvciBfID0gMSwgMTAwIGRvCiAgICAgICAgICAgIGhlcm86QWRkSXRlbShDcmVhdGVJdGVtKCJpdGVtX2dvb2RzXzE0IiwgaGVybywgaGVybykpCiAgICAgICAgZW5kCiAgICAgICAgZm9yIF8gPSAxLCAxMDAgZG8KICAgICAgICAgICAgaGVybzpBZGRJdGVtKENyZWF0ZUl0ZW0oIml0ZW1fZ29vZHNfMTUiLCBoZXJvLCBoZXJvKSkKICAgICAgICBlbmQKICAgICAgICBmb3IgXyA9IDEsIDEwMCBkbwogICAgICAgICAgICBoZXJvOkFkZEl0ZW0oQ3JlYXRlSXRlbSgiaXRlbV9nb29kc18xNiIsIGhlcm8sIGhlcm8pKQogICAgICAgIGVuZAogICAgZW5kLCB7IGdyb3VwID0gIueJqeWTgSIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgiYm9vazEiLCAiVDLmioDog73kuaYiLCBmdW5jdGlvbihJRCkKICAgICAgICBTa2lsbDpVc2VCb29rKElELCAiVDIiKQogICAgZW5kLCB7IGdyb3VwID0gIueJqeWTgSIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgiYm9vazIiLCAiVDHmioDog73kuaYiLCBmdW5jdGlvbihJRCkKICAgICAgICBTa2lsbDpVc2VCb29rKElELCAiVDEiKQogICAgZW5kLCB7IGdyb3VwID0gIueJqeWTgSIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgiYm9vazMiLCAiVDDmioDog73kuaYiLCBmdW5jdGlvbihJRCkKICAgICAgICBTa2lsbDpVc2VCb29rKElELCAiVDAiKQogICAgZW5kLCB7IGdyb3VwID0gIueJqeWTgSIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgibWoiLCAi6Zi/5ZOI5Yip5aeG6a2U5pm2IiwgZnVuY3Rpb24oXywgaGVybykKICAgICAgICBoZXJvOkFkZEl0ZW0oQ3JlYXRlSXRlbSgiaXRlbV9hZ2hhbmltc19zaGFyZCIsIGhlcm8sIGhlcm8pKQogICAgZW5kLCB7IGdyb3VwID0gIueJqeWTgSIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgicmIiLCAi5o6J6JC95YWo6YOo6IKJ5pCPIiwgZnVuY3Rpb24oXywgaGVybykKICAgICAgICBsb2NhbCBwb3MxID0gaGVybzpHZXRBYnNPcmlnaW4oKQogICAgICAgIGZvciBfLCB2IGluIHBhaXJzKEl0ZW0uUmIpIGRvCiAgICAgICAgICAgIGxvY2FsIHBvczIgPSB1dGlsZXg6UmFuZG9tUG9zKHBvczEsIDAsIDgwMCkKICAgICAgICAgICAgbG9jYWwgaXRlbSA9IENyZWF0ZUl0ZW0odiwgbmlsLCBuaWwpCiAgICAgICAgICAgIENyZWF0ZUl0ZW1PblBvc2l0aW9uU3luYyhwb3MxLCBpdGVtKQogICAgICAgICAgICBpdGVtOkxhdW5jaExvb3QoZmFsc2UsIDMwMCwgMC41LCBwb3MyLCBuaWwpCiAgICAgICAgZW5kCiAgICBlbmQsIHsgZ3JvdXAgPSAi54mp5ZOBIiB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJib3giLCAi5a6d566x5oq95aWWeDEwIiwgZnVuY3Rpb24oSUQpCiAgICAgICAgZm9yIF8gPSAxLCAxMCBkbwogICAgICAgICAgICBCb3g6QWRkRHJhdyhJRCkKICAgICAgICBlbmQKICAgIGVuZCwgeyBncm91cCA9ICLnianlk4EiIH0pCgogICAgc2VsZjpSZWdpc3RlclRvb2woImtpbGwiLCAi5aSp6LWL5Ye75p2AKzgwIiwgZnVuY3Rpb24oSUQpCiAgICAgICAgVGFsZW50LkRhdGFbSURdLmtpbGwgPSBUYWxlbnQuRGF0YVtJRF0ua2lsbCArIDgwCiAgICAgICAgVGFsZW50OlN0YXRraWxsKElEKQogICAgICAgIFRhbGVudDpTZW5kS2lsbERhdGEoSUQpCiAgICBlbmQsIHsgZ3JvdXAgPSAi54mp5ZOBIiB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJ6YiIsICIxMOe6pys5OTk5OTk56YeRIiwgZnVuY3Rpb24oSUQsIGhlcm8pCiAgICAgICAgbG9jYWwgdGFyZ2V0ID0gMTAKICAgICAgICBsb2NhbCBndWFyZCA9IDAKICAgICAgICB3aGlsZSBoZXJvLkdldExldmVsIGFuZCBoZXJvOkdldExldmVsKCkgPCB0YXJnZXQgYW5kIGd1YXJkIDwgODAgZG8KICAgICAgICAgICAgZ3VhcmQgPSBndWFyZCArIDEKICAgICAgICAgICAgaGVybzpBZGRFeHBlcmllbmNlKDI1MDAwMCwgMCwgZmFsc2UsIGZhbHNlKQogICAgICAgIGVuZAogICAgICAgIFBsYXllclJlc291cmNlOk1vZGlmeUdvbGQoSUQsIDk5OTk5OTksIGZhbHNlLCAwKQogICAgZW5kLCB7IGdyb3VwID0gIuWxnuaApyIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgiamJqYyIsICLph5HluIHliqDmiJArMTAwIiwgZnVuY3Rpb24oSUQpIHN4KElELCAiamJqYyIsIDEwMCkgZW5kLCB7IGdyb3VwID0gIuWxnuaApyIgfSkKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJqeWpjIiwgIue7j+mqjOWKoOaIkCsxMDAiLCBmdW5jdGlvbihJRCkgc3goSUQsICJqeWpjIiwgMTAwKSBlbmQsIHsgZ3JvdXAgPSAi5bGe5oCnIiB9KQogICAgc2VsZjpSZWdpc3RlclRvb2woInp6anMiLCAi5pyA57uI5YeP5LykKzEwMCIsIGZ1bmN0aW9uKElEKSBzeChJRCwgInp6anMiLCAxMDApIGVuZCwgeyBncm91cCA9ICLlsZ7mgKciIH0pCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgienpzaCIsICLmnIDnu4jkvKTlrrMrMTAwIiwgZnVuY3Rpb24oSUQpIHN4KElELCAienpzaCIsIDEwMCkgZW5kLCB7IGdyb3VwID0gIuWxnuaApyIgfSkKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJkanN4IiwgIuetiee6p+WxnuaApys1IiwgZnVuY3Rpb24oSUQpIHN4KElELCAiZGpzeCIsIDUpIGVuZCwgeyBncm91cCA9ICLlsZ7mgKciIH0pCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgiZ2pzZCIsICLmlLvlh7vpgJ/luqYrMTAwIiwgZnVuY3Rpb24oSUQpIHN4KElELCAiZ2pzZCIsIDEwMCkgZW5kLCB7IGdyb3VwID0gIuWxnuaApyIgfSkKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJzbWhmIiwgIueUn+WRveaBouWkjSsxMDAiLCBmdW5jdGlvbihJRCkgc3goSUQsICJzbWhmIiwgMTAwKSBlbmQsIHsgZ3JvdXAgPSAi5bGe5oCnIiB9KQogICAgc2VsZjpSZWdpc3RlclRvb2woImpuenEiLCAi5oqA6IO95aKe5by6KzEwMCIsIGZ1bmN0aW9uKElEKSBzeChJRCwgImpuenEiLCAxMDApIGVuZCwgeyBncm91cCA9ICLlsZ7mgKciIH0pCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgiZ2pqZyIsICLmlLvlh7vpl7TpmpQrMC4xIiwgZnVuY3Rpb24oSUQpIHN4KElELCAiZ2pqZyIsIDAuMSkgZW5kLCB7IGdyb3VwID0gIuWxnuaApyIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgi5L+u5LuZIiwgIuS/ruS4uuiHs+mjnuihjCgyNCkiLCBmdW5jdGlvbihJRCwgaGVybykKICAgICAgICByZXF1aXJlKCJpbmdhbWUubW9kaWZpZXIuY2xyYl9mbHlfY2xvdWRfdXRpbCIpCiAgICAgICAgaWYgQ2xyYkdldFRhbGVudEluZGV4Rm9ySGVybyA9PSBuaWwgdGhlbgogICAgICAgICAgICByZXF1aXJlKCJpbmdhbWUubW9kaWZpZXIubW9kaWZpZXJfY2xyYl90YWxlbnRzIikKICAgICAgICBlbmQKICAgICAgICBsb2NhbCBtb2QgPSBoZXJvOkZpbmRNb2RpZmllckJ5TmFtZSgibW9kaWZpZXJfdGFsZW50X3NraWxsXzYiKQogICAgICAgIGlmIG5vdCBtb2QgYW5kIENscmJHZXRUYWxlbnRJbmRleEZvckhlcm8oaGVybykgPT0gNiBhbmQgQ2xyYlRhbGVudEFwcGx5UGFzc2l2ZXMgdGhlbgogICAgICAgICAgICBDbHJiVGFsZW50QXBwbHlQYXNzaXZlcyhJRCwgaGVybykKICAgICAgICAgICAgbW9kID0gaGVybzpGaW5kTW9kaWZpZXJCeU5hbWUoIm1vZGlmaWVyX3RhbGVudF9za2lsbF82IikKICAgICAgICBlbmQKICAgICAgICBpZiBub3QgbW9kIHRoZW4KICAgICAgICAgICAgVXRpbDpCb3R0b21Nc2cySUQoSUQsICLlvZPliY3oi7Hpm4TmnKrpgInmi6nkv67ku5nlpKnotYsiLCAicmVkIiwgMykKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgbW9kOlNldFN0YWNrQ291bnQoMjQpCiAgICAgICAgaGVybzpDYWxjdWxhdGVTdGF0Qm9udXModHJ1ZSkKICAgICAgICBpZiBDbHJiRmx5Q2xvdWRTY2hlZHVsZVN5bmMgdGhlbgogICAgICAgICAgICBDbHJiRmx5Q2xvdWRTY2hlZHVsZVN5bmMoaGVybykKICAgICAgICBlbHNlaWYgQ2xyYkZseUNsb3VkU3luYyB0aGVuCiAgICAgICAgICAgIENscmJGbHlDbG91ZFN5bmMoaGVybykKICAgICAgICBlbmQKICAgICAgICBVdGlsOkJvdHRvbU1zZzJJRChJRCwgIuS/ruS7me+8muS/ruS4uuW3suiuvuS4uiAyNO+8iOmjnuihjOmYtuaute+8iSIsICJ5ZWxsb3ciLCAzKQogICAgZW5kLCB7IGdyb3VwID0gIuWxnuaApyIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgieWoiLCAi5Yi35Y+L5pa56YeO5oCqIiwgZnVuY3Rpb24oXywgaGVybykKICAgICAgICBsb2NhbCBwb3MgPSB1dGlsZXg6UmFuZG9tUG9zKGhlcm86R2V0QWJzT3JpZ2luKCksIDEwMCwgMjAwKQogICAgICAgIHV0aWxleDpDcmVhdGVVbml0KCJtXzFfMiIsIHBvcywgbmlsLCAiZ29vZCIpCiAgICBlbmQsIHsgZ3JvdXAgPSAi5Yi35oCqIiB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJkciIsICLliLfmlYzmlrnph47mgKoiLCBmdW5jdGlvbihfLCBoZXJvKQogICAgICAgIGxvY2FsIHBvcyA9IHV0aWxleDpSYW5kb21Qb3MoaGVybzpHZXRBYnNPcmlnaW4oKSwgMTAwLCAyMDApCiAgICAgICAgdXRpbGV4OkNyZWF0ZVVuaXQoIm1fMV8yIiwgcG9zLCBuaWwsICJiYWQiKQogICAgZW5kLCB7IGdyb3VwID0gIuWIt+aAqiIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgicGFjayIsICLliLflv6vpgJIiLCBmdW5jdGlvbihfLCBoZXJvKQogICAgICAgIGxvY2FsIHBvcyA9IHV0aWxleDpSYW5kb21Qb3MoaGVybzpHZXRBYnNPcmlnaW4oKSwgMTAwLCAyMDApCiAgICAgICAgbG9jYWwgdW5pdCA9IHV0aWxleDpDcmVhdGVVbml0KCJQYWNrIiwgcG9zLCBuaWwsICJnb29kIikKICAgICAgICB1dGlsZXg6QWRkTW9kaWZpZXIodW5pdCwgIndkX25vYmFyIikKICAgICAgICBQYWNrOkF1dG9QYWdlKHVuaXQpCiAgICBlbmQsIHsgZ3JvdXAgPSAi5Yi35oCqIiB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJtbCIsICLliLfprZTpvpkiLCBmdW5jdGlvbigpCiAgICAgICAgTW9uc3RlcjpDcmVhdGVEcmFnb24oKQogICAgZW5kLCB7IGdyb3VwID0gIuWIt+aAqiIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgibHciLCAi5Yi354u8546LIiwgZnVuY3Rpb24oKQogICAgICAgIE1vbnN0ZXI6Q3JlYXRlV29sZigpCiAgICBlbmQsIHsgZ3JvdXAgPSAi5Yi35oCqIiB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJteCIsICLliLflr7DlrofogonlsbEiLCBmdW5jdGlvbigpCiAgICAgICAgTW9uc3RlcjpDcmVhdGVCZWFyKCkKICAgIGVuZCwgeyBncm91cCA9ICLliLfmgKoiIH0pCgogICAgc2VsZjpSZWdpc3RlclRvb2woImxkeHQiLCAi5Yi36Zu355S15L+h5b6SIiwgZnVuY3Rpb24oSUQsIGhlcm8pCiAgICAgICAgbG9jYWwgcG9zID0gdXRpbGV4OlJhbmRvbVBvcyhoZXJvOkdldEFic09yaWdpbigpLCAxMDAsIDI1MCkKICAgICAgICBwb3MgPSBVdGlsOkZpbmRDYW5SZWFjaFBvcyhwb3MpIG9yIHBvcwogICAgICAgIE1vbnN0ZXI6U3Bhd25MaWdodG5pbmdCZWxpZXZlckF0KHBvcywgdHJ1ZSwgaGVybywgZnVuY3Rpb24odW5pdCkKICAgICAgICAgICAgaWYgdW5pdCB0aGVuCiAgICAgICAgICAgICAgICBVdGlsOkJvdHRvbU1zZzJJRChJRCwgIuW3suWcqOmZhOi/keWPrOWUpOmbt+eUteS/oeW+kiIsICJ5ZWxsb3ciLCAzKQogICAgICAgICAgICBlbHNlCiAgICAgICAgICAgICAgICBVdGlsOkJvdHRvbU1zZzJJRChJRCwgIumbt+eUteS/oeW+kuWPrOWUpOWksei0pSIsICJyZWQiLCAzKQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQpCiAgICBlbmQsIHsgZ3JvdXAgPSAi5Yi35oCqIiB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJ0YW5rIiwgIuWIt+acqOahqSjlnaYpIiwgZnVuY3Rpb24oXywgaGVybykKICAgICAgICBsb2NhbCBwb3MgPSB1dGlsZXg6UmFuZG9tUG9zKGhlcm86R2V0QWJzT3JpZ2luKCksIDEwMCwgMjAwKQogICAgICAgIGxvY2FsIHVuaXQgPSB1dGlsZXg6Q3JlYXRlVW5pdCgiaGpfdGVzdCIsIHBvcywgbmlsLCAiYmFkIikKICAgICAgICB1dGlsZXg6QWRkTW9kaWZpZXIodW5pdCwgIm1vZGlmaWVyX3Rlc3R0YW5rIikKICAgIGVuZCwgeyBncm91cCA9ICLliLfmgKoiIH0pCgogICAgc2VsZjpSZWdpc3RlclRvb2woImF0dGFjayIsICLliLfmnKjmoakiLCBmdW5jdGlvbihfLCBoZXJvKQogICAgICAgIGxvY2FsIHBvcyA9IHV0aWxleDpSYW5kb21Qb3MoaGVybzpHZXRBYnNPcmlnaW4oKSwgMTAwLCAyMDApCiAgICAgICAgdXRpbGV4OkNyZWF0ZVVuaXQoImhqX3Rlc3QiLCBwb3MsIG5pbCwgImJhZCIpCiAgICBlbmQsIHsgZ3JvdXAgPSAi5Yi35oCqIiB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJheGUiLCAi5Yi35Y+v5o6n5pan546LIiwgZnVuY3Rpb24oSUQsIGhlcm8pCiAgICAgICAgbG9jYWwgcG9zID0gdXRpbGV4OlJhbmRvbVBvcyhoZXJvOkdldEFic09yaWdpbigpLCAxMDAsIDMwMCkKICAgICAgICBDcmVhdGVVbml0QnlOYW1lQXN5bmMoIm5wY19kb3RhX2hlcm9fYXhlIiwgcG9zLCB0cnVlLCBoZXJvLCBoZXJvLCAzLCBmdW5jdGlvbih1bml0KQogICAgICAgICAgICB1bml0OlNldENvbnRyb2xsYWJsZUJ5UGxheWVyKElELCB0cnVlKQogICAgICAgIGVuZCkKICAgIGVuZCwgeyBncm91cCA9ICLliLfmgKoiIH0pCgogICAgc2VsZjpSZWdpc3RlclRvb2woImJvdCIsICLliLfmtYvor5VCb3QiLCBmdW5jdGlvbihfLCBoZXJvKQogICAgICAgIGxvY2FsIGJvdEhlcm8gPSBDcmVhdGVVbml0QnlOYW1lKCJucGNfZG90YV9oZXJvX2F4ZSIsIGhlcm86R2V0QWJzT3JpZ2luKCksIHRydWUsIG5pbCwgbmlsLCBET1RBX1RFQU1fQkFER1VZUykKICAgICAgICBpZiBib3RIZXJvIGFuZCBub3QgYm90SGVybzpJc051bGwoKSB0aGVuCiAgICAgICAgICAgIGJvdEhlcm8uS2lsbENvdW50ID0gMTAKICAgICAgICAgICAgYm90SGVybzpBZGROZXdNb2RpZmllcihib3RIZXJvLCBuaWwsICJtb2RpZmllcl9hYmlsaXR5X2JmXzFfYnVmZiIsIHt9KQogICAgICAgICAgICBsb2NhbCBtb2RlID0gR2FtZVJ1bGVzOkdldEdhbWVNb2RlRW50aXR5KCkKICAgICAgICAgICAgbW9kZTpTZXRIZXJvQ2hhbmdlQWxsb3dlZCh0cnVlKQogICAgICAgIGVuZAogICAgZW5kLCB7IGdyb3VwID0gIuWIt+aAqiIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgiZHUxIiwgIuavkuWciOmYtuautTEiLCBmdW5jdGlvbigpCiAgICAgICAgTWFpbkdhbWUuRGF0YS5zdGF0ZSA9IDIKICAgICAgICBNYWluR2FtZTpNYXBDaGFuZ2UxKCkKICAgIGVuZCwgeyBncm91cCA9ICLlnLDlm74iIH0pCgogICAgc2VsZjpSZWdpc3RlclRvb2woInNxMSIsICLnvKnlnIgxIiwgZnVuY3Rpb24oKQogICAgICAgIE1haW5HYW1lLkRhdGEuc3RhdGUgPSAyCiAgICAgICAgTWFpbkdhbWU6TWFwQ2hhbmdlMSgpCiAgICBlbmQsIHsgZ3JvdXAgPSAi5Zyw5Zu+IiB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJzcTIiLCAi57yp5ZyIMiIsIGZ1bmN0aW9uKCkKICAgICAgICBNYWluR2FtZS5EYXRhLnN0YXRlID0gMwogICAgICAgIE1haW5HYW1lOk1hcENoYW5nZTIoKQogICAgZW5kLCB7IGdyb3VwID0gIuWcsOWbviIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgiZ2ciLCAi5by65Yi257uT566XIiwgZnVuY3Rpb24oKQogICAgICAgIE1haW5HYW1lLk92ZXJEYXRhLlRlYW0yLnJlc3VsdCA9IDEKICAgICAgICBNYWluR2FtZTpHYW1lT3ZlcigpCiAgICBlbmQsIHsgZ3JvdXAgPSAi5Zyw5Zu+IiB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJ6cyIsICLoh6rmnYAiLCBmdW5jdGlvbihfLCBoZXJvKQogICAgICAgIGxvY2FsIGRhbSA9IGhlcm86R2V0TWF4SGVhbHRoKCkgKiAxMAogICAgICAgIHV0aWxleDpVbml0RGFtKGhlcm8sIGhlcm8sIGRhbSwgImNjIikKICAgIGVuZCwgeyBncm91cCA9ICLmiJjmlpciIH0pCgogICAgc2VsZjpSZWdpc3RlclRvb2woImp6c2ciLCAi56aB5q2i5Yi35oCqIiwgZnVuY3Rpb24oKQogICAgICAgIE1haW5HYW1lLkRhdGEuanpzZyA9IHRydWUKICAgIGVuZCwgeyBncm91cCA9ICLliLfmgKoiIH0pCgogICAgc2VsZjpSZWdpc3RlclRvb2woImx0ZngiLCAi6Zu36ZyG5aSp5rCUIiwgZnVuY3Rpb24oSUQpCiAgICAgICAgaWYgTWFpbkdhbWUgYW5kIE1haW5HYW1lLldlYXRoZXJTdGFydEJ5SWQgdGhlbgogICAgICAgICAgICBNYWluR2FtZTpXZWF0aGVyU3RhcnRCeUlkKDYpCiAgICAgICAgICAgIFV0aWw6Qm90dG9tTXNnMklEKElELCAi5bey6Kem5Y+R6Zu36ZyG6ZmN5LiW5aSp5rCUIiwgInllbGxvdyIsIDMpCiAgICAgICAgZW5kCiAgICBlbmQsIHsgZ3JvdXAgPSAi6LCD6K+VIiB9KQplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+function DevTools:InitBuiltinCommands()
+    local function sx(id, key, val)
+        HeroData:AddSX(id, key, val)
+    end
+
+    self:RegisterTool("yy", "预言界面", function(ID)
+        if Prophecy and Prophecy.ForceTryOpen then
+            if not Prophecy:ForceTryOpen(ID) then
+                Util:BottomMsg2ID(ID, "预言界面打开失败（可能已宣布或时间已过）", "red", 3)
+            end
+        end
+    end, { group = "预言" })
+
+    self:RegisterTool("-yy", "预言界面", function(ID)
+        DevTools:RunCommand(ID, "yy")
+    end, { group = "预言", show_in_panel = false })
+
+    self:RegisterTool("yyk", "预言卡x10", function(ID)
+        if Shop and Shop.GrantBagItemServer then
+            Shop:GrantBagItemServer(ID, "prophecy_card", 10, function(ok, keys)
+                if ok then
+                    local n = Shop:GetBagItemCount(ID, "prophecy_card")
+                    Util:BottomMsg2ID(ID, "获得预言卡 x10（当前 " .. tostring(n) .. "）", "yellow", 3)
+                    if Prophecy and Prophecy.OnBagReady then
+                        Prophecy:OnBagReady(ID)
+                    end
+                elseif keys == "no_token" then
+                    Util:BottomMsg2ID(ID, "请先登录账号后再使用 yyk", "red", 3)
+                else
+                    Util:BottomMsg2ID(ID, "预言卡发放失败", "red", 3)
+                end
+            end)
+        end
+    end, { group = "预言" })
+
+    self:RegisterTool("-yyk", "预言卡x10", function(ID)
+        DevTools:RunCommand(ID, "yyk")
+    end, { group = "预言", show_in_panel = false })
+
+    self:RegisterTool("xrsb", "跨纬度肉山宝宝", function(ID)
+        local itemKey = "pet_ti10_rosh"
+        local function onGranted()
+            if Shop:OutBagOwnsItem(ID, itemKey) then
+                Util:BottomMsg2ID(ID, "获得跨纬度肉山宝宝（可在背包佩戴）", "yellow", 3)
+            else
+                Util:BottomMsg2ID(ID, "获得跨纬度肉山宝宝", "yellow", 3)
+            end
+        end
+        if Shop and Shop.GrantBagItemServer then
+            Shop:GrantBagItemServer(ID, itemKey, 1, function(ok, keys)
+                if ok then
+                    onGranted()
+                    return
+                end
+                if keys == "no_token" and IsInToolsMode() and Shop.AddBagItemLocal then
+                    if not Shop.Data[ID] and Shop.Init then
+                        Shop:Init(ID)
+                    end
+                    if Shop:AddBagItemLocal(ID, itemKey, 1) then
+                        onGranted()
+                        return
+                    end
+                    Util:BottomMsg2ID(ID, "请先登录账号后再使用 xrsb", "red", 3)
+                    return
+                end
+                Util:BottomMsg2ID(ID, "跨纬度肉山宝宝发放失败", "red", 3)
+            end)
+        end
+    end, { group = "背包" })
+
+    self:RegisterTool("-xrsb", "跨纬度肉山宝宝", function(ID)
+        DevTools:RunCommand(ID, "xrsb")
+    end, { group = "背包", show_in_panel = false })
+
+    self:RegisterTool("我是萌新", "我是萌新", function(ID)
+        if MainGame:GetTime() <= 60 and Person:GetPoint(ID) < 1100 then
+            Item:AddItem(ID, "item_goods_14")
+        end
+    end, { group = "福利", tools_only = false })
+
+    self:RegisterTool("我是菜鸟", "我是菜鸟", function(ID)
+        if MainGame:GetTime() <= 60 and Person:GetPoint(ID) < 500 then
+            Item:AddItem(ID, "item_goods_14")
+            Item:AddItem(ID, "item_goods_14")
+        end
+    end, { group = "福利", tools_only = false })
+
+    self:RegisterTool("-zs", "自杀(限1次)", function(ID, hero)
+        if not DevTools.ChatCmdZsUsed[ID] and hero:IsAlive() then
+            DevTools.ChatCmdZsUsed[ID] = true
+            local dam = hero:GetMaxHealth() * 10
+            utilex:UnitDam(hero, hero, dam, "cc")
+        end
+    end, { group = "战斗", tools_only = false })
+
+    self:RegisterTool("wz", "打印坐标", function(_, hero)
+        print(hero:GetAbsOrigin())
+    end, { group = "调试" })
+
+    self:RegisterTool("wd", "无敌", function(_, hero)
+        LinkLuaModifier("modifier_wd", "ingame/modifier/modifier_wd", LUA_MODIFIER_MOTION_NONE)
+        hero:AddNewModifier(hero, nil, "modifier_wd", {})
+    end, { group = "调试" })
+
+    self:RegisterTool("gb", "关闭无敌", function(_, hero)
+        hero:RemoveModifierByName("modifier_wd")
+    end, { group = "调试" })
+
+    self:RegisterTool("fy", "无敌(修饰器)", function(_, hero)
+        LinkLuaModifier("modifier_wudi", "ingame/modifier/modifier_wudi", LUA_MODIFIER_MOTION_NONE)
+        hero:AddNewModifier(hero, nil, "modifier_wudi", {})
+    end, { group = "调试" })
+
+    self:RegisterTool("jnlb", "打印技能槽", function(_, hero)
+        local abilityCount = hero:GetAbilityCount()
+        print("英雄技能槽总数:", abilityCount)
+        for i = 0, abilityCount - 1 do
+            local ability = hero:GetAbilityByIndex(i)
+            if ability then
+                print(string.format("天赋槽位[%d]：%s 等级=%d", i,
+                    ability:GetAbilityName(), ability:GetLevel()))
+            end
+        end
+    end, { group = "调试" })
+
+    self:RegisterTool("map", "关闭战争迷雾", function()
+        local mode = GameRules:GetGameModeEntity()
+        mode:SetFogOfWarDisabled(true)
+    end, { group = "调试" })
+
+    self:RegisterTool("center", "传送地图中心", function(_, hero)
+        hero:SetAbsOrigin(Monster.Static.map_center)
+    end, { group = "调试" })
+
+    self:RegisterTool("book", "百本技能书", function(_, hero)
+        for _ = 1, 100 do
+            hero:AddItem(CreateItem("item_goods_14", hero, hero))
+        end
+        for _ = 1, 100 do
+            hero:AddItem(CreateItem("item_goods_15", hero, hero))
+        end
+        for _ = 1, 100 do
+            hero:AddItem(CreateItem("item_goods_16", hero, hero))
+        end
+    end, { group = "物品" })
+
+    self:RegisterTool("book1", "T2技能书", function(ID)
+        Skill:UseBook(ID, "T2")
+    end, { group = "物品" })
+
+    self:RegisterTool("book2", "T1技能书", function(ID)
+        Skill:UseBook(ID, "T1")
+    end, { group = "物品" })
+
+    self:RegisterTool("book3", "T0技能书", function(ID)
+        Skill:UseBook(ID, "T0")
+    end, { group = "物品" })
+
+    self:RegisterTool("mj", "阿哈利姆魔晶", function(_, hero)
+        hero:AddItem(CreateItem("item_aghanims_shard", hero, hero))
+    end, { group = "物品" })
+
+    self:RegisterTool("rb", "掉落全部肉搏", function(_, hero)
+        local pos1 = hero:GetAbsOrigin()
+        for _, v in pairs(Item.Rb) do
+            local pos2 = utilex:RandomPos(pos1, 0, 800)
+            local item = CreateItem(v, nil, nil)
+            CreateItemOnPositionSync(pos1, item)
+            item:LaunchLoot(false, 300, 0.5, pos2, nil)
+        end
+    end, { group = "物品" })
+
+    self:RegisterTool("box", "宝箱抽奖x10", function(ID)
+        for _ = 1, 10 do
+            Box:AddDraw(ID)
+        end
+    end, { group = "物品" })
+
+    self:RegisterTool("kill", "天赋击杀+80", function(ID)
+        Talent.Data[ID].kill = Talent.Data[ID].kill + 80
+        Talent:Statkill(ID)
+        Talent:SendKillData(ID)
+    end, { group = "物品" })
+
+    self:RegisterTool("zb", "10级+9999999金", function(ID, hero)
+        local target = 10
+        local guard = 0
+        while hero.GetLevel and hero:GetLevel() < target and guard < 80 do
+            guard = guard + 1
+            hero:AddExperience(250000, 0, false, false)
+        end
+        PlayerResource:ModifyGold(ID, 9999999, false, 0)
+    end, { group = "属性" })
+
+    self:RegisterTool("jbjc", "金币加成+100", function(ID) sx(ID, "jbjc", 100) end, { group = "属性" })
+    self:RegisterTool("jyjc", "经验加成+100", function(ID) sx(ID, "jyjc", 100) end, { group = "属性" })
+    self:RegisterTool("zzjs", "最终减伤+100", function(ID) sx(ID, "zzjs", 100) end, { group = "属性" })
+    self:RegisterTool("zzsh", "最终伤害+100", function(ID) sx(ID, "zzsh", 100) end, { group = "属性" })
+    self:RegisterTool("djsx", "等级属性+5", function(ID) sx(ID, "djsx", 5) end, { group = "属性" })
+    self:RegisterTool("gjsd", "攻击速度+100", function(ID) sx(ID, "gjsd", 100) end, { group = "属性" })
+    self:RegisterTool("smhf", "生命恢复+100", function(ID) sx(ID, "smhf", 100) end, { group = "属性" })
+    self:RegisterTool("jnzq", "技能增强+100", function(ID) sx(ID, "jnzq", 100) end, { group = "属性" })
+    self:RegisterTool("gjjg", "攻击间隔+0.1", function(ID) sx(ID, "gjjg", 0.1) end, { group = "属性" })
+
+    self:RegisterTool("修仙", "修为至飞行(24)", function(ID, hero)
+        require("ingame.modifier.clrb_fly_cloud_util")
+        if ClrbGetTalentIndexForHero == nil then
+            require("ingame.modifier.modifier_clrb_talents")
+        end
+        local mod = hero:FindModifierByName("modifier_talent_skill_6")
+        if not mod and ClrbGetTalentIndexForHero(hero) == 6 and ClrbTalentApplyPassives then
+            ClrbTalentApplyPassives(ID, hero)
+            mod = hero:FindModifierByName("modifier_talent_skill_6")
+        end
+        if not mod then
+            Util:BottomMsg2ID(ID, "当前英雄未选择修仙天赋", "red", 3)
+            return
+        end
+        mod:SetStackCount(24)
+        hero:CalculateStatBonus(true)
+        if ClrbFlyCloudScheduleSync then
+            ClrbFlyCloudScheduleSync(hero)
+        elseif ClrbFlyCloudSync then
+            ClrbFlyCloudSync(hero)
+        end
+        Util:BottomMsg2ID(ID, "修仙：修为已设为 24（飞行阶段）", "yellow", 3)
+    end, { group = "属性" })
+
+    self:RegisterTool("yj", "刷友方野怪", function(_, hero)
+        local pos = utilex:RandomPos(hero:GetAbsOrigin(), 100, 200)
+        utilex:CreateUnit("m_1_2", pos, nil, "good")
+    end, { group = "刷怪" })
+
+    self:RegisterTool("dr", "刷敌方野怪", function(_, hero)
+        local pos = utilex:RandomPos(hero:GetAbsOrigin(), 100, 200)
+        utilex:CreateUnit("m_1_2", pos, nil, "bad")
+    end, { group = "刷怪" })
+
+    self:RegisterTool("pack", "刷快递", function(_, hero)
+        local pos = utilex:RandomPos(hero:GetAbsOrigin(), 100, 200)
+        local unit = utilex:CreateUnit("Pack", pos, nil, "good")
+        utilex:AddModifier(unit, "wd_nobar")
+        Pack:AutoPage(unit)
+    end, { group = "刷怪" })
+
+    self:RegisterTool("ml", "刷魔龙", function()
+        Monster:CreateDragon()
+    end, { group = "刷怪" })
+
+    self:RegisterTool("lw", "刷狼王", function()
+        Monster:CreateWolf()
+    end, { group = "刷怪" })
+
+    self:RegisterTool("mx", "刷寰宇肉山", function()
+        Monster:CreateBear()
+    end, { group = "刷怪" })
+
+    self:RegisterTool("ldxt", "刷雷电信徒", function(ID, hero)
+        local pos = utilex:RandomPos(hero:GetAbsOrigin(), 100, 250)
+        pos = Util:FindCanReachPos(pos) or pos
+        Monster:SpawnLightningBelieverAt(pos, true, hero, function(unit)
+            if unit then
+                Util:BottomMsg2ID(ID, "已在附近召唤雷电信徒", "yellow", 3)
+            else
+                Util:BottomMsg2ID(ID, "雷电信徒召唤失败", "red", 3)
+            end
+        end)
+    end, { group = "刷怪" })
+
+    self:RegisterTool("tank", "刷木桩(坦)", function(_, hero)
+        local pos = utilex:RandomPos(hero:GetAbsOrigin(), 100, 200)
+        local unit = utilex:CreateUnit("hj_test", pos, nil, "bad")
+        utilex:AddModifier(unit, "modifier_testtank")
+    end, { group = "刷怪" })
+
+    self:RegisterTool("attack", "刷木桩", function(_, hero)
+        local pos = utilex:RandomPos(hero:GetAbsOrigin(), 100, 200)
+        utilex:CreateUnit("hj_test", pos, nil, "bad")
+    end, { group = "刷怪" })
+
+    self:RegisterTool("axe", "刷可控斧王", function(ID, hero)
+        local pos = utilex:RandomPos(hero:GetAbsOrigin(), 100, 300)
+        CreateUnitByNameAsync("npc_dota_hero_axe", pos, true, hero, hero, 3, function(unit)
+            unit:SetControllableByPlayer(ID, true)
+        end)
+    end, { group = "刷怪" })
+
+    self:RegisterTool("bot", "刷测试Bot", function(_, hero)
+        local botHero = CreateUnitByName("npc_dota_hero_axe", hero:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS)
+        if botHero and not botHero:IsNull() then
+            botHero.KillCount = 10
+            botHero:AddNewModifier(botHero, nil, "modifier_ability_bf_1_buff", {})
+            local mode = GameRules:GetGameModeEntity()
+            mode:SetHeroChangeAllowed(true)
+        end
+    end, { group = "刷怪" })
+
+    self:RegisterTool("du1", "毒圈阶段1", function()
+        MainGame.Data.state = 2
+        MainGame:MapChange1()
+    end, { group = "地图" })
+
+    self:RegisterTool("sq1", "缩圈1", function()
+        MainGame.Data.state = 2
+        MainGame:MapChange1()
+    end, { group = "地图" })
+
+    self:RegisterTool("sq2", "缩圈2", function()
+        MainGame.Data.state = 3
+        MainGame:MapChange2()
+    end, { group = "地图" })
+
+    self:RegisterTool("gg", "强制结算", function()
+        MainGame.OverData.Team2.result = 1
+        MainGame:GameOver()
+    end, { group = "地图" })
+
+    self:RegisterTool("zs", "自杀", function(_, hero)
+        local dam = hero:GetMaxHealth() * 10
+        utilex:UnitDam(hero, hero, dam, "cc")
+    end, { group = "战斗" })
+
+    self:RegisterTool("jzsg", "禁止刷怪", function()
+        MainGame.Data.jzsg = true
+    end, { group = "刷怪" })
+
+    self:RegisterTool("ltfx", "雷霆天气", function(ID)
+        if MainGame and MainGame.WeatherStartById then
+            MainGame:WeatherStartById(6)
+            Util:BottomMsg2ID(ID, "已触发雷霆降世天气", "yellow", 3)
+        end
+    end, { group = "调试" })
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end

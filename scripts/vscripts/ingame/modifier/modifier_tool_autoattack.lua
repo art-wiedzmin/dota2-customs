@@ -8,22 +8,106 @@
 ]]
 
 
-local encoded=[[aWYgbW9kaWZpZXJfdG9vbF9hdXRvYXR0YWNrID09IG5pbCB0aGVuCiAgICBtb2RpZmllcl90b29sX2F1dG9hdHRhY2sgPSBjbGFzcyh7fSkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90b29sX2F1dG9hdHRhY2s6SXNIaWRkZW4oKQogICAgcmV0dXJuIHRydWUKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90b29sX2F1dG9hdHRhY2s6SXNEZWJ1ZmYoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdG9vbF9hdXRvYXR0YWNrOklzUHVyZ2FibGUoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdG9vbF9hdXRvYXR0YWNrOlJlbW92ZU9uRGVhdGgoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdG9vbF9hdXRvYXR0YWNrOkFsbG93SWxsdXNpb25EdXBsaWNhdGUoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdG9vbF9hdXRvYXR0YWNrOkdldEF0dHJpYnV0ZXMoKQogICAgcmV0dXJuIE1PRElGSUVSX0FUVFJJQlVURV9QRVJNQU5FTlQgKwogICAgICAgIE1PRElGSUVSX0FUVFJJQlVURV9JR05PUkVfSU5WVUxORVJBQkxFCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdG9vbF9hdXRvYXR0YWNrOk9uQ3JlYXRlZCgpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuIHJldHVybiBlbmQKICAgIHNlbGYubmVlZGF0dGFjayA9IDEKICAgIHNlbGY6T25JbnRlcnZhbFRoaW5rKCkKICAgIHNlbGY6U3RhcnRJbnRlcnZhbFRoaW5rKDAuMTUpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdG9vbF9hdXRvYXR0YWNrOk9uSW50ZXJ2YWxUaGluaygpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuIHJldHVybiBlbmQKICAgIGxvY2FsIHBhID0gc2VsZjpHZXRQYXJlbnQoKQogICAgaWYgbm90IHBhIHRoZW4gcmV0dXJuIGVuZAogICAgaWYgcGE6SXNOdWxsKCkgdGhlbiByZXR1cm4gZW5kCiAgICBpZiBwYTpJc01vdmluZygpIHRoZW4gcmV0dXJuIGVuZAogICAgaWYgbm90IHBhOklzQWxpdmUoKSB0aGVuIHJldHVybiBlbmQKICAgIGlmIHBhOklzQXR0YWNraW5nKCkgdGhlbiByZXR1cm4gZW5kCiAgICBpZiBwYTpJc0NoYW5uZWxpbmcoKSB0aGVuIHJldHVybiBlbmQKICAgIGlmIEdhbWVSdWxlczpJc0dhbWVQYXVzZWQoKSB0aGVuIHJldHVybiBlbmQKICAgIGlmIHBhOkdldEN1cnJlbnRBY3RpdmVBYmlsaXR5KCkgdGhlbiByZXR1cm4gZW5kCiAgICBpZiBwYTpHZXRBZ2dyb1RhcmdldCgpIHRoZW4gcmV0dXJuIGVuZAogICAgaWYgcGE6SXNEaXNhcm1lZCgpIHRoZW4gcmV0dXJuIGVuZAogICAgaWYgcGE6SGFzTW9kaWZpZXIoIm1vZGlmaWVyX3RlbGVwb3J0X3VwX3Nsb3ciKSB0aGVuIHJldHVybiBlbmQKICAgIGlmIHBhOkhhc01vZGlmaWVyKCJtb2RpZmllcl90ZWxlcG9ydF91cF9mYXN0IikgdGhlbiByZXR1cm4gZW5kCiAgICBpZiBwYTpIYXNNb2RpZmllcigibW9kaWZpZXJfZ2VuZXJpY19hcmMiKSB0aGVuIHJldHVybiBlbmQKICAgIGlmIHNlbGYubmVlZGF0dGFjayA9PSAwIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgcGEubmVlZGF1dG9hdHRhY2sgfj0gbmlsIHRoZW4KICAgICAgICBpZiBwYS5uZWVkYXV0b2F0dGFjayA9PSAwIHRoZW4KICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGxvY2FsIHJhbmdlID0gcGE6U2NyaXB0X0dldEF0dGFja1JhbmdlKCkKICAgIGlmIHJhbmdlIDwgMzAwIHRoZW4gcmFuZ2UgPSAzMDAgZW5kCiAgICBsb2NhbCBlbmVteSA9IFV0aWw6UmFkaXVzMkVuZW15KHBhLCByYW5nZSkKICAgIGZvciBpID0gMSwgI2VuZW15IGRvCiAgICAgICAgaWYgZW5lbXlbaV0gdGhlbgogICAgICAgICAgICBpZiBlbmVteVtpXTpJc0FsaXZlKCkgdGhlbgogICAgICAgICAgICAgICAgbG9jYWwgdGFwb3MgPSBlbmVteVtpXTpHZXRBYnNPcmlnaW4oKQogICAgICAgICAgICAgICAgbG9jYWwgcGFwb3MgPSBwYTpHZXRBYnNPcmlnaW4oKQogICAgICAgICAgICAgICAgbG9jYWwgZnggPSAodGFwb3MgLSBwYXBvcyk6Tm9ybWFsaXplZCgpCiAgICAgICAgICAgICAgICBwYTpTZXRGb3J3YXJkVmVjdG9yKFZlY3RvcihmeC54LCBmeC55LCAwKSkKICAgICAgICAgICAgICAgIC0tIHBhOk1vdmVUb1Bvc2l0aW9uQWdncmVzc2l2ZShlbmVteVtpXTpHZXRPcmlnaW4oKSkKICAgICAgICAgICAgICAgIGxvY2FsIG9yZGVyID0gewogICAgICAgICAgICAgICAgICAgIFVuaXRJbmRleCA9IHBhOmVudGluZGV4KCksCiAgICAgICAgICAgICAgICAgICAgT3JkZXJUeXBlID0gRE9UQV9VTklUX09SREVSX0FUVEFDS19UQVJHRVQsCiAgICAgICAgICAgICAgICAgICAgVGFyZ2V0SW5kZXggPSBlbmVteVtpXTplbnRpbmRleCgpLAogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgRXhlY3V0ZU9yZGVyRnJvbVRhYmxlKG9yZGVyKQogICAgICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdG9vbF9hdXRvYXR0YWNrOkRlY2xhcmVGdW5jdGlvbnMoKQogICAgcmV0dXJuIHsgTU9ESUZJRVJfRVZFTlRfT05fT1JERVIsIH0KZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90b29sX2F1dG9hdHRhY2s6T25PcmRlcihrZXlzKQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbiByZXR1cm4gZW5kCiAgICBsb2NhbCBwYSA9IHNlbGY6R2V0UGFyZW50KCkKICAgIGxvY2FsIHVuaXQgPSBrZXlzLnVuaXQKICAgIGxvY2FsIG9yZGVyX3R5cGUgPSBrZXlzLm9yZGVyX3R5cGUKICAgIGlmIHBhID09IHBhIGFuZCAob3JkZXJfdHlwZSA9PSBET1RBX1VOSVRfT1JERVJfQVRUQUNLX1RBUkdFVCBvciBvcmRlcl90eXBlID09IERPVEFfVU5JVF9PUkRFUl9NT1ZFX1RPX1BPU0lUSU9OIG9yIG9yZGVyX3R5cGUgPT0gRE9UQV9VTklUX09SREVSX0FUVEFDS19NT1ZFIG9yIG9yZGVyX3R5cGUgPT0gRE9UQV9VTklUX09SREVSX0NBU1RfUE9TSVRJT04gb3Igb3JkZXJfdHlwZSA9PSBET1RBX1VOSVRfT1JERVJfTk9ORSkgdGhlbgogICAgICAgIHNlbGYubmVlZGF0dGFjayA9IDAKICAgICAgICBUaW1lcnMoMC4xNSwgZnVuY3Rpb24oKQogICAgICAgICAgICBpZiBub3Qgc2VsZiB0aGVuIHJldHVybiBlbmQKICAgICAgICAgICAgaWYgc2VsZjpJc051bGwoKSB0aGVuIHJldHVybiBlbmQKICAgICAgICAgICAgc2VsZi5uZWVkYXR0YWNrID0gMQogICAgICAgIGVuZCkKICAgIGVuZAplbmQKCi0tTGlua0x1YU1vZGlmaWVyKCJtb2RpZmllcl90b29sX2F1dG9hdHRhY2siLCJpbmdhbWUvbW9kaWZpZXIvdG9vbHMvbW9kaWZpZXJfdG9vbF9hdXRvYXR0YWNrIixMVUFfTU9ESUZJRVJfTU9USU9OX05PTkUpCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if modifier_tool_autoattack == nil then
+    modifier_tool_autoattack = class({})
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function modifier_tool_autoattack:IsHidden()
+    return true
+end
+
+function modifier_tool_autoattack:IsDebuff()
+    return false
+end
+
+function modifier_tool_autoattack:IsPurgable()
+    return false
+end
+
+function modifier_tool_autoattack:RemoveOnDeath()
+    return false
+end
+
+function modifier_tool_autoattack:AllowIllusionDuplicate()
+    return false
+end
+
+function modifier_tool_autoattack:GetAttributes()
+    return MODIFIER_ATTRIBUTE_PERMANENT +
+        MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE
+end
+
+function modifier_tool_autoattack:OnCreated()
+    if not IsServer() then return end
+    self.needattack = 1
+    self:OnIntervalThink()
+    self:StartIntervalThink(0.15)
+end
+
+function modifier_tool_autoattack:OnIntervalThink()
+    if not IsServer() then return end
+    local pa = self:GetParent()
+    if not pa then return end
+    if pa:IsNull() then return end
+    if pa:IsMoving() then return end
+    if not pa:IsAlive() then return end
+    if pa:IsAttacking() then return end
+    if pa:IsChanneling() then return end
+    if GameRules:IsGamePaused() then return end
+    if pa:GetCurrentActiveAbility() then return end
+    if pa:GetAggroTarget() then return end
+    if pa:IsDisarmed() then return end
+    if pa:HasModifier("modifier_teleport_up_slow") then return end
+    if pa:HasModifier("modifier_teleport_up_fast") then return end
+    if pa:HasModifier("modifier_generic_arc") then return end
+    if self.needattack == 0 then
+        return
+    end
+    if pa.needautoattack ~= nil then
+        if pa.needautoattack == 0 then
+            return
+        end
+    end
+    local range = pa:Script_GetAttackRange()
+    if range < 300 then range = 300 end
+    local enemy = Util:Radius2Enemy(pa, range)
+    for i = 1, #enemy do
+        if enemy[i] then
+            if enemy[i]:IsAlive() then
+                local tapos = enemy[i]:GetAbsOrigin()
+                local papos = pa:GetAbsOrigin()
+                local fx = (tapos - papos):Normalized()
+                pa:SetForwardVector(Vector(fx.x, fx.y, 0))
+                -- pa:MoveToPositionAggressive(enemy[i]:GetOrigin())
+                local order = {
+                    UnitIndex = pa:entindex(),
+                    OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
+                    TargetIndex = enemy[i]:entindex(),
+                }
+                ExecuteOrderFromTable(order)
+                return
+            end
+        end
+    end
+end
+
+function modifier_tool_autoattack:DeclareFunctions()
+    return { MODIFIER_EVENT_ON_ORDER, }
+end
+
+function modifier_tool_autoattack:OnOrder(keys)
+    if not IsServer() then return end
+    local pa = self:GetParent()
+    local unit = keys.unit
+    local order_type = keys.order_type
+    if pa == pa and (order_type == DOTA_UNIT_ORDER_ATTACK_TARGET or order_type == DOTA_UNIT_ORDER_MOVE_TO_POSITION or order_type == DOTA_UNIT_ORDER_ATTACK_MOVE or order_type == DOTA_UNIT_ORDER_CAST_POSITION or order_type == DOTA_UNIT_ORDER_NONE) then
+        self.needattack = 0
+        Timers(0.15, function()
+            if not self then return end
+            if self:IsNull() then return end
+            self.needattack = 1
+        end)
+    end
+end
+
+--LinkLuaModifier("modifier_tool_autoattack","ingame/modifier/tools/modifier_tool_autoattack",LUA_MODIFIER_MOTION_NONE)

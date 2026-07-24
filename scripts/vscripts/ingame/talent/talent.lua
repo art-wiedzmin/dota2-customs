@@ -8,22 +8,484 @@
 ]]
 
 
-local encoded=[[aWYgVGFsZW50ID09IG5pbCB0aGVuCiAgICBUYWxlbnQgPSBjbGFzcyh7fSkKICAgIHJlcXVpcmUoImluZ2FtZS5UYWxlbnQuQ29uZmlnIikKICAgIHJlcXVpcmUoImluZ2FtZS5UYWxlbnQuU2V0IikKICAgIHJlcXVpcmUoImluZ2FtZS5UYWxlbnQuR2V0IikKICAgIHJlcXVpcmUoImluZ2FtZS5UYWxlbnQuRnVuYyIpCiAgICByZXF1aXJlKCJpbmdhbWUuVGFsZW50LlVpIikKZW5kCgpsb2NhbCBDTFJCX1RFQU1fTkVVVFJBTFMgPSByYXdnZXQoX0csICJET1RBX1RFQU1fTkVVVFJBTFMiKSBvciA0CgotLS0g5aSp6LWLIDjjgIznjI7kurrjgI3vvJrku4XkuK3nq4vokKXlnLDph47mgKrvvIjpnZ7lhbXnur8v5bu6562R77yJCmxvY2FsIGZ1bmN0aW9uIGNscmJfaHVudGVyX2tpbGxfdmljdGltX2lzX25ldXRyYWwodmljdGltKQogICAgaWYgbm90IHZpY3RpbSBvciB2aWN0aW06SXNOdWxsKCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiB0eXBlKHZpY3RpbS5HZXRUZWFtTnVtYmVyKSB+PSAiZnVuY3Rpb24iIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgaWYgdHlwZSh2aWN0aW0uSXNIZXJvKSA9PSAiZnVuY3Rpb24iIGFuZCB2aWN0aW06SXNIZXJvKCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICByZXR1cm4gdmljdGltOkdldFRlYW1OdW1iZXIoKSA9PSBDTFJCX1RFQU1fTkVVVFJBTFMKZW5kCgpmdW5jdGlvbiBUYWxlbnQ6SW5pdChJRCkKICAgIGlmIG5vdCBJRCB0aGVuIHJldHVybiBlbmQKICAgIHNlbGYuRGF0YVtJRF0gPSBVdGlsOkRlZXBDb3B5VGFiKHNlbGYuVGVtcGxhdGUpCiAgICBsb2NhbCBuZWVkMCA9IHNlbGYuU3RhdGljLnVwXzAKICAgIGlmIENscmJUYWxlbnRHZXRFcXVpcFVwZ3JhZGVLaWxsc1JlcXVpcmVkIHRoZW4KICAgICAgICBuZWVkMCA9IENscmJUYWxlbnRHZXRFcXVpcFVwZ3JhZGVLaWxsc1JlcXVpcmVkKElELCAwKQogICAgZW5kCiAgICBzZWxmLkRhdGFbSURdLnN5ID0gbmVlZDAKZW5kCgotLSDmt7vliqDlhYjlpKnoo4XlpIcKZnVuY3Rpb24gVGFsZW50OkFkZFRhbGVudE9uY2UoSUQpCiAgICBpZiBub3QgSUQgdGhlbiByZXR1cm4gZW5kCiAgICBsb2NhbCBoZXJvID0gVXRpbDpJRDJIZXJvKElEKQogICAgaWYgbm90IGhlcm8gdGhlbiByZXR1cm4gZW5kCiAgICBpZiBzZWxmLkRhdGFbSURdLkluaXQgPT0gZmFsc2UgdGhlbiByZXR1cm4gZW5kCiAgICAtLSBJdGVtOkFkZEl0ZW0oSUQsICJpdGVtX2dvb2RzXzAiKQogICAgc2VsZi5EYXRhW0lEXS5Jbml0ID0gZmFsc2UKZW5kCgotLSDpgInmi6noo4XlpIcKZnVuY3Rpb24gVGFsZW50OlNlbGVjdFRhbGVudChJRCwgbnVtKQogICAgaWYgbm90IElEIG9yIG5vdCBudW0gdGhlbiByZXR1cm4gZW5kCiAgICBpZiBzZWxmLkRhdGFbSURdLnBhZ2UgPT0gZmFsc2UgdGhlbiByZXR1cm4gZW5kCiAgICBsb2NhbCBpdGVtX25hbWUKICAgIGlmIG51bSA9PSAxIHRoZW4gaXRlbV9uYW1lID0gIml0ZW1fZ29vZHNfMTciIGVuZAogICAgaWYgbnVtID09IDIgdGhlbiBpdGVtX25hbWUgPSAiaXRlbV9nb29kc18xOCIgZW5kCiAgICBpZiBudW0gPT0gMyB0aGVuIGl0ZW1fbmFtZSA9ICJpdGVtX2dvb2RzXzE5IiBlbmQKICAgIGlmIG51bSA9PSA0IHRoZW4gaXRlbV9uYW1lID0gIml0ZW1fZ29vZHNfMjQiIGVuZAogICAgc2VsZi5EYXRhW0lEXS5pdGVtX25hbWUgPSBpdGVtX25hbWUKICAgIHNlbGYuRGF0YVtJRF0uYmFnX3BhZ2UgPSB0cnVlCiAgICAtLSBsb2NhbCBpdGVtID0gSXRlbTpBZGRJdGVtKElELCBpdGVtX25hbWUpCgogICAgLS0gc2VsZi5EYXRhW0lEXS5pdGVtX2luZGV4ID0gaXRlbTpHZXRFbnRpdHlJbmRleCgpCiAgICBzZWxmLkRhdGFbSURdLml0ZW1fbmFtZSA9IGl0ZW1fbmFtZQogICAgc2VsZi5EYXRhW0lEXS5lcXVpcF9hdHRyLnRleHQgPSBpdGVtX25hbWUgLi4gIl90ZXh0IgogICAgLS0g5qC55o2u6KOF5aSH5re75Yqg5bGe5oCnCiAgICBUYWxlbnQ6QWRkRXF1aXBBdHRyKElEKQoKICAgIC0t5bey6YCJ5oup5aSp6LWL6KOF5aSHCiAgICBzZWxmLkRhdGFbSURdLnNlbGVjdF90YWxlbnQgPSB0cnVlCiAgICBzZWxmOkNsb3NlUGFnZShJRCkKICAgIFRhbGVudDpEcmFwKElEKQogICAgc2VsZjpTZW5kS2lsbERhdGEoSUQpCmVuZAoKLS0g5qC55o2u5b2T5YmN6KOF5aSH562J57qn6I635b6X5bGe5oCnCmZ1bmN0aW9uIFRhbGVudDpBZGRFcXVpcEF0dHIoSUQpCiAgICBsb2NhbCBpdGVtX25hbWUgPSBzZWxmLkRhdGFbSURdLml0ZW1fbmFtZQogICAgbG9jYWwgbGV2ZWwgPSBzZWxmLkRhdGFbSURdLmxldmVsCiAgICBsb2NhbCByYW5rID0gInJhbmsiIC4uIGxldmVsCiAgICBsb2NhbCBhdHRycyA9IHNlbGYuRXF1aXBbaXRlbV9uYW1lXVtyYW5rXQogICAgbG9jYWwgaGVybyA9IFV0aWw6SUQySGVybyhJRCkKICAgIGlmIG5vdCBoZXJvIG9yIGhlcm86SXNOdWxsKCkgdGhlbgogICAgICAgIHNlbGYuRGF0YVtJRF0ucGVuZGluZ19lcXVpcF9hdHRyID0gdHJ1ZQogICAgICAgIHJldHVybgogICAgZW5kCiAgICAtLSDmrbvkuqHmnJ/pl7QgQWRkTmV3TW9kaWZpZXIg5b6A5b6A5peg5pWI77yb5qCH6K6w5aSN5rS75ZCO55SxIFRyeUFwcGx5UGVuZGluZ0VxdWlwQXR0ciDlho3lupTnlKgKICAgIGlmIG5vdCBoZXJvOklzQWxpdmUoKSB0aGVuCiAgICAgICAgc2VsZi5EYXRhW0lEXS5wZW5kaW5nX2VxdWlwX2F0dHIgPSB0cnVlCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGYuRGF0YVtJRF0ucGVuZGluZ19lcXVpcF9hdHRyID0gZmFsc2UKICAgIGlmIENscmJUYWxlbnRQbGF5ZXJIYXNCbGFja3NtaXRoIGFuZCBDbHJiVGFsZW50UGxheWVySGFzQmxhY2tzbWl0aChJRCkgdGhlbgogICAgICAgIHNlbGYuRGF0YVtJRF0uY2xyYl9ibGFja3NtaXRoX2NhdGNodXBfZG9uZSA9IHRydWUKICAgIGVuZAogICAgZm9yIGssIHYgaW4gcGFpcnMoYXR0cnMpIGRvCiAgICAgICAgaWYgaXRlbV9uYW1lID09ICJpdGVtX2dvb2RzXzI0IiBhbmQgKGsgPT0gImpjbGwiIG9yIGsgPT0gImpjbWoiIG9yIGsgPT0gImpjemwiKSB0aGVuCiAgICAgICAgICAgIC0tIOWFqOWxnuaAp+eUsSBtb2RpZmllcl90YWxlbnRfNCDnu7/lrZfmj5DkvpsKICAgICAgICBlbHNlCiAgICAgICAgICAgIGxvY2FsIHZhbCA9IHYKICAgICAgICAgICAgaWYgQ2xyYlRhbGVudEJsYWNrc21pdGhTY2FsZWRFcXVpcEF0dHIgdGhlbgogICAgICAgICAgICAgICAgdmFsID0gQ2xyYlRhbGVudEJsYWNrc21pdGhTY2FsZWRFcXVpcEF0dHIoSUQsIGl0ZW1fbmFtZSwgaywgdikKICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIEhlcm9EYXRhOkFkZFNYKElELCBrLCB2YWwpCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGlmIGl0ZW1fbmFtZSA9PSAiaXRlbV9nb29kc18xOSIgYW5kIHV0aWxleCBhbmQgdXRpbGV4LkJhc2VaeWZ3IHRoZW4KICAgICAgICB1dGlsZXg6QmFzZVp5ZncoSUQpCiAgICBlbmQKICAgIC0tIOa3u+WKoGJ1ZmYKICAgIGxvY2FsIGJ1ZmZfbmFtZSA9ICIiCiAgICBpZiBpdGVtX25hbWUgPT0gIml0ZW1fZ29vZHNfMTciIHRoZW4gYnVmZl9uYW1lID0gIm1vZGlmaWVyX3RhbGVudF8xIiBlbmQKICAgIGlmIGl0ZW1fbmFtZSA9PSAiaXRlbV9nb29kc18xOCIgdGhlbiBidWZmX25hbWUgPSAibW9kaWZpZXJfdGFsZW50XzIiIGVuZAogICAgaWYgaXRlbV9uYW1lID09ICJpdGVtX2dvb2RzXzE5IiB0aGVuIGJ1ZmZfbmFtZSA9ICJtb2RpZmllcl90YWxlbnRfMyIgZW5kCiAgICBpZiBpdGVtX25hbWUgPT0gIml0ZW1fZ29vZHNfMjQiIHRoZW4gYnVmZl9uYW1lID0gIm1vZGlmaWVyX3RhbGVudF80IiBlbmQKICAgIExpbmtMdWFNb2RpZmllcigibW9kaWZpZXJfdGFsZW50XzEiLCAiaW5nYW1lL21vZGlmaWVyL21vZGlmaWVyX3RhbGVudF8xIiwKICAgICAgICBMVUFfTU9ESUZJRVJfTU9USU9OX05PTkUpCiAgICBMaW5rTHVhTW9kaWZpZXIoIm1vZGlmaWVyX3RhbGVudF8xX2RhbWFnZV9hbXBfZGVidWZmIiwKICAgICAgICAiaW5nYW1lL21vZGlmaWVyL21vZGlmaWVyX3RhbGVudF8xX2RhbWFnZV9hbXBfZGVidWZmIiwgTFVBX01PRElGSUVSX01PVElPTl9OT05FKQogICAgTGlua0x1YU1vZGlmaWVyKCJtb2RpZmllcl90YWxlbnRfMiIsICJpbmdhbWUvbW9kaWZpZXIvbW9kaWZpZXJfdGFsZW50XzIiLAogICAgICAgIExVQV9NT0RJRklFUl9NT1RJT05fTk9ORSkKICAgIExpbmtMdWFNb2RpZmllcigibW9kaWZpZXJfdGFsZW50XzJfYXVyYV9kZWJ1ZmYiLCAiaW5nYW1lL21vZGlmaWVyL21vZGlmaWVyX3RhbGVudF8yIiwKICAgICAgICBMVUFfTU9ESUZJRVJfTU9USU9OX05PTkUpCiAgICBMaW5rTHVhTW9kaWZpZXIoIm1vZGlmaWVyX3RhbGVudF8zIiwgImluZ2FtZS9tb2RpZmllci9tb2RpZmllcl90YWxlbnRfMyIsCiAgICAgICAgTFVBX01PRElGSUVSX01PVElPTl9OT05FKQogICAgTGlua0x1YU1vZGlmaWVyKCJtb2RpZmllcl90YWxlbnRfNCIsICJpbmdhbWUvbW9kaWZpZXIvbW9kaWZpZXJfdGFsZW50XzQiLAogICAgICAgIExVQV9NT0RJRklFUl9NT1RJT05fTk9ORSkKICAgIGxvY2FsIG1vZGlmaWVyID0gaGVybzpGaW5kTW9kaWZpZXJCeU5hbWUoYnVmZl9uYW1lKQogICAgaWYgbW9kaWZpZXIgdGhlbgogICAgICAgIC0tIOWmguaenCBtb2RpZmllciDlt7LlrZjlnKjvvIzliLfmlrDlroMKICAgICAgICBtb2RpZmllcjpGb3JjZVJlZnJlc2goKQogICAgZWxzZQogICAgICAgIC0tIOWmguaenOS4jeWtmOWcqO+8jOa3u+WKoOaWsOeahAogICAgICAgIGhlcm86QWRkTmV3TW9kaWZpZXIoaGVybywgLS0g5pa95rOV6ICFCiAgICAgICAgICAgIG5pbCwgICAgICAgICAgICAgICAgICAtLSDmioDog70KICAgICAgICAgICAgYnVmZl9uYW1lLCAgICAgICAgICAgIC0tIOS/rumlsOWZqOWQjeensAogICAgICAgICAgICB7fSAgICAgICAgICAgICAgICAgICAgLS0g5Y+C5pWwCiAgICAgICAgKQogICAgZW5kCmVuZAoKLS0tIOWxgOWGheaUuemAieOAjOmTgeWMoOOAjeWQju+8jOS4uuW3suWNh+e6p+eahOWkqei1i+ijheWkh+etiee6p+ihpeeul+WfuuehgOWxnuaApyArMzAl77yI5LiN5ZCrIHdsY3Qg562J5YW25a6D6K+N5p2h77yJCmZ1bmN0aW9uIFRhbGVudDpBcHBseUJsYWNrc21pdGhFcXVpcEJvbnVzQ2F0Y2h1cChJRCkKICAgIGlmIG5vdCBJRCBvciBub3Qgc2VsZi5EYXRhIG9yIG5vdCBzZWxmLkRhdGFbSURdIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgbm90IENscmJUYWxlbnRQbGF5ZXJIYXNCbGFja3NtaXRoIG9yIG5vdCBDbHJiVGFsZW50UGxheWVySGFzQmxhY2tzbWl0aChJRCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBzZWxmLkRhdGFbSURdLnNlbGVjdF90YWxlbnQgfj0gdHJ1ZSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIHNlbGYuRGF0YVtJRF0uY2xyYl9ibGFja3NtaXRoX2NhdGNodXBfZG9uZSA9PSB0cnVlIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgaXRlbV9uYW1lID0gc2VsZi5EYXRhW0lEXS5pdGVtX25hbWUKICAgIGlmIG5vdCBpdGVtX25hbWUgb3IgaXRlbV9uYW1lID09ICIiIG9yIG5vdCBzZWxmLkVxdWlwW2l0ZW1fbmFtZV0gdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBsZXZlbCA9IHNlbGYuRGF0YVtJRF0ubGV2ZWwgb3IgMAogICAgbG9jYWwgZXh0cmEgPSB7fQogICAgZm9yIGx2ID0gMCwgbGV2ZWwgZG8KICAgICAgICBsb2NhbCByYW5rID0gInJhbmsiIC4uIGx2CiAgICAgICAgbG9jYWwgYXR0cnMgPSBzZWxmLkVxdWlwW2l0ZW1fbmFtZV1bcmFua10KICAgICAgICBpZiBhdHRycyB0aGVuCiAgICAgICAgICAgIGZvciBrLCB2IGluIHBhaXJzKGF0dHJzKSBkbwogICAgICAgICAgICAgICAgaWYgaXRlbV9uYW1lID09ICJpdGVtX2dvb2RzXzI0IiBhbmQgKGsgPT0gImpjbGwiIG9yIGsgPT0gImpjbWoiIG9yIGsgPT0gImpjemwiKSB0aGVuCiAgICAgICAgICAgICAgICAgICAgLS0g57u/5a2X5YWo5bGe5oCn5LiN6LWwIEhlcm9EYXRhIOeZveWtlwogICAgICAgICAgICAgICAgZWxzZQogICAgICAgICAgICAgICAgICAgIGxvY2FsIHNjYWxlZCA9IHYKICAgICAgICAgICAgICAgICAgICBpZiBDbHJiVGFsZW50QmxhY2tzbWl0aFNjYWxlZEVxdWlwQXR0ciB0aGVuCiAgICAgICAgICAgICAgICAgICAgICAgIHNjYWxlZCA9IENscmJUYWxlbnRCbGFja3NtaXRoU2NhbGVkRXF1aXBBdHRyKElELCBpdGVtX25hbWUsIGssIHYpCiAgICAgICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgICAgICAgICAgbG9jYWwgZGVsdGEgPSBzY2FsZWQgLSB2CiAgICAgICAgICAgICAgICAgICAgaWYgZGVsdGEgPiAwIHRoZW4KICAgICAgICAgICAgICAgICAgICAgICAgZXh0cmFba10gPSAoZXh0cmFba10gb3IgMCkgKyBkZWx0YQogICAgICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCiAgICBmb3IgaywgZGVsdGEgaW4gcGFpcnMoZXh0cmEpIGRvCiAgICAgICAgSGVyb0RhdGE6QWRkU1goSUQsIGssIGRlbHRhKQogICAgZW5kCiAgICBzZWxmLkRhdGFbSURdLmNscmJfYmxhY2tzbWl0aF9jYXRjaHVwX2RvbmUgPSB0cnVlCiAgICBsb2NhbCBoZXJvID0gVXRpbDpJRDJIZXJvKElEKQogICAgaWYgaGVybyBhbmQgbm90IGhlcm86SXNOdWxsKCkgdGhlbgogICAgICAgIGhlcm86Q2FsY3VsYXRlU3RhdEJvbnVzKHRydWUpCiAgICAgICAgaWYgaXRlbV9uYW1lID09ICJpdGVtX2dvb2RzXzI0IiB0aGVuCiAgICAgICAgICAgIGxvY2FsIG00ID0gaGVybzpGaW5kTW9kaWZpZXJCeU5hbWUoIm1vZGlmaWVyX3RhbGVudF80IikKICAgICAgICAgICAgaWYgbTQgdGhlbgogICAgICAgICAgICAgICAgbTQ6Rm9yY2VSZWZyZXNoKCkKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQKZW5kCgotLS0g6Iux6ZuE5bey5Ye655Sf5ZCO77ya6Iul6YCJ6KOF5pep5LqO5Ye655Sf77yM6KGl5bqU55So6KOF5aSH5bGe5oCn5LiOIHRhbGVudCBtb2RpZmllcgpmdW5jdGlvbiBUYWxlbnQ6VHJ5QXBwbHlQZW5kaW5nRXF1aXBBdHRyKElEKQogICAgaWYgbm90IElEIG9yIG5vdCBzZWxmLkRhdGEgb3Igbm90IHNlbGYuRGF0YVtJRF0gdGhlbiByZXR1cm4gZW5kCiAgICBpZiBzZWxmLkRhdGFbSURdLnBlbmRpbmdfZXF1aXBfYXR0ciB+PSB0cnVlIHRoZW4gcmV0dXJuIGVuZAogICAgaWYgc2VsZi5EYXRhW0lEXS5zZWxlY3RfdGFsZW50IH49IHRydWUgdGhlbiByZXR1cm4gZW5kCiAgICBsb2NhbCBoZXJvID0gVXRpbDpJRDJIZXJvKElEKQogICAgaWYgbm90IGhlcm8gb3IgaGVybzpJc051bGwoKSB0aGVuIHJldHVybiBlbmQKICAgIGlmIG5vdCBoZXJvOklzQWxpdmUoKSB0aGVuIHJldHVybiBlbmQKICAgIHNlbGY6QWRkRXF1aXBBdHRyKElEKQplbmQKCi0tIOiOt+W+l+W9k+WJjeijheWkh+WxnuaApwoKLS0g54mp5ZOB5ouW5YqoCmZ1bmN0aW9uIFRhbGVudDpEcmFwKElEKQogICAgaWYgbm90IElEIHRoZW4gcmV0dXJuIGVuZAogICAgbG9jYWwgaGVybyA9IFV0aWw6SUQySGVybyhJRCkKICAgIGlmIG5vdCBoZXJvIHRoZW4gcmV0dXJuIGVuZAogICAgVGltZXJzKDAuMDIsIGZ1bmN0aW9uKCkKICAgICAgICBmb3IgaSA9IDAsIDUgZG8KICAgICAgICAgICAgbG9jYWwgaXRlbSA9IGhlcm86R2V0SXRlbUluU2xvdChpKQogICAgICAgICAgICBpZiBpdGVtIHRoZW4KICAgICAgICAgICAgICAgIGxvY2FsIGl0ZW1faW5kZXggPSBpdGVtOkdldEVudGl0eUluZGV4KCkKICAgICAgICAgICAgICAgIGlmIGl0ZW1faW5kZXggPT0gc2VsZi5EYXRhW0lEXS5pdGVtX2luZGV4IHRoZW4KICAgICAgICAgICAgICAgICAgICAtLSBwcmludChpKQogICAgICAgICAgICAgICAgICAgIHNlbGY6U2VuZEJhZ0RhdGEoSUQsIGkpCiAgICAgICAgICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQpCmVuZAoKLS0g5Ye75p2A5oCq54mp77yIdmljdGltIOWPr+mAie+8mueUqOS6juWkqei1iyA4IOS7hee7n+iuoeS4reeri+mHjuaAqu+8iQpmdW5jdGlvbiBUYWxlbnQ6S2lsbChJRCwgdmljdGltKQogICAgaWYgbm90IElEIHRoZW4gcmV0dXJuIGVuZAogICAgaWYgbm90IHNlbGYuRGF0YVtJRF0gdGhlbiByZXR1cm4gZW5kCgogICAgaWYgQ2xyYkdldFRhbGVudEluZGV4Rm9ySGVybyA9PSBuaWwgdGhlbgogICAgICAgIHJlcXVpcmUoImluZ2FtZS5tb2RpZmllci5tb2RpZmllcl9jbHJiX3RhbGVudHMiKQogICAgZW5kCiAgICBsb2NhbCBoZXJvX2ggPSBVdGlsOklEMkhlcm8oSUQpCiAgICBpZiBoZXJvX2ggYW5kIG5vdCBoZXJvX2g6SXNOdWxsKCkgYW5kIENscmJHZXRUYWxlbnRJbmRleEZvckhlcm8oaGVyb19oKSA9PSA4IHRoZW4KICAgICAgICBpZiB2aWN0aW0gYW5kIGNscmJfaHVudGVyX2tpbGxfdmljdGltX2lzX25ldXRyYWwodmljdGltKSB0aGVuCiAgICAgICAgICAgIGlmIEhlcm9EYXRhIGFuZCBIZXJvRGF0YS5EYXRhIGFuZCBIZXJvRGF0YS5EYXRhW0lEXSBhbmQgSGVyb0RhdGEuRGF0YVtJRF0uaGVyb19hdHRyIHRoZW4KICAgICAgICAgICAgICAgIEhlcm9EYXRhOkFkZFNYKElELCAic21qYyIsIDMpCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCgogICAgaWYgc2VsZi5EYXRhW0lEXS5pdGVtX25hbWUgPT0gIiIgdGhlbiByZXR1cm4gZW5kCiAgICBzZWxmLkRhdGFbSURdLmtpbGwgPSBzZWxmLkRhdGFbSURdLmtpbGwgKyAxCiAgICBsb2NhbCBnb2xkID0gSGVyb0RhdGE6R2V0U1goSUQsICJzZGpiIikKICAgIGlmIGdvbGQgPiAwIHRoZW4KICAgICAgICBsb2NhbCBoZXJvID0gVXRpbDpJRDJIZXJvKElEKQogICAgICAgIGhlcm86TW9kaWZ5R29sZChnb2xkLCBmYWxzZSwgMCkKICAgICAgICBTZW5kT3ZlcmhlYWRFdmVudE1lc3NhZ2UoUGxheWVyUmVzb3VyY2U6R2V0UGxheWVyKElEKSwKICAgICAgICAgICAgT1ZFUkhFQURfQUxFUlRfR09MRCwgaGVybywgZ29sZCwKICAgICAgICAgICAgaGVybzpHZXRQbGF5ZXJPd25lcigpKQogICAgZW5kCgogICAgVGFsZW50OlN0YXRraWxsKElEKQogICAgc2VsZjpTZW5kS2lsbERhdGEoSUQpCmVuZAoKLS0g6YCa6L+H5Ye75p2A6K6h566X5b2T5YmN5Ymp5L2Z5pWw6YeP5ZKM562J57qnCmZ1bmN0aW9uIFRhbGVudDpTdGF0a2lsbChJRCkKICAgIGlmIHNlbGYuRGF0YVtJRF0ubGV2ZWwgPj0gNSB0aGVuIHJldHVybiBlbmQKICAgIGxvY2FsIGxldmVsID0gc2VsZi5EYXRhW0lEXS5sZXZlbAogICAgbG9jYWwgbnVtID0gc2VsZi5TdGF0aWNbInVwXyIgLi4gbGV2ZWxdCiAgICBpZiBDbHJiVGFsZW50R2V0RXF1aXBVcGdyYWRlS2lsbHNSZXF1aXJlZCB0aGVuCiAgICAgICAgbnVtID0gQ2xyYlRhbGVudEdldEVxdWlwVXBncmFkZUtpbGxzUmVxdWlyZWQoSUQsIGxldmVsKQogICAgZW5kCiAgICBsb2NhbCBraWxsID0gc2VsZi5EYXRhW0lEXS5raWxsCiAgICBsb2NhbCB0aWVyX2Jhc2UgPSBzZWxmLkRhdGFbSURdLmtpbGxfYXRfbGV2ZWx1cCBvciAwCiAgICBsb2NhbCB0aWVyX2tpbGxzID0ga2lsbCAtIHRpZXJfYmFzZQogICAgaWYgdGllcl9raWxscyA+PSBudW0gdGhlbgogICAgICAgIHNlbGYuRGF0YVtJRF0udXAgPSB0cnVlCiAgICAgICAgc2VsZi5EYXRhW0lEXS5zeSA9IDAKICAgICAgICAtLSDoh6rliqjljYfnuqcKICAgICAgICBpZiBzZWxmLkRhdGFbSURdLmF1dG9fbGV2ZWx1cCA9PSB0cnVlIHRoZW4KICAgICAgICAgICAgVGltZXJzKDEsIGZ1bmN0aW9uKCkgc2VsZjpBdXRvTGV2ZWxVcChJRCkgZW5kKQogICAgICAgIGVuZAogICAgZWxzZQogICAgICAgIHNlbGYuRGF0YVtJRF0uc3kgPSBudW0gLSB0aWVyX2tpbGxzCiAgICBlbmQKICAgIC0tIHNlbGY6U2VuZERhdGEoSUQpCmVuZAoKZnVuY3Rpb24gVGFsZW50OkF1dG9MZXZlbFVwKElEKQogICAgLS0gcHJpbnQoIuiHquWKqOWNh+e6pyIpCiAgICBpZiBzZWxmLkRhdGFbSURdLnVwID09IGZhbHNlIHRoZW4gcmV0dXJuIGVuZAogICAgaWYgc2VsZi5EYXRhW0lEXS5hdHRyX3BhZ2UgPT0gdHJ1ZSB0aGVuIHJldHVybiBlbmQKICAgIGlmIHNlbGYuRGF0YVtJRF0uYXV0b19sZXZlbHVwID09IGZhbHNlIHRoZW4gcmV0dXJuIGVuZAogICAgc2VsZjpMZXZlbFVwKElEKQogICAgc2VsZi5EYXRhW0lEXS5hdXRvX2xldmVsdXAgPSBmYWxzZQplbmQKCi0tIOWNh+e6pwpmdW5jdGlvbiBUYWxlbnQ6TGV2ZWxVcChJRCkKICAgIC0tIHByaW50KCIxMTExIikKICAgIGlmIG5vdCBJRCB0aGVuIHJldHVybiBlbmQKICAgIGlmIHNlbGYuRGF0YVtJRF0uc2VsZWN0X3RhbGVudCA9PSBmYWxzZSB0aGVuCiAgICAgICAgVGFsZW50Ok9wZW5QYWdlKElEKQogICAgICAgIHJldHVybgogICAgZW5kCiAgICAtLSBwcmludCgiMjIyMiIpCiAgICBpZiBub3Qgc2VsZi5EYXRhW0lEXS51cCB0aGVuIHJldHVybiBlbmQKICAgIC0tIHByaW50KCI1NTU1IikKICAgIC0tIGlmIHNlbGYuRGF0YVtJRF0uYXR0cl9wYWdlID09IHRydWUgdGhlbiByZXR1cm4gZW5kCiAgICAtLSBwcmludCgiNjY2NiIpCiAgICBpZiBzZWxmLkRhdGFbSURdLnNlbGVjdF9hdHRyID09IHRydWUgdGhlbgogICAgICAgIC0tIHByaW50KCI3Nzc3IikKICAgICAgICBzZWxmLkRhdGFbSURdLmF0dHJfcGFnZSA9IHRydWUKICAgICAgICBzZWxmOlNlbmRBdHRyRGF0YShJRCkKICAgICAgICByZXR1cm4KICAgIGVuZAogICAgLS0gcHJpbnQoIjMzMzMiKQogICAgc2VsZi5EYXRhW0lEXS5hdHRyX3BhZ2UgPSB0cnVlCiAgICBzZWxmLkRhdGFbSURdLnJlZnJlc2hfc3RhdGUgPSB0cnVlCiAgICBzZWxmLkRhdGFbSURdLnJvbGxfbnVtID0gMAogICAgc2VsZi5EYXRhW0lEXS5zZWxlY3RfYXR0ciA9IHRydWUKICAgIC0tIHJvbGzor43mnaEKICAgIGlmIHNlbGYuRGF0YVtJRF0ucm9sbF9udW0gPT0gMCB0aGVuIHNlbGY6Um9sbEF0dHIoSUQpIGVuZAogICAgc2VsZjpTZW5kQXR0ckRhdGEoSUQpCmVuZAoKZnVuY3Rpb24gVGFsZW50OklzU3lqY0V4Y2x1ZGVkRm9yUm9sbChJRCkKICAgIGlmIG5vdCBJRCBvciBub3Qgc2VsZi5EYXRhW0lEXSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGxvY2FsIGhlcm9fbmFtZSA9IHNlbGYuRGF0YVtJRF0uaGVyb19uYW1lCiAgICBpZiBoZXJvX25hbWUgPT0gIiIgb3Igbm90IGhlcm9fbmFtZSB0aGVuCiAgICAgICAgaWYgSGVyb0RhdGEgYW5kIEhlcm9EYXRhLkdldEhlcm9OYW1lIHRoZW4KICAgICAgICAgICAgaGVyb19uYW1lID0gSGVyb0RhdGE6R2V0SGVyb05hbWUoSUQpCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGlmIG5vdCBoZXJvX25hbWUgb3IgaGVyb19uYW1lID09ICIiIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgZXggPSBzZWxmLkF0dHJSb2xsRXhjbHVkZVN5amNIZXJvZXMKICAgIHJldHVybiBleCBhbmQgZXhbaGVyb19uYW1lXSA9PSB0cnVlCmVuZAoKZnVuY3Rpb24gVGFsZW50OlJvbGxBdHRyKElEKQogICAgaWYgbm90IElEIHRoZW4gcmV0dXJuIGVuZAogICAgaWYgc2VsZi5EYXRhW0lEXS5yZWZyZXNoX3N0YXRlID09IGZhbHNlIHRoZW4gcmV0dXJuIGVuZAogICAgaWYgc2VsZi5EYXRhW0lEXS5yb2xsX251bSA+IDAgdGhlbgogICAgICAgIGxvY2FsIGNvc3QgPSBzZWxmLkRhdGFbSURdLmNvc3QKICAgICAgICBpZiBub3QgU2hvcDpDb3N0R29sZChJRCwgY29zdCkgdGhlbiByZXR1cm4gZW5kCiAgICBlbmQKICAgIHNlbGYuRGF0YVtJRF0ucm9sbF9udW0gPSBzZWxmLkRhdGFbSURdLnJvbGxfbnVtICsgMQogICAgbG9jYWwgaXRlbV9uYW1lID0gc2VsZi5EYXRhW0lEXS5pdGVtX25hbWUKICAgIGxvY2FsIGxldmVsID0gc2VsZi5EYXRhW0lEXS5sZXZlbCArIDEKICAgIGxvY2FsIHJhbmtfa2V5ID0gInJhbmtfIiAuLiBsZXZlbAogICAgbG9jYWwgcm9sbF9saXN0ID0gVXRpbDpEZWVwQ29weVRhYihzZWxmLkl0ZW1baXRlbV9uYW1lXVtyYW5rX2tleV0pCiAgICBpZiBzZWxmOklzU3lqY0V4Y2x1ZGVkRm9yUm9sbChJRCkgdGhlbgogICAgICAgIHJvbGxfbGlzdC5zeWpjID0gbmlsCiAgICBlbmQKICAgIC0tIHByaW50KGl0ZW1fbmFtZSkKICAgIC0tIHByaW50KHJhbmtfa2V5KQogICAgLS0gcHJpbnQocm9sbF9saXN0KQogICAgLS0gcm9sbDPmnaHmlbDmja4KICAgIGZvciBrLCB2IGluIHBhaXJzKHNlbGYuRGF0YVtJRF0uYXR0cl9saXN0KSBkbwogICAgICAgIC0tIHJvbGzlsZ7mgKflkI0KICAgICAgICBsb2NhbCBhdHRyX25hbWUgPSB1dGlsZXg6VGFiVHJ1ZUtleShyb2xsX2xpc3QpCiAgICAgICAgaWYgYXR0cl9uYW1lID09ICJzeWpjIiBhbmQgc2VsZjpJc1N5amNFeGNsdWRlZEZvclJvbGwoSUQpIHRoZW4KICAgICAgICAgICAgcm9sbF9saXN0LnN5amMgPSBuaWwKICAgICAgICAgICAgYXR0cl9uYW1lID0gdXRpbGV4OlRhYlRydWVLZXkocm9sbF9saXN0KQogICAgICAgIGVuZAogICAgICAgIGlmIGF0dHJfbmFtZSB0aGVuIHJvbGxfbGlzdFthdHRyX25hbWVdID0gZmFsc2UgZW5kCiAgICAgICAgLS0gcm9sbOWxnuaAp+WAvOWTgei0qAogICAgICAgIGxvY2FsIHJhbmsgPSBzZWxmOlJvbGxBdHRyUmFuayhJRCkKICAgICAgICAtLSDojrflj5blsZ7mgKflgLwKICAgICAgICBsb2NhbCBhdHRyX3ZhbHVlID0gc2VsZi5BdHRyW2F0dHJfbmFtZV1bcmFua10KICAgICAgICBpZiBhdHRyX25hbWUgYW5kIGF0dHJfdmFsdWUgdGhlbgogICAgICAgICAgICB2LnN0YXRlID0gdHJ1ZQogICAgICAgICAgICB2Lm5hbWUgPSBhdHRyX25hbWUKICAgICAgICAgICAgdi52YWx1ZSA9IGF0dHJfdmFsdWUKICAgICAgICAgICAgdi5yYW5rID0gcmFuawogICAgICAgIGVuZAogICAgZW5kCiAgICBzZWxmOlNldENvc3QoSUQpCiAgICBzZWxmOlNlbmRBdHRyRGF0YShJRCkKZW5kCgpmdW5jdGlvbiBUYWxlbnQ6U2V0Q29zdChJRCkKICAgIGxvY2FsIHJvbGxfbnVtID0gc2VsZi5EYXRhW0lEXS5yb2xsX251bQogICAgbG9jYWwga2V5ID0gIm51bSIgLi4gcm9sbF9udW0KICAgIGxvY2FsIGNvc3QgPSBzZWxmLkNvc3Rba2V5XQogICAgc2VsZi5EYXRhW0lEXS5jb3N0ID0gY29zdAogICAgaWYgcm9sbF9udW0gPj0gNSB0aGVuIHNlbGYuRGF0YVtJRF0ucmVmcmVzaF9zdGF0ZSA9IGZhbHNlIGVuZAplbmQKCmZ1bmN0aW9uIFRhbGVudDpSb2xsQXR0clJhbmsoSUQpCiAgICBsb2NhbCByb2xsX251bSA9IHNlbGYuRGF0YVtJRF0ucm9sbF9udW0KICAgIGlmIHJvbGxfbnVtID4gNCB0aGVuIHJvbGxfbnVtID0gNCBlbmQKICAgIGxvY2FsIG51bV9rZXkgPSAibnVtXyIgLi4gcm9sbF9udW0KICAgIGxvY2FsIHJvbGxfbGlzdCA9IHNlbGYuUm9sbE51bVtudW1fa2V5XQogICAgbG9jYWwgcmFuayA9IFV0aWw6V2VpZ2h0KHJvbGxfbGlzdCkKICAgIHJldHVybiByYW5rCmVuZAoKZnVuY3Rpb24gVGFsZW50OkNsb3NlQXR0cihJRCkKICAgIGlmIG5vdCBJRCB0aGVuIHJldHVybiBlbmQKICAgIHNlbGYuRGF0YVtJRF0uYXR0cl9wYWdlID0gZmFsc2UKICAgIHNlbGY6U2VuZEF0dHJEYXRhKElEKQplbmQKCmZ1bmN0aW9uIFRhbGVudDpTZWxlY3RBdHRyKElELCBzbG90KQogICAgaWYgbm90IElEIG9yIG5vdCBzbG90IHRoZW4gcmV0dXJuIGVuZAogICAgaWYgc2xvdCA9PSAiIiB0aGVuIHJldHVybiBlbmQKICAgIC0tIOeJqeWTgeetiee6pysxCiAgICBzZWxmLkRhdGFbSURdLmxldmVsID0gc2VsZi5EYXRhW0lEXS5sZXZlbCArIDEKICAgIGlmIHNlbGYuRGF0YVtJRF0ubGV2ZWwgPT0gMSB0aGVuIEl0ZW06QWRkSXRlbShJRCwgIml0ZW1fZ29vZHNfMjIiKSBlbmQKICAgIGlmIHNlbGYuRGF0YVtJRF0ubGV2ZWwgPT0gMiB0aGVuIEl0ZW06QWRkSXRlbShJRCwgIml0ZW1fZ29vZHNfMTUiKSBlbmQKICAgIC0tIOagueaNruijheWkh+a3u+WKoOWxnuaApwogICAgVGFsZW50OkFkZEVxdWlwQXR0cihJRCkKICAgIGxvY2FsIGF0dHJfbmFtZSA9IHNlbGYuRGF0YVtJRF0uYXR0cl9saXN0W3Nsb3RdLm5hbWUKICAgIGxvY2FsIGF0dHJfdmFsdWUgPSBzZWxmLkRhdGFbSURdLmF0dHJfbGlzdFtzbG90XS52YWx1ZQogICAgbG9jYWwgYXR0cl9yYW5rID0gc2VsZi5EYXRhW0lEXS5hdHRyX2xpc3Rbc2xvdF0ucmFuawogICAgLS0g5re75Yqg5pWw5o2u5Yiw54mp5ZOBCiAgICBzZWxmOkFkZEF0dHIoSUQsIGF0dHJfbmFtZSwgYXR0cl92YWx1ZSwgYXR0cl9yYW5rKQogICAgLS0g5re75Yqg5bGe5oCn5Yiw6Iux6ZuECiAgICBzZWxmOkFwcGx5Um9sbGVkQXR0clRvSGVybyhJRCwgYXR0cl9uYW1lLCBhdHRyX3ZhbHVlKQogICAgLS0g5YWz6Zet5bGe5oCn6aG16Z2iCiAgICBzZWxmLkRhdGFbSURdLmF0dHJfcGFnZSA9IGZhbHNlCiAgICAtLSDph43nva7pmo/mnLrmrKHmlbAKICAgIHNlbGYuRGF0YVtJRF0ucm9sbF9udW0gPSAwCiAgICAtLSDph43nva7liJfooagKICAgIGZvciBrLCB2IGluIHBhaXJzKHNlbGYuRGF0YVtJRF0uYXR0cl9saXN0KSBkbwogICAgICAgIHYuc3RhdGUgPSBmYWxzZQogICAgICAgIHYubmFtZSA9ICIiCiAgICAgICAgdi52YWx1ZSA9IC0xCiAgICAgICAgdi5yYW5rID0gLTEKICAgIGVuZAogICAgaWYgc2VsZi5EYXRhW0lEXS5sZXZlbCA+PSA1IHRoZW4gc2VsZi5EYXRhW0lEXS5zeSA9IC0xIGVuZAogICAgLS0g6YeN572u5Ye75p2ACiAgICBzZWxmOlJlc2V0S2lsbChJRCkKICAgIHNlbGY6U2VuZEF0dHJEYXRhKElEKQogICAgc2VsZjpTZW5kS2lsbERhdGEoSUQpCiAgICAtLSDph43nva7oh6rliqjljYfnuqcKICAgIHNlbGYuRGF0YVtJRF0uYXV0b19sZXZlbHVwID0gdHJ1ZQogICAgc2VsZi5EYXRhW0lEXS5zZWxlY3RfYXR0ciA9IGZhbHNlCiAgICB1dGlsZXg6U291bmQoSUQsICJlcXVpcHN1Y2Nlc3MiKQplbmQKCmZ1bmN0aW9uIFRhbGVudDpBZGRBdHRyKElELCBuYW1lLCB2YSwgcmFuaykKICAgIGxvY2FsIGxldmVsID0gc2VsZi5EYXRhW0lEXS5sZXZlbAogICAgbG9jYWwgc2xvdCA9ICJzbG90XyIgLi4gbGV2ZWwKICAgIHNlbGYuRGF0YVtJRF0uZXF1aXBfYXR0ci5hdHRyW3Nsb3RdID0geyBuYW1lID0gbmFtZSwgdmFsdWUgPSB2YSwgcmFuayA9IHJhbmsgfQplbmQKCi0tLSDljYfnuqfor43mnaHlhpnlhaXoi7Hpm4TvvJrlhajlsZ7mgKfliqDmiJDlkIzml7blop7liqDkuInnu7Tlop7luYUKZnVuY3Rpb24gVGFsZW50OkFwcGx5Um9sbGVkQXR0clRvSGVybyhJRCwgYXR0cl9uYW1lLCBhdHRyX3ZhbHVlKQogICAgaWYgbm90IElEIG9yIG5vdCBhdHRyX25hbWUgb3Igbm90IGF0dHJfdmFsdWUgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBhdHRyX25hbWUgPT0gInFzeGpjIiB0aGVuCiAgICAgICAgSGVyb0RhdGE6QWRkU1goSUQsICJsbGpjIiwgYXR0cl92YWx1ZSkKICAgICAgICBIZXJvRGF0YTpBZGRTWChJRCwgIm1qamMiLCBhdHRyX3ZhbHVlKQogICAgICAgIEhlcm9EYXRhOkFkZFNYKElELCAiemxqYyIsIGF0dHJfdmFsdWUpCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIEhlcm9EYXRhOkFkZFNYKElELCBhdHRyX25hbWUsIGF0dHJfdmFsdWUpCmVuZAoKZnVuY3Rpb24gVGFsZW50OlJlc2V0S2lsbChJRCkKICAgIGlmIG5vdCBJRCB0aGVuIHJldHVybiBlbmQKICAgIHNlbGYuRGF0YVtJRF0ua2lsbF9hdF9sZXZlbHVwID0gc2VsZi5EYXRhW0lEXS5raWxsIG9yIDAKICAgIHNlbGYuRGF0YVtJRF0udXAgPSBmYWxzZQogICAgVGFsZW50OlN0YXRraWxsKElEKQplbmQKCmZ1bmN0aW9uIFRhbGVudDpTaG93VGlwKElEKQogICAgaWYgbm90IElEIHRoZW4gcmV0dXJuIGVuZAogICAgc2VsZi5EYXRhW0lEXS50aXBfcGFnZSA9IHRydWUKICAgIHNlbGY6U2VuZFRpcERhdGEoSUQpCmVuZAoKZnVuY3Rpb24gVGFsZW50OkNsb3NlVGlwKElEKQogICAgc2VsZi5EYXRhW0lEXS50aXBfcGFnZSA9IGZhbHNlCiAgICBzZWxmOlNlbmRUaXBEYXRhKElEKQplbmQKCi0tLSDlsYDlhoXlpKnotYvmioDog73vvJrlt7LmlLnkuLrlm57ln47ljbfovbTmoI8gaXRlbV90YWxlbnRfc2tpbGxfTiDlsZXnpLrvvIzkv53nlZnnqbrlrp7njrDlhbzlrrnml6cgVUkg5LqL5Lu2CmZ1bmN0aW9uIFRhbGVudDpDYXN0VGFsZW50U2tpbGxJdGVtKF9JRCkKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if Talent == nil then
+    Talent = class({})
+    require("ingame.Talent.Config")
+    require("ingame.Talent.Set")
+    require("ingame.Talent.Get")
+    require("ingame.Talent.Func")
+    require("ingame.Talent.Ui")
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+local CLRB_TEAM_NEUTRALS = rawget(_G, "DOTA_TEAM_NEUTRALS") or 4
+
+--- 天赋 8「猎人」：仅中立营地野怪（非兵线/建筑）
+local function clrb_hunter_kill_victim_is_neutral(victim)
+    if not victim or victim:IsNull() then
+        return false
+    end
+    if type(victim.GetTeamNumber) ~= "function" then
+        return false
+    end
+    if type(victim.IsHero) == "function" and victim:IsHero() then
+        return false
+    end
+    return victim:GetTeamNumber() == CLRB_TEAM_NEUTRALS
+end
+
+function Talent:Init(ID)
+    if not ID then return end
+    self.Data[ID] = Util:DeepCopyTab(self.Template)
+    local need0 = self.Static.up_0
+    if ClrbTalentGetEquipUpgradeKillsRequired then
+        need0 = ClrbTalentGetEquipUpgradeKillsRequired(ID, 0)
+    end
+    self.Data[ID].sy = need0
+end
+
+-- 添加先天装备
+function Talent:AddTalentOnce(ID)
+    if not ID then return end
+    local hero = Util:ID2Hero(ID)
+    if not hero then return end
+    if self.Data[ID].Init == false then return end
+    -- Item:AddItem(ID, "item_goods_0")
+    self.Data[ID].Init = false
+end
+
+-- 选择装备
+function Talent:SelectTalent(ID, num)
+    if not ID or not num then return end
+    if self.Data[ID].page == false then return end
+    local item_name
+    if num == 1 then item_name = "item_goods_17" end
+    if num == 2 then item_name = "item_goods_18" end
+    if num == 3 then item_name = "item_goods_19" end
+    if num == 4 then item_name = "item_goods_24" end
+    self.Data[ID].item_name = item_name
+    self.Data[ID].bag_page = true
+    -- local item = Item:AddItem(ID, item_name)
+
+    -- self.Data[ID].item_index = item:GetEntityIndex()
+    self.Data[ID].item_name = item_name
+    self.Data[ID].equip_attr.text = item_name .. "_text"
+    -- 根据装备添加属性
+    Talent:AddEquipAttr(ID)
+
+    --已选择天赋装备
+    self.Data[ID].select_talent = true
+    self:ClosePage(ID)
+    Talent:Drap(ID)
+    self:SendKillData(ID)
+end
+
+-- 根据当前装备等级获得属性
+function Talent:AddEquipAttr(ID)
+    local item_name = self.Data[ID].item_name
+    local level = self.Data[ID].level
+    local rank = "rank" .. level
+    local attrs = self.Equip[item_name][rank]
+    local hero = Util:ID2Hero(ID)
+    if not hero or hero:IsNull() then
+        self.Data[ID].pending_equip_attr = true
+        return
+    end
+    -- 死亡期间 AddNewModifier 往往无效；标记复活后由 TryApplyPendingEquipAttr 再应用
+    if not hero:IsAlive() then
+        self.Data[ID].pending_equip_attr = true
+        return
+    end
+    self.Data[ID].pending_equip_attr = false
+    if ClrbTalentPlayerHasBlacksmith and ClrbTalentPlayerHasBlacksmith(ID) then
+        self.Data[ID].clrb_blacksmith_catchup_done = true
+    end
+    for k, v in pairs(attrs) do
+        if item_name == "item_goods_24" and (k == "jcll" or k == "jcmj" or k == "jczl") then
+            -- 全属性由 modifier_talent_4 绿字提供
+        else
+            local val = v
+            if ClrbTalentBlacksmithScaledEquipAttr then
+                val = ClrbTalentBlacksmithScaledEquipAttr(ID, item_name, k, v)
+            end
+            HeroData:AddSX(ID, k, val)
+        end
+    end
+    if item_name == "item_goods_19" and utilex and utilex.BaseZyfw then
+        utilex:BaseZyfw(ID)
+    end
+    -- 添加buff
+    local buff_name = ""
+    if item_name == "item_goods_17" then buff_name = "modifier_talent_1" end
+    if item_name == "item_goods_18" then buff_name = "modifier_talent_2" end
+    if item_name == "item_goods_19" then buff_name = "modifier_talent_3" end
+    if item_name == "item_goods_24" then buff_name = "modifier_talent_4" end
+    LinkLuaModifier("modifier_talent_1", "ingame/modifier/modifier_talent_1",
+        LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_talent_1_damage_amp_debuff",
+        "ingame/modifier/modifier_talent_1_damage_amp_debuff", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_talent_2", "ingame/modifier/modifier_talent_2",
+        LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_talent_2_aura_debuff", "ingame/modifier/modifier_talent_2",
+        LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_talent_3", "ingame/modifier/modifier_talent_3",
+        LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_talent_4", "ingame/modifier/modifier_talent_4",
+        LUA_MODIFIER_MOTION_NONE)
+    local modifier = hero:FindModifierByName(buff_name)
+    if modifier then
+        -- 如果 modifier 已存在，刷新它
+        modifier:ForceRefresh()
+    else
+        -- 如果不存在，添加新的
+        hero:AddNewModifier(hero, -- 施法者
+            nil,                  -- 技能
+            buff_name,            -- 修饰器名称
+            {}                    -- 参数
+        )
+    end
+end
+
+--- 局内改选「铁匠」后，为已升级的天赋装备等级补算基础属性 +30%（不含 wlct 等其它词条）
+function Talent:ApplyBlacksmithEquipBonusCatchup(ID)
+    if not ID or not self.Data or not self.Data[ID] then
+        return
+    end
+    if not ClrbTalentPlayerHasBlacksmith or not ClrbTalentPlayerHasBlacksmith(ID) then
+        return
+    end
+    if self.Data[ID].select_talent ~= true then
+        return
+    end
+    if self.Data[ID].clrb_blacksmith_catchup_done == true then
+        return
+    end
+    local item_name = self.Data[ID].item_name
+    if not item_name or item_name == "" or not self.Equip[item_name] then
+        return
+    end
+    local level = self.Data[ID].level or 0
+    local extra = {}
+    for lv = 0, level do
+        local rank = "rank" .. lv
+        local attrs = self.Equip[item_name][rank]
+        if attrs then
+            for k, v in pairs(attrs) do
+                if item_name == "item_goods_24" and (k == "jcll" or k == "jcmj" or k == "jczl") then
+                    -- 绿字全属性不走 HeroData 白字
+                else
+                    local scaled = v
+                    if ClrbTalentBlacksmithScaledEquipAttr then
+                        scaled = ClrbTalentBlacksmithScaledEquipAttr(ID, item_name, k, v)
+                    end
+                    local delta = scaled - v
+                    if delta > 0 then
+                        extra[k] = (extra[k] or 0) + delta
+                    end
+                end
+            end
+        end
+    end
+    for k, delta in pairs(extra) do
+        HeroData:AddSX(ID, k, delta)
+    end
+    self.Data[ID].clrb_blacksmith_catchup_done = true
+    local hero = Util:ID2Hero(ID)
+    if hero and not hero:IsNull() then
+        hero:CalculateStatBonus(true)
+        if item_name == "item_goods_24" then
+            local m4 = hero:FindModifierByName("modifier_talent_4")
+            if m4 then
+                m4:ForceRefresh()
+            end
+        end
+    end
+end
+
+--- 英雄已出生后：若选装早于出生，补应用装备属性与 talent modifier
+function Talent:TryApplyPendingEquipAttr(ID)
+    if not ID or not self.Data or not self.Data[ID] then return end
+    if self.Data[ID].pending_equip_attr ~= true then return end
+    if self.Data[ID].select_talent ~= true then return end
+    local hero = Util:ID2Hero(ID)
+    if not hero or hero:IsNull() then return end
+    if not hero:IsAlive() then return end
+    self:AddEquipAttr(ID)
+end
+
+-- 获得当前装备属性
+
+-- 物品拖动
+function Talent:Drap(ID)
+    if not ID then return end
+    local hero = Util:ID2Hero(ID)
+    if not hero then return end
+    Timers(0.02, function()
+        for i = 0, 5 do
+            local item = hero:GetItemInSlot(i)
+            if item then
+                local item_index = item:GetEntityIndex()
+                if item_index == self.Data[ID].item_index then
+                    -- print(i)
+                    self:SendBagData(ID, i)
+                    return
+                end
+            end
+        end
+    end)
+end
+
+-- 击杀怪物（victim 可选：用于天赋 8 仅统计中立野怪）
+function Talent:Kill(ID, victim)
+    if not ID then return end
+    if not self.Data[ID] then return end
+
+    if ClrbGetTalentIndexForHero == nil then
+        require("ingame.modifier.modifier_clrb_talents")
+    end
+    local hero_h = Util:ID2Hero(ID)
+    if hero_h and not hero_h:IsNull() and ClrbGetTalentIndexForHero(hero_h) == 8 then
+        if victim and clrb_hunter_kill_victim_is_neutral(victim) then
+            if HeroData and HeroData.Data and HeroData.Data[ID] and HeroData.Data[ID].hero_attr then
+                HeroData:AddSX(ID, "smjc", 3)
+            end
+        end
+    end
+
+    if self.Data[ID].item_name == "" then return end
+    self.Data[ID].kill = self.Data[ID].kill + 1
+    local gold = HeroData:GetSX(ID, "sdjb")
+    if gold > 0 then
+        local hero = Util:ID2Hero(ID)
+        hero:ModifyGold(gold, false, 0)
+        SendOverheadEventMessage(PlayerResource:GetPlayer(ID),
+            OVERHEAD_ALERT_GOLD, hero, gold,
+            hero:GetPlayerOwner())
+    end
+
+    Talent:Statkill(ID)
+    self:SendKillData(ID)
+end
+
+-- 通过击杀计算当前剩余数量和等级
+function Talent:Statkill(ID)
+    if self.Data[ID].level >= 5 then return end
+    local level = self.Data[ID].level
+    local num = self.Static["up_" .. level]
+    if ClrbTalentGetEquipUpgradeKillsRequired then
+        num = ClrbTalentGetEquipUpgradeKillsRequired(ID, level)
+    end
+    local kill = self.Data[ID].kill
+    local tier_base = self.Data[ID].kill_at_levelup or 0
+    local tier_kills = kill - tier_base
+    if tier_kills >= num then
+        self.Data[ID].up = true
+        self.Data[ID].sy = 0
+        -- 自动升级
+        if self.Data[ID].auto_levelup == true then
+            Timers(1, function() self:AutoLevelUp(ID) end)
+        end
+    else
+        self.Data[ID].sy = num - tier_kills
+    end
+    -- self:SendData(ID)
+end
+
+function Talent:AutoLevelUp(ID)
+    -- print("自动升级")
+    if self.Data[ID].up == false then return end
+    if self.Data[ID].attr_page == true then return end
+    if self.Data[ID].auto_levelup == false then return end
+    self:LevelUp(ID)
+    self.Data[ID].auto_levelup = false
+end
+
+-- 升级
+function Talent:LevelUp(ID)
+    -- print("1111")
+    if not ID then return end
+    if self.Data[ID].select_talent == false then
+        Talent:OpenPage(ID)
+        return
+    end
+    -- print("2222")
+    if not self.Data[ID].up then return end
+    -- print("5555")
+    -- if self.Data[ID].attr_page == true then return end
+    -- print("6666")
+    if self.Data[ID].select_attr == true then
+        -- print("7777")
+        self.Data[ID].attr_page = true
+        self:SendAttrData(ID)
+        return
+    end
+    -- print("3333")
+    self.Data[ID].attr_page = true
+    self.Data[ID].refresh_state = true
+    self.Data[ID].roll_num = 0
+    self.Data[ID].select_attr = true
+    -- roll词条
+    if self.Data[ID].roll_num == 0 then self:RollAttr(ID) end
+    self:SendAttrData(ID)
+end
+
+function Talent:IsSyjcExcludedForRoll(ID)
+    if not ID or not self.Data[ID] then
+        return false
+    end
+    local hero_name = self.Data[ID].hero_name
+    if hero_name == "" or not hero_name then
+        if HeroData and HeroData.GetHeroName then
+            hero_name = HeroData:GetHeroName(ID)
+        end
+    end
+    if not hero_name or hero_name == "" then
+        return false
+    end
+    local ex = self.AttrRollExcludeSyjcHeroes
+    return ex and ex[hero_name] == true
+end
+
+function Talent:RollAttr(ID)
+    if not ID then return end
+    if self.Data[ID].refresh_state == false then return end
+    if self.Data[ID].roll_num > 0 then
+        local cost = self.Data[ID].cost
+        if not Shop:CostGold(ID, cost) then return end
+    end
+    self.Data[ID].roll_num = self.Data[ID].roll_num + 1
+    local item_name = self.Data[ID].item_name
+    local level = self.Data[ID].level + 1
+    local rank_key = "rank_" .. level
+    local roll_list = Util:DeepCopyTab(self.Item[item_name][rank_key])
+    if self:IsSyjcExcludedForRoll(ID) then
+        roll_list.syjc = nil
+    end
+    -- print(item_name)
+    -- print(rank_key)
+    -- print(roll_list)
+    -- roll3条数据
+    for k, v in pairs(self.Data[ID].attr_list) do
+        -- roll属性名
+        local attr_name = utilex:TabTrueKey(roll_list)
+        if attr_name == "syjc" and self:IsSyjcExcludedForRoll(ID) then
+            roll_list.syjc = nil
+            attr_name = utilex:TabTrueKey(roll_list)
+        end
+        if attr_name then roll_list[attr_name] = false end
+        -- roll属性值品质
+        local rank = self:RollAttrRank(ID)
+        -- 获取属性值
+        local attr_value = self.Attr[attr_name][rank]
+        if attr_name and attr_value then
+            v.state = true
+            v.name = attr_name
+            v.value = attr_value
+            v.rank = rank
+        end
+    end
+    self:SetCost(ID)
+    self:SendAttrData(ID)
+end
+
+function Talent:SetCost(ID)
+    local roll_num = self.Data[ID].roll_num
+    local key = "num" .. roll_num
+    local cost = self.Cost[key]
+    self.Data[ID].cost = cost
+    if roll_num >= 5 then self.Data[ID].refresh_state = false end
+end
+
+function Talent:RollAttrRank(ID)
+    local roll_num = self.Data[ID].roll_num
+    if roll_num > 4 then roll_num = 4 end
+    local num_key = "num_" .. roll_num
+    local roll_list = self.RollNum[num_key]
+    local rank = Util:Weight(roll_list)
+    return rank
+end
+
+function Talent:CloseAttr(ID)
+    if not ID then return end
+    self.Data[ID].attr_page = false
+    self:SendAttrData(ID)
+end
+
+function Talent:SelectAttr(ID, slot)
+    if not ID or not slot then return end
+    if slot == "" then return end
+    -- 物品等级+1
+    self.Data[ID].level = self.Data[ID].level + 1
+    if self.Data[ID].level == 1 then Item:AddItem(ID, "item_goods_22") end
+    if self.Data[ID].level == 2 then Item:AddItem(ID, "item_goods_15") end
+    -- 根据装备添加属性
+    Talent:AddEquipAttr(ID)
+    local attr_name = self.Data[ID].attr_list[slot].name
+    local attr_value = self.Data[ID].attr_list[slot].value
+    local attr_rank = self.Data[ID].attr_list[slot].rank
+    -- 添加数据到物品
+    self:AddAttr(ID, attr_name, attr_value, attr_rank)
+    -- 添加属性到英雄
+    self:ApplyRolledAttrToHero(ID, attr_name, attr_value)
+    -- 关闭属性页面
+    self.Data[ID].attr_page = false
+    -- 重置随机次数
+    self.Data[ID].roll_num = 0
+    -- 重置列表
+    for k, v in pairs(self.Data[ID].attr_list) do
+        v.state = false
+        v.name = ""
+        v.value = -1
+        v.rank = -1
+    end
+    if self.Data[ID].level >= 5 then self.Data[ID].sy = -1 end
+    -- 重置击杀
+    self:ResetKill(ID)
+    self:SendAttrData(ID)
+    self:SendKillData(ID)
+    -- 重置自动升级
+    self.Data[ID].auto_levelup = true
+    self.Data[ID].select_attr = false
+    utilex:Sound(ID, "equipsuccess")
+end
+
+function Talent:AddAttr(ID, name, va, rank)
+    local level = self.Data[ID].level
+    local slot = "slot_" .. level
+    self.Data[ID].equip_attr.attr[slot] = { name = name, value = va, rank = rank }
+end
+
+--- 升级词条写入英雄：全属性加成同时增加三维增幅
+function Talent:ApplyRolledAttrToHero(ID, attr_name, attr_value)
+    if not ID or not attr_name or not attr_value then
+        return
+    end
+    if attr_name == "qsxjc" then
+        HeroData:AddSX(ID, "lljc", attr_value)
+        HeroData:AddSX(ID, "mjjc", attr_value)
+        HeroData:AddSX(ID, "zljc", attr_value)
+        return
+    end
+    HeroData:AddSX(ID, attr_name, attr_value)
+end
+
+function Talent:ResetKill(ID)
+    if not ID then return end
+    self.Data[ID].kill_at_levelup = self.Data[ID].kill or 0
+    self.Data[ID].up = false
+    Talent:Statkill(ID)
+end
+
+function Talent:ShowTip(ID)
+    if not ID then return end
+    self.Data[ID].tip_page = true
+    self:SendTipData(ID)
+end
+
+function Talent:CloseTip(ID)
+    self.Data[ID].tip_page = false
+    self:SendTipData(ID)
+end
+
+--- 局内天赋技能：已改为回城卷轴栏 item_talent_skill_N 展示，保留空实现兼容旧 UI 事件
+function Talent:CastTalentSkillItem(_ID)
+end

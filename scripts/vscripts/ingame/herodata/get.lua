@@ -8,22 +8,518 @@
 ]]
 
 
-local encoded=[[LS3oi7Hpm4TnrKzkuIDmrKHlh7rnlJ8KZnVuY3Rpb24gSGVyb0RhdGE6SGVyb0luaXRQb3MoSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBwbGF5ZXJfZGF0YSA9IEluaXRQbGF5ZXI6R2V0UGxheWVyRGF0YShJRCkKICAgIGlmIG5vdCBwbGF5ZXJfZGF0YSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGluaXRfcG9zID0gcGxheWVyX2RhdGEuaW5pdF9wb3MKICAgIGlmIG5vdCBpbml0X3BvcyBvciB0eXBlKGluaXRfcG9zKSB+PSAibnVtYmVyIiBvciBpbml0X3BvcyA8IDEgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBpbml0X2tleSA9ICJpbml0IiAuLiBpbml0X3BvcwogICAgbG9jYWwgYWxsX3BvcyA9IEVudGl0aWVzOkZpbmRBbGxCeUNsYXNzbmFtZSgiaW5mb190YXJnZXQiKQogICAgZm9yIGssIHYgaW4gcGFpcnMoYWxsX3BvcykgZG8KICAgICAgICBpZiB2IGFuZCB2OkdldE5hbWUoKSA9PSBpbml0X2tleSB0aGVuCiAgICAgICAgICAgIHJldHVybiB2OkdldEFic09yaWdpbigpCiAgICAgICAgZW5kCiAgICBlbmQKZW5kCgotLSDpmo/mnLrlgY/np7vmnIDlpKfot53nprvvvIznlKjkuo7pooTnlZnlnIjlhoXkvZnph4/vvIjku4XnvKnlnIjliY3lpKflnIjvvIkKbG9jYWwgUkVCT1JOX1JBTkRPTV9NQVJHSU4gPSA2MDAKLS0g57yp5ZyI5ZCO5aSN5rS744CM6L+c56a76L6555WM44CN77ya5YaF5pS2IFBPSVNPTl9SSU5HX1JFU1BBV05fSU5TRVTvvJvku4XnrKzkuIDms6LnvKnlnIgoc3RhZ2U8MixyYW5nMSnpnIDopoHvvIznrKzkuozms6Ioc3RhZ2U+PTIscmFuZzIp5LiN5YaN5YaF5pS25YWB6K646LS05rK/CmxvY2FsIFBPSVNPTl9SSU5HX1JFU1BBV05fSU5TRVQgPSAyMjAwCi0tIOe8qeWciOWJje+8iHN0YXRlPT0x77yJ5aSN5rS777ya6JC954K55LiO5q275Lqh54K55pyA5bCP5bmz6Z2i6Led56a7CmxvY2FsIFJFQk9STl9NSU5fRElTVF9GUk9NX0RFQVRIX1BSRV9TSFJJTksgPSA1MDAwCmxvY2FsIFJFQk9STl9TQU1QTEVfQVRURU1QVFMgPSA4MAotLSDlpI3mtLvokL3ngrnkuI7moJHmnKjmnIDlsI/lubPpnaLot53nprvvvIjnoIHvvInvvJtJc05lYXJieVRyZWUg55So6K+l5Y2K5b6E5qOA5rWL5piv5ZCm5LiO5qCR56Kw5pKeL+mHjeWPoApsb2NhbCBSRUJPUk5fTUlOX1RSRUVfQ0xFQVJBTkNFID0gMTUwCgotLSDkuI4gTWFpbkdhbWUg6Iux6ZuE5q+S5Lyk5LiA6Ie077yac3RhdGU8MiDml7blsJrmnKrmjIkgcmFuZyDmr5Loi7Hpm4TvvIzkuI3oo4HliaoKbG9jYWwgZnVuY3Rpb24gSGVyb0RhdGFfR2V0Q3VycmVudFBvaXNvblJpbmdSYWRpdXMoKQogICAgbG9jYWwgbWdfc3RhdGUgPSAoTWFpbkdhbWUgYW5kIE1haW5HYW1lLkdldFN0YXRlIGFuZCBNYWluR2FtZTpHZXRTdGF0ZSgpKSBvciAxCiAgICBpZiBtZ19zdGF0ZSA8IDIgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgbG9jYWwgc3RhZ2UgPSBNb25zdGVyIGFuZCBNb25zdGVyLkRhdGEgYW5kIE1vbnN0ZXIuRGF0YS5zdGFnZSBvciAxCiAgICBpZiBzdGFnZSA+PSAyIHRoZW4KICAgICAgICByZXR1cm4gTWFpbkdhbWUuU3RhdGljLnJhbmcyCiAgICBlbmQKICAgIHJldHVybiBNYWluR2FtZS5TdGF0aWMucmFuZzEKZW5kCgpsb2NhbCBmdW5jdGlvbiBIZXJvRGF0YV9TaG91bGRJbnNldFJlc3Bhd25Gcm9tUG9pc29uRWRnZSgpCiAgICBsb2NhbCBtZ19zdGF0ZSA9IChNYWluR2FtZSBhbmQgTWFpbkdhbWUuR2V0U3RhdGUgYW5kIE1haW5HYW1lOkdldFN0YXRlKCkpIG9yIDEKICAgIGlmIG1nX3N0YXRlIDwgMiB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGxvY2FsIHN0YWdlID0gTW9uc3RlciBhbmQgTW9uc3Rlci5EYXRhIGFuZCBNb25zdGVyLkRhdGEuc3RhZ2Ugb3IgMQogICAgcmV0dXJuIHN0YWdlIDwgMgplbmQKCi0tIOWwhuWcsOmdouiQveeCueayv+W+hOWQkeaUtui/m+OAjOavkuWciOWNiuW+hCAtIO+8iOS7heesrOS4gOazoue8qeWciOaXtu+8iVBPSVNPTl9SSU5HX1JFU1BBV05fSU5TRVTjgI3lhoXvvIjkurrmnLov55yf5Lq65aSN5rS75YWx55So77yJCmxvY2FsIGZ1bmN0aW9uIEhlcm9EYXRhX0NsYW1wUG9zVG9Qb2lzb25SaW5nSW5zZXQoZ3JvdW5kX3BvcywgaGVyb19mb3JfZ3JvdW5kKQogICAgaWYgbm90IGdyb3VuZF9wb3MgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgbG9jYWwgcmluZ19jZW50ZXIgPSBNb25zdGVyIGFuZCBNb25zdGVyLlN0YXRpYyBhbmQgTW9uc3Rlci5TdGF0aWMubWFwX2NlbnRlcgogICAgaWYgbm90IHJpbmdfY2VudGVyIHRoZW4KICAgICAgICByZXR1cm4gZ3JvdW5kX3BvcwogICAgZW5kCiAgICBsb2NhbCByYWRpdXMgPSBIZXJvRGF0YV9HZXRDdXJyZW50UG9pc29uUmluZ1JhZGl1cygpCiAgICBpZiByYWRpdXMgPT0gbmlsIHRoZW4KICAgICAgICByZXR1cm4gZ3JvdW5kX3BvcwogICAgZW5kCiAgICBsb2NhbCBpbnNldF91c2UgPSBIZXJvRGF0YV9TaG91bGRJbnNldFJlc3Bhd25Gcm9tUG9pc29uRWRnZSgpIGFuZCBQT0lTT05fUklOR19SRVNQQVdOX0lOU0VUIG9yIDAKICAgIGxvY2FsIG1heF9kaXN0ID0gbWF0aC5tYXgoMCwgcmFkaXVzIC0gaW5zZXRfdXNlKQogICAgbG9jYWwgdiA9IGdyb3VuZF9wb3MgLSByaW5nX2NlbnRlcgogICAgbG9jYWwgbGVuID0gdjpMZW5ndGgyRCgpCiAgICBpZiBsZW4gPD0gbWF4X2Rpc3QgdGhlbgogICAgICAgIHJldHVybiBncm91bmRfcG9zCiAgICBlbmQKICAgIGlmIGxlbiA8IDFlLTYgdGhlbgogICAgICAgIHJldHVybiBHZXRHcm91bmRQb3NpdGlvbihyaW5nX2NlbnRlciwgaGVyb19mb3JfZ3JvdW5kKQogICAgZW5kCiAgICBsb2NhbCBzID0gbWF4X2Rpc3QgLyBsZW4KICAgIGxvY2FsIHAgPSBWZWN0b3IocmluZ19jZW50ZXIueCArIHYueCAqIHMsIHJpbmdfY2VudGVyLnkgKyB2LnkgKiBzLCBncm91bmRfcG9zLnopCiAgICByZXR1cm4gR2V0R3JvdW5kUG9zaXRpb24ocCwgaGVyb19mb3JfZ3JvdW5kKQplbmQKCi0tIOS6uuacuuS7jiBSZWJyb24g6KGo55u06JC95pe25pegIEhlcm9Qb3Mg6KOB5Ymq77yM5LqM5ZyI5ZCO5Y+v6IO96JC95Zyo5q+S5ZyI5aSW77yb5oyJ5b2T5YmNIHN0YWdlIOS4juavkuWciOWNiuW+hOaUtui/m+WuieWFqOWMugpsb2NhbCBmdW5jdGlvbiBIZXJvRGF0YV9DbGFtcEJvdFBvc1RvQ3VycmVudFJpbmcoZ3JvdW5kX3BvcywgaGVyb19mb3JfZ3JvdW5kKQogICAgcmV0dXJuIEhlcm9EYXRhX0NsYW1wUG9zVG9Qb2lzb25SaW5nSW5zZXQoZ3JvdW5kX3BvcywgaGVyb19mb3JfZ3JvdW5kKQplbmQKCi0tIEZpbmRDbGVhclNwYWNlIC8g5byV5pOO5oyk5L2N5Y+v6IO95oqK5Y2V5L2N5o6o5Yiw5q+S5ZyI6L6577yb5YaN5pS25LiA6L+b77yI6ZyA5ZyoIEJvdE9ubHkgLyBBcHBseVJlYm9ybkNsZWFyUG9zIOWPr+inge+8jOaVhee9ruS6juatpO+8iQpsb2NhbCBmdW5jdGlvbiBIZXJvRGF0YV9SZWJvcm5GaW5hbGl6ZVBvc0luc2lkZVBvaXNvblJpbmcoaGVybykKICAgIGlmIG5vdCBoZXJvIG9yIGhlcm86SXNOdWxsKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBncCA9IEdldEdyb3VuZFBvc2l0aW9uKGhlcm86R2V0QWJzT3JpZ2luKCksIGhlcm8pCiAgICBsb2NhbCB2ID0gVmVjdG9yKGdwLngsIGdwLnksIGdwLnopCiAgICBsb2NhbCBjbGFtcGVkID0gSGVyb0RhdGFfQ2xhbXBQb3NUb1BvaXNvblJpbmdJbnNldCh2LCBoZXJvKQogICAgaWYgbm90IGNsYW1wZWQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiAoY2xhbXBlZCAtIHYpOkxlbmd0aDJEKCkgPCA0IHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaGVybzpTZXRBYnNPcmlnaW4oY2xhbXBlZCkKICAgIEZpbmRDbGVhclNwYWNlRm9yVW5pdChoZXJvLCBjbGFtcGVkLCB0cnVlKQogICAgZ3AgPSBHZXRHcm91bmRQb3NpdGlvbihoZXJvOkdldEFic09yaWdpbigpLCBoZXJvKQogICAgaGVybzpTZXRBYnNPcmlnaW4oVmVjdG9yKGdwLngsIGdwLnksIGdwLnopKQogICAgRmluZENsZWFyU3BhY2VGb3JVbml0KGhlcm8sIGhlcm86R2V0QWJzT3JpZ2luKCksIHRydWUpCmVuZAoKbG9jYWwgZnVuY3Rpb24gSGVyb0RhdGFfUmVib3JuUG9pbnRDbGVhck9mVHJlZXMocG9zKQogICAgaWYgbm90IHBvcyB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIG5vdCBHcmlkTmF2IG9yIG5vdCBHcmlkTmF2LklzTmVhcmJ5VHJlZSB0aGVuCiAgICAgICAgcmV0dXJuIHRydWUKICAgIGVuZAogICAgbG9jYWwgb2ssIG92ZXJsYXBzID0gcGNhbGwoZnVuY3Rpb24oKQogICAgICAgIHJldHVybiBHcmlkTmF2OklzTmVhcmJ5VHJlZShwb3MsIFJFQk9STl9NSU5fVFJFRV9DTEVBUkFOQ0UsIHRydWUpCiAgICBlbmQpCiAgICBpZiBub3Qgb2sgdGhlbgogICAgICAgIHJldHVybiB0cnVlCiAgICBlbmQKICAgIHJldHVybiBub3Qgb3ZlcmxhcHMKZW5kCgotLSDku44gUmVicm9uMe+8iOe8qeWciOWJje+8iS8gUmVicm9uMu+8iOe8qeWciOWQju+8ieS4remaj+acuuWPluS4gOS4quiLsembhOWkjea0u+eCue+8jOS9nOS4uumaj+acuumHh+agt+WchuW/g++8m+avkuWciOS4jui3r+W+hOS7jeebuOWvueWcsOWbvuS4reW/gyBtYXBfY2VudGVyCmxvY2FsIGZ1bmN0aW9uIEhlcm9EYXRhX1BpY2tSYW5kb21SZWJyb25CYXNlKG1nX3N0YXRlKQogICAgbG9jYWwgdGFiID0gKG1nX3N0YXRlID09IDEpIGFuZCBIZXJvRGF0YS5SZWJyb24xIG9yIEhlcm9EYXRhLlJlYnJvbjIKICAgIGlmIG5vdCB0YWIgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgbG9jYWwgbGlzdCA9IHt9CiAgICBmb3IgXywgdiBpbiBwYWlycyh0YWIpIGRvCiAgICAgICAgaWYgdiBhbmQgdi54IHRoZW4KICAgICAgICAgICAgbGlzdFsjbGlzdCArIDFdID0gdgogICAgICAgIGVuZAogICAgZW5kCiAgICBpZiAjbGlzdCA9PSAwIHRoZW4KICAgICAgICByZXR1cm4gbmlsCiAgICBlbmQKICAgIHJldHVybiBsaXN0W1JhbmRvbUludCgxLCAjbGlzdCldCmVuZAoKLS0tIOS6uuacuuS4k+eUqOWkjea0u+iQveeCue+8iOS4juecn+S6uiBBcHBseVJlYm9ybkNsZWFyUG9zIC8gSGVyb1BvcyDlrozlhajml6DlhbPvvInjgIIKLS0tIOWcqCBSZXNwYXduVW5pdCgpIOS5i+WQjueUseacjeWKoeerr+W7tui/n+iwg+eUqO+8muS7jiBIZXJvRGF0YS5SZWJyb24xIC8gUmVicm9uMu+8iENvbmZpZ++8iemaj+acuuWPluS4gOeCuei0tOWcsOS8oOmAgeOAggotLS0g5bu25ZCO5LiA5binICsg55+t5bu26L+f5YaN6K6+5LiA5qyh77yM6YG/5YWN5byV5pOO6buY6K6k5aSN5rS75Yy66KaG55uW5Z2Q5qCH44CCCmZ1bmN0aW9uIEhlcm9EYXRhOkJvdE9ubHlfUmVzcGF3blRlbGVwb3J0RnJvbVRhYmxlKGJvdF9wbGF5ZXJfaWQpCiAgICBpZiBib3RfcGxheWVyX2lkID09IG5pbCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGZ1bmN0aW9uIHBpY2tfaGVybygpCiAgICAgICAgbG9jYWwgaCA9IFV0aWw6SUQySGVybyhib3RfcGxheWVyX2lkKQogICAgICAgIGlmIG5vdCBoIG9yIGg6SXNOdWxsKCkgdGhlbgogICAgICAgICAgICBoID0gSGVyb0RhdGE6R2V0SGVybyhib3RfcGxheWVyX2lkKQogICAgICAgIGVuZAogICAgICAgIGlmIGggYW5kIG5vdCBoOklzTnVsbCgpIHRoZW4KICAgICAgICAgICAgcmV0dXJuIGgKICAgICAgICBlbmQKICAgIGVuZAogICAgbG9jYWwgZnVuY3Rpb24gZG9fcGxhY2UoaCkKICAgICAgICBpZiBub3QgaCB0aGVuCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZAogICAgICAgIGlmIGguU3RvcCB0aGVuCiAgICAgICAgICAgIHBjYWxsKGZ1bmN0aW9uKCkKICAgICAgICAgICAgICAgIGg6U3RvcCgpCiAgICAgICAgICAgIGVuZCkKICAgICAgICBlbmQKICAgICAgICBsb2NhbCBtZ19zdGF0ZSA9IChNYWluR2FtZSBhbmQgTWFpbkdhbWUuR2V0U3RhdGUgYW5kIE1haW5HYW1lOkdldFN0YXRlKCkgb3IgMSkKICAgICAgICBsb2NhbCByaW5nX2ZiID0gTW9uc3RlciBhbmQgTW9uc3Rlci5TdGF0aWMgYW5kIE1vbnN0ZXIuU3RhdGljLm1hcF9jZW50ZXIKICAgICAgICBsb2NhbCBwb3MKICAgICAgICBmb3IgXyA9IDEsIDIwIGRvCiAgICAgICAgICAgIGxvY2FsIHJhdyA9IEhlcm9EYXRhX1BpY2tSYW5kb21SZWJyb25CYXNlKG1nX3N0YXRlKQogICAgICAgICAgICBpZiByYXcgdGhlbgogICAgICAgICAgICAgICAgcG9zID0gR2V0R3JvdW5kUG9zaXRpb24oVmVjdG9yKHJhdy54LCByYXcueSwgcmF3LnopLCBoKQogICAgICAgICAgICBlbHNlaWYgcmluZ19mYiB0aGVuCiAgICAgICAgICAgICAgICBwb3MgPSBHZXRHcm91bmRQb3NpdGlvbihyaW5nX2ZiLCBoKQogICAgICAgICAgICBlbmQKICAgICAgICAgICAgaWYgcG9zIGFuZCBIZXJvRGF0YV9SZWJvcm5Qb2ludENsZWFyT2ZUcmVlcyhwb3MpIHRoZW4KICAgICAgICAgICAgICAgIHBvcyA9IEhlcm9EYXRhX0NsYW1wQm90UG9zVG9DdXJyZW50UmluZyhwb3MsIGgpCiAgICAgICAgICAgICAgICBicmVhawogICAgICAgICAgICBlbmQKICAgICAgICAgICAgcG9zID0gbmlsCiAgICAgICAgZW5kCiAgICAgICAgaWYgbm90IHBvcyBhbmQgcmluZ19mYiB0aGVuCiAgICAgICAgICAgIHBvcyA9IEdldEdyb3VuZFBvc2l0aW9uKHJpbmdfZmIsIGgpCiAgICAgICAgZW5kCiAgICAgICAgaWYgcG9zIHRoZW4KICAgICAgICAgICAgcG9zID0gSGVyb0RhdGFfQ2xhbXBCb3RQb3NUb0N1cnJlbnRSaW5nKHBvcywgaCkKICAgICAgICAgICAgaC5fY2xyYl9ib3RfcmVib3JuX2RzdCA9IHBvcwogICAgICAgICAgICBoOlNldEFic09yaWdpbihwb3MpCiAgICAgICAgICAgIEhlcm9EYXRhX1JlYm9ybkZpbmFsaXplUG9zSW5zaWRlUG9pc29uUmluZyhoKQogICAgICAgIGVuZAogICAgZW5kCiAgICBUaW1lcnMoMCwgZnVuY3Rpb24oKQogICAgICAgIGRvX3BsYWNlKHBpY2tfaGVybygpKQogICAgZW5kKQogICAgVGltZXJzKDAuMDgsIGZ1bmN0aW9uKCkKICAgICAgICBsb2NhbCBoID0gcGlja19oZXJvKCkKICAgICAgICBpZiBoIGFuZCBoLl9jbHJiX2JvdF9yZWJvcm5fZHN0IHRoZW4KICAgICAgICAgICAgaDpTZXRBYnNPcmlnaW4oR2V0R3JvdW5kUG9zaXRpb24oaC5fY2xyYl9ib3RfcmVib3JuX2RzdCwgaCkpCiAgICAgICAgICAgIGguX2NscmJfYm90X3JlYm9ybl9kc3QgPSBuaWwKICAgICAgICAgICAgSGVyb0RhdGFfUmVib3JuRmluYWxpemVQb3NJbnNpZGVQb2lzb25SaW5nKGgpCiAgICAgICAgZW5kCiAgICBlbmQpCmVuZAoKLS0g6Iux6ZuE5aSN5rS754K577ya5Zyo5q+S5ZyI5YWB6K645Y2K5b6E5YaF6ZqP5py66YeH5qC377yM6YeH5qC35ZyG5b+D5Li66ZqP5py6IFJlYnJvbiDngrnvvIjpnZ7lnLDlm77kuK3lv4PvvInvvJvnvKnlnIjliY3ov5jpobvku47lnLDlm77kuK3lv4MgQ2FuRmluZFBhdGgg5Y+v6L6+77yM5LiU6Led5q275Lqh54K56Iez5bCRIFJFQk9STl9NSU5fRElTVF9GUk9NX0RFQVRIX1BSRV9TSFJJTkvvvJvnvKnlnIjlkI7lnKjlnIjlhoXpmo/mnLrlj6/ooYzotbDngrnvvIjnm7jlr7kgbWFwX2NlbnRlciDnmoQgcmFuZ++8jOS4jeiDveiQveWcqOavkuWciOWklu+8ieOAggotLSBSZWJyb24xL1JlYnJvbjIg5Lqm55So5LqOIEJvdCDlt6HpgLvnrYnpgLvovpHjgIIKZnVuY3Rpb24gSGVyb0RhdGE6SGVyb1Bvcyhhdm9pZF9kZWF0aF9wb3MpCiAgICBsb2NhbCBtZ19zdGF0ZSA9IDEKICAgIGlmIE1haW5HYW1lIGFuZCBNYWluR2FtZS5HZXRTdGF0ZSB0aGVuCiAgICAgICAgbWdfc3RhdGUgPSBNYWluR2FtZTpHZXRTdGF0ZSgpIG9yIDEKICAgIGVuZAogICAgbG9jYWwgcmluZ19jZW50ZXIgPSBNb25zdGVyIGFuZCBNb25zdGVyLlN0YXRpYyBhbmQgTW9uc3Rlci5TdGF0aWMubWFwX2NlbnRlcgogICAgaWYgbm90IHJpbmdfY2VudGVyIHRoZW4KICAgICAgICByZXR1cm4gVmVjdG9yKDAsIDAsIDApCiAgICBlbmQKICAgIGxvY2FsIHNhbXBsZV9iYXNlID0gSGVyb0RhdGFfUGlja1JhbmRvbVJlYnJvbkJhc2UobWdfc3RhdGUpIG9yIHJpbmdfY2VudGVyCgogICAgbG9jYWwgcmFkaXVzCiAgICBpZiBtZ19zdGF0ZSA9PSAxIHRoZW4KICAgICAgICByYWRpdXMgPSAxMDAwMAogICAgZWxzZQogICAgICAgIGxvY2FsIHN0YWdlID0gTW9uc3RlciBhbmQgTW9uc3Rlci5EYXRhIGFuZCBNb25zdGVyLkRhdGEuc3RhZ2Ugb3IgMQogICAgICAgIGlmIHN0YWdlID49IDIgdGhlbgogICAgICAgICAgICByYWRpdXMgPSBNYWluR2FtZS5TdGF0aWMucmFuZzIKICAgICAgICBlbHNlCiAgICAgICAgICAgIHJhZGl1cyA9IE1haW5HYW1lLlN0YXRpYy5yYW5nMQogICAgICAgIGVuZAogICAgZW5kCiAgICBsb2NhbCBzYWZlX3JhZGl1cyA9IG1hdGgubWF4KDAsIHJhZGl1cyAtIFJFQk9STl9SQU5ET01fTUFSR0lOKQogICAgbG9jYWwgaW5zZXRfcHggPSBIZXJvRGF0YV9TaG91bGRJbnNldFJlc3Bhd25Gcm9tUG9pc29uRWRnZSgpIGFuZCBQT0lTT05fUklOR19SRVNQQVdOX0lOU0VUIG9yIDAKICAgIC0tIOe8qeWciOWQju+8mumHh+agty/oo4HliarljYrlvoTkuI3otoXov4flvZPliY3mr5LlnIjvvJvku4XnrKzkuIDms6LnvKnlnIjlho3lh48gaW5zZXRfcHjvvJvnvKnlnIjliY3ku43nlKjlpKflnIggc2FmZV9yYWRpdXMKICAgIGxvY2FsIHNwYXduX2NhcCA9IChtZ19zdGF0ZSA9PSAxKSBhbmQgc2FmZV9yYWRpdXMgb3IgbWF0aC5tYXgoMCwgcmFkaXVzIC0gaW5zZXRfcHgpCiAgICAtLSDku6Xpmo/mnLogUmVicm9uIOS4uuWchuW/g+OAgeWcqOiHs+WkmiBzcGF3bl9jYXAg6Led56a75YaF5Z2H5YyA6ZqP5py677yI5aSn6IyD5Zu077yJ77yb6JC954K55YaN55SxIGNsYW1wX3RvX3Jpbmcg6ZmQ5Yi25Zyo5q+S5ZyI5YaF77yM5Y2h5qCR55SxIEFwcGx5UmVib3JuQ2xlYXJQb3Mg5aSa6L2u5oyk5L2NCiAgICBsb2NhbCBqaXR0ZXJfbWF4ID0gc3Bhd25fY2FwCgogICAgbG9jYWwgY2VudGVyX25hdiA9IFV0aWw6RmluZENhblJlYWNoUG9zKFZlY3RvcihyaW5nX2NlbnRlci54LCByaW5nX2NlbnRlci55LCByaW5nX2NlbnRlci56KSkKICAgIGxvY2FsIHJlcXVpcmVfcGF0aF9mcm9tX2NlbnRlciA9IChtZ19zdGF0ZSA9PSAxKQogICAgbG9jYWwgcmVxdWlyZV9kZWF0aF9jbGVhcmFuY2UgPSAobWdfc3RhdGUgPT0gMSBhbmQgYXZvaWRfZGVhdGhfcG9zIH49IG5pbCkKCiAgICBsb2NhbCBmdW5jdGlvbiBjbGFtcF90b19yaW5nKGNhbmRpZGF0ZSkKICAgICAgICBsb2NhbCB2ID0gY2FuZGlkYXRlIC0gcmluZ19jZW50ZXIKICAgICAgICBsb2NhbCBsZW4yZCA9IHY6TGVuZ3RoMkQoKQogICAgICAgIGlmIGxlbjJkIDwgMWUtNiB0aGVuCiAgICAgICAgICAgIHJldHVybiBjYW5kaWRhdGUKICAgICAgICBlbmQKICAgICAgICBpZiBsZW4yZCA+IHNwYXduX2NhcCB0aGVuCiAgICAgICAgICAgIGxvY2FsIHMgPSBzcGF3bl9jYXAgLyBsZW4yZAogICAgICAgICAgICByZXR1cm4gVmVjdG9yKHJpbmdfY2VudGVyLnggKyB2LnggKiBzLCByaW5nX2NlbnRlci55ICsgdi55ICogcywgY2FuZGlkYXRlLnopCiAgICAgICAgZW5kCiAgICAgICAgcmV0dXJuIGNhbmRpZGF0ZQogICAgZW5kCgogICAgbG9jYWwgZnVuY3Rpb24gbmF2X2NlbGxfdXNhYmxlKHYpCiAgICAgICAgaWYgbm90IHYgdGhlbgogICAgICAgICAgICByZXR1cm4gZmFsc2UKICAgICAgICBlbmQKICAgICAgICBpZiBub3QgR3JpZE5hdjpJc1RyYXZlcnNhYmxlKHYpIHRoZW4KICAgICAgICAgICAgcmV0dXJuIGZhbHNlCiAgICAgICAgZW5kCiAgICAgICAgaWYgR3JpZE5hdi5Jc0Jsb2NrZWQgdGhlbgogICAgICAgICAgICBsb2NhbCBvaywgYmxvY2tlZCA9IHBjYWxsKGZ1bmN0aW9uKCkKICAgICAgICAgICAgICAgIHJldHVybiBHcmlkTmF2OklzQmxvY2tlZCh2KQogICAgICAgICAgICBlbmQpCiAgICAgICAgICAgIGlmIG9rIGFuZCBibG9ja2VkIHRoZW4KICAgICAgICAgICAgICAgIHJldHVybiBmYWxzZQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgICAgICByZXR1cm4gdHJ1ZQogICAgZW5kCgogICAgbG9jYWwgZnVuY3Rpb24gY2FuZGlkYXRlX29rKHZlYykKICAgICAgICBsb2NhbCBjYW5kaWRhdGUgPSBVdGlsOkZpbmRDYW5SZWFjaFBvcyhjbGFtcF90b19yaW5nKHZlYykpCiAgICAgICAgY2FuZGlkYXRlID0gY2xhbXBfdG9fcmluZyhjYW5kaWRhdGUpCiAgICAgICAgbG9jYWwgZ3AgPSBHZXRHcm91bmRQb3NpdGlvbihjYW5kaWRhdGUsIG5pbCkKICAgICAgICBjYW5kaWRhdGUgPSBWZWN0b3IoZ3AueCwgZ3AueSwgZ3AueikKICAgICAgICBpZiBub3QgbmF2X2NlbGxfdXNhYmxlKGNhbmRpZGF0ZSkgdGhlbgogICAgICAgICAgICByZXR1cm4gbmlsCiAgICAgICAgZW5kCiAgICAgICAgaWYgbWdfc3RhdGUgPj0gMiB0aGVuCiAgICAgICAgICAgIGxvY2FsIGxkID0gKGNhbmRpZGF0ZSAtIHJpbmdfY2VudGVyKTpMZW5ndGgyRCgpCiAgICAgICAgICAgIGlmIGxkID4gc3Bhd25fY2FwIHRoZW4KICAgICAgICAgICAgICAgIHJldHVybiBuaWwKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICAgICAgaWYgcmVxdWlyZV9wYXRoX2Zyb21fY2VudGVyIGFuZCBDYW5GaW5kUGF0aCBhbmQgbm90IENhbkZpbmRQYXRoKGNlbnRlcl9uYXYsIGNhbmRpZGF0ZSkgdGhlbgogICAgICAgICAgICByZXR1cm4gbmlsCiAgICAgICAgZW5kCiAgICAgICAgaWYgcmVxdWlyZV9kZWF0aF9jbGVhcmFuY2UgYW5kIChjYW5kaWRhdGUgLSBhdm9pZF9kZWF0aF9wb3MpOkxlbmd0aDJEKCkgPCBSRUJPUk5fTUlOX0RJU1RfRlJPTV9ERUFUSF9QUkVfU0hSSU5LIHRoZW4KICAgICAgICAgICAgcmV0dXJuIG5pbAogICAgICAgIGVuZAogICAgICAgIGlmIG5vdCBIZXJvRGF0YV9SZWJvcm5Qb2ludENsZWFyT2ZUcmVlcyhjYW5kaWRhdGUpIHRoZW4KICAgICAgICAgICAgcmV0dXJuIG5pbAogICAgICAgIGVuZAogICAgICAgIHJldHVybiBjYW5kaWRhdGUKICAgIGVuZAoKICAgIGZvciBfID0gMSwgUkVCT1JOX1NBTVBMRV9BVFRFTVBUUyBkbwogICAgICAgIGxvY2FsIHJhdyA9IHNhbXBsZV9iYXNlICsgUmFuZG9tVmVjdG9yKFJhbmRvbUZsb2F0KDAsIGppdHRlcl9tYXgpKQogICAgICAgIGxvY2FsIHBvcyA9IGNhbmRpZGF0ZV9vayhyYXcpCiAgICAgICAgaWYgcG9zIHRoZW4KICAgICAgICAgICAgcmV0dXJuIHBvcwogICAgICAgIGVuZAogICAgZW5kCgogICAgaWYgcmVxdWlyZV9kZWF0aF9jbGVhcmFuY2UgdGhlbgogICAgICAgIGxvY2FsIGF3YXkgPSByaW5nX2NlbnRlciAtIGF2b2lkX2RlYXRoX3BvcwogICAgICAgIGxvY2FsIGwyID0gYXdheTpMZW5ndGgyRCgpCiAgICAgICAgaWYgbDIgPCAxZS0zIHRoZW4KICAgICAgICAgICAgYXdheSA9IFJhbmRvbVZlY3RvcigxKQogICAgICAgIGVuZAogICAgICAgIGF3YXkgPSBWZWN0b3IoYXdheS54LCBhd2F5LnksIDApOk5vcm1hbGl6ZWQoKQogICAgICAgIGxvY2FsIGNhbmQgPSByaW5nX2NlbnRlciArIGF3YXkgKiAoc3Bhd25fY2FwICogMC43NSkKICAgICAgICBsb2NhbCBwb3MgPSBjYW5kaWRhdGVfb2soY2FuZCkKICAgICAgICBpZiBwb3MgdGhlbgogICAgICAgICAgICByZXR1cm4gcG9zCiAgICAgICAgZW5kCiAgICBlbmQKCiAgICBpZiBtZ19zdGF0ZSA+PSAyIHRoZW4KICAgICAgICBmb3IgXyA9IDEsIDQwIGRvCiAgICAgICAgICAgIGxvY2FsIHJhdyA9IHNhbXBsZV9iYXNlICsgUmFuZG9tVmVjdG9yKFJhbmRvbUZsb2F0KDAsIGppdHRlcl9tYXggKiAwLjYpKQogICAgICAgICAgICBsb2NhbCBjID0gVXRpbDpGaW5kQ2FuUmVhY2hQb3MoY2xhbXBfdG9fcmluZyhyYXcpKQogICAgICAgICAgICBjID0gY2xhbXBfdG9fcmluZyhjKQogICAgICAgICAgICBpZiBjIGFuZCAoYyAtIHJpbmdfY2VudGVyKTpMZW5ndGgyRCgpIDw9IHNwYXduX2NhcCBhbmQgSGVyb0RhdGFfUmVib3JuUG9pbnRDbGVhck9mVHJlZXMoYykgdGhlbgogICAgICAgICAgICAgICAgcmV0dXJuIGMKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICAgICAgbG9jYWwgZmIgPSBjbGFtcF90b19yaW5nKGNlbnRlcl9uYXYpCiAgICAgICAgaWYgSGVyb0RhdGFfUmVib3JuUG9pbnRDbGVhck9mVHJlZXMoZmIpIHRoZW4KICAgICAgICAgICAgcmV0dXJuIGZiCiAgICAgICAgZW5kCiAgICBlbmQKCiAgICBmb3IgXyA9IDEsIDI0IGRvCiAgICAgICAgbG9jYWwgaml0dGVyID0gUmFuZG9tVmVjdG9yKFJhbmRvbUZsb2F0KDQwLCA1MDApKQogICAgICAgIGxvY2FsIGMgPSBHZXRHcm91bmRQb3NpdGlvbihjZW50ZXJfbmF2ICsgaml0dGVyLCBuaWwpCiAgICAgICAgYyA9IFZlY3RvcihjLngsIGMueSwgYy56KQogICAgICAgIGlmIG1nX3N0YXRlID49IDIgdGhlbgogICAgICAgICAgICBjID0gY2xhbXBfdG9fcmluZyhjKQogICAgICAgIGVuZAogICAgICAgIGlmIG5hdl9jZWxsX3VzYWJsZShjKSBhbmQgSGVyb0RhdGFfUmVib3JuUG9pbnRDbGVhck9mVHJlZXMoYykgdGhlbgogICAgICAgICAgICBpZiBtZ19zdGF0ZSA8IDIgb3IgKGMgLSByaW5nX2NlbnRlcik6TGVuZ3RoMkQoKSA8PSBzcGF3bl9jYXAgdGhlbgogICAgICAgICAgICAgICAgcmV0dXJuIGMKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGlmIG1nX3N0YXRlID49IDIgdGhlbgogICAgICAgIGNlbnRlcl9uYXYgPSBjbGFtcF90b19yaW5nKFV0aWw6RmluZENhblJlYWNoUG9zKGNlbnRlcl9uYXYpKQogICAgICAgIGNlbnRlcl9uYXYgPSBjbGFtcF90b19yaW5nKGNlbnRlcl9uYXYpCiAgICAgICAgbG9jYWwgZ2YgPSBHZXRHcm91bmRQb3NpdGlvbihjZW50ZXJfbmF2LCBuaWwpCiAgICAgICAgY2VudGVyX25hdiA9IFZlY3RvcihnZi54LCBnZi55LCBnZi56KQogICAgZW5kCiAgICByZXR1cm4gY2VudGVyX25hdgplbmQKCmZ1bmN0aW9uIEhlcm9EYXRhOkFwcGx5UmVib3JuQ2xlYXJQb3MoaGVybywgZGVhdGhfcG9zX2Zvcl9yZWJvcm4pCiAgICBpZiBub3QgaGVybyBvciBoZXJvOklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgYXR0ZW1wdHMgPSAxNAogICAgbG9jYWwgcmluZ19mYiA9IE1vbnN0ZXIgYW5kIE1vbnN0ZXIuU3RhdGljIGFuZCBNb25zdGVyLlN0YXRpYy5tYXBfY2VudGVyCiAgICBmb3IgXyA9IDEsIGF0dGVtcHRzIGRvCiAgICAgICAgbG9jYWwgcG9zID0gc2VsZjpIZXJvUG9zKGRlYXRoX3Bvc19mb3JfcmVib3JuKQogICAgICAgIGlmIHBvcyB0aGVuCiAgICAgICAgICAgIGxvY2FsIGdwID0gR2V0R3JvdW5kUG9zaXRpb24ocG9zLCBoZXJvKQogICAgICAgICAgICBwb3MgPSBWZWN0b3IoZ3AueCwgZ3AueSwgZ3AueikKICAgICAgICAgICAgaGVybzpTZXRBYnNPcmlnaW4ocG9zKQogICAgICAgICAgICBGaW5kQ2xlYXJTcGFjZUZvclVuaXQoaGVybywgcG9zLCB0cnVlKQogICAgICAgICAgICBncCA9IEdldEdyb3VuZFBvc2l0aW9uKGhlcm86R2V0QWJzT3JpZ2luKCksIGhlcm8pCiAgICAgICAgICAgIGhlcm86U2V0QWJzT3JpZ2luKFZlY3RvcihncC54LCBncC55LCBncC56KSkKICAgICAgICAgICAgRmluZENsZWFyU3BhY2VGb3JVbml0KGhlcm8sIGhlcm86R2V0QWJzT3JpZ2luKCksIHRydWUpCiAgICAgICAgICAgIGxvY2FsIGFwID0gaGVybzpHZXRBYnNPcmlnaW4oKQogICAgICAgICAgICBpZiBHcmlkTmF2OklzVHJhdmVyc2FibGUoYXApIHRoZW4KICAgICAgICAgICAgICAgIGxvY2FsIGJhZCA9IGZhbHNlCiAgICAgICAgICAgICAgICBpZiBHcmlkTmF2LklzQmxvY2tlZCB0aGVuCiAgICAgICAgICAgICAgICAgICAgbG9jYWwgb2tiLCBibCA9IHBjYWxsKGZ1bmN0aW9uKCkKICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIEdyaWROYXY6SXNCbG9ja2VkKGFwKQogICAgICAgICAgICAgICAgICAgIGVuZCkKICAgICAgICAgICAgICAgICAgICBpZiBva2IgYW5kIGJsIHRoZW4KICAgICAgICAgICAgICAgICAgICAgICAgYmFkID0gdHJ1ZQogICAgICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgICAgICBpZiBub3QgYmFkIGFuZCBub3QgSGVyb0RhdGFfUmVib3JuUG9pbnRDbGVhck9mVHJlZXMoYXApIHRoZW4KICAgICAgICAgICAgICAgICAgICBiYWQgPSB0cnVlCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgIGlmIG5vdCBiYWQgdGhlbgogICAgICAgICAgICAgICAgICAgIEhlcm9EYXRhX1JlYm9ybkZpbmFsaXplUG9zSW5zaWRlUG9pc29uUmluZyhoZXJvKQogICAgICAgICAgICAgICAgICAgIHJldHVybgogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCiAgICBpZiByaW5nX2ZiIHRoZW4KICAgICAgICBsb2NhbCBwb3MgPSBHZXRHcm91bmRQb3NpdGlvbihyaW5nX2ZiLCBoZXJvKQogICAgICAgIHBvcyA9IEhlcm9EYXRhX0NsYW1wUG9zVG9Qb2lzb25SaW5nSW5zZXQocG9zLCBoZXJvKSBvciBwb3MKICAgICAgICBoZXJvOlNldEFic09yaWdpbihwb3MpCiAgICAgICAgRmluZENsZWFyU3BhY2VGb3JVbml0KGhlcm8sIHBvcywgdHJ1ZSkKICAgICAgICBIZXJvRGF0YV9SZWJvcm5GaW5hbGl6ZVBvc0luc2lkZVBvaXNvblJpbmcoaGVybykKICAgIGVuZAplbmQKCi0t6I635Y+W6Iux6ZuE5bGe5oCnCmZ1bmN0aW9uIEhlcm9EYXRhOkdldFNYKElELCBuYW1lKQogICAgaWYgbm90IElEIG9yIG5vdCBuYW1lIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgcm93ID0gc2VsZi5EYXRhIGFuZCBzZWxmLkRhdGFbSURdCiAgICBpZiBub3Qgcm93IG9yIG5vdCByb3cuaGVyb19hdHRyIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgcmV0dXJuIHJvdy5oZXJvX2F0dHJbbmFtZV0KZW5kCgotLS0g54mp55CG5Lyk5a6z77ya5oyJIGhlcm9fYXR0ci53bGN077yIJS8xMDAg5pyJ5pWI5oqk55Sy5YmK5YeP77yJ5Zyo5Lyk5a6z6L+H5ruk5Lit6KGl5YG/5byV5pOO56iO5ZCO5Lyk5a6z77yI5LiOIERvdGEgMC4wNiDmiqTnlLLns7vmlbDkuIDoh7TvvIkKZnVuY3Rpb24gSGVyb0RhdGE6R2V0UGh5c2ljYWxBcm1vclBlbkRhbWFnZVNjYWxlKGF0dGFja2VyLCB0YXJnZXQpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuIDEKICAgIGVuZAogICAgaWYgbm90IGF0dGFja2VyIG9yIGF0dGFja2VyOklzTnVsbCgpIG9yIG5vdCB0YXJnZXQgb3IgdGFyZ2V0OklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4gMQogICAgZW5kCiAgICBpZiB0YXJnZXQ6SXNCdWlsZGluZygpIHRoZW4KICAgICAgICByZXR1cm4gMQogICAgZW5kCiAgICBpZiBhdHRhY2tlcjpJc0lsbHVzaW9uKCkgdGhlbgogICAgICAgIHJldHVybiAxCiAgICBlbmQKICAgIGxvY2FsIElEID0gVXRpbCBhbmQgVXRpbC5IZXJvMklEIGFuZCBVdGlsOkhlcm8ySUQoYXR0YWNrZXIpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybiAxCiAgICBlbmQKICAgIGxvY2FsIHJlZHVjZV9wY3QgPSB0b251bWJlcihzZWxmOkdldFNYKElELCAid2xjdCIpKSBvciAwCiAgICBsb2NhbCByZWR1Y2VfZmFjdG9yID0gbWF0aC5tYXgoMCwgbWF0aC5taW4ocmVkdWNlX3BjdCwgMTAwKSkgLyAxMDAKICAgIGlmIHJlZHVjZV9mYWN0b3IgPD0gMCB0aGVuCiAgICAgICAgcmV0dXJuIDEKICAgIGVuZAogICAgbG9jYWwgYXJtb3IgPSB0YXJnZXQ6R2V0UGh5c2ljYWxBcm1vclZhbHVlKGZhbHNlKQogICAgaWYgYXJtb3IgPD0gMCB0aGVuCiAgICAgICAgcmV0dXJuIDEKICAgIGVuZAogICAgcmV0dXJuICgxICsgMC4wNiAqIGFybW9yKSAvICgxICsgMC4wNiAqIGFybW9yICogKDEgLSByZWR1Y2VfZmFjdG9yKSkKZW5kCgotLeiOt+WPlklE5a+55bqU55qE6Iux6ZuECmZ1bmN0aW9uIEhlcm9EYXRhOkdldEhlcm8oSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBub3Qgc2VsZi5EYXRhW0lEXSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGhlcm9faW5kZXggPSBzZWxmLkRhdGFbSURdLmhlcm9faW5kZXgKICAgIGxvY2FsIGhlcm8gPSBFbnRJbmRleFRvSFNjcmlwdChoZXJvX2luZGV4KQogICAgcmV0dXJuIGhlcm8KZW5kCgotLeiOt+WPluiLsembhOWQjeWtlwpmdW5jdGlvbiBIZXJvRGF0YTpHZXRIZXJvTmFtZShJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIG5hbWUgPSBTZWxlY3RIZXJvLkRhdGFbSURdLmhlcm9fbmFtZQogICAgcmV0dXJuIG5hbWUKZW5kCgotLeiOt+WPluiLsembhOWkjea0u+aXtumXtApmdW5jdGlvbiBIZXJvRGF0YTpHZXRSZWJvcm5UaW1lKGhlcm8pCiAgICBsb2NhbCBsZXZlbCA9IGhlcm86R2V0TGV2ZWwoKQogICAgbG9jYWwgdGltZSA9IDUKICAgIGlmIGxldmVsIDw9IDUgdGhlbgogICAgICAgIHRpbWUgPSAzCiAgICBlbmQKICAgIGlmIGxldmVsID49IDYgYW5kIGxldmVsIDw9IDEwIHRoZW4KICAgICAgICB0aW1lID0gNAogICAgZW5kCiAgICBpZiBsZXZlbCA+PSAxMSBhbmQgbGV2ZWwgPD0gMTUgdGhlbgogICAgICAgIHRpbWUgPSA1CiAgICBlbmQKICAgIGlmIGxldmVsID49IDE2IGFuZCBsZXZlbCA8PSAyMCB0aGVuCiAgICAgICAgdGltZSA9IDUKICAgIGVuZAogICAgaWYgbGV2ZWwgPj0gMjEgYW5kIGxldmVsIDw9IDI1IHRoZW4KICAgICAgICB0aW1lID0gNQogICAgZW5kCiAgICBpZiBsZXZlbCA+PSAyNiB0aGVuCiAgICAgICAgdGltZSA9IDUKICAgIGVuZAogICAgaWYgaGVyby5MYXN0R2FtZVN0YXRlID09IHRydWUgdGhlbgogICAgICAgIHRpbWUgPSA1CiAgICBlbmQKICAgIGlmIGhlcm86SGFzTW9kaWZpZXIoIm1vZGlmaWVyX3RhbGVudF9za2lsbF83IikgdGhlbgogICAgICAgIHRpbWUgPSB0aW1lIC0gMgogICAgZW5kCiAgICBsb2NhbCBleHRyYSA9IChIZXJvRGF0YS5TdGF0aWMgYW5kIEhlcm9EYXRhLlN0YXRpYy5yZWJvcm5fdGltZV9leHRyYSkgb3IgMAogICAgdGltZSA9IHRpbWUgKyBleHRyYQogICAgcmV0dXJuIHRpbWUKZW5kCgpmdW5jdGlvbiBIZXJvRGF0YTpHZXRTdGFyKElEKQogICAgcmV0dXJuIHNlbGYuRGF0YVtJRF0uc3RhcgplbmQKCi0t5piv5ZCm5piv5py65Zmo5Lq6CmZ1bmN0aW9uIEhlcm9EYXRhOklzQm90KElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgcGxheWVyX2RhdGEgPSBJbml0UGxheWVyOkdldFBsYXllckRhdGEoSUQpCiAgICBpZiBub3QgcGxheWVyX2RhdGEgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICByZXR1cm4gcGxheWVyX2RhdGEuYm90CmVuZAo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+--英雄第一次出生
+function HeroData:HeroInitPos(ID)
+    if not ID then
+        return
+    end
+    local player_data = InitPlayer:GetPlayerData(ID)
+    if not player_data then
+        return
+    end
+    local init_pos = player_data.init_pos
+    if not init_pos or type(init_pos) ~= "number" or init_pos < 1 then
+        return
+    end
+    local init_key = "init" .. init_pos
+    local all_pos = Entities:FindAllByClassname("info_target")
+    for k, v in pairs(all_pos) do
+        if v and v:GetName() == init_key then
+            return v:GetAbsOrigin()
+        end
+    end
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+-- 随机偏移最大距离，用于预留圈内余量（仅缩圈前大圈）
+local REBORN_RANDOM_MARGIN = 600
+-- 缩圈后复活「远离边界」：内收 POISON_RING_RESPAWN_INSET；仅第一波缩圈(stage<2,rang1)需要，第二波(stage>=2,rang2)不再内收允许贴沿
+local POISON_RING_RESPAWN_INSET = 2200
+-- 缩圈前（state==1）复活：落点与死亡点最小平面距离
+local REBORN_MIN_DIST_FROM_DEATH_PRE_SHRINK = 5000
+local REBORN_SAMPLE_ATTEMPTS = 80
+-- 复活落点与树木最小平面距离（码）；IsNearbyTree 用该半径检测是否与树碰撞/重叠
+local REBORN_MIN_TREE_CLEARANCE = 150
+
+-- 与 MainGame 英雄毒伤一致：state<2 时尚未按 rang 毒英雄，不裁剪
+local function HeroData_GetCurrentPoisonRingRadius()
+    local mg_state = (MainGame and MainGame.GetState and MainGame:GetState()) or 1
+    if mg_state < 2 then
+        return nil
+    end
+    local stage = Monster and Monster.Data and Monster.Data.stage or 1
+    if stage >= 2 then
+        return MainGame.Static.rang2
+    end
+    return MainGame.Static.rang1
+end
+
+local function HeroData_ShouldInsetRespawnFromPoisonEdge()
+    local mg_state = (MainGame and MainGame.GetState and MainGame:GetState()) or 1
+    if mg_state < 2 then
+        return false
+    end
+    local stage = Monster and Monster.Data and Monster.Data.stage or 1
+    return stage < 2
+end
+
+-- 将地面落点沿径向收进「毒圈半径 - （仅第一波缩圈时）POISON_RING_RESPAWN_INSET」内（人机/真人复活共用）
+local function HeroData_ClampPosToPoisonRingInset(ground_pos, hero_for_ground)
+    if not ground_pos then
+        return nil
+    end
+    local ring_center = Monster and Monster.Static and Monster.Static.map_center
+    if not ring_center then
+        return ground_pos
+    end
+    local radius = HeroData_GetCurrentPoisonRingRadius()
+    if radius == nil then
+        return ground_pos
+    end
+    local inset_use = HeroData_ShouldInsetRespawnFromPoisonEdge() and POISON_RING_RESPAWN_INSET or 0
+    local max_dist = math.max(0, radius - inset_use)
+    local v = ground_pos - ring_center
+    local len = v:Length2D()
+    if len <= max_dist then
+        return ground_pos
+    end
+    if len < 1e-6 then
+        return GetGroundPosition(ring_center, hero_for_ground)
+    end
+    local s = max_dist / len
+    local p = Vector(ring_center.x + v.x * s, ring_center.y + v.y * s, ground_pos.z)
+    return GetGroundPosition(p, hero_for_ground)
+end
+
+-- 人机从 Rebron 表直落时无 HeroPos 裁剪，二圈后可能落在毒圈外；按当前 stage 与毒圈半径收进安全区
+local function HeroData_ClampBotPosToCurrentRing(ground_pos, hero_for_ground)
+    return HeroData_ClampPosToPoisonRingInset(ground_pos, hero_for_ground)
+end
+
+-- FindClearSpace / 引擎挤位可能把单位推到毒圈边；再收一进（需在 BotOnly / ApplyRebornClearPos 可见，故置于此）
+local function HeroData_RebornFinalizePosInsidePoisonRing(hero)
+    if not hero or hero:IsNull() then
+        return
+    end
+    local gp = GetGroundPosition(hero:GetAbsOrigin(), hero)
+    local v = Vector(gp.x, gp.y, gp.z)
+    local clamped = HeroData_ClampPosToPoisonRingInset(v, hero)
+    if not clamped then
+        return
+    end
+    if (clamped - v):Length2D() < 4 then
+        return
+    end
+    hero:SetAbsOrigin(clamped)
+    FindClearSpaceForUnit(hero, clamped, true)
+    gp = GetGroundPosition(hero:GetAbsOrigin(), hero)
+    hero:SetAbsOrigin(Vector(gp.x, gp.y, gp.z))
+    FindClearSpaceForUnit(hero, hero:GetAbsOrigin(), true)
+end
+
+local function HeroData_RebornPointClearOfTrees(pos)
+    if not pos then
+        return false
+    end
+    if not GridNav or not GridNav.IsNearbyTree then
+        return true
+    end
+    local ok, overlaps = pcall(function()
+        return GridNav:IsNearbyTree(pos, REBORN_MIN_TREE_CLEARANCE, true)
+    end)
+    if not ok then
+        return true
+    end
+    return not overlaps
+end
+
+-- 从 Rebron1（缩圈前）/ Rebron2（缩圈后）中随机取一个英雄复活点，作为随机采样圆心；毒圈与路径仍相对地图中心 map_center
+local function HeroData_PickRandomRebronBase(mg_state)
+    local tab = (mg_state == 1) and HeroData.Rebron1 or HeroData.Rebron2
+    if not tab then
+        return nil
+    end
+    local list = {}
+    for _, v in pairs(tab) do
+        if v and v.x then
+            list[#list + 1] = v
+        end
+    end
+    if #list == 0 then
+        return nil
+    end
+    return list[RandomInt(1, #list)]
+end
+
+--- 人机专用复活落点（与真人 ApplyRebornClearPos / HeroPos 完全无关）。
+--- 在 RespawnUnit() 之后由服务端延迟调用：从 HeroData.Rebron1 / Rebron2（Config）随机取一点贴地传送。
+--- 延后一帧 + 短延迟再设一次，避免引擎默认复活区覆盖坐标。
+function HeroData:BotOnly_RespawnTeleportFromTable(bot_player_id)
+    if bot_player_id == nil then
+        return
+    end
+    local function pick_hero()
+        local h = Util:ID2Hero(bot_player_id)
+        if not h or h:IsNull() then
+            h = HeroData:GetHero(bot_player_id)
+        end
+        if h and not h:IsNull() then
+            return h
+        end
+    end
+    local function do_place(h)
+        if not h then
+            return
+        end
+        if h.Stop then
+            pcall(function()
+                h:Stop()
+            end)
+        end
+        local mg_state = (MainGame and MainGame.GetState and MainGame:GetState() or 1)
+        local ring_fb = Monster and Monster.Static and Monster.Static.map_center
+        local pos
+        for _ = 1, 20 do
+            local raw = HeroData_PickRandomRebronBase(mg_state)
+            if raw then
+                pos = GetGroundPosition(Vector(raw.x, raw.y, raw.z), h)
+            elseif ring_fb then
+                pos = GetGroundPosition(ring_fb, h)
+            end
+            if pos and HeroData_RebornPointClearOfTrees(pos) then
+                pos = HeroData_ClampBotPosToCurrentRing(pos, h)
+                break
+            end
+            pos = nil
+        end
+        if not pos and ring_fb then
+            pos = GetGroundPosition(ring_fb, h)
+        end
+        if pos then
+            pos = HeroData_ClampBotPosToCurrentRing(pos, h)
+            h._clrb_bot_reborn_dst = pos
+            h:SetAbsOrigin(pos)
+            HeroData_RebornFinalizePosInsidePoisonRing(h)
+        end
+    end
+    Timers(0, function()
+        do_place(pick_hero())
+    end)
+    Timers(0.08, function()
+        local h = pick_hero()
+        if h and h._clrb_bot_reborn_dst then
+            h:SetAbsOrigin(GetGroundPosition(h._clrb_bot_reborn_dst, h))
+            h._clrb_bot_reborn_dst = nil
+            HeroData_RebornFinalizePosInsidePoisonRing(h)
+        end
+    end)
+end
+
+-- 英雄复活点：在毒圈允许半径内随机采样，采样圆心为随机 Rebron 点（非地图中心）；缩圈前还须从地图中心 CanFindPath 可达，且距死亡点至少 REBORN_MIN_DIST_FROM_DEATH_PRE_SHRINK；缩圈后在圈内随机可行走点（相对 map_center 的 rang，不能落在毒圈外）。
+-- Rebron1/Rebron2 亦用于 Bot 巡逻等逻辑。
+function HeroData:HeroPos(avoid_death_pos)
+    local mg_state = 1
+    if MainGame and MainGame.GetState then
+        mg_state = MainGame:GetState() or 1
+    end
+    local ring_center = Monster and Monster.Static and Monster.Static.map_center
+    if not ring_center then
+        return Vector(0, 0, 0)
+    end
+    local sample_base = HeroData_PickRandomRebronBase(mg_state) or ring_center
+
+    local radius
+    if mg_state == 1 then
+        radius = 10000
+    else
+        local stage = Monster and Monster.Data and Monster.Data.stage or 1
+        if stage >= 2 then
+            radius = MainGame.Static.rang2
+        else
+            radius = MainGame.Static.rang1
+        end
+    end
+    local safe_radius = math.max(0, radius - REBORN_RANDOM_MARGIN)
+    local inset_px = HeroData_ShouldInsetRespawnFromPoisonEdge() and POISON_RING_RESPAWN_INSET or 0
+    -- 缩圈后：采样/裁剪半径不超过当前毒圈；仅第一波缩圈再减 inset_px；缩圈前仍用大圈 safe_radius
+    local spawn_cap = (mg_state == 1) and safe_radius or math.max(0, radius - inset_px)
+    -- 以随机 Rebron 为圆心、在至多 spawn_cap 距离内均匀随机（大范围）；落点再由 clamp_to_ring 限制在毒圈内，卡树由 ApplyRebornClearPos 多轮挤位
+    local jitter_max = spawn_cap
+
+    local center_nav = Util:FindCanReachPos(Vector(ring_center.x, ring_center.y, ring_center.z))
+    local require_path_from_center = (mg_state == 1)
+    local require_death_clearance = (mg_state == 1 and avoid_death_pos ~= nil)
+
+    local function clamp_to_ring(candidate)
+        local v = candidate - ring_center
+        local len2d = v:Length2D()
+        if len2d < 1e-6 then
+            return candidate
+        end
+        if len2d > spawn_cap then
+            local s = spawn_cap / len2d
+            return Vector(ring_center.x + v.x * s, ring_center.y + v.y * s, candidate.z)
+        end
+        return candidate
+    end
+
+    local function nav_cell_usable(v)
+        if not v then
+            return false
+        end
+        if not GridNav:IsTraversable(v) then
+            return false
+        end
+        if GridNav.IsBlocked then
+            local ok, blocked = pcall(function()
+                return GridNav:IsBlocked(v)
+            end)
+            if ok and blocked then
+                return false
+            end
+        end
+        return true
+    end
+
+    local function candidate_ok(vec)
+        local candidate = Util:FindCanReachPos(clamp_to_ring(vec))
+        candidate = clamp_to_ring(candidate)
+        local gp = GetGroundPosition(candidate, nil)
+        candidate = Vector(gp.x, gp.y, gp.z)
+        if not nav_cell_usable(candidate) then
+            return nil
+        end
+        if mg_state >= 2 then
+            local ld = (candidate - ring_center):Length2D()
+            if ld > spawn_cap then
+                return nil
+            end
+        end
+        if require_path_from_center and CanFindPath and not CanFindPath(center_nav, candidate) then
+            return nil
+        end
+        if require_death_clearance and (candidate - avoid_death_pos):Length2D() < REBORN_MIN_DIST_FROM_DEATH_PRE_SHRINK then
+            return nil
+        end
+        if not HeroData_RebornPointClearOfTrees(candidate) then
+            return nil
+        end
+        return candidate
+    end
+
+    for _ = 1, REBORN_SAMPLE_ATTEMPTS do
+        local raw = sample_base + RandomVector(RandomFloat(0, jitter_max))
+        local pos = candidate_ok(raw)
+        if pos then
+            return pos
+        end
+    end
+
+    if require_death_clearance then
+        local away = ring_center - avoid_death_pos
+        local l2 = away:Length2D()
+        if l2 < 1e-3 then
+            away = RandomVector(1)
+        end
+        away = Vector(away.x, away.y, 0):Normalized()
+        local cand = ring_center + away * (spawn_cap * 0.75)
+        local pos = candidate_ok(cand)
+        if pos then
+            return pos
+        end
+    end
+
+    if mg_state >= 2 then
+        for _ = 1, 40 do
+            local raw = sample_base + RandomVector(RandomFloat(0, jitter_max * 0.6))
+            local c = Util:FindCanReachPos(clamp_to_ring(raw))
+            c = clamp_to_ring(c)
+            if c and (c - ring_center):Length2D() <= spawn_cap and HeroData_RebornPointClearOfTrees(c) then
+                return c
+            end
+        end
+        local fb = clamp_to_ring(center_nav)
+        if HeroData_RebornPointClearOfTrees(fb) then
+            return fb
+        end
+    end
+
+    for _ = 1, 24 do
+        local jitter = RandomVector(RandomFloat(40, 500))
+        local c = GetGroundPosition(center_nav + jitter, nil)
+        c = Vector(c.x, c.y, c.z)
+        if mg_state >= 2 then
+            c = clamp_to_ring(c)
+        end
+        if nav_cell_usable(c) and HeroData_RebornPointClearOfTrees(c) then
+            if mg_state < 2 or (c - ring_center):Length2D() <= spawn_cap then
+                return c
+            end
+        end
+    end
+    if mg_state >= 2 then
+        center_nav = clamp_to_ring(Util:FindCanReachPos(center_nav))
+        center_nav = clamp_to_ring(center_nav)
+        local gf = GetGroundPosition(center_nav, nil)
+        center_nav = Vector(gf.x, gf.y, gf.z)
+    end
+    return center_nav
+end
+
+function HeroData:ApplyRebornClearPos(hero, death_pos_for_reborn)
+    if not hero or hero:IsNull() then
+        return
+    end
+    local attempts = 14
+    local ring_fb = Monster and Monster.Static and Monster.Static.map_center
+    for _ = 1, attempts do
+        local pos = self:HeroPos(death_pos_for_reborn)
+        if pos then
+            local gp = GetGroundPosition(pos, hero)
+            pos = Vector(gp.x, gp.y, gp.z)
+            hero:SetAbsOrigin(pos)
+            FindClearSpaceForUnit(hero, pos, true)
+            gp = GetGroundPosition(hero:GetAbsOrigin(), hero)
+            hero:SetAbsOrigin(Vector(gp.x, gp.y, gp.z))
+            FindClearSpaceForUnit(hero, hero:GetAbsOrigin(), true)
+            local ap = hero:GetAbsOrigin()
+            if GridNav:IsTraversable(ap) then
+                local bad = false
+                if GridNav.IsBlocked then
+                    local okb, bl = pcall(function()
+                        return GridNav:IsBlocked(ap)
+                    end)
+                    if okb and bl then
+                        bad = true
+                    end
+                end
+                if not bad and not HeroData_RebornPointClearOfTrees(ap) then
+                    bad = true
+                end
+                if not bad then
+                    HeroData_RebornFinalizePosInsidePoisonRing(hero)
+                    return
+                end
+            end
+        end
+    end
+    if ring_fb then
+        local pos = GetGroundPosition(ring_fb, hero)
+        pos = HeroData_ClampPosToPoisonRingInset(pos, hero) or pos
+        hero:SetAbsOrigin(pos)
+        FindClearSpaceForUnit(hero, pos, true)
+        HeroData_RebornFinalizePosInsidePoisonRing(hero)
+    end
+end
+
+--获取英雄属性
+function HeroData:GetSX(ID, name)
+    if not ID or not name then
+        return
+    end
+    local row = self.Data and self.Data[ID]
+    if not row or not row.hero_attr then
+        return
+    end
+    return row.hero_attr[name]
+end
+
+--- 物理伤害：按 hero_attr.wlct（%/100 有效护甲削减）在伤害过滤中补偿引擎税后伤害（与 Dota 0.06 护甲系数一致）
+function HeroData:GetPhysicalArmorPenDamageScale(attacker, target)
+    if not IsServer() then
+        return 1
+    end
+    if not attacker or attacker:IsNull() or not target or target:IsNull() then
+        return 1
+    end
+    if target:IsBuilding() then
+        return 1
+    end
+    if attacker:IsIllusion() then
+        return 1
+    end
+    local ID = Util and Util.Hero2ID and Util:Hero2ID(attacker)
+    if not ID then
+        return 1
+    end
+    local reduce_pct = tonumber(self:GetSX(ID, "wlct")) or 0
+    local reduce_factor = math.max(0, math.min(reduce_pct, 100)) / 100
+    if reduce_factor <= 0 then
+        return 1
+    end
+    local armor = target:GetPhysicalArmorValue(false)
+    if armor <= 0 then
+        return 1
+    end
+    return (1 + 0.06 * armor) / (1 + 0.06 * armor * (1 - reduce_factor))
+end
+
+--获取ID对应的英雄
+function HeroData:GetHero(ID)
+    if not ID then
+        return
+    end
+    if not self.Data[ID] then
+        return
+    end
+    local hero_index = self.Data[ID].hero_index
+    local hero = EntIndexToHScript(hero_index)
+    return hero
+end
+
+--获取英雄名字
+function HeroData:GetHeroName(ID)
+    if not ID then
+        return
+    end
+    local name = SelectHero.Data[ID].hero_name
+    return name
+end
+
+--获取英雄复活时间
+function HeroData:GetRebornTime(hero)
+    local level = hero:GetLevel()
+    local time = 5
+    if level <= 5 then
+        time = 3
+    end
+    if level >= 6 and level <= 10 then
+        time = 4
+    end
+    if level >= 11 and level <= 15 then
+        time = 5
+    end
+    if level >= 16 and level <= 20 then
+        time = 5
+    end
+    if level >= 21 and level <= 25 then
+        time = 5
+    end
+    if level >= 26 then
+        time = 5
+    end
+    if hero.LastGameState == true then
+        time = 5
+    end
+    if hero:HasModifier("modifier_talent_skill_7") then
+        time = time - 2
+    end
+    local extra = (HeroData.Static and HeroData.Static.reborn_time_extra) or 0
+    time = time + extra
+    return time
+end
+
+function HeroData:GetStar(ID)
+    return self.Data[ID].star
+end
+
+--是否是机器人
+function HeroData:IsBot(ID)
+    if not ID then
+        return
+    end
+    local player_data = InitPlayer:GetPlayerData(ID)
+    if not player_data then
+        return
+    end
+    return player_data.bot
+end

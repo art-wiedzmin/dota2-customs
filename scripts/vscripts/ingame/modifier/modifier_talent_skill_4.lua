@@ -8,22 +8,200 @@
 ]]
 
 
-local encoded=[[LS0g6KKr5Yqo5aSp6LWLIDTvvJrlrojljavigJTigJTliJ3lp4sgLTIwJSDmlLvlh7vlipvliqDmiJDjgIErMTIlIOeUn+WRveWinuW5he+8m+avj+WIhumSn+mineWkliAtMiUgLyArMSXvvJsKLS0g5a+55bGAIDE1IOWIhumSn+WQjuiOt+W+lyA1JSDmnIDnu4jlh4/kvKQKLS0gVG9vbHRpcCDplK7vvJpET1RBX1Rvb2x0aXBfbW9kaWZpZXJfdGFsZW50X3NraWxsXzQKCnJlcXVpcmUoImluZ2FtZS5tb2RpZmllci5tb2RpZmllcl9jbHJiX3RhbGVudHMiKQoKbW9kaWZpZXJfdGFsZW50X3NraWxsXzQgPSBjbGFzcyh7fSkKCmxvY2FsIE1JTlVURV9JTlRFUlZBTCA9IDYwCmxvY2FsIEJBU0VfR0pKQyA9IC0yMApsb2NhbCBCQVNFX1NNWkYgPSAxMgpsb2NhbCBHSkpDX1BFUl9NSU5VVEUgPSAtMgpsb2NhbCBTTVpGX1BFUl9NSU5VVEUgPSAxCmxvY2FsIFpaSlNfVU5MT0NLX01JTiA9IDE1CmxvY2FsIFpaSlNfQk9OVVMgPSA1CgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNDpJc0hpZGRlbigpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNDpJc0RlYnVmZigpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNDpJc1B1cmdhYmxlKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF80OlJlbW92ZU9uRGVhdGgoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzQ6SXNQZXJtYW5lbnQoKQogICAgcmV0dXJuIHRydWUKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNDpEZWNsYXJlRnVuY3Rpb25zKCkKICAgIHJldHVybiB7CiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfVE9PTFRJUCwKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9UT09MVElQMiwKICAgICAgICBNT0RJRklFUl9FVkVOVF9PTl9SRVNQQVdOLAogICAgfQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF80Ol9QbGF5ZXJJZCgpCiAgICBpZiBzZWxmLl9ib3VuZF9wbGF5ZXJfaWQgYW5kIHNlbGYuX2JvdW5kX3BsYXllcl9pZCA+PSAwIHRoZW4KICAgICAgICByZXR1cm4gc2VsZi5fYm91bmRfcGxheWVyX2lkCiAgICBlbmQKICAgIGxvY2FsIHAgPSBzZWxmOkdldFBhcmVudCgpCiAgICBpZiBub3QgcCBvciBwOklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4gLTEKICAgIGVuZAogICAgcmV0dXJuIENscmJHZXRPd25lclBsYXllcklkKHApCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzQ6X0N1cnJlbnRHampjQm9udXMoKQogICAgcmV0dXJuIEJBU0VfR0pKQyArIChzZWxmOkdldFN0YWNrQ291bnQoKSBvciAwKSAqIEdKSkNfUEVSX01JTlVURQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF80Ol9DdXJyZW50U216ZkJvbnVzKCkKICAgIHJldHVybiBCQVNFX1NNWkYgKyAoc2VsZjpHZXRTdGFja0NvdW50KCkgb3IgMCkgKiBTTVpGX1BFUl9NSU5VVEUKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNDpfQXBwbHlTdGF0RGVsdGEoZ2pqY19kZWx0YSwgc216Zl9kZWx0YSkKICAgIGxvY2FsIHBpZCA9IHNlbGY6X1BsYXllcklkKCkKICAgIGlmIHBpZCA8IDAgb3Igbm90IEhlcm9EYXRhIG9yIG5vdCBIZXJvRGF0YS5BZGRTWCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIGdqamNfZGVsdGEgYW5kIGdqamNfZGVsdGEgfj0gMCB0aGVuCiAgICAgICAgSGVyb0RhdGE6QWRkU1gocGlkLCAiZ2pqYyIsIGdqamNfZGVsdGEpCiAgICAgICAgc2VsZi5hcHBsaWVkX2dqamMgPSAoc2VsZi5hcHBsaWVkX2dqamMgb3IgMCkgKyBnampjX2RlbHRhCiAgICBlbmQKICAgIGlmIHNtemZfZGVsdGEgYW5kIHNtemZfZGVsdGEgfj0gMCB0aGVuCiAgICAgICAgSGVyb0RhdGE6QWRkU1gocGlkLCAic216ZiIsIHNtemZfZGVsdGEpCiAgICAgICAgc2VsZi5hcHBsaWVkX3NtemYgPSAoc2VsZi5hcHBsaWVkX3NtemYgb3IgMCkgKyBzbXpmX2RlbHRhCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNDpfVHJ5R3JhbnRaempzKCkKICAgIGlmIHNlbGYuX3p6anNfZ3JhbnRlZCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGdhbWVfbWluID0gKE1haW5HYW1lIGFuZCBNYWluR2FtZS5HZXRUaW1lTWluIGFuZCBNYWluR2FtZTpHZXRUaW1lTWluKCkpIG9yIDAKICAgIGlmIGdhbWVfbWluIDwgWlpKU19VTkxPQ0tfTUlOIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgcGlkID0gc2VsZjpfUGxheWVySWQoKQogICAgaWYgcGlkIDwgMCBvciBub3QgSGVyb0RhdGEgb3Igbm90IEhlcm9EYXRhLkFkZFNYIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5fenpqc19ncmFudGVkID0gdHJ1ZQogICAgSGVyb0RhdGE6QWRkU1gocGlkLCAienpqcyIsIFpaSlNfQk9OVVMpCiAgICBzZWxmLmFwcGxpZWRfenpqcyA9IFpaSlNfQk9OVVMKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNDpfUmV2ZXJ0QWxsU3RhdHMoKQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBwaWQgPSBzZWxmOl9QbGF5ZXJJZCgpCiAgICBpZiBwaWQgPCAwIG9yIG5vdCBIZXJvRGF0YSBvciBub3QgSGVyb0RhdGEuQWRkU1ggdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBnampjID0gc2VsZi5hcHBsaWVkX2dqamMgb3IgMAogICAgbG9jYWwgc216ZiA9IHNlbGYuYXBwbGllZF9zbXpmIG9yIDAKICAgIGxvY2FsIHp6anMgPSBzZWxmLmFwcGxpZWRfenpqcyBvciAwCiAgICBpZiBnampjIH49IDAgdGhlbgogICAgICAgIEhlcm9EYXRhOkFkZFNYKHBpZCwgImdqamMiLCAtZ2pqYykKICAgIGVuZAogICAgaWYgc216ZiB+PSAwIHRoZW4KICAgICAgICBIZXJvRGF0YTpBZGRTWChwaWQsICJzbXpmIiwgLXNtemYpCiAgICBlbmQKICAgIGlmIHp6anMgfj0gMCB0aGVuCiAgICAgICAgSGVyb0RhdGE6QWRkU1gocGlkLCAienpqcyIsIC16empzKQogICAgZW5kCiAgICBzZWxmLmFwcGxpZWRfZ2pqYyA9IDAKICAgIHNlbGYuYXBwbGllZF9zbXpmID0gMAogICAgc2VsZi5hcHBsaWVkX3p6anMgPSAwCiAgICBzZWxmLl96empzX2dyYW50ZWQgPSBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF80Ol9UcnlBZGRNaW51dGVTdGFjaygpCiAgICBsb2NhbCBwID0gc2VsZjpHZXRQYXJlbnQoKQogICAgaWYgbm90IHAgb3IgcDpJc051bGwoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBsb2NhbCBub3cgPSBHYW1lUnVsZXM6R2V0R2FtZVRpbWUoKQogICAgaWYgbm90IHNlbGYuX2xhc3RfbWludXRlX3RpbWUgdGhlbgogICAgICAgIHNlbGYuX2xhc3RfbWludXRlX3RpbWUgPSBub3cKICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGxvY2FsIGdhaW5lZCA9IDAKICAgIHdoaWxlIChub3cgLSBzZWxmLl9sYXN0X21pbnV0ZV90aW1lKSA+PSBNSU5VVEVfSU5URVJWQUwgZG8KICAgICAgICBnYWluZWQgPSBnYWluZWQgKyAxCiAgICAgICAgc2VsZi5fbGFzdF9taW51dGVfdGltZSA9IHNlbGYuX2xhc3RfbWludXRlX3RpbWUgKyBNSU5VVEVfSU5URVJWQUwKICAgIGVuZAoKICAgIGlmIGdhaW5lZCA+IDAgdGhlbgogICAgICAgIHNlbGY6U2V0U3RhY2tDb3VudChzZWxmOkdldFN0YWNrQ291bnQoKSArIGdhaW5lZCkKICAgICAgICBzZWxmOl9BcHBseVN0YXREZWx0YShnYWluZWQgKiBHSkpDX1BFUl9NSU5VVEUsIGdhaW5lZCAqIFNNWkZfUEVSX01JTlVURSkKICAgICAgICBwOkNhbGN1bGF0ZVN0YXRCb251cyh0cnVlKQogICAgZW5kCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzQ6T25SZXNwYXduKCkKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZjpfVHJ5QWRkTWludXRlU3RhY2soKQogICAgc2VsZjpfVHJ5R3JhbnRaempzKCkKICAgIHNlbGY6U3RhcnRJbnRlcnZhbFRoaW5rKDEpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzQ6T25DcmVhdGVkKGt2KQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmLl9ib3VuZF9wbGF5ZXJfaWQgPSBrdiBhbmQgdG9udW1iZXIoa3YucGxheWVyX2lkKSBvciAtMQogICAgc2VsZi5hcHBsaWVkX2dqamMgPSAwCiAgICBzZWxmLmFwcGxpZWRfc216ZiA9IDAKICAgIHNlbGYuYXBwbGllZF96empzID0gMAogICAgc2VsZi5fenpqc19ncmFudGVkID0gZmFsc2UKICAgIHNlbGYuX2xhc3RfbWludXRlX3RpbWUgPSBHYW1lUnVsZXM6R2V0R2FtZVRpbWUoKQogICAgc2VsZjpTZXRTdGFja0NvdW50KDApCiAgICBzZWxmOl9BcHBseVN0YXREZWx0YShCQVNFX0dKSkMsIEJBU0VfU01aRikKICAgIHNlbGY6X1RyeUdyYW50WnpqcygpCiAgICBzZWxmOlN0YXJ0SW50ZXJ2YWxUaGluaygxKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF80Ok9uRGVzdHJveSgpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGY6X1JldmVydEFsbFN0YXRzKCkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNDpPbkludGVydmFsVGhpbmsoKQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmOl9UcnlBZGRNaW51dGVTdGFjaygpCiAgICBzZWxmOl9UcnlHcmFudFp6anMoKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF80Ok9uVG9vbHRpcCgpCiAgICByZXR1cm4gc2VsZjpfQ3VycmVudFNtemZCb251cygpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzQ6T25Ub29sdGlwMigpCiAgICByZXR1cm4gLXNlbGY6X0N1cnJlbnRHampjQm9udXMoKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF80OkdldFRleHR1cmUoKQogICAgcmV0dXJuICJidWZmL3RhbGVudF80IgplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 被动天赋 4：守卫——初始 -20% 攻击力加成、+12% 生命增幅；每分钟额外 -2% / +1%；
+-- 对局 15 分钟后获得 5% 最终减伤
+-- Tooltip 键：DOTA_Tooltip_modifier_talent_skill_4
+
+require("ingame.modifier.modifier_clrb_talents")
+
+modifier_talent_skill_4 = class({})
+
+local MINUTE_INTERVAL = 60
+local BASE_GJJC = -20
+local BASE_SMZF = 12
+local GJJC_PER_MINUTE = -2
+local SMZF_PER_MINUTE = 1
+local ZZJS_UNLOCK_MIN = 15
+local ZZJS_BONUS = 5
+
+function modifier_talent_skill_4:IsHidden()
+    return false
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function modifier_talent_skill_4:IsDebuff()
+    return false
+end
+
+function modifier_talent_skill_4:IsPurgable()
+    return false
+end
+
+function modifier_talent_skill_4:RemoveOnDeath()
+    return false
+end
+
+function modifier_talent_skill_4:IsPermanent()
+    return true
+end
+
+function modifier_talent_skill_4:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_TOOLTIP,
+        MODIFIER_PROPERTY_TOOLTIP2,
+        MODIFIER_EVENT_ON_RESPAWN,
+    }
+end
+
+function modifier_talent_skill_4:_PlayerId()
+    if self._bound_player_id and self._bound_player_id >= 0 then
+        return self._bound_player_id
+    end
+    local p = self:GetParent()
+    if not p or p:IsNull() then
+        return -1
+    end
+    return ClrbGetOwnerPlayerId(p)
+end
+
+function modifier_talent_skill_4:_CurrentGjjcBonus()
+    return BASE_GJJC + (self:GetStackCount() or 0) * GJJC_PER_MINUTE
+end
+
+function modifier_talent_skill_4:_CurrentSmzfBonus()
+    return BASE_SMZF + (self:GetStackCount() or 0) * SMZF_PER_MINUTE
+end
+
+function modifier_talent_skill_4:_ApplyStatDelta(gjjc_delta, smzf_delta)
+    local pid = self:_PlayerId()
+    if pid < 0 or not HeroData or not HeroData.AddSX then
+        return
+    end
+    if gjjc_delta and gjjc_delta ~= 0 then
+        HeroData:AddSX(pid, "gjjc", gjjc_delta)
+        self.applied_gjjc = (self.applied_gjjc or 0) + gjjc_delta
+    end
+    if smzf_delta and smzf_delta ~= 0 then
+        HeroData:AddSX(pid, "smzf", smzf_delta)
+        self.applied_smzf = (self.applied_smzf or 0) + smzf_delta
+    end
+end
+
+function modifier_talent_skill_4:_TryGrantZzjs()
+    if self._zzjs_granted then
+        return
+    end
+    local game_min = (MainGame and MainGame.GetTimeMin and MainGame:GetTimeMin()) or 0
+    if game_min < ZZJS_UNLOCK_MIN then
+        return
+    end
+    local pid = self:_PlayerId()
+    if pid < 0 or not HeroData or not HeroData.AddSX then
+        return
+    end
+    self._zzjs_granted = true
+    HeroData:AddSX(pid, "zzjs", ZZJS_BONUS)
+    self.applied_zzjs = ZZJS_BONUS
+end
+
+function modifier_talent_skill_4:_RevertAllStats()
+    if not IsServer() then
+        return
+    end
+    local pid = self:_PlayerId()
+    if pid < 0 or not HeroData or not HeroData.AddSX then
+        return
+    end
+    local gjjc = self.applied_gjjc or 0
+    local smzf = self.applied_smzf or 0
+    local zzjs = self.applied_zzjs or 0
+    if gjjc ~= 0 then
+        HeroData:AddSX(pid, "gjjc", -gjjc)
+    end
+    if smzf ~= 0 then
+        HeroData:AddSX(pid, "smzf", -smzf)
+    end
+    if zzjs ~= 0 then
+        HeroData:AddSX(pid, "zzjs", -zzjs)
+    end
+    self.applied_gjjc = 0
+    self.applied_smzf = 0
+    self.applied_zzjs = 0
+    self._zzjs_granted = false
+end
+
+function modifier_talent_skill_4:_TryAddMinuteStack()
+    local p = self:GetParent()
+    if not p or p:IsNull() then
+        return
+    end
+
+    local now = GameRules:GetGameTime()
+    if not self._last_minute_time then
+        self._last_minute_time = now
+        return
+    end
+
+    local gained = 0
+    while (now - self._last_minute_time) >= MINUTE_INTERVAL do
+        gained = gained + 1
+        self._last_minute_time = self._last_minute_time + MINUTE_INTERVAL
+    end
+
+    if gained > 0 then
+        self:SetStackCount(self:GetStackCount() + gained)
+        self:_ApplyStatDelta(gained * GJJC_PER_MINUTE, gained * SMZF_PER_MINUTE)
+        p:CalculateStatBonus(true)
+    end
+end
+
+function modifier_talent_skill_4:OnRespawn()
+    if not IsServer() then
+        return
+    end
+    self:_TryAddMinuteStack()
+    self:_TryGrantZzjs()
+    self:StartIntervalThink(1)
+end
+
+function modifier_talent_skill_4:OnCreated(kv)
+    if not IsServer() then
+        return
+    end
+    self._bound_player_id = kv and tonumber(kv.player_id) or -1
+    self.applied_gjjc = 0
+    self.applied_smzf = 0
+    self.applied_zzjs = 0
+    self._zzjs_granted = false
+    self._last_minute_time = GameRules:GetGameTime()
+    self:SetStackCount(0)
+    self:_ApplyStatDelta(BASE_GJJC, BASE_SMZF)
+    self:_TryGrantZzjs()
+    self:StartIntervalThink(1)
+end
+
+function modifier_talent_skill_4:OnDestroy()
+    if not IsServer() then
+        return
+    end
+    self:_RevertAllStats()
+end
+
+function modifier_talent_skill_4:OnIntervalThink()
+    if not IsServer() then
+        return
+    end
+    self:_TryAddMinuteStack()
+    self:_TryGrantZzjs()
+end
+
+function modifier_talent_skill_4:OnTooltip()
+    return self:_CurrentSmzfBonus()
+end
+
+function modifier_talent_skill_4:OnTooltip2()
+    return -self:_CurrentGjjcBonus()
+end
+
+function modifier_talent_skill_4:GetTexture()
+    return "buff/talent_4"
+end

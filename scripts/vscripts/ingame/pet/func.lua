@@ -8,22 +8,125 @@
 ]]
 
 
-local encoded=[[LS0tIOWxgOWkluiDjOWMheS9qeaItOWuoOeJqSAtPiDlsYDlhoXmmL7npLrkuI7oh6rliqjmi77lj5YKCmZ1bmN0aW9uIFBldDpQZXRBaVRpbWVyTmFtZShJRCkKICAgIHJldHVybiAiY2xyYl9wZXRfYWlfIiAuLiB0b3N0cmluZyhJRCkKZW5kCgpmdW5jdGlvbiBQZXQ6U3RvcFBldEFpKElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgVGltZXJzOlJlbW92ZVRpbWVyKHNlbGY6UGV0QWlUaW1lck5hbWUoSUQpKQogICAgaWYgc2VsZi5EYXRhW0lEXSB0aGVuCiAgICAgICAgc2VsZi5EYXRhW0lEXS5wZXRfYWlfdGltZXIgPSBuaWwKICAgIGVuZAplbmQKCmZ1bmN0aW9uIFBldDpJc1BpY2t1cEVuYWJsZWQoSUQpCiAgICBpZiBub3QgSUQgb3Igbm90IHNlbGYuRGF0YVtJRF0gdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBVdGlsIGFuZCBVdGlsLklEMklmT25saW5lIGFuZCBub3QgVXRpbDpJRDJJZk9ubGluZShJRCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICByZXR1cm4gc2VsZi5EYXRhW0lEXS5waWNrX2VuYWJsZWQgPT0gdHJ1ZQplbmQKCi0tLSDlrqDnianku4XmjILphY3nva7nmoTnjq/looPlhYnmlYjvvJvliaXnprvor6/mjILnmoToi7Hpm4TlkajouqvnibnmlYjvvIjnh4Png6fmnKvml6XnrYnvvIkKZnVuY3Rpb24gUGV0OkFwcGx5UGV0QW1iaWVudCh1bml0LCBJRCkKICAgIGlmIG5vdCB1bml0IG9yIHVuaXQ6SXNOdWxsKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiB1bml0Okhhc01vZGlmaWVyKCJtb2RpZmllcl9jbHJiX2VmZmVjdCIpIHRoZW4KICAgICAgICB1bml0OlJlbW92ZU1vZGlmaWVyQnlOYW1lKCJtb2RpZmllcl9jbHJiX2VmZmVjdCIpCiAgICBlbmQKICAgIGlmIHVuaXQ6SGFzTW9kaWZpZXIoIm1vZGlmaWVyX2NscmJfcGV0X2FtYmllbnQiKSB0aGVuCiAgICAgICAgdW5pdDpSZW1vdmVNb2RpZmllckJ5TmFtZSgibW9kaWZpZXJfY2xyYl9wZXRfYW1iaWVudCIpCiAgICBlbmQKICAgIGxvY2FsIHBldEZ4ID0gU2hvcCBhbmQgU2hvcC5HZXRFcXVpcHBlZFBldFBhcnRpY2xlIGFuZCBTaG9wOkdldEVxdWlwcGVkUGV0UGFydGljbGUoSUQpCiAgICBpZiBwZXRGeCBhbmQgcGV0Rnggfj0gIiIgdGhlbgogICAgICAgIHVuaXQ6QWRkTmV3TW9kaWZpZXIodW5pdCwgbmlsLCAibW9kaWZpZXJfY2xyYl9wZXRfYW1iaWVudCIsIHsgYW1iaWVudF9meCA9IHBldEZ4IH0pCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBQZXQ6R2V0TGl2ZVBldChJRCkKICAgIGlmIG5vdCBJRCBvciBub3Qgc2VsZi5EYXRhW0lEXSB0aGVuCiAgICAgICAgcmV0dXJuIG5pbAogICAgZW5kCiAgICBsb2NhbCBpbmRleCA9IHNlbGYuRGF0YVtJRF0uaW5kZXgKICAgIGlmIG5vdCBpbmRleCBvciBpbmRleCA8IDAgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgbG9jYWwgcGV0ID0gRW50SW5kZXhUb0hTY3JpcHQoaW5kZXgpCiAgICBpZiBub3QgcGV0IG9yIHBldDpJc051bGwoKSBvciBub3QgcGV0OklzQWxpdmUoKSB0aGVuCiAgICAgICAgcmV0dXJuIG5pbAogICAgZW5kCiAgICByZXR1cm4gcGV0CmVuZAoKZnVuY3Rpb24gUGV0OlJlbW92ZVBldChJRCkKICAgIGlmIG5vdCBJRCBvciBub3Qgc2VsZi5EYXRhW0lEXSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGY6U3RvcFBldEFpKElEKQogICAgc2VsZjpDbG9zZVBpY2soSUQpCiAgICBzZWxmLkRhdGFbSURdLnBpY2tfZW5hYmxlZCA9IGZhbHNlCiAgICBzZWxmLkRhdGFbSURdLnNlc3Npb25fcGV0X3JlYWR5ID0gdHJ1ZQogICAgbG9jYWwgcGV0ID0gc2VsZjpHZXRMaXZlUGV0KElEKQogICAgaWYgcGV0IHRoZW4KICAgICAgICBpZiBVdGlsIGFuZCBVdGlsLkVudGl0eTJLaWxsIHRoZW4KICAgICAgICAgICAgVXRpbDpFbnRpdHkyS2lsbChwZXQpCiAgICAgICAgZWxzZQogICAgICAgICAgICBwZXQ6Rm9yY2VLaWxsKGZhbHNlKQogICAgICAgICAgICBpZiBwZXQuSXNBbGl2ZSBhbmQgbm90IHBldDpJc0FsaXZlKCkgdGhlbgogICAgICAgICAgICAgICAgcGV0OlJlbW92ZVNlbGYoKQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZAogICAgc2VsZi5EYXRhW0lEXS5pbmRleCA9IC0xCmVuZAoKZnVuY3Rpb24gUGV0OlN5bmNGcm9tT3V0QmFnKElEKQogICAgaWYgbm90IElEIG9yIG5vdCBzZWxmLkRhdGFbSURdIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgVXRpbCBhbmQgVXRpbC5Jc1BzZXVkb1BsYXllcklEIGFuZCBVdGlsOklzUHNldWRvUGxheWVySUQoSUQpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgc2hvdWxkX3Nob3cgPSBTaG9wIGFuZCBTaG9wLlNob3VsZFNob3dJbkdhbWVQZXQgYW5kIFNob3A6U2hvdWxkU2hvd0luR2FtZVBldChJRCkKICAgIGxvY2FsIHBldF9rZXkgPSAiIgogICAgaWYgU2hvcCBhbmQgU2hvcC5HZXRFcXVpcHBlZFBldEtleSB0aGVuCiAgICAgICAgcGV0X2tleSA9IFNob3A6R2V0RXF1aXBwZWRQZXRLZXkoSUQpIG9yICIiCiAgICBlbmQKICAgIGxvY2FsIHByZXZfa2V5ID0gc2VsZi5EYXRhW0lEXS5lcXVpcHBlZF9wZXRfa2V5IG9yICIiCiAgICBpZiBwZXRfa2V5IH49IHByZXZfa2V5IHRoZW4KICAgICAgICBzZWxmLkRhdGFbSURdLmVxdWlwcGVkX3BldF9rZXkgPSBwZXRfa2V5CiAgICAgICAgaWYgc2VsZjpHZXRMaXZlUGV0KElEKSB0aGVuCiAgICAgICAgICAgIHNlbGY6UmVtb3ZlUGV0KElEKQogICAgICAgIGVuZAogICAgZW5kCiAgICBpZiBub3Qgc2hvdWxkX3Nob3cgdGhlbgogICAgICAgIHNlbGY6UmVtb3ZlUGV0KElEKQogICAgICAgIHJldHVybgogICAgZW5kCgogICAgbG9jYWwgaGVybyA9IFV0aWw6SUQySGVybyhJRCkKICAgIGlmIG5vdCBoZXJvIG9yIGhlcm86SXNOdWxsKCkgb3Igbm90IGhlcm86SXNBbGl2ZSgpIHRoZW4KICAgICAgICBpZiBzaG91bGRfc2hvdyB0aGVuCiAgICAgICAgICAgIHNlbGYuRGF0YVtJRF0ucGlja19lbmFibGVkID0gdHJ1ZQogICAgICAgIGVuZAogICAgICAgIHJldHVybgogICAgZW5kCgogICAgaWYgc2VsZjpHZXRMaXZlUGV0KElEKSB0aGVuCiAgICAgICAgc2VsZjpBcHBseVBldEFtYmllbnQoc2VsZjpHZXRMaXZlUGV0KElEKSwgSUQpCiAgICAgICAgc2VsZi5EYXRhW0lEXS5waWNrX2VuYWJsZWQgPSB0cnVlCiAgICAgICAgc2VsZi5EYXRhW0lEXS5zZXNzaW9uX3BldF9yZWFkeSA9IHRydWUKICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIHNlbGY6U3RvcFBldEFpKElEKQogICAgc2VsZjpJbml0UGV0KElEKQplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+--- 局外背包佩戴宠物 -> 局内显示与自动拾取
+
+function Pet:PetAiTimerName(ID)
+    return "clrb_pet_ai_" .. tostring(ID)
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function Pet:StopPetAi(ID)
+    if not ID then
+        return
+    end
+    Timers:RemoveTimer(self:PetAiTimerName(ID))
+    if self.Data[ID] then
+        self.Data[ID].pet_ai_timer = nil
+    end
+end
+
+function Pet:IsPickupEnabled(ID)
+    if not ID or not self.Data[ID] then
+        return false
+    end
+    if Util and Util.ID2IfOnline and not Util:ID2IfOnline(ID) then
+        return false
+    end
+    return self.Data[ID].pick_enabled == true
+end
+
+--- 宠物仅挂配置的环境光效；剥离误挂的英雄周身特效（燃烧末日等）
+function Pet:ApplyPetAmbient(unit, ID)
+    if not unit or unit:IsNull() then
+        return
+    end
+    if unit:HasModifier("modifier_clrb_effect") then
+        unit:RemoveModifierByName("modifier_clrb_effect")
+    end
+    if unit:HasModifier("modifier_clrb_pet_ambient") then
+        unit:RemoveModifierByName("modifier_clrb_pet_ambient")
+    end
+    local petFx = Shop and Shop.GetEquippedPetParticle and Shop:GetEquippedPetParticle(ID)
+    if petFx and petFx ~= "" then
+        unit:AddNewModifier(unit, nil, "modifier_clrb_pet_ambient", { ambient_fx = petFx })
+    end
+end
+
+function Pet:GetLivePet(ID)
+    if not ID or not self.Data[ID] then
+        return nil
+    end
+    local index = self.Data[ID].index
+    if not index or index < 0 then
+        return nil
+    end
+    local pet = EntIndexToHScript(index)
+    if not pet or pet:IsNull() or not pet:IsAlive() then
+        return nil
+    end
+    return pet
+end
+
+function Pet:RemovePet(ID)
+    if not ID or not self.Data[ID] then
+        return
+    end
+    self:StopPetAi(ID)
+    self:ClosePick(ID)
+    self.Data[ID].pick_enabled = false
+    self.Data[ID].session_pet_ready = true
+    local pet = self:GetLivePet(ID)
+    if pet then
+        if Util and Util.Entity2Kill then
+            Util:Entity2Kill(pet)
+        else
+            pet:ForceKill(false)
+            if pet.IsAlive and not pet:IsAlive() then
+                pet:RemoveSelf()
+            end
+        end
+    end
+    self.Data[ID].index = -1
+end
+
+function Pet:SyncFromOutBag(ID)
+    if not ID or not self.Data[ID] then
+        return
+    end
+    if Util and Util.IsPseudoPlayerID and Util:IsPseudoPlayerID(ID) then
+        return
+    end
+    local should_show = Shop and Shop.ShouldShowInGamePet and Shop:ShouldShowInGamePet(ID)
+    local pet_key = ""
+    if Shop and Shop.GetEquippedPetKey then
+        pet_key = Shop:GetEquippedPetKey(ID) or ""
+    end
+    local prev_key = self.Data[ID].equipped_pet_key or ""
+    if pet_key ~= prev_key then
+        self.Data[ID].equipped_pet_key = pet_key
+        if self:GetLivePet(ID) then
+            self:RemovePet(ID)
+        end
+    end
+    if not should_show then
+        self:RemovePet(ID)
+        return
+    end
+
+    local hero = Util:ID2Hero(ID)
+    if not hero or hero:IsNull() or not hero:IsAlive() then
+        if should_show then
+            self.Data[ID].pick_enabled = true
+        end
+        return
+    end
+
+    if self:GetLivePet(ID) then
+        self:ApplyPetAmbient(self:GetLivePet(ID), ID)
+        self.Data[ID].pick_enabled = true
+        self.Data[ID].session_pet_ready = true
+        return
+    end
+
+    self:StopPetAi(ID)
+    self:InitPet(ID)
+end

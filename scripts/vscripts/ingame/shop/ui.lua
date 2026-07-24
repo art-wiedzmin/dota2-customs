@@ -8,22 +8,137 @@
 ]]
 
 
-local encoded=[[ZnVuY3Rpb24gU2hvcDpHZXRVSURhdGEoSUQsIGRhdGEpCiAgICBpZiBub3QgSUQgb3Igbm90IGRhdGEgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICAtLeaaguWBnOemgeatouS8oOaVsOaNrgogICAgLS0gaWYgR2FtZVJ1bGVzOklzR2FtZVBhdXNlZCgpIHRoZW4KICAgIC0tICAgICByZXR1cm4KICAgIC0tIGVuZAogICAgLS3liJ3lp4vljJbmlbDmja4KICAgIGlmIGRhdGEudHAgPT0gImluaXQiIHRoZW4KICAgICAgICBzZWxmOlNlbmREYXRhKElEKQogICAgZW5kCgogICAgaWYgZGF0YS50cCA9PSAiT3BlblBhZ2UiIHRoZW4KICAgICAgICBzZWxmOk9wZW5QYWdlKElEKQogICAgZW5kCiAgICBpZiBkYXRhLnRwID09ICJPcGVuQmF0dGxlUGFzcyIgdGhlbgogICAgICAgIHNlbGY6T3BlbkJhdHRsZVBhc3NQYWdlKElEKQogICAgZW5kCiAgICBpZiBkYXRhLnRwID09ICJDbG9zZVBhZ2UiIHRoZW4KICAgICAgICBzZWxmOkNsb3NlUGFnZShJRCkKICAgIGVuZAogICAgLS3otK3kubDvvIgyLTcg6YeR6LGG5qGjIDYvMzAvNjgvMTI4LzMyOC82NDgg5YWD77yMMTA9MTI4MCDlhYPvvJs4IOWto+WNoSA5IOmAmuihjOivge+8iQogICAgaWYgZGF0YS50cCA9PSAiUGF5IiB0aGVuCiAgICAgICAgc2VsZjpQYXkoSUQsIGRhdGEudGV4dCkKICAgIGVuZAogICAgaWYgZGF0YS50cCA9PSAiUGF5Q2FyZExldmVsIiB0aGVuCiAgICAgICAgc2VsZjpQYXlDYXJkTGV2ZWwoSUQsIGRhdGEudGV4dCkKICAgIGVuZAogICAgLS3lhY3otLnpooblj5YoMSzmr4/ml6Xph5HluIHnpLzljIXvvIwy5pyI5Y2h5q+P5pel56S85YyFKQogICAgaWYgZGF0YS50cCA9PSAiRnJlZSIgdGhlbgogICAgICAgIHNlbGY6RnJlZShJRCwgZGF0YS50ZXh0KQogICAgZW5kCiAgICBpZiBkYXRhLnRwID09ICJSZWZyZXNoIiB0aGVuCiAgICAgICAgc2VsZjpSZWZyZXNoKElEKQogICAgZW5kCgogICAgaWYgZGF0YS50cCA9PSAiQ29kZSIgdGhlbgogICAgICAgIHNlbGY6Q29kZShJRCwgZGF0YS50ZXh0KQogICAgZW5kCiAgICBpZiBkYXRhLnRwID09ICJDbGFpbUNhcmRSZXdhcmQiIHRoZW4KICAgICAgICBzZWxmOkNsYWltQ2FyZFJld2FyZChJRCwgZGF0YS5sZXZlbCwgZGF0YS50cmFjaykKICAgIGVuZAogICAgaWYgZGF0YS50cCA9PSAiQ2xhaW1BbGxDYXJkUmV3YXJkcyIgdGhlbgogICAgICAgIHNlbGY6Q2xhaW1BbGxDYXJkUmV3YXJkcyhJRCkKICAgIGVuZAogICAgaWYgZGF0YS50cCA9PSAiT3V0QmFnU3luYyIgdGhlbgogICAgICAgIHNlbGY6U3luY091dEJhZyhJRCkKICAgIGVuZAogICAgaWYgZGF0YS50cCA9PSAiT3V0QmFnRXF1aXAiIHRoZW4KICAgICAgICBzZWxmOk91dEJhZ0VxdWlwKElELCBkYXRhLnNsb3QsIGRhdGEuaXRlbV9rZXkpCiAgICBlbmQKICAgIGlmIGRhdGEudHAgPT0gIk91dEJhZ1VuZXF1aXAiIHRoZW4KICAgICAgICBzZWxmOk91dEJhZ1VuZXF1aXAoSUQsIGRhdGEuc2xvdCkKICAgIGVuZAplbmQKCi0t57uZ5YmN56uv5Y+R5pWw5o2uCmZ1bmN0aW9uIFNob3A6U2VuZERhdGEoSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBkYXRhID0gc2VsZi5EYXRhW0lEXQogICAgZGF0YS5pdGVtTGlzdCA9IHNlbGYuSXRlbUxpc3QKICAgIGxvY2FsIGNvc21ldGljcyA9IChzZWxmLkRhdGFbSURdIGFuZCBzZWxmLkRhdGFbSURdLnBhc3NfY29zbWV0aWNzKSBvciBzZWxmLlBhc3NDb3NtZXRpY3MKICAgIGRhdGEucGFzc19jb3NtZXRpY3MgPSBjb3NtZXRpY3MKICAgIGRhdGEucGFzc19jb3NtZXRpY3NfanNvbiA9IG5pbAogICAgLS0g5omB5bmz5a2X5q6177yI5LiO56S85YyFIGltYWdlX2tleSDlkIznkIbvvInvvJrlj6rkvKDplK7vvIzlrqLmiLfnq6/mnKzlnLDlj5blm74KICAgIGRhdGEucGFzc19zZWFzb25faWQgPSBuaWwKICAgIGRhdGEucGFzc19kZWFkbGluZV90ZXh0ID0gbmlsCiAgICBkYXRhLnBhc3NfZnJlZV90aXRsZV9rZXkgPSBuaWwKICAgIGRhdGEucGFzc19wcmVtaXVtX3RpdGxlX2tleSA9IG5pbAogICAgZGF0YS5wYXNzX3ByZW1pdW1fZWZmZWN0X2tleSA9IG5pbAogICAgZGF0YS5wYXNzX3ByZW1pdW1fZWZmZWN0X2tpbmQgPSBuaWwKICAgIGlmIGNvc21ldGljcyBhbmQgdHlwZShjb3NtZXRpY3MpID09ICJ0YWJsZSIgdGhlbgogICAgICAgIGRhdGEucGFzc19zZWFzb25faWQgPSBjb3NtZXRpY3Muc2Vhc29uX2lkIG9yIGNvc21ldGljcy5zZWFzb25JZCBvciBjb3NtZXRpY3Muc2Vhc29uaWQKICAgICAgICBkYXRhLnBhc3NfZGVhZGxpbmVfdGV4dCA9IGNvc21ldGljcy5kZWFkbGluZV90ZXh0IG9yIGNvc21ldGljcy5kZWFkbGluZVRleHQgb3IgY29zbWV0aWNzLmRlYWRsaW5ldGV4dAogICAgICAgIGRhdGEucGFzc19mcmVlX3RpdGxlX2tleSA9IGNvc21ldGljcy5mcmVlX3RpdGxlX2tleQogICAgICAgICAgICBvciAoY29zbWV0aWNzLmZyZWVUaXRsZSBhbmQgKGNvc21ldGljcy5mcmVlVGl0bGUuaXRlbUtleSBvciBjb3NtZXRpY3MuZnJlZVRpdGxlLml0ZW1fa2V5KSkKICAgICAgICBkYXRhLnBhc3NfcHJlbWl1bV90aXRsZV9rZXkgPSBjb3NtZXRpY3MucHJlbWl1bV90aXRsZV9rZXkKICAgICAgICAgICAgb3IgKGNvc21ldGljcy5wcmVtaXVtVGl0bGUgYW5kIChjb3NtZXRpY3MucHJlbWl1bVRpdGxlLml0ZW1LZXkgb3IgY29zbWV0aWNzLnByZW1pdW1UaXRsZS5pdGVtX2tleSkpCiAgICAgICAgZGF0YS5wYXNzX3ByZW1pdW1fZWZmZWN0X2tleSA9IGNvc21ldGljcy5wcmVtaXVtX2VmZmVjdF9rZXkKICAgICAgICAgICAgb3IgKGNvc21ldGljcy5wcmVtaXVtRWZmZWN0IGFuZCAoY29zbWV0aWNzLnByZW1pdW1FZmZlY3QuaXRlbUtleSBvciBjb3NtZXRpY3MucHJlbWl1bUVmZmVjdC5pdGVtX2tleSkpCiAgICAgICAgZGF0YS5wYXNzX3ByZW1pdW1fZWZmZWN0X2tpbmQgPSBjb3NtZXRpY3MucHJlbWl1bV9lZmZlY3Rfa2luZAogICAgICAgICAgICBvciAoY29zbWV0aWNzLnByZW1pdW1FZmZlY3QgYW5kIGNvc21ldGljcy5wcmVtaXVtRWZmZWN0LmtpbmQpCiAgICAgICAgaWYgSlNPTiBhbmQgSlNPTi5lbmNvZGUgdGhlbgogICAgICAgICAgICBsb2NhbCBvaywgZW5jb2RlZCA9IHBjYWxsKGZ1bmN0aW9uKCkKICAgICAgICAgICAgICAgIHJldHVybiBKU09OLmVuY29kZShjb3NtZXRpY3MpCiAgICAgICAgICAgIGVuZCkKICAgICAgICAgICAgaWYgb2sgYW5kIHR5cGUoZW5jb2RlZCkgPT0gInN0cmluZyIgYW5kIGVuY29kZWQgfj0gIiIgdGhlbgogICAgICAgICAgICAgICAgZGF0YS5wYXNzX2Nvc21ldGljc19qc29uID0gZW5jb2RlZAogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZAogICAgVXRpbDpTZW5kMkpzSUQoIlVJX1Nob3AiLCBkYXRhLCBJRCkKZW5kCgpmdW5jdGlvbiBTaG9wOlBheUNhcmRMZXZlbChJRCwgbGV2ZWxfY291bnQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBtYXhfbiA9IHNlbGY6R2V0UmVtYWluaW5nQnV5YWJsZUxldmVscyhJRCkKICAgIGlmIG1heF9uIDw9IDAgdGhlbgogICAgICAgIE1zZ3M6UG9wKElELCAi6YCa6KGM6K+B5bey5ruh57qnIikKICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgbiA9IHRvbnVtYmVyKGxldmVsX2NvdW50KSBvciAwCiAgICBpZiBuIDwgMSB0aGVuCiAgICAgICAgTXNnczpQb3AoSUQsICLor7fpgInmi6notK3kubDnrYnnuqciKQogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBub3QgQ29kZTpTZXRDYXJkTGV2ZWxHb29kcyhJRCwgbikgdGhlbgogICAgICAgIE1zZ3M6UG9wKElELCAi6YCa6KGM6K+B5bey5ruh57qnIikKICAgICAgICByZXR1cm4KICAgIGVuZAogICAgQ29kZTpQYXkoSUQsIDEpCmVuZAoKZnVuY3Rpb24gU2hvcDpQYXkoSUQsIG51bSkKICAgIGlmIG5vdCBJRCBvciBub3QgbnVtIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgZ29vZHNfbnVtID0gdG9udW1iZXIobnVtKQogICAgaWYgZ29vZHNfbnVtID09IDkgdGhlbgogICAgICAgIGxvY2FsIGNhcmQgPSBzZWxmLkRhdGFbSURdIGFuZCBzZWxmLkRhdGFbSURdLmNhcmQKICAgICAgICBpZiBjYXJkIGFuZCBjYXJkLnN0YXRlID09IDEgdGhlbgogICAgICAgICAgICBNc2dzOlBvcChJRCwgIumAmuihjOivgeW3sua/gOa0u++8jOaXoOazlemHjeWkjei0reS5sCIsIHt9KQogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgIGVuZAogICAgQ29kZTpTZXRHb29kcyhJRCwgbnVtKQogICAgLS3lj5HotbforqLljZUKICAgIENvZGU6UGF5KElELCAxKQplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+function Shop:GetUIData(ID, data)
+    if not ID or not data then
+        return
+    end
+    --暂停禁止传数据
+    -- if GameRules:IsGamePaused() then
+    --     return
+    -- end
+    --初始化数据
+    if data.tp == "init" then
+        self:SendData(ID)
+    end
+
+    if data.tp == "OpenPage" then
+        self:OpenPage(ID)
+    end
+    if data.tp == "OpenBattlePass" then
+        self:OpenBattlePassPage(ID)
+    end
+    if data.tp == "ClosePage" then
+        self:ClosePage(ID)
+    end
+    --购买（2-7 金豆档 6/30/68/128/328/648 元，10=1280 元；8 季卡 9 通行证）
+    if data.tp == "Pay" then
+        self:Pay(ID, data.text)
+    end
+    if data.tp == "PayCardLevel" then
+        self:PayCardLevel(ID, data.text)
+    end
+    --免费领取(1,每日金币礼包，2月卡每日礼包)
+    if data.tp == "Free" then
+        self:Free(ID, data.text)
+    end
+    if data.tp == "Refresh" then
+        self:Refresh(ID)
+    end
+
+    if data.tp == "Code" then
+        self:Code(ID, data.text)
+    end
+    if data.tp == "ClaimCardReward" then
+        self:ClaimCardReward(ID, data.level, data.track)
+    end
+    if data.tp == "ClaimAllCardRewards" then
+        self:ClaimAllCardRewards(ID)
+    end
+    if data.tp == "OutBagSync" then
+        self:SyncOutBag(ID)
+    end
+    if data.tp == "OutBagEquip" then
+        self:OutBagEquip(ID, data.slot, data.item_key)
+    end
+    if data.tp == "OutBagUnequip" then
+        self:OutBagUnequip(ID, data.slot)
+    end
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--给前端发数据
+function Shop:SendData(ID)
+    if not ID then
+        return
+    end
+    local data = self.Data[ID]
+    data.itemList = self.ItemList
+    local cosmetics = (self.Data[ID] and self.Data[ID].pass_cosmetics) or self.PassCosmetics
+    data.pass_cosmetics = cosmetics
+    data.pass_cosmetics_json = nil
+    -- 扁平字段（与礼包 image_key 同理）：只传键，客户端本地取图
+    data.pass_season_id = nil
+    data.pass_deadline_text = nil
+    data.pass_free_title_key = nil
+    data.pass_premium_title_key = nil
+    data.pass_premium_effect_key = nil
+    data.pass_premium_effect_kind = nil
+    if cosmetics and type(cosmetics) == "table" then
+        data.pass_season_id = cosmetics.season_id or cosmetics.seasonId or cosmetics.seasonid
+        data.pass_deadline_text = cosmetics.deadline_text or cosmetics.deadlineText or cosmetics.deadlinetext
+        data.pass_free_title_key = cosmetics.free_title_key
+            or (cosmetics.freeTitle and (cosmetics.freeTitle.itemKey or cosmetics.freeTitle.item_key))
+        data.pass_premium_title_key = cosmetics.premium_title_key
+            or (cosmetics.premiumTitle and (cosmetics.premiumTitle.itemKey or cosmetics.premiumTitle.item_key))
+        data.pass_premium_effect_key = cosmetics.premium_effect_key
+            or (cosmetics.premiumEffect and (cosmetics.premiumEffect.itemKey or cosmetics.premiumEffect.item_key))
+        data.pass_premium_effect_kind = cosmetics.premium_effect_kind
+            or (cosmetics.premiumEffect and cosmetics.premiumEffect.kind)
+        if JSON and JSON.encode then
+            local ok, encoded = pcall(function()
+                return JSON.encode(cosmetics)
+            end)
+            if ok and type(encoded) == "string" and encoded ~= "" then
+                data.pass_cosmetics_json = encoded
+            end
+        end
+    end
+    Util:Send2JsID("UI_Shop", data, ID)
+end
+
+function Shop:PayCardLevel(ID, level_count)
+    if not ID then
+        return
+    end
+    local max_n = self:GetRemainingBuyableLevels(ID)
+    if max_n <= 0 then
+        Msgs:Pop(ID, "通行证已满级")
+        return
+    end
+    local n = tonumber(level_count) or 0
+    if n < 1 then
+        Msgs:Pop(ID, "请选择购买等级")
+        return
+    end
+    if not Code:SetCardLevelGoods(ID, n) then
+        Msgs:Pop(ID, "通行证已满级")
+        return
+    end
+    Code:Pay(ID, 1)
+end
+
+function Shop:Pay(ID, num)
+    if not ID or not num then
+        return
+    end
+    local goods_num = tonumber(num)
+    if goods_num == 9 then
+        local card = self.Data[ID] and self.Data[ID].card
+        if card and card.state == 1 then
+            Msgs:Pop(ID, "通行证已激活，无法重复购买", {})
+            return
+        end
+    end
+    Code:SetGoods(ID, num)
+    --发起订单
+    Code:Pay(ID, 1)
+end

@@ -8,22 +8,418 @@
 ]]
 
 
-local encoded=[[TWFpbkdhbWUuRGF0YSA9IHsKICAgIC0t5b2T5YmN5ri45oiP6L+b56iLKDEs5Yid5aeL77yMMuesrOS4gOasoee8qeWciO+8jDPvvIznrKzkuozmrKHnvKnlnIgpCiAgICBzdGF0ZSA9IDEsCiAgICBvdmVyID0gZmFsc2UsCiAgICB3aW5fdGVhbSA9IDAsCiAgICAtLeWkqeawlOe8luWPtwogICAgd2VhdGhlciA9IC0xLAogICAgd2VhdGhlcl90aW1lID0gLTEsCiAgICAtLSDkuIrkuIDova7lt7Lnu5PmnZ/nmoTlpKnmsJQgaWTvvIjova7mjaLml7bkuI3lj6/ov57nu63ph43lpI3vvIkKICAgIHdlYXRoZXJfbGFzdF9pZCA9IG5pbCwKICAgIC0t5q+S5ZyI54m55pWICiAgICB0eCA9IC0xLAogICAgLS0g5aSp5rCU6YWN5aWX546v5aKD57KS5a2Q77yI54Ob54GrL+i3r+eBry/om74v6J2277yJ77yM6L2u5o2i5aSp5rCU5pe26YeN5bu677yb5a+55bGA57uT5p2f5riF55CGCiAgICB3b3JsZF9hbWJpZW50X2Z4ID0ge30sCiAgICAtLee0r+iuoeadgOaVjOaVsAogICAga2lsbCA9IHsKICAgICAgICAtLeWkqei+iQogICAgICAgIFRlYW0yID0gMCwKICAgICAgICAtLeWknOWutAogICAgICAgIFRlYW0zID0gMCwKICAgICAgICAtLSByYW5rXzN4NO+8mkNVU1RPTV8xIC8gQ1VTVE9NXzIKICAgICAgICBUZWFtNiA9IDAsCiAgICAgICAgVGVhbTcgPSAwLAogICAgfSwKICAgIHN0YXJfbWF4X3N0YXRlID0gZmFsc2UsCiAgICB3eV9zdGF0ZSA9IGZhbHNlLAogICAgZG9vciA9IHsKICAgICAgICBkb29yczEgPSB7CiAgICAgICAgICAgIGRvb3IxID0gewogICAgICAgICAgICAgICAgbmFtZSA9ICJkb29yMSIsCiAgICAgICAgICAgICAgICBwb3MgPSBWZWN0b3IoLTc1NzguNjg5OTQxLCA3MzU4LjE2NTUyNywgMjU2LjAwMDAwMCksCiAgICAgICAgICAgICAgICB0eCA9IC0xLAogICAgICAgICAgICAgICAgc3RhdGUgPSBmYWxzZQogICAgICAgICAgICB9LAogICAgICAgICAgICBkb29yMiA9IHsKICAgICAgICAgICAgICAgIG5hbWUgPSAiZG9vcjIiLAogICAgICAgICAgICAgICAgcG9zID0gVmVjdG9yKDc2NTQuNzgxMjUwLCAtNzc4MS45NzE2ODAsIDI1Ni4wMDAwMDApLAogICAgICAgICAgICAgICAgdHggPSAtMSwKICAgICAgICAgICAgICAgIHN0YXRlID0gZmFsc2UKICAgICAgICAgICAgfSwKICAgICAgICB9LAogICAgICAgIGRvb3JzMiA9IHsKICAgICAgICAgICAgZG9vcjMgPSB7CiAgICAgICAgICAgICAgICBuYW1lID0gImRvb3IzIiwKICAgICAgICAgICAgICAgIHBvcyA9IFZlY3RvcigtNzc2Ny4zNTEwNzQsIC03NjkyLjY1NzIyNywgMTI4LjAwMDAwMCksCiAgICAgICAgICAgICAgICB0eCA9IC0xLAogICAgICAgICAgICAgICAgc3RhdGUgPSBmYWxzZQogICAgICAgICAgICB9LAogICAgICAgICAgICBkb29yNCA9IHsKICAgICAgICAgICAgICAgIG5hbWUgPSAiZG9vcjQiLAogICAgICAgICAgICAgICAgcG9zID0gVmVjdG9yKDc4NzkuMTA2OTM0LCA3NTA4LjU1NTY2NCwgMTI4LjAwMDAwMCksCiAgICAgICAgICAgICAgICB0eCA9IC0xLAogICAgICAgICAgICAgICAgc3RhdGUgPSBmYWxzZQogICAgICAgICAgICB9LAogICAgICAgIH0KICAgIH0sCiAgICBkdW1teSA9IC0xLAogICAgaGVyb19yZWJvcm5faW5kZXggPSAxLAogICAgc2Vzc2lvbl9sb2FkX2dhdGVfc3RhcnRlZCA9IGZhbHNlLAogICAgc2Vzc2lvbl9sb2FkX2dhdGVfZmluaXNoZWQgPSBmYWxzZSwKICAgIC0tIHBhc3NpdmVfbW9kZe+8muW3suenu+mZpOOAjOiiq+WKqOaooeW8j+OAjeeOqeazle+8jOWbuuWumuS4uiBmYWxzZe+8iOWFvOWuueaXp+W8leeUqO+8iQogICAgcGFzc2l2ZV9tb2RlID0gZmFsc2UsCiAgICAtLeemgeatouWIt+aAqgogICAganpzZyA9IGZhbHNlLAogICAgLS0tIOWGs+aImOaXtuWIuyAyMDAwMCDlhajlsYDph5HluIHlj6rlj5HkuIDmrKHvvIjpgb/lhY0gRXZlbnRUcmlnZ2VyIOWksei0peWQjumHjeivlemHjeWkjeWKoOmSse+8iQogICAgbGFzdGZpZ2h0X2dvbGRfZG9uZSA9IGZhbHNlLAogICAgLS0g6Ieq5a6a5LmJ5pi85aSc77yadHJ1ZT3nmb3lpKnvvIxmYWxzZT3pu5HlpJwKICAgIGRheW5pZ2h0X2lzX2RheSA9IHRydWUsCiAgICBkYXluaWdodF9lbGFwc2VkID0gMCwKfQpNYWluR2FtZS5TdGF0aWMgPSB7CiAgICBkb29yc19jZCA9IDYsCiAgICAtLS0g5Lyg6YCB6Zeo6JC95Zyw5ZCO55+t5pqC5peg5pWM77yI56eS77yJCiAgICBkb29yX3RlbGVwb3J0X2ludnVsbiA9IDAuMSwKICAgIGRvb3JzX3R4ID0gInBhcnRpY2xlcy9lY29uL2l0ZW1zL3VuZGVybG9yZC91bmRlcmxvcmRfMjAyMV9pbW1vcnRhbC91bmRlcmxvcmRfMjAyMV9pbW1vcnRhbF9wb3J0YWwudnBjZiIsCiAgICAtLSDnmb3lpKkgLyDpu5HlpJzml7bplb/vvIjnp5LvvIkKICAgIGRheV90aW1lID0gMjQwLAogICAgbmlnaHRfdGltZSA9IDM2MCwKICAgIC0tIOeZveWkqSAvIOm7keWknOWkqeawlOaViOaenOaMgee7reaXtumXtO+8iOenku+8iQogICAgd2VhdGhlcl90aW1lX2RheSA9IDEyMCwKICAgIHdlYXRoZXJfdGltZV9uaWdodCA9IDE4MCwKICAgIC0t56ys5LiA5qyh57yp6Yab6IyD5Zu0CiAgICByYW5nMSA9IDcwMDAsCiAgICAtLeesrOS6jOasoee8qemGm+iMg+WbtAogICAgcmFuZzIgPSAzMDAwLAogICAgLS3lm6LpmJ/ojrfog5zkurrlpLTmlbDvvIg1djUg562J5Y+M5Lq66Zi16JCl77yJCiAgICB0ZWFtX2tpbGwgPSAxNDAsCiAgICAtLSByYW5rXzN4NO+8muWNlemYn+mYteiQpeaAu+WHu+adgOiDnOWIqee6v++8iOS4jiB0ZWFtX2tpbGwg5YiG56a777yM6YG/5YWN5pS5IDN4NCDlvbHlk40gNXY177yJCiAgICB0ZWFtX2tpbGxfM3g0ID0gMTUwLAogICAgLS3kuKrkurrojrfog5zkurrlpLTmlbDvvIhiZWlkb25nIOetiSBnYW1lX3R5cGU9PTLvvIkKICAgIHBlcnNvbl9raWxsID0gODAsCiAgICAtLSByYW5rXzF2MSAvIGJlaWRvbmcg5Liq5Lq66I636IOc5Lq65aS05pWwCiAgICBwZXJzb25fa2lsbF9yYW5rXzF2MSA9IDc1LAogICAgLS0g6b6Z77ya6aaW5Y+qL+esrOS6jOWPqiDliLfmlrDml7bpl7TvvIjnp5LvvIzkuI7kuIsgTWFpbkdhbWUuRXZlbnRMaXN0IGRyYWdvbjHjgIFkcmFnb24zIOS4gOiHtO+8ie+8m+esrOS6jOWPqiA9IOmmluWPqiArIDMg5YiG6ZKfCiAgICBkcmFnb24xID0gMTI2MCwgLS0gMjEqNjAKICAgIGRyYWdvbjMgPSAxNDQwLCAtLSAyNCo2MAogICAgLS0tIOiiq+WKqOaooeW8j++8muecn+S6uuemgeeUqOivpeeJqeWTge+8iOWVhuW6l+i0reS5sOOAgemFjeaWueOAgeWQiOaIkC/lv6vpgJLlhaXlupPjgIHkvb/nlKjvvInjgILplK7kuLrmiJDlk4EgaXRlbV8qIOWNs+WPr++8jGl0ZW1fcmVjaXBlXyog5Lya5oyJ5oiQ5ZOB6Ieq5Yqo6KeG5Li656aB55So44CCCiAgICBQYXNzaXZlTW9kZUJhbm5lZFNob3BJdGVtcyA9IHsKICAgICAgICAtLSBbIml0ZW1fYmxhY2tfa2luZ19iYXIiXSA9IHRydWUsCiAgICAgICAgWyJpdGVtX2dob3N0Il0gPSB0cnVlLCAgICAgICAgICAgLS0g5bm954G15p2D5p2WCiAgICAgICAgWyJpdGVtX2hlYXZlbnNfaGFsYmVyZCJdID0gdHJ1ZSwgLS0g5aSp5aCC5LmL5oif77yI5ZCrIGl0ZW1fcmVjaXBlX2hlYXZlbnNfaGFsYmVyZCDphY3mlrnotK3kubDvvIkKICAgICAgICBbIml0ZW1fc2tpbGxfMzMiXSA9IHRydWUsICAgICAgICAtLSDms5Xlipvnsr7noJTvvIjmioDog73kuabmjonokL0v6LSt5LmwL+S9v+eUqO+8iQogICAgICAgIFsiaXRlbV9jeWNsb25lIl0gPSB0cnVlLCAgICAgICAgIC0tIEV1bCDnmoTnpZ7lnKPms5XmnZbvvIjlkKsgaXRlbV9yZWNpcGVfY3ljbG9uZe+8iQogICAgICAgIFsiaXRlbV9vY3RhcmluZV9jb3JlIl0gPSB0cnVlLCAgIC0tIOeOsuePkeW/g++8iOWQqyBpdGVtX3JlY2lwZV9vY3RhcmluZV9jb3Jl77yJCiAgICB9LAp9Ck1haW5HYW1lLkV2ZW50TGlzdCA9IHsKICAgIC0t5ri45oiP57uT5p2fCiAgICBnYW1lX292ZXIgPSB7CiAgICAgICAgaWQgPSAiZ2FtZV9vdmVyIiwKICAgICAgICB0aW1lID0gMTgwMCwKICAgICAgICBzdGF0ZSA9IHRydWUKICAgIH0sCiAgICAtLei3neemu+a4uOaIj+aXtumXtOe7k+adn+eahOivremfs+aSreaKpQogICAgdGltZW92ZXIxID0gewogICAgICAgIGlkID0gInRpbWVvdmVyMSIsCiAgICAgICAgdGltZSA9IDE3NDAsCiAgICAgICAgc3RhdGUgPSB0cnVlCiAgICB9LAogICAgLS3ot53nprvmuLjmiI/ml7bpl7Tnu5PmnZ/nmoTor63pn7Pmkq3miqUKICAgIHRpbWVvdmVyMiA9IHsKICAgICAgICBpZCA9ICJ0aW1lb3ZlcjIiLAogICAgICAgIHRpbWUgPSAxNjc3LAogICAgICAgIHN0YXRlID0gdHJ1ZQogICAgfSwKICAgIC0t5Lmx5paX6K+t6Z+zCiAgICBsYXN0ZmlnaHQgPSB7CiAgICAgICAgaWQgPSAibGFzdGZpZ2h0IiwKICAgICAgICB0aW1lID0gMTUwMCwKICAgICAgICBzdGF0ZSA9IHRydWUKICAgIH0sCiAgICAtLeavkuWciDIKICAgIG1hcDIgPSB7CiAgICAgICAgaWQgPSAibWFwMiIsCiAgICAgICAgdGltZSA9IDE0NDAsCiAgICAgICAgc3RhdGUgPSB0cnVlLAogICAgfSwKICAgIC0t5q+S5ZyI6K+t6Z+zMgogICAgbWFwMzBfMiA9IHsKICAgICAgICBpZCA9ICJtYXAzMF8yIiwKICAgICAgICB0aW1lID0gMTQxMCwKICAgICAgICBzdGF0ZSA9IHRydWUsCiAgICB9LAogICAgLS3muIXnkIYyCiAgICBjbGVhcjIgPSB7CiAgICAgICAgaWQgPSAiY2xlYXIyIiwKICAgICAgICB0aW1lID0gMTM4MCwKICAgICAgICBzdGF0ZSA9IHRydWUsCiAgICB9LAogICAgLS3mr5LlnIgxCiAgICBtYXAxID0gewogICAgICAgIGlkID0gIm1hcDEiLAogICAgICAgIHRpbWUgPSA5NjAsCiAgICAgICAgc3RhdGUgPSB0cnVlLAogICAgfSwKICAgIC0t5q+S5ZyI6K+t6Z+zMQogICAgbWFwMzBfMSA9IHsKICAgICAgICBpZCA9ICJtYXAzMF8xIiwKICAgICAgICB0aW1lID0gOTMwLAogICAgICAgIHN0YXRlID0gdHJ1ZSwKICAgIH0sCiAgICAtLea4heeQhgogICAgY2xlYXIxID0gewogICAgICAgIGlkID0gImNsZWFyMSIsCiAgICAgICAgdGltZSA9IDkwMCwKICAgICAgICBzdGF0ZSA9IHRydWUsCiAgICB9LAoKCgoKCiAgICAtLem+mTLvvIjnrKzkuozlj6rvvIzpobrlu7YgMyDliIbpkp/vvIwyNDowMO+8iQogICAgZHJhZ29uMyA9IHsKICAgICAgICBpZCA9ICJkcmFnb24zIiwKICAgICAgICB0aW1lID0gMTQ0MCwKICAgICAgICBzdGF0ZSA9IHRydWUKICAgIH0sCiAgICAtLem+mTHvvIjpppblj6rprZTpvpnvvIzmuLjmiI/ml7bpl7QgMjE6MDDvvIkKICAgIGRyYWdvbjEgPSB7CiAgICAgICAgaWQgPSAiZHJhZ29uMSIsCiAgICAgICAgdGltZSA9IDEyNjAsCiAgICAgICAgc3RhdGUgPSB0cnVlCiAgICB9LAogICAgLS3nhooxCiAgICBiZWFyMSA9IHsKICAgICAgICBpZCA9ICJiZWFyMSIsCiAgICAgICAgdGltZSA9IDEwODAsCiAgICAgICAgc3RhdGUgPSB0cnVlCiAgICB9LAogICAgLS3nhooyCiAgICBiZWFyMiA9IHsKICAgICAgICBpZCA9ICJiZWFyMiIsCiAgICAgICAgdGltZSA9IDEyMDAsCiAgICAgICAgc3RhdGUgPSB0cnVlCiAgICB9LAogICAgLS3nhoozCiAgICBiZWFyMyA9IHsKICAgICAgICBpZCA9ICJiZWFyMyIsCiAgICAgICAgdGltZSA9IDEzMjAsCiAgICAgICAgc3RhdGUgPSB0cnVlCiAgICB9LAoKCiAgICAtLeeLvDMKICAgIHdvbGYzID0gewogICAgICAgIGlkID0gIndvbGYzIiwKICAgICAgICB0aW1lID0gNTQwLAogICAgICAgIHN0YXRlID0gdHJ1ZQogICAgfSwKICAgIC0t54u8MgogICAgd29sZjIgPSB7CiAgICAgICAgaWQgPSAid29sZjIiLAogICAgICAgIHRpbWUgPSA0MjAsCiAgICAgICAgc3RhdGUgPSB0cnVlCiAgICB9LAogICAgLS3ni7wxCiAgICB3b2xmMSA9IHsKICAgICAgICBpZCA9ICJ3b2xmMSIsCiAgICAgICAgdGltZSA9IDMwMCwKICAgICAgICBzdGF0ZSA9IHRydWUKICAgIH0sCiAgICAtLSDpmajokL3mmJ/ovrDvvIg4IOWIhumSn++8jDQg6aKX77yJCiAgICBmYWxsc3RhcjEgPSB7CiAgICAgICAgaWQgPSAiZmFsbHN0YXIxIiwKICAgICAgICB0aW1lID0gNDgwLAogICAgICAgIHN0YXRlID0gdHJ1ZSwKICAgIH0sCiAgICAtLSDpmajokL3mmJ/ovrDvvIgxMCDliIbpkp/vvIw0IOmil++8iQogICAgZmFsbHN0YXIyID0gewogICAgICAgIGlkID0gImZhbGxzdGFyMiIsCiAgICAgICAgdGltZSA9IDYwMCwKICAgICAgICBzdGF0ZSA9IHRydWUsCiAgICB9LAp9CgpNYWluR2FtZS5QbGF5ZXJEYXRhID0gewogICAgLS3njqnlrrZzdGVhbWlkCiAgICBwX2lkID0gLTEsCiAgICBoZXJvX25hbWUgPSAiIiwKICAgIC0t5ZCN5a2XCiAgICBuYW1lID0gIiIsCiAgICBLREEgPSB7CiAgICAgICAga2lsbCA9IDAsCiAgICAgICAgZGVhdGggPSAwLAogICAgICAgIGFzc2lzdCA9IDAsCiAgICAgICAga2RhID0gMCwKICAgIH0sCiAgICAtLeeJqeWTgeagjwogICAgaXRlbXMgPSB7CiAgICAgICAgc2xvdF8xID0gIiIsCiAgICAgICAgc2xvdF8yID0gIiIsCiAgICAgICAgc2xvdF8zID0gIiIsCiAgICAgICAgc2xvdF80ID0gIiIsCiAgICAgICAgc2xvdF81ID0gIiIsCiAgICAgICAgc2xvdF82ID0gIiIsCiAgICB9LAogICAgLS3lpKnotYvnianlk4E9LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAgdGFsZW50ID0gIml0ZW1fZ29vZHNfMCIsCiAgICAtLeaKgOiDveagjwogICAgc2tpbGwgPSB7CiAgICAgICAgc2tpbGxfMSA9ICIiLAogICAgICAgIHNraWxsXzIgPSAiIiwKICAgICAgICBza2lsbF8zID0gIiIsCiAgICAgICAgc2tpbGxfNCA9ICIiLAogICAgICAgIHNraWxsXzUgPSAiIiwKICAgICAgICBza2lsbF82ID0gIiIsCiAgICAgICAgc2tpbGxfNyA9ICIiLAogICAgICAgIHNraWxsXzggPSAiIiwKICAgICAgICBza2lsbF85ID0gIiIsCiAgICAgICAgc2tpbGxfMTAgPSAiIiwKICAgIH0sCiAgICAtLemHkeW4gQogICAgZ29sZCA9IDAsCiAgICAtLeaAu+S8pOWuswogICAgZGFtYWdlID0gMCwKICAgIC0t5om/5Y+X5Lyk5a6zCiAgICB0YW5rID0gMCwKICAgIC0t5aSp5qKv5YiGCiAgICBwb2ludCA9IDEwMDAsCiAgICAtLeWIhuaVsOWinuWHjwogICAgYWRkX3BvaW50ID0gMCwKICAgIC0tdGFnMShtdnApCiAgICAtLXRhZzIo56WeKQogICAgLS10YWczKOaatCkKICAgIC0tdGFnNCjnoawpCiAgICAtLXRhZzUo5p2AKQogICAgLS10YWc2KOWDtSkKICAgIC0tdGFnNyjpgIMpCiAgICAtLXRhZzgo5LyQ5pyoKQogICAgLS10YWc5KOWKmykKICAgIC0tdGFnMTAo5pWPKQogICAgLS10YWcxMSjmmbopCiAgICAtLXRhZzEyKOi0qikKICAgIC0tdGFnMTMo5peg5Y+MKQogICAgLS10YWcxNCjlpK8pCiAgICAtLXRhZzE1KOeLgikKICAgIC0t56ew5Y+35qCPCiAgICB0YWcgPSB7CiAgICAgICAgdGFnMSA9IGZhbHNlLAogICAgICAgIHRhZzIgPSBmYWxzZSwKICAgICAgICB0YWczID0gZmFsc2UsCiAgICAgICAgdGFnNCA9IGZhbHNlLAogICAgICAgIHRhZzUgPSBmYWxzZSwKICAgICAgICB0YWc2ID0gZmFsc2UsCiAgICAgICAgdGFnNyA9IGZhbHNlLAogICAgICAgIHRhZzggPSBmYWxzZSwKICAgICAgICB0YWc5ID0gZmFsc2UsCiAgICAgICAgdGFnMTAgPSBmYWxzZSwKICAgICAgICB0YWcxMSA9IGZhbHNlLAogICAgICAgIHRhZzEyID0gZmFsc2UsCiAgICAgICAgdGFnMTMgPSBmYWxzZSwKICAgICAgICB0YWcxNCA9IGZhbHNlLAogICAgICAgIHRhZzE1ID0gZmFsc2UsCiAgICB9LAp9Ck1haW5HYW1lLk92ZXJEYXRhID0gewogICAgLS3lpKnovokKICAgIFRlYW0yID0gewogICAgICAgIHRlYW0gPSAyLAogICAgICAgIHJlc3VsdCA9IDAsCiAgICAgICAga2lsbCA9IDAsCiAgICAgICAgcGxheWVyID0gewogICAgICAgICAgICAtLSBwbGF5ZXJfMCA9IHsKICAgICAgICAgICAgLS0gICAgIGlkID0gMCwKICAgICAgICAgICAgLS0gICAgIHN0YXRlID0gZmFsc2UsCiAgICAgICAgICAgIC0tICAgICBkYXRhID0ge30KICAgICAgICAgICAgLS0gfSwKICAgICAgICAgICAgLS0gcGxheWVyXzEgPSB7CiAgICAgICAgICAgIC0tICAgICBpZCA9IDEsCiAgICAgICAgICAgIC0tICAgICBzdGF0ZSA9IGZhbHNlLAogICAgICAgICAgICAtLSAgICAgZGF0YSA9IHt9CiAgICAgICAgICAgIC0tIH0sCiAgICAgICAgICAgIC0tIHBsYXllcl8yID0gewogICAgICAgICAgICAtLSAgICAgaWQgPSAyLAogICAgICAgICAgICAtLSAgICAgc3RhdGUgPSBmYWxzZSwKICAgICAgICAgICAgLS0gICAgIGRhdGEgPSB7fQogICAgICAgICAgICAtLSB9LAogICAgICAgICAgICAtLSBwbGF5ZXJfMyA9IHsKICAgICAgICAgICAgLS0gICAgIGlkID0gMywKICAgICAgICAgICAgLS0gICAgIHN0YXRlID0gZmFsc2UsCiAgICAgICAgICAgIC0tICAgICBkYXRhID0ge30KICAgICAgICAgICAgLS0gfSwKICAgICAgICAgICAgLS0gcGxheWVyXzQgPSB7CiAgICAgICAgICAgIC0tICAgICBpZCA9IDQsCiAgICAgICAgICAgIC0tICAgICBzdGF0ZSA9IGZhbHNlLAogICAgICAgICAgICAtLSAgICAgZGF0YSA9IHt9CiAgICAgICAgICAgIC0tIH0sCiAgICAgICAgfQogICAgfSwKICAgIC0t5aSc5a60CiAgICBUZWFtMyA9IHsKICAgICAgICB0ZWFtID0gMywKICAgICAgICByZXN1bHQgPSAwLAogICAgICAgIGtpbGwgPSAwLAogICAgICAgIHBsYXllciA9IHsKICAgICAgICAgICAgLS0gcGxheWVyXzUgPSB7CiAgICAgICAgICAgIC0tICAgICBpZCA9IDUsCiAgICAgICAgICAgIC0tICAgICBzdGF0ZSA9IGZhbHNlLAogICAgICAgICAgICAtLSAgICAgZGF0YSA9IHt9CiAgICAgICAgICAgIC0tIH0sCiAgICAgICAgICAgIC0tIHBsYXllcl82ID0gewogICAgICAgICAgICAtLSAgICAgaWQgPSA2LAogICAgICAgICAgICAtLSAgICAgc3RhdGUgPSBmYWxzZSwKICAgICAgICAgICAgLS0gICAgIGRhdGEgPSB7fQogICAgICAgICAgICAtLSB9LAogICAgICAgICAgICAtLSBwbGF5ZXJfNyA9IHsKICAgICAgICAgICAgLS0gICAgIGlkID0gNywKICAgICAgICAgICAgLS0gICAgIHN0YXRlID0gZmFsc2UsCiAgICAgICAgICAgIC0tICAgICBkYXRhID0ge30KICAgICAgICAgICAgLS0gfSwKICAgICAgICAgICAgLS0gcGxheWVyXzggPSB7CiAgICAgICAgICAgIC0tICAgICBpZCA9IDgsCiAgICAgICAgICAgIC0tICAgICBzdGF0ZSA9IGZhbHNlLAogICAgICAgICAgICAtLSAgICAgZGF0YSA9IHt9CiAgICAgICAgICAgIC0tIH0sCiAgICAgICAgICAgIC0tIHBsYXllcl85ID0gewogICAgICAgICAgICAtLSAgICAgaWQgPSA5LAogICAgICAgICAgICAtLSAgICAgc3RhdGUgPSBmYWxzZSwKICAgICAgICAgICAgLS0gICAgIGRhdGEgPSB7fQogICAgICAgICAgICAtLSB9LAogICAgICAgIH0KICAgIH0KfQpNYWluR2FtZS5Ub3BMaXN0ID0gewogICAgLS3pobXpnaLlvIDlhbMKICAgIHBhZ2UgPSBmYWxzZSwKICAgIC0t5b2T5YmN5ri45oiP5pe26Ze0CiAgICB0aW1lID0gLTEsCiAgICAtLeW9k+WJjeeZveWkqeWknOaZmgogICAgZGF5ID0gLTEsCiAgICAtLeeOqeWutuWIl+ihqAogICAgbGlzdCA9IHsKICAgIH0sCn0KTWFpbkdhbWUuUGxheWVyU2xvdCA9IHsKICAgIC0t5qe95L2NCiAgICBzbG90ID0gLTEsCiAgICAtLeeOqeWutumYn+S8jQogICAgdGVhbSA9IC0xLAogICAgLS3njqnlrrZJRAogICAgaWQgPSAtMSwKICAgIC0t5piv5ZCm5a2Y5ZyoCiAgICBzdGF0ZSA9IGZhbHNlLAogICAgLS3mmK/lkKbmjonnur8KICAgIG9ubGluZSA9IGZhbHNlLAogICAgLS3oi7Hpm4TlpLTlg48KICAgIGhlcm8gPSAiIiwKICAgIC0t546p5a625YiG5pWwCiAgICBwb2ludCA9IDAsCiAgICAtLeaYr+WQpuatu+S6oQogICAgZGVhdGggPSBmYWxzZSwKICAgIC0t546p5a625aSN5rS75pe26Ze0CiAgICByZWJvcm4gPSAtMSwKfQo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
-end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+MainGame.Data = {
+    --当前游戏进程(1,初始，2第一次缩圈，3，第二次缩圈)
+    state = 1,
+    over = false,
+    win_team = 0,
+    --天气编号
+    weather = -1,
+    weather_time = -1,
+    -- 上一轮已结束的天气 id（轮换时不可连续重复）
+    weather_last_id = nil,
+    --毒圈特效
+    tx = -1,
+    -- 天气配套环境粒子（烛火/路灯/蛾/蝶），轮换天气时重建；对局结束清理
+    world_ambient_fx = {},
+    --累计杀敌数
+    kill = {
+        --天辉
+        Team2 = 0,
+        --夜宴
+        Team3 = 0,
+        -- rank_3x4：CUSTOM_1 / CUSTOM_2
+        Team6 = 0,
+        Team7 = 0,
+    },
+    star_max_state = false,
+    wy_state = false,
+    door = {
+        doors1 = {
+            door1 = {
+                name = "door1",
+                pos = Vector(-7578.689941, 7358.165527, 256.000000),
+                tx = -1,
+                state = false
+            },
+            door2 = {
+                name = "door2",
+                pos = Vector(7654.781250, -7781.971680, 256.000000),
+                tx = -1,
+                state = false
+            },
+        },
+        doors2 = {
+            door3 = {
+                name = "door3",
+                pos = Vector(-7767.351074, -7692.657227, 128.000000),
+                tx = -1,
+                state = false
+            },
+            door4 = {
+                name = "door4",
+                pos = Vector(7879.106934, 7508.555664, 128.000000),
+                tx = -1,
+                state = false
+            },
+        }
+    },
+    dummy = -1,
+    hero_reborn_index = 1,
+    session_load_gate_started = false,
+    session_load_gate_finished = false,
+    -- passive_mode：已移除「被动模式」玩法，固定为 false（兼容旧引用）
+    passive_mode = false,
+    --禁止刷怪
+    jzsg = false,
+    --- 决战时刻 20000 全局金币只发一次（避免 EventTrigger 失败后重试重复加钱）
+    lastfight_gold_done = false,
+    -- 自定义昼夜：true=白天，false=黑夜
+    daynight_is_day = true,
+    daynight_elapsed = 0,
+}
+MainGame.Static = {
+    doors_cd = 6,
+    --- 传送门落地后短暂无敌（秒）
+    door_teleport_invuln = 0.1,
+    doors_tx = "particles/econ/items/underlord/underlord_2021_immortal/underlord_2021_immortal_portal.vpcf",
+    -- 白天 / 黑夜时长（秒）
+    day_time = 240,
+    night_time = 360,
+    -- 白天 / 黑夜天气效果持续时间（秒）
+    weather_time_day = 120,
+    weather_time_night = 180,
+    --第一次缩醛范围
+    rang1 = 7000,
+    --第二次缩醛范围
+    rang2 = 3000,
+    --团队获胜人头数（5v5 等双人阵营）
+    team_kill = 140,
+    -- rank_3x4：单队阵营总击杀胜利线（与 team_kill 分离，避免改 3x4 影响 5v5）
+    team_kill_3x4 = 150,
+    --个人获胜人头数（beidong 等 game_type==2）
+    person_kill = 80,
+    -- rank_1v1 / beidong 个人获胜人头数
+    person_kill_rank_1v1 = 75,
+    -- 龙：首只/第二只 刷新时间（秒，与下 MainGame.EventList dragon1、dragon3 一致）；第二只 = 首只 + 3 分钟
+    dragon1 = 1260, -- 21*60
+    dragon3 = 1440, -- 24*60
+    --- 被动模式：真人禁用该物品（商店购买、配方、合成/快递入库、使用）。键为成品 item_* 即可，item_recipe_* 会按成品自动视为禁用。
+    PassiveModeBannedShopItems = {
+        -- ["item_black_king_bar"] = true,
+        ["item_ghost"] = true,           -- 幽灵权杖
+        ["item_heavens_halberd"] = true, -- 天堂之戟（含 item_recipe_heavens_halberd 配方购买）
+        ["item_skill_33"] = true,        -- 法力精研（技能书掉落/购买/使用）
+        ["item_cyclone"] = true,         -- Eul 的神圣法杖（含 item_recipe_cyclone）
+        ["item_octarine_core"] = true,   -- 玲珑心（含 item_recipe_octarine_core）
+    },
+}
+MainGame.EventList = {
+    --游戏结束
+    game_over = {
+        id = "game_over",
+        time = 1800,
+        state = true
+    },
+    --距离游戏时间结束的语音播报
+    timeover1 = {
+        id = "timeover1",
+        time = 1740,
+        state = true
+    },
+    --距离游戏时间结束的语音播报
+    timeover2 = {
+        id = "timeover2",
+        time = 1677,
+        state = true
+    },
+    --乱斗语音
+    lastfight = {
+        id = "lastfight",
+        time = 1500,
+        state = true
+    },
+    --毒圈2
+    map2 = {
+        id = "map2",
+        time = 1440,
+        state = true,
+    },
+    --毒圈语音2
+    map30_2 = {
+        id = "map30_2",
+        time = 1410,
+        state = true,
+    },
+    --清理2
+    clear2 = {
+        id = "clear2",
+        time = 1380,
+        state = true,
+    },
+    --毒圈1
+    map1 = {
+        id = "map1",
+        time = 960,
+        state = true,
+    },
+    --毒圈语音1
+    map30_1 = {
+        id = "map30_1",
+        time = 930,
+        state = true,
+    },
+    --清理
+    clear1 = {
+        id = "clear1",
+        time = 900,
+        state = true,
+    },
+
+
+
+
+
+    --龙2（第二只，顺延 3 分钟，24:00）
+    dragon3 = {
+        id = "dragon3",
+        time = 1440,
+        state = true
+    },
+    --龙1（首只魔龙，游戏时间 21:00）
+    dragon1 = {
+        id = "dragon1",
+        time = 1260,
+        state = true
+    },
+    --熊1
+    bear1 = {
+        id = "bear1",
+        time = 1080,
+        state = true
+    },
+    --熊2
+    bear2 = {
+        id = "bear2",
+        time = 1200,
+        state = true
+    },
+    --熊3
+    bear3 = {
+        id = "bear3",
+        time = 1320,
+        state = true
+    },
+
+
+    --狼3
+    wolf3 = {
+        id = "wolf3",
+        time = 540,
+        state = true
+    },
+    --狼2
+    wolf2 = {
+        id = "wolf2",
+        time = 420,
+        state = true
+    },
+    --狼1
+    wolf1 = {
+        id = "wolf1",
+        time = 300,
+        state = true
+    },
+    -- 陨落星辰（8 分钟，4 颗）
+    fallstar1 = {
+        id = "fallstar1",
+        time = 480,
+        state = true,
+    },
+    -- 陨落星辰（10 分钟，4 颗）
+    fallstar2 = {
+        id = "fallstar2",
+        time = 600,
+        state = true,
+    },
+}
+
+MainGame.PlayerData = {
+    --玩家steamid
+    p_id = -1,
+    hero_name = "",
+    --名字
+    name = "",
+    KDA = {
+        kill = 0,
+        death = 0,
+        assist = 0,
+        kda = 0,
+    },
+    --物品栏
+    items = {
+        slot_1 = "",
+        slot_2 = "",
+        slot_3 = "",
+        slot_4 = "",
+        slot_5 = "",
+        slot_6 = "",
+    },
+    --天赋物品=----------------------------------------------------------------
+    talent = "item_goods_0",
+    --技能栏
+    skill = {
+        skill_1 = "",
+        skill_2 = "",
+        skill_3 = "",
+        skill_4 = "",
+        skill_5 = "",
+        skill_6 = "",
+        skill_7 = "",
+        skill_8 = "",
+        skill_9 = "",
+        skill_10 = "",
+    },
+    --金币
+    gold = 0,
+    --总伤害
+    damage = 0,
+    --承受伤害
+    tank = 0,
+    --天梯分
+    point = 1000,
+    --分数增减
+    add_point = 0,
+    --tag1(mvp)
+    --tag2(神)
+    --tag3(暴)
+    --tag4(硬)
+    --tag5(杀)
+    --tag6(僵)
+    --tag7(逃)
+    --tag8(伐木)
+    --tag9(力)
+    --tag10(敏)
+    --tag11(智)
+    --tag12(贪)
+    --tag13(无双)
+    --tag14(夯)
+    --tag15(狂)
+    --称号栏
+    tag = {
+        tag1 = false,
+        tag2 = false,
+        tag3 = false,
+        tag4 = false,
+        tag5 = false,
+        tag6 = false,
+        tag7 = false,
+        tag8 = false,
+        tag9 = false,
+        tag10 = false,
+        tag11 = false,
+        tag12 = false,
+        tag13 = false,
+        tag14 = false,
+        tag15 = false,
+    },
+}
+MainGame.OverData = {
+    --天辉
+    Team2 = {
+        team = 2,
+        result = 0,
+        kill = 0,
+        player = {
+            -- player_0 = {
+            --     id = 0,
+            --     state = false,
+            --     data = {}
+            -- },
+            -- player_1 = {
+            --     id = 1,
+            --     state = false,
+            --     data = {}
+            -- },
+            -- player_2 = {
+            --     id = 2,
+            --     state = false,
+            --     data = {}
+            -- },
+            -- player_3 = {
+            --     id = 3,
+            --     state = false,
+            --     data = {}
+            -- },
+            -- player_4 = {
+            --     id = 4,
+            --     state = false,
+            --     data = {}
+            -- },
+        }
+    },
+    --夜宴
+    Team3 = {
+        team = 3,
+        result = 0,
+        kill = 0,
+        player = {
+            -- player_5 = {
+            --     id = 5,
+            --     state = false,
+            --     data = {}
+            -- },
+            -- player_6 = {
+            --     id = 6,
+            --     state = false,
+            --     data = {}
+            -- },
+            -- player_7 = {
+            --     id = 7,
+            --     state = false,
+            --     data = {}
+            -- },
+            -- player_8 = {
+            --     id = 8,
+            --     state = false,
+            --     data = {}
+            -- },
+            -- player_9 = {
+            --     id = 9,
+            --     state = false,
+            --     data = {}
+            -- },
+        }
+    }
+}
+MainGame.TopList = {
+    --页面开关
+    page = false,
+    --当前游戏时间
+    time = -1,
+    --当前白天夜晚
+    day = -1,
+    --玩家列表
+    list = {
+    },
+}
+MainGame.PlayerSlot = {
+    --槽位
+    slot = -1,
+    --玩家队伍
+    team = -1,
+    --玩家ID
+    id = -1,
+    --是否存在
+    state = false,
+    --是否掉线
+    online = false,
+    --英雄头像
+    hero = "",
+    --玩家分数
+    point = 0,
+    --是否死亡
+    death = false,
+    --玩家复活时间
+    reborn = -1,
+}

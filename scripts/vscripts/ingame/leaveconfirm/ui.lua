@@ -8,22 +8,247 @@
 ]]
 
 
-local encoded=[[ZnVuY3Rpb24gTGVhdmVDb25maXJtOkdldFVJRGF0YShJRCwgZGF0YSkKICAgIGlmIG5vdCBJRCBvciBub3QgZGF0YSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIGRhdGEudHAgPT0gImluaXQiIHRoZW4KICAgICAgICBzZWxmOlNlbmREYXRhKElEKQogICAgZW5kCiAgICBpZiBkYXRhLnRwID09ICJPcGVuUGFnZSIgdGhlbgogICAgICAgIHNlbGY6T3BlblBhZ2UoSUQpCiAgICBlbmQKICAgIGlmIGRhdGEudHAgPT0gIkNsb3NlUGFnZSIgdGhlbgogICAgICAgIHNlbGY6Q2xvc2VQYWdlKElEKQogICAgZW5kCiAgICBpZiBkYXRhLnRwID09ICJDb25maXJtTGVhdmUiIHRoZW4KICAgICAgICBzZWxmOkNvbmZpcm1MZWF2ZShJRCkKICAgIGVuZAplbmQKCmZ1bmN0aW9uIExlYXZlQ29uZmlybTpTZW5kRGF0YShJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGRhdGEgPSBzZWxmLkRhdGFbSURdCiAgICBpZiBub3QgZGF0YSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIFV0aWw6U2VuZDJKc0lEKCJVSV9MZWF2ZUNvbmZpcm0iLCBkYXRhLCBJRCkKZW5kCgpmdW5jdGlvbiBMZWF2ZUNvbmZpcm06T3BlblBhZ2UoSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBub3Qgc2VsZi5EYXRhW0lEXSB0aGVuCiAgICAgICAgc2VsZi5EYXRhW0lEXSA9IFV0aWw6RGVlcENvcHlUYWIoc2VsZi5UZW1wbGF0ZSkKICAgIGVuZAogICAgc2VsZi5EYXRhW0lEXS5wYWdlID0gdHJ1ZQogICAgc2VsZjpTZW5kRGF0YShJRCkKZW5kCgpmdW5jdGlvbiBMZWF2ZUNvbmZpcm06Q2xvc2VQYWdlKElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgbm90IHNlbGYuRGF0YVtJRF0gdGhlbgogICAgICAgIHNlbGYuRGF0YVtJRF0gPSBVdGlsOkRlZXBDb3B5VGFiKHNlbGYuVGVtcGxhdGUpCiAgICBlbmQKICAgIHNlbGYuRGF0YVtJRF0ucGFnZSA9IGZhbHNlCiAgICBzZWxmOlNlbmREYXRhKElEKQplbmQKCi0tLSDlr7nlsYDov5vooYzkuK3kuJTmnKrnu5PnrpfjgIHkuJTkuLrmu6HlkZjnnJ/kurrlr7nlsYDml7bvvIzkuK3pgJTnprvlvIDmiY3lj6/og73op6blj5Hnp5LpgIDmg6nnvZoKLS0tIOS7hea4uOaIj+aXtumXtOacqua7oSAxNSDliIbpkp/ml7bmg6nnvZrvvJvljZXmnLogLyDkurrmnLrloavlhYXlsYDkuI3mg6nnvZoKTGVhdmVDb25maXJtLkVBUkxZX0xFQVZFX1BFTkFMVFlfQkVGT1JFX01JTiA9IDE1Ci0tLSDmlq3lvIDov57mjqXlkI7pnIDmjIHnu63nprvnur/ovr7liLDor6Xnp5LmlbDmiY3mg6nnvZrvvIjph43ov57liJnmuIXpm7bvvIkKTGVhdmVDb25maXJtLkRJU0NPTk5FQ1RfUEVOQUxUWV9TRUMgPSA1ICogNjAKLS0tIFRFTVDvvJrnur/kuIrlsI/lsYDmtYvnp5LpgIDvvIzmmoLkuI3opoHmsYLmu6HlkZggMTAvMTIg55yf5Lq677yb5q2j5byP546v5aKD5L+d5oyBIGZhbHNlCkxlYXZlQ29uZmlybS5URU1QX1JFTEFYX0ZVTExfTE9CQlkgPSBmYWxzZQpMZWF2ZUNvbmZpcm0uVEVNUF9NSU5fSFVNQU5TX0ZPUl9QRU5BTFRZID0gMgoKZnVuY3Rpb24gTGVhdmVDb25maXJtOklzV2l0aGluRWFybHlMZWF2ZVBlbmFsdHlXaW5kb3coYXRfbWluKQogICAgbG9jYWwgbGltaXQgPSBzZWxmLkVBUkxZX0xFQVZFX1BFTkFMVFlfQkVGT1JFX01JTiBvciAxNQogICAgaWYgYXRfbWluID09IG5pbCB0aGVuCiAgICAgICAgYXRfbWluID0gKE1haW5HYW1lIGFuZCBNYWluR2FtZS5HZXRUaW1lTWluIGFuZCBNYWluR2FtZTpHZXRUaW1lTWluKCkpIG9yIDAKICAgIGVuZAogICAgYXRfbWluID0gdG9udW1iZXIoYXRfbWluKSBvciAwCiAgICByZXR1cm4gYXRfbWluIDwgbGltaXQKZW5kCgotLS0g56eS6YCA5oOp572a6YCC55So55qE5a+55bGA57G75Z6L77yIVEVNUCDmlL7lrr3mu6HlkZjkurrmlbDvvIkKZnVuY3Rpb24gTGVhdmVDb25maXJtOklzRWxpZ2libGVMb2JieUZvckVhcmx5TGVhdmVQZW5hbHR5KCkKICAgIGlmIG5vdCBPdmVyRGF0YSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIE92ZXJEYXRhLlNvbG9IdW1hblZzQm90czF2MSBhbmQgT3ZlckRhdGE6U29sb0h1bWFuVnNCb3RzMXYxKCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICAtLSDku43pnIDmmK/lpKnmoq/mqKHlvI/vvIgxdjEvNXY1LzN4NO+8ie+8jOaOkumZpCBiZWlkb25nIOetieaXoOaOkuS9jeaooeW8jwogICAgbG9jYWwgbW9kZV9uZWVkID0gT3ZlckRhdGEuR2V0TGFkZGVyUmFua2VkSHVtYW5SZXF1aXJlbWVudAogICAgICAgIGFuZCBPdmVyRGF0YTpHZXRMYWRkZXJSYW5rZWRIdW1hblJlcXVpcmVtZW50KCkKICAgIGlmIG5vdCBtb2RlX25lZWQgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBzZWxmLlRFTVBfUkVMQVhfRlVMTF9MT0JCWSB0aGVuCiAgICAgICAgbG9jYWwgbiA9IChPdmVyRGF0YS5Db3VudFJlYWxIdW1hblBsYXllcnMgYW5kIE92ZXJEYXRhOkNvdW50UmVhbEh1bWFuUGxheWVycygpKSBvciAwCiAgICAgICAgbG9jYWwgbWluX2h1bWFucyA9IHNlbGYuVEVNUF9NSU5fSFVNQU5TX0ZPUl9QRU5BTFRZIG9yIDIKICAgICAgICByZXR1cm4gbiA+PSBtaW5faHVtYW5zCiAgICBlbmQKICAgIHJldHVybiBPdmVyRGF0YS5Jc0xhZGRlclJhbmtlZExvYmJ5IGFuZCBPdmVyRGF0YTpJc0xhZGRlclJhbmtlZExvYmJ5KCkgPT0gdHJ1ZQplbmQKCmZ1bmN0aW9uIExlYXZlQ29uZmlybTpTaG91bGRBcHBseUVhcmx5TGVhdmVQZW5hbHR5KGF0X21pbikKICAgIGlmIG5vdCBNYWluR2FtZSBvciBub3QgTWFpbkdhbWUuRGF0YSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIE1haW5HYW1lLkRhdGEub3ZlciA9PSB0cnVlIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgaWYgbm90IEdhbWVSdWxlcyBvciBub3QgR2FtZVJ1bGVzLlN0YXRlX0dldCB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGxvY2FsIHN0ID0gR2FtZVJ1bGVzOlN0YXRlX0dldCgpCiAgICBpZiBzdCA9PSBuaWwgb3Igc3QgPCBET1RBX0dBTUVSVUxFU19TVEFURV9QUkVfR0FNRSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIG5vdCBzZWxmOklzV2l0aGluRWFybHlMZWF2ZVBlbmFsdHlXaW5kb3coYXRfbWluKSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIHJldHVybiBzZWxmOklzRWxpZ2libGVMb2JieUZvckVhcmx5TGVhdmVQZW5hbHR5KCkgPT0gdHJ1ZQplbmQKCmZ1bmN0aW9uIExlYXZlQ29uZmlybTpFbnN1cmVNYXRjaFVpZCgpCiAgICBpZiBzZWxmLm1hdGNoX3VpZCBhbmQgc2VsZi5tYXRjaF91aWQgfj0gIiIgdGhlbgogICAgICAgIHJldHVybiBzZWxmLm1hdGNoX3VpZAogICAgZW5kCiAgICBsb2NhbCBtYXAgPSAoR2V0TWFwTmFtZSBhbmQgR2V0TWFwTmFtZSgpKSBvciAibWFwIgogICAgbG9jYWwgdCA9IG1hdGguZmxvb3IoKFRpbWUgYW5kIFRpbWUoKSkgb3IgMCkKICAgIGxvY2FsIHIgPSAoUmFuZG9tSW50IGFuZCBSYW5kb21JbnQoMTAwMDAwLCA5OTk5OTkpKSBvciAwCiAgICBzZWxmLm1hdGNoX3VpZCA9IHN0cmluZy5mb3JtYXQoIiVzXyVkXyVkIiwgdG9zdHJpbmcobWFwKSwgdCwgcikKICAgIHJldHVybiBzZWxmLm1hdGNoX3VpZAplbmQKCi0tLSDmnKzlsYDku4Xmg6nnvZrnrKzkuIDkuKrmjIHnu63mlq3nur/otoXml7bnmoTnjqnlrrYKLS0tIEBwYXJhbSBhdF9taW4gbnVtYmVyfG5pbCDmlq3nur/ml7bnmoTmuLjmiI/liIbpkp/vvIjnlKjkuo4gPDE1IOWIhueql+WPo+WIpOWumu+8iQpmdW5jdGlvbiBMZWF2ZUNvbmZpcm06Q2xhaW1GaXJzdEVhcmx5TGVhdmVQZW5hbHR5KElELCBhdF9taW4pCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBub3Qgc2VsZjpTaG91bGRBcHBseUVhcmx5TGVhdmVQZW5hbHR5KGF0X21pbikgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBVdGlsIGFuZCBVdGlsLklzUHNldWRvUGxheWVySUQgYW5kIFV0aWw6SXNQc2V1ZG9QbGF5ZXJJRChJRCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBzZWxmLnBlbmFsdHlfY2xhaW1lZCA9PSB0cnVlIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgc2VsZi5wZW5hbHR5X2NsYWltZWQgPSB0cnVlCiAgICByZXR1cm4gdHJ1ZQplbmQKCmxvY2FsIGZ1bmN0aW9uIExlYXZlQ29uZmlybV9BcHBseVRwY2ZMb2NhbChJRCwgdHBjZikKICAgIHRwY2YgPSB0b251bWJlcih0cGNmKQogICAgaWYgbm90IHRwY2Ygb3IgdHBjZiA8IDAgdGhlbgogICAgICAgIHRwY2YgPSAwCiAgICBlbmQKICAgIHRwY2YgPSBtYXRoLmZsb29yKHRwY2YpCiAgICBpZiBQZXJzb24gYW5kIFBlcnNvbi5EYXRhIGFuZCBQZXJzb24uRGF0YVtJRF0gdGhlbgogICAgICAgIFBlcnNvbi5EYXRhW0lEXS50cGNmID0gdHBjZgogICAgZW5kCiAgICBpZiBPdmVyRGF0YSBhbmQgT3ZlckRhdGEuRGF0YSBhbmQgT3ZlckRhdGEuRGF0YVtJRF0gdGhlbgogICAgICAgIE92ZXJEYXRhLkRhdGFbSURdLnRwY2YgPSB0cGNmCiAgICBlbmQKZW5kCgotLS0g5LiK5oql5pyN5Yqh56uv77ya5ruh5ZGY5bGAIDE1IOWIhumSn+WJjeOAgeaMgee7reaWree6v+i2heaXtiB0cGNmKzPvvIjmr4/lsYDku4XnrKzkuIDkurrvvIkKZnVuY3Rpb24gTGVhdmVDb25maXJtOlJlcG9ydEVhcmx5TGVhdmUoSUQsIGF0X21pbikKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIG5vdCBzZWxmOkNsYWltRmlyc3RFYXJseUxlYXZlUGVuYWx0eShJRCwgYXRfbWluKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIG5vdCBIdHRwIG9yIG5vdCBIdHRwLlBPU1QgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBib2R5ID0gewogICAgICAgIG1hdGNoX3VpZCA9IHNlbGY6RW5zdXJlTWF0Y2hVaWQoKSwKICAgIH0KICAgIEh0dHA6UE9TVCgiL2dhbWUvZWFybHlfbGVhdmUiLCBib2R5LCBJRCwgZnVuY3Rpb24oa2V5cykKICAgICAgICBpZiBub3Qga2V5cyBvciBub3Qga2V5cy5kYXRhIHRoZW4KICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgbG9jYWwgdHBjZiA9IHRvbnVtYmVyKGtleXMuZGF0YS50cGNmKQogICAgICAgIGlmIHRwY2Ygfj0gbmlsIHRoZW4KICAgICAgICAgICAgTGVhdmVDb25maXJtX0FwcGx5VHBjZkxvY2FsKElELCB0cGNmKQogICAgICAgIGVuZAogICAgZW5kKQplbmQKCi0tLSDmlq3nur/lkI7lvIDlp4vorqHml7bvvJrmjIHnu63nprvnur/mu6EgRElTQ09OTkVDVF9QRU5BTFRZX1NFQ++8iOm7mOiupCA1IOWIhumSn++8ieaJjeaDqee9mu+8m+S4remAlOmHjei/nuWPlua2iApmdW5jdGlvbiBMZWF2ZUNvbmZpcm06V2F0Y2hBYmFuZG9uQWZ0ZXJEaXNjb25uZWN0KElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgZGlzY29ubmVjdF9taW4gPSAoTWFpbkdhbWUgYW5kIE1haW5HYW1lLkdldFRpbWVNaW4gYW5kIE1haW5HYW1lOkdldFRpbWVNaW4oKSkgb3IgMAogICAgaWYgbm90IHNlbGY6U2hvdWxkQXBwbHlFYXJseUxlYXZlUGVuYWx0eShkaXNjb25uZWN0X21pbikgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBVdGlsIGFuZCBVdGlsLklzUHNldWRvUGxheWVySUQgYW5kIFV0aWw6SXNQc2V1ZG9QbGF5ZXJJRChJRCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBzZWxmLnBlbmFsdHlfY2xhaW1lZCA9PSB0cnVlIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5fYWJhbmRvbl93YXRjaCA9IHNlbGYuX2FiYW5kb25fd2F0Y2ggb3Ige30KICAgIGlmIHNlbGYuX2FiYW5kb25fd2F0Y2hbSURdIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5fYWJhbmRvbl93YXRjaFtJRF0gPSB0cnVlCiAgICBpZiBub3QgVGltZXJzIHRoZW4KICAgICAgICBzZWxmLl9hYmFuZG9uX3dhdGNoW0lEXSA9IG5pbAogICAgICAgIHJldHVybgogICAgZW5kCgogICAgbG9jYWwgbmVlZF9zZWMgPSB0b251bWJlcihzZWxmLkRJU0NPTk5FQ1RfUEVOQUxUWV9TRUMpIG9yICg1ICogNjApCiAgICBpZiBuZWVkX3NlYyA8IDEgdGhlbgogICAgICAgIG5lZWRfc2VjID0gNSAqIDYwCiAgICBlbmQKICAgIGxvY2FsIHN0YXJ0X3QgPSAoVGltZSBhbmQgVGltZSgpKSBvciAwCgogICAgVGltZXJzKDEsIGZ1bmN0aW9uKCkKICAgICAgICBpZiBub3QgSUQgdGhlbgogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgICAgICBpZiBzZWxmLnBlbmFsdHlfY2xhaW1lZCA9PSB0cnVlCiAgICAgICAgICAgIG9yIChNYWluR2FtZSBhbmQgTWFpbkdhbWUuRGF0YSBhbmQgTWFpbkdhbWUuRGF0YS5vdmVyID09IHRydWUpIHRoZW4KICAgICAgICAgICAgc2VsZi5fYWJhbmRvbl93YXRjaFtJRF0gPSBuaWwKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgLS0g5bey6YeN6L+e77ya5LiN6K6h5pe244CB5LiN5oOp572aCiAgICAgICAgaWYgVXRpbCBhbmQgVXRpbC5JRDJJZk9ubGluZSBhbmQgVXRpbDpJRDJJZk9ubGluZShJRCkgdGhlbgogICAgICAgICAgICBzZWxmLl9hYmFuZG9uX3dhdGNoW0lEXSA9IG5pbAogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgICAgICBsb2NhbCBub3cgPSAoVGltZSBhbmQgVGltZSgpKSBvciAwCiAgICAgICAgbG9jYWwgZWxhcHNlZCA9IG5vdyAtIHN0YXJ0X3QKICAgICAgICBpZiBlbGFwc2VkID49IG5lZWRfc2VjIHRoZW4KICAgICAgICAgICAgc2VsZi5fYWJhbmRvbl93YXRjaFtJRF0gPSBuaWwKICAgICAgICAgICAgLS0g5LuN5oyJ5pat57q/5b2T5pe25piv5ZCmIDwxNSDliIbliKTlrprnqpflj6MKICAgICAgICAgICAgc2VsZjpSZXBvcnRFYXJseUxlYXZlKElELCBkaXNjb25uZWN0X21pbikKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgcmV0dXJuIDEKICAgIGVuZCkKZW5kCgpmdW5jdGlvbiBMZWF2ZUNvbmZpcm06Q29uZmlybUxlYXZlKElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZjpDbG9zZVBhZ2UoSUQpCiAgICAtLSDnoa7lrprnprvlvIDkvJrmlq3lvIDov57mjqXvvJvmg6nnvZrnlLHmlq3nur/orqHml7bvvIjmu6EgNSDliIbpkp/vvInnu5/kuIDlpITnkIbvvIzmraTlpITkuI3nq4vljbPkuIrmiqUKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+function LeaveConfirm:GetUIData(ID, data)
+    if not ID or not data then
+        return
+    end
+    if data.tp == "init" then
+        self:SendData(ID)
+    end
+    if data.tp == "OpenPage" then
+        self:OpenPage(ID)
+    end
+    if data.tp == "ClosePage" then
+        self:ClosePage(ID)
+    end
+    if data.tp == "ConfirmLeave" then
+        self:ConfirmLeave(ID)
+    end
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function LeaveConfirm:SendData(ID)
+    if not ID then
+        return
+    end
+    local data = self.Data[ID]
+    if not data then
+        return
+    end
+    Util:Send2JsID("UI_LeaveConfirm", data, ID)
+end
+
+function LeaveConfirm:OpenPage(ID)
+    if not ID then
+        return
+    end
+    if not self.Data[ID] then
+        self.Data[ID] = Util:DeepCopyTab(self.Template)
+    end
+    self.Data[ID].page = true
+    self:SendData(ID)
+end
+
+function LeaveConfirm:ClosePage(ID)
+    if not ID then
+        return
+    end
+    if not self.Data[ID] then
+        self.Data[ID] = Util:DeepCopyTab(self.Template)
+    end
+    self.Data[ID].page = false
+    self:SendData(ID)
+end
+
+--- 对局进行中且未结算、且为满员真人对局时，中途离开才可能触发秒退惩罚
+--- 仅游戏时间未满 15 分钟时惩罚；单机 / 人机填充局不惩罚
+LeaveConfirm.EARLY_LEAVE_PENALTY_BEFORE_MIN = 15
+--- 断开连接后需持续离线达到该秒数才惩罚（重连则清零）
+LeaveConfirm.DISCONNECT_PENALTY_SEC = 5 * 60
+--- TEMP：线上小局测秒退，暂不要求满员 10/12 真人；正式环境保持 false
+LeaveConfirm.TEMP_RELAX_FULL_LOBBY = false
+LeaveConfirm.TEMP_MIN_HUMANS_FOR_PENALTY = 2
+
+function LeaveConfirm:IsWithinEarlyLeavePenaltyWindow(at_min)
+    local limit = self.EARLY_LEAVE_PENALTY_BEFORE_MIN or 15
+    if at_min == nil then
+        at_min = (MainGame and MainGame.GetTimeMin and MainGame:GetTimeMin()) or 0
+    end
+    at_min = tonumber(at_min) or 0
+    return at_min < limit
+end
+
+--- 秒退惩罚适用的对局类型（TEMP 放宽满员人数）
+function LeaveConfirm:IsEligibleLobbyForEarlyLeavePenalty()
+    if not OverData then
+        return false
+    end
+    if OverData.SoloHumanVsBots1v1 and OverData:SoloHumanVsBots1v1() then
+        return false
+    end
+    -- 仍需是天梯模式（1v1/5v5/3x4），排除 beidong 等无排位模式
+    local mode_need = OverData.GetLadderRankedHumanRequirement
+        and OverData:GetLadderRankedHumanRequirement()
+    if not mode_need then
+        return false
+    end
+    if self.TEMP_RELAX_FULL_LOBBY then
+        local n = (OverData.CountRealHumanPlayers and OverData:CountRealHumanPlayers()) or 0
+        local min_humans = self.TEMP_MIN_HUMANS_FOR_PENALTY or 2
+        return n >= min_humans
+    end
+    return OverData.IsLadderRankedLobby and OverData:IsLadderRankedLobby() == true
+end
+
+function LeaveConfirm:ShouldApplyEarlyLeavePenalty(at_min)
+    if not MainGame or not MainGame.Data then
+        return false
+    end
+    if MainGame.Data.over == true then
+        return false
+    end
+    if not GameRules or not GameRules.State_Get then
+        return false
+    end
+    local st = GameRules:State_Get()
+    if st == nil or st < DOTA_GAMERULES_STATE_PRE_GAME then
+        return false
+    end
+    if not self:IsWithinEarlyLeavePenaltyWindow(at_min) then
+        return false
+    end
+    return self:IsEligibleLobbyForEarlyLeavePenalty() == true
+end
+
+function LeaveConfirm:EnsureMatchUid()
+    if self.match_uid and self.match_uid ~= "" then
+        return self.match_uid
+    end
+    local map = (GetMapName and GetMapName()) or "map"
+    local t = math.floor((Time and Time()) or 0)
+    local r = (RandomInt and RandomInt(100000, 999999)) or 0
+    self.match_uid = string.format("%s_%d_%d", tostring(map), t, r)
+    return self.match_uid
+end
+
+--- 本局仅惩罚第一个持续断线超时的玩家
+--- @param at_min number|nil 断线时的游戏分钟（用于 <15 分窗口判定）
+function LeaveConfirm:ClaimFirstEarlyLeavePenalty(ID, at_min)
+    if not ID then
+        return false
+    end
+    if not self:ShouldApplyEarlyLeavePenalty(at_min) then
+        return false
+    end
+    if Util and Util.IsPseudoPlayerID and Util:IsPseudoPlayerID(ID) then
+        return false
+    end
+    if self.penalty_claimed == true then
+        return false
+    end
+    self.penalty_claimed = true
+    return true
+end
+
+local function LeaveConfirm_ApplyTpcfLocal(ID, tpcf)
+    tpcf = tonumber(tpcf)
+    if not tpcf or tpcf < 0 then
+        tpcf = 0
+    end
+    tpcf = math.floor(tpcf)
+    if Person and Person.Data and Person.Data[ID] then
+        Person.Data[ID].tpcf = tpcf
+    end
+    if OverData and OverData.Data and OverData.Data[ID] then
+        OverData.Data[ID].tpcf = tpcf
+    end
+end
+
+--- 上报服务端：满员局 15 分钟前、持续断线超时 tpcf+3（每局仅第一人）
+function LeaveConfirm:ReportEarlyLeave(ID, at_min)
+    if not ID then
+        return
+    end
+    if not self:ClaimFirstEarlyLeavePenalty(ID, at_min) then
+        return
+    end
+    if not Http or not Http.POST then
+        return
+    end
+    local body = {
+        match_uid = self:EnsureMatchUid(),
+    }
+    Http:POST("/game/early_leave", body, ID, function(keys)
+        if not keys or not keys.data then
+            return
+        end
+        local tpcf = tonumber(keys.data.tpcf)
+        if tpcf ~= nil then
+            LeaveConfirm_ApplyTpcfLocal(ID, tpcf)
+        end
+    end)
+end
+
+--- 断线后开始计时：持续离线满 DISCONNECT_PENALTY_SEC（默认 5 分钟）才惩罚；中途重连取消
+function LeaveConfirm:WatchAbandonAfterDisconnect(ID)
+    if not ID then
+        return
+    end
+    local disconnect_min = (MainGame and MainGame.GetTimeMin and MainGame:GetTimeMin()) or 0
+    if not self:ShouldApplyEarlyLeavePenalty(disconnect_min) then
+        return
+    end
+    if Util and Util.IsPseudoPlayerID and Util:IsPseudoPlayerID(ID) then
+        return
+    end
+    if self.penalty_claimed == true then
+        return
+    end
+    self._abandon_watch = self._abandon_watch or {}
+    if self._abandon_watch[ID] then
+        return
+    end
+    self._abandon_watch[ID] = true
+    if not Timers then
+        self._abandon_watch[ID] = nil
+        return
+    end
+
+    local need_sec = tonumber(self.DISCONNECT_PENALTY_SEC) or (5 * 60)
+    if need_sec < 1 then
+        need_sec = 5 * 60
+    end
+    local start_t = (Time and Time()) or 0
+
+    Timers(1, function()
+        if not ID then
+            return
+        end
+        if self.penalty_claimed == true
+            or (MainGame and MainGame.Data and MainGame.Data.over == true) then
+            self._abandon_watch[ID] = nil
+            return
+        end
+        -- 已重连：不计时、不惩罚
+        if Util and Util.ID2IfOnline and Util:ID2IfOnline(ID) then
+            self._abandon_watch[ID] = nil
+            return
+        end
+        local now = (Time and Time()) or 0
+        local elapsed = now - start_t
+        if elapsed >= need_sec then
+            self._abandon_watch[ID] = nil
+            -- 仍按断线当时是否 <15 分判定窗口
+            self:ReportEarlyLeave(ID, disconnect_min)
+            return
+        end
+        return 1
+    end)
+end
+
+function LeaveConfirm:ConfirmLeave(ID)
+    if not ID then
+        return
+    end
+    self:ClosePage(ID)
+    -- 确定离开会断开连接；惩罚由断线计时（满 5 分钟）统一处理，此处不立即上报
+end

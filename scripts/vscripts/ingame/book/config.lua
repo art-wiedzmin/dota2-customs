@@ -8,22 +8,266 @@
 ]]
 
 
-local encoded=[[LS0tIOWbvumJtOacq+WwvuOAjOaXoOW9kuWxniAvIOacquaUtuW9leiLsembhOOAjeaKgOiDveihjO+8muWktOWDj+eUqCBkdW1tee+8jOagh+mimOi1sOacrOWcsOWMliB0b2tlbgpCb29rLlVuYXNzaWduZWRTa2lsbFJvdyA9IHsKICAgIGhlcm9fbmFtZSA9ICJucGNfZG90YV9oZXJvX3RhcmdldF9kdW1teSIsCiAgICBkaXNwbGF5X25hbWUgPSAiY2xyYl9ib29rX3VuYXNzaWduZWRfc2tpbGxzIiwKfQoKQm9vay5EYXRhID0ge30KQm9vay5UZW1wbGF0ZSA9IHsKICAgIHBhZ2UgPSBmYWxzZSwKICAgIC0tIOW9k+WJjemhtemdogogICAgcGFnZV90eXBlID0gMSwKICAgIC0tIOmhtemdouWIl+ihqCh0cDE65Yqb6YeP6Iux6ZuE77yMdHAyOuaVj+aNt+iLsembhO+8jHRwMzrmmbrlipvoi7Hpm4TvvIx0cDQ65YWo5omN6Iux6ZuEKQogICAgLS3lr7nlupRIZXJvVHlwZQogICAgbGlzdDEgPSB7IHRwMSA9IHt9LCB0cDIgPSB7fSwgdHAzID0ge30sIHRwNCA9IHt9IH0sCiAgICAtLSBEb3Rh5oqA6IO9CiAgICAtLeWvueW6lEhlcm9Ta2lsbAogICAgbGlzdDIgPSB7fSwKICAgIC0tIOWFrOWFseaKgOiDve+8iGhlcm8g5Li656m677yJ77yM5oqA6IO95Zu+6Ym06aG26YOo5Y2V54us5qCP5L2NCiAgICBsaXN0X3B1YmxpYyA9IHsKICAgICAgICBkaXNwbGF5X25hbWUgPSAiY2xyYl9ib29rX3VuYXNzaWduZWRfc2tpbGxzIiwKICAgICAgICBsaXN0ID0ge30sCiAgICB9LAogICAgLS0g5oiY5paX5oqA6IO9CiAgICAtLeWvueW6lEJhdHRsZVNvcnQKICAgIGxpc3QzID0geyB0cDEgPSB7fSwgdHAyID0ge30sIHRwMyA9IHt9LCB0cDQgPSB7fSB9Cn0KQm9vay5IZXJvVHlwZSA9IHsKICAgIC0tIOiLsembhOmhuuW6jwogICAgaW5kZXggPSAtMSwKICAgIC0tIOiLsembhOexu+WeiygxLOWKm+mHj++8jDLmlY/mjbfvvIwz5pm65Yqb77yMNOWFqOaJjSkKICAgIHRwID0gLTEsCiAgICAtLSDoi7Hpm4TlkI3np7AKICAgIG5hbWUgPSAiIiwKICAgIC0tIOiLsembhOWcqOezu+e7n+S4reaYr+WQpuWtmOWcqAogICAgc3RhdGUgPSBmYWxzZSwKICAgIC0tIOiLsembhOWcqOezu+e7n+S4reeahElE77yM5aaC5p6c5LiN5a2Y5Zyo5bCx5Li6LTEKICAgIGlkID0gLTEKfQpCb29rLkhlcm9Ta2lsbCA9IHsKICAgIC0t57Si5byVCiAgICBpbmRleCA9IC0xLAogICAgLS3oi7Hpm4TlkI3np7AKICAgIG5hbWUgPSAiIiwKICAgIC0t5oqA6IO95YiX6KGoCiAgICBsaXN0ID0gewogICAgICAgIHNsb3RfMSA9IHsKICAgICAgICAgICAgc3RhdGUgPSBmYWxzZSwKICAgICAgICAgICAgbmFtZSA9ICIiLAogICAgICAgICAgICBpbWcgPSAiIiwKICAgICAgICAgICAgcmFuayA9IC0xLAogICAgICAgIH0sCiAgICAgICAgc2xvdF8yID0gewogICAgICAgICAgICBzdGF0ZSA9IGZhbHNlLAogICAgICAgICAgICBuYW1lID0gIiIsCiAgICAgICAgICAgIGltZyA9ICIiLAogICAgICAgICAgICByYW5rID0gLTEsCgogICAgICAgIH0sCiAgICAgICAgc2xvdF8zID0gewogICAgICAgICAgICBzdGF0ZSA9IGZhbHNlLAogICAgICAgICAgICBuYW1lID0gIiIsCiAgICAgICAgICAgIGltZyA9ICIiLAogICAgICAgICAgICByYW5rID0gLTEsCgogICAgICAgIH0sCiAgICAgICAgc2xvdF80ID0gewogICAgICAgICAgICBzdGF0ZSA9IGZhbHNlLAogICAgICAgICAgICBuYW1lID0gIiIsCiAgICAgICAgICAgIGltZyA9ICIiLAogICAgICAgICAgICByYW5rID0gLTEsCgogICAgICAgIH0sCiAgICAgICAgc2xvdF81ID0gewogICAgICAgICAgICBzdGF0ZSA9IGZhbHNlLAogICAgICAgICAgICBuYW1lID0gIiIsCiAgICAgICAgICAgIGltZyA9ICIiLAogICAgICAgICAgICByYW5rID0gLTEsCgogICAgICAgIH0sCiAgICB9Cn0KQm9vay5CYXR0bGVTa2lsbCA9IHsKICAgIGluZGV4ID0gLTEsCiAgICBuYW1lID0gIiIsCiAgICB0ZXh0ID0gIiIKfQpCb29rLkJhdHRsZVNvcnQgPSB7CiAgICBhYmlsaXR5X2l0ZW1fMSA9IDQsCiAgICBhYmlsaXR5X2l0ZW1fMiA9IDQsCiAgICBhYmlsaXR5X2l0ZW1fMyA9IDEsCiAgICBhYmlsaXR5X2l0ZW1fNCA9IC0xLAogICAgYWJpbGl0eV9pdGVtXzUgPSAxLAogICAgYWJpbGl0eV9pdGVtXzYgPSAzLAogICAgYWJpbGl0eV9pdGVtXzcgPSAzLAogICAgYWJpbGl0eV9pdGVtXzggPSAzLAogICAgYWJpbGl0eV9pdGVtXzkgPSAzLAogICAgYWJpbGl0eV9pdGVtXzEwID0gLTEsCiAgICBhYmlsaXR5X2l0ZW1fMTEgPSAyLAogICAgYWJpbGl0eV9pdGVtXzEyID0gLTEsCiAgICBhYmlsaXR5X2l0ZW1fMTMgPSA0LAogICAgYWJpbGl0eV9pdGVtXzE0ID0gMiwKICAgIGFiaWxpdHlfaXRlbV8xNSA9IDEsCiAgICBhYmlsaXR5X2l0ZW1fMTYgPSA0LAogICAgYWJpbGl0eV9pdGVtXzE3ID0gMywKICAgIGFiaWxpdHlfaXRlbV8xOCA9IDQsCiAgICBhYmlsaXR5X2l0ZW1fMTkgPSAxLAogICAgYWJpbGl0eV9pdGVtXzIwID0gMiwKICAgIGFiaWxpdHlfaXRlbV8yMSA9IDIsCiAgICBhYmlsaXR5X2l0ZW1fMjIgPSAzLAogICAgYWJpbGl0eV9pdGVtXzIzID0gMiwKICAgIGFiaWxpdHlfaXRlbV8yNCA9IDQsCiAgICBhYmlsaXR5X2l0ZW1fMjUgPSAzLAogICAgYWJpbGl0eV9pdGVtXzI2ID0gMSwKICAgIGFiaWxpdHlfaXRlbV8yNyA9IDEsCiAgICBhYmlsaXR5X2l0ZW1fMjggPSA0LAogICAgYWJpbGl0eV9pdGVtXzI5ID0gMywKICAgIGFiaWxpdHlfaXRlbV8zMCA9IDMsCiAgICBhYmlsaXR5X2l0ZW1fMzEgPSAzLAogICAgYWJpbGl0eV9pdGVtXzMyID0gNCwKICAgIGFiaWxpdHlfaXRlbV8zMyA9IDIsCiAgICBhYmlsaXR5X2l0ZW1fMzQgPSA0LAogICAgYWJpbGl0eV9pdGVtXzM1ID0gNCwKICAgIGFiaWxpdHlfaXRlbV8zNiA9IDIsCiAgICBhYmlsaXR5X2l0ZW1fMzcgPSAxLAogICAgYWJpbGl0eV9pdGVtXzM4ID0gMywKfQpCb29rLkhlcm9MaXN0ID0gewogICAgdHAxID0gewogICAgICAgIHNsb3RfMSA9ICJucGNfZG90YV9oZXJvX2VsZGVyX3RpdGFuIiwKICAgICAgICBzbG90XzIgPSAibnBjX2RvdGFfaGVyb191bmR5aW5nIiwKICAgICAgICBzbG90XzMgPSAibnBjX2RvdGFfaGVyb19zaHJlZGRlciIsCiAgICAgICAgc2xvdF80ID0gIm5wY19kb3RhX2hlcm9fb21uaWtuaWdodCIsCiAgICAgICAgc2xvdF81ID0gIm5wY19kb3RhX2hlcm9fbGVnaW9uX2NvbW1hbmRlciIsCiAgICAgICAgc2xvdF82ID0gIm5wY19kb3RhX2hlcm9fc2tlbGV0b25fa2luZyIsCiAgICAgICAgc2xvdF83ID0gIm5wY19kb3RhX2hlcm9fcGhvZW5peCIsCiAgICAgICAgc2xvdF84ID0gIm5wY19kb3RhX2hlcm9fY2VudGF1ciIsCiAgICAgICAgc2xvdF85ID0gIm5wY19kb3RhX2hlcm9fcmF0dGxldHJhcCIsCiAgICAgICAgc2xvdF8xMCA9ICJucGNfZG90YV9oZXJvX2h1c2thciIsCiAgICAgICAgc2xvdF8xMSA9ICJucGNfZG90YV9oZXJvX2xpZmVfc3RlYWxlciIsCiAgICAgICAgc2xvdF8xMiA9ICJucGNfZG90YV9oZXJvX2VhcnRoX3NwaXJpdCIsCiAgICAgICAgc2xvdF8xMyA9ICJucGNfZG90YV9oZXJvX2FieXNzYWxfdW5kZXJsb3JkIiwKICAgICAgICBzbG90XzE0ID0gIm5wY19kb3RhX2hlcm9fdGlueSIsCiAgICAgICAgc2xvdF8xNSA9ICJucGNfZG90YV9oZXJvX3R1c2siLAogICAgICAgIHNsb3RfMTYgPSAibnBjX2RvdGFfaGVyb19wdWRnZSIsCiAgICAgICAgc2xvdF8xNyA9ICJucGNfZG90YV9oZXJvX2VhcnRoc2hha2VyIiwKICAgICAgICBzbG90XzE4ID0gIm5wY19kb3RhX2hlcm9fYXhlIiwKICAgICAgICBzbG90XzE5ID0gIm5wY19kb3RhX2hlcm9fc2xhcmRhciIsCiAgICAgICAgc2xvdF8yMCA9ICJucGNfZG90YV9oZXJvX3N2ZW4iLAogICAgICAgIHNsb3RfMjEgPSAibnBjX2RvdGFfaGVyb19rdW5ra2EiLAogICAgICAgIHNsb3RfMjIgPSAibnBjX2RvdGFfaGVyb19uaWdodF9zdGFsa2VyIiwKICAgICAgICBzbG90XzIzID0gIm5wY19kb3RhX2hlcm9fbGFyZ28iLAogICAgICAgIHNsb3RfMjQgPSAibnBjX2RvdGFfaGVyb19kb29tX2JyaW5nZXIiLAogICAgICAgIHNsb3RfMjUgPSAibnBjX2RvdGFfaGVyb190cmVhbnQiLAogICAgICAgIHNsb3RfMjYgPSAibnBjX2RvdGFfaGVyb19jaGFvc19rbmlnaHQiLAogICAgICAgIHNsb3RfMjcgPSAibnBjX2RvdGFfaGVyb190aWRlaHVudGVyIiwKICAgICAgICBzbG90XzI4ID0gIm5wY19kb3RhX2hlcm9fYWxjaGVtaXN0IiwKICAgICAgICBzbG90XzI5ID0gIm5wY19kb3RhX2hlcm9fbHljYW4iLAogICAgICAgIHNsb3RfMzAgPSAibnBjX2RvdGFfaGVyb19wcmltYWxfYmVhc3QiLAogICAgICAgIHNsb3RfMzEgPSAibnBjX2RvdGFfaGVyb19tYXJzIiwKICAgICAgICBzbG90XzMyID0gIm5wY19kb3RhX2hlcm9fZGF3bmJyZWFrZXIiLAogICAgICAgIHNsb3RfMzMgPSAibnBjX2RvdGFfaGVyb19zcGlyaXRfYnJlYWtlciIsCiAgICAgICAgc2xvdF8zNCA9ICJucGNfZG90YV9oZXJvX2JyaXN0bGViYWNrIiwKICAgICAgICBzbG90XzM1ID0gIm5wY19kb3RhX2hlcm9fb2dyZV9tYWdpIiwKICAgICAgICBzbG90XzM2ID0gIm5wY19kb3RhX2hlcm9fZHJhZ29uX2tuaWdodCIKICAgIH0sCiAgICB0cDIgPSB7CiAgICAgICAgc2xvdF8xID0gIm5wY19kb3RhX2hlcm9fanVnZ2VybmF1dCIsCiAgICAgICAgc2xvdF8yID0gIm5wY19kb3RhX2hlcm9fY2xpbmt6IiwKICAgICAgICBzbG90XzMgPSAibnBjX2RvdGFfaGVyb192aXBlciIsCiAgICAgICAgc2xvdF80ID0gIm5wY19kb3RhX2hlcm9fa2V6IiwKICAgICAgICBzbG90XzUgPSAibnBjX2RvdGFfaGVyb19yaWtpIiwKICAgICAgICBzbG90XzYgPSAibnBjX2RvdGFfaGVyb19kcm93X3JhbmdlciIsCiAgICAgICAgc2xvdF83ID0gIm5wY19kb3RhX2hlcm9fbW9ycGhsaW5nIiwKICAgICAgICBzbG90XzggPSAibnBjX2RvdGFfaGVyb190ZW1wbGFyX2Fzc2Fzc2luIiwKICAgICAgICBzbG90XzkgPSAibnBjX2RvdGFfaGVyb192ZW5nZWZ1bHNwaXJpdCIsCiAgICAgICAgc2xvdF8xMCA9ICJucGNfZG90YV9oZXJvX25hZ2Ffc2lyZW4iLAogICAgICAgIHNsb3RfMTEgPSAibnBjX2RvdGFfaGVyb190cm9sbF93YXJsb3JkIiwKICAgICAgICBzbG90XzEyID0gIm5wY19kb3RhX2hlcm9fcGhhbnRvbV9hc3Nhc3NpbiIsCiAgICAgICAgc2xvdF8xMyA9ICJucGNfZG90YV9oZXJvX3BoYW50b21fbGFuY2VyIiwKICAgICAgICBzbG90XzE0ID0gIm5wY19kb3RhX2hlcm9fc3BlY3RyZSIsCiAgICAgICAgc2xvdF8xNSA9ICJucGNfZG90YV9oZXJvX25ldmVybW9yZSIsCiAgICAgICAgc2xvdF8xNiA9ICJucGNfZG90YV9oZXJvX3RlcnJvcmJsYWRlIiwKICAgICAgICBzbG90XzE3ID0gIm5wY19kb3RhX2hlcm9fYW50aW1hZ2UiLAogICAgICAgIHNsb3RfMTggPSAibnBjX2RvdGFfaGVyb19zbGFyayIsCiAgICAgICAgc2xvdF8xOSA9ICJucGNfZG90YV9oZXJvX2hvb2R3aW5rIiwKICAgICAgICBzbG90XzIwID0gIm5wY19kb3RhX2hlcm9fZW1iZXJfc3Bpcml0IiwKICAgICAgICBzbG90XzIxID0gIm5wY19kb3RhX2hlcm9fdXJzYSIsCiAgICAgICAgc2xvdF8yMiA9ICJucGNfZG90YV9oZXJvX3NuaXBlciIsCiAgICAgICAgc2xvdF8yMyA9ICJucGNfZG90YV9oZXJvX2xvbmVfZHJ1aWQiLAogICAgICAgIHNsb3RfMjQgPSAibnBjX2RvdGFfaGVyb19neXJvY29wdGVyIiwKICAgICAgICBzbG90XzI1ID0gIm5wY19kb3RhX2hlcm9fbWlyYW5hIiwKICAgICAgICBzbG90XzI2ID0gIm5wY19kb3RhX2hlcm9fbWVlcG8iLAogICAgICAgIHNsb3RfMjcgPSAibnBjX2RvdGFfaGVyb193ZWF2ZXIiLAogICAgICAgIHNsb3RfMjggPSAibnBjX2RvdGFfaGVyb19tZWR1c2EiLAogICAgICAgIHNsb3RfMjkgPSAibnBjX2RvdGFfaGVyb19icm9vZG1vdGhlciIsCiAgICAgICAgc2xvdF8zMCA9ICJucGNfZG90YV9oZXJvX2ZhY2VsZXNzX3ZvaWQiLAogICAgICAgIHNsb3RfMzEgPSAibnBjX2RvdGFfaGVyb19ibG9vZHNlZWtlciIsCiAgICAgICAgc2xvdF8zMiA9ICJucGNfZG90YV9oZXJvX2JvdW50eV9odW50ZXIiLAogICAgICAgIHNsb3RfMzMgPSAibnBjX2RvdGFfaGVyb19yYXpvciIsCiAgICAgICAgc2xvdF8zNCA9ICJucGNfZG90YV9oZXJvX2x1bmEiLAogICAgICAgIHNsb3RfMzUgPSAibnBjX2RvdGFfaGVyb19tb25rZXlfa2luZyIKICAgIH0sCiAgICB0cDMgPSB7CiAgICAgICAgc2xvdF8xID0gIm5wY19kb3RhX2hlcm9fdGlua2VyIiwKICAgICAgICBzbG90XzIgPSAibnBjX2RvdGFfaGVyb19rZWVwZXJfb2ZfdGhlX2xpZ2h0IiwKICAgICAgICBzbG90XzMgPSAibnBjX2RvdGFfaGVyb19za3l3cmF0aF9tYWdlIiwKICAgICAgICBzbG90XzQgPSAibnBjX2RvdGFfaGVyb19ncmltc3Ryb2tlIiwKICAgICAgICBzbG90XzUgPSAibnBjX2RvdGFfaGVyb196dXVzIiwKICAgICAgICBzbG90XzYgPSAibnBjX2RvdGFfaGVyb193aW50ZXJfd3l2ZXJuIiwKICAgICAgICBzbG90XzcgPSAibnBjX2RvdGFfaGVyb193aXRjaF9kb2N0b3IiLAogICAgICAgIHNsb3RfOCA9ICJucGNfZG90YV9oZXJvX2xpY2giLAogICAgICAgIHNsb3RfOSA9ICJucGNfZG90YV9oZXJvX3B1Y2siLAogICAgICAgIHNsb3RfMTAgPSAibnBjX2RvdGFfaGVyb19wdWduYSIsCiAgICAgICAgc2xvdF8xMSA9ICJucGNfZG90YV9oZXJvX2Rpc3J1cHRvciIsCiAgICAgICAgc2xvdF8xMiA9ICJucGNfZG90YV9oZXJvX2xlc2hyYWMiLAogICAgICAgIHNsb3RfMTMgPSAibnBjX2RvdGFfaGVyb19ydWJpY2siLAogICAgICAgIHNsb3RfMTQgPSAibnBjX2RvdGFfaGVyb19zaGFkb3dfZGVtb24iLAogICAgICAgIHNsb3RfMTUgPSAibnBjX2RvdGFfaGVyb19zaGFkb3dfc2hhbWFuIiwKICAgICAgICBzbG90XzE2ID0gIm5wY19kb3RhX2hlcm9fd2FybG9jayIsCiAgICAgICAgc2xvdF8xNyA9ICJucGNfZG90YV9oZXJvX2pha2lybyIsCiAgICAgICAgc2xvdF8xOCA9ICJucGNfZG90YV9oZXJvX29ic2lkaWFuX2Rlc3Ryb3llciIsCiAgICAgICAgc2xvdF8xOSA9ICJucGNfZG90YV9oZXJvX2NyeXN0YWxfbWFpZGVuIiwKICAgICAgICBzbG90XzIwID0gIm5wY19kb3RhX2hlcm9fc2lsZW5jZXIiLAogICAgICAgIHNsb3RfMjEgPSAibnBjX2RvdGFfaGVyb19tdWVydGEiLAogICAgICAgIHNsb3RfMjIgPSAibnBjX2RvdGFfaGVyb19xdWVlbm9mcGFpbiIsCiAgICAgICAgc2xvdF8yMyA9ICJucGNfZG90YV9oZXJvX25lY3JvbHl0ZSIsCiAgICAgICAgc2xvdF8yNCA9ICJucGNfZG90YV9oZXJvX3JpbmdtYXN0ZXIiLAogICAgICAgIHNsb3RfMjUgPSAibnBjX2RvdGFfaGVyb19pbnZva2VyIiwKICAgICAgICBzbG90XzI2ID0gIm5wY19kb3RhX2hlcm9fb3JhY2xlIiwKICAgICAgICBzbG90XzI3ID0gIm5wY19kb3RhX2hlcm9fbGluYSIsCiAgICAgICAgc2xvdF8yOCA9ICJucGNfZG90YV9oZXJvX2xpb24iLAogICAgICAgIHNsb3RfMjkgPSAibnBjX2RvdGFfaGVyb19hbmNpZW50X2FwcGFyaXRpb24iLAogICAgICAgIHNsb3RfMzAgPSAibnBjX2RvdGFfaGVyb19kYXJrX3dpbGxvdyIsCiAgICAgICAgc2xvdF8zMSA9ICJucGNfZG90YV9oZXJvX2NoZW4iLAogICAgICAgIHNsb3RfMzIgPSAibnBjX2RvdGFfaGVyb19zdG9ybV9zcGlyaXQiLAogICAgICAgIHNsb3RfMzMgPSAibnBjX2RvdGFfaGVyb19lbmNoYW50cmVzcyIsCiAgICAgICAgc2xvdF8zNCA9ICJucGNfZG90YV9oZXJvX2Rhcmtfc2VlciIKICAgIH0sCiAgICB0cDQgPSB7CiAgICAgICAgc2xvdF8xID0gIm5wY19kb3RhX2hlcm9fYWJhZGRvbiIsCiAgICAgICAgc2xvdF8yID0gIm5wY19kb3RhX2hlcm9fYmVhc3RtYXN0ZXIiLAogICAgICAgIHNsb3RfMyA9ICJucGNfZG90YV9oZXJvX3Zlbm9tYW5jZXIiLAogICAgICAgIHNsb3RfNCA9ICJucGNfZG90YV9oZXJvX255eF9hc3Nhc3NpbiIsCiAgICAgICAgc2xvdF81ID0gIm5wY19kb3RhX2hlcm9fYXJjX3dhcmRlbiIsCiAgICAgICAgc2xvdF82ID0gIm5wY19kb3RhX2hlcm9fdGVjaGllcyIsCiAgICAgICAgc2xvdF83ID0gIm5wY19kb3RhX2hlcm9fZGF6emxlIiwKICAgICAgICBzbG90XzggPSAibnBjX2RvdGFfaGVyb19kZWF0aF9wcm9waGV0IiwKICAgICAgICBzbG90XzkgPSAibnBjX2RvdGFfaGVyb19zYW5kX2tpbmciLAogICAgICAgIHNsb3RfMTAgPSAibnBjX2RvdGFfaGVyb19tYXJjaSIsCiAgICAgICAgc2xvdF8xMSA9ICJucGNfZG90YV9oZXJvX3NuYXBmaXJlIiwKICAgICAgICBzbG90XzEyID0gIm5wY19kb3RhX2hlcm9fcGFuZ29saWVyIiwKICAgICAgICBzbG90XzEzID0gIm5wY19kb3RhX2hlcm9fYmFuZSIsCiAgICAgICAgc2xvdF8xNCA9ICJucGNfZG90YV9oZXJvX3Zpc2FnZSIsCiAgICAgICAgc2xvdF8xNSA9ICJucGNfZG90YV9oZXJvX2Z1cmlvbiIsCiAgICAgICAgc2xvdF8xNiA9ICJucGNfZG90YV9oZXJvX3dpc3AiLAogICAgICAgIHNsb3RfMTcgPSAibnBjX2RvdGFfaGVyb192b2lkX3NwaXJpdCIsCiAgICAgICAgc2xvdF8xOCA9ICJucGNfZG90YV9oZXJvX2JhdHJpZGVyIiwKICAgICAgICBzbG90XzE5ID0gIm5wY19kb3RhX2hlcm9fZW5pZ21hIiwKICAgICAgICBzbG90XzIwID0gIm5wY19kb3RhX2hlcm9fYnJld21hc3RlciIsCiAgICAgICAgc2xvdF8yMSA9ICJucGNfZG90YV9oZXJvX3dpbmRydW5uZXIiLAogICAgICAgIHNsb3RfMjIgPSAibnBjX2RvdGFfaGVyb19tYWduYXRhdXIiCiAgICB9Cn0K]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
-end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+--- 图鉴末尾「无归属 / 未收录英雄」技能行：头像用 dummy，标题走本地化 token
+Book.UnassignedSkillRow = {
+    hero_name = "npc_dota_hero_target_dummy",
+    display_name = "clrb_book_unassigned_skills",
+}
+
+Book.Data = {}
+Book.Template = {
+    page = false,
+    -- 当前页面
+    page_type = 1,
+    -- 页面列表(tp1:力量英雄，tp2:敏捷英雄，tp3:智力英雄，tp4:全才英雄)
+    --对应HeroType
+    list1 = { tp1 = {}, tp2 = {}, tp3 = {}, tp4 = {} },
+    -- Dota技能
+    --对应HeroSkill
+    list2 = {},
+    -- 公共技能（hero 为空），技能图鉴顶部单独栏位
+    list_public = {
+        display_name = "clrb_book_unassigned_skills",
+        list = {},
+    },
+    -- 战斗技能
+    --对应BattleSort
+    list3 = { tp1 = {}, tp2 = {}, tp3 = {}, tp4 = {} }
+}
+Book.HeroType = {
+    -- 英雄顺序
+    index = -1,
+    -- 英雄类型(1,力量，2敏捷，3智力，4全才)
+    tp = -1,
+    -- 英雄名称
+    name = "",
+    -- 英雄在系统中是否存在
+    state = false,
+    -- 英雄在系统中的ID，如果不存在就为-1
+    id = -1
+}
+Book.HeroSkill = {
+    --索引
+    index = -1,
+    --英雄名称
+    name = "",
+    --技能列表
+    list = {
+        slot_1 = {
+            state = false,
+            name = "",
+            img = "",
+            rank = -1,
+        },
+        slot_2 = {
+            state = false,
+            name = "",
+            img = "",
+            rank = -1,
+
+        },
+        slot_3 = {
+            state = false,
+            name = "",
+            img = "",
+            rank = -1,
+
+        },
+        slot_4 = {
+            state = false,
+            name = "",
+            img = "",
+            rank = -1,
+
+        },
+        slot_5 = {
+            state = false,
+            name = "",
+            img = "",
+            rank = -1,
+
+        },
+    }
+}
+Book.BattleSkill = {
+    index = -1,
+    name = "",
+    text = ""
+}
+Book.BattleSort = {
+    ability_item_1 = 4,
+    ability_item_2 = 4,
+    ability_item_3 = 1,
+    ability_item_4 = -1,
+    ability_item_5 = 1,
+    ability_item_6 = 3,
+    ability_item_7 = 3,
+    ability_item_8 = 3,
+    ability_item_9 = 3,
+    ability_item_10 = -1,
+    ability_item_11 = 2,
+    ability_item_12 = -1,
+    ability_item_13 = 4,
+    ability_item_14 = 2,
+    ability_item_15 = 1,
+    ability_item_16 = 4,
+    ability_item_17 = 3,
+    ability_item_18 = 4,
+    ability_item_19 = 1,
+    ability_item_20 = 2,
+    ability_item_21 = 2,
+    ability_item_22 = 3,
+    ability_item_23 = 2,
+    ability_item_24 = 4,
+    ability_item_25 = 3,
+    ability_item_26 = 1,
+    ability_item_27 = 1,
+    ability_item_28 = 4,
+    ability_item_29 = 3,
+    ability_item_30 = 3,
+    ability_item_31 = 3,
+    ability_item_32 = 4,
+    ability_item_33 = 2,
+    ability_item_34 = 4,
+    ability_item_35 = 4,
+    ability_item_36 = 2,
+    ability_item_37 = 1,
+    ability_item_38 = 3,
+}
+Book.HeroList = {
+    tp1 = {
+        slot_1 = "npc_dota_hero_elder_titan",
+        slot_2 = "npc_dota_hero_undying",
+        slot_3 = "npc_dota_hero_shredder",
+        slot_4 = "npc_dota_hero_omniknight",
+        slot_5 = "npc_dota_hero_legion_commander",
+        slot_6 = "npc_dota_hero_skeleton_king",
+        slot_7 = "npc_dota_hero_phoenix",
+        slot_8 = "npc_dota_hero_centaur",
+        slot_9 = "npc_dota_hero_rattletrap",
+        slot_10 = "npc_dota_hero_huskar",
+        slot_11 = "npc_dota_hero_life_stealer",
+        slot_12 = "npc_dota_hero_earth_spirit",
+        slot_13 = "npc_dota_hero_abyssal_underlord",
+        slot_14 = "npc_dota_hero_tiny",
+        slot_15 = "npc_dota_hero_tusk",
+        slot_16 = "npc_dota_hero_pudge",
+        slot_17 = "npc_dota_hero_earthshaker",
+        slot_18 = "npc_dota_hero_axe",
+        slot_19 = "npc_dota_hero_slardar",
+        slot_20 = "npc_dota_hero_sven",
+        slot_21 = "npc_dota_hero_kunkka",
+        slot_22 = "npc_dota_hero_night_stalker",
+        slot_23 = "npc_dota_hero_largo",
+        slot_24 = "npc_dota_hero_doom_bringer",
+        slot_25 = "npc_dota_hero_treant",
+        slot_26 = "npc_dota_hero_chaos_knight",
+        slot_27 = "npc_dota_hero_tidehunter",
+        slot_28 = "npc_dota_hero_alchemist",
+        slot_29 = "npc_dota_hero_lycan",
+        slot_30 = "npc_dota_hero_primal_beast",
+        slot_31 = "npc_dota_hero_mars",
+        slot_32 = "npc_dota_hero_dawnbreaker",
+        slot_33 = "npc_dota_hero_spirit_breaker",
+        slot_34 = "npc_dota_hero_bristleback",
+        slot_35 = "npc_dota_hero_ogre_magi",
+        slot_36 = "npc_dota_hero_dragon_knight"
+    },
+    tp2 = {
+        slot_1 = "npc_dota_hero_juggernaut",
+        slot_2 = "npc_dota_hero_clinkz",
+        slot_3 = "npc_dota_hero_viper",
+        slot_4 = "npc_dota_hero_kez",
+        slot_5 = "npc_dota_hero_riki",
+        slot_6 = "npc_dota_hero_drow_ranger",
+        slot_7 = "npc_dota_hero_morphling",
+        slot_8 = "npc_dota_hero_templar_assassin",
+        slot_9 = "npc_dota_hero_vengefulspirit",
+        slot_10 = "npc_dota_hero_naga_siren",
+        slot_11 = "npc_dota_hero_troll_warlord",
+        slot_12 = "npc_dota_hero_phantom_assassin",
+        slot_13 = "npc_dota_hero_phantom_lancer",
+        slot_14 = "npc_dota_hero_spectre",
+        slot_15 = "npc_dota_hero_nevermore",
+        slot_16 = "npc_dota_hero_terrorblade",
+        slot_17 = "npc_dota_hero_antimage",
+        slot_18 = "npc_dota_hero_slark",
+        slot_19 = "npc_dota_hero_hoodwink",
+        slot_20 = "npc_dota_hero_ember_spirit",
+        slot_21 = "npc_dota_hero_ursa",
+        slot_22 = "npc_dota_hero_sniper",
+        slot_23 = "npc_dota_hero_lone_druid",
+        slot_24 = "npc_dota_hero_gyrocopter",
+        slot_25 = "npc_dota_hero_mirana",
+        slot_26 = "npc_dota_hero_meepo",
+        slot_27 = "npc_dota_hero_weaver",
+        slot_28 = "npc_dota_hero_medusa",
+        slot_29 = "npc_dota_hero_broodmother",
+        slot_30 = "npc_dota_hero_faceless_void",
+        slot_31 = "npc_dota_hero_bloodseeker",
+        slot_32 = "npc_dota_hero_bounty_hunter",
+        slot_33 = "npc_dota_hero_razor",
+        slot_34 = "npc_dota_hero_luna",
+        slot_35 = "npc_dota_hero_monkey_king"
+    },
+    tp3 = {
+        slot_1 = "npc_dota_hero_tinker",
+        slot_2 = "npc_dota_hero_keeper_of_the_light",
+        slot_3 = "npc_dota_hero_skywrath_mage",
+        slot_4 = "npc_dota_hero_grimstroke",
+        slot_5 = "npc_dota_hero_zuus",
+        slot_6 = "npc_dota_hero_winter_wyvern",
+        slot_7 = "npc_dota_hero_witch_doctor",
+        slot_8 = "npc_dota_hero_lich",
+        slot_9 = "npc_dota_hero_puck",
+        slot_10 = "npc_dota_hero_pugna",
+        slot_11 = "npc_dota_hero_disruptor",
+        slot_12 = "npc_dota_hero_leshrac",
+        slot_13 = "npc_dota_hero_rubick",
+        slot_14 = "npc_dota_hero_shadow_demon",
+        slot_15 = "npc_dota_hero_shadow_shaman",
+        slot_16 = "npc_dota_hero_warlock",
+        slot_17 = "npc_dota_hero_jakiro",
+        slot_18 = "npc_dota_hero_obsidian_destroyer",
+        slot_19 = "npc_dota_hero_crystal_maiden",
+        slot_20 = "npc_dota_hero_silencer",
+        slot_21 = "npc_dota_hero_muerta",
+        slot_22 = "npc_dota_hero_queenofpain",
+        slot_23 = "npc_dota_hero_necrolyte",
+        slot_24 = "npc_dota_hero_ringmaster",
+        slot_25 = "npc_dota_hero_invoker",
+        slot_26 = "npc_dota_hero_oracle",
+        slot_27 = "npc_dota_hero_lina",
+        slot_28 = "npc_dota_hero_lion",
+        slot_29 = "npc_dota_hero_ancient_apparition",
+        slot_30 = "npc_dota_hero_dark_willow",
+        slot_31 = "npc_dota_hero_chen",
+        slot_32 = "npc_dota_hero_storm_spirit",
+        slot_33 = "npc_dota_hero_enchantress",
+        slot_34 = "npc_dota_hero_dark_seer"
+    },
+    tp4 = {
+        slot_1 = "npc_dota_hero_abaddon",
+        slot_2 = "npc_dota_hero_beastmaster",
+        slot_3 = "npc_dota_hero_venomancer",
+        slot_4 = "npc_dota_hero_nyx_assassin",
+        slot_5 = "npc_dota_hero_arc_warden",
+        slot_6 = "npc_dota_hero_techies",
+        slot_7 = "npc_dota_hero_dazzle",
+        slot_8 = "npc_dota_hero_death_prophet",
+        slot_9 = "npc_dota_hero_sand_king",
+        slot_10 = "npc_dota_hero_marci",
+        slot_11 = "npc_dota_hero_snapfire",
+        slot_12 = "npc_dota_hero_pangolier",
+        slot_13 = "npc_dota_hero_bane",
+        slot_14 = "npc_dota_hero_visage",
+        slot_15 = "npc_dota_hero_furion",
+        slot_16 = "npc_dota_hero_wisp",
+        slot_17 = "npc_dota_hero_void_spirit",
+        slot_18 = "npc_dota_hero_batrider",
+        slot_19 = "npc_dota_hero_enigma",
+        slot_20 = "npc_dota_hero_brewmaster",
+        slot_21 = "npc_dota_hero_windrunner",
+        slot_22 = "npc_dota_hero_magnataur"
+    }
+}

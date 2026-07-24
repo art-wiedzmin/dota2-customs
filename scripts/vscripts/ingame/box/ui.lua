@@ -8,22 +8,98 @@
 ]]
 
 
-local encoded=[[ZnVuY3Rpb24gQm94OkdldFVJRGF0YShJRCwgZGF0YSkKICAgIGlmIG5vdCBJRCBvciBub3QgZGF0YSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIC0t5pqC5YGc56aB5q2i5Lyg5pWw5o2uCiAgICBpZiBHYW1lUnVsZXM6SXNHYW1lUGF1c2VkKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICAtLeWIneWni+WMluaVsOaNrgogICAgaWYgZGF0YS50cCA9PSAiaW5pdCIgdGhlbgogICAgICAgIHNlbGY6U2VuZERhdGEoSUQpCiAgICBlbmQKICAgIC0t5omT5byA5a6d566x6aG16Z2iCiAgICBpZiBkYXRhLnRwID09ICJPcGVuUGFnZSIgdGhlbgogICAgICAgIHNlbGY6T3BlblBhZ2UoSUQpCiAgICBlbmQKICAgIC0t5YWz6Zet5a6d566x6aG16Z2iCiAgICBpZiBkYXRhLnRwID09ICJDbG9zZVBhZ2UiIHRoZW4KICAgICAgICBzZWxmOkNsb3NlUGFnZShJRCkKICAgIGVuZAogICAgLS3mlL7lvIPmnKzmrKHlrp3nrrHpgInlj5bvvIjmtojogJfmrKHmlbDvvIkKICAgIGlmIGRhdGEudHAgPT0gIkdpdmVVcCIgdGhlbgogICAgICAgIHNlbGY6R2l2ZVVwKElEKQogICAgZW5kCiAgICAtLeaKveWPluWuneeusQogICAgaWYgZGF0YS50cCA9PSAiRHJhdyIgdGhlbgogICAgICAgIGlmIHNlbGYuRGF0YVtJRF0uZHJhd19zdGF0ZSA9PSB0cnVlIHRoZW4KICAgICAgICAgICAgc2VsZjpEcmF3KElEKQogICAgICAgIGVsc2UKICAgICAgICAgICAgaWYgc2VsZi5EYXRhW0lEXS5wYWdlID09IHRydWUgdGhlbgogICAgICAgICAgICAgICAgc2VsZjpDbG9zZVBhZ2UoSUQpCiAgICAgICAgICAgIGVsc2UKICAgICAgICAgICAgICAgIHNlbGY6T3BlblBhZ2UoSUQpCiAgICAgICAgICAgICAgICBzZWxmOlNlbmREYXRhKElEKQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZAogICAgLS3pmo/mnLrlrp3niakKICAgIGlmIGRhdGEudHAgPT0gIkRyYXdSb2xsIiB0aGVuCiAgICAgICAgc2VsZjpEcmF3Um9sbChJRCkKICAgICAgICBzZWxmOlNlbmREYXRhKElELCB0cnVlKQogICAgZW5kCiAgICAtLemAieaLqeWuneeJqQogICAgaWYgZGF0YS50cCA9PSAiU2VsZWN0IiB0aGVuCiAgICAgICAgc2VsZjpTZWxlY3QoSUQsIGRhdGEudGV4dCkKICAgIGVuZAogICAgLS3mkafmr4Hlrp3niakKICAgIGlmIGRhdGEudHAgPT0gIkJyZWFrSXRlbSIgdGhlbgogICAgICAgIHNlbGY6QnJlYWtJdGVtKElELCBkYXRhLnRleHQpCiAgICBlbmQKICAgIC0t5Yqg6YCfCiAgICBpZiBkYXRhLnRwID09ICJSdW4iIHRoZW4KICAgICAgICAtLSBzZWxmOlJ1bihJRCkKICAgIGVuZAogICAgaWYgZGF0YS50cCA9PSAiQWRkSXRlbSIgdGhlbgogICAgICAgIHNlbGY6SG9zdEFkZEl0ZW0oSUQsIGRhdGEucGlkLCBkYXRhLml0ZW0pCiAgICBlbmQKZW5kCgotLee7meWJjeerr+WPkeaVsOaNrgpmdW5jdGlvbiBCb3g6U2VuZERhdGEoSUQsIG1vdmllLCBjbGVhcikKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGxpc3QgPSB7CiAgICAgICAgc2hvdyA9IHNlbGYuRGF0YVtJRF0uc2hvdywKICAgICAgICBwYWdlID0gc2VsZi5EYXRhW0lEXS5wYWdlLAogICAgICAgIGJveF9zeV9kcmF3ID0gbWF0aC5tYXgoMCwgc2VsZi5EYXRhW0lEXS5ib3hfc3lfZHJhdyksCiAgICAgICAgcm9sbF9zeV9kcmF3ID0gc2VsZi5EYXRhW0lEXS5yb2xsX3N5X2RyYXcsCiAgICAgICAgYmFnID0gc2VsZi5EYXRhW0lEXS5iYWcsCiAgICAgICAgbGlzdCA9IHNlbGYuRGF0YVtJRF0ubGlzdCwKICAgICAgICBjbGVhciA9IGZhbHNlLAogICAgICAgIG1vdmllID0gZmFsc2UsCiAgICAgICAgY29zdCA9IHNlbGYuRGF0YVtJRF0uY29zdAogICAgfQogICAgaWYgbW92aWUgdGhlbgogICAgICAgIGxpc3QubW92aWUgPSB0cnVlCiAgICBlbmQKICAgIGlmIGNsZWFyIHRoZW4KICAgICAgICBsaXN0LmNsZWFyID0gdHJ1ZQogICAgZW5kCiAgICBVdGlsOlNlbmQySnNJRCgiVUlfQm94IiwgbGlzdCwgSUQpCmVuZAoKLS3lj5HpgIHliqDpgJ/mlbDmja4KZnVuY3Rpb24gQm94OlNlbmRSdW5EYXRhKElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgbGlzdCA9IHsKICAgICAgICBydW5fc3RhdGUgPSBzZWxmLkRhdGFbSURdLnJ1bl9zdGF0ZSwKICAgICAgICBydW5fY2QgPSBzZWxmLkRhdGFbSURdLnJ1bl9jZAogICAgfQogICAgVXRpbDpTZW5kMkpzSUQoIlVJX1J1bkJveCIsIGxpc3QsIElEKQplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+function Box:GetUIData(ID, data)
+    if not ID or not data then
+        return
+    end
+    --暂停禁止传数据
+    if GameRules:IsGamePaused() then
+        return
+    end
+    --初始化数据
+    if data.tp == "init" then
+        self:SendData(ID)
+    end
+    --打开宝箱页面
+    if data.tp == "OpenPage" then
+        self:OpenPage(ID)
+    end
+    --关闭宝箱页面
+    if data.tp == "ClosePage" then
+        self:ClosePage(ID)
+    end
+    --放弃本次宝箱选取（消耗次数）
+    if data.tp == "GiveUp" then
+        self:GiveUp(ID)
+    end
+    --抽取宝箱
+    if data.tp == "Draw" then
+        if self.Data[ID].draw_state == true then
+            self:Draw(ID)
+        else
+            if self.Data[ID].page == true then
+                self:ClosePage(ID)
+            else
+                self:OpenPage(ID)
+                self:SendData(ID)
+            end
+        end
+    end
+    --随机宝物
+    if data.tp == "DrawRoll" then
+        self:DrawRoll(ID)
+        self:SendData(ID, true)
+    end
+    --选择宝物
+    if data.tp == "Select" then
+        self:Select(ID, data.text)
+    end
+    --摧毁宝物
+    if data.tp == "BreakItem" then
+        self:BreakItem(ID, data.text)
+    end
+    --加速
+    if data.tp == "Run" then
+        -- self:Run(ID)
+    end
+    if data.tp == "AddItem" then
+        self:HostAddItem(ID, data.pid, data.item)
+    end
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--给前端发数据
+function Box:SendData(ID, movie, clear)
+    if not ID then
+        return
+    end
+    local list = {
+        show = self.Data[ID].show,
+        page = self.Data[ID].page,
+        box_sy_draw = math.max(0, self.Data[ID].box_sy_draw),
+        roll_sy_draw = self.Data[ID].roll_sy_draw,
+        bag = self.Data[ID].bag,
+        list = self.Data[ID].list,
+        clear = false,
+        movie = false,
+        cost = self.Data[ID].cost
+    }
+    if movie then
+        list.movie = true
+    end
+    if clear then
+        list.clear = true
+    end
+    Util:Send2JsID("UI_Box", list, ID)
+end
+
+--发送加速数据
+function Box:SendRunData(ID)
+    if not ID then
+        return
+    end
+    local list = {
+        run_state = self.Data[ID].run_state,
+        run_cd = self.Data[ID].run_cd
+    }
+    Util:Send2JsID("UI_RunBox", list, ID)
+end

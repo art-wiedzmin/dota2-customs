@@ -8,22 +8,158 @@
 ]]
 
 
-local encoded=[[LS0g5paH5Lu25ZCN77yabW9kaWZpZXJfYm9zc18xX2J1ZmYubHVhCkxpbmtMdWFNb2RpZmllcigibW9kaWZpZXJfYm9zc18xX2J1ZmZfc2xvdyIsICJpbmdhbWUvbW9kaWZpZXIvbW9kaWZpZXJfYm9zc18xX2J1ZmYiLCBMVUFfTU9ESUZJRVJfTU9USU9OX05PTkUpCm1vZGlmaWVyX2Jvc3NfMV9idWZmID0gY2xhc3Moe30pCgpmdW5jdGlvbiBtb2RpZmllcl9ib3NzXzFfYnVmZjpJc0hpZGRlbigpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9ib3NzXzFfYnVmZjpJc0RlYnVmZigpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9ib3NzXzFfYnVmZjpJc1B1cmdhYmxlKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2Jvc3NfMV9idWZmOlJlbW92ZU9uRGVhdGgoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfYm9zc18xX2J1ZmY6QWxsb3dJbGx1c2lvbkR1cGxpY2F0ZSgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9ib3NzXzFfYnVmZjpPbkNyZWF0ZWQoa3YpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuIHJldHVybiBlbmQKCiAgICBsb2NhbCBwYXJlbnQgPSBzZWxmOkdldFBhcmVudCgpCgogICAgLS0g6Zi25q615oyB57utIDgg56eS77yb5pSv5oyB5aSW6YOo5Lyg5YWlIGR1ciDopobnm5YKICAgIHNlbGYucGhhc2VfZHVyYXRpb24gPSB0b251bWJlcihrdiBhbmQga3YuZHVyKSBvciA4CiAgICBzZWxmLmludGVydmFsID0gMC41CiAgICBzZWxmLmZpc3N1cmVfbGVuZ3RoID0gMjQwMAogICAgc2VsZi5maXNzdXJlX3dpZHRoID0gMzE1CiAgICBzZWxmLnNsb3dfcGN0ID0gNTAgICAgICAgICAtLSDlr7npvZDlpKfniZvkuInnuqflh4/pgJ8KICAgIHNlbGYuc2xvd19kdXJhdGlvbiA9IDUgICAgIC0tIOWvuem9kOWkp+eJm+S4iee6p+aMgee7rQogICAgc2VsZi5kYW1hZ2VfcGN0ID0gMS4wICAgICAgLS0g5by65YyW5Yiw55uu5qCH5pyA5aSn55Sf5ZG95YC8IDEwMCUKICAgIHNlbGYuc3BsaXR0ZXJfZGVsYXkgPSAyLjc1IC0tIOWkp+eJm+ijguWcsOiAheW7tui/nwoKICAgIHNlbGY6U2V0RHVyYXRpb24oc2VsZi5waGFzZV9kdXJhdGlvbiwgdHJ1ZSkKCiAgICBsb2NhbCBwYXRoID0gInBhcnRpY2xlcy9lY29uL2l0ZW1zL29tbmlrbmlnaHQvb21uaV8yMDIxX2ltbW9ydGFsL29tbmlfMjAyMV9pbW1vcnRhbC52cGNmIgogICAgdXRpbGV4OkFkZFR4KHBhdGgsIHBhcmVudCwgc2VsZi5waGFzZV9kdXJhdGlvbikKCiAgICBzZWxmOlN0YXJ0SW50ZXJ2YWxUaGluayhzZWxmLmludGVydmFsKQogICAgc2VsZjpPbkludGVydmFsVGhpbmsoKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2Jvc3NfMV9idWZmOk9uSW50ZXJ2YWxUaGluaygpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuIHJldHVybiBlbmQKCiAgICBsb2NhbCBjYXN0ZXIgPSBzZWxmOkdldFBhcmVudCgpCiAgICBpZiBub3QgY2FzdGVyIG9yIGNhc3RlcjpJc051bGwoKSBvciBub3QgY2FzdGVyOklzQWxpdmUoKSB0aGVuCiAgICAgICAgc2VsZjpEZXN0cm95KCkKICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIHNlbGY6Q2FzdFJhbmRvbUZpc3N1cmUoY2FzdGVyKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2Jvc3NfMV9idWZmOkNhc3RSYW5kb21GaXNzdXJlKGNhc3RlcikKICAgIGxvY2FsIHN0YXJ0X3BvcyA9IGNhc3RlcjpHZXRBYnNPcmlnaW4oKQogICAgbG9jYWwgcmFuZG9tX2FuZ2xlID0gbWF0aC5yYWQobWF0aC5yYW5kb20oMCwgMzU5KSkKICAgIGxvY2FsIGRpcmVjdGlvbiA9IFZlY3RvcihtYXRoLmNvcyhyYW5kb21fYW5nbGUpLCBtYXRoLnNpbihyYW5kb21fYW5nbGUpLCAwKTpOb3JtYWxpemVkKCkKICAgIGxvY2FsIGZpc3N1cmVfbGVuZ3RoID0gMjQwMAogICAgbG9jYWwgZmlzc3VyZV93aWR0aCA9IDMxNQogICAgbG9jYWwgc3BsaXR0ZXJfZGVsYXkgPSAyLjc1CiAgICBsb2NhbCBkYW1hZ2VfcGN0ID0gMS4wCiAgICBsb2NhbCBlbmRfcG9zID0gc3RhcnRfcG9zICsgZGlyZWN0aW9uICogZmlzc3VyZV9sZW5ndGggKiAyCiAgICBsb2NhbCBlbmRfZGFtZ2Vwb3MgPSBzdGFydF9wb3MgKyBkaXJlY3Rpb24gKiBmaXNzdXJlX2xlbmd0aAogICAgbG9jYWwgc3BsaXR0ZXJfcGZ4ID0gUGFydGljbGVNYW5hZ2VyOkNyZWF0ZVBhcnRpY2xlKAogICAgICAgICJwYXJ0aWNsZXMvdW5pdHMvaGVyb2VzL2hlcm9fZWxkZXJfdGl0YW4vZWxkZXJfdGl0YW5fZWFydGhfc3BsaXR0ZXIudnBjZiIsCiAgICAgICAgUEFUVEFDSF9XT1JMRE9SSUdJTiwKICAgICAgICBuaWwKICAgICkKICAgIFBhcnRpY2xlTWFuYWdlcjpTZXRQYXJ0aWNsZUNvbnRyb2woc3BsaXR0ZXJfcGZ4LCAwLCBzdGFydF9wb3MpCiAgICBQYXJ0aWNsZU1hbmFnZXI6U2V0UGFydGljbGVDb250cm9sKHNwbGl0dGVyX3BmeCwgMSwgZW5kX3BvcykKICAgIC0tIHg95bu26L+fKOijgue8neiUk+W7tuWIsOeIhuWPkeaXtumXtCksIHk95a695bqmCiAgICBQYXJ0aWNsZU1hbmFnZXI6U2V0UGFydGljbGVDb250cm9sKHNwbGl0dGVyX3BmeCwgMiwgVmVjdG9yKHNwbGl0dGVyX2RlbGF5LCBmaXNzdXJlX3dpZHRoLCAwKSkKICAgIFBhcnRpY2xlTWFuYWdlcjpSZWxlYXNlUGFydGljbGVJbmRleChzcGxpdHRlcl9wZngpCiAgICBFbWl0U291bmRPbkxvY2F0aW9uV2l0aENhc3RlcihzdGFydF9wb3MsICJIZXJvX0VsZGVyVGl0YW4uRWFydGhTcGxpdHRlci5Qcm9qZWN0aWxlIiwgY2FzdGVyKQoKICAgIFRpbWVycygxLCBmdW5jdGlvbigpCiAgICAgICAgaWYgbm90IGhlcm8gb3IgaGVybzpJc051bGwoKSBvciBub3QgaGVybzpJc0FsaXZlKCkgdGhlbiByZXR1cm4gZW5kCgogICAgICAgIGxvY2FsIGVuZW1pZXMgPSBGaW5kVW5pdHNJbkxpbmUoCiAgICAgICAgICAgIGhlcm86R2V0VGVhbU51bWJlcigpLAogICAgICAgICAgICBzdGFydF9wb3MsCiAgICAgICAgICAgIGVuZF9kYW1nZXBvcywKICAgICAgICAgICAgbmlsLAogICAgICAgICAgICBmaXNzdXJlX3dpZHRoLAogICAgICAgICAgICBET1RBX1VOSVRfVEFSR0VUX1RFQU1fRU5FTVksCiAgICAgICAgICAgIERPVEFfVU5JVF9UQVJHRVRfSEVSTyArIERPVEFfVU5JVF9UQVJHRVRfQkFTSUMsCiAgICAgICAgICAgIERPVEFfVU5JVF9UQVJHRVRfRkxBR19NQUdJQ19JTU1VTkVfRU5FTUlFUwogICAgICAgICkKICAgICAgICAtLSBwcmludCgic3BsaXR0ZXIgaGl0IGNvdW50OiIsICNlbmVtaWVzKQogICAgICAgIEVtaXRTb3VuZE9uTG9jYXRpb25XaXRoQ2FzdGVyKHN0YXJ0X3BvcywgIkhlcm9fRWxkZXJUaXRhbi5FYXJ0aFNwbGl0dGVyLkRlc3Ryb3kiLCBjYXN0ZXIpCgogICAgICAgIGZvciBfLCBlbmVteSBpbiBwYWlycyhlbmVtaWVzKSBkbwogICAgICAgICAgICBpZiBlbmVteSBhbmQgbm90IGVuZW15OklzTnVsbCgpIGFuZCBlbmVteTpJc0FsaXZlKCkgdGhlbgogICAgICAgICAgICAgICAgbG9jYWwgZGFtYWdlID0gZW5lbXk6R2V0TWF4SGVhbHRoKCkgKiBkYW1hZ2VfcGN0CiAgICAgICAgICAgICAgICBBcHBseURhbWFnZSh7CiAgICAgICAgICAgICAgICAgICAgdmljdGltID0gZW5lbXksCiAgICAgICAgICAgICAgICAgICAgYXR0YWNrZXIgPSBjYXN0ZXIsCiAgICAgICAgICAgICAgICAgICAgZGFtYWdlID0gZGFtYWdlLAogICAgICAgICAgICAgICAgICAgIGRhbWFnZV90eXBlID0gREFNQUdFX1RZUEVfTUFHSUNBTCwKICAgICAgICAgICAgICAgICAgICBhYmlsaXR5ID0gbmlsLAogICAgICAgICAgICAgICAgICAgIGRhbWFnZV9mbGFncyA9IERPVEFfREFNQUdFX0ZMQUdfQllQQVNTRVNfQkxPQ0sKICAgICAgICAgICAgICAgIH0pCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2Jvc3NfMV9idWZmOkRlY2xhcmVGdW5jdGlvbnMoKQogICAgcmV0dXJuIHt9CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfYm9zc18xX2J1ZmY6Q2hlY2tTdGF0ZSgpCiAgICByZXR1cm4gewogICAgICAgIFtNT0RJRklFUl9TVEFURV9JTlZVTE5FUkFCTEVdID0gdHJ1ZSwgIC0tIOaXoOaVjAogICAgICAgIFtNT0RJRklFUl9TVEFURV9BVFRBQ0tfSU1NVU5FXSA9IHRydWUsIC0tIOS4jeiDveiiq+aZruaUu+mAieS4uuebruaghwogICAgICAgIFtNT0RJRklFUl9TVEFURV9NQUdJQ19JTU1VTkVdID0gdHJ1ZSwgIC0tIOaKgOiDveWFjeeWqwogICAgICAgIFtNT0RJRklFUl9TVEFURV9OT19IRUFMVEhfQkFSXSA9IGZhbHNlCiAgICB9CmVuZAoKbW9kaWZpZXJfYm9zc18xX2J1ZmZfc2xvdyA9IGNsYXNzKHt9KQoKZnVuY3Rpb24gbW9kaWZpZXJfYm9zc18xX2J1ZmZfc2xvdzpJc0hpZGRlbigpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9ib3NzXzFfYnVmZl9zbG93OklzRGVidWZmKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfYm9zc18xX2J1ZmZfc2xvdzpJc1B1cmdhYmxlKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfYm9zc18xX2J1ZmZfc2xvdzpEZWNsYXJlRnVuY3Rpb25zKCkKICAgIHJldHVybiB7CiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfTU9WRVNQRUVEX0JPTlVTX1BFUkNFTlRBR0UKICAgIH0KZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9ib3NzXzFfYnVmZl9zbG93Ok9uQ3JlYXRlZChrdikKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4gcmV0dXJuIGVuZAogICAgc2VsZi5zbG93X3BjdCA9IHRvbnVtYmVyKGt2IGFuZCBrdi5zbG93X3BjdCkgb3IgNTAKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9ib3NzXzFfYnVmZl9zbG93OkdldE1vZGlmaWVyTW92ZVNwZWVkQm9udXNfUGVyY2VudGFnZSgpCiAgICByZXR1cm4gLW1hdGguYWJzKHNlbGYuc2xvd19wY3Qgb3IgNTApCmVuZAo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 文件名：modifier_boss_1_buff.lua
+LinkLuaModifier("modifier_boss_1_buff_slow", "ingame/modifier/modifier_boss_1_buff", LUA_MODIFIER_MOTION_NONE)
+modifier_boss_1_buff = class({})
+
+function modifier_boss_1_buff:IsHidden()
+    return false
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function modifier_boss_1_buff:IsDebuff()
+    return false
+end
+
+function modifier_boss_1_buff:IsPurgable()
+    return false
+end
+
+function modifier_boss_1_buff:RemoveOnDeath()
+    return false
+end
+
+function modifier_boss_1_buff:AllowIllusionDuplicate()
+    return false
+end
+
+function modifier_boss_1_buff:OnCreated(kv)
+    if not IsServer() then return end
+
+    local parent = self:GetParent()
+
+    -- 阶段持续 8 秒；支持外部传入 dur 覆盖
+    self.phase_duration = tonumber(kv and kv.dur) or 8
+    self.interval = 0.5
+    self.fissure_length = 2400
+    self.fissure_width = 315
+    self.slow_pct = 50         -- 对齐大牛三级减速
+    self.slow_duration = 5     -- 对齐大牛三级持续
+    self.damage_pct = 1.0      -- 强化到目标最大生命值 100%
+    self.splitter_delay = 2.75 -- 大牛裂地者延迟
+
+    self:SetDuration(self.phase_duration, true)
+
+    local path = "particles/econ/items/omniknight/omni_2021_immortal/omni_2021_immortal.vpcf"
+    utilex:AddTx(path, parent, self.phase_duration)
+
+    self:StartIntervalThink(self.interval)
+    self:OnIntervalThink()
+end
+
+function modifier_boss_1_buff:OnIntervalThink()
+    if not IsServer() then return end
+
+    local caster = self:GetParent()
+    if not caster or caster:IsNull() or not caster:IsAlive() then
+        self:Destroy()
+        return
+    end
+
+    self:CastRandomFissure(caster)
+end
+
+function modifier_boss_1_buff:CastRandomFissure(caster)
+    local start_pos = caster:GetAbsOrigin()
+    local random_angle = math.rad(math.random(0, 359))
+    local direction = Vector(math.cos(random_angle), math.sin(random_angle), 0):Normalized()
+    local fissure_length = 2400
+    local fissure_width = 315
+    local splitter_delay = 2.75
+    local damage_pct = 1.0
+    local end_pos = start_pos + direction * fissure_length * 2
+    local end_damgepos = start_pos + direction * fissure_length
+    local splitter_pfx = ParticleManager:CreateParticle(
+        "particles/units/heroes/hero_elder_titan/elder_titan_earth_splitter.vpcf",
+        PATTACH_WORLDORIGIN,
+        nil
+    )
+    ParticleManager:SetParticleControl(splitter_pfx, 0, start_pos)
+    ParticleManager:SetParticleControl(splitter_pfx, 1, end_pos)
+    -- x=延迟(裂缝蔓延到爆发时间), y=宽度
+    ParticleManager:SetParticleControl(splitter_pfx, 2, Vector(splitter_delay, fissure_width, 0))
+    ParticleManager:ReleaseParticleIndex(splitter_pfx)
+    EmitSoundOnLocationWithCaster(start_pos, "Hero_ElderTitan.EarthSplitter.Projectile", caster)
+
+    Timers(1, function()
+        if not hero or hero:IsNull() or not hero:IsAlive() then return end
+
+        local enemies = FindUnitsInLine(
+            hero:GetTeamNumber(),
+            start_pos,
+            end_damgepos,
+            nil,
+            fissure_width,
+            DOTA_UNIT_TARGET_TEAM_ENEMY,
+            DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+            DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
+        )
+        -- print("splitter hit count:", #enemies)
+        EmitSoundOnLocationWithCaster(start_pos, "Hero_ElderTitan.EarthSplitter.Destroy", caster)
+
+        for _, enemy in pairs(enemies) do
+            if enemy and not enemy:IsNull() and enemy:IsAlive() then
+                local damage = enemy:GetMaxHealth() * damage_pct
+                ApplyDamage({
+                    victim = enemy,
+                    attacker = caster,
+                    damage = damage,
+                    damage_type = DAMAGE_TYPE_MAGICAL,
+                    ability = nil,
+                    damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_BLOCK
+                })
+            end
+        end
+    end)
+end
+
+function modifier_boss_1_buff:DeclareFunctions()
+    return {}
+end
+
+function modifier_boss_1_buff:CheckState()
+    return {
+        [MODIFIER_STATE_INVULNERABLE] = true,  -- 无敌
+        [MODIFIER_STATE_ATTACK_IMMUNE] = true, -- 不能被普攻选为目标
+        [MODIFIER_STATE_MAGIC_IMMUNE] = true,  -- 技能免疫
+        [MODIFIER_STATE_NO_HEALTH_BAR] = false
+    }
+end
+
+modifier_boss_1_buff_slow = class({})
+
+function modifier_boss_1_buff_slow:IsHidden()
+    return false
+end
+
+function modifier_boss_1_buff_slow:IsDebuff()
+    return true
+end
+
+function modifier_boss_1_buff_slow:IsPurgable()
+    return true
+end
+
+function modifier_boss_1_buff_slow:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
+    }
+end
+
+function modifier_boss_1_buff_slow:OnCreated(kv)
+    if not IsServer() then return end
+    self.slow_pct = tonumber(kv and kv.slow_pct) or 50
+end
+
+function modifier_boss_1_buff_slow:GetModifierMoveSpeedBonus_Percentage()
+    return -math.abs(self.slow_pct or 50)
+end

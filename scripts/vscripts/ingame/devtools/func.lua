@@ -8,22 +8,254 @@
 ]]
 
 
-local encoded=[[LS0tIOazqOWGjOW3peWFt+aMh+S7pO+8iOiBiuWkqSAvIOW3puS+p+mdouadv+WFseeUqO+8iQotLS0gQHBhcmFtIG9wdHMgdGFibGV8bmlsIHsgZ3JvdXAsIHRvb2xzX29ubHk9dHJ1ZSwgc2hvd19pbl9wYW5lbD10cnVlIH0KZnVuY3Rpb24gRGV2VG9vbHM6UmVnaXN0ZXJUb29sKGNtZCwgbGFiZWwsIGhhbmRsZXIsIG9wdHMpCiAgICBpZiBub3QgY21kIG9yIGNtZCA9PSAiIiBvciB0eXBlKGhhbmRsZXIpIH49ICJmdW5jdGlvbiIgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBvcHRzID0gb3B0cyBvciB7fQogICAgc2VsZi5SZWdpc3RyeVtjbWRdID0gewogICAgICAgIGNtZCA9IGNtZCwKICAgICAgICBsYWJlbCA9IGxhYmVsIG9yIGNtZCwKICAgICAgICBncm91cCA9IG9wdHMuZ3JvdXAgb3Igc2VsZi5EZWZhdWx0R3JvdXAsCiAgICAgICAgaGFuZGxlciA9IGhhbmRsZXIsCiAgICAgICAgdG9vbHNfb25seSA9IG9wdHMudG9vbHNfb25seSB+PSBmYWxzZSwKICAgICAgICBzaG93X2luX3BhbmVsID0gb3B0cy5zaG93X2luX3BhbmVsIH49IGZhbHNlLAogICAgfQplbmQKCmZ1bmN0aW9uIERldlRvb2xzOkluaXRSZWdpc3RyeSgpCiAgICBpZiBzZWxmLl9yZWdpc3RyeV9pbml0ZWQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmLl9yZWdpc3RyeV9pbml0ZWQgPSB0cnVlCiAgICBpZiBzZWxmLkluaXRCdWlsdGluQ29tbWFuZHMgdGhlbgogICAgICAgIHNlbGY6SW5pdEJ1aWx0aW5Db21tYW5kcygpCiAgICBlbmQKICAgIGlmIHNlbGYuUmVnaXN0ZXJDdXN0b21Ub29scyB0aGVuCiAgICAgICAgc2VsZjpSZWdpc3RlckN1c3RvbVRvb2xzKCkKICAgIGVuZAplbmQKCmZ1bmN0aW9uIERldlRvb2xzOlJ1bkNvbW1hbmQoSUQsIGNtZCkKICAgIGlmIG5vdCBJRCBvciBub3QgY21kIG9yIGNtZCA9PSAiIiB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIHNlbGY6SW5pdFJlZ2lzdHJ5KCkKICAgIGxvY2FsIGVudHJ5ID0gc2VsZi5SZWdpc3RyeVtjbWRdCiAgICBpZiBub3QgZW50cnkgb3Igbm90IGVudHJ5LmhhbmRsZXIgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBlbnRyeS50b29sc19vbmx5IGFuZCBub3Qgc2VsZjpJc0VuYWJsZWQoKSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGxvY2FsIGhlcm8gPSBVdGlsOklEMkhlcm8oSUQpCiAgICBpZiBub3QgaGVybyBvciBoZXJvOklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgb2ssIGVyciA9IHBjYWxsKGVudHJ5LmhhbmRsZXIsIElELCBoZXJvKQogICAgaWYgbm90IG9rIGFuZCBTZXJ2ZXIgYW5kIFNlcnZlci5TZW5kRXJyb3IgdGhlbgogICAgICAgIFNlcnZlcjpTZW5kRXJyb3IodG9zdHJpbmcoZXJyKSwgIkRldlRvb2xzOlJ1bkNvbW1hbmQ6IiAuLiB0b3N0cmluZyhjbWQpKQogICAgZW5kCiAgICByZXR1cm4gb2sKZW5kCgotLS0g5bel5YW35qih5byP77ya5Y+R5pS+56ew5Y+35Yiw6IOM5YyF44CB5L2p5oi077yM5bm25by55Ye65rWL6K+V54mI6I635b6X56ew5Y+35aWW5Yqx56qXCmZ1bmN0aW9uIERldlRvb2xzOkdyYW50VGl0bGVBbmRFcXVpcChJRCwgaGVybywgaXRlbV9rZXkpCiAgICBpZiBub3QgSUQgb3Igbm90IGhlcm8gb3IgaGVybzpJc051bGwoKSBvciBub3QgaXRlbV9rZXkgb3IgaXRlbV9rZXkgPT0gIiIgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBub3QgU2hvcCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIElEID0gdG9udW1iZXIoSUQpIG9yIElECiAgICBpZiBTaG9wLkVuc3VyZVBsYXllckRhdGEgYW5kIG5vdCBTaG9wOkVuc3VyZVBsYXllckRhdGEoSUQpIHRoZW4KICAgICAgICBVdGlsOkJvdHRvbU1zZzJJRChJRCwgIueOqeWutuaVsOaNruacquWIneWni+WMliIsICJyZWQiLCAzKQogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBtZXRhID0gU2hvcC5JdGVtTGlzdCBhbmQgU2hvcC5JdGVtTGlzdFtpdGVtX2tleV0KICAgIGlmIG5vdCBtZXRhIHRoZW4KICAgICAgICBVdGlsOkJvdHRvbU1zZzJJRChJRCwgIuacquefpeensOWPtzogIiAuLiB0b3N0cmluZyhpdGVtX2tleSksICJyZWQiLCAzKQogICAgICAgIHJldHVybgogICAgZW5kCgogICAgbG9jYWwgZnVuY3Rpb24gb25SZWFkeSgpCiAgICAgICAgaWYgbm90IFNob3A6T3V0QmFnT3duc0l0ZW0oSUQsIGl0ZW1fa2V5KSB0aGVuCiAgICAgICAgICAgIFV0aWw6Qm90dG9tTXNnMklEKElELCAi56ew5Y+35pyq5YWl6IOM5YyFIiwgInJlZCIsIDMpCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZAogICAgICAgIGlmIFNob3AuT3V0QmFnRXF1aXAgdGhlbgogICAgICAgICAgICBTaG9wOk91dEJhZ0VxdWlwKElELCAidGl0bGUiLCBpdGVtX2tleSkKICAgICAgICBlbmQKICAgICAgICBpZiBUaXRsZSBhbmQgVGl0bGUuQXBwbHlUaXRsZSB0aGVuCiAgICAgICAgICAgIFRpdGxlOkFwcGx5VGl0bGUoaGVybywgaXRlbV9rZXksIElELCB0cnVlKQogICAgICAgIGVuZAogICAgICAgIGxvY2FsIHJvd3MgPSB7fQogICAgICAgIGlmIFNob3AuQnVpbGRUaXRsZVJlZGVlbVJvdyB0aGVuCiAgICAgICAgICAgIGxvY2FsIHJvdyA9IFNob3A6QnVpbGRUaXRsZVJlZGVlbVJvdyhpdGVtX2tleSkKICAgICAgICAgICAgaWYgcm93IHRoZW4KICAgICAgICAgICAgICAgIHJvd3NbMV0gPSByb3cKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICAgICAgaWYgTXNncyBhbmQgTXNncy5Qb3BSZWRlZW1TdWNjZXNzIHRoZW4KICAgICAgICAgICAgTXNnczpQb3BSZWRlZW1TdWNjZXNzKElELCAi6I635b6X56ew5Y+377yI5rWL6K+V77yJIiwgcm93cykKICAgICAgICBlbmQKICAgIGVuZAoKICAgIGlmIFNob3A6T3V0QmFnT3duc0l0ZW0oSUQsIGl0ZW1fa2V5KSB0aGVuCiAgICAgICAgb25SZWFkeSgpCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICAtLSBEZXZUb29scyDnp7Dlj7fvvJrlp4vnu4jmnKzlnLDlhaXog4zljIXvvIhSdW5Db21tYW5kIOW3suS/neivgeW3peWFt+aooeW8j++8m+S4jeS+nei1luacjeWKoeerryBncmFudCDnmb3lkI3ljZXvvIkKICAgIGlmIFNob3AuQWRkQmFnSXRlbUxvY2FsIGFuZCBTaG9wOkFkZEJhZ0l0ZW1Mb2NhbChJRCwgaXRlbV9rZXksIDEpIHRoZW4KICAgICAgICBvblJlYWR5KCkKICAgICAgICAtLSDlt7LnmbvlvZXml7blkI7lj7DlkIzmraXmnI3liqHnq6/vvIzlpLHotKXkuI3lvbHlk43mnKzlnLDog4zljIXkuI7kvanmiLQKICAgICAgICBpZiBTaG9wLkdyYW50QmFnSXRlbVNlcnZlciBhbmQgSHR0cCBhbmQgSHR0cC5HZXRQbGF5ZXJBY2Nlc3NUb2tlbiB0aGVuCiAgICAgICAgICAgIGxvY2FsIHRva2VuID0gSHR0cDpHZXRQbGF5ZXJBY2Nlc3NUb2tlbihJRCkKICAgICAgICAgICAgaWYgdG9rZW4gYW5kIHRva2VuIH49ICIiIHRoZW4KICAgICAgICAgICAgICAgIFNob3A6R3JhbnRCYWdJdGVtU2VydmVyKElELCBpdGVtX2tleSwgMSwgZnVuY3Rpb24ob2spCiAgICAgICAgICAgICAgICAgICAgaWYgb2sgYW5kIFNob3AuU2VuZE91dEJhZ0RhdGEgdGhlbgogICAgICAgICAgICAgICAgICAgICAgICBTaG9wOlNlbmRPdXRCYWdEYXRhKElEKQogICAgICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgZW5kKQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIFV0aWw6Qm90dG9tTXNnMklEKElELCAi56ew5Y+35Y+R5pS+5aSx6LSlIiwgInJlZCIsIDMpCmVuZAoKLS0tIOW3peWFt+aooeW8j++8mumihOiniOWRqOi6q+eJueaViO+8iOWFiOa4heaXp+eJueaViOWGjeaMguaWsOeykuWtkO+8jOS4jeWPoOWKoO+8iQpmdW5jdGlvbiBEZXZUb29sczpQcmV2aWV3Qm9keUVmZmVjdChJRCwgaGVybywgZngsIGxhYmVsKQogICAgaWYgbm90IGhlcm8gb3IgaGVybzpJc051bGwoKSBvciBub3QgZnggb3IgZnggPT0gIiIgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBJRCA9IHRvbnVtYmVyKElEKSBvciBJRAogICAgLS0g5YWI55m76K6w6aKE6KeI6Lev5b6E77yM6YG/5YWNIE91dEJhZ1VuZXF1aXAg4oaSIEVmZmVjdDpTeW5jIOaKiuWImuaMguS4iueahOeykuWtkOa4heaOiQogICAgaWYgRWZmZWN0IGFuZCBFZmZlY3QuU2V0VG9vbHNQcmV2aWV3IHRoZW4KICAgICAgICBFZmZlY3Q6U2V0VG9vbHNQcmV2aWV3KElELCBmeCkKICAgIGVuZAogICAgaWYgU2hvcCBhbmQgU2hvcC5HZXRFcXVpcHBlZEVmZmVjdEtleSBhbmQgU2hvcDpHZXRFcXVpcHBlZEVmZmVjdEtleShJRCkgYW5kIFNob3AuT3V0QmFnVW5lcXVpcCB0aGVuCiAgICAgICAgU2hvcDpPdXRCYWdVbmVxdWlwKElELCAiZWZmZWN0IikKICAgIGVsc2VpZiBFZmZlY3QgYW5kIEVmZmVjdC5SZW1vdmVFZmZlY3QgdGhlbgogICAgICAgIEVmZmVjdDpSZW1vdmVFZmZlY3QoaGVybykKICAgIGVuZAogICAgaWYgRWZmZWN0IGFuZCBFZmZlY3QuQXBwbHlFZmZlY3RGeCB0aGVuCiAgICAgICAgRWZmZWN0OkFwcGx5RWZmZWN0RngoaGVybywgZngpCiAgICBlbmQKICAgIFV0aWw6Qm90dG9tTXNnMklEKElELCBsYWJlbCBvciAi5bey5YiH5o2i5ZGo6Lqr54m55pWIIiwgImdyZWVuIiwgMikKZW5kCgotLS0g5bel5YW35qih5byP77ya5riF6Zmk5b2T5YmN5ZGo6Lqr54m55pWICmZ1bmN0aW9uIERldlRvb2xzOlJlbW92ZUJvZHlFZmZlY3QoSUQsIGhlcm8sIGxhYmVsKQogICAgaWYgbm90IGhlcm8gb3IgaGVybzpJc051bGwoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIElEID0gdG9udW1iZXIoSUQpIG9yIElECiAgICBpZiBFZmZlY3QgYW5kIEVmZmVjdC5DbGVhclRvb2xzUHJldmlldyB0aGVuCiAgICAgICAgRWZmZWN0OkNsZWFyVG9vbHNQcmV2aWV3KElEKQogICAgZW5kCiAgICBpZiBFZmZlY3QgYW5kIEVmZmVjdC5SZW1vdmVFZmZlY3QgdGhlbgogICAgICAgIEVmZmVjdDpSZW1vdmVFZmZlY3QoaGVybykKICAgIGVuZAogICAgaWYgU2hvcCBhbmQgU2hvcC5PdXRCYWdVbmVxdWlwIHRoZW4KICAgICAgICBsb2NhbCBlcXVpcHBlZCA9IFNob3AuR2V0RXF1aXBwZWRFZmZlY3RLZXkgYW5kIFNob3A6R2V0RXF1aXBwZWRFZmZlY3RLZXkoSUQpCiAgICAgICAgaWYgZXF1aXBwZWQgdGhlbgogICAgICAgICAgICBTaG9wOk91dEJhZ1VuZXF1aXAoSUQsICJlZmZlY3QiKQogICAgICAgIGVuZAogICAgZW5kCiAgICBVdGlsOkJvdHRvbU1zZzJJRChJRCwgbGFiZWwgb3IgIuW3suenu+mZpOWRqOi6q+eJueaViCIsICJ5ZWxsb3ciLCAyKQplbmQKCi0tLSDlt6XlhbfmqKHlvI/vvJrlj5HmlL7lkajouqvnibnmlYjliLDog4zljIXjgIHkvanmiLTvvIzlubblvLnlh7rmtYvor5XniYjojrflvpfnibnmlYjlpZblirHnqpcKZnVuY3Rpb24gRGV2VG9vbHM6R3JhbnRFZmZlY3RBbmRFcXVpcChJRCwgaGVybywgaXRlbV9rZXkpCiAgICBpZiBub3QgSUQgb3Igbm90IGhlcm8gb3IgaGVybzpJc051bGwoKSBvciBub3QgaXRlbV9rZXkgb3IgaXRlbV9rZXkgPT0gIiIgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBub3QgU2hvcCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIElEID0gdG9udW1iZXIoSUQpIG9yIElECiAgICBpZiBTaG9wLkVuc3VyZVBsYXllckRhdGEgYW5kIG5vdCBTaG9wOkVuc3VyZVBsYXllckRhdGEoSUQpIHRoZW4KICAgICAgICBVdGlsOkJvdHRvbU1zZzJJRChJRCwgIueOqeWutuaVsOaNruacquWIneWni+WMliIsICJyZWQiLCAzKQogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBtZXRhID0gU2hvcC5JdGVtTGlzdCBhbmQgU2hvcC5JdGVtTGlzdFtpdGVtX2tleV0KICAgIGlmIG5vdCBtZXRhIHRoZW4KICAgICAgICBVdGlsOkJvdHRvbU1zZzJJRChJRCwgIuacquefpeeJueaViDogIiAuLiB0b3N0cmluZyhpdGVtX2tleSksICJyZWQiLCAzKQogICAgICAgIHJldHVybgogICAgZW5kCgogICAgbG9jYWwgZnVuY3Rpb24gb25SZWFkeSgpCiAgICAgICAgaWYgbm90IFNob3A6T3V0QmFnT3duc0l0ZW0oSUQsIGl0ZW1fa2V5KSB0aGVuCiAgICAgICAgICAgIFV0aWw6Qm90dG9tTXNnMklEKElELCAi54m55pWI5pyq5YWl6IOM5YyFIiwgInJlZCIsIDMpCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZAogICAgICAgIGlmIFNob3AuT3V0QmFnRXF1aXAgdGhlbgogICAgICAgICAgICBTaG9wOk91dEJhZ0VxdWlwKElELCAiZWZmZWN0IiwgaXRlbV9rZXkpCiAgICAgICAgZW5kCiAgICAgICAgaWYgRWZmZWN0IGFuZCBFZmZlY3QuQXBwbHlFZmZlY3QgdGhlbgogICAgICAgICAgICBFZmZlY3Q6QXBwbHlFZmZlY3QoaGVybywgaXRlbV9rZXkpCiAgICAgICAgZW5kCiAgICAgICAgbG9jYWwgcm93cyA9IHt9CiAgICAgICAgaWYgbWV0YS5pY29uIGFuZCBtZXRhLmljb24gfj0gIiIgdGhlbgogICAgICAgICAgICByb3dzWzFdID0gewogICAgICAgICAgICAgICAgaW1nID0gbWV0YS5pY29uLAogICAgICAgICAgICAgICAgY291bnQgPSBtZXRhLm5hbWUgb3IgaXRlbV9rZXksCiAgICAgICAgICAgICAgICB1bml0ID0gIueJueaViCIsCiAgICAgICAgICAgIH0KICAgICAgICBlbmQKICAgICAgICBpZiBNc2dzIGFuZCBNc2dzLlBvcFJlZGVlbVN1Y2Nlc3MgdGhlbgogICAgICAgICAgICBNc2dzOlBvcFJlZGVlbVN1Y2Nlc3MoSUQsICLojrflvpfnibnmlYjvvIjmtYvor5XvvIkiLCByb3dzKQogICAgICAgIGVuZAogICAgZW5kCgogICAgaWYgU2hvcDpPdXRCYWdPd25zSXRlbShJRCwgaXRlbV9rZXkpIHRoZW4KICAgICAgICBvblJlYWR5KCkKICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGlmIFNob3AuQWRkQmFnSXRlbUxvY2FsIGFuZCBTaG9wOkFkZEJhZ0l0ZW1Mb2NhbChJRCwgaXRlbV9rZXksIDEpIHRoZW4KICAgICAgICBvblJlYWR5KCkKICAgICAgICBpZiBTaG9wLkdyYW50QmFnSXRlbVNlcnZlciBhbmQgSHR0cCBhbmQgSHR0cC5HZXRQbGF5ZXJBY2Nlc3NUb2tlbiB0aGVuCiAgICAgICAgICAgIGxvY2FsIHRva2VuID0gSHR0cDpHZXRQbGF5ZXJBY2Nlc3NUb2tlbihJRCkKICAgICAgICAgICAgaWYgdG9rZW4gYW5kIHRva2VuIH49ICIiIHRoZW4KICAgICAgICAgICAgICAgIFNob3A6R3JhbnRCYWdJdGVtU2VydmVyKElELCBpdGVtX2tleSwgMSwgZnVuY3Rpb24ob2spCiAgICAgICAgICAgICAgICAgICAgaWYgb2sgYW5kIFNob3AuU2VuZE91dEJhZ0RhdGEgdGhlbgogICAgICAgICAgICAgICAgICAgICAgICBTaG9wOlNlbmRPdXRCYWdEYXRhKElEKQogICAgICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICAgICAgZW5kKQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIFV0aWw6Qm90dG9tTXNnMklEKElELCAi54m55pWI5Y+R5pS+5aSx6LSlIiwgInJlZCIsIDMpCmVuZAoKLS0tIOW3peWFt+aooeW8j++8muS4uuiLsembhOa3u+WKoCBEaXJldGlkZSDmlLvlh7vlvLnpgZPnibnmlYjvvIhhdHYxL2F0djIvYXR2M++8iQpmdW5jdGlvbiBEZXZUb29sczpHcmFudEF0dGFja0VmZmVjdChJRCwgaGVybywgZWZmZWN0X2tleSwgbGFiZWwpCiAgICBpZiBub3QgaGVybyBvciBoZXJvOklzTnVsbCgpIG9yIG5vdCBlZmZlY3Rfa2V5IG9yIGVmZmVjdF9rZXkgPT0gIiIgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBoZXJvOkhhc01vZGlmaWVyKCJtb2RpZmllcl9hdHRhY2tfZWZmZWN0IikgdGhlbgogICAgICAgIGhlcm86UmVtb3ZlTW9kaWZpZXJCeU5hbWUoIm1vZGlmaWVyX2F0dGFja19lZmZlY3QiKQogICAgZW5kCiAgICBoZXJvOkFkZE5ld01vZGlmaWVyKGhlcm8sIG5pbCwgIm1vZGlmaWVyX2F0dGFja19lZmZlY3QiLCB7CiAgICAgICAgYXR0YWNrX2VmZmVjdCA9IGVmZmVjdF9rZXksCiAgICB9KQogICAgVXRpbDpCb3R0b21Nc2cySUQoSUQsIGxhYmVsIG9yICgi5bey5re75Yqg5pS75Ye754m55pWIICIgLi4gZWZmZWN0X2tleSksICJncmVlbiIsIDIpCmVuZAoKZnVuY3Rpb24gRGV2VG9vbHM6UmVtb3ZlQXR0YWNrRWZmZWN0KElELCBoZXJvKQogICAgaWYgbm90IGhlcm8gb3IgaGVybzpJc051bGwoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIGhlcm86SGFzTW9kaWZpZXIoIm1vZGlmaWVyX2F0dGFja19lZmZlY3QiKSB0aGVuCiAgICAgICAgaGVybzpSZW1vdmVNb2RpZmllckJ5TmFtZSgibW9kaWZpZXJfYXR0YWNrX2VmZmVjdCIpCiAgICBlbmQKICAgIFV0aWw6Qm90dG9tTXNnMklEKElELCAi5bey5riF6Zmk5pS75Ye754m55pWIIiwgInllbGxvdyIsIDIpCmVuZAo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+--- 注册工具指令（聊天 / 左侧面板共用）
+--- @param opts table|nil { group, tools_only=true, show_in_panel=true }
+function DevTools:RegisterTool(cmd, label, handler, opts)
+    if not cmd or cmd == "" or type(handler) ~= "function" then
+        return
+    end
+    opts = opts or {}
+    self.Registry[cmd] = {
+        cmd = cmd,
+        label = label or cmd,
+        group = opts.group or self.DefaultGroup,
+        handler = handler,
+        tools_only = opts.tools_only ~= false,
+        show_in_panel = opts.show_in_panel ~= false,
+    }
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function DevTools:InitRegistry()
+    if self._registry_inited then
+        return
+    end
+    self._registry_inited = true
+    if self.InitBuiltinCommands then
+        self:InitBuiltinCommands()
+    end
+    if self.RegisterCustomTools then
+        self:RegisterCustomTools()
+    end
+end
+
+function DevTools:RunCommand(ID, cmd)
+    if not ID or not cmd or cmd == "" then
+        return false
+    end
+    self:InitRegistry()
+    local entry = self.Registry[cmd]
+    if not entry or not entry.handler then
+        return false
+    end
+    if entry.tools_only and not self:IsEnabled() then
+        return false
+    end
+    local hero = Util:ID2Hero(ID)
+    if not hero or hero:IsNull() then
+        return false
+    end
+    local ok, err = pcall(entry.handler, ID, hero)
+    if not ok and Server and Server.SendError then
+        Server:SendError(tostring(err), "DevTools:RunCommand:" .. tostring(cmd))
+    end
+    return ok
+end
+
+--- 工具模式：发放称号到背包、佩戴，并弹出测试版获得称号奖励窗
+function DevTools:GrantTitleAndEquip(ID, hero, item_key)
+    if not ID or not hero or hero:IsNull() or not item_key or item_key == "" then
+        return
+    end
+    if not Shop then
+        return
+    end
+    ID = tonumber(ID) or ID
+    if Shop.EnsurePlayerData and not Shop:EnsurePlayerData(ID) then
+        Util:BottomMsg2ID(ID, "玩家数据未初始化", "red", 3)
+        return
+    end
+    local meta = Shop.ItemList and Shop.ItemList[item_key]
+    if not meta then
+        Util:BottomMsg2ID(ID, "未知称号: " .. tostring(item_key), "red", 3)
+        return
+    end
+
+    local function onReady()
+        if not Shop:OutBagOwnsItem(ID, item_key) then
+            Util:BottomMsg2ID(ID, "称号未入背包", "red", 3)
+            return
+        end
+        if Shop.OutBagEquip then
+            Shop:OutBagEquip(ID, "title", item_key)
+        end
+        if Title and Title.ApplyTitle then
+            Title:ApplyTitle(hero, item_key, ID, true)
+        end
+        local rows = {}
+        if Shop.BuildTitleRedeemRow then
+            local row = Shop:BuildTitleRedeemRow(item_key)
+            if row then
+                rows[1] = row
+            end
+        end
+        if Msgs and Msgs.PopRedeemSuccess then
+            Msgs:PopRedeemSuccess(ID, "获得称号（测试）", rows)
+        end
+    end
+
+    if Shop:OutBagOwnsItem(ID, item_key) then
+        onReady()
+        return
+    end
+
+    -- DevTools 称号：始终本地入背包（RunCommand 已保证工具模式；不依赖服务端 grant 白名单）
+    if Shop.AddBagItemLocal and Shop:AddBagItemLocal(ID, item_key, 1) then
+        onReady()
+        -- 已登录时后台同步服务端，失败不影响本地背包与佩戴
+        if Shop.GrantBagItemServer and Http and Http.GetPlayerAccessToken then
+            local token = Http:GetPlayerAccessToken(ID)
+            if token and token ~= "" then
+                Shop:GrantBagItemServer(ID, item_key, 1, function(ok)
+                    if ok and Shop.SendOutBagData then
+                        Shop:SendOutBagData(ID)
+                    end
+                end)
+            end
+        end
+        return
+    end
+
+    Util:BottomMsg2ID(ID, "称号发放失败", "red", 3)
+end
+
+--- 工具模式：预览周身特效（先清旧特效再挂新粒子，不叠加）
+function DevTools:PreviewBodyEffect(ID, hero, fx, label)
+    if not hero or hero:IsNull() or not fx or fx == "" then
+        return
+    end
+    ID = tonumber(ID) or ID
+    -- 先登记预览路径，避免 OutBagUnequip → Effect:Sync 把刚挂上的粒子清掉
+    if Effect and Effect.SetToolsPreview then
+        Effect:SetToolsPreview(ID, fx)
+    end
+    if Shop and Shop.GetEquippedEffectKey and Shop:GetEquippedEffectKey(ID) and Shop.OutBagUnequip then
+        Shop:OutBagUnequip(ID, "effect")
+    elseif Effect and Effect.RemoveEffect then
+        Effect:RemoveEffect(hero)
+    end
+    if Effect and Effect.ApplyEffectFx then
+        Effect:ApplyEffectFx(hero, fx)
+    end
+    Util:BottomMsg2ID(ID, label or "已切换周身特效", "green", 2)
+end
+
+--- 工具模式：清除当前周身特效
+function DevTools:RemoveBodyEffect(ID, hero, label)
+    if not hero or hero:IsNull() then
+        return
+    end
+    ID = tonumber(ID) or ID
+    if Effect and Effect.ClearToolsPreview then
+        Effect:ClearToolsPreview(ID)
+    end
+    if Effect and Effect.RemoveEffect then
+        Effect:RemoveEffect(hero)
+    end
+    if Shop and Shop.OutBagUnequip then
+        local equipped = Shop.GetEquippedEffectKey and Shop:GetEquippedEffectKey(ID)
+        if equipped then
+            Shop:OutBagUnequip(ID, "effect")
+        end
+    end
+    Util:BottomMsg2ID(ID, label or "已移除周身特效", "yellow", 2)
+end
+
+--- 工具模式：发放周身特效到背包、佩戴，并弹出测试版获得特效奖励窗
+function DevTools:GrantEffectAndEquip(ID, hero, item_key)
+    if not ID or not hero or hero:IsNull() or not item_key or item_key == "" then
+        return
+    end
+    if not Shop then
+        return
+    end
+    ID = tonumber(ID) or ID
+    if Shop.EnsurePlayerData and not Shop:EnsurePlayerData(ID) then
+        Util:BottomMsg2ID(ID, "玩家数据未初始化", "red", 3)
+        return
+    end
+    local meta = Shop.ItemList and Shop.ItemList[item_key]
+    if not meta then
+        Util:BottomMsg2ID(ID, "未知特效: " .. tostring(item_key), "red", 3)
+        return
+    end
+
+    local function onReady()
+        if not Shop:OutBagOwnsItem(ID, item_key) then
+            Util:BottomMsg2ID(ID, "特效未入背包", "red", 3)
+            return
+        end
+        if Shop.OutBagEquip then
+            Shop:OutBagEquip(ID, "effect", item_key)
+        end
+        if Effect and Effect.ApplyEffect then
+            Effect:ApplyEffect(hero, item_key)
+        end
+        local rows = {}
+        if meta.icon and meta.icon ~= "" then
+            rows[1] = {
+                img = meta.icon,
+                count = meta.name or item_key,
+                unit = "特效",
+            }
+        end
+        if Msgs and Msgs.PopRedeemSuccess then
+            Msgs:PopRedeemSuccess(ID, "获得特效（测试）", rows)
+        end
+    end
+
+    if Shop:OutBagOwnsItem(ID, item_key) then
+        onReady()
+        return
+    end
+
+    if Shop.AddBagItemLocal and Shop:AddBagItemLocal(ID, item_key, 1) then
+        onReady()
+        if Shop.GrantBagItemServer and Http and Http.GetPlayerAccessToken then
+            local token = Http:GetPlayerAccessToken(ID)
+            if token and token ~= "" then
+                Shop:GrantBagItemServer(ID, item_key, 1, function(ok)
+                    if ok and Shop.SendOutBagData then
+                        Shop:SendOutBagData(ID)
+                    end
+                end)
+            end
+        end
+        return
+    end
+
+    Util:BottomMsg2ID(ID, "特效发放失败", "red", 3)
+end
+
+--- 工具模式：为英雄添加 Diretide 攻击弹道特效（atv1/atv2/atv3）
+function DevTools:GrantAttackEffect(ID, hero, effect_key, label)
+    if not hero or hero:IsNull() or not effect_key or effect_key == "" then
+        return
+    end
+    if hero:HasModifier("modifier_attack_effect") then
+        hero:RemoveModifierByName("modifier_attack_effect")
+    end
+    hero:AddNewModifier(hero, nil, "modifier_attack_effect", {
+        attack_effect = effect_key,
+    })
+    Util:BottomMsg2ID(ID, label or ("已添加攻击特效 " .. effect_key), "green", 2)
+end
+
+function DevTools:RemoveAttackEffect(ID, hero)
+    if not hero or hero:IsNull() then
+        return
+    end
+    if hero:HasModifier("modifier_attack_effect") then
+        hero:RemoveModifierByName("modifier_attack_effect")
+    end
+    Util:BottomMsg2ID(ID, "已清除攻击特效", "yellow", 2)
+end

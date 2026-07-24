@@ -8,22 +8,47 @@
 ]]
 
 
-local encoded=[[bW9kaWZpZXJfbWZ4aGpzID0gY2xhc3Moe30pCgotLeivpW1vZGlmaWVy5piv5ZCm5piv6LSf6Z2i55qECmZ1bmN0aW9uIG1vZGlmaWVyX21meGhqczpJc0RlYnVmZigpCiAgICByZXR1cm4gZmFsc2UKZW5kCgotLeivpW1vZGlmaWVy6IO95ZCm6KKr5riF6ZmkCmZ1bmN0aW9uIG1vZGlmaWVyX21meGhqczpJc1B1cmdhYmxlKCkKICAgIHJldHVybiBmYWxzZQplbmQKCi0t6K+lbW9kaWZpZXLmmK/lkKbpmpDol48KZnVuY3Rpb24gbW9kaWZpZXJfbWZ4aGpzOklzSGlkZGVuKCkKICAgIHJldHVybiB0cnVlCmVuZAoKLS3mrbvkuqHml7bmmK/lkKbnp7vpmaQKZnVuY3Rpb24gbW9kaWZpZXJfbWZ4aGpzOlJlbW92ZU9uRGVhdGgoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKLS0g5Yid5aeL5YyWbW9kaWZpZXIKZnVuY3Rpb24gbW9kaWZpZXJfbWZ4aGpzOk9uQ3JlYXRlZChrdikKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4gcmV0dXJuIGVuZAogICAgLS0g5by65Yi25bGe5oCn5Yi35pawCiAgICBzZWxmOkZvcmNlUmVmcmVzaCgpCmVuZAoKLS0g5Yi35pawbW9kaWZpZXIKZnVuY3Rpb24gbW9kaWZpZXJfbWZ4aGpzOk9uUmVmcmVzaChrdikKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4gcmV0dXJuIGVuZAplbmQKCi0tIOWjsOaYjuimgeS/ruaUueeahOWHveaVsApmdW5jdGlvbiBtb2RpZmllcl9tZnhoanM6RGVjbGFyZUZ1bmN0aW9ucygpCiAgICByZXR1cm4gewogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX01BTkFDT1NUX1BFUkNFTlRBR0VfU1RBQ0tJTkcsCiAgICB9CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfbWZ4aGpzOkdldE1vZGlmaWVyUGVyY2VudGFnZU1hbmFjb3N0U3RhY2tpbmcoKQogICAgcmV0dXJuIDI1IC0tIOWHj+WwkTI1JemtlOazlea2iOiAlwplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+modifier_mfxhjs = class({})
+
+--该modifier是否是负面的
+function modifier_mfxhjs:IsDebuff()
+    return false
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--该modifier能否被清除
+function modifier_mfxhjs:IsPurgable()
+    return false
+end
+
+--该modifier是否隐藏
+function modifier_mfxhjs:IsHidden()
+    return true
+end
+
+--死亡时是否移除
+function modifier_mfxhjs:RemoveOnDeath()
+    return false
+end
+
+-- 初始化modifier
+function modifier_mfxhjs:OnCreated(kv)
+    if not IsServer() then return end
+    -- 强制属性刷新
+    self:ForceRefresh()
+end
+
+-- 刷新modifier
+function modifier_mfxhjs:OnRefresh(kv)
+    if not IsServer() then return end
+end
+
+-- 声明要修改的函数
+function modifier_mfxhjs:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_MANACOST_PERCENTAGE_STACKING,
+    }
+end
+
+function modifier_mfxhjs:GetModifierPercentageManacostStacking()
+    return 25 -- 减少25%魔法消耗
+end

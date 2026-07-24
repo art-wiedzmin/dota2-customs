@@ -8,22 +8,106 @@
 ]]
 
 
-local encoded=[[bW9kaWZpZXJfd2VhdGhlcl81ID0gY2xhc3Moe30pCi0tIOWQiOaIkOWQjuW3suenu+mZpCBtb2RpZmllcl93ZWF0aGVyXzTvvIzpobvlnKjmnKzmlofku7blho3mrKHms6jlhozvvIzlkKbliJnlr5LpnJwgZGVidWZmIOWPr+iDveacqiBMaW5r44CBT25BdHRhY2tMYW5kZWQg5Yqg5LiN5LiKCkxpbmtMdWFNb2RpZmllcigibW9kaWZpZXJfd2VhdGhlcl80X2J1ZmYiLAogICAgImluZ2FtZS9tb2RpZmllci9tb2RpZmllcl93ZWF0aGVyXzRfYnVmZiIsCiAgICBMVUFfTU9ESUZJRVJfTU9USU9OX05PTkUpCgotLeaYr+WQpuWcqOmdouadv+S4iuaYvuekugpmdW5jdGlvbiBtb2RpZmllcl93ZWF0aGVyXzU6SXNIaWRkZW4oKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfd2VhdGhlcl81OklzRGVidWZmKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3dlYXRoZXJfNTpJc1B1cmdhYmxlKCkKICAgIHJldHVybiBmYWxzZSAtLSDkuI3lj6/ooqvpqbHmlaMKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl93ZWF0aGVyXzU6UmVtb3ZlT25EZWF0aCgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl93ZWF0aGVyXzU6R2V0VGV4dHVyZSgpCiAgICByZXR1cm4gInNjcm9sbC93ZWF0aGVyX21vb25iZWFtX3BuZyIKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl93ZWF0aGVyXzU6QWxsb3dJbGx1c2lvbkR1cGxpY2F0ZSgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgotLeiJs+mYswotLeWIm+W7uuaXtuiuvue9rgpmdW5jdGlvbiBtb2RpZmllcl93ZWF0aGVyXzU6T25DcmVhdGVkKGt2KQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbiByZXR1cm4gZW5kCiAgICBzZWxmOlNldER1cmF0aW9uKGt2LmR1ciwgdHJ1ZSkKICAgIGxvY2FsIHBhID0gc2VsZjpHZXRQYXJlbnQoKQogICAgLS0g5YWo5bGe5oCn55So57u/5a2X77yIYm9udXPvvInvvIznp7vpmaQgbW9kaWZpZXIg5pe255Sx5byV5pOO5pS25Zue77yb5Yu/55SoIE1vZGlmeSrmlLnnmb3lrZcKICAgIHBhOlJlbW92ZU1vZGlmaWVyQnlOYW1lKCJtb2RpZmllcl93ZWF0aGVyXzEiKQogICAgcGE6UmVtb3ZlTW9kaWZpZXJCeU5hbWUoIm1vZGlmaWVyX3dlYXRoZXJfMiIpCiAgICBwYTpSZW1vdmVNb2RpZmllckJ5TmFtZSgibW9kaWZpZXJfd2VhdGhlcl8zIikKICAgIHBhOlJlbW92ZU1vZGlmaWVyQnlOYW1lKCJtb2RpZmllcl93ZWF0aGVyXzQiKQogICAgcGE6UmVtb3ZlTW9kaWZpZXJCeU5hbWUoIm1vZGlmaWVyX3dlYXRoZXJfNiIpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfd2VhdGhlcl81OkRlY2xhcmVGdW5jdGlvbnMoKQogICAgcmV0dXJuIHsKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9TVEFUU19TVFJFTkdUSF9CT05VUywKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9TVEFUU19BR0lMSVRZX0JPTlVTLAogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX1NUQVRTX0lOVEVMTEVDVF9CT05VUywKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9BVFRBQ0tTUEVFRF9CT05VU19DT05TVEFOVCwgLS3mlLvlh7vpgJ/luqYKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9NT1ZFU1BFRURfQk9OVVNfUEVSQ0VOVEFHRSwgLS3np7vliqjpgJ/luqbliqDmiJAKICAgICAgICAtLSDpm6jpnLLvvIhtb2RpZmllcl93ZWF0aGVyXzPvvInvvJrkuI7ljp/niYjkuIDoh7TnlKjnlJ/lkb3lm57lpI3nmb7liIbmr5TvvIzpgb/lhY0gSGVhbCgpIOWcqOayu+eWl+i/h+a7pC/lvJXmk47ot6/lvoTkuIvkuI3nlJ/mlYgKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9IRUFMVEhfUkVHRU5fUEVSQ0VOVEFHRSwKICAgICAgICAtLSDoibPpmLPvvIhtb2RpZmllcl93ZWF0aGVyXzHvvInooqvnp7vpmaTlkI7pnIDlnKjmnKwgbW9kaWZpZXIg5YaF5L+d55WZ5ZCM562J5Yqg5oiQ77yM5ZCm5YiZ5ZCI5oiQ5ZCO5Lyk5a6zL+azleW8uuS8muKAnOWkseaViOKAnQogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX0JBU0VEQU1BR0VPVVRHT0lOR19QRVJDRU5UQUdFLAogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX1NQRUxMX0FNUExJRllfUEVSQ0VOVEFHRSwKICAgICAgICBNT0RJRklFUl9FVkVOVF9PTl9BVFRBQ0tfTEFOREVELCAgICAgICAgICAgICAgLS0g5pS75Ye75ZG95Lit5pe2CiAgICB9CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfd2VhdGhlcl81OkdldE1vZGlmaWVyQm9udXNTdGF0c19TdHJlbmd0aCgpCiAgICByZXR1cm4gMzAKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl93ZWF0aGVyXzU6R2V0TW9kaWZpZXJCb251c1N0YXRzX0FnaWxpdHkoKQogICAgcmV0dXJuIDMwCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfd2VhdGhlcl81OkdldE1vZGlmaWVyQm9udXNTdGF0c19JbnRlbGxlY3QoKQogICAgcmV0dXJuIDMwCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfd2VhdGhlcl81OkdldE1vZGlmaWVySGVhbHRoUmVnZW5QZXJjZW50YWdlKCkKICAgIHJldHVybiAzCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfd2VhdGhlcl81OkdldE1vZGlmaWVyQmFzZURhbWFnZU91dGdvaW5nX1BlcmNlbnRhZ2UoKQogICAgcmV0dXJuIDMwCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfd2VhdGhlcl81OkdldE1vZGlmaWVyU3BlbGxBbXBsaWZ5X1BlcmNlbnRhZ2UoKQogICAgcmV0dXJuIDE1CmVuZAoKLS0g6I635Y+W5pS75Ye76YCf5bqm5bi45pWw5aKe55uKCmZ1bmN0aW9uIG1vZGlmaWVyX3dlYXRoZXJfNTpHZXRNb2RpZmllckF0dGFja1NwZWVkQm9udXNfQ29uc3RhbnQoKQogICAgcmV0dXJuIDYwCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfd2VhdGhlcl81OkdldE1vZGlmaWVyTW92ZVNwZWVkQm9udXNfUGVyY2VudGFnZSgpCiAgICByZXR1cm4gMTAKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl93ZWF0aGVyXzU6T25BdHRhY2tMYW5kZWQoa2V5cykKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4gcmV0dXJuIGVuZAogICAgaWYga2V5cy5hdHRhY2tlciB+PSBzZWxmOkdldFBhcmVudCgpIHRoZW4gcmV0dXJuIGVuZAogICAgbG9jYWwgY2EgPSBzZWxmOkdldFBhcmVudCgpCiAgICBsb2NhbCB0YSA9IGtleXMudGFyZ2V0CiAgICBpZiBub3QgdGEgb3IgdGE6SXNOdWxsKCkgb3Igbm90IHRhOklzQmFzZU5QQygpIG9yIG5vdCB0YTpJc0FsaXZlKCkgdGhlbiByZXR1cm4gZW5kCiAgICAtLSBhYmlsaXR5IOS8oCBuaWzvvJrpg6jliIbnjq/looPkuIvnlKjkv67ppbDlmajkvZwgaW5mbGljdG9yIOS8muWvvOiHtOWvkumcnCBkZWJ1ZmYg5Yqg5LiN5LiKCiAgICB0YTpBZGROZXdNb2RpZmllcihjYSwgbmlsLCAibW9kaWZpZXJfd2VhdGhlcl80X2J1ZmYiLCB7IGR1ciA9IDIgfSkKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+modifier_weather_5 = class({})
+-- 合成后已移除 modifier_weather_4，须在本文件再次注册，否则寒霜 debuff 可能未 Link、OnAttackLanded 加不上
+LinkLuaModifier("modifier_weather_4_buff",
+    "ingame/modifier/modifier_weather_4_buff",
+    LUA_MODIFIER_MOTION_NONE)
+
+--是否在面板上显示
+function modifier_weather_5:IsHidden()
+    return false
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function modifier_weather_5:IsDebuff()
+    return false
+end
+
+function modifier_weather_5:IsPurgable()
+    return false -- 不可被驱散
+end
+
+function modifier_weather_5:RemoveOnDeath()
+    return false
+end
+
+function modifier_weather_5:GetTexture()
+    return "scroll/weather_moonbeam_png"
+end
+
+function modifier_weather_5:AllowIllusionDuplicate()
+    return false
+end
+
+--艳阳
+--创建时设置
+function modifier_weather_5:OnCreated(kv)
+    if not IsServer() then return end
+    self:SetDuration(kv.dur, true)
+    local pa = self:GetParent()
+    -- 全属性用绿字（bonus），移除 modifier 时由引擎收回；勿用 Modify*改白字
+    pa:RemoveModifierByName("modifier_weather_1")
+    pa:RemoveModifierByName("modifier_weather_2")
+    pa:RemoveModifierByName("modifier_weather_3")
+    pa:RemoveModifierByName("modifier_weather_4")
+    pa:RemoveModifierByName("modifier_weather_6")
+end
+
+function modifier_weather_5:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, --攻击速度
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE, --移动速度加成
+        -- 雨露（modifier_weather_3）：与原版一致用生命回复百分比，避免 Heal() 在治疗过滤/引擎路径下不生效
+        MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
+        -- 艳阳（modifier_weather_1）被移除后需在本 modifier 内保留同等加成，否则合成后伤害/法强会“失效”
+        MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,
+        MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
+        MODIFIER_EVENT_ON_ATTACK_LANDED,              -- 攻击命中时
+    }
+end
+
+function modifier_weather_5:GetModifierBonusStats_Strength()
+    return 30
+end
+
+function modifier_weather_5:GetModifierBonusStats_Agility()
+    return 30
+end
+
+function modifier_weather_5:GetModifierBonusStats_Intellect()
+    return 30
+end
+
+function modifier_weather_5:GetModifierHealthRegenPercentage()
+    return 3
+end
+
+function modifier_weather_5:GetModifierBaseDamageOutgoing_Percentage()
+    return 30
+end
+
+function modifier_weather_5:GetModifierSpellAmplify_Percentage()
+    return 15
+end
+
+-- 获取攻击速度常数增益
+function modifier_weather_5:GetModifierAttackSpeedBonus_Constant()
+    return 60
+end
+
+function modifier_weather_5:GetModifierMoveSpeedBonus_Percentage()
+    return 10
+end
+
+function modifier_weather_5:OnAttackLanded(keys)
+    if not IsServer() then return end
+    if keys.attacker ~= self:GetParent() then return end
+    local ca = self:GetParent()
+    local ta = keys.target
+    if not ta or ta:IsNull() or not ta:IsBaseNPC() or not ta:IsAlive() then return end
+    -- ability 传 nil：部分环境下用修饰器作 inflictor 会导致寒霜 debuff 加不上
+    ta:AddNewModifier(ca, nil, "modifier_weather_4_buff", { dur = 2 })
+end

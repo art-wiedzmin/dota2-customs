@@ -8,22 +8,250 @@
 ]]
 
 
-local encoded=[[LS0g6KKr5Yqo5aSp6LWLIDXvvJrms5XnpZ7igJTigJTmlr3ms5XlkI7lj6DprZTms5Xlop7kvKTvvJsxNSDliIbpkp/lkI7ojrflvpcgMTUlIOaKgOiDveWQuOihgAotLSDlsZXnpLrnianlk4EgaXRlbV90YWxlbnRfc2tpbGxfNe+8iOWbnuWfjuagj++8ie+8m+WPoOWxgiBidWZmIOeKtuaAgeagj+aYvuekuuWxguaVsOS4jumtlOazleWinuS8pO+8iOWQjOaUu+WHu+WNh+e6p++8iQotLSBUb29sdGlwIOmUru+8mkRPVEFfVG9vbHRpcF9tb2RpZmllcl90YWxlbnRfc2tpbGxfNSAvIG1vZGlmaWVyX3RhbGVudF9za2lsbF81X2J1ZmYKCnJlcXVpcmUoImluZ2FtZS5tb2RpZmllci5tb2RpZmllcl9jbHJiX3RhbGVudHMiKQoKbW9kaWZpZXJfdGFsZW50X3NraWxsXzUgPSBjbGFzcyh7fSkKbW9kaWZpZXJfdGFsZW50X3NraWxsXzVfYnVmZiA9IGNsYXNzKHt9KQoKbG9jYWwgQlVGRl9EVVJBVElPTiA9IDYuMApsb2NhbCBCVUZGX1NUQUNLX1BDVCA9IDYKbG9jYWwgQlVGRl9NQVhfU1RBQ0tTID0gNQpsb2NhbCBTUEVMTF9MU19VTkxPQ0tfTUlOID0gMTUKbG9jYWwgU1BFTExfTFNfUENUID0gMTUKbG9jYWwgVEVYVFVSRV9CVUZGID0gImJ1ZmYvdGFsZW50XzUiCgpsb2NhbCBCRUhBVklPUl9UT0dHTEUgPSB0b251bWJlcihyYXdnZXQoX0csICJET1RBX0FCSUxJVFlfQkVIQVZJT1JfVE9HR0xFIikpIG9yIDUxMgpsb2NhbCBCRUhBVklPUl9BVVRPQ0FTVCA9IHRvbnVtYmVyKHJhd2dldChfRywgIkRPVEFfQUJJTElUWV9CRUhBVklPUl9BVVRPQ0FTVCIpKSBvciA0MDk2CmxvY2FsIEJFSEFWSU9SX0FUVEFDSyA9IHRvbnVtYmVyKHJhd2dldChfRywgIkRPVEFfQUJJTElUWV9CRUhBVklPUl9BVFRBQ0siKSkKbG9jYWwgQkVIQVZJT1JfUEFTU0lWRSA9IHRvbnVtYmVyKHJhd2dldChfRywgIkRPVEFfQUJJTElUWV9CRUhBVklPUl9QQVNTSVZFIikpIG9yIDIKCi0tLSDlvIDlhbMgLyDms5XnkIMo6Ieq5Yqo5pa95rOV5pS75Ye75L+u6aWwKSAvIOiiq+WKqO+8muS4jeWPoOWxggpsb2NhbCBmdW5jdGlvbiBDbHJiVGFsZW50NUlzRXhjbHVkZWRBYmlsaXR5KGFiaWxpdHkpCiAgICBpZiBub3QgYWJpbGl0eSBvciBhYmlsaXR5OklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4gdHJ1ZQogICAgZW5kCiAgICBpZiB0eXBlKGFiaWxpdHkuSXNJdGVtKSA9PSAiZnVuY3Rpb24iIGFuZCBhYmlsaXR5OklzSXRlbSgpIHRoZW4KICAgICAgICByZXR1cm4gdHJ1ZQogICAgZW5kCiAgICBpZiB0eXBlKGFiaWxpdHkuR2V0QWJpbGl0eU5hbWUpID09ICJmdW5jdGlvbiIgdGhlbgogICAgICAgIGxvY2FsIGFuID0gYWJpbGl0eTpHZXRBYmlsaXR5TmFtZSgpIG9yICIiCiAgICAgICAgaWYgc3RyaW5nLnN1YihhbiwgMSwgNSkgPT0gIml0ZW1fIiB0aGVuCiAgICAgICAgICAgIHJldHVybiB0cnVlCiAgICAgICAgZW5kCiAgICAgICAgaWYgc3RyaW5nLnN1YihhbiwgMSwgMTcpID09ICJpdGVtX3RhbGVudF9za2lsbCIgdGhlbgogICAgICAgICAgICByZXR1cm4gdHJ1ZQogICAgICAgIGVuZAogICAgZW5kCiAgICBpZiB0eXBlKGFiaWxpdHkuR2V0QmVoYXZpb3IpIH49ICJmdW5jdGlvbiIgb3Igbm90IGJpdCBvciB0eXBlKGJpdC5iYW5kKSB+PSAiZnVuY3Rpb24iIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgb2ssIGIgPSBwY2FsbChmdW5jdGlvbigpCiAgICAgICAgcmV0dXJuIGFiaWxpdHk6R2V0QmVoYXZpb3IoKQogICAgZW5kKQogICAgaWYgbm90IG9rIG9yIGIgPT0gbmlsIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgYiA9IHRvbnVtYmVyKGIpIG9yIDAKICAgIGlmIEJFSEFWSU9SX1BBU1NJVkUgYW5kIGJpdC5iYW5kKGIsIEJFSEFWSU9SX1BBU1NJVkUpIH49IDAgdGhlbgogICAgICAgIHJldHVybiB0cnVlCiAgICBlbmQKICAgIGlmIGJpdC5iYW5kKGIsIEJFSEFWSU9SX1RPR0dMRSkgfj0gMCB0aGVuCiAgICAgICAgcmV0dXJuIHRydWUKICAgIGVuZAogICAgaWYgYml0LmJhbmQoYiwgQkVIQVZJT1JfQVVUT0NBU1QpIH49IDAgdGhlbgogICAgICAgIHJldHVybiB0cnVlCiAgICBlbmQKICAgIGlmIEJFSEFWSU9SX0FUVEFDSyBhbmQgYml0LmJhbmQoYiwgQkVIQVZJT1JfQVRUQUNLKSB+PSAwIHRoZW4KICAgICAgICByZXR1cm4gdHJ1ZQogICAgZW5kCiAgICByZXR1cm4gZmFsc2UKZW5kCgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQotLSDmsLjkuYXooqvliqjvvJrnm5HlkKzmlr3ms5UgKyAxNSDliIbpkp/mioDog73lkLjooYDop6PplIHvvIjnirbmgIHmoI/luLjpqbvvvIzlm77moIflkIzlpKnotYvvvIkKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzU6SXNIaWRkZW4oKQogICAgLS0g5bi46am76KKr5Yqo5LiN5Y2g54q25oCB5qCP77yb5Y+g5bGC5pWI5p6c5Y+q5pi+56S6IG1vZGlmaWVyX3RhbGVudF9za2lsbF81X2J1ZmYKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzU6SXNEZWJ1ZmYoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzU6SXNQdXJnYWJsZSgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNTpSZW1vdmVPbkRlYXRoKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF81OklzUGVybWFuZW50KCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzU6RGVjbGFyZUZ1bmN0aW9ucygpCiAgICByZXR1cm4gewogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX1RPT0xUSVAsCiAgICAgICAgTU9ESUZJRVJfRVZFTlRfT05fQUJJTElUWV9GVUxMWV9DQVNULAogICAgICAgIE1PRElGSUVSX0VWRU5UX09OX1JFU1BBV04sCiAgICB9CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzU6SXNTcGVsbExpZmVzdGVhbFVubG9ja2VkKCkKICAgIHJldHVybiBzZWxmLnNwZWxsX2xpZmVzdGVhbF91bmxvY2tlZCA9PSB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzU6X1RyeVVubG9ja1NwZWxsTGlmZXN0ZWFsKCkKICAgIGlmIHNlbGYuc3BlbGxfbGlmZXN0ZWFsX3VubG9ja2VkIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgZ2FtZV9taW4gPSAoTWFpbkdhbWUgYW5kIE1haW5HYW1lLkdldFRpbWVNaW4gYW5kIE1haW5HYW1lOkdldFRpbWVNaW4oKSkgb3IgMAogICAgaWYgZ2FtZV9taW4gPCBTUEVMTF9MU19VTkxPQ0tfTUlOIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5zcGVsbF9saWZlc3RlYWxfdW5sb2NrZWQgPSB0cnVlCiAgICBsb2NhbCBwID0gc2VsZjpHZXRQYXJlbnQoKQogICAgaWYgbm90IHAgb3IgcDpJc051bGwoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIHBpZCA9IENscmJHZXRPd25lclBsYXllcklkIGFuZCBDbHJiR2V0T3duZXJQbGF5ZXJJZChwKSBvciAtMQogICAgaWYgcGlkID49IDAgYW5kIFV0aWwgYW5kIFV0aWwuQm90dG9tTXNnMklEIHRoZW4KICAgICAgICBVdGlsOkJvdHRvbU1zZzJJRChwaWQsICLms5XnpZ7vvJrojrflvpcgMTUlIOaKgOiDveWQuOihgCIsICJ5ZWxsb3ciLCAzKQogICAgZW5kCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzU6X0FkZE1hZ2ljQW1wU3RhY2soKQogICAgbG9jYWwgcCA9IHNlbGY6R2V0UGFyZW50KCkKICAgIGlmIG5vdCBwIG9yIHA6SXNOdWxsKCkgb3Igbm90IHA6SXNBbGl2ZSgpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgYnVmZiA9IHA6RmluZE1vZGlmaWVyQnlOYW1lKCJtb2RpZmllcl90YWxlbnRfc2tpbGxfNV9idWZmIikKICAgIGxvY2FsIHN0YWNrcyA9IDEKICAgIGlmIGJ1ZmYgYW5kIG5vdCBidWZmOklzTnVsbCgpIHRoZW4KICAgICAgICBzdGFja3MgPSBtYXRoLm1pbihCVUZGX01BWF9TVEFDS1MsIChidWZmOkdldFN0YWNrQ291bnQoKSBvciAwKSArIDEpCiAgICBlbmQKICAgIGJ1ZmYgPSBwOkFkZE5ld01vZGlmaWVyKHAsIG5pbCwgIm1vZGlmaWVyX3RhbGVudF9za2lsbF81X2J1ZmYiLCB7IGR1cmF0aW9uID0gQlVGRl9EVVJBVElPTiB9KQogICAgaWYgYnVmZiBhbmQgbm90IGJ1ZmY6SXNOdWxsKCkgdGhlbgogICAgICAgIGJ1ZmY6U2V0U3RhY2tDb3VudChzdGFja3MpCiAgICAgICAgaWYgYnVmZi5Gb3JjZVJlZnJlc2ggdGhlbgogICAgICAgICAgICBidWZmOkZvcmNlUmVmcmVzaCgpCiAgICAgICAgZW5kCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNTpPbkFiaWxpdHlGdWxseUNhc3QocGFyYW1zKQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBwID0gc2VsZjpHZXRQYXJlbnQoKQogICAgaWYgbm90IHAgb3IgcDpJc051bGwoKSBvciBwYXJhbXMudW5pdCB+PSBwIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgQ2xyYlRhbGVudDVJc0V4Y2x1ZGVkQWJpbGl0eShwYXJhbXMuYWJpbGl0eSkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmOl9BZGRNYWdpY0FtcFN0YWNrKCkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNTpPblJlc3Bhd24oKQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmOl9UcnlVbmxvY2tTcGVsbExpZmVzdGVhbCgpCiAgICBzZWxmOlN0YXJ0SW50ZXJ2YWxUaGluaygxKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF81Ok9uQ3JlYXRlZCgpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGYuc3BlbGxfbGlmZXN0ZWFsX3VubG9ja2VkID0gZmFsc2UKICAgIHNlbGY6X1RyeVVubG9ja1NwZWxsTGlmZXN0ZWFsKCkKICAgIHNlbGY6U3RhcnRJbnRlcnZhbFRoaW5rKDEpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzU6T25JbnRlcnZhbFRoaW5rKCkKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZjpfVHJ5VW5sb2NrU3BlbGxMaWZlc3RlYWwoKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF81Ok9uVG9vbHRpcCgpCiAgICByZXR1cm4gc2VsZjpJc1NwZWxsTGlmZXN0ZWFsVW5sb2NrZWQoKSBhbmQgU1BFTExfTFNfUENUIG9yIDAKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNTpHZXRUZXh0dXJlKCkKICAgIHJldHVybiBURVhUVVJFX0JVRkYKZW5kCgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQotLSDkuLTml7YgYnVmZu+8muWbvuagh+aYvuekuuWxguaVsO+8m+aCrOa1ruaYvuekuuWxguaVsCArIOmtlOazleWinuS8pCXvvIjlj4LogIPmlLvlh7vljYfnuqfvvIkKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzVfYnVmZjpJc0hpZGRlbigpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNV9idWZmOklzRGVidWZmKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF81X2J1ZmY6SXNQdXJnYWJsZSgpCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF81X2J1ZmY6UmVtb3ZlT25EZWF0aCgpCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF81X2J1ZmY6RGVzdHJveU9uRXhwaXJlKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzVfYnVmZjpHZXRBdHRyaWJ1dGVzKCkKICAgIHJldHVybiBNT0RJRklFUl9BVFRSSUJVVEVfTk9ORQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF81X2J1ZmY6RGVjbGFyZUZ1bmN0aW9ucygpCiAgICByZXR1cm4gewogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX1RPT0xUSVAsCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfVE9PTFRJUDIsCiAgICB9CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzVfYnVmZjpPbkNyZWF0ZWQoKQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiAoc2VsZjpHZXRTdGFja0NvdW50KCkgb3IgMCkgPCAxIHRoZW4KICAgICAgICBzZWxmOlNldFN0YWNrQ291bnQoMSkKICAgIGVuZAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF81X2J1ZmY6T25SZWZyZXNoKCkKICAgIC0tIGR1cmF0aW9uIC8g5bGC5pWw55Sx5aSW6YOoIEFkZE5ld01vZGlmaWVyICsgU2V0U3RhY2tDb3VudCDlpITnkIYKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNV9idWZmOkdldE1hZ2ljQW1wUGVyY2VudCgpCiAgICByZXR1cm4gbWF0aC5tYXgoMCwgc2VsZjpHZXRTdGFja0NvdW50KCkgb3IgMCkgKiBCVUZGX1NUQUNLX1BDVAplbmQKCi0tLSDmgqzmta7vvJrprZTms5Xlop7kvKTnmb7liIbmr5QKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzVfYnVmZjpPblRvb2x0aXAoKQogICAgcmV0dXJuIHNlbGY6R2V0TWFnaWNBbXBQZXJjZW50KCkKZW5kCgotLS0g5oKs5rWu77ya5b2T5YmN5bGC5pWwCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF81X2J1ZmY6T25Ub29sdGlwMigpCiAgICByZXR1cm4gbWF0aC5tYXgoMCwgc2VsZjpHZXRTdGFja0NvdW50KCkgb3IgMCkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfNV9idWZmOkdldFRleHR1cmUoKQogICAgcmV0dXJuIFRFWFRVUkVfQlVGRgplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 被动天赋 5：法神——施法后叠魔法增伤；15 分钟后获得 15% 技能吸血
+-- 展示物品 item_talent_skill_5（回城栏）；叠层 buff 状态栏显示层数与魔法增伤（同攻击升级）
+-- Tooltip 键：DOTA_Tooltip_modifier_talent_skill_5 / modifier_talent_skill_5_buff
+
+require("ingame.modifier.modifier_clrb_talents")
+
+modifier_talent_skill_5 = class({})
+modifier_talent_skill_5_buff = class({})
+
+local BUFF_DURATION = 6.0
+local BUFF_STACK_PCT = 6
+local BUFF_MAX_STACKS = 5
+local SPELL_LS_UNLOCK_MIN = 15
+local SPELL_LS_PCT = 15
+local TEXTURE_BUFF = "buff/talent_5"
+
+local BEHAVIOR_TOGGLE = tonumber(rawget(_G, "DOTA_ABILITY_BEHAVIOR_TOGGLE")) or 512
+local BEHAVIOR_AUTOCAST = tonumber(rawget(_G, "DOTA_ABILITY_BEHAVIOR_AUTOCAST")) or 4096
+local BEHAVIOR_ATTACK = tonumber(rawget(_G, "DOTA_ABILITY_BEHAVIOR_ATTACK"))
+local BEHAVIOR_PASSIVE = tonumber(rawget(_G, "DOTA_ABILITY_BEHAVIOR_PASSIVE")) or 2
+
+--- 开关 / 法球(自动施法攻击修饰) / 被动：不叠层
+local function ClrbTalent5IsExcludedAbility(ability)
+    if not ability or ability:IsNull() then
+        return true
+    end
+    if type(ability.IsItem) == "function" and ability:IsItem() then
+        return true
+    end
+    if type(ability.GetAbilityName) == "function" then
+        local an = ability:GetAbilityName() or ""
+        if string.sub(an, 1, 5) == "item_" then
+            return true
+        end
+        if string.sub(an, 1, 17) == "item_talent_skill" then
+            return true
+        end
+    end
+    if type(ability.GetBehavior) ~= "function" or not bit or type(bit.band) ~= "function" then
+        return false
+    end
+    local ok, b = pcall(function()
+        return ability:GetBehavior()
+    end)
+    if not ok or b == nil then
+        return false
+    end
+    b = tonumber(b) or 0
+    if BEHAVIOR_PASSIVE and bit.band(b, BEHAVIOR_PASSIVE) ~= 0 then
+        return true
+    end
+    if bit.band(b, BEHAVIOR_TOGGLE) ~= 0 then
+        return true
+    end
+    if bit.band(b, BEHAVIOR_AUTOCAST) ~= 0 then
+        return true
+    end
+    if BEHAVIOR_ATTACK and bit.band(b, BEHAVIOR_ATTACK) ~= 0 then
+        return true
+    end
+    return false
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--------------------------------------------------------------------------------
+-- 永久被动：监听施法 + 15 分钟技能吸血解锁（状态栏常驻，图标同天赋）
+--------------------------------------------------------------------------------
+function modifier_talent_skill_5:IsHidden()
+    -- 常驻被动不占状态栏；叠层效果只显示 modifier_talent_skill_5_buff
+    return true
+end
+
+function modifier_talent_skill_5:IsDebuff()
+    return false
+end
+
+function modifier_talent_skill_5:IsPurgable()
+    return false
+end
+
+function modifier_talent_skill_5:RemoveOnDeath()
+    return false
+end
+
+function modifier_talent_skill_5:IsPermanent()
+    return true
+end
+
+function modifier_talent_skill_5:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_TOOLTIP,
+        MODIFIER_EVENT_ON_ABILITY_FULLY_CAST,
+        MODIFIER_EVENT_ON_RESPAWN,
+    }
+end
+
+function modifier_talent_skill_5:IsSpellLifestealUnlocked()
+    return self.spell_lifesteal_unlocked == true
+end
+
+function modifier_talent_skill_5:_TryUnlockSpellLifesteal()
+    if self.spell_lifesteal_unlocked then
+        return
+    end
+    local game_min = (MainGame and MainGame.GetTimeMin and MainGame:GetTimeMin()) or 0
+    if game_min < SPELL_LS_UNLOCK_MIN then
+        return
+    end
+    self.spell_lifesteal_unlocked = true
+    local p = self:GetParent()
+    if not p or p:IsNull() then
+        return
+    end
+    local pid = ClrbGetOwnerPlayerId and ClrbGetOwnerPlayerId(p) or -1
+    if pid >= 0 and Util and Util.BottomMsg2ID then
+        Util:BottomMsg2ID(pid, "法神：获得 15% 技能吸血", "yellow", 3)
+    end
+end
+
+function modifier_talent_skill_5:_AddMagicAmpStack()
+    local p = self:GetParent()
+    if not p or p:IsNull() or not p:IsAlive() then
+        return
+    end
+    local buff = p:FindModifierByName("modifier_talent_skill_5_buff")
+    local stacks = 1
+    if buff and not buff:IsNull() then
+        stacks = math.min(BUFF_MAX_STACKS, (buff:GetStackCount() or 0) + 1)
+    end
+    buff = p:AddNewModifier(p, nil, "modifier_talent_skill_5_buff", { duration = BUFF_DURATION })
+    if buff and not buff:IsNull() then
+        buff:SetStackCount(stacks)
+        if buff.ForceRefresh then
+            buff:ForceRefresh()
+        end
+    end
+end
+
+function modifier_talent_skill_5:OnAbilityFullyCast(params)
+    if not IsServer() then
+        return
+    end
+    local p = self:GetParent()
+    if not p or p:IsNull() or params.unit ~= p then
+        return
+    end
+    if ClrbTalent5IsExcludedAbility(params.ability) then
+        return
+    end
+    self:_AddMagicAmpStack()
+end
+
+function modifier_talent_skill_5:OnRespawn()
+    if not IsServer() then
+        return
+    end
+    self:_TryUnlockSpellLifesteal()
+    self:StartIntervalThink(1)
+end
+
+function modifier_talent_skill_5:OnCreated()
+    if not IsServer() then
+        return
+    end
+    self.spell_lifesteal_unlocked = false
+    self:_TryUnlockSpellLifesteal()
+    self:StartIntervalThink(1)
+end
+
+function modifier_talent_skill_5:OnIntervalThink()
+    if not IsServer() then
+        return
+    end
+    self:_TryUnlockSpellLifesteal()
+end
+
+function modifier_talent_skill_5:OnTooltip()
+    return self:IsSpellLifestealUnlocked() and SPELL_LS_PCT or 0
+end
+
+function modifier_talent_skill_5:GetTexture()
+    return TEXTURE_BUFF
+end
+
+--------------------------------------------------------------------------------
+-- 临时 buff：图标显示层数；悬浮显示层数 + 魔法增伤%（参考攻击升级）
+--------------------------------------------------------------------------------
+function modifier_talent_skill_5_buff:IsHidden()
+    return false
+end
+
+function modifier_talent_skill_5_buff:IsDebuff()
+    return false
+end
+
+function modifier_talent_skill_5_buff:IsPurgable()
+    return true
+end
+
+function modifier_talent_skill_5_buff:RemoveOnDeath()
+    return true
+end
+
+function modifier_talent_skill_5_buff:DestroyOnExpire()
+    return true
+end
+
+function modifier_talent_skill_5_buff:GetAttributes()
+    return MODIFIER_ATTRIBUTE_NONE
+end
+
+function modifier_talent_skill_5_buff:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_TOOLTIP,
+        MODIFIER_PROPERTY_TOOLTIP2,
+    }
+end
+
+function modifier_talent_skill_5_buff:OnCreated()
+    if not IsServer() then
+        return
+    end
+    if (self:GetStackCount() or 0) < 1 then
+        self:SetStackCount(1)
+    end
+end
+
+function modifier_talent_skill_5_buff:OnRefresh()
+    -- duration / 层数由外部 AddNewModifier + SetStackCount 处理
+end
+
+function modifier_talent_skill_5_buff:GetMagicAmpPercent()
+    return math.max(0, self:GetStackCount() or 0) * BUFF_STACK_PCT
+end
+
+--- 悬浮：魔法增伤百分比
+function modifier_talent_skill_5_buff:OnTooltip()
+    return self:GetMagicAmpPercent()
+end
+
+--- 悬浮：当前层数
+function modifier_talent_skill_5_buff:OnTooltip2()
+    return math.max(0, self:GetStackCount() or 0)
+end
+
+function modifier_talent_skill_5_buff:GetTexture()
+    return TEXTURE_BUFF
+end

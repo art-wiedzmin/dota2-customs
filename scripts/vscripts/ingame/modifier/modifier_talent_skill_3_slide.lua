@@ -8,22 +8,80 @@
 ]]
 
 
-local encoded=[[LS0g5aSp6LWLIDMg5Li75Yqo77ya5rK/5pa95rOV5pe25pyd5ZCR5YiG5q615L2N56e777yI6L+R5Ly85o6o5o6o5qOS77yM5q+P5bin5LiA5bCP5q2l77yJCgptb2RpZmllcl90YWxlbnRfc2tpbGxfM19zbGlkZSA9IGNsYXNzKHt9KQoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzNfc2xpZGU6SXNIaWRkZW4oKQogICAgcmV0dXJuIHRydWUKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfM19zbGlkZTpJc1B1cmdhYmxlKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF8zX3NsaWRlOlJlbW92ZU9uRGVhdGgoKQogICAgcmV0dXJuIHRydWUKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfM19zbGlkZTpPbkNyZWF0ZWQoa3YpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIG1heF9kdXIgPSB0b251bWJlcihrdiBhbmQga3YuZHVyYXRpb24pIG9yIDEuMgogICAgc2VsZjpTZXREdXJhdGlvbihtYXhfZHVyLCB0cnVlKQoKICAgIHNlbGYuaW50ZXJ2YWwgPSAxIC8gMzAKICAgIGxvY2FsIHRvdGFsID0gNzAwCiAgICAtLSDnlaXmhaLkuo7ljp/niYjmjqjmjqggfjYwMC8wLjVz77yMNzAwIOe6piAwLjY1cyDlrozmiJAKICAgIGxvY2FsIHRhcmdldF9zZWNzID0gMC41CiAgICBzZWxmLnN0ZXBzID0gbWF0aC5tYXgoMTAsIG1hdGguZmxvb3IodGFyZ2V0X3NlY3MgLyBzZWxmLmludGVydmFsICsgMC45OSkpCiAgICBzZWxmLnN0ZXBfbGVuID0gdG90YWwgLyBzZWxmLnN0ZXBzCiAgICBzZWxmLnRyYXZlbGVkID0gMAogICAgc2VsZi50b3RhbCA9IHRvdGFsCgogICAgbG9jYWwgZndkID0gc2VsZjpHZXRQYXJlbnQoKTpHZXRGb3J3YXJkVmVjdG9yKCkKICAgIGZ3ZCA9IFZlY3Rvcihmd2QueCwgZndkLnksIDApCiAgICBpZiBmd2Q6TGVuZ3RoMkQoKSA8IDAuMDEgdGhlbgogICAgICAgIGZ3ZCA9IFZlY3RvcigxLCAwLCAwKQogICAgZWxzZQogICAgICAgIGZ3ZCA9IGZ3ZDpOb3JtYWxpemVkKCkKICAgIGVuZAogICAgc2VsZi5md2QgPSBmd2QKCiAgICBsb2NhbCBwYXJlbnQgPSBzZWxmOkdldFBhcmVudCgpCiAgICBpZiBwYXJlbnQgYW5kIG5vdCBwYXJlbnQ6SXNOdWxsKCkgdGhlbgogICAgICAgIEVtaXRTb3VuZE9uKCJET1RBX0l0ZW0uRm9yY2VTdGFmZi5BY3RpdmF0ZSIsIHBhcmVudCkKICAgIGVuZAoKICAgIHNlbGY6U3RhcnRJbnRlcnZhbFRoaW5rKHNlbGYuaW50ZXJ2YWwpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzNfc2xpZGU6T25JbnRlcnZhbFRoaW5rKCkKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgcGFyZW50ID0gc2VsZjpHZXRQYXJlbnQoKQogICAgaWYgbm90IHBhcmVudCBvciBwYXJlbnQ6SXNOdWxsKCkgb3Igbm90IHBhcmVudDpJc0FsaXZlKCkgdGhlbgogICAgICAgIHNlbGY6RGVzdHJveSgpCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBsb2NhbCByZW1haW4gPSBzZWxmLnRvdGFsIC0gc2VsZi50cmF2ZWxlZAogICAgaWYgcmVtYWluIDw9IDAgdGhlbgogICAgICAgIHNlbGY6RGVzdHJveSgpCiAgICAgICAgcmV0dXJuCiAgICBlbmQKCiAgICBsb2NhbCBzdGVwID0gbWF0aC5taW4oc2VsZi5zdGVwX2xlbiwgcmVtYWluKQogICAgbG9jYWwgZGVzdCA9IHBhcmVudDpHZXRBYnNPcmlnaW4oKSArIHNlbGYuZndkICogc3RlcAogICAgZGVzdC56ID0gR2V0R3JvdW5kUG9zaXRpb24oZGVzdCwgcGFyZW50KS56CgogICAgcGFyZW50OlNldEFic09yaWdpbihkZXN0KQogICAgc2VsZi50cmF2ZWxlZCA9IHNlbGYudHJhdmVsZWQgKyBzdGVwCgogICAgaWYgc2VsZi50cmF2ZWxlZCA+PSBzZWxmLnRvdGFsIC0gMC4wMDEgdGhlbgogICAgICAgIEZpbmRDbGVhclNwYWNlRm9yVW5pdChwYXJlbnQsIGRlc3QsIHRydWUpCiAgICAgICAgc2VsZjpEZXN0cm95KCkKICAgIGVuZAplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 天赋 3 主动：沿施法时朝向分段位移（近似推推棒，每帧一小步）
+
+modifier_talent_skill_3_slide = class({})
+
+function modifier_talent_skill_3_slide:IsHidden()
+    return true
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function modifier_talent_skill_3_slide:IsPurgable()
+    return false
+end
+
+function modifier_talent_skill_3_slide:RemoveOnDeath()
+    return true
+end
+
+function modifier_talent_skill_3_slide:OnCreated(kv)
+    if not IsServer() then
+        return
+    end
+    local max_dur = tonumber(kv and kv.duration) or 1.2
+    self:SetDuration(max_dur, true)
+
+    self.interval = 1 / 30
+    local total = 700
+    -- 略慢于原版推推 ~600/0.5s，700 约 0.65s 完成
+    local target_secs = 0.5
+    self.steps = math.max(10, math.floor(target_secs / self.interval + 0.99))
+    self.step_len = total / self.steps
+    self.traveled = 0
+    self.total = total
+
+    local fwd = self:GetParent():GetForwardVector()
+    fwd = Vector(fwd.x, fwd.y, 0)
+    if fwd:Length2D() < 0.01 then
+        fwd = Vector(1, 0, 0)
+    else
+        fwd = fwd:Normalized()
+    end
+    self.fwd = fwd
+
+    local parent = self:GetParent()
+    if parent and not parent:IsNull() then
+        EmitSoundOn("DOTA_Item.ForceStaff.Activate", parent)
+    end
+
+    self:StartIntervalThink(self.interval)
+end
+
+function modifier_talent_skill_3_slide:OnIntervalThink()
+    if not IsServer() then
+        return
+    end
+    local parent = self:GetParent()
+    if not parent or parent:IsNull() or not parent:IsAlive() then
+        self:Destroy()
+        return
+    end
+
+    local remain = self.total - self.traveled
+    if remain <= 0 then
+        self:Destroy()
+        return
+    end
+
+    local step = math.min(self.step_len, remain)
+    local dest = parent:GetAbsOrigin() + self.fwd * step
+    dest.z = GetGroundPosition(dest, parent).z
+
+    parent:SetAbsOrigin(dest)
+    self.traveled = self.traveled + step
+
+    if self.traveled >= self.total - 0.001 then
+        FindClearSpaceForUnit(parent, dest, true)
+        self:Destroy()
+    end
+end

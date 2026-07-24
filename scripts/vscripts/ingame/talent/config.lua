@@ -8,22 +8,448 @@
 ]]
 
 
-local encoded=[[VGFsZW50LkRhdGEgPSB7fQpUYWxlbnQuVGVtcGxhdGUgPSB7CiAgICBJbml0ID0gdHJ1ZSwKICAgIC0t5piv5ZCm5bey6YCJ5Y+W5aSp6LWL6KOF5aSHCiAgICBzZWxlY3RfdGFsZW50ID0gZmFsc2UsCiAgICBwYWdlID0gZmFsc2UsCiAgICBpdGVtX2luZGV4ID0gLTEsCiAgICBpdGVtX25hbWUgPSAiIiwKICAgIGhlcm9fbmFtZSA9ICIiLAogICAgYmFnX3BhZ2UgPSBmYWxzZSwKICAgIC0tIOW9k+WJjeetiee6pwogICAgbGV2ZWwgPSAwLAogICAgLS0g5Y2H57qn5Ymp5L2Z5pWw6YePCiAgICBzeSA9IDAsCiAgICAtLSDmgLvorqHmnYDmlYzmlbDph48KICAgIGtpbGwgPSAwLAogICAgLS0g5LiK5qyh5aSp6LWL6KOF5aSH5Y2H57qn5pe255qE57Sv6K6h5p2A5pWM77yI5pys5q615Y2H57qn6L+b5bqmID0ga2lsbCAtIGtpbGxfYXRfbGV2ZWx1cO+8iQogICAga2lsbF9hdF9sZXZlbHVwID0gMCwKICAgIC0tIOWNh+e6p+eKtuaAgQogICAgdXAgPSBmYWxzZSwKICAgIC0tIOWxnuaAp+mhtemdogogICAgYXR0cl9wYWdlID0gZmFsc2UsCiAgICAtLSByb2xs5bGe5oCn5YC85qyh5pWwCiAgICByb2xsX251bSA9IDAsCiAgICBhdHRyX2xpc3QgPSB7CiAgICAgICAgc2xvdF8xID0geyBzdGF0ZSA9IGZhbHNlLCBuYW1lID0gIiIsIHZhbHVlID0gLTEsIHJhbmsgPSAtMSB9LAogICAgICAgIHNsb3RfMiA9IHsgc3RhdGUgPSBmYWxzZSwgbmFtZSA9ICIiLCB2YWx1ZSA9IC0xLCByYW5rID0gLTEgfSwKICAgICAgICBzbG90XzMgPSB7IHN0YXRlID0gZmFsc2UsIG5hbWUgPSAiIiwgdmFsdWUgPSAtMSwgcmFuayA9IC0xIH0KICAgIH0sCiAgICAtLSDoo4XlpIfkv6Hmga8KICAgIGVxdWlwX2F0dHIgPSB7IGF0dHIgPSB7fSwgdGV4dCA9ICIiIH0sCiAgICB0aXBfcGFnZSA9IGZhbHNlLAogICAgdGV4dF9wYWdlID0gZmFsc2UsCiAgICAtLSDoh6rliqjljYfnuqcKICAgIGF1dG9fbGV2ZWx1cCA9IHRydWUsCiAgICAtLSDph5HluIHoirHotLkKICAgIGNvc3QgPSAwLAogICAgLS0g5piv5ZCm5Y+v5Lul5Yi35pawCiAgICByZWZyZXNoX3N0YXRlID0gdHJ1ZSwKICAgIC0tIOaYr+WQpuato+WcqOi/m+ihjOWxnuaAp+mAieaLqQogICAgc2VsZWN0X2F0dHIgPSBmYWxzZSwKICAgIC0tIOmAieWkqei1i+ijheWkh+aXtuiLsembhOWwmuacquWHuueUn++8muW7tuWQjuWIsOWHuueUn+WQjuihpeWxnuaAp+S4jiBtb2RpZmllcgogICAgcGVuZGluZ19lcXVpcF9hdHRyID0gZmFsc2UsCiAgICAtLSDpk4HljKDvvJrlsYDlhoXmlLnpgInlpKnotYsgMyDlkI7mmK/lkKblt7LooaXnrpfov4fml6LmnInnrYnnuqfnmoTln7rnoYDlsZ7mgKcgKzMwJQogICAgY2xyYl9ibGFja3NtaXRoX2NhdGNodXBfZG9uZSA9IGZhbHNlCn0KVGFsZW50LkNvc3QgPSB7IG51bTEgPSAwLCBudW0yID0gMSwgbnVtMyA9IDksIG51bTQgPSAxOSwgbnVtNSA9IDE5IH0KCi0tIOWkqei1i+ijheWkh+maj+acuuivjeadoe+8mui/meS6m+iLsembhOawuOS4jeWIt+aWsOOAjOinhumHjuWKoOaIkOOAjShzeWpjKQpUYWxlbnQuQXR0clJvbGxFeGNsdWRlU3lqY0hlcm9lcyA9IHsKICAgIG5wY19kb3RhX2hlcm9fbW9ua2V5X2tpbmcgPSB0cnVlLAogICAgbnBjX2RvdGFfaGVyb19iYXRyaWRlciA9IHRydWUsCiAgICAtLSBucGNfZG90YV9oZXJvX25pZ2h0X3N0YWxrZXIgPSB0cnVlLAp9CgpUYWxlbnQuRXF1aXAgPSB7CiAgICBpdGVtX2dvb2RzXzE3ID0gewogICAgICAgIHJhbmswID0geyBnanNkID0gMzAsIGpjeXMgPSAxNSwgd2xjdCA9IDUgfSwKICAgICAgICByYW5rMSA9IHsgZ2pzZCA9IDE1LCBqY3lzID0gMTUsIHdsY3QgPSA1IH0sCiAgICAgICAgcmFuazIgPSB7IGdqc2QgPSAxNSwgamN5cyA9IDE1LCB3bGN0ID0gNSB9LAogICAgICAgIHJhbmszID0geyBnanNkID0gMjAsIGpjeXMgPSAxNSwgd2xjdCA9IDUgfSwKICAgICAgICByYW5rNCA9IHsgZ2pzZCA9IDMwLCBqY3lzID0gMTUsIHdsY3QgPSA1IH0sCiAgICAgICAgcmFuazUgPSB7IGdqc2QgPSA0MCwgamN5cyA9IDE1LCB3bGN0ID0gNSB9CiAgICB9LAogICAgaXRlbV9nb29kc18xOCA9IHsKICAgICAgICByYW5rMCA9IHsgc216ZiA9IDMsIHdsa3ggPSA0IH0sCiAgICAgICAgcmFuazEgPSB7IHNtemYgPSAzLCB3bGt4ID0gNCB9LAogICAgICAgIHJhbmsyID0geyBzbXpmID0gMywgd2xreCA9IDQgfSwKICAgICAgICByYW5rMyA9IHsgc216ZiA9IDMsIHdsa3ggPSA0IH0sCiAgICAgICAgcmFuazQgPSB7IHNtemYgPSAzLCB3bGt4ID0gNCB9LAogICAgICAgIHJhbms1ID0geyBzbXpmID0gMywgd2xreCA9IDQgfQogICAgfSwKICAgIGl0ZW1fZ29vZHNfMTkgPSB7CiAgICAgICAgcmFuazAgPSB7IGpuenEgPSA0LCB6eWZ3ID0gMTUgfSwKICAgICAgICByYW5rMSA9IHsgam56cSA9IDQsIHp5ZncgPSAxNSB9LAogICAgICAgIHJhbmsyID0geyBqbnpxID0gNCwgenlmdyA9IDE1IH0sCiAgICAgICAgcmFuazMgPSB7IGpuenEgPSA0LCB6eWZ3ID0gMTUgfSwKICAgICAgICByYW5rNCA9IHsgam56cSA9IDQsIHp5ZncgPSAxNSB9LAogICAgICAgIHJhbms1ID0geyBqbnpxID0gNCwgenlmdyA9IDE1IH0KICAgIH0sCiAgICBpdGVtX2dvb2RzXzI0ID0gewogICAgICAgIHJhbmswID0geyBqY2xsID0gNiwgamNtaiA9IDYsIGpjemwgPSA2IH0sCiAgICAgICAgcmFuazEgPSB7IGpjbGwgPSA2LCBqY21qID0gNiwgamN6bCA9IDYgfSwKICAgICAgICByYW5rMiA9IHsgamNsbCA9IDYsIGpjbWogPSA2LCBqY3psID0gNiB9LAogICAgICAgIHJhbmszID0geyBqY2xsID0gNiwgamNtaiA9IDYsIGpjemwgPSA2IH0sCiAgICAgICAgcmFuazQgPSB7IGpjbGwgPSA2LCBqY21qID0gNiwgamN6bCA9IDYgfSwKICAgICAgICByYW5rNSA9IHsgamNsbCA9IDYsIGpjbWogPSA2LCBqY3psID0gNiB9CiAgICB9Cn0KLS0tIOWQhOetiee6p+auteWNh+e6p+aJgOmcgOadgOaVjOaVsO+8iDDihpIxIOKApiA04oaSNe+8ie+8m+mTgeWMoOWkqei1i+WcqOatpOWfuuehgOS4iuWGjeWHj+WFjQpUYWxlbnQuU3RhdGljID0geyB1cF8wID0gNzAsIHVwXzEgPSA5MCwgdXBfMiA9IDExMCwgdXBfMyA9IDEzMCwgdXBfNCA9IDE1MCB9ClRhbGVudC5Sb2xsTnVtID0gewogICAgbnVtXzEgPSB7IHJhbmtfMSA9IDM1LCByYW5rXzIgPSAyNSwgcmFua18zID0gMjAsIHJhbmtfNCA9IDEyLCByYW5rXzUgPSA4IH0sCiAgICBudW1fMiA9IHsgcmFua18xID0gMCwgcmFua18yID0gMCwgcmFua18zID0gNjAsIHJhbmtfNCA9IDI1LCByYW5rXzUgPSAxNSB9LAogICAgbnVtXzMgPSB7IHJhbmtfMSA9IDAsIHJhbmtfMiA9IDAsIHJhbmtfMyA9IDAsIHJhbmtfNCA9IDcwLCByYW5rXzUgPSAzMCB9LAogICAgbnVtXzQgPSB7IHJhbmtfMSA9IDAsIHJhbmtfMiA9IDAsIHJhbmtfMyA9IDAsIHJhbmtfNCA9IDAsIHJhbmtfNSA9IDEwIH0KfQpUYWxlbnQuQXR0ciA9IHsKICAgIC0tIOmHkeW4geWKoOaIkAogICAgamJqYyA9IHsgcmFua18xID0gNiwgcmFua18yID0gOCwgcmFua18zID0gMTAsIHJhbmtfNCA9IDEyLCByYW5rXzUgPSAxNSB9LAogICAgLS0g5Z+656GA5pWP5o23CiAgICBqY21qID0geyByYW5rXzEgPSAxMCwgcmFua18yID0gMTIsIHJhbmtfMyA9IDE0LCByYW5rXzQgPSAxNiwgcmFua181ID0gMjAgfSwKICAgIC0tIOWfuuehgOWKm+mHjwogICAgamNsbCA9IHsgcmFua18xID0gMTAsIHJhbmtfMiA9IDEyLCByYW5rXzMgPSAxNCwgcmFua180ID0gMTYsIHJhbmtfNSA9IDIwIH0sCiAgICAtLSDln7rnoYDmmbrlipsKICAgIGpjemwgPSB7IHJhbmtfMSA9IDEwLCByYW5rXzIgPSAxMiwgcmFua18zID0gMTQsIHJhbmtfNCA9IDE2LCByYW5rXzUgPSAyMCB9LAogICAgLS0g5Yqb6YeP5Yqg5oiQCiAgICBsbGpjID0geyByYW5rXzEgPSA3LCByYW5rXzIgPSA5LCByYW5rXzMgPSAxMSwgcmFua180ID0gMTMsIHJhbmtfNSA9IDE1IH0sCiAgICAtLSDmlY/mjbfliqDmiJAKICAgIG1qamMgPSB7IHJhbmtfMSA9IDcsIHJhbmtfMiA9IDksIHJhbmtfMyA9IDExLCByYW5rXzQgPSAxMywgcmFua181ID0gMTUgfSwKICAgIC0tIOWFqOWxnuaAp+WKoOaIkO+8iDQvNSDnuqfljYfnuqfmsaDvvJvlkIzml7blhpnlhaUgbGxqYy9tampjL3psamPvvIkKICAgIHFzeGpjID0geyByYW5rXzEgPSA0LCByYW5rXzIgPSA1LCByYW5rXzMgPSA2LCByYW5rXzQgPSA3LCByYW5rXzUgPSA4IH0sCiAgICAtLSDmmbrlipvliqDmiJAKICAgIHpsamMgPSB7IHJhbmtfMSA9IDcsIHJhbmtfMiA9IDksIHJhbmtfMyA9IDExLCByYW5rXzQgPSAxMywgcmFua181ID0gMTUgfSwKICAgIC0tIOetiee6p+S4iumZkAogICAgZGpzeCA9IHsgcmFua18xID0gMSwgcmFua18yID0gMiwgcmFua18zID0gMywgcmFua180ID0gNCwgcmFua181ID0gNSB9LAogICAgLS0g5oqk55SyCiAgICB3bGt4ID0geyByYW5rXzEgPSA2LCByYW5rXzIgPSA4LCByYW5rXzMgPSAxMCwgcmFua180ID0gMTIsIHJhbmtfNSA9IDE0IH0sCiAgICAtLSDln7rnoYDnp7vpgJ8KICAgIGpjeXMgPSB7IHJhbmtfMSA9IDIwLCByYW5rXzIgPSAyNSwgcmFua18zID0gMzAsIHJhbmtfNCA9IDM1LCByYW5rXzUgPSA0MCB9LAogICAgLS0g57uP6aqM5Yqg5oiQCiAgICBqeWpjID0geyByYW5rXzEgPSA0LCByYW5rXzIgPSA4LCByYW5rXzMgPSAxMiwgcmFua180ID0gMTYsIHJhbmtfNSA9IDIwIH0sCiAgICAtLeWfuuehgOaUu+WHu++8iOWbuuWumue7v+Wtl++8iQogICAgamNnaiA9IHsgcmFua18xID0gOCwgcmFua18yID0gMTEsIHJhbmtfMyA9IDE0LCByYW5rXzQgPSAxNywgcmFua181ID0gMjAgfSwKICAgIC0tIOaUu+WHu+WKm+WKoOaIkCAl77yIaGVyb19hdHRyLmdqamMgKyBtb2RpZmllcl9nampj77yJ77yM5pWw5YC86KGo5LiOIGpjZ2og55u45ZCMCiAgICBnampjID0geyByYW5rXzEgPSA4LCByYW5rXzIgPSAxMSwgcmFua18zID0gMTQsIHJhbmtfNCA9IDE3LCByYW5rXzUgPSAyMCB9LAogICAgLS0g5pyA57uI5YeP5LykCiAgICB6empzID0geyByYW5rXzEgPSA3LCByYW5rXzIgPSA5LCByYW5rXzMgPSAxMSwgcmFua180ID0gMTMsIHJhbmtfNSA9IDE1IH0sCiAgICAtLSDmioDog73lop7lvLoKICAgIGpuenEgPSB7IHJhbmtfMSA9IDEwLCByYW5rXzIgPSAxMSwgcmFua18zID0gMTIsIHJhbmtfNCA9IDEzLCByYW5rXzUgPSAxNSB9LAogICAgLS0g5pS75Ye76Led56a7CiAgICBnampsID0geyByYW5rXzEgPSA2MCwgcmFua18yID0gNzAsIHJhbmtfMyA9IDgwLCByYW5rXzQgPSA5MCwgcmFua181ID0gMTIwIH0sCiAgICAtLSDmnIDnu4jkvKTlrrMKICAgIHp6c2ggPSB7IHJhbmtfMSA9IDUsIHJhbmtfMiA9IDYsIHJhbmtfMyA9IDcsIHJhbmtfNCA9IDgsIHJhbmtfNSA9IDEwIH0sCiAgICAtLSDnlJ/lkb3kuIrpmZAKICAgIHNtamMgPSB7CiAgICAgICAgcmFua18xID0gNTAwLAogICAgICAgIHJhbmtfMiA9IDYwMCwKICAgICAgICByYW5rXzMgPSA3MDAsCiAgICAgICAgcmFua180ID0gODAwLAogICAgICAgIHJhbmtfNSA9IDEwMDAKICAgIH0sCiAgICBscWpzID0geyByYW5rXzEgPSA1LCByYW5rXzIgPSA2LCByYW5rXzMgPSA3LCByYW5rXzQgPSA4LCByYW5rXzUgPSAxMCB9LAogICAgLS0g5p2A5pWM6YeR5biBCiAgICBzZGpiID0geyByYW5rXzEgPSAyLCByYW5rXzIgPSA0LCByYW5rXzMgPSA2LCByYW5rXzQgPSA4LCByYW5rXzUgPSAxMCB9LAogICAgLS0g54mp55CG5qC85oyhCiAgICB3bGdkID0geyByYW5rXzEgPSAxNiwgcmFua18yID0gMjAsIHJhbmtfMyA9IDI0LCByYW5rXzQgPSAyOCwgcmFua181ID0gMzIgfSwKICAgIC0tIOmtlOazleaUu+WHuwogICAgbWZnaiA9IHsgcmFua18xID0gMjQsIHJhbmtfMiA9IDMwLCByYW5rXzMgPSAzNiwgcmFua180ID0gNDIsIHJhbmtfNSA9IDQ4IH0sCiAgICAtLSDlkLjooYAKICAgIGdqeHggPSB7IHJhbmtfMSA9IDIuNSwgcmFua18yID0gMywgcmFua18zID0gMy41LCByYW5rXzQgPSA0LCByYW5rXzUgPSA1IH0sCiAgICAtLSDop4bph47liqDmiJAKICAgIHN5amMgPSB7CiAgICAgICAgcmFua18xID0gMTIwLAogICAgICAgIHJhbmtfMiA9IDE2MCwKICAgICAgICByYW5rXzMgPSAyMDAsCiAgICAgICAgcmFua180ID0gMjQwLAogICAgICAgIHJhbmtfNSA9IDI4MAogICAgfSwKICAgIC0tIOeUn+WRveWinuW5he+8iCXvvInvvIzku4XlkI7kuKTmnaHnqIDmnInor43mnaEKICAgIHNtemYgPSB7IHJhbmtfMSA9IDYsIHJhbmtfMiA9IDgsIHJhbmtfMyA9IDEwLCByYW5rXzQgPSAxMiwgcmFua181ID0gMTUgfSwKICAgIC0t6a2U5rOV5oqX5oCnCiAgICBtZmt4ID0geyByYW5rXzEgPSA3LCByYW5rXzIgPSA5LCByYW5rXzMgPSAxMSwgcmFua180ID0gMTMsIHJhbmtfNSA9IDE1IH0KfQpUYWxlbnQuSXRlbSA9IHsKICAgIGl0ZW1fZ29vZHNfMTcgPSB7CiAgICAgICAgcmFua18xID0gewogICAgICAgICAgICBqYmpjID0gdHJ1ZSwKICAgICAgICAgICAgbWZreCA9IHRydWUsCiAgICAgICAgICAgIC0tIGpjbWogPSB0cnVlLAogICAgICAgICAgICB3bGt4ID0gdHJ1ZSwKICAgICAgICAgICAgamN5cyA9IHRydWUsCiAgICAgICAgICAgIGp5amMgPSB0cnVlLAogICAgICAgICAgICBzbWpjID0gdHJ1ZSwKICAgICAgICAgICAgLS0gbHFqcyA9IHRydWUsCiAgICAgICAgICAgIHNkamIgPSB0cnVlLAogICAgICAgICAgICB3bGdkID0gdHJ1ZSwKICAgICAgICAgICAgbWZnaiA9IHRydWUsCiAgICAgICAgICAgIGdqeHggPSB0cnVlLAogICAgICAgICAgICBzeWpjID0gdHJ1ZQogICAgICAgIH0sCiAgICAgICAgcmFua18yID0gewogICAgICAgICAgICBqYmpjID0gdHJ1ZSwKICAgICAgICAgICAgbWZreCA9IHRydWUsCgogICAgICAgICAgICAtLSBqY21qID0gdHJ1ZSwKICAgICAgICAgICAgd2xreCA9IHRydWUsCiAgICAgICAgICAgIGpjeXMgPSB0cnVlLAogICAgICAgICAgICBqeWpjID0gdHJ1ZSwKICAgICAgICAgICAgc21qYyA9IHRydWUsCiAgICAgICAgICAgIC0tIGxxanMgPSB0cnVlLAogICAgICAgICAgICBzZGpiID0gdHJ1ZSwKICAgICAgICAgICAgd2xnZCA9IHRydWUsCiAgICAgICAgICAgIG1mZ2ogPSB0cnVlLAogICAgICAgICAgICBnanh4ID0gdHJ1ZSwKICAgICAgICAgICAgc3lqYyA9IHRydWUKICAgICAgICB9LAogICAgICAgIHJhbmtfMyA9IHsKICAgICAgICAgICAgamJqYyA9IHRydWUsCiAgICAgICAgICAgIG1ma3ggPSB0cnVlLAoKICAgICAgICAgICAgLS0gamNtaiA9IHRydWUsCiAgICAgICAgICAgIC0tIGRqc3ggPSB0cnVlLAogICAgICAgICAgICB3bGt4ID0gdHJ1ZSwKICAgICAgICAgICAgamN5cyA9IHRydWUsCiAgICAgICAgICAgIGp5amMgPSB0cnVlLAogICAgICAgICAgICBzbWpjID0gdHJ1ZSwKICAgICAgICAgICAgLS0gbHFqcyA9IHRydWUsCiAgICAgICAgICAgIHNkamIgPSB0cnVlLAogICAgICAgICAgICB3bGdkID0gdHJ1ZSwKICAgICAgICAgICAgbWZnaiA9IHRydWUsCiAgICAgICAgICAgIGdqeHggPSB0cnVlLAogICAgICAgICAgICBzeWpjID0gdHJ1ZQogICAgICAgIH0sCiAgICAgICAgcmFua180ID0gewogICAgICAgICAgICBnampjID0gdHJ1ZSwKICAgICAgICAgICAgZGpzeCA9IHRydWUsCiAgICAgICAgICAgIHp6anMgPSB0cnVlLAogICAgICAgICAgICBqbnpxID0gdHJ1ZSwKICAgICAgICAgICAgZ2pqbCA9IHRydWUsCiAgICAgICAgICAgIHp6c2ggPSB0cnVlLAogICAgICAgICAgICBtampjID0gdHJ1ZSwKICAgICAgICAgICAgLS0gcXN4amMgPSB0cnVlLAogICAgICAgICAgICBzbXpmID0gdHJ1ZQogICAgICAgIH0sCiAgICAgICAgcmFua181ID0gewogICAgICAgICAgICBnampjID0gdHJ1ZSwKICAgICAgICAgICAgZGpzeCA9IHRydWUsCiAgICAgICAgICAgIHp6anMgPSB0cnVlLAogICAgICAgICAgICBqbnpxID0gdHJ1ZSwKICAgICAgICAgICAgZ2pqbCA9IHRydWUsCiAgICAgICAgICAgIHp6c2ggPSB0cnVlLAogICAgICAgICAgICBtampjID0gdHJ1ZSwKICAgICAgICAgICAgLS0gcXN4amMgPSB0cnVlLAogICAgICAgICAgICBzbXpmID0gdHJ1ZQogICAgICAgIH0KICAgIH0sCiAgICBpdGVtX2dvb2RzXzE4ID0gewogICAgICAgIHJhbmtfMSA9IHsKICAgICAgICAgICAgamJqYyA9IHRydWUsCiAgICAgICAgICAgIG1ma3ggPSB0cnVlLAoKICAgICAgICAgICAgLS0gamNsbCA9IHRydWUsCiAgICAgICAgICAgIHdsa3ggPSB0cnVlLAogICAgICAgICAgICBqY3lzID0gdHJ1ZSwKICAgICAgICAgICAganlqYyA9IHRydWUsCiAgICAgICAgICAgIHNtamMgPSB0cnVlLAogICAgICAgICAgICAtLSBscWpzID0gdHJ1ZSwKICAgICAgICAgICAgc2RqYiA9IHRydWUsCiAgICAgICAgICAgIHdsZ2QgPSB0cnVlLAogICAgICAgICAgICBtZmdqID0gdHJ1ZSwKICAgICAgICAgICAgZ2p4eCA9IHRydWUsCiAgICAgICAgICAgIHN5amMgPSB0cnVlCiAgICAgICAgfSwKICAgICAgICByYW5rXzIgPSB7CiAgICAgICAgICAgIGpiamMgPSB0cnVlLAogICAgICAgICAgICBtZmt4ID0gdHJ1ZSwKCiAgICAgICAgICAgIC0tIGpjbGwgPSB0cnVlLAogICAgICAgICAgICB3bGt4ID0gdHJ1ZSwKICAgICAgICAgICAgamN5cyA9IHRydWUsCiAgICAgICAgICAgIGp5amMgPSB0cnVlLAogICAgICAgICAgICBzbWpjID0gdHJ1ZSwKICAgICAgICAgICAgLS0gbHFqcyA9IHRydWUsCiAgICAgICAgICAgIHNkamIgPSB0cnVlLAogICAgICAgICAgICB3bGdkID0gdHJ1ZSwKICAgICAgICAgICAgbWZnaiA9IHRydWUsCiAgICAgICAgICAgIGdqeHggPSB0cnVlLAogICAgICAgICAgICBzeWpjID0gdHJ1ZQogICAgICAgIH0sCiAgICAgICAgcmFua18zID0gewogICAgICAgICAgICBqYmpjID0gdHJ1ZSwKICAgICAgICAgICAgbWZreCA9IHRydWUsCgogICAgICAgICAgICAtLSBqY2xsID0gdHJ1ZSwKICAgICAgICAgICAgLS0gZGpzeCA9IHRydWUsCiAgICAgICAgICAgIHdsa3ggPSB0cnVlLAogICAgICAgICAgICBqY3lzID0gdHJ1ZSwKICAgICAgICAgICAganlqYyA9IHRydWUsCiAgICAgICAgICAgIHNtamMgPSB0cnVlLAogICAgICAgICAgICAtLSBscWpzID0gdHJ1ZSwKICAgICAgICAgICAgc2RqYiA9IHRydWUsCiAgICAgICAgICAgIHdsZ2QgPSB0cnVlLAogICAgICAgICAgICBtZmdqID0gdHJ1ZSwKICAgICAgICAgICAgZ2p4eCA9IHRydWUsCiAgICAgICAgICAgIHN5amMgPSB0cnVlCiAgICAgICAgfSwKICAgICAgICByYW5rXzQgPSB7CiAgICAgICAgICAgIGdqamMgPSB0cnVlLAogICAgICAgICAgICBkanN4ID0gdHJ1ZSwKICAgICAgICAgICAgenpqcyA9IHRydWUsCiAgICAgICAgICAgIGpuenEgPSB0cnVlLAogICAgICAgICAgICBnampsID0gdHJ1ZSwKICAgICAgICAgICAgenpzaCA9IHRydWUsCiAgICAgICAgICAgIGxsamMgPSB0cnVlLAogICAgICAgICAgICBzbXpmID0gdHJ1ZQogICAgICAgIH0sCiAgICAgICAgcmFua181ID0gewogICAgICAgICAgICBnampjID0gdHJ1ZSwKICAgICAgICAgICAgZGpzeCA9IHRydWUsCiAgICAgICAgICAgIHp6anMgPSB0cnVlLAogICAgICAgICAgICBqbnpxID0gdHJ1ZSwKICAgICAgICAgICAgZ2pqbCA9IHRydWUsCiAgICAgICAgICAgIHp6c2ggPSB0cnVlLAogICAgICAgICAgICBsbGpjID0gdHJ1ZSwKICAgICAgICAgICAgc216ZiA9IHRydWUKICAgICAgICB9CiAgICB9LAogICAgaXRlbV9nb29kc18xOSA9IHsKICAgICAgICByYW5rXzEgPSB7CiAgICAgICAgICAgIGpiamMgPSB0cnVlLAogICAgICAgICAgICBtZmt4ID0gdHJ1ZSwKCiAgICAgICAgICAgIC0tIGpjemwgPSB0cnVlLAogICAgICAgICAgICB3bGt4ID0gdHJ1ZSwKICAgICAgICAgICAgamN5cyA9IHRydWUsCiAgICAgICAgICAgIGp5amMgPSB0cnVlLAogICAgICAgICAgICBzbWpjID0gdHJ1ZSwKICAgICAgICAgICAgLS0gbHFqcyA9IHRydWUsCiAgICAgICAgICAgIHNkamIgPSB0cnVlLAogICAgICAgICAgICB3bGdkID0gdHJ1ZSwKICAgICAgICAgICAgbWZnaiA9IHRydWUsCiAgICAgICAgICAgIGdqeHggPSB0cnVlLAogICAgICAgICAgICBzeWpjID0gdHJ1ZQogICAgICAgIH0sCiAgICAgICAgcmFua18yID0gewogICAgICAgICAgICBqYmpjID0gdHJ1ZSwKICAgICAgICAgICAgbWZreCA9IHRydWUsCgogICAgICAgICAgICAtLSBqY3psID0gdHJ1ZSwKICAgICAgICAgICAgd2xreCA9IHRydWUsCiAgICAgICAgICAgIGpjeXMgPSB0cnVlLAogICAgICAgICAgICBqeWpjID0gdHJ1ZSwKICAgICAgICAgICAgc21qYyA9IHRydWUsCiAgICAgICAgICAgIC0tIGxxanMgPSB0cnVlLAogICAgICAgICAgICBzZGpiID0gdHJ1ZSwKICAgICAgICAgICAgd2xnZCA9IHRydWUsCiAgICAgICAgICAgIG1mZ2ogPSB0cnVlLAogICAgICAgICAgICBnanh4ID0gdHJ1ZSwKICAgICAgICAgICAgc3lqYyA9IHRydWUKICAgICAgICB9LAogICAgICAgIHJhbmtfMyA9IHsKICAgICAgICAgICAgamJqYyA9IHRydWUsCiAgICAgICAgICAgIG1ma3ggPSB0cnVlLAoKICAgICAgICAgICAgLS0gamN6bCA9IHRydWUsCiAgICAgICAgICAgIC0tIGRqc3ggPSB0cnVlLAogICAgICAgICAgICB3bGt4ID0gdHJ1ZSwKICAgICAgICAgICAgamN5cyA9IHRydWUsCiAgICAgICAgICAgIGp5amMgPSB0cnVlLAogICAgICAgICAgICBzbWpjID0gdHJ1ZSwKICAgICAgICAgICAgLS0gbHFqcyA9IHRydWUsCiAgICAgICAgICAgIHNkamIgPSB0cnVlLAogICAgICAgICAgICB3bGdkID0gdHJ1ZSwKICAgICAgICAgICAgbWZnaiA9IHRydWUsCiAgICAgICAgICAgIGdqeHggPSB0cnVlLAogICAgICAgICAgICBzeWpjID0gdHJ1ZQogICAgICAgIH0sCiAgICAgICAgcmFua180ID0gewogICAgICAgICAgICBnampjID0gdHJ1ZSwKICAgICAgICAgICAgZGpzeCA9IHRydWUsCiAgICAgICAgICAgIHp6anMgPSB0cnVlLAogICAgICAgICAgICBqbnpxID0gdHJ1ZSwKICAgICAgICAgICAgZ2pqbCA9IHRydWUsCiAgICAgICAgICAgIHp6c2ggPSB0cnVlLAogICAgICAgICAgICB6bGpjID0gdHJ1ZSwKICAgICAgICAgICAgc216ZiA9IHRydWUKICAgICAgICB9LAogICAgICAgIHJhbmtfNSA9IHsKICAgICAgICAgICAgZ2pqYyA9IHRydWUsCiAgICAgICAgICAgIGRqc3ggPSB0cnVlLAogICAgICAgICAgICB6empzID0gdHJ1ZSwKICAgICAgICAgICAgam56cSA9IHRydWUsCiAgICAgICAgICAgIGdqamwgPSB0cnVlLAogICAgICAgICAgICB6enNoID0gdHJ1ZSwKICAgICAgICAgICAgemxqYyA9IHRydWUsCiAgICAgICAgICAgIHNtemYgPSB0cnVlCiAgICAgICAgfQogICAgfSwKICAgIGl0ZW1fZ29vZHNfMjQgPSB7CiAgICAgICAgcmFua18xID0gewogICAgICAgICAgICBqYmpjID0gdHJ1ZSwKICAgICAgICAgICAgbWZreCA9IHRydWUsCiAgICAgICAgICAgIHdsa3ggPSB0cnVlLAogICAgICAgICAgICBqY3lzID0gdHJ1ZSwKICAgICAgICAgICAganlqYyA9IHRydWUsCiAgICAgICAgICAgIHNtamMgPSB0cnVlLAogICAgICAgICAgICBzZGpiID0gdHJ1ZSwKICAgICAgICAgICAgd2xnZCA9IHRydWUsCiAgICAgICAgICAgIG1mZ2ogPSB0cnVlLAogICAgICAgICAgICBnanh4ID0gdHJ1ZSwKICAgICAgICAgICAgc3lqYyA9IHRydWUKICAgICAgICB9LAogICAgICAgIHJhbmtfMiA9IHsKICAgICAgICAgICAgamJqYyA9IHRydWUsCiAgICAgICAgICAgIG1ma3ggPSB0cnVlLAogICAgICAgICAgICB3bGt4ID0gdHJ1ZSwKICAgICAgICAgICAgamN5cyA9IHRydWUsCiAgICAgICAgICAgIGp5amMgPSB0cnVlLAogICAgICAgICAgICBzbWpjID0gdHJ1ZSwKICAgICAgICAgICAgc2RqYiA9IHRydWUsCiAgICAgICAgICAgIHdsZ2QgPSB0cnVlLAogICAgICAgICAgICBtZmdqID0gdHJ1ZSwKICAgICAgICAgICAgZ2p4eCA9IHRydWUsCiAgICAgICAgICAgIHN5amMgPSB0cnVlCiAgICAgICAgfSwKICAgICAgICByYW5rXzMgPSB7CiAgICAgICAgICAgIGpiamMgPSB0cnVlLAogICAgICAgICAgICBtZmt4ID0gdHJ1ZSwKICAgICAgICAgICAgd2xreCA9IHRydWUsCiAgICAgICAgICAgIGpjeXMgPSB0cnVlLAogICAgICAgICAgICBqeWpjID0gdHJ1ZSwKICAgICAgICAgICAgc21qYyA9IHRydWUsCiAgICAgICAgICAgIHNkamIgPSB0cnVlLAogICAgICAgICAgICB3bGdkID0gdHJ1ZSwKICAgICAgICAgICAgbWZnaiA9IHRydWUsCiAgICAgICAgICAgIGdqeHggPSB0cnVlLAogICAgICAgICAgICBzeWpjID0gdHJ1ZQogICAgICAgIH0sCiAgICAgICAgcmFua180ID0gewogICAgICAgICAgICBnampjID0gdHJ1ZSwKICAgICAgICAgICAgZGpzeCA9IHRydWUsCiAgICAgICAgICAgIHp6anMgPSB0cnVlLAogICAgICAgICAgICBqbnpxID0gdHJ1ZSwKICAgICAgICAgICAgZ2pqbCA9IHRydWUsCiAgICAgICAgICAgIHp6c2ggPSB0cnVlLAogICAgICAgICAgICAtLSBsbGpjID0gdHJ1ZSwKICAgICAgICAgICAgcXN4amMgPSB0cnVlLAogICAgICAgICAgICAtLSB6bGpjID0gdHJ1ZSwKICAgICAgICAgICAgc216ZiA9IHRydWUKICAgICAgICB9LAogICAgICAgIHJhbmtfNSA9IHsKICAgICAgICAgICAgZ2pqYyA9IHRydWUsCiAgICAgICAgICAgIGRqc3ggPSB0cnVlLAogICAgICAgICAgICB6empzID0gdHJ1ZSwKICAgICAgICAgICAgam56cSA9IHRydWUsCiAgICAgICAgICAgIGdqamwgPSB0cnVlLAogICAgICAgICAgICB6enNoID0gdHJ1ZSwKICAgICAgICAgICAgLS0gbGxqYyA9IHRydWUsCiAgICAgICAgICAgIHFzeGpjID0gdHJ1ZSwKICAgICAgICAgICAgLS0gemxqYyA9IHRydWUsCiAgICAgICAgICAgIHNtemYgPSB0cnVlCiAgICAgICAgfQogICAgfQp9Cg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
-end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+Talent.Data = {}
+Talent.Template = {
+    Init = true,
+    --是否已选取天赋装备
+    select_talent = false,
+    page = false,
+    item_index = -1,
+    item_name = "",
+    hero_name = "",
+    bag_page = false,
+    -- 当前等级
+    level = 0,
+    -- 升级剩余数量
+    sy = 0,
+    -- 总计杀敌数量
+    kill = 0,
+    -- 上次天赋装备升级时的累计杀敌（本段升级进度 = kill - kill_at_levelup）
+    kill_at_levelup = 0,
+    -- 升级状态
+    up = false,
+    -- 属性页面
+    attr_page = false,
+    -- roll属性值次数
+    roll_num = 0,
+    attr_list = {
+        slot_1 = { state = false, name = "", value = -1, rank = -1 },
+        slot_2 = { state = false, name = "", value = -1, rank = -1 },
+        slot_3 = { state = false, name = "", value = -1, rank = -1 }
+    },
+    -- 装备信息
+    equip_attr = { attr = {}, text = "" },
+    tip_page = false,
+    text_page = false,
+    -- 自动升级
+    auto_levelup = true,
+    -- 金币花费
+    cost = 0,
+    -- 是否可以刷新
+    refresh_state = true,
+    -- 是否正在进行属性选择
+    select_attr = false,
+    -- 选天赋装备时英雄尚未出生：延后到出生后补属性与 modifier
+    pending_equip_attr = false,
+    -- 铁匠：局内改选天赋 3 后是否已补算过既有等级的基础属性 +30%
+    clrb_blacksmith_catchup_done = false
+}
+Talent.Cost = { num1 = 0, num2 = 1, num3 = 9, num4 = 19, num5 = 19 }
+
+-- 天赋装备随机词条：这些英雄永不刷新「视野加成」(syjc)
+Talent.AttrRollExcludeSyjcHeroes = {
+    npc_dota_hero_monkey_king = true,
+    npc_dota_hero_batrider = true,
+    -- npc_dota_hero_night_stalker = true,
+}
+
+Talent.Equip = {
+    item_goods_17 = {
+        rank0 = { gjsd = 30, jcys = 15, wlct = 5 },
+        rank1 = { gjsd = 15, jcys = 15, wlct = 5 },
+        rank2 = { gjsd = 15, jcys = 15, wlct = 5 },
+        rank3 = { gjsd = 20, jcys = 15, wlct = 5 },
+        rank4 = { gjsd = 30, jcys = 15, wlct = 5 },
+        rank5 = { gjsd = 40, jcys = 15, wlct = 5 }
+    },
+    item_goods_18 = {
+        rank0 = { smzf = 3, wlkx = 4 },
+        rank1 = { smzf = 3, wlkx = 4 },
+        rank2 = { smzf = 3, wlkx = 4 },
+        rank3 = { smzf = 3, wlkx = 4 },
+        rank4 = { smzf = 3, wlkx = 4 },
+        rank5 = { smzf = 3, wlkx = 4 }
+    },
+    item_goods_19 = {
+        rank0 = { jnzq = 4, zyfw = 15 },
+        rank1 = { jnzq = 4, zyfw = 15 },
+        rank2 = { jnzq = 4, zyfw = 15 },
+        rank3 = { jnzq = 4, zyfw = 15 },
+        rank4 = { jnzq = 4, zyfw = 15 },
+        rank5 = { jnzq = 4, zyfw = 15 }
+    },
+    item_goods_24 = {
+        rank0 = { jcll = 6, jcmj = 6, jczl = 6 },
+        rank1 = { jcll = 6, jcmj = 6, jczl = 6 },
+        rank2 = { jcll = 6, jcmj = 6, jczl = 6 },
+        rank3 = { jcll = 6, jcmj = 6, jczl = 6 },
+        rank4 = { jcll = 6, jcmj = 6, jczl = 6 },
+        rank5 = { jcll = 6, jcmj = 6, jczl = 6 }
+    }
+}
+--- 各等级段升级所需杀敌数（0→1 … 4→5）；铁匠天赋在此基础上再减免
+Talent.Static = { up_0 = 70, up_1 = 90, up_2 = 110, up_3 = 130, up_4 = 150 }
+Talent.RollNum = {
+    num_1 = { rank_1 = 35, rank_2 = 25, rank_3 = 20, rank_4 = 12, rank_5 = 8 },
+    num_2 = { rank_1 = 0, rank_2 = 0, rank_3 = 60, rank_4 = 25, rank_5 = 15 },
+    num_3 = { rank_1 = 0, rank_2 = 0, rank_3 = 0, rank_4 = 70, rank_5 = 30 },
+    num_4 = { rank_1 = 0, rank_2 = 0, rank_3 = 0, rank_4 = 0, rank_5 = 10 }
+}
+Talent.Attr = {
+    -- 金币加成
+    jbjc = { rank_1 = 6, rank_2 = 8, rank_3 = 10, rank_4 = 12, rank_5 = 15 },
+    -- 基础敏捷
+    jcmj = { rank_1 = 10, rank_2 = 12, rank_3 = 14, rank_4 = 16, rank_5 = 20 },
+    -- 基础力量
+    jcll = { rank_1 = 10, rank_2 = 12, rank_3 = 14, rank_4 = 16, rank_5 = 20 },
+    -- 基础智力
+    jczl = { rank_1 = 10, rank_2 = 12, rank_3 = 14, rank_4 = 16, rank_5 = 20 },
+    -- 力量加成
+    lljc = { rank_1 = 7, rank_2 = 9, rank_3 = 11, rank_4 = 13, rank_5 = 15 },
+    -- 敏捷加成
+    mjjc = { rank_1 = 7, rank_2 = 9, rank_3 = 11, rank_4 = 13, rank_5 = 15 },
+    -- 全属性加成（4/5 级升级池；同时写入 lljc/mjjc/zljc）
+    qsxjc = { rank_1 = 4, rank_2 = 5, rank_3 = 6, rank_4 = 7, rank_5 = 8 },
+    -- 智力加成
+    zljc = { rank_1 = 7, rank_2 = 9, rank_3 = 11, rank_4 = 13, rank_5 = 15 },
+    -- 等级上限
+    djsx = { rank_1 = 1, rank_2 = 2, rank_3 = 3, rank_4 = 4, rank_5 = 5 },
+    -- 护甲
+    wlkx = { rank_1 = 6, rank_2 = 8, rank_3 = 10, rank_4 = 12, rank_5 = 14 },
+    -- 基础移速
+    jcys = { rank_1 = 20, rank_2 = 25, rank_3 = 30, rank_4 = 35, rank_5 = 40 },
+    -- 经验加成
+    jyjc = { rank_1 = 4, rank_2 = 8, rank_3 = 12, rank_4 = 16, rank_5 = 20 },
+    --基础攻击（固定绿字）
+    jcgj = { rank_1 = 8, rank_2 = 11, rank_3 = 14, rank_4 = 17, rank_5 = 20 },
+    -- 攻击力加成 %（hero_attr.gjjc + modifier_gjjc），数值表与 jcgj 相同
+    gjjc = { rank_1 = 8, rank_2 = 11, rank_3 = 14, rank_4 = 17, rank_5 = 20 },
+    -- 最终减伤
+    zzjs = { rank_1 = 7, rank_2 = 9, rank_3 = 11, rank_4 = 13, rank_5 = 15 },
+    -- 技能增强
+    jnzq = { rank_1 = 10, rank_2 = 11, rank_3 = 12, rank_4 = 13, rank_5 = 15 },
+    -- 攻击距离
+    gjjl = { rank_1 = 60, rank_2 = 70, rank_3 = 80, rank_4 = 90, rank_5 = 120 },
+    -- 最终伤害
+    zzsh = { rank_1 = 5, rank_2 = 6, rank_3 = 7, rank_4 = 8, rank_5 = 10 },
+    -- 生命上限
+    smjc = {
+        rank_1 = 500,
+        rank_2 = 600,
+        rank_3 = 700,
+        rank_4 = 800,
+        rank_5 = 1000
+    },
+    lqjs = { rank_1 = 5, rank_2 = 6, rank_3 = 7, rank_4 = 8, rank_5 = 10 },
+    -- 杀敌金币
+    sdjb = { rank_1 = 2, rank_2 = 4, rank_3 = 6, rank_4 = 8, rank_5 = 10 },
+    -- 物理格挡
+    wlgd = { rank_1 = 16, rank_2 = 20, rank_3 = 24, rank_4 = 28, rank_5 = 32 },
+    -- 魔法攻击
+    mfgj = { rank_1 = 24, rank_2 = 30, rank_3 = 36, rank_4 = 42, rank_5 = 48 },
+    -- 吸血
+    gjxx = { rank_1 = 2.5, rank_2 = 3, rank_3 = 3.5, rank_4 = 4, rank_5 = 5 },
+    -- 视野加成
+    syjc = {
+        rank_1 = 120,
+        rank_2 = 160,
+        rank_3 = 200,
+        rank_4 = 240,
+        rank_5 = 280
+    },
+    -- 生命增幅（%），仅后两条稀有词条
+    smzf = { rank_1 = 6, rank_2 = 8, rank_3 = 10, rank_4 = 12, rank_5 = 15 },
+    --魔法抗性
+    mfkx = { rank_1 = 7, rank_2 = 9, rank_3 = 11, rank_4 = 13, rank_5 = 15 }
+}
+Talent.Item = {
+    item_goods_17 = {
+        rank_1 = {
+            jbjc = true,
+            mfkx = true,
+            -- jcmj = true,
+            wlkx = true,
+            jcys = true,
+            jyjc = true,
+            smjc = true,
+            -- lqjs = true,
+            sdjb = true,
+            wlgd = true,
+            mfgj = true,
+            gjxx = true,
+            syjc = true
+        },
+        rank_2 = {
+            jbjc = true,
+            mfkx = true,
+
+            -- jcmj = true,
+            wlkx = true,
+            jcys = true,
+            jyjc = true,
+            smjc = true,
+            -- lqjs = true,
+            sdjb = true,
+            wlgd = true,
+            mfgj = true,
+            gjxx = true,
+            syjc = true
+        },
+        rank_3 = {
+            jbjc = true,
+            mfkx = true,
+
+            -- jcmj = true,
+            -- djsx = true,
+            wlkx = true,
+            jcys = true,
+            jyjc = true,
+            smjc = true,
+            -- lqjs = true,
+            sdjb = true,
+            wlgd = true,
+            mfgj = true,
+            gjxx = true,
+            syjc = true
+        },
+        rank_4 = {
+            gjjc = true,
+            djsx = true,
+            zzjs = true,
+            jnzq = true,
+            gjjl = true,
+            zzsh = true,
+            mjjc = true,
+            -- qsxjc = true,
+            smzf = true
+        },
+        rank_5 = {
+            gjjc = true,
+            djsx = true,
+            zzjs = true,
+            jnzq = true,
+            gjjl = true,
+            zzsh = true,
+            mjjc = true,
+            -- qsxjc = true,
+            smzf = true
+        }
+    },
+    item_goods_18 = {
+        rank_1 = {
+            jbjc = true,
+            mfkx = true,
+
+            -- jcll = true,
+            wlkx = true,
+            jcys = true,
+            jyjc = true,
+            smjc = true,
+            -- lqjs = true,
+            sdjb = true,
+            wlgd = true,
+            mfgj = true,
+            gjxx = true,
+            syjc = true
+        },
+        rank_2 = {
+            jbjc = true,
+            mfkx = true,
+
+            -- jcll = true,
+            wlkx = true,
+            jcys = true,
+            jyjc = true,
+            smjc = true,
+            -- lqjs = true,
+            sdjb = true,
+            wlgd = true,
+            mfgj = true,
+            gjxx = true,
+            syjc = true
+        },
+        rank_3 = {
+            jbjc = true,
+            mfkx = true,
+
+            -- jcll = true,
+            -- djsx = true,
+            wlkx = true,
+            jcys = true,
+            jyjc = true,
+            smjc = true,
+            -- lqjs = true,
+            sdjb = true,
+            wlgd = true,
+            mfgj = true,
+            gjxx = true,
+            syjc = true
+        },
+        rank_4 = {
+            gjjc = true,
+            djsx = true,
+            zzjs = true,
+            jnzq = true,
+            gjjl = true,
+            zzsh = true,
+            lljc = true,
+            smzf = true
+        },
+        rank_5 = {
+            gjjc = true,
+            djsx = true,
+            zzjs = true,
+            jnzq = true,
+            gjjl = true,
+            zzsh = true,
+            lljc = true,
+            smzf = true
+        }
+    },
+    item_goods_19 = {
+        rank_1 = {
+            jbjc = true,
+            mfkx = true,
+
+            -- jczl = true,
+            wlkx = true,
+            jcys = true,
+            jyjc = true,
+            smjc = true,
+            -- lqjs = true,
+            sdjb = true,
+            wlgd = true,
+            mfgj = true,
+            gjxx = true,
+            syjc = true
+        },
+        rank_2 = {
+            jbjc = true,
+            mfkx = true,
+
+            -- jczl = true,
+            wlkx = true,
+            jcys = true,
+            jyjc = true,
+            smjc = true,
+            -- lqjs = true,
+            sdjb = true,
+            wlgd = true,
+            mfgj = true,
+            gjxx = true,
+            syjc = true
+        },
+        rank_3 = {
+            jbjc = true,
+            mfkx = true,
+
+            -- jczl = true,
+            -- djsx = true,
+            wlkx = true,
+            jcys = true,
+            jyjc = true,
+            smjc = true,
+            -- lqjs = true,
+            sdjb = true,
+            wlgd = true,
+            mfgj = true,
+            gjxx = true,
+            syjc = true
+        },
+        rank_4 = {
+            gjjc = true,
+            djsx = true,
+            zzjs = true,
+            jnzq = true,
+            gjjl = true,
+            zzsh = true,
+            zljc = true,
+            smzf = true
+        },
+        rank_5 = {
+            gjjc = true,
+            djsx = true,
+            zzjs = true,
+            jnzq = true,
+            gjjl = true,
+            zzsh = true,
+            zljc = true,
+            smzf = true
+        }
+    },
+    item_goods_24 = {
+        rank_1 = {
+            jbjc = true,
+            mfkx = true,
+            wlkx = true,
+            jcys = true,
+            jyjc = true,
+            smjc = true,
+            sdjb = true,
+            wlgd = true,
+            mfgj = true,
+            gjxx = true,
+            syjc = true
+        },
+        rank_2 = {
+            jbjc = true,
+            mfkx = true,
+            wlkx = true,
+            jcys = true,
+            jyjc = true,
+            smjc = true,
+            sdjb = true,
+            wlgd = true,
+            mfgj = true,
+            gjxx = true,
+            syjc = true
+        },
+        rank_3 = {
+            jbjc = true,
+            mfkx = true,
+            wlkx = true,
+            jcys = true,
+            jyjc = true,
+            smjc = true,
+            sdjb = true,
+            wlgd = true,
+            mfgj = true,
+            gjxx = true,
+            syjc = true
+        },
+        rank_4 = {
+            gjjc = true,
+            djsx = true,
+            zzjs = true,
+            jnzq = true,
+            gjjl = true,
+            zzsh = true,
+            -- lljc = true,
+            qsxjc = true,
+            -- zljc = true,
+            smzf = true
+        },
+        rank_5 = {
+            gjjc = true,
+            djsx = true,
+            zzjs = true,
+            jnzq = true,
+            gjjl = true,
+            zzsh = true,
+            -- lljc = true,
+            qsxjc = true,
+            -- zljc = true,
+            smzf = true
+        }
+    }
+}

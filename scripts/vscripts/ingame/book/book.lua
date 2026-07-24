@@ -8,22 +8,101 @@
 ]]
 
 
-local encoded=[[aWYgQm9vayA9PSBuaWwgdGhlbgogICAgQm9vayA9IGNsYXNzKHt9KQogICAgcmVxdWlyZSgiaW5nYW1lLkJvb2suQ29uZmlnIikKICAgIHJlcXVpcmUoImluZ2FtZS5Cb29rLlNldCIpCiAgICByZXF1aXJlKCJpbmdhbWUuQm9vay5HZXQiKQogICAgcmVxdWlyZSgiaW5nYW1lLkJvb2suRnVuYyIpCiAgICByZXF1aXJlKCJpbmdhbWUuQm9vay5VaSIpCmVuZAoKZnVuY3Rpb24gQm9vazpJbml0KElEKQogICAgaWYgbm90IElEIHRoZW4gcmV0dXJuIGVuZAogICAgc2VsZi5EYXRhW0lEXSA9IFV0aWw6RGVlcENvcHlUYWIoc2VsZi5UZW1wbGF0ZSkKICAgIEJvb2s6SW5pdEhlcm9MaXN0KElEKQplbmQKCmZ1bmN0aW9uIEJvb2s6SW5pdEhlcm9MaXN0KElEKQogICAgZm9yIGkgPSAxLCA0IGRvCiAgICAgICAgbG9jYWwgdHBfa2V5ID0gInRwIiAuLiBpCiAgICAgICAgc2VsZjpGb3JFYWNoU2xvdFNvcnRlZChzZWxmLkhlcm9MaXN0W3RwX2tleV0sIGZ1bmN0aW9uKGssIHYpCiAgICAgICAgICAgIGxvY2FsIGluZGV4ID0gdG9udW1iZXIodXRpbGV4OnNwbGl0SW5kZXgoaywgIl8iLCAyKSkKICAgICAgICAgICAgbG9jYWwgaGVyb19kYXRhID0gVXRpbDpEZWVwQ29weVRhYihzZWxmLkhlcm9UeXBlKQogICAgICAgICAgICBoZXJvX2RhdGEuaW5kZXggPSBpbmRleAogICAgICAgICAgICBoZXJvX2RhdGEudHAgPSBpCiAgICAgICAgICAgIGhlcm9fZGF0YS5uYW1lID0gdgogICAgICAgICAgICBpZiBzZWxmOkdldEhlcm9TdGF0ZSh2KSB0aGVuCiAgICAgICAgICAgICAgICBoZXJvX2RhdGEuc3RhdGUgPSB0cnVlCiAgICAgICAgICAgIGVsc2UKICAgICAgICAgICAgICAgIGhlcm9fZGF0YS5zdGF0ZSA9IGZhbHNlCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBpZiBzZWxmOkdldEhlcm9JRCh2KSB0aGVuCiAgICAgICAgICAgICAgICBoZXJvX2RhdGEuaWQgPSBzZWxmOkdldEhlcm9JRCh2KQogICAgICAgICAgICBlbHNlCiAgICAgICAgICAgICAgICBoZXJvX2RhdGEuaWQgPSAtMQogICAgICAgICAgICBlbmQKICAgICAgICAgICAgc2VsZi5EYXRhW0lEXS5saXN0MVt0cF9rZXldW2tdID0gaGVyb19kYXRhCiAgICAgICAgZW5kKQogICAgZW5kCiAgICBsb2NhbCBib29rX2hlcm9fc2V0ID0ge30KICAgIGxvY2FsIHJvd19jZmcgPSBzZWxmLlVuYXNzaWduZWRTa2lsbFJvdyBvciB7fQogICAgc2VsZi5EYXRhW0lEXS5saXN0X3B1YmxpYyA9IHsKICAgICAgICBkaXNwbGF5X25hbWUgPSByb3dfY2ZnLmRpc3BsYXlfbmFtZSBvciAiY2xyYl9ib29rX3VuYXNzaWduZWRfc2tpbGxzIiwKICAgICAgICBsaXN0ID0gc2VsZjpCdWlsZFNraWxsU2xvdExpc3Qoc2VsZjpDb2xsZWN0UHVibGljU2tpbGxzKCkpLAogICAgfQogICAgbG9jYWwgbnVtID0gMQogICAgZm9yIGkgPSAxLCA0IGRvCiAgICAgICAgbG9jYWwgdHBfa2V5ID0gInRwIiAuLiBpCiAgICAgICAgc2VsZjpGb3JFYWNoU2xvdFNvcnRlZChzZWxmLkRhdGFbSURdLmxpc3QxW3RwX2tleV0sIGZ1bmN0aW9uKF8sIHYpCiAgICAgICAgICAgIGlmIHYubmFtZSBhbmQgdi5uYW1lIH49ICIiIHRoZW4KICAgICAgICAgICAgICAgIGJvb2tfaGVyb19zZXRbdi5uYW1lXSA9IHRydWUKICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGxvY2FsIG51bV9rZXkgPSAibnVtIiAuLiBudW0KICAgICAgICAgICAgbG9jYWwgc2tpbGxfZGF0YSA9IFV0aWw6RGVlcENvcHlUYWIoc2VsZi5IZXJvU2tpbGwpCiAgICAgICAgICAgIHNraWxsX2RhdGEuaW5kZXggPSBudW0KICAgICAgICAgICAgc2tpbGxfZGF0YS5uYW1lID0gdi5uYW1lCiAgICAgICAgICAgIHNraWxsX2RhdGEubGlzdCA9IHNlbGY6R2V0SGVyb1NraWxsTGlzdCh2Lm5hbWUsIHNraWxsX2RhdGEubGlzdCkKICAgICAgICAgICAgc2VsZi5EYXRhW0lEXS5saXN0MltudW1fa2V5XSA9IHNraWxsX2RhdGEKICAgICAgICAgICAgbnVtID0gbnVtICsgMQogICAgICAgIGVuZCkKICAgIGVuZAogICAgLS0gU2tpbGwuQWJpbGl0eSDkuK3lt7Lnu5Hlrproi7Hpm4TjgIHkvYbmnKrliJflhaUgQm9vay5IZXJvTGlzdCDnmoTvvIzooaXkuIDooYzlsZXnpLrlhbblhajpg6jmioDog70KICAgIGxvY2FsIGV4dHJhX2hlcm9lcyA9IHt9CiAgICBpZiBTa2lsbCBhbmQgU2tpbGwuQWJpbGl0eSB0aGVuCiAgICAgICAgZm9yIF8sIHJvdyBpbiBwYWlycyhTa2lsbC5BYmlsaXR5KSBkbwogICAgICAgICAgICBsb2NhbCBobiA9IHJvdyBhbmQgcm93Lmhlcm8KICAgICAgICAgICAgaWYgaG4gYW5kIGhuIH49ICIiIGFuZCBub3QgYm9va19oZXJvX3NldFtobl0gYW5kIG5vdCBleHRyYV9oZXJvZXNbaG5dIHRoZW4KICAgICAgICAgICAgICAgIGV4dHJhX2hlcm9lc1tobl0gPSB0cnVlCiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZW5kCiAgICBsb2NhbCBleHRyYV9saXN0ID0ge30KICAgIGZvciBobiBpbiBwYWlycyhleHRyYV9oZXJvZXMpIGRvCiAgICAgICAgdGFibGUuaW5zZXJ0KGV4dHJhX2xpc3QsIGhuKQogICAgZW5kCiAgICB0YWJsZS5zb3J0KGV4dHJhX2xpc3QpCiAgICBmb3IgXywgaG4gaW4gaXBhaXJzKGV4dHJhX2xpc3QpIGRvCiAgICAgICAgYm9va19oZXJvX3NldFtobl0gPSB0cnVlCiAgICAgICAgbG9jYWwgbnVtX2tleSA9ICJudW0iIC4uIG51bQogICAgICAgIGxvY2FsIHNraWxsX2RhdGEgPSBVdGlsOkRlZXBDb3B5VGFiKHNlbGYuSGVyb1NraWxsKQogICAgICAgIHNraWxsX2RhdGEuaW5kZXggPSBudW0KICAgICAgICBza2lsbF9kYXRhLm5hbWUgPSBobgogICAgICAgIHNraWxsX2RhdGEubGlzdCA9IHNlbGY6R2V0SGVyb1NraWxsTGlzdChobiwgc2tpbGxfZGF0YS5saXN0KQogICAgICAgIHNlbGYuRGF0YVtJRF0ubGlzdDJbbnVtX2tleV0gPSBza2lsbF9kYXRhCiAgICAgICAgbnVtID0gbnVtICsgMQogICAgZW5kCiAgICBsb2NhbCBudW0yID0gMQogICAgZm9yIGssIHYgaW4gcGFpcnMoc2VsZi5CYXR0bGVTb3J0KSBkbwogICAgICAgIGlmIHYgfj0gLTEgdGhlbgogICAgICAgICAgICBsb2NhbCB0cF9rZXkgPSAidHAiIC4uIHYKICAgICAgICAgICAgbG9jYWwgYmF0dGxlX2RhdGEgPSBVdGlsOkRlZXBDb3B5VGFiKHNlbGYuQmF0dGxlU2tpbGwpCiAgICAgICAgICAgIGxvY2FsIG51bV9rZXkgPSAibnVtIiAuLiBudW0yCiAgICAgICAgICAgIGJhdHRsZV9kYXRhLmluZGV4ID0gbnVtMgogICAgICAgICAgICBiYXR0bGVfZGF0YS5uYW1lID0gawogICAgICAgICAgICBiYXR0bGVfZGF0YS50ZXh0ID0gIkRPVEFfVG9vbHRpcF9hYmlsaXR5XyIgLi4gayAuLiAiX0Rlc2NyaXB0aW9uIgogICAgICAgICAgICBzZWxmLkRhdGFbSURdLmxpc3QzW3RwX2tleV1bbnVtX2tleV0gPSBiYXR0bGVfZGF0YQogICAgICAgICAgICBudW0yID0gbnVtMiArIDEKICAgICAgICBlbmQKICAgIGVuZAplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if Book == nil then
+    Book = class({})
+    require("ingame.Book.Config")
+    require("ingame.Book.Set")
+    require("ingame.Book.Get")
+    require("ingame.Book.Func")
+    require("ingame.Book.Ui")
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function Book:Init(ID)
+    if not ID then return end
+    self.Data[ID] = Util:DeepCopyTab(self.Template)
+    Book:InitHeroList(ID)
+end
+
+function Book:InitHeroList(ID)
+    for i = 1, 4 do
+        local tp_key = "tp" .. i
+        self:ForEachSlotSorted(self.HeroList[tp_key], function(k, v)
+            local index = tonumber(utilex:splitIndex(k, "_", 2))
+            local hero_data = Util:DeepCopyTab(self.HeroType)
+            hero_data.index = index
+            hero_data.tp = i
+            hero_data.name = v
+            if self:GetHeroState(v) then
+                hero_data.state = true
+            else
+                hero_data.state = false
+            end
+            if self:GetHeroID(v) then
+                hero_data.id = self:GetHeroID(v)
+            else
+                hero_data.id = -1
+            end
+            self.Data[ID].list1[tp_key][k] = hero_data
+        end)
+    end
+    local book_hero_set = {}
+    local row_cfg = self.UnassignedSkillRow or {}
+    self.Data[ID].list_public = {
+        display_name = row_cfg.display_name or "clrb_book_unassigned_skills",
+        list = self:BuildSkillSlotList(self:CollectPublicSkills()),
+    }
+    local num = 1
+    for i = 1, 4 do
+        local tp_key = "tp" .. i
+        self:ForEachSlotSorted(self.Data[ID].list1[tp_key], function(_, v)
+            if v.name and v.name ~= "" then
+                book_hero_set[v.name] = true
+            end
+            local num_key = "num" .. num
+            local skill_data = Util:DeepCopyTab(self.HeroSkill)
+            skill_data.index = num
+            skill_data.name = v.name
+            skill_data.list = self:GetHeroSkillList(v.name, skill_data.list)
+            self.Data[ID].list2[num_key] = skill_data
+            num = num + 1
+        end)
+    end
+    -- Skill.Ability 中已绑定英雄、但未列入 Book.HeroList 的，补一行展示其全部技能
+    local extra_heroes = {}
+    if Skill and Skill.Ability then
+        for _, row in pairs(Skill.Ability) do
+            local hn = row and row.hero
+            if hn and hn ~= "" and not book_hero_set[hn] and not extra_heroes[hn] then
+                extra_heroes[hn] = true
+            end
+        end
+    end
+    local extra_list = {}
+    for hn in pairs(extra_heroes) do
+        table.insert(extra_list, hn)
+    end
+    table.sort(extra_list)
+    for _, hn in ipairs(extra_list) do
+        book_hero_set[hn] = true
+        local num_key = "num" .. num
+        local skill_data = Util:DeepCopyTab(self.HeroSkill)
+        skill_data.index = num
+        skill_data.name = hn
+        skill_data.list = self:GetHeroSkillList(hn, skill_data.list)
+        self.Data[ID].list2[num_key] = skill_data
+        num = num + 1
+    end
+    local num2 = 1
+    for k, v in pairs(self.BattleSort) do
+        if v ~= -1 then
+            local tp_key = "tp" .. v
+            local battle_data = Util:DeepCopyTab(self.BattleSkill)
+            local num_key = "num" .. num2
+            battle_data.index = num2
+            battle_data.name = k
+            battle_data.text = "DOTA_Tooltip_ability_" .. k .. "_Description"
+            self.Data[ID].list3[tp_key][num_key] = battle_data
+            num2 = num2 + 1
+        end
+    end
+end

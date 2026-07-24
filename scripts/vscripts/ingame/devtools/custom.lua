@@ -8,22 +8,143 @@
 ]]
 
 
-local encoded=[[LS0g6Ieq5a6a5LmJ5bel5YW377ya5Zyo5q2kIFJlZ2lzdGVyVG9vbO+8jOS4juWGhee9ruaMh+S7pOebuOWQjOaWueW8j+aJqeWxlQotLSDnp7Dlj7cgLyDlkajouqsgLyDmlLvlh7vnibnmlYjvvJrngrnlh7vljbPoh6rliqjmm7/mjaLlvZPliY3mlYjmnpzvvIzkuI3lho3mj5DkvpvjgIznp7vpmaQgeHh444CN5oyJ6ZKuCmZ1bmN0aW9uIERldlRvb2xzOlJlZ2lzdGVyQ3VzdG9tVG9vbHMoKQogICAgc2VsZjpSZWdpc3RlclRvb2woImZhbGxzdGFyIiwgIumZqOiQveaYn+i+sCIsIGZ1bmN0aW9uKCkKICAgICAgICBpZiBNYWluR2FtZSBhbmQgTWFpbkdhbWUuRHJvcEZhbGxlblN0YXJzIHRoZW4KICAgICAgICAgICAgTWFpbkdhbWU6RHJvcEZhbGxlblN0YXJzKCkKICAgICAgICBlbmQKICAgIGVuZCwgeyBncm91cCA9ICLkuovku7YiIH0pCgogICAgbG9jYWwgZnVuY3Rpb24gYWRkX3RpdGxlKGNtZCwgbGFiZWwsIGl0ZW1fa2V5KQogICAgICAgIHNlbGY6UmVnaXN0ZXJUb29sKGNtZCwgbGFiZWwsIGZ1bmN0aW9uKElELCBoZXJvKQogICAgICAgICAgICBpZiBEZXZUb29scy5HcmFudFRpdGxlQW5kRXF1aXAgdGhlbgogICAgICAgICAgICAgICAgRGV2VG9vbHM6R3JhbnRUaXRsZUFuZEVxdWlwKElELCBoZXJvLCBpdGVtX2tleSkKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kLCB7IGdyb3VwID0gIuensOWPtyIgfSkKICAgIGVuZAoKICAgIGFkZF90aXRsZSgiY2x4eCIsICLkuJvmnpfmlrDnp4Dnp7Dlj7ciLCAidGl0bGVfY2x4eCIpCiAgICBhZGRfdGl0bGUoIndybmQiLCAi5peg5Lq66IO95oyh56ew5Y+3IiwgInRpdGxlX3dybmQiKQogICAgYWRkX3RpdGxlKCJ3aGNsIiwgIuWNp+iZjuiXj+m+meensOWPtyIsICJ0aXRsZV93aGNsIikKICAgIGFkZF90aXRsZSgiY2x4eiIsICLkuJvmnpfooYzogIXnp7Dlj7ciLCAidGl0bGVfY2x4eiIpCiAgICBhZGRfdGl0bGUoIndzenMiLCAi5peg5Y+M5oiY56We56ew5Y+3IiwgInRpdGxlX3dzenMiKQogICAgYWRkX3RpdGxlKCJoc2JoIiwgIuaoquaJq+WFq+iNkuensOWPtyIsICJ0aXRsZV9oc2JoIikKICAgIGFkZF90aXRsZSgiaGRsbSIsICLmqKrliIDnq4vpqaznp7Dlj7ciLCAidGl0bGVfaGRsbSIpCiAgICBhZGRfdGl0bGUoInlzcXdoIiwgIuS4gOmGiei9u+eOi+S+r+ensOWPtyIsICJ0aXRsZV95c3F3aCIpCiAgICBhZGRfdGl0bGUoInJ6bGYiLCAi5Lq65Lit6b6Z5Yek56ew5Y+3IiwgInRpdGxlX3J6bGYiKQogICAgYWRkX3RpdGxlKCJjbGxzIiwgIuS4m+ael+eMjuaJi+ensOWPtyIsICJ0aXRsZV9jbGxzIikKICAgIGFkZF90aXRsZSgiY2xsciIsICLkuJvmnpfnjI7kurrnp7Dlj7ciLCAidGl0bGVfY2xsciIpCiAgICBhZGRfdGl0bGUoImNsenciLCAi5Lib5p6X5LmL546L56ew5Y+3IiwgInRpdGxlX2NsenciKQogICAgYWRkX3RpdGxlKCJjbG15IiwgIuS4m+ael+aipumth+ensOWPtyIsICJ0aXRsZV9jbG15IikKICAgIGFkZF90aXRsZSgiY2x6eSIsICLkuJvmnpfkuYvnv7znp7Dlj7ciLCAidGl0bGVfY2x6eSIpCiAgICBhZGRfdGl0bGUoInh4cWMiLCAi6KGA5rSX5YWo5Zy656ew5Y+3IiwgInRpdGxlX3h4cWMiKQogICAgYWRkX3RpdGxlKCJyenpsIiwgIuS6uuS4reS5i+m+meensOWPtyIsICJ0aXRsZV9yenpsIikKCiAgICAtLSDlkajouqvnibnmlYjpooTop4jvvJrliIfmjaLml7bnu5/kuIDotbAgQXBwbHlFZmZlY3RGeO+8jOWFiOa4heaXp+WGjeaMguaWsO+8jOS4jeWPoOWKoAogICAgLS0g6ZOC6YeR6IKJ5bGx77ya5Y+q5oyCIGFtYmllbnQg54i254m55pWI77yMYi9jL2QvZS9mICsgZXllcyDmlbTljIXlrZDnspLlrZDkvJroh6rliqjluKbkuIoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJ0eHAiLCAi6ZOC6YeR6IKJ5bGx5ZGo6LqrIiwgZnVuY3Rpb24oSUQsIGhlcm8pCiAgICAgICAgaWYgRGV2VG9vbHMuUHJldmlld0JvZHlFZmZlY3QgdGhlbgogICAgICAgICAgICBEZXZUb29sczpQcmV2aWV3Qm9keUVmZmVjdChJRCwgaGVybywKICAgICAgICAgICAgICAgICJwYXJ0aWNsZXMvY2xyYi9wbGF0aW51bV9yb3NoYW5fYW1iaWVudC52cGNmIiwKICAgICAgICAgICAgICAgICLlt7LliIfmjaLvvJrpk4Lph5HogonlsbHlkajouqvvvIjmlbTljIXvvIkiKQogICAgICAgIGVuZAogICAgZW5kLCB7IGdyb3VwID0gIuWRqOi6q+eJueaViCIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgidHgxIiwgIueHg+eDp+acq+aXpeWRqOi6q+eJueaViCIsIGZ1bmN0aW9uKElELCBoZXJvKQogICAgICAgIGlmIERldlRvb2xzLkdyYW50RWZmZWN0QW5kRXF1aXAgdGhlbgogICAgICAgICAgICBEZXZUb29sczpHcmFudEVmZmVjdEFuZEVxdWlwKElELCBoZXJvLCAiZWZmZWN0X3R4MSIpCiAgICAgICAgZWxzZWlmIERldlRvb2xzLlByZXZpZXdCb2R5RWZmZWN0IHRoZW4KICAgICAgICAgICAgRGV2VG9vbHM6UHJldmlld0JvZHlFZmZlY3QoSUQsIGhlcm8sCiAgICAgICAgICAgICAgICAicGFydGljbGVzL2Vjb24vY291cmllci9jb3VyaWVyX3RyYWlsX2xhdmEvY291cmllcl90cmFpbF9sYXZhLnZwY2YiLAogICAgICAgICAgICAgICAgIuW3suWIh+aNou+8mueHg+eDp+acq+aXpSIpCiAgICAgICAgZW5kCiAgICBlbmQsIHsgZ3JvdXAgPSAi5ZGo6Lqr54m55pWIIiB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJ0eDMiLCAi54aU5bKp6IKJ5bGx5ZGo6LqrIiwgZnVuY3Rpb24oSUQsIGhlcm8pCiAgICAgICAgaWYgRGV2VG9vbHMuUHJldmlld0JvZHlFZmZlY3QgdGhlbgogICAgICAgICAgICBEZXZUb29sczpQcmV2aWV3Qm9keUVmZmVjdChJRCwgaGVybywKICAgICAgICAgICAgICAgICJwYXJ0aWNsZXMvZWNvbi9jb3VyaWVyL2NvdXJpZXJfcm9zaGFuX2xhdmEvY291cmllcl9yb3NoYW5fbGF2YS52cGNmIiwKICAgICAgICAgICAgICAgICLlt7LliIfmjaLvvJrnhpTlsqnogonlsbHlkajouqsiKQogICAgICAgIGVuZAogICAgZW5kLCB7IGdyb3VwID0gIuWRqOi6q+eJueaViCIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgidHhmIiwgIuaApembquaLluWwvuWRqOi6qyIsIGZ1bmN0aW9uKElELCBoZXJvKQogICAgICAgIGlmIERldlRvb2xzLlByZXZpZXdCb2R5RWZmZWN0IHRoZW4KICAgICAgICAgICAgRGV2VG9vbHM6UHJldmlld0JvZHlFZmZlY3QoSUQsIGhlcm8sCiAgICAgICAgICAgICAgICAicGFydGljbGVzL2NscmIvY291cmllcl90cmFpbF9mbHVycnkudnBjZiIsCiAgICAgICAgICAgICAgICAi5bey5YiH5o2i77ya5oCl6Zuq5ouW5bC+77yI6K+356e75Yqo6Iux6ZuE5p+l55yL5ouW5bC+77yJIikKICAgICAgICBlbmQKICAgIGVuZCwgeyBncm91cCA9ICLlkajouqvnibnmlYgiIH0pCgogICAgc2VsZjpSZWdpc3RlclRvb2woInR4aGIiLCAi5ayJ5oiP6J206J22IiwgZnVuY3Rpb24oSUQsIGhlcm8pCiAgICAgICAgaWYgRGV2VG9vbHMuR3JhbnRFZmZlY3RBbmRFcXVpcCB0aGVuCiAgICAgICAgICAgIERldlRvb2xzOkdyYW50RWZmZWN0QW5kRXF1aXAoSUQsIGhlcm8sICJlZmZlY3RfdHhoYiIpCiAgICAgICAgZWxzZWlmIERldlRvb2xzLlByZXZpZXdCb2R5RWZmZWN0IHRoZW4KICAgICAgICAgICAgRGV2VG9vbHM6UHJldmlld0JvZHlFZmZlY3QoSUQsIGhlcm8sCiAgICAgICAgICAgICAgICAicGFydGljbGVzL2NvdXJpZXJfc2hhZ2JhcmsvY291cmllcl9zaGFnYmFya19hbWJpZW50LnZwY2YiLAogICAgICAgICAgICAgICAgIuW3suWIh+aNou+8muWsieaIj+idtOidtiIpCiAgICAgICAgZW5kCiAgICBlbmQsIHsgZ3JvdXAgPSAi5ZGo6Lqr54m55pWIIiB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJ0eHFoIiwgIuemu+WtkOS5i+awlCIsIGZ1bmN0aW9uKElELCBoZXJvKQogICAgICAgIGlmIERldlRvb2xzLkdyYW50RWZmZWN0QW5kRXF1aXAgdGhlbgogICAgICAgICAgICBEZXZUb29sczpHcmFudEVmZmVjdEFuZEVxdWlwKElELCBoZXJvLCAiZWZmZWN0X2x6cXoiKQogICAgICAgIGVsc2VpZiBEZXZUb29scy5QcmV2aWV3Qm9keUVmZmVjdCB0aGVuCiAgICAgICAgICAgIERldlRvb2xzOlByZXZpZXdCb2R5RWZmZWN0KElELCBoZXJvLAogICAgICAgICAgICAgICAgInBhcnRpY2xlcy9jb3VyaWVyX3BsYXRpbnVtX3Jvc2hhbi9wbGF0aW51bV9yb3NoYW5fYW1iaWVudC52cGNmIiwKICAgICAgICAgICAgICAgICLlt7LliIfmjaLvvJrnprvlrZDkuYvmsJQiKQogICAgICAgIGVuZAogICAgZW5kLCB7IGdyb3VwID0gIuWRqOi6q+eJueaViCIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgidjQiLCAi5b6956ug6buY6K6k5ZGo6LqrIiwgZnVuY3Rpb24oSUQsIGhlcm8pCiAgICAgICAgaWYgRGV2VG9vbHMuUHJldmlld0JvZHlFZmZlY3QgdGhlbgogICAgICAgICAgICBEZXZUb29sczpQcmV2aWV3Qm9keUVmZmVjdChJRCwgaGVybywKICAgICAgICAgICAgICAgICJwYXJ0aWNsZXMvZWNvbi9ldmVudHMvZGlyZXRpZGVfMjAyMC9lbWJsZW0vZmFsbDIwX2VtYmxlbV9lZmZlY3QudnBjZiIsCiAgICAgICAgICAgICAgICAi5bey5YiH5o2i77ya5b6956ug6buY6K6kIikKICAgICAgICBlbmQKICAgIGVuZCwgeyBncm91cCA9ICLlkajouqvnibnmlYgiIH0pCgogICAgc2VsZjpSZWdpc3RlclRvb2woInYzIiwgIuW+veeroCB2MyDlkajouqsiLCBmdW5jdGlvbihJRCwgaGVybykKICAgICAgICBpZiBEZXZUb29scy5QcmV2aWV3Qm9keUVmZmVjdCB0aGVuCiAgICAgICAgICAgIERldlRvb2xzOlByZXZpZXdCb2R5RWZmZWN0KElELCBoZXJvLAogICAgICAgICAgICAgICAgInBhcnRpY2xlcy9lY29uL2V2ZW50cy9kaXJldGlkZV8yMDIwL2VtYmxlbS9mYWxsMjBfZW1ibGVtX3YzX2VmZmVjdC52cGNmIiwKICAgICAgICAgICAgICAgICLlt7LliIfmjaLvvJrlvr3nq6AgdjMiKQogICAgICAgIGVuZAogICAgZW5kLCB7IGdyb3VwID0gIuWRqOi6q+eJueaViCIgfSkKCiAgICBzZWxmOlJlZ2lzdGVyVG9vbCgidjIiLCAi5b6956ugIHYyIOWRqOi6qyIsIGZ1bmN0aW9uKElELCBoZXJvKQogICAgICAgIGlmIERldlRvb2xzLlByZXZpZXdCb2R5RWZmZWN0IHRoZW4KICAgICAgICAgICAgRGV2VG9vbHM6UHJldmlld0JvZHlFZmZlY3QoSUQsIGhlcm8sCiAgICAgICAgICAgICAgICAicGFydGljbGVzL2Vjb24vZXZlbnRzL2RpcmV0aWRlXzIwMjAvZW1ibGVtL2ZhbGwyMF9lbWJsZW1fdjJfZWZmZWN0LnZwY2YiLAogICAgICAgICAgICAgICAgIuW3suWIh+aNou+8muW+veeroCB2MiIpCiAgICAgICAgZW5kCiAgICBlbmQsIHsgZ3JvdXAgPSAi5ZGo6Lqr54m55pWIIiB9KQoKICAgIHNlbGY6UmVnaXN0ZXJUb29sKCJ2MSIsICLlvr3nq6AgdjEg5ZGo6LqrIiwgZnVuY3Rpb24oSUQsIGhlcm8pCiAgICAgICAgaWYgRGV2VG9vbHMuUHJldmlld0JvZHlFZmZlY3QgdGhlbgogICAgICAgICAgICBEZXZUb29sczpQcmV2aWV3Qm9keUVmZmVjdChJRCwgaGVybywKICAgICAgICAgICAgICAgICJwYXJ0aWNsZXMvZWNvbi9ldmVudHMvZGlyZXRpZGVfMjAyMC9lbWJsZW0vZmFsbDIwX2VtYmxlbV92MV9lZmZlY3QudnBjZiIsCiAgICAgICAgICAgICAgICAi5bey5YiH5o2i77ya5b6956ugIHYxIikKICAgICAgICBlbmQKICAgIGVuZCwgeyBncm91cCA9ICLlkajouqvnibnmlYgiIH0pCgogICAgc2VsZjpSZWdpc3RlclRvb2woImF0djEiLCAi5pS75Ye754m55pWIIHYxIiwgZnVuY3Rpb24oSUQsIGhlcm8pCiAgICAgICAgaWYgRGV2VG9vbHMuR3JhbnRBdHRhY2tFZmZlY3QgdGhlbgogICAgICAgICAgICBEZXZUb29sczpHcmFudEF0dGFja0VmZmVjdChJRCwgaGVybywgImF0djEiLCAi5bey5re75Yqg5pS75Ye754m55pWIIHYxIikKICAgICAgICBlbmQKICAgIGVuZCwgeyBncm91cCA9ICLmlLvlh7vnibnmlYgiIH0pCgogICAgc2VsZjpSZWdpc3RlclRvb2woImF0djIiLCAi5pS75Ye754m55pWIIHYyIiwgZnVuY3Rpb24oSUQsIGhlcm8pCiAgICAgICAgaWYgRGV2VG9vbHMuR3JhbnRBdHRhY2tFZmZlY3QgdGhlbgogICAgICAgICAgICBEZXZUb29sczpHcmFudEF0dGFja0VmZmVjdChJRCwgaGVybywgImF0djIiLCAi5bey5re75Yqg5pS75Ye754m55pWIIHYyIikKICAgICAgICBlbmQKICAgIGVuZCwgeyBncm91cCA9ICLmlLvlh7vnibnmlYgiIH0pCgogICAgc2VsZjpSZWdpc3RlclRvb2woImF0djMiLCAi5pS75Ye754m55pWIIHYzIiwgZnVuY3Rpb24oSUQsIGhlcm8pCiAgICAgICAgaWYgRGV2VG9vbHMuR3JhbnRBdHRhY2tFZmZlY3QgdGhlbgogICAgICAgICAgICBEZXZUb29sczpHcmFudEF0dGFja0VmZmVjdChJRCwgaGVybywgImF0djMiLCAi5bey5re75Yqg5pS75Ye754m55pWIIHYzIikKICAgICAgICBlbmQKICAgIGVuZCwgeyBncm91cCA9ICLmlLvlh7vnibnmlYgiIH0pCmVuZAo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 自定义工具：在此 RegisterTool，与内置指令相同方式扩展
+-- 称号 / 周身 / 攻击特效：点击即自动替换当前效果，不再提供「移除 xxx」按钮
+function DevTools:RegisterCustomTools()
+    self:RegisterTool("fallstar", "陨落星辰", function()
+        if MainGame and MainGame.DropFallenStars then
+            MainGame:DropFallenStars()
+        end
+    end, { group = "事件" })
+
+    local function add_title(cmd, label, item_key)
+        self:RegisterTool(cmd, label, function(ID, hero)
+            if DevTools.GrantTitleAndEquip then
+                DevTools:GrantTitleAndEquip(ID, hero, item_key)
+            end
+        end, { group = "称号" })
+    end
+
+    add_title("clxx", "丛林新秀称号", "title_clxx")
+    add_title("wrnd", "无人能挡称号", "title_wrnd")
+    add_title("whcl", "卧虎藏龙称号", "title_whcl")
+    add_title("clxz", "丛林行者称号", "title_clxz")
+    add_title("wszs", "无双战神称号", "title_wszs")
+    add_title("hsbh", "横扫八荒称号", "title_hsbh")
+    add_title("hdlm", "横刀立马称号", "title_hdlm")
+    add_title("ysqwh", "一醉轻王侯称号", "title_ysqwh")
+    add_title("rzlf", "人中龙凤称号", "title_rzlf")
+    add_title("clls", "丛林猎手称号", "title_clls")
+    add_title("cllr", "丛林猎人称号", "title_cllr")
+    add_title("clzw", "丛林之王称号", "title_clzw")
+    add_title("clmy", "丛林梦魇称号", "title_clmy")
+    add_title("clzy", "丛林之翼称号", "title_clzy")
+    add_title("xxqc", "血洗全场称号", "title_xxqc")
+    add_title("rzzl", "人中之龙称号", "title_rzzl")
+
+    -- 周身特效预览：切换时统一走 ApplyEffectFx，先清旧再挂新，不叠加
+    -- 铂金肉山：只挂 ambient 父特效，b/c/d/e/f + eyes 整包子粒子会自动带上
+    self:RegisterTool("txp", "铂金肉山周身", function(ID, hero)
+        if DevTools.PreviewBodyEffect then
+            DevTools:PreviewBodyEffect(ID, hero,
+                "particles/clrb/platinum_roshan_ambient.vpcf",
+                "已切换：铂金肉山周身（整包）")
+        end
+    end, { group = "周身特效" })
+
+    self:RegisterTool("tx1", "燃烧末日周身特效", function(ID, hero)
+        if DevTools.GrantEffectAndEquip then
+            DevTools:GrantEffectAndEquip(ID, hero, "effect_tx1")
+        elseif DevTools.PreviewBodyEffect then
+            DevTools:PreviewBodyEffect(ID, hero,
+                "particles/econ/courier/courier_trail_lava/courier_trail_lava.vpcf",
+                "已切换：燃烧末日")
+        end
+    end, { group = "周身特效" })
+
+    self:RegisterTool("tx3", "熔岩肉山周身", function(ID, hero)
+        if DevTools.PreviewBodyEffect then
+            DevTools:PreviewBodyEffect(ID, hero,
+                "particles/econ/courier/courier_roshan_lava/courier_roshan_lava.vpcf",
+                "已切换：熔岩肉山周身")
+        end
+    end, { group = "周身特效" })
+
+    self:RegisterTool("txf", "急雪拖尾周身", function(ID, hero)
+        if DevTools.PreviewBodyEffect then
+            DevTools:PreviewBodyEffect(ID, hero,
+                "particles/clrb/courier_trail_flurry.vpcf",
+                "已切换：急雪拖尾（请移动英雄查看拖尾）")
+        end
+    end, { group = "周身特效" })
+
+    self:RegisterTool("txhb", "嬉戏蝴蝶", function(ID, hero)
+        if DevTools.GrantEffectAndEquip then
+            DevTools:GrantEffectAndEquip(ID, hero, "effect_txhb")
+        elseif DevTools.PreviewBodyEffect then
+            DevTools:PreviewBodyEffect(ID, hero,
+                "particles/courier_shagbark/courier_shagbark_ambient.vpcf",
+                "已切换：嬉戏蝴蝶")
+        end
+    end, { group = "周身特效" })
+
+    self:RegisterTool("txqh", "离子之气", function(ID, hero)
+        if DevTools.GrantEffectAndEquip then
+            DevTools:GrantEffectAndEquip(ID, hero, "effect_lzqz")
+        elseif DevTools.PreviewBodyEffect then
+            DevTools:PreviewBodyEffect(ID, hero,
+                "particles/courier_platinum_roshan/platinum_roshan_ambient.vpcf",
+                "已切换：离子之气")
+        end
+    end, { group = "周身特效" })
+
+    self:RegisterTool("v4", "徽章默认周身", function(ID, hero)
+        if DevTools.PreviewBodyEffect then
+            DevTools:PreviewBodyEffect(ID, hero,
+                "particles/econ/events/diretide_2020/emblem/fall20_emblem_effect.vpcf",
+                "已切换：徽章默认")
+        end
+    end, { group = "周身特效" })
+
+    self:RegisterTool("v3", "徽章 v3 周身", function(ID, hero)
+        if DevTools.PreviewBodyEffect then
+            DevTools:PreviewBodyEffect(ID, hero,
+                "particles/econ/events/diretide_2020/emblem/fall20_emblem_v3_effect.vpcf",
+                "已切换：徽章 v3")
+        end
+    end, { group = "周身特效" })
+
+    self:RegisterTool("v2", "徽章 v2 周身", function(ID, hero)
+        if DevTools.PreviewBodyEffect then
+            DevTools:PreviewBodyEffect(ID, hero,
+                "particles/econ/events/diretide_2020/emblem/fall20_emblem_v2_effect.vpcf",
+                "已切换：徽章 v2")
+        end
+    end, { group = "周身特效" })
+
+    self:RegisterTool("v1", "徽章 v1 周身", function(ID, hero)
+        if DevTools.PreviewBodyEffect then
+            DevTools:PreviewBodyEffect(ID, hero,
+                "particles/econ/events/diretide_2020/emblem/fall20_emblem_v1_effect.vpcf",
+                "已切换：徽章 v1")
+        end
+    end, { group = "周身特效" })
+
+    self:RegisterTool("atv1", "攻击特效 v1", function(ID, hero)
+        if DevTools.GrantAttackEffect then
+            DevTools:GrantAttackEffect(ID, hero, "atv1", "已添加攻击特效 v1")
+        end
+    end, { group = "攻击特效" })
+
+    self:RegisterTool("atv2", "攻击特效 v2", function(ID, hero)
+        if DevTools.GrantAttackEffect then
+            DevTools:GrantAttackEffect(ID, hero, "atv2", "已添加攻击特效 v2")
+        end
+    end, { group = "攻击特效" })
+
+    self:RegisterTool("atv3", "攻击特效 v3", function(ID, hero)
+        if DevTools.GrantAttackEffect then
+            DevTools:GrantAttackEffect(ID, hero, "atv3", "已添加攻击特效 v3")
+        end
+    end, { group = "攻击特效" })
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end

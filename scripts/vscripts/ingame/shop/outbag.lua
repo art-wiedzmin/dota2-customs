@@ -8,22 +8,550 @@
 ]]
 
 
-local encoded=[[LS0g5bGA5aSW6IOM5YyF77ya5ZCM5q2l44CB5L2p5oi044CB5Y245LiL77yI5L2p5oi0L+WNuOS4i+acrOWcsOWNs+aXtueUn+aViO+8jDMg56eS6Ziy5oqW5ZCO5LiA5qyh5oCn5ZCM5q2l5pyN5Yqh56uv77yJCgpsb2NhbCBMT0FET1VUX1NZTkNfREVCT1VOQ0VfU0VDID0gMwpsb2NhbCBMT0FET1VUX1RJTUVSX1BSRUZJWCA9ICJjbHJiX291dGJhZ19sb2Fkb3V0XyIKCmZ1bmN0aW9uIFNob3A6Tm9ybWFsaXplTG9hZG91dFNsb3Qoc2xvdCkKICAgIGlmIG5vdCBzbG90IHRoZW4KICAgICAgICByZXR1cm4gbmlsCiAgICBlbmQKICAgIGxvY2FsIHMgPSBzdHJpbmcubG93ZXIodG9zdHJpbmcoc2xvdCkpCiAgICBpZiBzID09ICJ0aXRsZSIgb3IgcyA9PSAiZWZmZWN0IiBvciBzID09ICJhdHRhY2tfZWZmZWN0IiBvciBzID09ICJwZXQiIHRoZW4KICAgICAgICByZXR1cm4gcwogICAgZW5kCiAgICByZXR1cm4gbmlsCmVuZAoKZnVuY3Rpb24gU2hvcDpMb2Fkb3V0RmllbGRGb3JTbG90KHNsb3QpCiAgICBsb2NhbCBzbG90Tm9ybSA9IHNlbGY6Tm9ybWFsaXplTG9hZG91dFNsb3Qoc2xvdCkKICAgIGlmIG5vdCBzbG90Tm9ybSB0aGVuCiAgICAgICAgcmV0dXJuIG5pbAogICAgZW5kCiAgICByZXR1cm4gImVxdWlwcGVkXyIgLi4gc2xvdE5vcm0KZW5kCgpmdW5jdGlvbiBTaG9wOkVuc3VyZUJhZ0xvYWRvdXRNZXRhKElEKQogICAgaWYgbm90IElEIG9yIG5vdCBzZWxmLkRhdGFbSURdIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgSUQgPSB0b251bWJlcihJRCkgb3IgSUQKICAgIGlmIG5vdCBzZWxmLkRhdGFbSURdLmJhZyB0aGVuCiAgICAgICAgc2VsZi5EYXRhW0lEXS5iYWcgPSB7CiAgICAgICAgICAgIGl0ZW1zID0ge30sCiAgICAgICAgICAgIGxvYWRvdXQgPSB7CiAgICAgICAgICAgICAgICBlcXVpcHBlZF90aXRsZSA9IG5pbCwKICAgICAgICAgICAgICAgIGVxdWlwcGVkX2VmZmVjdCA9IG5pbCwKICAgICAgICAgICAgICAgIGVxdWlwcGVkX2F0dGFja19lZmZlY3QgPSBuaWwsCiAgICAgICAgICAgICAgICBlcXVpcHBlZF9wZXQgPSBuaWwsCiAgICAgICAgICAgIH0sCiAgICAgICAgfQogICAgZW5kCiAgICBsb2NhbCBiYWcgPSBzZWxmLkRhdGFbSURdLmJhZwogICAgaWYgbm90IGJhZy5sb2Fkb3V0IHRoZW4KICAgICAgICBiYWcubG9hZG91dCA9IHsKICAgICAgICAgICAgZXF1aXBwZWRfdGl0bGUgPSBuaWwsCiAgICAgICAgICAgIGVxdWlwcGVkX2VmZmVjdCA9IG5pbCwKICAgICAgICAgICAgZXF1aXBwZWRfYXR0YWNrX2VmZmVjdCA9IG5pbCwKICAgICAgICAgICAgZXF1aXBwZWRfcGV0ID0gbmlsLAogICAgICAgIH0KICAgIGVuZAogICAgaWYgbm90IHNlbGYuRGF0YVtJRF0uYmFnX2xvYWRvdXRfc2VydmVyIHRoZW4KICAgICAgICBzZWxmLkRhdGFbSURdLmJhZ19sb2Fkb3V0X3NlcnZlciA9IFV0aWw6RGVlcENvcHlUYWIoYmFnLmxvYWRvdXQpCiAgICBlbmQKICAgIGlmIHNlbGYuRGF0YVtJRF0uYmFnX2xvYWRvdXRfZGlydHkgPT0gbmlsIHRoZW4KICAgICAgICBzZWxmLkRhdGFbSURdLmJhZ19sb2Fkb3V0X2RpcnR5ID0gZmFsc2UKICAgIGVuZAplbmQKCmZ1bmN0aW9uIFNob3A6Q29uZmlybUJhZ0xvYWRvdXRGcm9tU2VydmVyKElEKQogICAgaWYgbm90IElEIG9yIG5vdCBzZWxmLkRhdGFbSURdIG9yIG5vdCBzZWxmLkRhdGFbSURdLmJhZyB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGY6RW5zdXJlQmFnTG9hZG91dE1ldGEoSUQpCiAgICBzZWxmLkRhdGFbSURdLmJhZ19sb2Fkb3V0X3NlcnZlciA9IFV0aWw6RGVlcENvcHlUYWIoc2VsZi5EYXRhW0lEXS5iYWcubG9hZG91dCkKICAgIHNlbGYuRGF0YVtJRF0uYmFnX2xvYWRvdXRfZGlydHkgPSBmYWxzZQplbmQKCmZ1bmN0aW9uIFNob3A6Tm9ybWFsaXplQmFnSXRlbXMoaXRlbXMpCiAgICBsb2NhbCBvdXQgPSB7fQogICAgaWYgdHlwZShpdGVtcykgfj0gInRhYmxlIiB0aGVuCiAgICAgICAgcmV0dXJuIG91dAogICAgZW5kCiAgICBpZiAjaXRlbXMgPiAwIHRoZW4KICAgICAgICBmb3IgaSwgcm93IGluIGlwYWlycyhpdGVtcykgZG8KICAgICAgICAgICAgb3V0W2ldID0gcm93CiAgICAgICAgZW5kCiAgICAgICAgcmV0dXJuIG91dAogICAgZW5kCiAgICBsb2NhbCBrZXlzID0ge30KICAgIGZvciBrLCByb3cgaW4gcGFpcnMoaXRlbXMpIGRvCiAgICAgICAgaWYgdHlwZShyb3cpID09ICJ0YWJsZSIgdGhlbgogICAgICAgICAgICBrZXlzWyNrZXlzICsgMV0gPSBrCiAgICAgICAgZW5kCiAgICBlbmQKICAgIHRhYmxlLnNvcnQoa2V5cywgZnVuY3Rpb24oYSwgYikKICAgICAgICByZXR1cm4gdG9udW1iZXIoYSkgPCB0b251bWJlcihiKQogICAgZW5kKQogICAgZm9yIF8sIGsgaW4gaXBhaXJzKGtleXMpIGRvCiAgICAgICAgb3V0WyNvdXQgKyAxXSA9IGl0ZW1zW2tdCiAgICBlbmQKICAgIHJldHVybiBvdXQKZW5kCgpmdW5jdGlvbiBTaG9wOk91dEJhZ093bnNJdGVtKElELCBpdGVtX2tleSkKICAgIHJldHVybiBzZWxmOkdldEJhZ0l0ZW1Db3VudChJRCwgaXRlbV9rZXkpID4gMAplbmQKCmZ1bmN0aW9uIFNob3A6R2V0QmFnSXRlbUNvdW50KElELCBpdGVtX2tleSkKICAgIGlmIG5vdCBJRCBvciBub3QgaXRlbV9rZXkgb3Igbm90IHNlbGYuRGF0YVtJRF0gb3Igbm90IHNlbGYuRGF0YVtJRF0uYmFnIHRoZW4KICAgICAgICByZXR1cm4gMAogICAgZW5kCiAgICBsb2NhbCBpdGVtcyA9IHNlbGY6Tm9ybWFsaXplQmFnSXRlbXMoc2VsZi5EYXRhW0lEXS5iYWcuaXRlbXMpCiAgICBmb3IgXywgcm93IGluIGlwYWlycyhpdGVtcykgZG8KICAgICAgICBpZiByb3cuaXRlbV9rZXkgPT0gaXRlbV9rZXkgdGhlbgogICAgICAgICAgICByZXR1cm4gdG9udW1iZXIocm93LmNvdW50KSBvciAwCiAgICAgICAgZW5kCiAgICBlbmQKICAgIHJldHVybiAwCmVuZAoKZnVuY3Rpb24gU2hvcDpFbnN1cmVQbGF5ZXJEYXRhKElEKQogICAgaWYgSUQgPT0gbmlsIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgSUQgPSB0b251bWJlcihJRCkgb3IgSUQKICAgIGlmIG5vdCBzZWxmLkRhdGEgdGhlbgogICAgICAgIHNlbGYuRGF0YSA9IHt9CiAgICBlbmQKICAgIGlmIG5vdCBzZWxmLkRhdGFbSURdIGFuZCBzZWxmLkluaXQgdGhlbgogICAgICAgIHNlbGY6SW5pdChJRCkKICAgIGVuZAogICAgcmV0dXJuIHNlbGYuRGF0YVtJRF0gfj0gbmlsCmVuZAoKZnVuY3Rpb24gU2hvcDpBZGRCYWdJdGVtTG9jYWwoSUQsIGl0ZW1fa2V5LCBhbW91bnQpCiAgICBpZiBub3QgSUQgb3Igbm90IGl0ZW1fa2V5IG9yIGl0ZW1fa2V5ID09ICIiIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgSUQgPSB0b251bWJlcihJRCkgb3IgSUQKICAgIGlmIG5vdCBzZWxmOkVuc3VyZVBsYXllckRhdGEoSUQpIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgYWRkID0gbWF0aC5tYXgoMCwgbWF0aC5mbG9vcih0b251bWJlcihhbW91bnQpIG9yIDApKQogICAgaWYgYWRkIDwgMSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIG5vdCBzZWxmLkRhdGFbSURdLmJhZyB0aGVuCiAgICAgICAgc2VsZi5EYXRhW0lEXS5iYWcgPSB7CiAgICAgICAgICAgIGl0ZW1zID0ge30sCiAgICAgICAgICAgIGxvYWRvdXQgPSB7CiAgICAgICAgICAgICAgICBlcXVpcHBlZF90aXRsZSA9IG5pbCwKICAgICAgICAgICAgICAgIGVxdWlwcGVkX2VmZmVjdCA9IG5pbCwKICAgICAgICAgICAgICAgIGVxdWlwcGVkX2F0dGFja19lZmZlY3QgPSBuaWwsCiAgICAgICAgICAgICAgICBlcXVpcHBlZF9wZXQgPSBuaWwsCiAgICAgICAgICAgIH0sCiAgICAgICAgfQogICAgZW5kCiAgICBzZWxmOkVuc3VyZUJhZ0xvYWRvdXRNZXRhKElEKQogICAgbG9jYWwgbWV0YSA9IHNlbGYuSXRlbUxpc3QgYW5kIHNlbGYuSXRlbUxpc3RbaXRlbV9rZXldCiAgICBpZiBub3QgbWV0YSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGxvY2FsIGl0ZW1zID0gc2VsZjpOb3JtYWxpemVCYWdJdGVtcyhzZWxmLkRhdGFbSURdLmJhZy5pdGVtcykKICAgIGlmIG1ldGEuc3RhY2sgPT0gZmFsc2UgdGhlbgogICAgICAgIGZvciBfLCByb3cgaW4gaXBhaXJzKGl0ZW1zKSBkbwogICAgICAgICAgICBpZiByb3cuaXRlbV9rZXkgPT0gaXRlbV9rZXkgYW5kICh0b251bWJlcihyb3cuY291bnQpIG9yIDApID4gMCB0aGVuCiAgICAgICAgICAgICAgICBzZWxmLkRhdGFbSURdLmJhZy5pdGVtcyA9IGl0ZW1zCiAgICAgICAgICAgICAgICBzZWxmOlNlbmRPdXRCYWdEYXRhKElEKQogICAgICAgICAgICAgICAgcmV0dXJuIHRydWUKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGxvY2FsIG1heFN0YWNrID0gbWV0YS5tYXhTdGFjayBvciA5OTk5CiAgICBsb2NhbCBmb3VuZCA9IGZhbHNlCiAgICBmb3IgXywgcm93IGluIGlwYWlycyhpdGVtcykgZG8KICAgICAgICBpZiByb3cuaXRlbV9rZXkgPT0gaXRlbV9rZXkgdGhlbgogICAgICAgICAgICByb3cuY291bnQgPSBtYXRoLm1pbihtYXhTdGFjaywgKHRvbnVtYmVyKHJvdy5jb3VudCkgb3IgMCkgKyBhZGQpCiAgICAgICAgICAgIGZvdW5kID0gdHJ1ZQogICAgICAgICAgICBicmVhawogICAgICAgIGVuZAogICAgZW5kCiAgICBpZiBub3QgZm91bmQgdGhlbgogICAgICAgIGl0ZW1zWyNpdGVtcyArIDFdID0gewogICAgICAgICAgICBpdGVtX2tleSA9IGl0ZW1fa2V5LAogICAgICAgICAgICBjb3VudCA9IG1hdGgubWluKG1heFN0YWNrLCBhZGQpLAogICAgICAgICAgICBpZCA9IG1ldGEuaWQsCiAgICAgICAgICAgIHR5cGUgPSBtZXRhLnR5cGUsCiAgICAgICAgICAgIG5hbWUgPSBtZXRhLm5hbWUsCiAgICAgICAgICAgIHN0YWNrID0gbWV0YS5zdGFjaywKICAgICAgICB9CiAgICBlbmQKICAgIHNlbGYuRGF0YVtJRF0uYmFnLml0ZW1zID0gaXRlbXMKICAgIHNlbGY6U2VuZE91dEJhZ0RhdGEoSUQpCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIFNob3A6R3JhbnRCYWdJdGVtU2VydmVyKElELCBpdGVtX2tleSwgYW1vdW50LCBjYWxsYmFjaykKICAgIGlmIG5vdCBJRCBvciBub3QgaXRlbV9rZXkgb3IgaXRlbV9rZXkgPT0gIiIgdGhlbgogICAgICAgIGlmIGNhbGxiYWNrIHRoZW4KICAgICAgICAgICAgY2FsbGJhY2soZmFsc2UsICJpbnZhbGlkIikKICAgICAgICBlbmQKICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgbm90IHNlbGYuRGF0YVtJRF0gdGhlbgogICAgICAgIHNlbGY6SW5pdChJRCkKICAgIGVuZAogICAgbG9jYWwgdG9rZW4gPSBIdHRwOkdldFBsYXllckFjY2Vzc1Rva2VuKElEKQogICAgaWYgbm90IHRva2VuIG9yIHRva2VuID09ICIiIHRoZW4KICAgICAgICBpZiBjYWxsYmFjayB0aGVuCiAgICAgICAgICAgIGNhbGxiYWNrKGZhbHNlLCAibm9fdG9rZW4iKQogICAgICAgIGVuZAogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBib2R5ID0gewogICAgICAgIGl0ZW1fa2V5ID0gaXRlbV9rZXksCiAgICAgICAgYW1vdW50ID0gYW1vdW50LAogICAgfQogICAgaWYgSXNJblRvb2xzTW9kZSgpIHRoZW4KICAgICAgICBib2R5LnRvb2xzX21vZGUgPSAxCiAgICBlbmQKICAgIEh0dHA6UE9TVCgiL2JhZy9ncmFudCIsIGJvZHksIElELCBmdW5jdGlvbihrZXlzKQogICAgICAgIGlmIGtleXMgYW5kIGtleXMuY29kZSA9PSAyMDAgYW5kIGtleXMuZGF0YSBhbmQga2V5cy5kYXRhLmJhZyB0aGVuCiAgICAgICAgICAgIHNlbGY6QXBwbHlCYWdBbmROb3RpZnkoSUQsIGtleXMuZGF0YS5iYWcpCiAgICAgICAgICAgIGlmIGNhbGxiYWNrIHRoZW4KICAgICAgICAgICAgICAgIGNhbGxiYWNrKHRydWUsIGtleXMpCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgICAgICBpZiBjYWxsYmFjayB0aGVuCiAgICAgICAgICAgIGNhbGxiYWNrKGZhbHNlLCBrZXlzKQogICAgICAgIGVuZAogICAgZW5kKQplbmQKCmZ1bmN0aW9uIFNob3A6T3V0QmFnVmFsaWRhdGVFcXVpcChJRCwgc2xvdCwgaXRlbV9rZXkpCiAgICBsb2NhbCBzbG90Tm9ybSA9IHNlbGY6Tm9ybWFsaXplTG9hZG91dFNsb3Qoc2xvdCkKICAgIGlmIG5vdCBzbG90Tm9ybSBvciBub3QgaXRlbV9rZXkgb3IgaXRlbV9rZXkgPT0gIiIgdGhlbgogICAgICAgIHJldHVybiBmYWxzZSwgIuaXoOaViOeahOS9qeaItOWPguaVsCIKICAgIGVuZAogICAgbG9jYWwgbWV0YSA9IHNlbGYuSXRlbUxpc3QgYW5kIHNlbGYuSXRlbUxpc3RbaXRlbV9rZXldCiAgICBpZiBub3QgbWV0YSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlLCAi5pyq55+l6YGT5YW3IgogICAgZW5kCiAgICBpZiBtZXRhLnR5cGUgPT0gMSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlLCAi5raI6ICX5ZOB5LiN5Y+v5L2p5oi0IgogICAgZW5kCiAgICBpZiBtZXRhLnNsb3Qgfj0gc2xvdE5vcm0gdGhlbgogICAgICAgIHJldHVybiBmYWxzZSwgIumBk+WFt+exu+Wei+S4juanveS9jeS4jeWMuemFjSIKICAgIGVuZAogICAgaWYgbm90IHNlbGY6T3V0QmFnT3duc0l0ZW0oSUQsIGl0ZW1fa2V5KSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlLCAi5pyq5oul5pyJ6K+l6YGT5YW3IgogICAgZW5kCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIFNob3A6U2V0QmFnU2VydmVyRGF0YShJRCwgYmFnKQogICAgaWYgbm90IElEIG9yIG5vdCBzZWxmLkRhdGFbSURdIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgbm90IGJhZyBvciB0eXBlKGJhZykgfj0gInRhYmxlIiB0aGVuCiAgICAgICAgc2VsZi5EYXRhW0lEXS5iYWcgPSB7CiAgICAgICAgICAgIGl0ZW1zID0ge30sCiAgICAgICAgICAgIGxvYWRvdXQgPSB7CiAgICAgICAgICAgICAgICBlcXVpcHBlZF90aXRsZSA9IG5pbCwKICAgICAgICAgICAgICAgIGVxdWlwcGVkX2VmZmVjdCA9IG5pbCwKICAgICAgICAgICAgICAgIGVxdWlwcGVkX2F0dGFja19lZmZlY3QgPSBuaWwsCiAgICAgICAgICAgICAgICBlcXVpcHBlZF9wZXQgPSBuaWwsCiAgICAgICAgICAgIH0sCiAgICAgICAgfQogICAgICAgIHNlbGY6Q29uZmlybUJhZ0xvYWRvdXRGcm9tU2VydmVyKElEKQogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmLkRhdGFbSURdLmJhZyA9IHsKICAgICAgICBpdGVtcyA9IHNlbGY6Tm9ybWFsaXplQmFnSXRlbXMoYmFnLml0ZW1zKSwKICAgICAgICBsb2Fkb3V0ID0gYmFnLmxvYWRvdXQgb3IgewogICAgICAgICAgICBlcXVpcHBlZF90aXRsZSA9IG5pbCwKICAgICAgICAgICAgZXF1aXBwZWRfZWZmZWN0ID0gbmlsLAogICAgICAgICAgICBlcXVpcHBlZF9hdHRhY2tfZWZmZWN0ID0gbmlsLAogICAgICAgICAgICBlcXVpcHBlZF9wZXQgPSBuaWwsCiAgICAgICAgfSwKICAgIH0KICAgIHNlbGY6Q29uZmlybUJhZ0xvYWRvdXRGcm9tU2VydmVyKElEKQogICAgaWYgUGV0IGFuZCBQZXQuU3luY0Zyb21PdXRCYWcgdGhlbgogICAgICAgIFBldDpTeW5jRnJvbU91dEJhZyhJRCkKICAgIGVuZAogICAgaWYgVGl0bGUgYW5kIFRpdGxlLlN5bmNGcm9tT3V0QmFnIHRoZW4KICAgICAgICBUaXRsZTpTeW5jRnJvbU91dEJhZyhJRCkKICAgIGVuZAogICAgaWYgRWZmZWN0IGFuZCBFZmZlY3QuU3luY0Zyb21PdXRCYWcgdGhlbgogICAgICAgIEVmZmVjdDpTeW5jRnJvbU91dEJhZyhJRCkKICAgIGVuZAogICAgaWYgQXR0YWNrRWZmZWN0IGFuZCBBdHRhY2tFZmZlY3QuU3luY0Zyb21PdXRCYWcgdGhlbgogICAgICAgIEF0dGFja0VmZmVjdDpTeW5jRnJvbU91dEJhZyhJRCkKICAgIGVuZAogICAgaWYgUHJvcGhlY3kgYW5kIFByb3BoZWN5Lk9uQmFnUmVhZHkgdGhlbgogICAgICAgIFByb3BoZWN5Ok9uQmFnUmVhZHkoSUQpCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBTaG9wOlNlbmRPdXRCYWdEYXRhKElEKQogICAgaWYgbm90IElEIG9yIG5vdCBzZWxmLkRhdGFbSURdIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZjpFbnN1cmVCYWdMb2Fkb3V0TWV0YShJRCkKICAgIGxvY2FsIGJhZyA9IHNlbGYuRGF0YVtJRF0uYmFnIG9yIHt9CiAgICBsb2NhbCBpdGVtcyA9IHNlbGY6Tm9ybWFsaXplQmFnSXRlbXMoYmFnLml0ZW1zKQogICAgbG9jYWwgbG9hZG91dCA9IGJhZy5sb2Fkb3V0IG9yIHsKICAgICAgICBlcXVpcHBlZF90aXRsZSA9IG5pbCwKICAgICAgICBlcXVpcHBlZF9lZmZlY3QgPSBuaWwsCiAgICAgICAgZXF1aXBwZWRfYXR0YWNrX2VmZmVjdCA9IG5pbCwKICAgICAgICBlcXVpcHBlZF9wZXQgPSBuaWwsCiAgICB9CiAgICBsb2NhbCBwYXlsb2FkID0gewogICAgICAgIHBhZ2UgPSBzZWxmLkRhdGFbSURdLnBhZ2UsCiAgICAgICAgYmFnX2pzb24gPSAiIiwKICAgICAgICBvdXRfYmFnX24gPSAjaXRlbXMsCiAgICB9CiAgICBsb2NhbCBvaywgZW5jID0gcGNhbGwoZnVuY3Rpb24oKQogICAgICAgIHJldHVybiBKU09OLmVuY29kZSh7CiAgICAgICAgICAgIGl0ZW1zID0gaXRlbXMsCiAgICAgICAgICAgIGxvYWRvdXQgPSBsb2Fkb3V0LAogICAgICAgIH0pCiAgICBlbmQpCiAgICBpZiBvayBhbmQgZW5jIHRoZW4KICAgICAgICBwYXlsb2FkLmJhZ19qc29uID0gZW5jCiAgICBlbmQKICAgIGZvciBpLCByb3cgaW4gaXBhaXJzKGl0ZW1zKSBkbwogICAgICAgIGlmIHR5cGUocm93KSA9PSAidGFibGUiIHRoZW4KICAgICAgICAgICAgcGF5bG9hZFsib2JpXyIgLi4gaSAuLiAiX2tleSJdID0gcm93Lml0ZW1fa2V5IG9yICIiCiAgICAgICAgICAgIHBheWxvYWRbIm9iaV8iIC4uIGkgLi4gIl9jb3VudCJdID0gcm93LmNvdW50IG9yIDAKICAgICAgICAgICAgcGF5bG9hZFsib2JpXyIgLi4gaSAuLiAiX25hbWUiXSA9IHJvdy5uYW1lIG9yICIiCiAgICAgICAgICAgIHBheWxvYWRbIm9iaV8iIC4uIGkgLi4gIl90eXBlIl0gPSByb3cudHlwZSBvciAwCiAgICAgICAgZW5kCiAgICBlbmQKICAgIHBheWxvYWQubG9hZG91dF90aXRsZSA9IGxvYWRvdXQuZXF1aXBwZWRfdGl0bGUgb3IgIiIKICAgIHBheWxvYWQubG9hZG91dF9lZmZlY3QgPSBsb2Fkb3V0LmVxdWlwcGVkX2VmZmVjdCBvciAiIgogICAgcGF5bG9hZC5sb2Fkb3V0X2F0dGFja19lZmZlY3QgPSBsb2Fkb3V0LmVxdWlwcGVkX2F0dGFja19lZmZlY3Qgb3IgIiIKICAgIHBheWxvYWQubG9hZG91dF9wZXQgPSBsb2Fkb3V0LmVxdWlwcGVkX3BldCBvciAiIgogICAgVXRpbDpTZW5kMkpzSUQoIlVJX091dEJhZyIsIHBheWxvYWQsIElEKQplbmQKCmZ1bmN0aW9uIFNob3A6QXBwbHlCYWdBbmROb3RpZnkoSUQsIGJhZykKICAgIHNlbGY6U2V0QmFnU2VydmVyRGF0YShJRCwgYmFnKQogICAgc2VsZjpTZW5kT3V0QmFnRGF0YShJRCkKICAgIHNlbGY6U2VuZERhdGEoSUQpCmVuZAoKZnVuY3Rpb24gU2hvcDpBcHBseUxvZ2luQmFnKElELCBkYXRhKQogICAgaWYgbm90IElEIG9yIG5vdCBkYXRhIG9yIG5vdCBkYXRhLmJhZyB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIHNlbGY6U2V0QmFnU2VydmVyRGF0YShJRCwgZGF0YS5iYWcpCiAgICBzZWxmOlNlbmRPdXRCYWdEYXRhKElEKQogICAgcmV0dXJuIHRydWUKZW5kCgpmdW5jdGlvbiBTaG9wOlNjaGVkdWxlRGVib3VuY2VkTG9hZG91dFN5bmMoSUQpCiAgICBpZiBub3QgSUQgb3Igbm90IHNlbGYuRGF0YVtJRF0gdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBuYW1lID0gTE9BRE9VVF9USU1FUl9QUkVGSVggLi4gdG9zdHJpbmcoSUQpCiAgICBUaW1lcnM6Q3JlYXRlVGltZXIobmFtZSwgewogICAgICAgIGVuZFRpbWUgPSBMT0FET1VUX1NZTkNfREVCT1VOQ0VfU0VDLAogICAgICAgIGNhbGxiYWNrID0gZnVuY3Rpb24oKQogICAgICAgICAgICBpZiBub3QgU2hvcC5EYXRhW0lEXSB0aGVuCiAgICAgICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIFNob3A6Rmx1c2hPdXRCYWdMb2Fkb3V0VG9TZXJ2ZXIoSUQpCiAgICAgICAgZW5kLAogICAgfSkKZW5kCgpmdW5jdGlvbiBTaG9wOlJldmVydE91dEJhZ0xvYWRvdXQoSUQpCiAgICBpZiBub3QgSUQgb3Igbm90IHNlbGYuRGF0YVtJRF0gdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmOkVuc3VyZUJhZ0xvYWRvdXRNZXRhKElEKQogICAgbG9jYWwgc2VydmVyID0gc2VsZi5EYXRhW0lEXS5iYWdfbG9hZG91dF9zZXJ2ZXIKICAgIGlmIHNlcnZlciBhbmQgc2VsZi5EYXRhW0lEXS5iYWcgdGhlbgogICAgICAgIHNlbGYuRGF0YVtJRF0uYmFnLmxvYWRvdXQgPSBVdGlsOkRlZXBDb3B5VGFiKHNlcnZlcikKICAgIGVuZAogICAgc2VsZi5EYXRhW0lEXS5iYWdfbG9hZG91dF9kaXJ0eSA9IGZhbHNlCiAgICBzZWxmOlNlbmRPdXRCYWdEYXRhKElEKQogICAgaWYgUGV0IGFuZCBQZXQuU3luY0Zyb21PdXRCYWcgdGhlbgogICAgICAgIFBldDpTeW5jRnJvbU91dEJhZyhJRCkKICAgIGVuZAogICAgaWYgVGl0bGUgYW5kIFRpdGxlLlN5bmNGcm9tT3V0QmFnIHRoZW4KICAgICAgICBUaXRsZTpTeW5jRnJvbU91dEJhZyhJRCkKICAgIGVuZAogICAgaWYgRWZmZWN0IGFuZCBFZmZlY3QuU3luY0Zyb21PdXRCYWcgdGhlbgogICAgICAgIEVmZmVjdDpTeW5jRnJvbU91dEJhZyhJRCkKICAgIGVuZAogICAgaWYgQXR0YWNrRWZmZWN0IGFuZCBBdHRhY2tFZmZlY3QuU3luY0Zyb21PdXRCYWcgdGhlbgogICAgICAgIEF0dGFja0VmZmVjdDpTeW5jRnJvbU91dEJhZyhJRCkKICAgIGVuZAplbmQKCmZ1bmN0aW9uIFNob3A6Rmx1c2hPdXRCYWdMb2Fkb3V0VG9TZXJ2ZXIoSUQpCiAgICBpZiBub3QgSUQgb3Igbm90IHNlbGYuRGF0YVtJRF0gdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmOkVuc3VyZUJhZ0xvYWRvdXRNZXRhKElEKQogICAgaWYgbm90IHNlbGYuRGF0YVtJRF0uYmFnX2xvYWRvdXRfZGlydHkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBsb2Fkb3V0ID0gc2VsZi5EYXRhW0lEXS5iYWcubG9hZG91dAogICAgaWYgbm90IGxvYWRvdXQgdGhlbgogICAgICAgIHNlbGYuRGF0YVtJRF0uYmFnX2xvYWRvdXRfZGlydHkgPSBmYWxzZQogICAgICAgIHJldHVybgogICAgZW5kCiAgICBIdHRwOlBPU1QoIi9iYWcvbG9hZG91dCIsIHsgbG9hZG91dCA9IGxvYWRvdXQgfSwgSUQsIGZ1bmN0aW9uKGtleXMpCiAgICAgICAgaWYgbm90IFNob3AuRGF0YVtJRF0gdGhlbgogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgICAgICBpZiBrZXlzLmNvZGUgPT0gMjAwIGFuZCBrZXlzLmRhdGEgYW5kIGtleXMuZGF0YS5iYWcgdGhlbgogICAgICAgICAgICBTaG9wOlNldEJhZ1NlcnZlckRhdGEoSUQsIGtleXMuZGF0YS5iYWcpCiAgICAgICAgICAgIFNob3A6U2VuZE91dEJhZ0RhdGEoSUQpCiAgICAgICAgZWxzZQogICAgICAgICAgICBTaG9wOlJldmVydE91dEJhZ0xvYWRvdXQoSUQpCiAgICAgICAgICAgIGxvY2FsIG1zZyA9ICLkvanmiLTlkIzmraXlpLHotKUiCiAgICAgICAgICAgIGlmIGtleXMgYW5kIGtleXMubWVzc2FnZSBhbmQga2V5cy5tZXNzYWdlIH49ICIiIHRoZW4KICAgICAgICAgICAgICAgIG1zZyA9IGtleXMubWVzc2FnZQogICAgICAgICAgICBlbmQKICAgICAgICAgICAgTXNnczpQb3AoSUQsIG1zZykKICAgICAgICBlbmQKICAgIGVuZCkKZW5kCgpmdW5jdGlvbiBTaG9wOk91dEJhZ0FwcGx5TG9hZG91dExvY2FsKElELCBzbG90LCBpdGVtX2tleSkKICAgIGlmIG5vdCBJRCBvciBub3Qgc2VsZi5EYXRhW0lEXSBvciBub3Qgc2VsZi5EYXRhW0lEXS5iYWcgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBmaWVsZCA9IHNlbGY6TG9hZG91dEZpZWxkRm9yU2xvdChzbG90KQogICAgaWYgbm90IGZpZWxkIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZjpFbnN1cmVCYWdMb2Fkb3V0TWV0YShJRCkKCiAgICBpZiBub3QgaXRlbV9rZXkgb3IgaXRlbV9rZXkgPT0gIiIgdGhlbgogICAgICAgIHNlbGYuRGF0YVtJRF0uYmFnLmxvYWRvdXRbZmllbGRdID0gbmlsCiAgICAgICAgc2VsZi5EYXRhW0lEXS5iYWdfbG9hZG91dF9kaXJ0eSA9IHRydWUKICAgICAgICBzZWxmOlNlbmRPdXRCYWdEYXRhKElEKQogICAgICAgIHNlbGY6U2NoZWR1bGVEZWJvdW5jZWRMb2Fkb3V0U3luYyhJRCkKICAgICAgICBpZiBzbG90ID09ICJwZXQiIGFuZCBQZXQgYW5kIFBldC5TeW5jRnJvbU91dEJhZyB0aGVuCiAgICAgICAgICAgIFBldDpTeW5jRnJvbU91dEJhZyhJRCkKICAgICAgICBlbmQKICAgICAgICBpZiBzbG90ID09ICJ0aXRsZSIgYW5kIFRpdGxlIGFuZCBUaXRsZS5TeW5jRnJvbU91dEJhZyB0aGVuCiAgICAgICAgICAgIFRpdGxlOlN5bmNGcm9tT3V0QmFnKElEKQogICAgICAgIGVuZAogICAgICAgIGlmIHNsb3QgPT0gImVmZmVjdCIgYW5kIEVmZmVjdCBhbmQgRWZmZWN0LlN5bmNGcm9tT3V0QmFnIHRoZW4KICAgICAgICAgICAgRWZmZWN0OlN5bmNGcm9tT3V0QmFnKElEKQogICAgICAgIGVuZAogICAgICAgIGlmIHNsb3QgPT0gImF0dGFja19lZmZlY3QiIGFuZCBBdHRhY2tFZmZlY3QgYW5kIEF0dGFja0VmZmVjdC5TeW5jRnJvbU91dEJhZyB0aGVuCiAgICAgICAgICAgIEF0dGFja0VmZmVjdDpTeW5jRnJvbU91dEJhZyhJRCkKICAgICAgICBlbmQKICAgICAgICByZXR1cm4KICAgIGVuZAoKICAgIGxvY2FsIG9rLCBlcnJNc2cgPSBzZWxmOk91dEJhZ1ZhbGlkYXRlRXF1aXAoSUQsIHNsb3QsIGl0ZW1fa2V5KQogICAgaWYgbm90IG9rIHRoZW4KICAgICAgICBNc2dzOlBvcChJRCwgZXJyTXNnIG9yICLml6Dms5XkvanmiLQiKQogICAgICAgIHJldHVybgogICAgZW5kCiAgICAtLSDnp7Dlj7cv54m55pWIL+WuoOeJqeWQjOanveS9jeS7heiDveS9qeaItOS4gOS4qu+8jOebtOaOpeimhuebluaXp+S9qeaItAogICAgc2VsZi5EYXRhW0lEXS5iYWcubG9hZG91dFtmaWVsZF0gPSBpdGVtX2tleQogICAgc2VsZi5EYXRhW0lEXS5iYWdfbG9hZG91dF9kaXJ0eSA9IHRydWUKICAgIHNlbGY6U2VuZE91dEJhZ0RhdGEoSUQpCiAgICBzZWxmOlNjaGVkdWxlRGVib3VuY2VkTG9hZG91dFN5bmMoSUQpCiAgICBpZiBzbG90ID09ICJwZXQiIGFuZCBQZXQgYW5kIFBldC5TeW5jRnJvbU91dEJhZyB0aGVuCiAgICAgICAgUGV0OlN5bmNGcm9tT3V0QmFnKElEKQogICAgZW5kCiAgICBpZiBzbG90ID09ICJ0aXRsZSIgYW5kIFRpdGxlIGFuZCBUaXRsZS5TeW5jRnJvbU91dEJhZyB0aGVuCiAgICAgICAgVGl0bGU6U3luY0Zyb21PdXRCYWcoSUQpCiAgICBlbmQKICAgIGlmIHNsb3QgPT0gImVmZmVjdCIgYW5kIEVmZmVjdCBhbmQgRWZmZWN0LlN5bmNGcm9tT3V0QmFnIHRoZW4KICAgICAgICBFZmZlY3Q6U3luY0Zyb21PdXRCYWcoSUQpCiAgICBlbmQKICAgIGlmIHNsb3QgPT0gImF0dGFja19lZmZlY3QiIGFuZCBBdHRhY2tFZmZlY3QgYW5kIEF0dGFja0VmZmVjdC5TeW5jRnJvbU91dEJhZyB0aGVuCiAgICAgICAgQXR0YWNrRWZmZWN0OlN5bmNGcm9tT3V0QmFnKElEKQogICAgZW5kCmVuZAoKZnVuY3Rpb24gU2hvcDpSZXF1ZXN0T3V0QmFnU3luYyhJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIEh0dHA6UE9TVCgiL2JhZy9zeW5jIiwge30sIElELCBmdW5jdGlvbihrZXlzKQogICAgICAgIGlmIGtleXMuY29kZSA9PSAyMDAgYW5kIGtleXMuZGF0YSBhbmQga2V5cy5kYXRhLmJhZyB0aGVuCiAgICAgICAgICAgIHNlbGY6QXBwbHlCYWdBbmROb3RpZnkoSUQsIGtleXMuZGF0YS5iYWcpCiAgICAgICAgZWxzZQogICAgICAgICAgICBsb2NhbCBjb2RlID0ga2V5cyBhbmQga2V5cy5jb2RlIG9yIDAKICAgICAgICAgICAgbG9jYWwgbXNnID0ga2V5cyBhbmQga2V5cy5tZXNzYWdlIG9yICJ1bmtub3duIgogICAgICAgICAgICAtLSBwcmludCgiW091dEJhZ10gc3luYyBmYWlsZWQgY29kZT0iIC4uIHRvc3RyaW5nKGNvZGUpIC4uICIgbXNnPSIgLi4gdG9zdHJpbmcobXNnKSkKICAgICAgICAgICAgaWYgY29kZSA9PSA0MDEgb3IgY29kZSA9PSA0MDMgb3IgY29kZSA9PSA0MDQgb3IgY29kZSA9PSAwIHRoZW4KICAgICAgICAgICAgICAgIHNlbGY6U3luY091dEJhZ1ZpYUxvZ2luKElEKQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZCkKZW5kCgpmdW5jdGlvbiBTaG9wOlN5bmNPdXRCYWdWaWFMb2dpbihJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIEh0dHA6UE9TVCgiL3VzZXIvbG9naW4iLCB7fSwgSUQsIGZ1bmN0aW9uKGtleXMpCiAgICAgICAgaWYga2V5cy5jb2RlIH49IDIwMCBvciBub3Qga2V5cy5kYXRhIHRoZW4KICAgICAgICAgICAgLS0gcHJpbnQoIltPdXRCYWddIGxvZ2luIGZhaWxlZCBiZWZvcmUgYmFnIHJlZnJlc2giKQogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgICAgICBsb2NhbCBkYXRhID0ga2V5cy5kYXRhCiAgICAgICAgaWYgZGF0YS5hY2Nlc3NUb2tlbiB0aGVuCiAgICAgICAgICAgIEh0dHA6U2V0UGxheWVyQWNjZXNzVG9rZW4oSUQsIGRhdGEuYWNjZXNzVG9rZW4pCiAgICAgICAgZW5kCiAgICAgICAgaWYgZGF0YS51c2VyIHRoZW4KICAgICAgICAgICAgbG9jYWwgZm8gPSBkYXRhLmZpcnN0X3JlY2hhcmdlX2RvdWJsZV9vcGVuCiAgICAgICAgICAgIGlmIGZvID09IG5pbCB0aGVuCiAgICAgICAgICAgICAgICBmbyA9IHRydWUKICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIFNob3A6U2V0U2hvcFNlcnZlckRhdGEoSUQsIGRhdGEudXNlciwgZm8pCiAgICAgICAgZW5kCiAgICAgICAgaWYgZGF0YS5jYXJkIHRoZW4KICAgICAgICAgICAgU2hvcDpTZXRDYXJkU2VydmVyRGF0YShJRCwgZGF0YS5jYXJkKQogICAgICAgIGVuZAogICAgICAgIGlmIHNlbGY6QXBwbHlMb2dpbkJhZyhJRCwgZGF0YSkgdGhlbgogICAgICAgICAgICBzZWxmOlNlbmREYXRhKElEKQogICAgICAgIGVsc2UKICAgICAgICAgICAgLS0gcHJpbnQoIltPdXRCYWddIGxvZ2luIG9rIGJ1dCBubyBiYWcgZmllbGQg4oCUIGRlcGxveSBzZXJ2ZXIgdXNlci5qcyB3aXRoIGJhZyBzbmFwc2hvdCIpCiAgICAgICAgZW5kCiAgICBlbmQpCmVuZAoKZnVuY3Rpb24gU2hvcDpTeW5jT3V0QmFnKElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgdG9rZW4gPSBIdHRwOkdldFBsYXllckFjY2Vzc1Rva2VuKElEKQogICAgaWYgdG9rZW4gYW5kIHRva2VuIH49ICIiIHRoZW4KICAgICAgICBzZWxmOlJlcXVlc3RPdXRCYWdTeW5jKElEKQogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmOlN5bmNPdXRCYWdWaWFMb2dpbihJRCkKZW5kCgpmdW5jdGlvbiBTaG9wOk91dEJhZ0VxdWlwKElELCBzbG90LCBpdGVtX2tleSkKICAgIHNlbGY6T3V0QmFnQXBwbHlMb2Fkb3V0TG9jYWwoSUQsIHNsb3QsIGl0ZW1fa2V5KQplbmQKCmZ1bmN0aW9uIFNob3A6T3V0QmFnVW5lcXVpcChJRCwgc2xvdCkKICAgIHNlbGY6T3V0QmFnQXBwbHlMb2Fkb3V0TG9jYWwoSUQsIHNsb3QsIG5pbCkKZW5kCgpmdW5jdGlvbiBTaG9wOkZsdXNoUGVuZGluZ091dEJhZ0xvYWRvdXQoSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBUaW1lcnM6UmVtb3ZlVGltZXIoTE9BRE9VVF9USU1FUl9QUkVGSVggLi4gdG9zdHJpbmcoSUQpKQogICAgc2VsZjpGbHVzaE91dEJhZ0xvYWRvdXRUb1NlcnZlcihJRCkKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 局外背包：同步、佩戴、卸下（佩戴/卸下本地即时生效，3 秒防抖后一次性同步服务端）
+
+local LOADOUT_SYNC_DEBOUNCE_SEC = 3
+local LOADOUT_TIMER_PREFIX = "clrb_outbag_loadout_"
+
+function Shop:NormalizeLoadoutSlot(slot)
+    if not slot then
+        return nil
+    end
+    local s = string.lower(tostring(slot))
+    if s == "title" or s == "effect" or s == "attack_effect" or s == "pet" then
+        return s
+    end
+    return nil
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function Shop:LoadoutFieldForSlot(slot)
+    local slotNorm = self:NormalizeLoadoutSlot(slot)
+    if not slotNorm then
+        return nil
+    end
+    return "equipped_" .. slotNorm
+end
+
+function Shop:EnsureBagLoadoutMeta(ID)
+    if not ID or not self.Data[ID] then
+        return
+    end
+    ID = tonumber(ID) or ID
+    if not self.Data[ID].bag then
+        self.Data[ID].bag = {
+            items = {},
+            loadout = {
+                equipped_title = nil,
+                equipped_effect = nil,
+                equipped_attack_effect = nil,
+                equipped_pet = nil,
+            },
+        }
+    end
+    local bag = self.Data[ID].bag
+    if not bag.loadout then
+        bag.loadout = {
+            equipped_title = nil,
+            equipped_effect = nil,
+            equipped_attack_effect = nil,
+            equipped_pet = nil,
+        }
+    end
+    if not self.Data[ID].bag_loadout_server then
+        self.Data[ID].bag_loadout_server = Util:DeepCopyTab(bag.loadout)
+    end
+    if self.Data[ID].bag_loadout_dirty == nil then
+        self.Data[ID].bag_loadout_dirty = false
+    end
+end
+
+function Shop:ConfirmBagLoadoutFromServer(ID)
+    if not ID or not self.Data[ID] or not self.Data[ID].bag then
+        return
+    end
+    self:EnsureBagLoadoutMeta(ID)
+    self.Data[ID].bag_loadout_server = Util:DeepCopyTab(self.Data[ID].bag.loadout)
+    self.Data[ID].bag_loadout_dirty = false
+end
+
+function Shop:NormalizeBagItems(items)
+    local out = {}
+    if type(items) ~= "table" then
+        return out
+    end
+    if #items > 0 then
+        for i, row in ipairs(items) do
+            out[i] = row
+        end
+        return out
+    end
+    local keys = {}
+    for k, row in pairs(items) do
+        if type(row) == "table" then
+            keys[#keys + 1] = k
+        end
+    end
+    table.sort(keys, function(a, b)
+        return tonumber(a) < tonumber(b)
+    end)
+    for _, k in ipairs(keys) do
+        out[#out + 1] = items[k]
+    end
+    return out
+end
+
+function Shop:OutBagOwnsItem(ID, item_key)
+    return self:GetBagItemCount(ID, item_key) > 0
+end
+
+function Shop:GetBagItemCount(ID, item_key)
+    if not ID or not item_key or not self.Data[ID] or not self.Data[ID].bag then
+        return 0
+    end
+    local items = self:NormalizeBagItems(self.Data[ID].bag.items)
+    for _, row in ipairs(items) do
+        if row.item_key == item_key then
+            return tonumber(row.count) or 0
+        end
+    end
+    return 0
+end
+
+function Shop:EnsurePlayerData(ID)
+    if ID == nil then
+        return false
+    end
+    ID = tonumber(ID) or ID
+    if not self.Data then
+        self.Data = {}
+    end
+    if not self.Data[ID] and self.Init then
+        self:Init(ID)
+    end
+    return self.Data[ID] ~= nil
+end
+
+function Shop:AddBagItemLocal(ID, item_key, amount)
+    if not ID or not item_key or item_key == "" then
+        return false
+    end
+    ID = tonumber(ID) or ID
+    if not self:EnsurePlayerData(ID) then
+        return false
+    end
+    local add = math.max(0, math.floor(tonumber(amount) or 0))
+    if add < 1 then
+        return false
+    end
+    if not self.Data[ID].bag then
+        self.Data[ID].bag = {
+            items = {},
+            loadout = {
+                equipped_title = nil,
+                equipped_effect = nil,
+                equipped_attack_effect = nil,
+                equipped_pet = nil,
+            },
+        }
+    end
+    self:EnsureBagLoadoutMeta(ID)
+    local meta = self.ItemList and self.ItemList[item_key]
+    if not meta then
+        return false
+    end
+    local items = self:NormalizeBagItems(self.Data[ID].bag.items)
+    if meta.stack == false then
+        for _, row in ipairs(items) do
+            if row.item_key == item_key and (tonumber(row.count) or 0) > 0 then
+                self.Data[ID].bag.items = items
+                self:SendOutBagData(ID)
+                return true
+            end
+        end
+    end
+    local maxStack = meta.maxStack or 9999
+    local found = false
+    for _, row in ipairs(items) do
+        if row.item_key == item_key then
+            row.count = math.min(maxStack, (tonumber(row.count) or 0) + add)
+            found = true
+            break
+        end
+    end
+    if not found then
+        items[#items + 1] = {
+            item_key = item_key,
+            count = math.min(maxStack, add),
+            id = meta.id,
+            type = meta.type,
+            name = meta.name,
+            stack = meta.stack,
+        }
+    end
+    self.Data[ID].bag.items = items
+    self:SendOutBagData(ID)
+    return true
+end
+
+function Shop:GrantBagItemServer(ID, item_key, amount, callback)
+    if not ID or not item_key or item_key == "" then
+        if callback then
+            callback(false, "invalid")
+        end
+        return
+    end
+    if not self.Data[ID] then
+        self:Init(ID)
+    end
+    local token = Http:GetPlayerAccessToken(ID)
+    if not token or token == "" then
+        if callback then
+            callback(false, "no_token")
+        end
+        return
+    end
+    local body = {
+        item_key = item_key,
+        amount = amount,
+    }
+    if IsInToolsMode() then
+        body.tools_mode = 1
+    end
+    Http:POST("/bag/grant", body, ID, function(keys)
+        if keys and keys.code == 200 and keys.data and keys.data.bag then
+            self:ApplyBagAndNotify(ID, keys.data.bag)
+            if callback then
+                callback(true, keys)
+            end
+            return
+        end
+        if callback then
+            callback(false, keys)
+        end
+    end)
+end
+
+function Shop:OutBagValidateEquip(ID, slot, item_key)
+    local slotNorm = self:NormalizeLoadoutSlot(slot)
+    if not slotNorm or not item_key or item_key == "" then
+        return false, "无效的佩戴参数"
+    end
+    local meta = self.ItemList and self.ItemList[item_key]
+    if not meta then
+        return false, "未知道具"
+    end
+    if meta.type == 1 then
+        return false, "消耗品不可佩戴"
+    end
+    if meta.slot ~= slotNorm then
+        return false, "道具类型与槽位不匹配"
+    end
+    if not self:OutBagOwnsItem(ID, item_key) then
+        return false, "未拥有该道具"
+    end
+    return true
+end
+
+function Shop:SetBagServerData(ID, bag)
+    if not ID or not self.Data[ID] then
+        return
+    end
+    if not bag or type(bag) ~= "table" then
+        self.Data[ID].bag = {
+            items = {},
+            loadout = {
+                equipped_title = nil,
+                equipped_effect = nil,
+                equipped_attack_effect = nil,
+                equipped_pet = nil,
+            },
+        }
+        self:ConfirmBagLoadoutFromServer(ID)
+        return
+    end
+    self.Data[ID].bag = {
+        items = self:NormalizeBagItems(bag.items),
+        loadout = bag.loadout or {
+            equipped_title = nil,
+            equipped_effect = nil,
+            equipped_attack_effect = nil,
+            equipped_pet = nil,
+        },
+    }
+    self:ConfirmBagLoadoutFromServer(ID)
+    if Pet and Pet.SyncFromOutBag then
+        Pet:SyncFromOutBag(ID)
+    end
+    if Title and Title.SyncFromOutBag then
+        Title:SyncFromOutBag(ID)
+    end
+    if Effect and Effect.SyncFromOutBag then
+        Effect:SyncFromOutBag(ID)
+    end
+    if AttackEffect and AttackEffect.SyncFromOutBag then
+        AttackEffect:SyncFromOutBag(ID)
+    end
+    if Prophecy and Prophecy.OnBagReady then
+        Prophecy:OnBagReady(ID)
+    end
+end
+
+function Shop:SendOutBagData(ID)
+    if not ID or not self.Data[ID] then
+        return
+    end
+    self:EnsureBagLoadoutMeta(ID)
+    local bag = self.Data[ID].bag or {}
+    local items = self:NormalizeBagItems(bag.items)
+    local loadout = bag.loadout or {
+        equipped_title = nil,
+        equipped_effect = nil,
+        equipped_attack_effect = nil,
+        equipped_pet = nil,
+    }
+    local payload = {
+        page = self.Data[ID].page,
+        bag_json = "",
+        out_bag_n = #items,
+    }
+    local ok, enc = pcall(function()
+        return JSON.encode({
+            items = items,
+            loadout = loadout,
+        })
+    end)
+    if ok and enc then
+        payload.bag_json = enc
+    end
+    for i, row in ipairs(items) do
+        if type(row) == "table" then
+            payload["obi_" .. i .. "_key"] = row.item_key or ""
+            payload["obi_" .. i .. "_count"] = row.count or 0
+            payload["obi_" .. i .. "_name"] = row.name or ""
+            payload["obi_" .. i .. "_type"] = row.type or 0
+        end
+    end
+    payload.loadout_title = loadout.equipped_title or ""
+    payload.loadout_effect = loadout.equipped_effect or ""
+    payload.loadout_attack_effect = loadout.equipped_attack_effect or ""
+    payload.loadout_pet = loadout.equipped_pet or ""
+    Util:Send2JsID("UI_OutBag", payload, ID)
+end
+
+function Shop:ApplyBagAndNotify(ID, bag)
+    self:SetBagServerData(ID, bag)
+    self:SendOutBagData(ID)
+    self:SendData(ID)
+end
+
+function Shop:ApplyLoginBag(ID, data)
+    if not ID or not data or not data.bag then
+        return false
+    end
+    self:SetBagServerData(ID, data.bag)
+    self:SendOutBagData(ID)
+    return true
+end
+
+function Shop:ScheduleDebouncedLoadoutSync(ID)
+    if not ID or not self.Data[ID] then
+        return
+    end
+    local name = LOADOUT_TIMER_PREFIX .. tostring(ID)
+    Timers:CreateTimer(name, {
+        endTime = LOADOUT_SYNC_DEBOUNCE_SEC,
+        callback = function()
+            if not Shop.Data[ID] then
+                return
+            end
+            Shop:FlushOutBagLoadoutToServer(ID)
+        end,
+    })
+end
+
+function Shop:RevertOutBagLoadout(ID)
+    if not ID or not self.Data[ID] then
+        return
+    end
+    self:EnsureBagLoadoutMeta(ID)
+    local server = self.Data[ID].bag_loadout_server
+    if server and self.Data[ID].bag then
+        self.Data[ID].bag.loadout = Util:DeepCopyTab(server)
+    end
+    self.Data[ID].bag_loadout_dirty = false
+    self:SendOutBagData(ID)
+    if Pet and Pet.SyncFromOutBag then
+        Pet:SyncFromOutBag(ID)
+    end
+    if Title and Title.SyncFromOutBag then
+        Title:SyncFromOutBag(ID)
+    end
+    if Effect and Effect.SyncFromOutBag then
+        Effect:SyncFromOutBag(ID)
+    end
+    if AttackEffect and AttackEffect.SyncFromOutBag then
+        AttackEffect:SyncFromOutBag(ID)
+    end
+end
+
+function Shop:FlushOutBagLoadoutToServer(ID)
+    if not ID or not self.Data[ID] then
+        return
+    end
+    self:EnsureBagLoadoutMeta(ID)
+    if not self.Data[ID].bag_loadout_dirty then
+        return
+    end
+    local loadout = self.Data[ID].bag.loadout
+    if not loadout then
+        self.Data[ID].bag_loadout_dirty = false
+        return
+    end
+    Http:POST("/bag/loadout", { loadout = loadout }, ID, function(keys)
+        if not Shop.Data[ID] then
+            return
+        end
+        if keys.code == 200 and keys.data and keys.data.bag then
+            Shop:SetBagServerData(ID, keys.data.bag)
+            Shop:SendOutBagData(ID)
+        else
+            Shop:RevertOutBagLoadout(ID)
+            local msg = "佩戴同步失败"
+            if keys and keys.message and keys.message ~= "" then
+                msg = keys.message
+            end
+            Msgs:Pop(ID, msg)
+        end
+    end)
+end
+
+function Shop:OutBagApplyLoadoutLocal(ID, slot, item_key)
+    if not ID or not self.Data[ID] or not self.Data[ID].bag then
+        return
+    end
+    local field = self:LoadoutFieldForSlot(slot)
+    if not field then
+        return
+    end
+    self:EnsureBagLoadoutMeta(ID)
+
+    if not item_key or item_key == "" then
+        self.Data[ID].bag.loadout[field] = nil
+        self.Data[ID].bag_loadout_dirty = true
+        self:SendOutBagData(ID)
+        self:ScheduleDebouncedLoadoutSync(ID)
+        if slot == "pet" and Pet and Pet.SyncFromOutBag then
+            Pet:SyncFromOutBag(ID)
+        end
+        if slot == "title" and Title and Title.SyncFromOutBag then
+            Title:SyncFromOutBag(ID)
+        end
+        if slot == "effect" and Effect and Effect.SyncFromOutBag then
+            Effect:SyncFromOutBag(ID)
+        end
+        if slot == "attack_effect" and AttackEffect and AttackEffect.SyncFromOutBag then
+            AttackEffect:SyncFromOutBag(ID)
+        end
+        return
+    end
+
+    local ok, errMsg = self:OutBagValidateEquip(ID, slot, item_key)
+    if not ok then
+        Msgs:Pop(ID, errMsg or "无法佩戴")
+        return
+    end
+    -- 称号/特效/宠物同槽位仅能佩戴一个，直接覆盖旧佩戴
+    self.Data[ID].bag.loadout[field] = item_key
+    self.Data[ID].bag_loadout_dirty = true
+    self:SendOutBagData(ID)
+    self:ScheduleDebouncedLoadoutSync(ID)
+    if slot == "pet" and Pet and Pet.SyncFromOutBag then
+        Pet:SyncFromOutBag(ID)
+    end
+    if slot == "title" and Title and Title.SyncFromOutBag then
+        Title:SyncFromOutBag(ID)
+    end
+    if slot == "effect" and Effect and Effect.SyncFromOutBag then
+        Effect:SyncFromOutBag(ID)
+    end
+    if slot == "attack_effect" and AttackEffect and AttackEffect.SyncFromOutBag then
+        AttackEffect:SyncFromOutBag(ID)
+    end
+end
+
+function Shop:RequestOutBagSync(ID)
+    if not ID then
+        return
+    end
+    Http:POST("/bag/sync", {}, ID, function(keys)
+        if keys.code == 200 and keys.data and keys.data.bag then
+            self:ApplyBagAndNotify(ID, keys.data.bag)
+        else
+            local code = keys and keys.code or 0
+            local msg = keys and keys.message or "unknown"
+            -- print("[OutBag] sync failed code=" .. tostring(code) .. " msg=" .. tostring(msg))
+            if code == 401 or code == 403 or code == 404 or code == 0 then
+                self:SyncOutBagViaLogin(ID)
+            end
+        end
+    end)
+end
+
+function Shop:SyncOutBagViaLogin(ID)
+    if not ID then
+        return
+    end
+    Http:POST("/user/login", {}, ID, function(keys)
+        if keys.code ~= 200 or not keys.data then
+            -- print("[OutBag] login failed before bag refresh")
+            return
+        end
+        local data = keys.data
+        if data.accessToken then
+            Http:SetPlayerAccessToken(ID, data.accessToken)
+        end
+        if data.user then
+            local fo = data.first_recharge_double_open
+            if fo == nil then
+                fo = true
+            end
+            Shop:SetShopServerData(ID, data.user, fo)
+        end
+        if data.card then
+            Shop:SetCardServerData(ID, data.card)
+        end
+        if self:ApplyLoginBag(ID, data) then
+            self:SendData(ID)
+        else
+            -- print("[OutBag] login ok but no bag field — deploy server user.js with bag snapshot")
+        end
+    end)
+end
+
+function Shop:SyncOutBag(ID)
+    if not ID then
+        return
+    end
+    local token = Http:GetPlayerAccessToken(ID)
+    if token and token ~= "" then
+        self:RequestOutBagSync(ID)
+        return
+    end
+    self:SyncOutBagViaLogin(ID)
+end
+
+function Shop:OutBagEquip(ID, slot, item_key)
+    self:OutBagApplyLoadoutLocal(ID, slot, item_key)
+end
+
+function Shop:OutBagUnequip(ID, slot)
+    self:OutBagApplyLoadoutLocal(ID, slot, nil)
+end
+
+function Shop:FlushPendingOutBagLoadout(ID)
+    if not ID then
+        return
+    end
+    Timers:RemoveTimer(LOADOUT_TIMER_PREFIX .. tostring(ID))
+    self:FlushOutBagLoadoutToServer(ID)
+end

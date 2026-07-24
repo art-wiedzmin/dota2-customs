@@ -8,22 +8,555 @@
 ]]
 
 
-local encoded=[[U2hvcC5EYXRhID0ge30KU2hvcC5UZW1wbGF0ZSA9IHsKICAgIHBhZ2UgPSBmYWxzZSwKICAgIC0t6YeR5biBCiAgICBnb2xkID0gMCwKICAgIC0t5pyI5Y2h5Ymp5L2Z5aSp5pWwCiAgICBjYXJkMSA9IDAsCiAgICAtLeWto+WNoQogICAgY2FyZDIgPSAwLAogICAgLS3mnIjljaHmr4/ml6Xpooblj5bnirbmgIEKICAgIGNhcmQxZGF5ID0gMCwKICAgIC0t5a2j5Y2h5q+P5pel6aKG5Y+W54q25oCBCiAgICBjYXJkMmRheSA9IDAsCiAgICAtLeavj+aXpemihuWPlueKtuaAgQogICAgZnJlZWRheSA9IDAsCiAgICAtLSDoioLml6XnpLzljIXvvJrmr4/ml6XlhY3otLnvvIgx5Y+v6aKGIDDlt7LpoobvvIkKICAgIGR3X2ZyZWVfZGF5ID0gMSwKICAgIGR3X2ZyZWVfb3BlbiA9IGZhbHNlLAogICAgZHdfZnJlZV9ldmVudF9zdGF0dXMgPSAiZW5kZWQiLAogICAgLS0g6IqC5pel56S85YyF77ya5LuY6LS56ZmQ6LSt5bey6LSt5qyh5pWw77yI5q+P5qGj5LiK6ZmQM++8iQogICAgZHdfMzBfYnV5ID0gMCwKICAgIGR3XzY4X2J1eSA9IDAsCiAgICBkd18xMjhfYnV5ID0gMCwKICAgIC0t5Y+M5YCN6YeN572u54q25oCBCiAgICBkb3VibGUgPSB7CiAgICAgICAgZ29sZDYgPSAwLAogICAgICAgIGdvbGQzMCA9IDAsCiAgICAgICAgZ29sZDY4ID0gMCwKICAgICAgICBnb2xkMTI4ID0gMCwKICAgICAgICBnb2xkMzI4ID0gMCwKICAgICAgICBnb2xkNjQ4ID0gMCwKICAgICAgICBnb2xkMTI4MCA9IDAsCiAgICB9LAogICAgLS3mnKzlsYDmtojogJfnmoTosYblrZAKICAgIGNvc3QgPSAwLAogICAgLS3liLfmlrDnirbmgIEKICAgIHJlZnJlc2ggPSB0cnVlLAogICAgLS0g5YWo5pyN6aaW5YWF5Y+M5YCN5piv5ZCm5byA5ZCv77yI5LiO5pyN5Yqh5ZmoIGZpcnN0X3JlY2hhcmdlX2RvdWJsZV9vcGVuIOS4gOiHtO+8jOS7heW9seWTjeWVhuWfjuWxleekuueUqCBkb3VibGXvvIkKICAgIGZpcnN0X3JlY2hhcmdlX2RvdWJsZV9vcGVuID0gdHJ1ZSwKICAgIC0t6YCa6KGM6K+B5pWw5o2u77yI5LiO5pyN5Yqh56uvIGNhcmQg6KGo5a2X5q615LiA6Ie077yJCiAgICBjYXJkID0gewogICAgICAgIC0tIOmrmOe6p+mAmuihjOivgeaYr+WQpua/gOa0u++8mjDlkKYgMeaYrwogICAgICAgIHN0YXRlID0gMCwKICAgICAgICAtLSDnjqnlrrblvZPliY3pgJrooYzor4Hnu4/pqozmgLvlkowKICAgICAgICBleHAgPSAwLAogICAgICAgIC0tIOW3sumihuWPluWlluWKseWIsOi+vueahOetiee6pwogICAgICAgIGdldF9sZXZlbCA9IDAsCiAgICAgICAgLS0g6L+b6Zi26L2o6YGT5bey6aKG5Y+W5aWW5Yqx5Yiw6L6+55qE562J57qnCiAgICAgICAgZ2V0X2xldmVsX3ByZW1pdW0gPSAwLAogICAgICAgIC0tIOavj+aXpea4uOeOqeWcuuaVsAogICAgICAgIGRheWdhbWVjb3VudCA9IDAsCiAgICAgICAgLS0g5q+P5pel57Sv6K6h5p2A5pWM5pWwCiAgICAgICAgZGF5a2lsbGNvdW50ID0gMCwKICAgICAgICAtLSDmr4/ml6XojrflvpfpmJ/kvI3nrKzkuIDlkI3mrKHmlbAKICAgICAgICBkYXl0b3AxY291bnQgPSAwLAogICAgICAgIC0tIOavj+WRqOS7u+aEj+aooeW8j+iOt+W+l+mYn+S8jeesrOS4gOWQjeasoeaVsO+8iOS4juavj+aXpSBkYXl0b3AxY291bnQg5LiA6Ie077yJCiAgICAgICAgd2Vla3RvcDFjb3VudCA9IDAsCiAgICAgICAgLS0g5q+P5ZGo57Sv6K6h5p2A5pWM5pWwCiAgICAgICAgd2Vla2tpbGxjb3VudCA9IDAsCiAgICAgICAgLS0gcmFua18xdjEg5qih5byP6I635b6X56ys5LiA5ZCN5qyh5pWwCiAgICAgICAgd2Vla21hcDF0b3AxID0gMCwKICAgICAgICAtLSByYW5rXzN4NCDmqKHlvI/ojrflvpfnrKzkuIDlkI3mrKHmlbAKICAgICAgICB3ZWVrbWFwMnRvcDEgPSAwLAogICAgICAgIC0tIHJhbmtfNXY1IOaooeW8j+iOt+W+l+esrOS4gOWQjeasoeaVsAogICAgICAgIHdlZWttYXAzdG9wMSA9IDAsCiAgICAgICAgLS0g5q+P5pel5Lu75YqhMeaYr+WQpuW3sumihuWPluWlluWKse+8mjDlkKYgMeaYrwogICAgICAgIHRhc2tkYXkxID0gMCwKICAgICAgICAtLSDmr4/ml6Xku7vliqEy5piv5ZCm5bey6aKG5Y+W5aWW5Yqx77yaMOWQpiAx5pivCiAgICAgICAgdGFza2RheTIgPSAwLAogICAgICAgIC0tIOavj+aXpeS7u+WKoTPmmK/lkKblt7Lpooblj5blpZblirHvvJow5ZCmIDHmmK8KICAgICAgICB0YXNrZGF5MyA9IDAsCiAgICAgICAgLS0g5q+P5pel5Lu75YqhNOaYr+WQpuW3sumihuWPluWlluWKse+8mjDlkKYgMeaYrwogICAgICAgIHRhc2tkYXk0ID0gMCwKICAgICAgICAtLSDmr4/ml6Xku7vliqE15piv5ZCm5bey6aKG5Y+W5aWW5Yqx77yaMOWQpiAx5pivCiAgICAgICAgdGFza2RheTUgPSAwLAogICAgICAgIC0tIOavj+aXpeS7u+WKoTbmmK/lkKblt7Lpooblj5blpZblirHvvJow5ZCmIDHmmK8KICAgICAgICB0YXNrZGF5NiA9IDAsCiAgICAgICAgLS0g5q+P5ZGo5Lu75YqhMeaYr+WQpuW3sumihuWPluWlluWKse+8mjDlkKYgMeaYrwogICAgICAgIHRhc2t3ZWVkMSA9IDAsCiAgICAgICAgLS0g5q+P5ZGo5Lu75YqhMuaYr+WQpuW3sumihuWPluWlluWKse+8mjDlkKYgMeaYrwogICAgICAgIHRhc2t3ZWVkMiA9IDAsCiAgICAgICAgLS0g5q+P5ZGo5Lu75YqhM+aYr+WQpuW3sumihuWPluWlluWKse+8mjDlkKYgMeaYrwogICAgICAgIHRhc2t3ZWVkMyA9IDAsCiAgICAgICAgLS0g5q+P5ZGo5Lu75YqhNOaYr+WQpuW3sumihuWPluWlluWKse+8mjDlkKYgMeaYrwogICAgICAgIHRhc2t3ZWVkNCA9IDAsCiAgICAgICAgLS0g5q+P5ZGo5Lu75YqhNeaYr+WQpuW3sumihuWPluWlluWKse+8mjDlkKYgMeaYrwogICAgICAgIHRhc2t3ZWVkNSA9IDAsCiAgICAgICAgdGFza3dlZWQ2ID0gMCwKICAgIH0sCiAgICAtLSDlsYDlpJbog4zljIXvvIgvYmFnL3N5bmPvvIkKICAgIGJhZyA9IHsKICAgICAgICBpdGVtcyA9IHt9LAogICAgICAgIGxvYWRvdXQgPSB7CiAgICAgICAgICAgIGVxdWlwcGVkX3RpdGxlID0gbmlsLAogICAgICAgICAgICBlcXVpcHBlZF9lZmZlY3QgPSBuaWwsCiAgICAgICAgICAgIGVxdWlwcGVkX2F0dGFja19lZmZlY3QgPSBuaWwsCiAgICAgICAgICAgIGVxdWlwcGVkX3BldCA9IG5pbCwKICAgICAgICB9LAogICAgfSwKICAgIC0tIOacjeWKoeerr+W3suehruiupOS9qeaItOW/q+eFp++8iOS4jiBiYWcubG9hZG91dCDlr7nmr5TliKTmlq3mmK/lkKbmnInmnKrlkIzmraXmlLnliqjvvIkKICAgIGJhZ19sb2Fkb3V0X3NlcnZlciA9IHsKICAgICAgICBlcXVpcHBlZF90aXRsZSA9IG5pbCwKICAgICAgICBlcXVpcHBlZF9lZmZlY3QgPSBuaWwsCiAgICAgICAgZXF1aXBwZWRfYXR0YWNrX2VmZmVjdCA9IG5pbCwKICAgICAgICBlcXVpcHBlZF9wZXQgPSBuaWwsCiAgICB9LAogICAgYmFnX2xvYWRvdXRfZGlydHkgPSBmYWxzZSwKfQpTaG9wLlN0YXRpYyA9IHsKCn0KU2hvcC5Hb29kcyA9IHsKICAgIC0t5pyI5Y2hCiAgICBnb29kc18xID0gewogICAgICAgIGlkID0gMSwKICAgICAgICBwcmljZSA9IDMwLAogICAgfSwKICAgIGdvb2RzXzIgPSB7CiAgICAgICAgaWQgPSAyLAogICAgICAgIHByaWNlID0gNiwKICAgIH0sCiAgICBnb29kc18zID0gewogICAgICAgIGlkID0gImdvb2RzMyIsCiAgICAgICAgcHJpY2UgPSAzMCwKICAgIH0sCiAgICBnb29kc180ID0gewogICAgICAgIGlkID0gImdvb2RzNCIsCiAgICAgICAgcHJpY2UgPSA2OCwKICAgIH0sCiAgICBnb29kc181ID0gewogICAgICAgIGlkID0gImdvb2RzNSIsCiAgICAgICAgcHJpY2UgPSAxMjgsCiAgICB9LAogICAgZ29vZHNfNiA9IHsKICAgICAgICBpZCA9ICJnb29kczYiLAogICAgICAgIHByaWNlID0gMzI4LAogICAgfSwKICAgIGdvb2RzXzcgPSB7CiAgICAgICAgaWQgPSAiZ29vZHM3IiwKICAgICAgICBwcmljZSA9IDY0OCwKICAgIH0sCiAgICBnb29kc18xMCA9IHsKICAgICAgICBpZCA9ICJnb29kczEwIiwKICAgICAgICBwcmljZSA9IDEyODAsCiAgICB9LAogICAgZ29vZHNfOCA9IHsKICAgICAgICBpZCA9ICJnb29kczgiLAogICAgICAgIHByaWNlID0gODgsCiAgICB9LAogICAgLS0g6auY57qn6YCa6KGM6K+B77yIY2FyZDPvvIzku4Xlj6/otK3kubDkuIDmrKHvvIkKICAgIGdvb2RzXzkgPSB7CiAgICAgICAgaWQgPSAiZ29vZHM5IiwKICAgICAgICBwcmljZSA9IDk4LAogICAgfSwKfQotLemAmuihjOivgeeahOebuOWFs+WPguaVsApTaG9wLkNhcmRTdGF0aWNEYXRhID0gewogICAgLS0g5q+P5Y2HIDEg57qn5omA6ZyA6YCa6KGM6K+B57uP6aqMCiAgICB4cF9wZXJfbGV2ZWwgPSA1MDAsCiAgICAtLSDotK3kubDpgJrooYzor4HlkI7nq4vljbPojrflvpfnmoTpgJrooYzor4Hnu4/pqowKICAgIHB1cmNoYXNlX3hwX2JvbnVzID0gNTAwMCwKICAgIC0tIOetiee6p+S4iumZkOS4juWlluWKsemihOiniO+8iOavjyA1MCDnuqfkuLrkuIDpmLbmrrXnv7vpobXlsZXnpLrvvIzmnIDpq5ggMjAw77yJCiAgICBtYXhfbGV2ZWwgPSAyMDAsICAgICAgICAgIC0tIOaImOS7pOWwgemhtuetiee6pwogICAgcHJldmlld19waGFzZV9zaXplID0gNTAsICAtLSDmr4/pmLbmrrUgNTAg57qn77yINDkg5YiX5rua5YqoICsgMSDliJflm7rlrprvvIkKICAgIHByZXZpZXdfaW5pdGlhbF9tYXggPSA1MCwgLS0g5Yid5aeL6aKE6KeI56ysIDEg6Zi25q6177yIMX41MCDnuqfvvIkKICAgIC0tIOaZrumAmui9qOmBk+WlluWKsQogICAgZnJlZSA9IHsKICAgICAgICBnb2xkX3Blcl9sZXZlbCA9IDQwLCAtLSDmr4/nuqflpZblirHph5HosYYKICAgICAgICBnb2xkX2V2ZXJ5XzEwID0gODAsICAtLSDnrYnnuqfkuLogMTAg55qE5YCN5pWw5pe25aWW5Yqx6YeR6LGGCiAgICAgICAgdGl0bGVfYnlfbGV2ZWwgPSB7ICAgLS0g5oyH5a6a562J57qn5aWW5Yqx56ew5Y+377yI5LuFIDMwIOe6p++8iQogICAgICAgICAgICBbMzBdID0gIuS4m+ael+ihjOiAhSIsCiAgICAgICAgfSwKICAgIH0sCiAgICAtLSDmv4DmtLvpgJrooYzor4HlkI7nmoTpop3lpJblpZblirEKICAgIHByZW1pdW0gPSB7CiAgICAgICAgZ29sZF9wZXJfbGV2ZWwgPSA4MCwgICAgICAgICAgICAtLSDmr4/nuqflpZblirHph5HosYYKICAgICAgICBnb2xkX2V2ZXJ5XzEwID0gMTYwLCAgICAgICAgICAgIC0tIOetiee6p+S4uiAxMCDnmoTlgI3mlbDml7blpZblirHph5HosYYKICAgICAgICBoZXJvX3BpY2tfZXZlcnlfMTAgPSAxLCAgICAgICAgIC0tIOetiee6p+S4uiAxMCDnmoTlgI3mlbDml7bpop3lpJblpZblirHoi7Hpm4Toh6rpgInljaHmlbDph48KICAgICAgICBjYW5fZGVkdWN0X2xhZGRlcl9wb2ludCA9IHRydWUsIC0tIOiLsembhOiHqumAieWNoeWPr+aJo+Wkqeair+WIhgogICAgICAgIHRpdGxlX2J5X2xldmVsID0geyAgICAgICAgICAgICAtLSDmjIflrprnrYnnuqflpZblirHnp7Dlj7fvvIjku4UgMzAg57qn77yJCiAgICAgICAgICAgIFszMF0gPSAi5qiq5omr5YWr6I2SIiwKICAgICAgICB9LAogICAgICAgIGVmZmVjdF9ieV9sZXZlbCA9IHsgICAgICAgICAgLS0g5oyH5a6a562J57qn5aWW5Yqx5pS75Ye75by56YGT54m55pWI77yI5LuFIDEg57qn77yJCiAgICAgICAgICAgIFsxXSA9ICLmtYHmmJ/ngavnn6IiLAogICAgICAgIH0sCiAgICB9LAp9Ci0tIOmAmuihjOivgeS7u+WKoeebuOWFs+WPguaVsApTaG9wLkNhcmRUYXNrRGF0YSA9IHsKICAgIC0tIOavj+aXpeS7u+WKoe+8iOavj+aXpemHjee9ru+8iQogICAgZGFpbHkgPSB7CiAgICAgICAgbG9naW4gPSB7CiAgICAgICAgICAgIGRlc2MgPSAi55m75b2V5Lib5p6X5r+A5oiYIiwKICAgICAgICAgICAgeHAgPSA1MCwKICAgICAgICB9LAogICAgICAgIHBsYXlfMiA9IHsKICAgICAgICAgICAgZGVzYyA9ICLlrozmiJDkuIDlsYDku7vmhI/mqKHlvI/muLjmiI8iLAogICAgICAgICAgICB4cCA9IDUwLAogICAgICAgICAgICB0YXJnZXQgPSAxLCAtLSDpnIDlrozmiJDlsYDmlbAKICAgICAgICB9LAogICAgICAgIHBsYXlfNSA9IHsKICAgICAgICAgICAgZGVzYyA9ICLlrozmiJDkuInlsYDku7vmhI/mqKHlvI/muLjmiI8iLAogICAgICAgICAgICB4cCA9IDEwMCwKICAgICAgICAgICAgdGFyZ2V0ID0gMywKICAgICAgICB9LAogICAgICAgIHdpbl8xID0gewogICAgICAgICAgICBkZXNjID0gIuS7u+aEj+aooeW8j+a4uOaIj+iOt+WPlumYn+S8jeesrOS4gOWQjSIsCiAgICAgICAgICAgIHhwID0gMjAwLAogICAgICAgICAgICB0YXJnZXQgPSAxLCAtLSDpnIDojrfog5zlsYDmlbAKICAgICAgICB9LAogICAgICAgIGtpbGxzXzEwMCA9IHsKICAgICAgICAgICAgZGVzYyA9ICLku7vmhI/mqKHlvI/muLjmiI/ntK/orqHmnYDmlYwxMDDkuroiLAogICAgICAgICAgICB4cCA9IDIwMCwKICAgICAgICAgICAgdGFyZ2V0ID0gMTAwLAogICAgICAgIH0sCiAgICAgICAga2lsbHNfMjAwID0gewogICAgICAgICAgICBkZXNjID0gIuS7u+aEj+aooeW8j+a4uOaIj+e0r+iuoeadgOaVjDIwMOS6uiIsCiAgICAgICAgICAgIHhwID0gNTAwLAogICAgICAgICAgICB0YXJnZXQgPSAyMDAsCiAgICAgICAgfSwKICAgIH0sCiAgICAtLSDmr4/lkajku7vliqHvvIjmr4/lkajph43nva7vvIkKICAgIHdlZWtseSA9IHsKICAgICAgICBzb2xvX3dpbl8xID0gewogICAgICAgICAgICBkZXNjID0gIuS7u+aEj+aooeW8j+a4uOaIj+e0r+iuoeiOt+WPlumYn+S8jeesrOS4gOWQjeS6jOasoSIsCiAgICAgICAgICAgIHhwID0gNTAwLAogICAgICAgICAgICB0YXJnZXQgPSAyLAogICAgICAgIH0sCiAgICAgICAgZHVvX3dpbl80ID0gewogICAgICAgICAgICBkZXNjID0gIuS7u+aEj+aooeW8j+a4uOaIj+e0r+iuoeiOt+WPlumYn+S8jeesrOS4gOWQjeWbm+asoSIsCiAgICAgICAgICAgIHhwID0gNTAwLAogICAgICAgICAgICB0YXJnZXQgPSA0LAogICAgICAgIH0sCiAgICAgICAgdGVhbTVfd2luXzggPSB7CiAgICAgICAgICAgIGRlc2MgPSAi5Lu75oSP5qih5byP5ri45oiP57Sv6K6h6I635Y+W6Zif5LyN56ys5LiA5ZCN5YWr5qyhIiwKICAgICAgICAgICAgeHAgPSA1MDAsCiAgICAgICAgICAgIHRhcmdldCA9IDgsCiAgICAgICAgfSwKICAgICAgICBraWxsc181MDAgPSB7CiAgICAgICAgICAgIGRlc2MgPSAi5Lu75oSP5qih5byP5ri45oiP57Sv6K6h5p2A5pWMNTAw5Lq6IiwKICAgICAgICAgICAgeHAgPSAxMDAwLAogICAgICAgICAgICB0YXJnZXQgPSA1MDAsCiAgICAgICAgfSwKICAgICAgICBraWxsc18xMDAwID0gewogICAgICAgICAgICBkZXNjID0gIuS7u+aEj+aooeW8j+a4uOaIj+e0r+iuoeadgOaVjDEwMDDkuroiLAogICAgICAgICAgICB4cCA9IDEwMDAsCiAgICAgICAgICAgIHRhcmdldCA9IDEwMDAsCiAgICAgICAgfSwKICAgICAgICBraWxsc18yMDAwID0gewogICAgICAgICAgICBkZXNjID0gIuS7u+aEj+aooeW8j+a4uOaIj+e0r+iuoeadgOaVjDIwMDDkuroiLAogICAgICAgICAgICB4cCA9IDIwMDAsCiAgICAgICAgICAgIHRhcmdldCA9IDIwMDAsCiAgICAgICAgfSwKICAgIH0sCn0KCi0t5ri45oiP5YaF6YGT5YW35YiX6KGoKOmBk+WFt+exu+WeiykKU2hvcC5JdGVtTGlzdCA9IHsKICAgIGdvbGQgPSB7CiAgICAgICAgaWQgPSAxMDAsCiAgICAgICAgbmFtZSA9ICLph5HosYYiLAogICAgICAgIHR5cGUgPSAwLAogICAgICAgIHN0YWNrID0gdHJ1ZSwKICAgICAgICBzbG90ID0gbmlsLAogICAgICAgIGljb24gPSAicmF3Oi8vcmVzb3VyY2UvZmxhc2gzL2ltYWdlcy9jYXJkL2psMS5wbmciLAogICAgICAgIHRleHQgPSAi5Y+v55So5LqO6ZqP5py66Iux6ZuE77yM5oq95Y+W5a6d566x6KOF5aSH77yM5Yi35paw6KOF5aSH6K+N5p2h44CCIiwKICAgIH0sCiAgICBoZXJvX3BpY2sgPSB7CiAgICAgICAgaWQgPSAxLAogICAgICAgIG5hbWUgPSAi6Iux6ZuE6Ieq6YCJ5Y2hIiwKICAgICAgICB0eXBlID0gMSwKICAgICAgICBzdGFjayA9IHRydWUsCiAgICAgICAgc2xvdCA9IG5pbCwKICAgICAgICBpY29uID0gInJhdzovL3Jlc291cmNlL2ZsYXNoMy9pbWFnZXMvY2FyZC9oZXJvY2FyZC5wbmciLAogICAgICAgIHRleHQgPSAi5Y+v5Zyo6YCJ5oup6Iux6ZuE55WM6Z2i5L2/55So77yM6Kej6ZSB5Lu75oSP6Iux6ZuE6Ieq6YCJ44CCIiwKICAgIH0sCiAgICBwcm9waGVjeV9jYXJkID0gewogICAgICAgIGlkID0gNywKICAgICAgICBuYW1lID0gIumihOiogOWNoSIsCiAgICAgICAgdHlwZSA9IDEsCiAgICAgICAgc3RhY2sgPSB0cnVlLAogICAgICAgIHNsb3QgPSBuaWwsCiAgICAgICAgaWNvbiA9ICJyYXc6Ly9yZXNvdXJjZS9mbGFzaDMvaW1hZ2VzL2FjaGl2ZS95eWsucG5nIiwKICAgICAgICB0ZXh0ID0gIuW8gOWxgDLliIbpkp/lhoXlj6/ku6XpooToqIDvvIzlpoLmnpzmuLjmiI/nu5Pnrpfml7bojrflvpfkuobnrKzkuIDlkI3vvIzojrflvpc4ODjph5HosYbjgIIiLAogICAgfSwKICAgIHRpdGxlX2NseHggPSB7CiAgICAgICAgaWQgPSAyLAogICAgICAgIG5hbWUgPSAi5Lib5p6X5paw56eAIiwKICAgICAgICB0eXBlID0gMiwKICAgICAgICBzdGFjayA9IGZhbHNlLAogICAgICAgIHNsb3QgPSAidGl0bGUiLAogICAgICAgIGljb24gPSAicmF3Oi8vcmVzb3VyY2UvZmxhc2gzL2ltYWdlcy9jYXJkL2NoX2NseHgucG5nIiwKICAgICAgICB0aXRsZUljb24gPSB0cnVlLAogICAgICAgIHRpdGxlUGFydGljbGUgPSAicGFydGljbGVzL2NscmIvY2xyYl9lcXVpcF90aXRsZV9jbHh4X2xvb3AudnBjZiIsCiAgICAgICAgdGV4dCA9ICLlpLTpobbnp7Dlj7fnibnmlYjvvIzlj6/lnKjog4zljIXlhoXkvanmiLTjgIIiLAogICAgfSwKICAgIHRpdGxlX3dybmQgPSB7CiAgICAgICAgaWQgPSA1LAogICAgICAgIG5hbWUgPSAi5peg5Lq66IO95oyhIiwKICAgICAgICB0eXBlID0gMiwKICAgICAgICBzdGFjayA9IGZhbHNlLAogICAgICAgIHNsb3QgPSAidGl0bGUiLAogICAgICAgIGljb24gPSAicmF3Oi8vcmVzb3VyY2UvZmxhc2gzL2ltYWdlcy9jYXJkL2NoX3dybmQucG5nIiwKICAgICAgICB0aXRsZUljb24gPSB0cnVlLAogICAgICAgIHRpdGxlUGFydGljbGUgPSAicGFydGljbGVzL2NscmIvY2xyYl9lcXVpcF90aXRsZV93cm5kX2xvb3AudnBjZiIsCiAgICAgICAgdGV4dCA9ICLlpLTpobbnp7Dlj7fnibnmlYjvvIzlj6/lnKjog4zljIXlhoXkvanmiLTjgIIiLAogICAgfSwKICAgIHRpdGxlX3doY2wgPSB7CiAgICAgICAgaWQgPSA4LAogICAgICAgIG5hbWUgPSAi5Y2n6JmO6JeP6b6ZIiwKICAgICAgICB0eXBlID0gMiwKICAgICAgICBzdGFjayA9IGZhbHNlLAogICAgICAgIHNsb3QgPSAidGl0bGUiLAogICAgICAgIGljb24gPSAicmF3Oi8vcmVzb3VyY2UvZmxhc2gzL2ltYWdlcy9jYXJkL2NoX3doY2wucG5nIiwKICAgICAgICB0aXRsZUljb24gPSB0cnVlLAogICAgICAgIHRpdGxlUGFydGljbGUgPSAicGFydGljbGVzL2NscmIvY2xyYl9lcXVpcF90aXRsZV93aGNsX2xvb3AudnBjZiIsCiAgICAgICAgdGV4dCA9ICLlpLTpobbnp7Dlj7fnibnmlYjvvIzlj6/lnKjog4zljIXlhoXkvanmiLTjgIIiLAogICAgfSwKICAgIHRpdGxlX2NseHogPSB7CiAgICAgICAgaWQgPSA5LAogICAgICAgIG5hbWUgPSAi5Lib5p6X6KGM6ICFIiwKICAgICAgICB0eXBlID0gMiwKICAgICAgICBzdGFjayA9IGZhbHNlLAogICAgICAgIHNsb3QgPSAidGl0bGUiLAogICAgICAgIGljb24gPSAicmF3Oi8vcmVzb3VyY2UvZmxhc2gzL2ltYWdlcy9jYXJkL2NoX2NseHoucG5nIiwKICAgICAgICB0aXRsZUljb24gPSB0cnVlLAogICAgICAgIHRpdGxlUGFydGljbGUgPSAicGFydGljbGVzL2NscmIvY2xyYl9lcXVpcF90aXRsZV9jbHh6X2xvb3AudnBjZiIsCiAgICAgICAgdGV4dCA9ICLlpLTpobbnp7Dlj7fnibnmlYjvvIzlj6/lnKjog4zljIXlhoXkvanmiLTjgIIiLAogICAgfSwKICAgIHRpdGxlX3dzenMgPSB7CiAgICAgICAgaWQgPSAxMCwKICAgICAgICBuYW1lID0gIuaXoOWPjOaImOelniIsCiAgICAgICAgdHlwZSA9IDIsCiAgICAgICAgc3RhY2sgPSBmYWxzZSwKICAgICAgICBzbG90ID0gInRpdGxlIiwKICAgICAgICBpY29uID0gInJhdzovL3Jlc291cmNlL2ZsYXNoMy9pbWFnZXMvY2FyZC9jaF93c3pzLnBuZyIsCiAgICAgICAgdGl0bGVJY29uID0gdHJ1ZSwKICAgICAgICB0aXRsZVBhcnRpY2xlID0gInBhcnRpY2xlcy9jbHJiL2NscmJfZXF1aXBfdGl0bGVfd3N6c19sb29wLnZwY2YiLAogICAgICAgIHRleHQgPSAi5aS06aG256ew5Y+354m55pWI77yM5Y+v5Zyo6IOM5YyF5YaF5L2p5oi044CCIiwKICAgIH0sCiAgICB0aXRsZV9oc2JoID0gewogICAgICAgIGlkID0gMTEsCiAgICAgICAgbmFtZSA9ICLmqKrmiavlhavojZIiLAogICAgICAgIHR5cGUgPSAyLAogICAgICAgIHN0YWNrID0gZmFsc2UsCiAgICAgICAgc2xvdCA9ICJ0aXRsZSIsCiAgICAgICAgaWNvbiA9ICJyYXc6Ly9yZXNvdXJjZS9mbGFzaDMvaW1hZ2VzL2NhcmQvY2hfaHNiaC5wbmciLAogICAgICAgIHRpdGxlSWNvbiA9IHRydWUsCiAgICAgICAgdGl0bGVQYXJ0aWNsZSA9ICJwYXJ0aWNsZXMvY2xyYi9jbHJiX2VxdWlwX3RpdGxlX2hzYmhfbG9vcC52cGNmIiwKICAgICAgICB0ZXh0ID0gIuWktOmhtuensOWPt+eJueaViO+8jOWPr+WcqOiDjOWMheWGheS9qeaItOOAgiIsCiAgICB9LAogICAgdGl0bGVfaGRsbSA9IHsKICAgICAgICBpZCA9IDEzLAogICAgICAgIG5hbWUgPSAi5qiq5YiA56uL6amsIiwKICAgICAgICB0eXBlID0gMiwKICAgICAgICBzdGFjayA9IGZhbHNlLAogICAgICAgIHNsb3QgPSAidGl0bGUiLAogICAgICAgIGljb24gPSAicmF3Oi8vcmVzb3VyY2UvZmxhc2gzL2ltYWdlcy9jYXJkL2NoX2hkbG0ucG5nIiwKICAgICAgICB0aXRsZUljb24gPSB0cnVlLAogICAgICAgIHRpdGxlUGFydGljbGUgPSAicGFydGljbGVzL2NscmIvY2xyYl9lcXVpcF90aXRsZV9oZGxtX2xvb3AudnBjZiIsCiAgICAgICAgdGV4dCA9ICLlpLTpobbnp7Dlj7fnibnmlYjvvIzlj6/lnKjog4zljIXlhoXkvanmiLTjgIIiLAogICAgfSwKICAgIHRpdGxlX3lzcXdoID0gewogICAgICAgIGlkID0gMTQsCiAgICAgICAgbmFtZSA9ICLkuIDphonovbvnjovkvq8iLAogICAgICAgIHR5cGUgPSAyLAogICAgICAgIHN0YWNrID0gZmFsc2UsCiAgICAgICAgc2xvdCA9ICJ0aXRsZSIsCiAgICAgICAgaWNvbiA9ICJyYXc6Ly9yZXNvdXJjZS9mbGFzaDMvaW1hZ2VzL2NhcmQvY2hfeXNxd2gucG5nIiwKICAgICAgICB0aXRsZUljb24gPSB0cnVlLAogICAgICAgIHRpdGxlUGFydGljbGUgPSAicGFydGljbGVzL2NscmIvY2xyYl9lcXVpcF90aXRsZV95c3F3aF9sb29wLnZwY2YiLAogICAgICAgIHRleHQgPSAi5aS06aG256ew5Y+354m55pWI77yM5Y+v5Zyo6IOM5YyF5YaF5L2p5oi044CCIiwKICAgIH0sCiAgICB0aXRsZV9yemxmID0gewogICAgICAgIGlkID0gMTUsCiAgICAgICAgbmFtZSA9ICLkurrkuK3pvpnlh6QiLAogICAgICAgIHR5cGUgPSAyLAogICAgICAgIHN0YWNrID0gZmFsc2UsCiAgICAgICAgc2xvdCA9ICJ0aXRsZSIsCiAgICAgICAgaWNvbiA9ICJyYXc6Ly9yZXNvdXJjZS9mbGFzaDMvaW1hZ2VzL2NhcmQvY2hfcnpsZi5wbmciLAogICAgICAgIHRpdGxlSWNvbiA9IHRydWUsCiAgICAgICAgdGl0bGVQYXJ0aWNsZSA9ICJwYXJ0aWNsZXMvY2xyYi9jbHJiX2VxdWlwX3RpdGxlX3J6bGZfbG9vcC52cGNmIiwKICAgICAgICB0ZXh0ID0gIuWktOmhtuensOWPt+eJueaViO+8jOWPr+WcqOiDjOWMheWGheS9qeaItOOAgiIsCiAgICB9LAogICAgdGl0bGVfY2xscyA9IHsKICAgICAgICBpZCA9IDE2LAogICAgICAgIG5hbWUgPSAi5Lib5p6X54yO5omLIiwKICAgICAgICB0eXBlID0gMiwKICAgICAgICBzdGFjayA9IGZhbHNlLAogICAgICAgIHNsb3QgPSAidGl0bGUiLAogICAgICAgIGljb24gPSAicmF3Oi8vcmVzb3VyY2UvZmxhc2gzL2ltYWdlcy9jYXJkL2NoX2NsbHMucG5nIiwKICAgICAgICB0aXRsZUljb24gPSB0cnVlLAogICAgICAgIHRpdGxlUGFydGljbGUgPSAicGFydGljbGVzL2NscmIvY2xyYl9lcXVpcF90aXRsZV9jbGxzX2xvb3AudnBjZiIsCiAgICAgICAgdGV4dCA9ICLlpLTpobbnp7Dlj7fnibnmlYjvvIzlj6/lnKjog4zljIXlhoXkvanmiLTjgIIiLAogICAgfSwKICAgIHRpdGxlX2NsbHIgPSB7CiAgICAgICAgaWQgPSAxNywKICAgICAgICBuYW1lID0gIuS4m+ael+eMjuS6uiIsCiAgICAgICAgdHlwZSA9IDIsCiAgICAgICAgc3RhY2sgPSBmYWxzZSwKICAgICAgICBzbG90ID0gInRpdGxlIiwKICAgICAgICBpY29uID0gInJhdzovL3Jlc291cmNlL2ZsYXNoMy9pbWFnZXMvY2FyZC9jaF9jbGxyLnBuZyIsCiAgICAgICAgdGl0bGVJY29uID0gdHJ1ZSwKICAgICAgICB0aXRsZVBhcnRpY2xlID0gInBhcnRpY2xlcy9jbHJiL2NscmJfZXF1aXBfdGl0bGVfY2xscl9sb29wLnZwY2YiLAogICAgICAgIHRleHQgPSAi5aS06aG256ew5Y+354m55pWI77yM5Y+v5Zyo6IOM5YyF5YaF5L2p5oi044CCIiwKICAgIH0sCiAgICB0aXRsZV9jbHp3ID0gewogICAgICAgIGlkID0gMTgsCiAgICAgICAgbmFtZSA9ICLkuJvmnpfkuYvnjosiLAogICAgICAgIHR5cGUgPSAyLAogICAgICAgIHN0YWNrID0gZmFsc2UsCiAgICAgICAgc2xvdCA9ICJ0aXRsZSIsCiAgICAgICAgaWNvbiA9ICJyYXc6Ly9yZXNvdXJjZS9mbGFzaDMvaW1hZ2VzL2NhcmQvY2hfY2x6dy5wbmciLAogICAgICAgIHRpdGxlSWNvbiA9IHRydWUsCiAgICAgICAgdGl0bGVQYXJ0aWNsZSA9ICJwYXJ0aWNsZXMvY2xyYi9jbHJiX2VxdWlwX3RpdGxlX2NsendfbG9vcC52cGNmIiwKICAgICAgICB0ZXh0ID0gIuWktOmhtuensOWPt+eJueaViO+8jOWPr+WcqOiDjOWMheWGheS9qeaItOOAgiIsCiAgICB9LAogICAgdGl0bGVfY2xteSA9IHsKICAgICAgICBpZCA9IDE5LAogICAgICAgIG5hbWUgPSAi5Lib5p6X5qKm6a2HIiwKICAgICAgICB0eXBlID0gMiwKICAgICAgICBzdGFjayA9IGZhbHNlLAogICAgICAgIHNsb3QgPSAidGl0bGUiLAogICAgICAgIGljb24gPSAicmF3Oi8vcmVzb3VyY2UvZmxhc2gzL2ltYWdlcy9jYXJkL2NoX2NsbXkucG5nIiwKICAgICAgICB0aXRsZUljb24gPSB0cnVlLAogICAgICAgIHRpdGxlUGFydGljbGUgPSAicGFydGljbGVzL2NscmIvY2xyYl9lcXVpcF90aXRsZV9jbG15X2xvb3AudnBjZiIsCiAgICAgICAgdGV4dCA9ICLlpLTpobbnp7Dlj7fnibnmlYjvvIzlj6/lnKjog4zljIXlhoXkvanmiLTjgIIiLAogICAgfSwKICAgIHRpdGxlX2NsenkgPSB7CiAgICAgICAgaWQgPSAyMCwKICAgICAgICBuYW1lID0gIuS4m+ael+S5i+e/vCIsCiAgICAgICAgdHlwZSA9IDIsCiAgICAgICAgc3RhY2sgPSBmYWxzZSwKICAgICAgICBzbG90ID0gInRpdGxlIiwKICAgICAgICBpY29uID0gInJhdzovL3Jlc291cmNlL2ZsYXNoMy9pbWFnZXMvY2FyZC9jaF9jbHp5LnBuZyIsCiAgICAgICAgdGl0bGVJY29uID0gdHJ1ZSwKICAgICAgICB0aXRsZVBhcnRpY2xlID0gInBhcnRpY2xlcy9jbHJiL2NscmJfZXF1aXBfdGl0bGVfY2x6eV9sb29wLnZwY2YiLAogICAgICAgIHRleHQgPSAi5aS06aG256ew5Y+354m55pWI77yM5Y+v5Zyo6IOM5YyF5YaF5L2p5oi044CCIiwKICAgIH0sCiAgICB0aXRsZV94eHFjID0gewogICAgICAgIGlkID0gMjEsCiAgICAgICAgbmFtZSA9ICLooYDmtJflhajlnLoiLAogICAgICAgIHR5cGUgPSAyLAogICAgICAgIHN0YWNrID0gZmFsc2UsCiAgICAgICAgc2xvdCA9ICJ0aXRsZSIsCiAgICAgICAgaWNvbiA9ICJyYXc6Ly9yZXNvdXJjZS9mbGFzaDMvaW1hZ2VzL2NhcmQvY2hfeHhxYy5wbmciLAogICAgICAgIHRpdGxlSWNvbiA9IHRydWUsCiAgICAgICAgdGl0bGVQYXJ0aWNsZSA9ICJwYXJ0aWNsZXMvY2xyYi9jbHJiX2VxdWlwX3RpdGxlX3h4cWNfbG9vcC52cGNmIiwKICAgICAgICB0ZXh0ID0gIuWktOmhtuensOWPt+eJueaViO+8jOWPr+WcqOiDjOWMheWGheS9qeaItOOAgiIsCiAgICB9LAogICAgdGl0bGVfcnp6bCA9IHsKICAgICAgICBpZCA9IDIyLAogICAgICAgIG5hbWUgPSAi5Lq65Lit5LmL6b6ZIiwKICAgICAgICB0eXBlID0gMiwKICAgICAgICBzdGFjayA9IGZhbHNlLAogICAgICAgIHNsb3QgPSAidGl0bGUiLAogICAgICAgIGljb24gPSAicmF3Oi8vcmVzb3VyY2UvZmxhc2gzL2ltYWdlcy9jYXJkL2NoX3J6emwucG5nIiwKICAgICAgICB0aXRsZUljb24gPSB0cnVlLAogICAgICAgIHRpdGxlUGFydGljbGUgPSAicGFydGljbGVzL2NscmIvY2xyYl9lcXVpcF90aXRsZV9yenpsX2xvb3AudnBjZiIsCiAgICAgICAgdGV4dCA9ICLlpLTpobbnp7Dlj7fnibnmlYjvvIzlj6/lnKjog4zljIXlhoXkvanmiLTjgIIiLAogICAgfSwKICAgIGVmZmVjdF90eDEgPSB7CiAgICAgICAgaWQgPSA2LAogICAgICAgIG5hbWUgPSAi54eD54On5pyr5pelIiwKICAgICAgICB0eXBlID0gMywKICAgICAgICBzdGFjayA9IGZhbHNlLAogICAgICAgIHNsb3QgPSAiZWZmZWN0IiwKICAgICAgICBpY29uID0gInJhdzovL3Jlc291cmNlL2ZsYXNoMy9pbWFnZXMvY2FyZC90eDEucG5nIiwKICAgICAgICBlZmZlY3RQYXJ0aWNsZSA9ICJwYXJ0aWNsZXMvZWNvbi9jb3VyaWVyL2NvdXJpZXJfdHJhaWxfbGF2YS9jb3VyaWVyX3RyYWlsX2xhdmEudnBjZiIsCiAgICAgICAgdGV4dCA9ICLlkajouqvnibnmlYjvvIzlj6/lnKjog4zljIXlhoXkvanmiLTjgIIiLAogICAgfSwKICAgIGVmZmVjdF9senF6ID0gewogICAgICAgIGlkID0gMjMsCiAgICAgICAgbmFtZSA9ICLnprvlrZDkuYvmsJQiLAogICAgICAgIHR5cGUgPSAzLAogICAgICAgIHN0YWNrID0gZmFsc2UsCiAgICAgICAgc2xvdCA9ICJlZmZlY3QiLAogICAgICAgIGljb24gPSAicmF3Oi8vcmVzb3VyY2UvZmxhc2gzL2ltYWdlcy9jYXJkL3R4X2x6enEucG5nIiwKICAgICAgICBlZmZlY3RQYXJ0aWNsZSA9ICJwYXJ0aWNsZXMvY291cmllcl9wbGF0aW51bV9yb3NoYW4vcGxhdGludW1fcm9zaGFuX2FtYmllbnQudnBjZiIsCiAgICAgICAgdGV4dCA9ICLlkajouqvnibnmlYjvvIzlj6/lnKjog4zljIXlhoXkvanmiLTjgIIiLAogICAgfSwKICAgIGVmZmVjdF90eGhiID0gewogICAgICAgIGlkID0gMjQsCiAgICAgICAgbmFtZSA9ICLlrInmiI/onbTonbYiLAogICAgICAgIHR5cGUgPSAzLAogICAgICAgIHN0YWNrID0gZmFsc2UsCiAgICAgICAgc2xvdCA9ICJlZmZlY3QiLAogICAgICAgIGljb24gPSAicmF3Oi8vcmVzb3VyY2UvZmxhc2gzL2ltYWdlcy9jYXJkL3R4X3h4aGQucG5nIiwKICAgICAgICBlZmZlY3RQYXJ0aWNsZSA9ICJwYXJ0aWNsZXMvY291cmllcl9zaGFnYmFyay9jb3VyaWVyX3NoYWdiYXJrX2FtYmllbnQudnBjZiIsCiAgICAgICAgdGV4dCA9ICLlkajouqvnibnmlYjvvIzlj6/lnKjog4zljIXlhoXkvanmiLTjgIIiLAogICAgfSwKICAgIGF0dGFja19seGhzID0gewogICAgICAgIGlkID0gMTIsCiAgICAgICAgbmFtZSA9ICLmtYHmmJ/ngavnn6IiLAogICAgICAgIHR5cGUgPSA1LAogICAgICAgIHN0YWNrID0gZmFsc2UsCiAgICAgICAgc2xvdCA9ICJhdHRhY2tfZWZmZWN0IiwKICAgICAgICBpY29uID0gInJhdzovL3Jlc291cmNlL2ZsYXNoMy9pbWFnZXMvY2FyZC90eHpfbHhocy5wbmciLAogICAgICAgIGF0dGFja0VmZmVjdEtleSA9ICJhdHYyIiwKICAgICAgICB0ZXh0ID0gIuaUu+WHu+W8uemBk+eJueaViO+8jOWPr+WcqOiDjOWMheWGheS9qeaItOOAgiIsCiAgICB9LAogICAgYXR0YWNrX2F0djMgPSB7CiAgICAgICAgaWQgPSAyNSwKICAgICAgICBuYW1lID0gIueip+WFiea1geefoiIsCiAgICAgICAgdHlwZSA9IDUsCiAgICAgICAgc3RhY2sgPSBmYWxzZSwKICAgICAgICBzbG90ID0gImF0dGFja19lZmZlY3QiLAogICAgICAgIGljb24gPSAicmF3Oi8vcmVzb3VyY2UvZmxhc2gzL2ltYWdlcy9jYXJkL3R4X2JnbHMucG5nIiwKICAgICAgICBhdHRhY2tFZmZlY3RLZXkgPSAiYXR2MSIsCiAgICAgICAgdGV4dCA9ICLmlLvlh7vlvLnpgZPnibnmlYjvvIzlj6/lnKjog4zljIXlhoXkvanmiLTjgIIiLAogICAgfSwKICAgIGVmZmVjdF9ibHVlID0gewogICAgICAgIGlkID0gMywKICAgICAgICBuYW1lID0gIuW5veiTneWGsOeEsCIsCiAgICAgICAgdHlwZSA9IDMsCiAgICAgICAgc3RhY2sgPSBmYWxzZSwKICAgICAgICBzbG90ID0gImVmZmVjdCIsCiAgICAgICAgaWNvbiA9ICJmaWxlOi8ve2ltYWdlc30vY2FyZC9iZzMucG5nIiwKICAgICAgICB0ZXh0ID0gIuWRqOi6q+eJueaViO+8jOWPr+WcqOiDjOWMheWGheS9qeaItOOAgiIsCiAgICB9LAogICAgcGV0X21lYXQgPSB7CiAgICAgICAgaWQgPSA0LAogICAgICAgIG5hbWUgPSAi5bCP6IKJ5bGxIiwKICAgICAgICB0eXBlID0gNCwKICAgICAgICBzdGFjayA9IGZhbHNlLAogICAgICAgIHNsb3QgPSAicGV0IiwKICAgICAgICBpY29uID0gImZpbGU6Ly97aW1hZ2VzfS9jYXJkL2NhcmQyLnBuZyIsCiAgICAgICAgdGV4dCA9ICLot5/pmo/lrqDnianvvIzlj6/lnKjog4zljIXlhoXkvanmiLTjgIIiLAogICAgfSwKICAgIHBldF9iYWJ5X3Jvc2ggPSB7CiAgICAgICAgaWQgPSAxMDQsCiAgICAgICAgbmFtZSA9ICLogonlsbHlrp3lrp0iLAogICAgICAgIHR5cGUgPSA0LAogICAgICAgIHN0YWNrID0gZmFsc2UsCiAgICAgICAgc2xvdCA9ICJwZXQiLAogICAgICAgIHByZXZpZXdVbml0ID0gIkNhcmRQZXQiLAogICAgICAgIG1vZGVsUGF0aCA9ICJtb2RlbHMvY291cmllci9iYWJ5X3Jvc2gvYmFieXJvc2hhbi52bWRsIiwKICAgICAgICB0ZXh0ID0gIum7mOiupOi3n+maj+WuoOeJqe+8jOWIm+W7uui0puWPt+WQjuiHquWKqOiOt+W+l++8jOWPr+S9qeaItOaIluWNuOS4i+OAgiIsCiAgICB9LAogICAgcGV0X3RpMTBfcm9zaCA9IHsKICAgICAgICBpZCA9IDEwNSwKICAgICAgICBuYW1lID0gIui3qOe6rOW6puiCieWxseWuneWunSIsCiAgICAgICAgdHlwZSA9IDQsCiAgICAgICAgc3RhY2sgPSBmYWxzZSwKICAgICAgICBzbG90ID0gInBldCIsCiAgICAgICAgaWNvbiA9ICJyYXc6Ly9yZXNvdXJjZS9mbGFzaDMvaW1hZ2VzL2FjaGl2ZS9wZXQucG5nIiwKICAgICAgICBwcmV2aWV3VW5pdCA9ICJDYXJkUGV0VGkxMCIsCiAgICAgICAgbW9kZWxQYXRoID0gIm1vZGVscy9jb3VyaWVyL2JhYnlfcm9zaC9iYWJ5cm9zaGFuX3RpMTBfZmx5aW5nLnZtZGwiLAogICAgICAgIHBldFBhcnRpY2xlID0gInBhcnRpY2xlcy9lY29uL2NvdXJpZXIvY291cmllcl9iYWJ5cm9zaGFuX3RpMTAvY291cmllcl9iYWJ5cm9zaGFuX3RpMTBfYW1iaWVudC52cGNmIiwKICAgICAgICB0ZXh0ID0gIui3n+maj+WuoOeJqe+8jOWPr+WcqOiDjOWMheWGheS9qeaItOOAgiIsCiAgICB9LAp9Cg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
-end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+Shop.Data = {}
+Shop.Template = {
+    page = false,
+    --金币
+    gold = 0,
+    --月卡剩余天数
+    card1 = 0,
+    --季卡
+    card2 = 0,
+    --月卡每日领取状态
+    card1day = 0,
+    --季卡每日领取状态
+    card2day = 0,
+    --每日领取状态
+    freeday = 0,
+    -- 节日礼包：每日免费（1可领 0已领）
+    dw_free_day = 1,
+    dw_free_open = false,
+    dw_free_event_status = "ended",
+    -- 节日礼包：付费限购已购次数（每档上限3）
+    dw_30_buy = 0,
+    dw_68_buy = 0,
+    dw_128_buy = 0,
+    --双倍重置状态
+    double = {
+        gold6 = 0,
+        gold30 = 0,
+        gold68 = 0,
+        gold128 = 0,
+        gold328 = 0,
+        gold648 = 0,
+        gold1280 = 0,
+    },
+    --本局消耗的豆子
+    cost = 0,
+    --刷新状态
+    refresh = true,
+    -- 全服首充双倍是否开启（与服务器 first_recharge_double_open 一致，仅影响商城展示用 double）
+    first_recharge_double_open = true,
+    --通行证数据（与服务端 card 表字段一致）
+    card = {
+        -- 高级通行证是否激活：0否 1是
+        state = 0,
+        -- 玩家当前通行证经验总和
+        exp = 0,
+        -- 已领取奖励到达的等级
+        get_level = 0,
+        -- 进阶轨道已领取奖励到达的等级
+        get_level_premium = 0,
+        -- 每日游玩场数
+        daygamecount = 0,
+        -- 每日累计杀敌数
+        daykillcount = 0,
+        -- 每日获得队伍第一名次数
+        daytop1count = 0,
+        -- 每周任意模式获得队伍第一名次数（与每日 daytop1count 一致）
+        weektop1count = 0,
+        -- 每周累计杀敌数
+        weekkillcount = 0,
+        -- rank_1v1 模式获得第一名次数
+        weekmap1top1 = 0,
+        -- rank_3x4 模式获得第一名次数
+        weekmap2top1 = 0,
+        -- rank_5v5 模式获得第一名次数
+        weekmap3top1 = 0,
+        -- 每日任务1是否已领取奖励：0否 1是
+        taskday1 = 0,
+        -- 每日任务2是否已领取奖励：0否 1是
+        taskday2 = 0,
+        -- 每日任务3是否已领取奖励：0否 1是
+        taskday3 = 0,
+        -- 每日任务4是否已领取奖励：0否 1是
+        taskday4 = 0,
+        -- 每日任务5是否已领取奖励：0否 1是
+        taskday5 = 0,
+        -- 每日任务6是否已领取奖励：0否 1是
+        taskday6 = 0,
+        -- 每周任务1是否已领取奖励：0否 1是
+        taskweed1 = 0,
+        -- 每周任务2是否已领取奖励：0否 1是
+        taskweed2 = 0,
+        -- 每周任务3是否已领取奖励：0否 1是
+        taskweed3 = 0,
+        -- 每周任务4是否已领取奖励：0否 1是
+        taskweed4 = 0,
+        -- 每周任务5是否已领取奖励：0否 1是
+        taskweed5 = 0,
+        taskweed6 = 0,
+    },
+    -- 局外背包（/bag/sync）
+    bag = {
+        items = {},
+        loadout = {
+            equipped_title = nil,
+            equipped_effect = nil,
+            equipped_attack_effect = nil,
+            equipped_pet = nil,
+        },
+    },
+    -- 服务端已确认佩戴快照（与 bag.loadout 对比判断是否有未同步改动）
+    bag_loadout_server = {
+        equipped_title = nil,
+        equipped_effect = nil,
+        equipped_attack_effect = nil,
+        equipped_pet = nil,
+    },
+    bag_loadout_dirty = false,
+}
+Shop.Static = {
+
+}
+Shop.Goods = {
+    --月卡
+    goods_1 = {
+        id = 1,
+        price = 30,
+    },
+    goods_2 = {
+        id = 2,
+        price = 6,
+    },
+    goods_3 = {
+        id = "goods3",
+        price = 30,
+    },
+    goods_4 = {
+        id = "goods4",
+        price = 68,
+    },
+    goods_5 = {
+        id = "goods5",
+        price = 128,
+    },
+    goods_6 = {
+        id = "goods6",
+        price = 328,
+    },
+    goods_7 = {
+        id = "goods7",
+        price = 648,
+    },
+    goods_10 = {
+        id = "goods10",
+        price = 1280,
+    },
+    goods_8 = {
+        id = "goods8",
+        price = 88,
+    },
+    -- 高级通行证（card3，仅可购买一次）
+    goods_9 = {
+        id = "goods9",
+        price = 98,
+    },
+}
+--通行证的相关参数
+Shop.CardStaticData = {
+    -- 每升 1 级所需通行证经验
+    xp_per_level = 500,
+    -- 购买通行证后立即获得的通行证经验
+    purchase_xp_bonus = 5000,
+    -- 等级上限与奖励预览（每 50 级为一阶段翻页展示，最高 200）
+    max_level = 200,          -- 战令封顶等级
+    preview_phase_size = 50,  -- 每阶段 50 级（49 列滚动 + 1 列固定）
+    preview_initial_max = 50, -- 初始预览第 1 阶段（1~50 级）
+    -- 普通轨道奖励
+    free = {
+        gold_per_level = 40, -- 每级奖励金豆
+        gold_every_10 = 80,  -- 等级为 10 的倍数时奖励金豆
+        title_by_level = {   -- 指定等级奖励称号（仅 30 级）
+            [30] = "丛林行者",
+        },
+    },
+    -- 激活通行证后的额外奖励
+    premium = {
+        gold_per_level = 80,            -- 每级奖励金豆
+        gold_every_10 = 160,            -- 等级为 10 的倍数时奖励金豆
+        hero_pick_every_10 = 1,         -- 等级为 10 的倍数时额外奖励英雄自选卡数量
+        can_deduct_ladder_point = true, -- 英雄自选卡可扣天梯分
+        title_by_level = {             -- 指定等级奖励称号（仅 30 级）
+            [30] = "横扫八荒",
+        },
+        effect_by_level = {          -- 指定等级奖励攻击弹道特效（仅 1 级）
+            [1] = "流星火矢",
+        },
+    },
+}
+-- 通行证任务相关参数
+Shop.CardTaskData = {
+    -- 每日任务（每日重置）
+    daily = {
+        login = {
+            desc = "登录丛林激战",
+            xp = 50,
+        },
+        play_2 = {
+            desc = "完成一局任意模式游戏",
+            xp = 50,
+            target = 1, -- 需完成局数
+        },
+        play_5 = {
+            desc = "完成三局任意模式游戏",
+            xp = 100,
+            target = 3,
+        },
+        win_1 = {
+            desc = "任意模式游戏获取队伍第一名",
+            xp = 200,
+            target = 1, -- 需获胜局数
+        },
+        kills_100 = {
+            desc = "任意模式游戏累计杀敌100人",
+            xp = 200,
+            target = 100,
+        },
+        kills_200 = {
+            desc = "任意模式游戏累计杀敌200人",
+            xp = 500,
+            target = 200,
+        },
+    },
+    -- 每周任务（每周重置）
+    weekly = {
+        solo_win_1 = {
+            desc = "任意模式游戏累计获取队伍第一名二次",
+            xp = 500,
+            target = 2,
+        },
+        duo_win_4 = {
+            desc = "任意模式游戏累计获取队伍第一名四次",
+            xp = 500,
+            target = 4,
+        },
+        team5_win_8 = {
+            desc = "任意模式游戏累计获取队伍第一名八次",
+            xp = 500,
+            target = 8,
+        },
+        kills_500 = {
+            desc = "任意模式游戏累计杀敌500人",
+            xp = 1000,
+            target = 500,
+        },
+        kills_1000 = {
+            desc = "任意模式游戏累计杀敌1000人",
+            xp = 1000,
+            target = 1000,
+        },
+        kills_2000 = {
+            desc = "任意模式游戏累计杀敌2000人",
+            xp = 2000,
+            target = 2000,
+        },
+    },
+}
+
+--游戏内道具列表(道具类型)
+Shop.ItemList = {
+    gold = {
+        id = 100,
+        name = "金豆",
+        type = 0,
+        stack = true,
+        slot = nil,
+        icon = "raw://resource/flash3/images/card/jl1.png",
+        text = "可用于随机英雄，抽取宝箱装备，刷新装备词条。",
+    },
+    hero_pick = {
+        id = 1,
+        name = "英雄自选卡",
+        type = 1,
+        stack = true,
+        slot = nil,
+        icon = "raw://resource/flash3/images/card/herocard.png",
+        text = "可在选择英雄界面使用，解锁任意英雄自选。",
+    },
+    prophecy_card = {
+        id = 7,
+        name = "预言卡",
+        type = 1,
+        stack = true,
+        slot = nil,
+        icon = "raw://resource/flash3/images/achive/yyk.png",
+        text = "开局2分钟内可以预言，如果游戏结算时获得了第一名，获得888金豆。",
+    },
+    title_clxx = {
+        id = 2,
+        name = "丛林新秀",
+        type = 2,
+        stack = false,
+        slot = "title",
+        icon = "raw://resource/flash3/images/card/ch_clxx.png",
+        titleIcon = true,
+        titleParticle = "particles/clrb/clrb_equip_title_clxx_loop.vpcf",
+        text = "头顶称号特效，可在背包内佩戴。",
+    },
+    title_wrnd = {
+        id = 5,
+        name = "无人能挡",
+        type = 2,
+        stack = false,
+        slot = "title",
+        icon = "raw://resource/flash3/images/card/ch_wrnd.png",
+        titleIcon = true,
+        titleParticle = "particles/clrb/clrb_equip_title_wrnd_loop.vpcf",
+        text = "头顶称号特效，可在背包内佩戴。",
+    },
+    title_whcl = {
+        id = 8,
+        name = "卧虎藏龙",
+        type = 2,
+        stack = false,
+        slot = "title",
+        icon = "raw://resource/flash3/images/card/ch_whcl.png",
+        titleIcon = true,
+        titleParticle = "particles/clrb/clrb_equip_title_whcl_loop.vpcf",
+        text = "头顶称号特效，可在背包内佩戴。",
+    },
+    title_clxz = {
+        id = 9,
+        name = "丛林行者",
+        type = 2,
+        stack = false,
+        slot = "title",
+        icon = "raw://resource/flash3/images/card/ch_clxz.png",
+        titleIcon = true,
+        titleParticle = "particles/clrb/clrb_equip_title_clxz_loop.vpcf",
+        text = "头顶称号特效，可在背包内佩戴。",
+    },
+    title_wszs = {
+        id = 10,
+        name = "无双战神",
+        type = 2,
+        stack = false,
+        slot = "title",
+        icon = "raw://resource/flash3/images/card/ch_wszs.png",
+        titleIcon = true,
+        titleParticle = "particles/clrb/clrb_equip_title_wszs_loop.vpcf",
+        text = "头顶称号特效，可在背包内佩戴。",
+    },
+    title_hsbh = {
+        id = 11,
+        name = "横扫八荒",
+        type = 2,
+        stack = false,
+        slot = "title",
+        icon = "raw://resource/flash3/images/card/ch_hsbh.png",
+        titleIcon = true,
+        titleParticle = "particles/clrb/clrb_equip_title_hsbh_loop.vpcf",
+        text = "头顶称号特效，可在背包内佩戴。",
+    },
+    title_hdlm = {
+        id = 13,
+        name = "横刀立马",
+        type = 2,
+        stack = false,
+        slot = "title",
+        icon = "raw://resource/flash3/images/card/ch_hdlm.png",
+        titleIcon = true,
+        titleParticle = "particles/clrb/clrb_equip_title_hdlm_loop.vpcf",
+        text = "头顶称号特效，可在背包内佩戴。",
+    },
+    title_ysqwh = {
+        id = 14,
+        name = "一醉轻王侯",
+        type = 2,
+        stack = false,
+        slot = "title",
+        icon = "raw://resource/flash3/images/card/ch_ysqwh.png",
+        titleIcon = true,
+        titleParticle = "particles/clrb/clrb_equip_title_ysqwh_loop.vpcf",
+        text = "头顶称号特效，可在背包内佩戴。",
+    },
+    title_rzlf = {
+        id = 15,
+        name = "人中龙凤",
+        type = 2,
+        stack = false,
+        slot = "title",
+        icon = "raw://resource/flash3/images/card/ch_rzlf.png",
+        titleIcon = true,
+        titleParticle = "particles/clrb/clrb_equip_title_rzlf_loop.vpcf",
+        text = "头顶称号特效，可在背包内佩戴。",
+    },
+    title_clls = {
+        id = 16,
+        name = "丛林猎手",
+        type = 2,
+        stack = false,
+        slot = "title",
+        icon = "raw://resource/flash3/images/card/ch_clls.png",
+        titleIcon = true,
+        titleParticle = "particles/clrb/clrb_equip_title_clls_loop.vpcf",
+        text = "头顶称号特效，可在背包内佩戴。",
+    },
+    title_cllr = {
+        id = 17,
+        name = "丛林猎人",
+        type = 2,
+        stack = false,
+        slot = "title",
+        icon = "raw://resource/flash3/images/card/ch_cllr.png",
+        titleIcon = true,
+        titleParticle = "particles/clrb/clrb_equip_title_cllr_loop.vpcf",
+        text = "头顶称号特效，可在背包内佩戴。",
+    },
+    title_clzw = {
+        id = 18,
+        name = "丛林之王",
+        type = 2,
+        stack = false,
+        slot = "title",
+        icon = "raw://resource/flash3/images/card/ch_clzw.png",
+        titleIcon = true,
+        titleParticle = "particles/clrb/clrb_equip_title_clzw_loop.vpcf",
+        text = "头顶称号特效，可在背包内佩戴。",
+    },
+    title_clmy = {
+        id = 19,
+        name = "丛林梦魇",
+        type = 2,
+        stack = false,
+        slot = "title",
+        icon = "raw://resource/flash3/images/card/ch_clmy.png",
+        titleIcon = true,
+        titleParticle = "particles/clrb/clrb_equip_title_clmy_loop.vpcf",
+        text = "头顶称号特效，可在背包内佩戴。",
+    },
+    title_clzy = {
+        id = 20,
+        name = "丛林之翼",
+        type = 2,
+        stack = false,
+        slot = "title",
+        icon = "raw://resource/flash3/images/card/ch_clzy.png",
+        titleIcon = true,
+        titleParticle = "particles/clrb/clrb_equip_title_clzy_loop.vpcf",
+        text = "头顶称号特效，可在背包内佩戴。",
+    },
+    title_xxqc = {
+        id = 21,
+        name = "血洗全场",
+        type = 2,
+        stack = false,
+        slot = "title",
+        icon = "raw://resource/flash3/images/card/ch_xxqc.png",
+        titleIcon = true,
+        titleParticle = "particles/clrb/clrb_equip_title_xxqc_loop.vpcf",
+        text = "头顶称号特效，可在背包内佩戴。",
+    },
+    title_rzzl = {
+        id = 22,
+        name = "人中之龙",
+        type = 2,
+        stack = false,
+        slot = "title",
+        icon = "raw://resource/flash3/images/card/ch_rzzl.png",
+        titleIcon = true,
+        titleParticle = "particles/clrb/clrb_equip_title_rzzl_loop.vpcf",
+        text = "头顶称号特效，可在背包内佩戴。",
+    },
+    effect_tx1 = {
+        id = 6,
+        name = "燃烧末日",
+        type = 3,
+        stack = false,
+        slot = "effect",
+        icon = "raw://resource/flash3/images/card/tx1.png",
+        effectParticle = "particles/econ/courier/courier_trail_lava/courier_trail_lava.vpcf",
+        text = "周身特效，可在背包内佩戴。",
+    },
+    effect_lzqz = {
+        id = 23,
+        name = "离子之气",
+        type = 3,
+        stack = false,
+        slot = "effect",
+        icon = "raw://resource/flash3/images/card/tx_lzzq.png",
+        effectParticle = "particles/courier_platinum_roshan/platinum_roshan_ambient.vpcf",
+        text = "周身特效，可在背包内佩戴。",
+    },
+    effect_txhb = {
+        id = 24,
+        name = "嬉戏蝴蝶",
+        type = 3,
+        stack = false,
+        slot = "effect",
+        icon = "raw://resource/flash3/images/card/tx_xxhd.png",
+        effectParticle = "particles/courier_shagbark/courier_shagbark_ambient.vpcf",
+        text = "周身特效，可在背包内佩戴。",
+    },
+    attack_lxhs = {
+        id = 12,
+        name = "流星火矢",
+        type = 5,
+        stack = false,
+        slot = "attack_effect",
+        icon = "raw://resource/flash3/images/card/txz_lxhs.png",
+        attackEffectKey = "atv2",
+        text = "攻击弹道特效，可在背包内佩戴。",
+    },
+    attack_atv3 = {
+        id = 25,
+        name = "碧光流矢",
+        type = 5,
+        stack = false,
+        slot = "attack_effect",
+        icon = "raw://resource/flash3/images/card/tx_bgls.png",
+        attackEffectKey = "atv1",
+        text = "攻击弹道特效，可在背包内佩戴。",
+    },
+    effect_blue = {
+        id = 3,
+        name = "幽蓝冰焰",
+        type = 3,
+        stack = false,
+        slot = "effect",
+        icon = "file://{images}/card/bg3.png",
+        text = "周身特效，可在背包内佩戴。",
+    },
+    pet_meat = {
+        id = 4,
+        name = "小肉山",
+        type = 4,
+        stack = false,
+        slot = "pet",
+        icon = "file://{images}/card/card2.png",
+        text = "跟随宠物，可在背包内佩戴。",
+    },
+    pet_baby_rosh = {
+        id = 104,
+        name = "肉山宝宝",
+        type = 4,
+        stack = false,
+        slot = "pet",
+        previewUnit = "CardPet",
+        modelPath = "models/courier/baby_rosh/babyroshan.vmdl",
+        text = "默认跟随宠物，创建账号后自动获得，可佩戴或卸下。",
+    },
+    pet_ti10_rosh = {
+        id = 105,
+        name = "跨纬度肉山宝宝",
+        type = 4,
+        stack = false,
+        slot = "pet",
+        icon = "raw://resource/flash3/images/achive/pet.png",
+        previewUnit = "CardPetTi10",
+        modelPath = "models/courier/baby_rosh/babyroshan_ti10_flying.vmdl",
+        petParticle = "particles/econ/courier/courier_babyroshan_ti10/courier_babyroshan_ti10_ambient.vpcf",
+        text = "跟随宠物，可在背包内佩戴。",
+    },
+}

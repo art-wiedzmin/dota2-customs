@@ -8,22 +8,256 @@
 ]]
 
 
-local encoded=[[aWYgUmFuayA9PSBuaWwgdGhlbgogICAgUmFuayA9IGNsYXNzKHt9KQogICAgcmVxdWlyZSgiaW5nYW1lLlJhbmsuQ29uZmlnIikKICAgIHJlcXVpcmUoImluZ2FtZS5SYW5rLlNldCIpCiAgICByZXF1aXJlKCJpbmdhbWUuUmFuay5HZXQiKQogICAgcmVxdWlyZSgiaW5nYW1lLlJhbmsuVWkiKQplbmQKCmZ1bmN0aW9uIFJhbms6SW5pdChJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGYuRGF0YVtJRF0gPSBVdGlsOkRlZXBDb3B5VGFiKHNlbGYuVGVtcGxhdGUpCmVuZAoKZnVuY3Rpb24gUmFuazpSZXNldFBsYXllclJhbmtMaXN0cyhJRCkKICAgIGlmIG5vdCBzZWxmLkRhdGFbSURdIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5EYXRhW0lEXS5saXN0XzV2NSA9IHt9CiAgICBzZWxmLkRhdGFbSURdLmxpc3RfMXYxID0ge30KICAgIHNlbGYuRGF0YVtJRF0ubGlzdF9ib3RfMXYxID0ge30KICAgIHNlbGYuRGF0YVtJRF0ubGlzdCA9IHt9CiAgICBzZWxmLkRhdGFbSURdLmRhdGEucmFuayA9IC0xCiAgICBzZWxmLkRhdGFbSURdLmRhdGEucG9pbnQgPSAtMQogICAgc2VsZi5EYXRhW0lEXS5kYXRhLnJhbmsyID0gLTEKICAgIHNlbGYuRGF0YVtJRF0uZGF0YS5wb2ludDIgPSAtMQogICAgc2VsZi5EYXRhW0lEXS5kYXRhLnJhbmtfYm90ID0gLTEKICAgIHNlbGYuRGF0YVtJRF0uZGF0YS5wb2ludF9ib3QgPSAtMQplbmQKCmZ1bmN0aW9uIFJhbms6QXBwbHlMZWFkZXJib2FyZHNUb0FsbFBsYXllcnMoZGF0YTEsIGRhdGEyLCBkYXRhMykKICAgIGlmIG5vdCBkYXRhMSBvciBub3QgZGF0YTIgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBmb3IgaywgdiBpbiBwYWlycyhQRC5JRHMpIGRvCiAgICAgICAgaWYgdiB0aGVuCiAgICAgICAgICAgIGxvY2FsIElEID0gdgogICAgICAgICAgICBpZiBub3Qgc2VsZi5EYXRhW0lEXSB0aGVuCiAgICAgICAgICAgICAgICBzZWxmOkluaXQoSUQpCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBsb2NhbCBzZWxmX2lkID0gUGxheWVyUmVzb3VyY2U6R2V0U3RlYW1BY2NvdW50SUQoSUQpCiAgICAgICAgICAgIGxvY2FsIHNlbGZfaWQ2NCA9IHV0aWxleDpDb252ZXJ0U3RlYW1JRDMyVG82NF9TYWZlKHNlbGZfaWQpCiAgICAgICAgICAgIHNlbGYuRGF0YVtJRF0uZGF0YS5waWQgPSBzZWxmX2lkCiAgICAgICAgICAgIHNlbGYuRGF0YVtJRF0uZGF0YS5zaWQgPSBzZWxmX2lkNjQKICAgICAgICAgICAgc2VsZi5EYXRhW0lEXS5saXN0XzV2NSA9IHt9CiAgICAgICAgICAgIHNlbGYuRGF0YVtJRF0ubGlzdF8xdjEgPSB7fQogICAgICAgICAgICBzZWxmLkRhdGFbSURdLmxpc3RfYm90XzF2MSA9IHt9CgogICAgICAgICAgICBmb3IgaSA9IDEsIDEwMCBkbwogICAgICAgICAgICAgICAgbG9jYWwgcmFua19rZXkgPSAicmFuayIgLi4gaQogICAgICAgICAgICAgICAgbG9jYWwgcmFua19kYXRhID0gZGF0YTFbaV0KICAgICAgICAgICAgICAgIGlmIHJhbmtfZGF0YSB0aGVuCiAgICAgICAgICAgICAgICAgICAgc2VsZi5EYXRhW0lEXS5saXN0XzV2NVtyYW5rX2tleV0gPSB7CiAgICAgICAgICAgICAgICAgICAgICAgIGlkID0gcmFua19kYXRhLnBpZCwKICAgICAgICAgICAgICAgICAgICAgICAgc2lkID0gdXRpbGV4OkNvbnZlcnRTdGVhbUlEMzJUbzY0X1NhZmUocmFua19kYXRhLnBpZCksCiAgICAgICAgICAgICAgICAgICAgICAgIHJhbmsgPSByYW5rX2RhdGEucmFuaywKICAgICAgICAgICAgICAgICAgICAgICAgcG9pbnQgPSByYW5rX2RhdGEuc2NvcmUsCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIGlmIHJhbmtfZGF0YS5waWQgPT0gc2VsZl9pZCB0aGVuCiAgICAgICAgICAgICAgICAgICAgICAgIHNlbGYuRGF0YVtJRF0uZGF0YS5yYW5rID0gcmFua19kYXRhLnJhbmsKICAgICAgICAgICAgICAgICAgICAgICAgc2VsZi5EYXRhW0lEXS5kYXRhLnBvaW50ID0gcmFua19kYXRhLnNjb3JlCiAgICAgICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgZW5kCgogICAgICAgICAgICBmb3IgaSA9IDEsIDEwMCBkbwogICAgICAgICAgICAgICAgbG9jYWwgcmFua19rZXkgPSAicmFuayIgLi4gaQogICAgICAgICAgICAgICAgbG9jYWwgcmFua19kYXRhID0gZGF0YTJbaV0KICAgICAgICAgICAgICAgIGlmIHJhbmtfZGF0YSB0aGVuCiAgICAgICAgICAgICAgICAgICAgc2VsZi5EYXRhW0lEXS5saXN0XzF2MVtyYW5rX2tleV0gPSB7CiAgICAgICAgICAgICAgICAgICAgICAgIGlkID0gcmFua19kYXRhLnBpZCwKICAgICAgICAgICAgICAgICAgICAgICAgc2lkID0gdXRpbGV4OkNvbnZlcnRTdGVhbUlEMzJUbzY0X1NhZmUocmFua19kYXRhLnBpZCksCiAgICAgICAgICAgICAgICAgICAgICAgIHJhbmsgPSByYW5rX2RhdGEucmFuaywKICAgICAgICAgICAgICAgICAgICAgICAgcG9pbnQgPSByYW5rX2RhdGEuc2NvcmUsCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIGlmIHJhbmtfZGF0YS5waWQgPT0gc2VsZl9pZCB0aGVuCiAgICAgICAgICAgICAgICAgICAgICAgIHNlbGYuRGF0YVtJRF0uZGF0YS5yYW5rMiA9IHJhbmtfZGF0YS5yYW5rCiAgICAgICAgICAgICAgICAgICAgICAgIHNlbGYuRGF0YVtJRF0uZGF0YS5wb2ludDIgPSByYW5rX2RhdGEuc2NvcmUKICAgICAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgICAgIGVuZAogICAgICAgICAgICBlbmQKCiAgICAgICAgICAgIGlmIGRhdGEzIHRoZW4KICAgICAgICAgICAgICAgIGZvciBpID0gMSwgMTAwIGRvCiAgICAgICAgICAgICAgICAgICAgbG9jYWwgcmFua19rZXkgPSAicmFuayIgLi4gaQogICAgICAgICAgICAgICAgICAgIGxvY2FsIHJhbmtfZGF0YSA9IGRhdGEzW2ldCiAgICAgICAgICAgICAgICAgICAgaWYgcmFua19kYXRhIHRoZW4KICAgICAgICAgICAgICAgICAgICAgICAgc2VsZi5EYXRhW0lEXS5saXN0X2JvdF8xdjFbcmFua19rZXldID0gewogICAgICAgICAgICAgICAgICAgICAgICAgICAgaWQgPSByYW5rX2RhdGEucGlkLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgc2lkID0gdXRpbGV4OkNvbnZlcnRTdGVhbUlEMzJUbzY0X1NhZmUocmFua19kYXRhLnBpZCksCiAgICAgICAgICAgICAgICAgICAgICAgICAgICByYW5rID0gcmFua19kYXRhLnJhbmssCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBwb2ludCA9IHJhbmtfZGF0YS5zY29yZSwKICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICBpZiByYW5rX2RhdGEucGlkID09IHNlbGZfaWQgdGhlbgogICAgICAgICAgICAgICAgICAgICAgICAgICAgc2VsZi5EYXRhW0lEXS5kYXRhLnJhbmtfYm90ID0gcmFua19kYXRhLnJhbmsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNlbGYuRGF0YVtJRF0uZGF0YS5wb2ludF9ib3QgPSByYW5rX2RhdGEuc2NvcmUKICAgICAgICAgICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgZW5kCgogICAgICAgICAgICBzZWxmLkRhdGFbSURdLmxpc3QgPSBzZWxmLkRhdGFbSURdLmxpc3RfNXY1CiAgICAgICAgICAgIGlmIHNlbGYuRGF0YVtJRF0ucGFnZSB0aGVuCiAgICAgICAgICAgICAgICBzZWxmOlNlbmREYXRhKElEKQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZAplbmQKCmZ1bmN0aW9uIFJhbms6QXBwbHlTZWFzb25NZXRhVG9BbGxQbGF5ZXJzKG1ldGEpCiAgICBpZiBub3QgbWV0YSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGZvciBrLCB2IGluIHBhaXJzKFBELklEcykgZG8KICAgICAgICBpZiB2IGFuZCBzZWxmLkRhdGFbdl0gdGhlbgogICAgICAgICAgICBzZWxmLkRhdGFbdl0uc2Vhc29ucyA9IG1ldGEuc2Vhc29ucyBvciB7fQogICAgICAgICAgICBpZiBtZXRhLmN1cnJlbnRTZWFzb25MYWJlbCB0aGVuCiAgICAgICAgICAgICAgICBzZWxmLkRhdGFbdl0uY3VycmVudF9zZWFzb25fbGFiZWwgPSBtZXRhLmN1cnJlbnRTZWFzb25MYWJlbAogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZAplbmQKCi0t6I635Y+W5o6S6KGM5qac5pWw5o2uCmZ1bmN0aW9uIFJhbms6TG9hZFNlcnZlcigpCiAgICBsb2NhbCBjb3VudCA9IDUKICAgIHNlbGY6TG9hZFNlYXNvbkxpc3QoKQogICAgVGltZXJzKDEsIGZ1bmN0aW9uKCkKICAgICAgICBpZiBzZWxmLlB1YmxpYy5zZXJ2ZXIgPT0gdHJ1ZSB0aGVuCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZAogICAgICAgIHNlbGY6SW5pdFJhbmsoKQogICAgICAgIGNvdW50ID0gY291bnQgLSAxCiAgICAgICAgaWYgY291bnQgPT0gMCB0aGVuCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZAogICAgICAgIHJldHVybiAzCiAgICBlbmQpCmVuZAoKZnVuY3Rpb24gUmFuazpMb2FkU2Vhc29uTGlzdCgpCiAgICBpZiBzZWxmLlB1YmxpYy5zZWFzb25zX2xvYWRlZCA9PSB0cnVlIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgaG9zdF9pZCA9IFBELkhvc3QKICAgIEh0dHA6UE9TVCgiL3Jhbmtpbmcvc2Vhc29uX2xpc3QiLCB7fSwgaG9zdF9pZCwgZnVuY3Rpb24oa2V5cykKICAgICAgICBpZiBrZXlzLmNvZGUgPT0gMjAwIGFuZCBrZXlzLmRhdGEgdGhlbgogICAgICAgICAgICBzZWxmLlB1YmxpYy5zZWFzb25zX2xvYWRlZCA9IHRydWUKICAgICAgICAgICAgc2VsZjpBcHBseVNlYXNvbk1ldGFUb0FsbFBsYXllcnMoa2V5cy5kYXRhKQogICAgICAgICAgICBmb3IgaywgdiBpbiBwYWlycyhQRC5JRHMpIGRvCiAgICAgICAgICAgICAgICBpZiB2IGFuZCBzZWxmLkRhdGFbdl0gYW5kIHNlbGYuRGF0YVt2XS5wYWdlIHRoZW4KICAgICAgICAgICAgICAgICAgICBzZWxmOlNlbmREYXRhKHYpCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbmQpCmVuZAoKZnVuY3Rpb24gUmFuazpMb2FkU2Vhc29uSGlzdG9yeShzZWFzb25fbGFiZWwpCiAgICBpZiBub3Qgc2Vhc29uX2xhYmVsIG9yIHNlYXNvbl9sYWJlbCA9PSAiIiB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGhvc3RfaWQgPSBQRC5Ib3N0CiAgICBIdHRwOlBPU1QoIi9yYW5raW5nL3NlYXNvbl9sZWFkZXJib2FyZCIsIHsgc2Vhc29uX2xhYmVsID0gc2Vhc29uX2xhYmVsIH0sIGhvc3RfaWQsIGZ1bmN0aW9uKGtleXMpCiAgICAgICAgaWYga2V5cy5jb2RlIH49IDIwMCBvciBub3Qga2V5cy5kYXRhIHRoZW4KICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZW5kCiAgICAgICAgbG9jYWwgbGVhZGVyYm9hcmRzID0ga2V5cy5kYXRhLmxlYWRlcmJvYXJkcwogICAgICAgIGlmIG5vdCBsZWFkZXJib2FyZHMgdGhlbgogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgICAgICBmb3IgaywgdiBpbiBwYWlycyhQRC5JRHMpIGRvCiAgICAgICAgICAgIGlmIHYgYW5kIHNlbGYuRGF0YVt2XSB0aGVuCiAgICAgICAgICAgICAgICBzZWxmLkRhdGFbdl0ucmFua192aWV3ID0gImhpc3RvcnkiCiAgICAgICAgICAgICAgICBzZWxmLkRhdGFbdl0uaGlzdG9yeV9zZWFzb24gPSBzZWFzb25fbGFiZWwKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICAgICAgc2VsZjpBcHBseUxlYWRlcmJvYXJkc1RvQWxsUGxheWVycygKICAgICAgICAgICAgbGVhZGVyYm9hcmRzLmRhdGExLAogICAgICAgICAgICBsZWFkZXJib2FyZHMuZGF0YTIsCiAgICAgICAgICAgIGxlYWRlcmJvYXJkcy5kYXRhMwogICAgICAgICkKICAgIGVuZCkKZW5kCgpmdW5jdGlvbiBSYW5rOlN3aXRjaFRvTGl2ZVZpZXcoSUQpCiAgICBpZiBJRCBhbmQgc2VsZi5EYXRhW0lEXSB0aGVuCiAgICAgICAgc2VsZi5EYXRhW0lEXS5yYW5rX3ZpZXcgPSAibGl2ZSIKICAgICAgICBzZWxmLkRhdGFbSURdLmhpc3Rvcnlfc2Vhc29uID0gIiIKICAgIGVuZAogICAgaWYgc2VsZi5QdWJsaWMubGl2ZV9kYXRhMSBhbmQgc2VsZi5QdWJsaWMubGl2ZV9kYXRhMiB0aGVuCiAgICAgICAgZm9yIGssIHYgaW4gcGFpcnMoUEQuSURzKSBkbwogICAgICAgICAgICBpZiB2IGFuZCBzZWxmLkRhdGFbdl0gdGhlbgogICAgICAgICAgICAgICAgc2VsZi5EYXRhW3ZdLnJhbmtfdmlldyA9ICJsaXZlIgogICAgICAgICAgICAgICAgc2VsZi5EYXRhW3ZdLmhpc3Rvcnlfc2Vhc29uID0gIiIKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICAgICAgc2VsZjpBcHBseUxlYWRlcmJvYXJkc1RvQWxsUGxheWVycygKICAgICAgICAgICAgc2VsZi5QdWJsaWMubGl2ZV9kYXRhMSwKICAgICAgICAgICAgc2VsZi5QdWJsaWMubGl2ZV9kYXRhMiwKICAgICAgICAgICAgc2VsZi5QdWJsaWMubGl2ZV9kYXRhMwogICAgICAgICkKICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgc2VsZi5QdWJsaWMuc2VydmVyIH49IHRydWUgdGhlbgogICAgICAgIHNlbGY6SW5pdFJhbmsoKQogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBJRCB0aGVuCiAgICAgICAgc2VsZjpTZW5kRGF0YShJRCkKICAgIGVuZAplbmQKCmZ1bmN0aW9uIFJhbms6SW5pdFJhbmsoKQogICAgaWYgc2VsZi5QdWJsaWMuc2VydmVyID09IHRydWUgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBob3N0X2lkID0gUEQuSG9zdAogICAgbG9jYWwgbGlzdCA9IHsKICAgICAgICBsaW1pdCA9IDEwMCwKICAgICAgICBtaW5fZ2FtZXMgPSAxLAogICAgICAgIGZvcmNlX3JlZnJlc2ggPSBmYWxzZSwKICAgICAgICBwYWdlID0gMSwKICAgICAgICBwYWdlX3NpemUgPSAxMDAsCiAgICB9CiAgICBIdHRwOlBPU1QoIi9yYW5raW5nL2xlYWRlcmJvYXJkIiwgbGlzdCwgaG9zdF9pZCwgZnVuY3Rpb24oa2V5cykKICAgICAgICBpZiBrZXlzLmNvZGUgPT0gMjAwIHRoZW4KICAgICAgICAgICAgaWYgc2VsZi5QdWJsaWMuc2VydmVyID09IHRydWUgdGhlbgogICAgICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBsb2NhbCBsZWFkZXJib2FyZHMgPSBrZXlzLmRhdGEubGVhZGVyYm9hcmRzCiAgICAgICAgICAgIGlmIG5vdCBsZWFkZXJib2FyZHMgb3Igbm90IGxlYWRlcmJvYXJkcy5kYXRhMSBvciBub3QgbGVhZGVyYm9hcmRzLmRhdGEyIHRoZW4KICAgICAgICAgICAgICAgIHJldHVybgogICAgICAgICAgICBlbmQKICAgICAgICAgICAgc2VsZi5QdWJsaWMuc2VydmVyID0gdHJ1ZQogICAgICAgICAgICBzZWxmLlB1YmxpYy5saXZlX2RhdGExID0gbGVhZGVyYm9hcmRzLmRhdGExCiAgICAgICAgICAgIHNlbGYuUHVibGljLmxpdmVfZGF0YTIgPSBsZWFkZXJib2FyZHMuZGF0YTIKICAgICAgICAgICAgc2VsZi5QdWJsaWMubGl2ZV9kYXRhMyA9IGxlYWRlcmJvYXJkcy5kYXRhMwogICAgICAgICAgICBmb3IgaywgdiBpbiBwYWlycyhQRC5JRHMpIGRvCiAgICAgICAgICAgICAgICBpZiB2IGFuZCBzZWxmLkRhdGFbdl0gdGhlbgogICAgICAgICAgICAgICAgICAgIHNlbGYuRGF0YVt2XS5yYW5rX3ZpZXcgPSAibGl2ZSIKICAgICAgICAgICAgICAgICAgICBzZWxmLkRhdGFbdl0uaGlzdG9yeV9zZWFzb24gPSAiIgogICAgICAgICAgICAgICAgZW5kCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBzZWxmOkFwcGx5TGVhZGVyYm9hcmRzVG9BbGxQbGF5ZXJzKAogICAgICAgICAgICAgICAgbGVhZGVyYm9hcmRzLmRhdGExLAogICAgICAgICAgICAgICAgbGVhZGVyYm9hcmRzLmRhdGEyLAogICAgICAgICAgICAgICAgbGVhZGVyYm9hcmRzLmRhdGEzCiAgICAgICAgICAgICkKICAgICAgICBlbmQKICAgIGVuZCkKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if Rank == nil then
+    Rank = class({})
+    require("ingame.Rank.Config")
+    require("ingame.Rank.Set")
+    require("ingame.Rank.Get")
+    require("ingame.Rank.Ui")
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function Rank:Init(ID)
+    if not ID then
+        return
+    end
+    self.Data[ID] = Util:DeepCopyTab(self.Template)
+end
+
+function Rank:ResetPlayerRankLists(ID)
+    if not self.Data[ID] then
+        return
+    end
+    self.Data[ID].list_5v5 = {}
+    self.Data[ID].list_1v1 = {}
+    self.Data[ID].list_bot_1v1 = {}
+    self.Data[ID].list = {}
+    self.Data[ID].data.rank = -1
+    self.Data[ID].data.point = -1
+    self.Data[ID].data.rank2 = -1
+    self.Data[ID].data.point2 = -1
+    self.Data[ID].data.rank_bot = -1
+    self.Data[ID].data.point_bot = -1
+end
+
+function Rank:ApplyLeaderboardsToAllPlayers(data1, data2, data3)
+    if not data1 or not data2 then
+        return
+    end
+    for k, v in pairs(PD.IDs) do
+        if v then
+            local ID = v
+            if not self.Data[ID] then
+                self:Init(ID)
+            end
+            local self_id = PlayerResource:GetSteamAccountID(ID)
+            local self_id64 = utilex:ConvertSteamID32To64_Safe(self_id)
+            self.Data[ID].data.pid = self_id
+            self.Data[ID].data.sid = self_id64
+            self.Data[ID].list_5v5 = {}
+            self.Data[ID].list_1v1 = {}
+            self.Data[ID].list_bot_1v1 = {}
+
+            for i = 1, 100 do
+                local rank_key = "rank" .. i
+                local rank_data = data1[i]
+                if rank_data then
+                    self.Data[ID].list_5v5[rank_key] = {
+                        id = rank_data.pid,
+                        sid = utilex:ConvertSteamID32To64_Safe(rank_data.pid),
+                        rank = rank_data.rank,
+                        point = rank_data.score,
+                    }
+                    if rank_data.pid == self_id then
+                        self.Data[ID].data.rank = rank_data.rank
+                        self.Data[ID].data.point = rank_data.score
+                    end
+                end
+            end
+
+            for i = 1, 100 do
+                local rank_key = "rank" .. i
+                local rank_data = data2[i]
+                if rank_data then
+                    self.Data[ID].list_1v1[rank_key] = {
+                        id = rank_data.pid,
+                        sid = utilex:ConvertSteamID32To64_Safe(rank_data.pid),
+                        rank = rank_data.rank,
+                        point = rank_data.score,
+                    }
+                    if rank_data.pid == self_id then
+                        self.Data[ID].data.rank2 = rank_data.rank
+                        self.Data[ID].data.point2 = rank_data.score
+                    end
+                end
+            end
+
+            if data3 then
+                for i = 1, 100 do
+                    local rank_key = "rank" .. i
+                    local rank_data = data3[i]
+                    if rank_data then
+                        self.Data[ID].list_bot_1v1[rank_key] = {
+                            id = rank_data.pid,
+                            sid = utilex:ConvertSteamID32To64_Safe(rank_data.pid),
+                            rank = rank_data.rank,
+                            point = rank_data.score,
+                        }
+                        if rank_data.pid == self_id then
+                            self.Data[ID].data.rank_bot = rank_data.rank
+                            self.Data[ID].data.point_bot = rank_data.score
+                        end
+                    end
+                end
+            end
+
+            self.Data[ID].list = self.Data[ID].list_5v5
+            if self.Data[ID].page then
+                self:SendData(ID)
+            end
+        end
+    end
+end
+
+function Rank:ApplySeasonMetaToAllPlayers(meta)
+    if not meta then
+        return
+    end
+    for k, v in pairs(PD.IDs) do
+        if v and self.Data[v] then
+            self.Data[v].seasons = meta.seasons or {}
+            if meta.currentSeasonLabel then
+                self.Data[v].current_season_label = meta.currentSeasonLabel
+            end
+        end
+    end
+end
+
+--获取排行榜数据
+function Rank:LoadServer()
+    local count = 5
+    self:LoadSeasonList()
+    Timers(1, function()
+        if self.Public.server == true then
+            return
+        end
+        self:InitRank()
+        count = count - 1
+        if count == 0 then
+            return
+        end
+        return 3
+    end)
+end
+
+function Rank:LoadSeasonList()
+    if self.Public.seasons_loaded == true then
+        return
+    end
+    local host_id = PD.Host
+    Http:POST("/ranking/season_list", {}, host_id, function(keys)
+        if keys.code == 200 and keys.data then
+            self.Public.seasons_loaded = true
+            self:ApplySeasonMetaToAllPlayers(keys.data)
+            for k, v in pairs(PD.IDs) do
+                if v and self.Data[v] and self.Data[v].page then
+                    self:SendData(v)
+                end
+            end
+        end
+    end)
+end
+
+function Rank:LoadSeasonHistory(season_label)
+    if not season_label or season_label == "" then
+        return
+    end
+    local host_id = PD.Host
+    Http:POST("/ranking/season_leaderboard", { season_label = season_label }, host_id, function(keys)
+        if keys.code ~= 200 or not keys.data then
+            return
+        end
+        local leaderboards = keys.data.leaderboards
+        if not leaderboards then
+            return
+        end
+        for k, v in pairs(PD.IDs) do
+            if v and self.Data[v] then
+                self.Data[v].rank_view = "history"
+                self.Data[v].history_season = season_label
+            end
+        end
+        self:ApplyLeaderboardsToAllPlayers(
+            leaderboards.data1,
+            leaderboards.data2,
+            leaderboards.data3
+        )
+    end)
+end
+
+function Rank:SwitchToLiveView(ID)
+    if ID and self.Data[ID] then
+        self.Data[ID].rank_view = "live"
+        self.Data[ID].history_season = ""
+    end
+    if self.Public.live_data1 and self.Public.live_data2 then
+        for k, v in pairs(PD.IDs) do
+            if v and self.Data[v] then
+                self.Data[v].rank_view = "live"
+                self.Data[v].history_season = ""
+            end
+        end
+        self:ApplyLeaderboardsToAllPlayers(
+            self.Public.live_data1,
+            self.Public.live_data2,
+            self.Public.live_data3
+        )
+        return
+    end
+    if self.Public.server ~= true then
+        self:InitRank()
+        return
+    end
+    if ID then
+        self:SendData(ID)
+    end
+end
+
+function Rank:InitRank()
+    if self.Public.server == true then
+        return
+    end
+    local host_id = PD.Host
+    local list = {
+        limit = 100,
+        min_games = 1,
+        force_refresh = false,
+        page = 1,
+        page_size = 100,
+    }
+    Http:POST("/ranking/leaderboard", list, host_id, function(keys)
+        if keys.code == 200 then
+            if self.Public.server == true then
+                return
+            end
+            local leaderboards = keys.data.leaderboards
+            if not leaderboards or not leaderboards.data1 or not leaderboards.data2 then
+                return
+            end
+            self.Public.server = true
+            self.Public.live_data1 = leaderboards.data1
+            self.Public.live_data2 = leaderboards.data2
+            self.Public.live_data3 = leaderboards.data3
+            for k, v in pairs(PD.IDs) do
+                if v and self.Data[v] then
+                    self.Data[v].rank_view = "live"
+                    self.Data[v].history_season = ""
+                end
+            end
+            self:ApplyLeaderboardsToAllPlayers(
+                leaderboards.data1,
+                leaderboards.data2,
+                leaderboards.data3
+            )
+        end
+    end)
+end

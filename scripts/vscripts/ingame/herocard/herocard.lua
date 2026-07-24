@@ -8,22 +8,59 @@
 ]]
 
 
-local encoded=[[aWYgSGVyb0NhcmQgPT0gbmlsIHRoZW4KICAgIEhlcm9DYXJkID0gY2xhc3Moe30pCmVuZApyZXF1aXJlKCJpbmdhbWUuSGVyb0NhcmQuQ29uZmlnIikKcmVxdWlyZSgiaW5nYW1lLkhlcm9DYXJkLkZ1bmMiKQpyZXF1aXJlKCJpbmdhbWUuSGVyb0NhcmQuVWkiKQoKLS0gVUkg5Y+v6IO95pep5LqOIEluaXRQbGF5ZXI6SW5pdF9JRCDlm57osIPvvIzpgb/lhY0gc2VsZi5EYXRhW0lEXSDkuLrnqboKZnVuY3Rpb24gSGVyb0NhcmQ6RW5zdXJlUGxheWVyRGF0YShJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIG5vdCBzZWxmLkRhdGFbSURdIHRoZW4KICAgICAgICBzZWxmLkRhdGFbSURdID0gVXRpbDpEZWVwQ29weVRhYihzZWxmLlRlbXBsYXRlKQogICAgZW5kCmVuZAoKZnVuY3Rpb24gSGVyb0NhcmQ6SW5pdChJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGYuRGF0YVtJRF0gPSBVdGlsOkRlZXBDb3B5VGFiKHNlbGYuVGVtcGxhdGUpCmVuZAoKZnVuY3Rpb24gSGVyb0NhcmQ6T3BlblBhZ2UoSUQpCiAgICBpZiBub3QgSUQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBzZWxmOkVuc3VyZVBsYXllckRhdGEoSUQpCiAgICBzZWxmLkRhdGFbSURdLnBhZ2UgPSB0cnVlCiAgICAtLSBzZWxmOlNlbmREYXRhKElEKQplbmQKCmZ1bmN0aW9uIEhlcm9DYXJkOkNsb3NlUGFnZShJRCkKICAgIGlmIG5vdCBJRCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGY6RW5zdXJlUGxheWVyRGF0YShJRCkKICAgIHNlbGYuRGF0YVtJRF0ucGFnZSA9IGZhbHNlCiAgICBzZWxmOlNlbmREYXRhKElEKQplbmQKCi0tIOafpeeci+iLsembhOS/oeaBr++8iOanveS9jeWPguaVsOS4jiBTdGF0IOS4gOiHtO+8mjV2NSDkvKAgc2lkZStnaWTvvIwxdjEwIOS8oCByb3fvvIkKZnVuY3Rpb24gSGVyb0NhcmQ6SGVyb0luZm8oSUQsIGRhdGEpCiAgICBpZiBub3QgSUQgb3Igbm90IGRhdGEgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBwaWQgPSBzZWxmOlJlc29sdmVQbGF5ZXJJZEZyb21TbG90KGRhdGEpCiAgICBpZiBub3QgcGlkIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZjpPcGVuUGFnZShJRCkKICAgIGxvY2FsIHBheWxvYWQgPSBzZWxmOkJ1aWxkUGF5bG9hZChwaWQpCiAgICBzZWxmLkRhdGFbSURdLmRhdGEgPSBwYXlsb2FkCiAgICBzZWxmOlNlbmREYXRhKElEKQplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if HeroCard == nil then
+    HeroCard = class({})
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+require("ingame.HeroCard.Config")
+require("ingame.HeroCard.Func")
+require("ingame.HeroCard.Ui")
+
+-- UI 可能早于 InitPlayer:Init_ID 回调，避免 self.Data[ID] 为空
+function HeroCard:EnsurePlayerData(ID)
+    if not ID then
+        return
+    end
+    if not self.Data[ID] then
+        self.Data[ID] = Util:DeepCopyTab(self.Template)
+    end
+end
+
+function HeroCard:Init(ID)
+    if not ID then
+        return
+    end
+    self.Data[ID] = Util:DeepCopyTab(self.Template)
+end
+
+function HeroCard:OpenPage(ID)
+    if not ID then
+        return
+    end
+    self:EnsurePlayerData(ID)
+    self.Data[ID].page = true
+    -- self:SendData(ID)
+end
+
+function HeroCard:ClosePage(ID)
+    if not ID then
+        return
+    end
+    self:EnsurePlayerData(ID)
+    self.Data[ID].page = false
+    self:SendData(ID)
+end
+
+-- 查看英雄信息（槽位参数与 Stat 一致：5v5 传 side+gid，1v10 传 row）
+function HeroCard:HeroInfo(ID, data)
+    if not ID or not data then
+        return
+    end
+    local pid = self:ResolvePlayerIdFromSlot(data)
+    if not pid then
+        return
+    end
+    self:OpenPage(ID)
+    local payload = self:BuildPayload(pid)
+    self.Data[ID].data = payload
+    self:SendData(ID)
+end

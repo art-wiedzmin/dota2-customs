@@ -8,22 +8,64 @@
 ]]
 
 
-local encoded=[[LS0gMTUg56eS5YaFICs2MCDmlLvpgJ/jgIErMzAlIOenu+mAn+OAgSszMCUg54q25oCB5oqX5oCn77yI5Y+v6LCDIGR1cmF0aW9u77yJCgptb2RpZmllcl9jbHJiX2NvbWJhdF9ib29zdCA9IGNsYXNzKHt9KQoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9jb21iYXRfYm9vc3Q6SXNIaWRkZW4oKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9jb21iYXRfYm9vc3Q6SXNEZWJ1ZmYoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9jb21iYXRfYm9vc3Q6SXNQdXJnYWJsZSgpCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2NscmJfY29tYmF0X2Jvb3N0OlJlbW92ZU9uRGVhdGgoKQogICAgcmV0dXJuIHRydWUKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2NvbWJhdF9ib29zdDpPbkNyZWF0ZWQoa3YpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGdqc2QgPSBrdi5nanNkIG9yIDYwCiAgICBsb2NhbCB6dGt4ID0ga3YuenRreCBvciAzMAogICAgbG9jYWwgeWRzZCA9IGt2Lnlkc2Qgb3IgMzAKICAgIGxvY2FsIGQgPSAzCiAgICBpZiBkIDwgMCB0aGVuCiAgICAgICAgZCA9IDE1CiAgICBlbmQKICAgIHNlbGY6U2V0RHVyYXRpb24oZCwgdHJ1ZSkKICAgIHNlbGYuZ2pzZCA9IGdqc2QKICAgIHNlbGYuenRreCA9IHp0a3gKICAgIHNlbGYueWRzZCA9IHlkc2QKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2NvbWJhdF9ib29zdDpEZWNsYXJlRnVuY3Rpb25zKCkKICAgIHJldHVybiB7CiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfQVRUQUNLU1BFRURfQk9OVVNfQ09OU1RBTlQsCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfTU9WRVNQRUVEX0JPTlVTX1BFUkNFTlRBR0UsCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfU1RBVFVTX1JFU0lTVEFOQ0VfU1RBQ0tJTkcsCiAgICB9CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9jb21iYXRfYm9vc3Q6R2V0TW9kaWZpZXJBdHRhY2tTcGVlZEJvbnVzX0NvbnN0YW50KGt2KQogICAgLS0gcHJpbnQoc2VsZikKICAgIHJldHVybiBzZWxmLmdqc2QKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9jbHJiX2NvbWJhdF9ib29zdDpHZXRNb2RpZmllck1vdmVTcGVlZEJvbnVzX1BlcmNlbnRhZ2Uoa3YpCiAgICByZXR1cm4gc2VsZi55ZHNkCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9jb21iYXRfYm9vc3Q6R2V0TW9kaWZpZXJTdGF0dXNSZXNpc3RhbmNlU3RhY2tpbmcoa3YpCiAgICByZXR1cm4gc2VsZi56dGt4CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfY2xyYl9jb21iYXRfYm9vc3Q6R2V0VGV4dHVyZSgpCiAgICByZXR1cm4gIml0ZW1faHlwZXJzdG9uZSIKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 15 秒内 +60 攻速、+30% 移速、+30% 状态抗性（可调 duration）
+
+modifier_clrb_combat_boost = class({})
+
+function modifier_clrb_combat_boost:IsHidden()
+    return false
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function modifier_clrb_combat_boost:IsDebuff()
+    return false
+end
+
+function modifier_clrb_combat_boost:IsPurgable()
+    return true
+end
+
+function modifier_clrb_combat_boost:RemoveOnDeath()
+    return true
+end
+
+function modifier_clrb_combat_boost:OnCreated(kv)
+    if not IsServer() then
+        return
+    end
+    local gjsd = kv.gjsd or 60
+    local ztkx = kv.ztkx or 30
+    local ydsd = kv.ydsd or 30
+    local d = 3
+    if d < 0 then
+        d = 15
+    end
+    self:SetDuration(d, true)
+    self.gjsd = gjsd
+    self.ztkx = ztkx
+    self.ydsd = ydsd
+end
+
+function modifier_clrb_combat_boost:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+        MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING,
+    }
+end
+
+function modifier_clrb_combat_boost:GetModifierAttackSpeedBonus_Constant(kv)
+    -- print(self)
+    return self.gjsd
+end
+
+function modifier_clrb_combat_boost:GetModifierMoveSpeedBonus_Percentage(kv)
+    return self.ydsd
+end
+
+function modifier_clrb_combat_boost:GetModifierStatusResistanceStacking(kv)
+    return self.ztkx
+end
+
+function modifier_clrb_combat_boost:GetTexture()
+    return "item_hyperstone"
+end

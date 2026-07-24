@@ -8,22 +8,82 @@
 ]]
 
 
-local encoded=[[aWYgbW9kaWZpZXJfcGV0ID09IG5pbCB0aGVuCiAgICBtb2RpZmllcl9wZXQgPSBjbGFzcyh7fSkKZW5kCmZ1bmN0aW9uIG1vZGlmaWVyX3BldDpJc0RlYnVmZigpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9wZXQ6SXNIaWRkZW4oKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfcGV0OlJlbW92ZU9uRGVhdGgoKQogICAgcmV0dXJuIHRydWUKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9wZXQ6T25DcmVhdGVkKGt2KQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbiByZXR1cm4gZW5kCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfcGV0Ok9uSW50ZXJ2YWxUaGluaygpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9wZXQ6T25EZXN0cm95KCkKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4gcmV0dXJuIGVuZAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3BldDpDaGVja1N0YXRlKCkKICAgIGxvY2FsIHN0YXRlID0gewogICAgICAgIFtNT0RJRklFUl9TVEFURV9JTlZVTE5FUkFCTEVdID0gdHJ1ZSwgICAgICAgICAgICAgICAgICAgICAtLeaXoOaVjAogICAgICAgIFtNT0RJRklFUl9TVEFURV9OT19IRUFMVEhfQkFSXSA9IHRydWUsICAgICAgICAgICAgICAgICAgICAtLeayoeacieihgOadoQogICAgICAgIFtNT0RJRklFUl9TVEFURV9OT19VTklUX0NPTExJU0lPTl0gPSB0cnVlLCAgICAgICAgICAgICAgICAtLSDml6Dop4bljZXkvY3norDmkp4KICAgICAgICBbTU9ESUZJRVJfU1RBVEVfRkxZSU5HX0ZPUl9QQVRISU5HX1BVUlBPU0VTX09OTFldID0gdHJ1ZSwgLS0g6aOe6KGMCiAgICAgICAgW01PRElGSUVSX1NUQVRFX09VVF9PRl9HQU1FXSA9IHRydWUsICAgICAgICAgICAgICAgICAgICAgIC0tIOa4uOaIj+WklgogICAgICAgIFtNT0RJRklFUl9TVEFURV9OT1RfT05fTUlOSU1BUF9GT1JfRU5FTUlFU10gPSB0cnVlLCAgICAgICAtLSDkuI3lnKjlnLDlm77lkJHmlYzlhpvmmL7npLoKICAgICAgICBbTU9ESUZJRVJfU1RBVEVfQUxMT1dfUEFUSElOR19USFJPVUdIX0NMSUZGU10gPSB0cnVlLCAgICAgLS0g5YWB6K646YCa6L+H5oKs5bSW5bOt5aOBCiAgICAgICAgW01PRElGSUVSX1NUQVRFX0FMTE9XX1BBVEhJTkdfVEhST1VHSF9GSVNTVVJFXSA9IHRydWUsICAgIC0tIOWFgeiuuOmAmui/h+ijgue8nei3r+W+hAogICAgICAgIFtNT0RJRklFUl9TVEFURV9BVFRBQ0tfSU1NVU5FXSA9IHRydWUsICAgICAgICAgICAgICAgICAgICAtLSDmma7mlLvkuI3og73pgInkuK0g5LiN5Y+X5Yiw5oqA6IO955qE54mp55CG5Lyk5a6zCiAgICAgICAgW01PRElGSUVSX1NUQVRFX0RJU0FSTUVEXSA9IHRydWUsICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOe8tOaisCDkuI3og73mma7mlLsKICAgICAgICBbTU9ESUZJRVJfU1RBVEVfTUFHSUNfSU1NVU5FXSA9IHRydWUsICAgICAgICAgICAgICAgICAgICAgLS0g6a2U5YWNCiAgICAgICAgW01PRElGSUVSX1NUQVRFX1VOU0VMRUNUQUJMRV0gPSB0cnVlLCAgICAgICAgICAgICAgICAgICAgIC0tIOS4jeWPr+mAieS4rQogICAgICAgIFtNT0RJRklFUl9TVEFURV9OT1RfT05fTUlOSU1BUF0gPSB0cnVlLAogICAgICAgIC0tIOWwj+WcsOWbvuS4jeaYvuekugogICAgfQogICAgcmV0dXJuIHN0YXRlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfcGV0OkRlY2xhcmVGdW5jdGlvbnMoKQogICAgbG9jYWwgZnVuY3MgPSB7CiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfTU9WRVNQRUVEX0JPTlVTX0NPTlNUQU5ULAogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX0lHTk9SRV9NT1ZFU1BFRURfTElNSVQsCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfTU9WRVNQRUVEX0FCU09MVVRFLAogICAgfQogICAgcmV0dXJuIGZ1bmNzCmVuZAoKLS0g6K6+572u5Zu65a6a56e76YCf5Yqg5oiQ5YiwODg4CmZ1bmN0aW9uIG1vZGlmaWVyX3BldDpHZXRNb2RpZmllck1vdmVTcGVlZEJvbnVzX0NvbnN0YW50KCkKICAgIHJldHVybiA2NjYKZW5kCgotLSDmiJbogIXkvb/nlKjnu53lr7nnp7vpgJ/vvIjkuozpgInkuIDvvIkKZnVuY3Rpb24gbW9kaWZpZXJfcGV0OkdldE1vZGlmaWVyTW92ZVNwZWVkX0Fic29sdXRlKCkKICAgIC0tIOWmguaenOS9v+eUqOe7neWvueenu+mAn++8jOWPlua2iOS4iumdoueahOWbuuWumuWKoOaIkAogICAgLS0gcmV0dXJuIDg4OAogICAgcmV0dXJuIDY2NgplbmQKCi0tIOW/veeVpeenu+mAn+S4iumZkApmdW5jdGlvbiBtb2RpZmllcl9wZXQ6R2V0TW9kaWZpZXJJZ25vcmVNb3Zlc3BlZWRMaW1pdCgpCiAgICByZXR1cm4gMQplbmQKCi0tIOiuvue9ruenu+mAn+mZkOWItu+8iOWPr+mAie+8iQpmdW5jdGlvbiBtb2RpZmllcl9wZXQ6R2V0TW9kaWZpZXJNb3ZlU3BlZWRfTGltaXQoKQogICAgcmV0dXJuIDY2NgplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if modifier_pet == nil then
+    modifier_pet = class({})
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+function modifier_pet:IsDebuff()
+    return false
+end
+
+function modifier_pet:IsHidden()
+    return false
+end
+
+function modifier_pet:RemoveOnDeath()
+    return true
+end
+
+function modifier_pet:OnCreated(kv)
+    if not IsServer() then return end
+end
+
+function modifier_pet:OnIntervalThink()
+    if not IsServer() then
+        return
+    end
+end
+
+function modifier_pet:OnDestroy()
+    if not IsServer() then return end
+end
+
+function modifier_pet:CheckState()
+    local state = {
+        [MODIFIER_STATE_INVULNERABLE] = true,                     --无敌
+        [MODIFIER_STATE_NO_HEALTH_BAR] = true,                    --没有血条
+        [MODIFIER_STATE_NO_UNIT_COLLISION] = true,                -- 无视单位碰撞
+        [MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true, -- 飞行
+        [MODIFIER_STATE_OUT_OF_GAME] = true,                      -- 游戏外
+        [MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES] = true,       -- 不在地图向敌军显示
+        [MODIFIER_STATE_ALLOW_PATHING_THROUGH_CLIFFS] = true,     -- 允许通过悬崖峭壁
+        [MODIFIER_STATE_ALLOW_PATHING_THROUGH_FISSURE] = true,    -- 允许通过裂缝路径
+        [MODIFIER_STATE_ATTACK_IMMUNE] = true,                    -- 普攻不能选中 不受到技能的物理伤害
+        [MODIFIER_STATE_DISARMED] = true,                         -- 缴械 不能普攻
+        [MODIFIER_STATE_MAGIC_IMMUNE] = true,                     -- 魔免
+        [MODIFIER_STATE_UNSELECTABLE] = true,                     -- 不可选中
+        [MODIFIER_STATE_NOT_ON_MINIMAP] = true,
+        -- 小地图不显示
+    }
+    return state
+end
+
+function modifier_pet:DeclareFunctions()
+    local funcs = {
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+        MODIFIER_PROPERTY_IGNORE_MOVESPEED_LIMIT,
+        MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
+    }
+    return funcs
+end
+
+-- 设置固定移速加成到888
+function modifier_pet:GetModifierMoveSpeedBonus_Constant()
+    return 666
+end
+
+-- 或者使用绝对移速（二选一）
+function modifier_pet:GetModifierMoveSpeed_Absolute()
+    -- 如果使用绝对移速，取消上面的固定加成
+    -- return 888
+    return 666
+end
+
+-- 忽略移速上限
+function modifier_pet:GetModifierIgnoreMovespeedLimit()
+    return 1
+end
+
+-- 设置移速限制（可选）
+function modifier_pet:GetModifierMoveSpeed_Limit()
+    return 666
+end

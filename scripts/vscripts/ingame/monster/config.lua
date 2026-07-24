@@ -8,22 +8,102 @@
 ]]
 
 
-local encoded=[[TW9uc3Rlci5EYXRhID0gewogICAgcGFnZSA9IGZhbHNlLAogICAgbGltaXQgPSAzMDAsCiAgICBzcGF3bl90aW1lID0gMTAsCiAgICBzcGF3bl9udW0gPSAxMDAsCiAgICBub3JtYWwgPSB7fSwKICAgIG5vcm1hbF9jb3VudCA9IDAsIC0tIOe8k+WtmOWtmOa0u+aVsOmHj++8jOmBv+WFjemikee5gSBUYWJDb3VudCDpgKDmiJDljaHpob8KICAgIGxlYWRlciA9IHt9LAogICAgLS0g54u8CiAgICB3b2xmX3N0YXRlID0gMSwKICAgIC0tIOeGigogICAgYmVhcl9zdGF0ZSA9IDEsCiAgICAtLSDpvpkKICAgIGRyYWdvbl9zdGF0ZSA9IDEsCiAgICB3b2xmX3RpbWUgPSAzMDAsCiAgICBiZWFyX3RpbWUgPSA5MDAsCiAgICAtLS0g5LiOIE1haW5HYW1lIOmmluWPqumtlOm+meWIt+aWsO+8iEV2ZW50TGlzdCBkcmFnb24x77yM56eS77yJ5LiA6Ie077yM5L6bIEhVRCDlgJLorqHml7YKICAgIGRyYWdvbl90aW1lID0gMTI2MCwKICAgIHBvc19pbmRleCA9IDEsCiAgICBwb3NfbnVtID0gMCwKICAgIHN0YWdlID0gMCwKICAgIGxpZ2h0bmluZyA9IHt9LAp9Ck1vbnN0ZXIuTGlnaHRuaW5nQmVsaWV2ZXIgPSB7CiAgICB1bml0X25hbWUgPSAibV8xXzYiLAogICAgc3RhcnRfdGltZSA9IDYwMCwKICAgIGludGVydmFsID0gMjAsCiAgICBtYXhfYWxpdmUgPSAxMiwKICAgIHNwYXduX3BmeF9ib2x0ID0gInBhcnRpY2xlcy9lY29uL2l0ZW1zL3pldXMvemV1c19pbW1vcnRhbF8yMDIxL3p1dXNfc2hhcmRfZ29sZF9lLnZwY2YiLAogICAgc3Bhd25fcGZ4X2JlYW0gPSAicGFydGljbGVzL2Vjb24vaXRlbXMvaHVza2FyL2h1c2thcl8yMDIyX2ltbW9ydGFsL2h1c2thcl8yMDIyX2ltbW9ydGFsX2xpZmVfYnJlYWtfZ29sZF92ZXJ0aWNhbF9saWdodGJlYW0udnBjZiIsCiAgICBzcGF3bl9wZnhfZ3JvdW5kID0gInBhcnRpY2xlcy9lY29uL2l0ZW1zL3pldXMvbGlnaHRuaW5nX3dlYXBvbl9meC96dXVzX2xpZ2h0bmluZ19ib2x0X2dyb3VuZGZ4X2NyYWNrLnZwY2YiLAp9Ck1vbnN0ZXIuTm9ybWFsID0geyAibV8xXzEiLCAibV8xXzIiLCAibV8xXzMiLCAibV8xXzQiIH0KTW9uc3Rlci5CZWFyUG9zID0gewogICAgcG9zMSA9IFZlY3RvcigtMjQzNy43NzE0ODQsIC0zNzIuMjQxMDI4LCAyNTYuMDAwMDAwKSwKICAgIHBvczIgPSBWZWN0b3IoOC4yMDQ4MzQsIDE1MjcuMjk1Mjg4LCAwLjAwMDAwMCksCiAgICBwb3MzID0gVmVjdG9yKDIzNzAuMTYwNDAwLCAtNTE5LjYwMjYwMCwgMjU2LjAwMDAwMCksCiAgICBwb3M0ID0gVmVjdG9yKDE1Ny41MzUxNTYsIC0yNTUxLjEyNzE5NywgMTI4LjAwMDAwMCksCiAgICBwb3M1ID0gVmVjdG9yKDI0ODEuOTk5NTEyLCAtMjQwMi44ODIzMjQsIDI1Ni4wMDAwMDApLAogICAgcG9zNiA9IFZlY3RvcigtMzEwOS45OTI5MjAsIDE5NDAuMzkwNTAzLCAxMjguMDAwMDAwKQp9Ck1vbnN0ZXIuRHJhZ29uUG9zID0gVmVjdG9yKDI0MC41NDU2NTQsIC02MC4wODk5NjYsIDEyOC4wMDAwMDApCgpNb25zdGVyLmxlYWRlciA9IHsKICAgIG1fMl8xID0gIml0ZW1fZ29vZHNfMTAiLAogICAgbV8yXzIgPSAiaXRlbV9nb29kc18xMSIsCiAgICBtXzJfMyA9ICJpdGVtX2dvb2RzXzI2Igp9Ci0t5Y2B5YiG6ZKf5YmN5o6J6JC95qaC546HCk1vbnN0ZXIuSXRlbTEgPSB7CiAgICAtLeepugogICAgbnVsbCA9IDUxNSwKICAgIC0t6IKJ5pCP5oqA6IO95LmmCiAgICBpdGVtX2dvb2RzXzEzID0gNDAwLAogICAgLS3liJ3nuqfmioDog73kuaYKICAgIGl0ZW1fZ29vZHNfMTQgPSA3MCwKICAgIC0t6auY57qn5oqA6IO95LmmCiAgICBpdGVtX2dvb2RzXzE1ID0gMTUsCiAgICAtLeeptuaegeaKgOiDveS5pu+8iDE2IOWIhumSn+WJjeS4jeaOieiQve+8jOingSBNb25zdGVyOkdldE5vcm1hbERyb3BQb29s77yJCiAgICBpdGVtX2dvb2RzXzE2ID0gMQp9Ci0t5LqM5Y2B5YiG6ZKf5YmN5o6J6JC95qaC546HCk1vbnN0ZXIuSXRlbTIgPSB7CiAgICAtLeepugogICAgbnVsbCA9IDU1MCwKICAgIC0t6IKJ5pCP5oqA6IO9CiAgICBpdGVtX2dvb2RzXzEzID0gNDAwLAogICAgLS3liJ3nuqfmioDog73kuaYKICAgIGl0ZW1fZ29vZHNfMTQgPSAzMCwKICAgIC0t6auY57qn5oqA6IO95LmmCiAgICBpdGVtX2dvb2RzXzE1ID0gMzAsCiAgICAtLeeptuaegeaKgOiDveS5pu+8iDE2IOWIhumSn+WJjeS4jeaOieiQve+8jOingSBNb25zdGVyOkdldE5vcm1hbERyb3BQb29s77yJCiAgICBpdGVtX2dvb2RzXzE2ID0gMQp9Ci0t5LqM5Y2B5YiG6ZKf5ZCO5o6J6JC95qaC546HCk1vbnN0ZXIuSXRlbTMgPSB7CiAgICAtLeepugogICAgbnVsbCA9IDY0MCwKICAgIC0t6IKJ5pCP5oqA6IO9CiAgICBpdGVtX2dvb2RzXzEzID0gMzAwLAogICAgLS3liJ3nuqfmioDog73kuaYKICAgIGl0ZW1fZ29vZHNfMTQgPSAzMCwKICAgIC0t6auY57qn5oqA6IO95LmmCiAgICBpdGVtX2dvb2RzXzE1ID0gNDAsCiAgICAtLeeptuaegeaKgOiDveS5pu+8iDE2IOWIhumSn+WJjeS4jeaOieiQve+8jOingSBNb25zdGVyOkdldE5vcm1hbERyb3BQb29s77yJCiAgICBpdGVtX2dvb2RzXzE2ID0gMSwKfQoKTW9uc3Rlci5TdGF0aWMgPSB7CiAgICAtLSDni7znjovmlbDph48KICAgIHdvbGZfbnVtID0gNCwKICAgIC0tIOeGiueOi+aVsOmHjwogICAgYmVhcl9udW0gPSA0LAogICAgLS0g6aOO5pq06aKG5Li75pWw6YePCiAgICBkcmFnb24gPSAxLAogICAgLS0g5Zyw5Zu+5Lit6Ze0CiAgICBtYXBfY2VudGVyID0gVmVjdG9yKDE5MS45Mjk0MjgsIC00MjQuMDM3MDQ4LCAxMjguMDAwMDAwKQp9Ck1vbnN0ZXIuUG9zID0ge30K]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
-end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+Monster.Data = {
+    page = false,
+    limit = 300,
+    spawn_time = 10,
+    spawn_num = 100,
+    normal = {},
+    normal_count = 0, -- 缓存存活数量，避免频繁 TabCount 造成卡顿
+    leader = {},
+    -- 狼
+    wolf_state = 1,
+    -- 熊
+    bear_state = 1,
+    -- 龙
+    dragon_state = 1,
+    wolf_time = 300,
+    bear_time = 900,
+    --- 与 MainGame 首只魔龙刷新（EventList dragon1，秒）一致，供 HUD 倒计时
+    dragon_time = 1260,
+    pos_index = 1,
+    pos_num = 0,
+    stage = 0,
+    lightning = {},
+}
+Monster.LightningBeliever = {
+    unit_name = "m_1_6",
+    start_time = 600,
+    interval = 20,
+    max_alive = 12,
+    spawn_pfx_bolt = "particles/econ/items/zeus/zeus_immortal_2021/zuus_shard_gold_e.vpcf",
+    spawn_pfx_beam = "particles/econ/items/huskar/huskar_2022_immortal/huskar_2022_immortal_life_break_gold_vertical_lightbeam.vpcf",
+    spawn_pfx_ground = "particles/econ/items/zeus/lightning_weapon_fx/zuus_lightning_bolt_groundfx_crack.vpcf",
+}
+Monster.Normal = { "m_1_1", "m_1_2", "m_1_3", "m_1_4" }
+Monster.BearPos = {
+    pos1 = Vector(-2437.771484, -372.241028, 256.000000),
+    pos2 = Vector(8.204834, 1527.295288, 0.000000),
+    pos3 = Vector(2370.160400, -519.602600, 256.000000),
+    pos4 = Vector(157.535156, -2551.127197, 128.000000),
+    pos5 = Vector(2481.999512, -2402.882324, 256.000000),
+    pos6 = Vector(-3109.992920, 1940.390503, 128.000000)
+}
+Monster.DragonPos = Vector(240.545654, -60.089966, 128.000000)
+
+Monster.leader = {
+    m_2_1 = "item_goods_10",
+    m_2_2 = "item_goods_11",
+    m_2_3 = "item_goods_26"
+}
+--十分钟前掉落概率
+Monster.Item1 = {
+    --空
+    null = 515,
+    --肉搏技能书
+    item_goods_13 = 400,
+    --初级技能书
+    item_goods_14 = 70,
+    --高级技能书
+    item_goods_15 = 15,
+    --究极技能书（16 分钟前不掉落，见 Monster:GetNormalDropPool）
+    item_goods_16 = 1
+}
+--二十分钟前掉落概率
+Monster.Item2 = {
+    --空
+    null = 550,
+    --肉搏技能
+    item_goods_13 = 400,
+    --初级技能书
+    item_goods_14 = 30,
+    --高级技能书
+    item_goods_15 = 30,
+    --究极技能书（16 分钟前不掉落，见 Monster:GetNormalDropPool）
+    item_goods_16 = 1
+}
+--二十分钟后掉落概率
+Monster.Item3 = {
+    --空
+    null = 640,
+    --肉搏技能
+    item_goods_13 = 300,
+    --初级技能书
+    item_goods_14 = 30,
+    --高级技能书
+    item_goods_15 = 40,
+    --究极技能书（16 分钟前不掉落，见 Monster:GetNormalDropPool）
+    item_goods_16 = 1,
+}
+
+Monster.Static = {
+    -- 狼王数量
+    wolf_num = 4,
+    -- 熊王数量
+    bear_num = 4,
+    -- 风暴领主数量
+    dragon = 1,
+    -- 地图中间
+    map_center = Vector(191.929428, -424.037048, 128.000000)
+}
+Monster.Pos = {}

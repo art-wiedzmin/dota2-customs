@@ -8,22 +8,123 @@
 ]]
 
 
-local encoded=[[LS3mioDog73mmK/lkKblnKjliJfooajkuK0KZnVuY3Rpb24gU2tpbGw6SXNJbkxpc3QoSUQsIGlkKQogICAgZm9yIGssIHYgaW4gcGFpcnMoc2VsZi5EYXRhW0lEXS5saXN0KSBkbwogICAgICAgIGlmIHYuc2tpbGwgPT0gaWQgdGhlbgogICAgICAgICAgICByZXR1cm4gdHJ1ZQogICAgICAgIGVuZAogICAgZW5kCmVuZAoKLS3mioDog73mmK/lkKblnKjlhazlhbHmsaDlrZDkuK0KZnVuY3Rpb24gU2tpbGw6SXNJblB1YmxpYyhpZCkKICAgIGZvciBrLCB2IGluIHBhaXJzKHNlbGYuUHVibGljKSBkbwogICAgICAgIGlmIHYgYW5kIHYgPT0gaWQgdGhlbgogICAgICAgICAgICByZXR1cm4gdHJ1ZQogICAgICAgIGVuZAogICAgZW5kCmVuZAoKLS3mmK/lkKbmnInor6XmioDog70KZnVuY3Rpb24gU2tpbGw6SXNIYXZlQWIoSUQsIGlkKQogICAgbG9jYWwgZGF0YSA9IHNlbGY6R2V0U2tpbGxEYXRhKGlkKQogICAgaWYgZGF0YSB0aGVuCiAgICAgICAgbG9jYWwgYWJfbmFtZSA9IGRhdGEubmFtZQogICAgICAgIGxvY2FsIGhlcm8gPSBVdGlsOklEMkhlcm8oSUQpCiAgICAgICAgaWYgaGVybyBhbmQgaGVybzpIYXNBYmlsaXR5KGFiX25hbWUpIHRoZW4KICAgICAgICAgICAgcmV0dXJuIHRydWUKICAgICAgICBlbmQKICAgIGVuZAplbmQKCi0t6I635Y+W5oqA6IO95L+h5oGvCmZ1bmN0aW9uIFNraWxsOkdldFNraWxsRGF0YShpZCkKICAgIGlmIG5vdCBpZCB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIHNraWxsX2tleSA9ICJza2lsbF8iIC4uIGlkCiAgICByZXR1cm4gU2tpbGwuQWJpbGl0eVtza2lsbF9rZXldCmVuZAoKZnVuY3Rpb24gU2tpbGw6U2tpbGwySXNGdWxsKElEKQogICAgaWYgbm90IElEIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgZm9yIGssIHYgaW4gcGFpcnMoc2VsZi5EYXRhW0lEXS5Ta2lsbDIpIGRvCiAgICAgICAgaWYgdi5zdGF0ZSA9PSBmYWxzZSB0aGVuCiAgICAgICAgICAgIHJldHVybiBmYWxzZQogICAgICAgIGVuZAogICAgZW5kCiAgICBVdGlsOkJvdHRvbU1zZzJJRChJRCwgIuaKgOiDveagj+W3sua7oSIsICJyZWQiLCAxKQogICAgcmV0dXJuIHRydWUKZW5kCgpmdW5jdGlvbiBTa2lsbDpHZXRTa2lsbElEKG5hbWUpCiAgICBmb3IgaywgdiBpbiBwYWlycyhTa2lsbC5BYmlsaXR5KSBkbwogICAgICAgIGlmIG5hbWUgPT0gdi5uYW1lIHRoZW4KICAgICAgICAgICAgcmV0dXJuIHYuaWQKICAgICAgICBlbmQKICAgIGVuZAogICAgCmVuZAoKLS3mmK/lkKbmmK/nqbrmioDog73vvIhTa2lsbDEg55qEIDHigJM0ICsgU2tpbGwyIOiCieaQj+anvSA14oCTMTAg5Y2g5L2N77yJCmZ1bmN0aW9uIFNraWxsOklzTnVsbFNraWxsKGFiX25hbWUpCiAgICBpZiBub3QgYWJfbmFtZSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIHJldHVybiBzdHJpbmcubWF0Y2goYWJfbmFtZSwgIl5hYmlsaXR5X251bGxfJWQrJCIpIH49IG5pbAplbmQKCi0tLSDogonmkI/mioDog73vvIhTa2lsbDIg5qe95L2NIDXigJMxMO+8jOWQqyBfdXAg6L+b6Zi254mI77yJCmZ1bmN0aW9uIFNraWxsOklzTWVsZWVCcmF3bFNraWxsKGFiX25hbWUpCiAgICBpZiBub3QgYWJfbmFtZSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIHJldHVybiBzdHJpbmcubWF0Y2goYWJfbmFtZSwgIl5hYmlsaXR5X2l0ZW1fJWQrIikgfj0gbmlsCmVuZAoKZnVuY3Rpb24gU2tpbGw6SXNTa2lsbChhYl9uYW1lKQogICAgZm9yIGssIHYgaW4gcGFpcnMoU2tpbGwuQWJpbGl0eSkgZG8KICAgICAgICBpZiBhYl9uYW1lID09IHYubmFtZSB0aGVuCiAgICAgICAgICAgIHJldHVybiB0cnVlCiAgICAgICAgZW5kCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBTa2lsbDpHZXRBYlNraWxsTmFtZShhYl9uYW1lKQogICAgZm9yIGssIHYgaW4gcGFpcnMoc2VsZi5BYmlsaXR5KSBkbwogICAgICAgIGlmIHYgYW5kIHYubmFtZSA9PSBhYl9uYW1lIHRoZW4KICAgICAgICAgICAgcmV0dXJuIGsKICAgICAgICBlbmQKICAgIGVuZAplbmQKCmZ1bmN0aW9uIFNraWxsOklzU2tpbGwzNkZpbHRlcihuYW1lKQogICAgaWYgbm90IG5hbWUgb3IgbmFtZSA9PSAiIiB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGxvY2FsIGxpc3QgPSBzZWxmLlNraWxsMzZGaWx0ZXIKICAgIGlmIG5vdCBsaXN0IHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgZm9yIF8sIHYgaW4gcGFpcnMobGlzdCkgZG8KICAgICAgICBpZiB2ID09IG5hbWUgdGhlbgogICAgICAgICAgICByZXR1cm4gdHJ1ZQogICAgICAgIGVuZAogICAgZW5kCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBTa2lsbDpJc1JhbmdlZEF0dGFja2VyKG5hbWUpCiAgICBpZiBub3QgbmFtZSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGZvciBrLCB2IGluIHBhaXJzKHNlbGYuUmFuZ2VkQXR0YWNrZXIpIGRvCiAgICAgICAgaWYgdiA9PSBuYW1lIHRoZW4KICAgICAgICAgICAgcmV0dXJuIHRydWUKICAgICAgICBlbmQKICAgIGVuZAogICAgcmV0dXJuIGZhbHNlCmVuZAo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+--技能是否在列表中
+function Skill:IsInList(ID, id)
+    for k, v in pairs(self.Data[ID].list) do
+        if v.skill == id then
+            return true
+        end
+    end
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+--技能是否在公共池子中
+function Skill:IsInPublic(id)
+    for k, v in pairs(self.Public) do
+        if v and v == id then
+            return true
+        end
+    end
+end
+
+--是否有该技能
+function Skill:IsHaveAb(ID, id)
+    local data = self:GetSkillData(id)
+    if data then
+        local ab_name = data.name
+        local hero = Util:ID2Hero(ID)
+        if hero and hero:HasAbility(ab_name) then
+            return true
+        end
+    end
+end
+
+--获取技能信息
+function Skill:GetSkillData(id)
+    if not id then
+        return
+    end
+    local skill_key = "skill_" .. id
+    return Skill.Ability[skill_key]
+end
+
+function Skill:Skill2IsFull(ID)
+    if not ID then
+        return
+    end
+    for k, v in pairs(self.Data[ID].Skill2) do
+        if v.state == false then
+            return false
+        end
+    end
+    Util:BottomMsg2ID(ID, "技能栏已满", "red", 1)
+    return true
+end
+
+function Skill:GetSkillID(name)
+    for k, v in pairs(Skill.Ability) do
+        if name == v.name then
+            return v.id
+        end
+    end
+    
+end
+
+--是否是空技能（Skill1 的 1–4 + Skill2 肉搏槽 5–10 占位）
+function Skill:IsNullSkill(ab_name)
+    if not ab_name then
+        return false
+    end
+    return string.match(ab_name, "^ability_null_%d+$") ~= nil
+end
+
+--- 肉搏技能（Skill2 槽位 5–10，含 _up 进阶版）
+function Skill:IsMeleeBrawlSkill(ab_name)
+    if not ab_name then
+        return false
+    end
+    return string.match(ab_name, "^ability_item_%d+") ~= nil
+end
+
+function Skill:IsSkill(ab_name)
+    for k, v in pairs(Skill.Ability) do
+        if ab_name == v.name then
+            return true
+        end
+    end
+end
+
+function Skill:GetAbSkillName(ab_name)
+    for k, v in pairs(self.Ability) do
+        if v and v.name == ab_name then
+            return k
+        end
+    end
+end
+
+function Skill:IsSkill36Filter(name)
+    if not name or name == "" then
+        return false
+    end
+    local list = self.Skill36Filter
+    if not list then
+        return false
+    end
+    for _, v in pairs(list) do
+        if v == name then
+            return true
+        end
+    end
+    return false
+end
+
+function Skill:IsRangedAttacker(name)
+    if not name then
+        return false
+    end
+    for k, v in pairs(self.RangedAttacker) do
+        if v == name then
+            return true
+        end
+    end
+    return false
+end

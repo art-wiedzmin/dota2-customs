@@ -8,22 +8,110 @@
 ]]
 
 
-local encoded=[[LS0g6KKr5Yqo5aSp6LWLIDnvvJrotKrotKIKLS0g5q+P5qyh5pS75Ye7ICs1IOi0ouWvjOWAvO+8iOS4iumZkCA1MDAwMO+8jGJ1ZmYg5bGC5pWw5pi+56S677yJ77yb6LSi5a+M5YC8ICsg5b2T5YmN6YeR6ZKx77yM5q+PIDEwMDAg54K5ICsxNiDmlLvlh7sgKzQg56e76YCfCgpyZXF1aXJlKCJpbmdhbWUubW9kaWZpZXIubW9kaWZpZXJfY2xyYl90YWxlbnRzIikKCm1vZGlmaWVyX3RhbGVudF9za2lsbF85ID0gY2xhc3Moe30pCgpsb2NhbCBXRUFMVEhfUEVSX0FUVEFDSyA9IDUKbG9jYWwgV0VBTFRIX0NBUCA9IDUwMDAwCmxvY2FsIEFUS19QRVJfMTAwMCA9IDE2CmxvY2FsIE1TX1BFUl8xMDAwID0gNAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzk6SXNIaWRkZW4oKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzk6SXNEZWJ1ZmYoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzk6SXNQdXJnYWJsZSgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfOTpSZW1vdmVPbkRlYXRoKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF85Ol9QbGF5ZXJJZCgpCiAgICBsb2NhbCBwID0gc2VsZjpHZXRQYXJlbnQoKQogICAgaWYgbm90IHAgb3IgcDpJc051bGwoKSB0aGVuCiAgICAgICAgcmV0dXJuIC0xCiAgICBlbmQKICAgIHJldHVybiBDbHJiR2V0T3duZXJQbGF5ZXJJZChwKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF85Ok9uQ3JlYXRlZCgpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGYuX2FwcGxpZWRfayA9IDAKICAgIHNlbGY6U3RhcnRJbnRlcnZhbFRoaW5rKDEpCiAgICBzZWxmOlNldFN0YWNrQ291bnQoMCkKICAgIHNlbGY6UmVmcmVzaEJvbnVzU3RhdHMoKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF85OkRlY2xhcmVGdW5jdGlvbnMoKQogICAgcmV0dXJuIHsKICAgICAgICBNT0RJRklFUl9FVkVOVF9PTl9BVFRBQ0tfTEFOREVELAogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX1RPT0xUSVAsCiAgICB9CmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzk6T25JbnRlcnZhbFRoaW5rKCkKICAgIGlmIElzU2VydmVyKCkgdGhlbgogICAgICAgIHNlbGY6UmVmcmVzaEJvbnVzU3RhdHMoKQogICAgZW5kCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzk6T25SZWZyZXNoKCkKICAgIGlmIElzU2VydmVyKCkgdGhlbgogICAgICAgIHNlbGY6UmVmcmVzaEJvbnVzU3RhdHMoKQogICAgZW5kCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzk6UmVmcmVzaEJvbnVzU3RhdHMoKQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBwaWQgPSBzZWxmOl9QbGF5ZXJJZCgpCiAgICBpZiBwaWQgPCAwIG9yIG5vdCBQbGF5ZXJSZXNvdXJjZSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIHdlYWx0aCA9IHNlbGY6R2V0U3RhY2tDb3VudCgpCiAgICBsb2NhbCBnb2xkID0gUGxheWVyUmVzb3VyY2U6R2V0R29sZChwaWQpIG9yIDAKICAgIGxvY2FsIGsgPSBtYXRoLmZsb29yKCh3ZWFsdGggKyBnb2xkKSAvIDEwMDApCiAgICBsb2NhbCBvbGRfayA9IHNlbGYuX2FwcGxpZWRfayBvciAwCiAgICBpZiBrIH49IG9sZF9rIHRoZW4KICAgICAgICBsb2NhbCBkaWZmID0gayAtIG9sZF9rCiAgICAgICAgSGVyb0RhdGE6QWRkU1gocGlkLCAiamNnaiIsIGRpZmYgKiBBVEtfUEVSXzEwMDApCiAgICAgICAgSGVyb0RhdGE6QWRkU1gocGlkLCAiamN5cyIsIGRpZmYgKiBNU19QRVJfMTAwMCkKICAgICAgICBzZWxmLl9hcHBsaWVkX2sgPSBrCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl90YWxlbnRfc2tpbGxfOTpPbkF0dGFja0xhbmRlZChrZXlzKQogICAgaWYgbm90IElzU2VydmVyKCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBrZXlzLmF0dGFja2VyIH49IHNlbGY6R2V0UGFyZW50KCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCB3ZWFsdGggPSBzZWxmOkdldFN0YWNrQ291bnQoKQogICAgaWYgd2VhbHRoIDwgV0VBTFRIX0NBUCB0aGVuCiAgICAgICAgd2VhbHRoID0gbWF0aC5taW4od2VhbHRoICsgV0VBTFRIX1BFUl9BVFRBQ0ssIFdFQUxUSF9DQVApCiAgICAgICAgc2VsZjpTZXRTdGFja0NvdW50KHdlYWx0aCkKICAgIGVuZAogICAgc2VsZjpSZWZyZXNoQm9udXNTdGF0cygpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfdGFsZW50X3NraWxsXzk6T25Ub29sdGlwKCkKICAgIHJldHVybiBzZWxmOkdldFN0YWNrQ291bnQoKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX3RhbGVudF9za2lsbF85OkdldFRleHR1cmUoKQogICAgcmV0dXJuICJidWZmL3RhbGVudF85IgplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+-- 被动天赋 9：贪财
+-- 每次攻击 +5 财富值（上限 50000，buff 层数显示）；财富值 + 当前金钱，每 1000 点 +16 攻击 +4 移速
+
+require("ingame.modifier.modifier_clrb_talents")
+
+modifier_talent_skill_9 = class({})
+
+local WEALTH_PER_ATTACK = 5
+local WEALTH_CAP = 50000
+local ATK_PER_1000 = 16
+local MS_PER_1000 = 4
+
+function modifier_talent_skill_9:IsHidden()
+    return false
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function modifier_talent_skill_9:IsDebuff()
+    return false
+end
+
+function modifier_talent_skill_9:IsPurgable()
+    return false
+end
+
+function modifier_talent_skill_9:RemoveOnDeath()
+    return false
+end
+
+function modifier_talent_skill_9:_PlayerId()
+    local p = self:GetParent()
+    if not p or p:IsNull() then
+        return -1
+    end
+    return ClrbGetOwnerPlayerId(p)
+end
+
+function modifier_talent_skill_9:OnCreated()
+    if not IsServer() then
+        return
+    end
+    self._applied_k = 0
+    self:StartIntervalThink(1)
+    self:SetStackCount(0)
+    self:RefreshBonusStats()
+end
+
+function modifier_talent_skill_9:DeclareFunctions()
+    return {
+        MODIFIER_EVENT_ON_ATTACK_LANDED,
+        MODIFIER_PROPERTY_TOOLTIP,
+    }
+end
+
+function modifier_talent_skill_9:OnIntervalThink()
+    if IsServer() then
+        self:RefreshBonusStats()
+    end
+end
+
+function modifier_talent_skill_9:OnRefresh()
+    if IsServer() then
+        self:RefreshBonusStats()
+    end
+end
+
+function modifier_talent_skill_9:RefreshBonusStats()
+    if not IsServer() then
+        return
+    end
+    local pid = self:_PlayerId()
+    if pid < 0 or not PlayerResource then
+        return
+    end
+    local wealth = self:GetStackCount()
+    local gold = PlayerResource:GetGold(pid) or 0
+    local k = math.floor((wealth + gold) / 1000)
+    local old_k = self._applied_k or 0
+    if k ~= old_k then
+        local diff = k - old_k
+        HeroData:AddSX(pid, "jcgj", diff * ATK_PER_1000)
+        HeroData:AddSX(pid, "jcys", diff * MS_PER_1000)
+        self._applied_k = k
+    end
+end
+
+function modifier_talent_skill_9:OnAttackLanded(keys)
+    if not IsServer() then
+        return
+    end
+    if keys.attacker ~= self:GetParent() then
+        return
+    end
+    local wealth = self:GetStackCount()
+    if wealth < WEALTH_CAP then
+        wealth = math.min(wealth + WEALTH_PER_ATTACK, WEALTH_CAP)
+        self:SetStackCount(wealth)
+    end
+    self:RefreshBonusStats()
+end
+
+function modifier_talent_skill_9:OnTooltip()
+    return self:GetStackCount()
+end
+
+function modifier_talent_skill_9:GetTexture()
+    return "buff/talent_9"
+end

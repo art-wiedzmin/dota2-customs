@@ -8,22 +8,244 @@
 ]]
 
 
-local encoded=[[LS1bW+S6uuacuumavuW6pumFjee9ru+8iOWOnyBDb25maWdfZWFzeSAvIENvbmZpZ19oYXJkIC8gQ29uZmlnX2luc2FuZSDlkIjlubbkuo7mraTvvIzli7/lho0gcmVxdWlyZSDliIbmlofku7bvvInjgIIKICAgIOmAieWPlu+8mmBCb290LkNvbmZpZy5ib3RfZGlmZmljdWx0eWDvvIwxPeeugOWNle+8jDI95Zuw6Zq+77yMMz3ku6Tkurrlj5Hni4LvvJswIOaIluacqumAieaXtuaMieWbsOmavuaho+i3r+W+hOWKoOi9veOAggogICAg6L+Q6KGM5pe277yaYEJvdEFJOkFwcGx5Q29uZmlnUHJlc2V0KClgIOa3seaLt+i0neafkOS4gOaho+WQju+8jOWGjeWGmeWFpeS4gOaJueOAjOWFqOmavuW6puWFseeUqOm7mOiupOWAvOOAje+8iOe8qeWciOavlOS+i+OAgeWkjea0u+ebuOS9jeOAgW1vZGlmaWVyIOeUqOaVsOWAvOetie+8jOingeaWh+S7tuW6lemDqO+8ieOAggpdXQoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCi0tIOWFrOeUqOihqO+8iOaMiSB0cDE95Yqb6YePIHRwMj3mlY/mjbcgdHAzPeaZuuWKm++8jOS4jiBCb290LkJvb3RUeXBlIOS4gOiHtO+8iQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KCi0tIOS6uuacuuWumuaXtuWtpuS5oOeahOWIgOWhlOaKgOiDvSBJRCDmsaDvvIjmlbTlsYDkuIDlpZfvvIzmjInkuLvlsZ7mgKfliIblnovvvJvmu6EgNCDmp73lkI7kuI3lho3ku47msaDlrabvvIzku43lrprml7bliqDmioDog73ngrnvvIkKbG9jYWwgQk9UQUlfU0hBUkVEX0RPVEFfU0tJTExfSURTX0JZX1RQID0gewogICAgdHAxID0geyAyLCA5LCAxNywgMjEsIDIyLCAyMywgMjksIDM0LCAzNSwgMzYsIDM3LCAzOCwgMzksIDQ2LCA0NywgNTUsIDYxLCA3MywgNzcsIDgxLCA4MywgOTMsIDk4LCAxMDMsIDEwNSwgMTE2LCAxNDUsIDE1MSwgMTUyLCAxNjMsIDE2NCwgMTgyLCAxOTQsIDE5OCwgMTk5LCAyMDAsIDIwNywgMjg2LCAzMTMsIDMzMiB9LAogICAgdHAyID0geyAxLCAyLCAzLCA0LCA4LCAxMSwgMjAsIDI0LCAyOSwgMzMsIDM1LCAzNywgMzgsIDM5LCA0NiwgNDcsIDU3LCA2MSwgNjksIDk1LCA5OCwgMTAzLCAxMTMsIDExNiwgMTI2LCAxNDUsIDE4MiwgMTkzLCAxOTQsIDE5OCwgMTk5LCAyMDAsIDIwOSwgMjE0LCAyMzEsIDI1MSwgMjU3LCAyNjcsIDMyNiwgMzMyLCB9LAogICAgdHAzID0geyAyLCA1LCA3LCA4LCAxOSwgMjYsIDI4LCAzNywgMzksIDQ2LCA0NywgNTIsIDY5LCA3MSwgNzgsIDEwNCwgMTA1LCAxMTAsIDEyMCwgMTQyLCAxNjIsIDE4MiwgMTgzLCAxODYsIDE5NCwgMTk5LCAyMDIsIDIwNiwgMjA3LCAyMDksIDIxNCwgMjIwLCAyMjYsIDIyOSwgMjQ2LCAyNTUsIDI1NywgMjU5LCAyNjcsIDI3NywgMjgxLCAyOTYsIDI5OSwgMzE4LCAzMjcgfSwKfQoKCi0tIOiCieaQj+S5puWFqOWxgOm7keWQjeWNle+8m+eZveWQjeWNleeUsSBgU2VsZWN0SGVybzpHZXRNZWxlZUxlYXJuV2hpdGVsaXN0Rm9ySGVyb0luZGV4YO+8iEJhdHRsZVR5cGUgKyBSTUJMaXN077yJ55Sf5oiQCmxvY2FsIEJPVEFJX1NIQVJFRF9NRUxFRV9CTE9DS0xJU1QgPSB7CiAgICBbIml0ZW1fc2tpbGxfMzIiXSA9IHRydWUsCiAgICBbIml0ZW1fc2tpbGxfMjgiXSA9IHRydWUsCn0KCi0tIOi0reijhemaj+acuuaxoO+8iOS5sOm9kOW/heS5sOihqOWQjuaJjeS8muaKvei/memHjO+8iQpsb2NhbCBCT1RBSV9TSEFSRURfSVRFTV9CVVlfUE9PTF9CWV9UUCA9IHsKICAgIHRwMSA9IHsKICAgICAgICAiaXRlbV9oZWFydCIsCiAgICAgICAgIml0ZW1fYXNzYXVsdCIsCiAgICAgICAgIml0ZW1fc2hpdmFzX2d1YXJkIiwKICAgICAgICAiaXRlbV9hYnlzc2FsX2JsYWRlIiwKICAgICAgICAiaXRlbV9zYXRhbmljIiwKICAgIH0sCiAgICB0cDIgPSB7CiAgICAgICAgIml0ZW1fc3BoZXJlIiwKICAgICAgICAiaXRlbV9idXR0ZXJmbHkiLAogICAgICAgICJpdGVtX21vbmtleV9raW5nX2JhciIsCiAgICAgICAgIml0ZW1fZ3JlYXRlcl9jcml0IiwKICAgICAgICAiaXRlbV9oeWRyYXNfYnJlYXRoIiwKICAgICAgICAiaXRlbV9za2FkaSIsCiAgICAgICAgIml0ZW1fc2lsdmVyX2VkZ2UiLAogICAgfSwKICAgIHRwMyA9IHsKICAgICAgICAiaXRlbV9zcGhlcmUiLAogICAgICAgICJpdGVtX3NoaXZhc19ndWFyZCIsCiAgICAgICAgIml0ZW1feWFzaGFfYW5kX2theWEiLAogICAgICAgICJpdGVtX2V0aGVyZWFsX2JsYWRlIiwKICAgICAgICAiaXRlbV9ndW5naXIiLAogICAgICAgICJpdGVtX2RldmFzdGF0b3IiLAogICAgfSwKfQoKLS0g5b+F5Lmw6aG65bqP77yI5pyq5Lmw6b2Q5YmN5LiN5oq96ZqP5py65rGg77yJ77yb6L+c56iL5pWP44CB6L+R5oiY5pWP562J54m55L6L5o+S5YWl6KeBIEZ1bmMuR2V0Qm90TWFuZGF0b3J5SXRlbUJ1eUxpc3QKbG9jYWwgQk9UQUlfU0hBUkVEX0lURU1fQlVZX1JFUVVJUkVEX0JZX1RQID0gewogICAgdHAxID0geyAiaXRlbV9ibGFkZV9tYWlsIiwgIml0ZW1fYmxhY2tfa2luZ19iYXIiLCAiaXRlbV9zcGhlcmUiLCB9LAogICAgdHAyID0geyAiaXRlbV9zYXRhbmljIiwgIml0ZW1fYmxhY2tfa2luZ19iYXIiLCAiaXRlbV9udWxsaWZpZXIiLCB9LAogICAgdHAzID0geyAiaXRlbV9zaGVlcHN0aWNrIiwgIml0ZW1fcmVmcmVzaGVyIiwgIml0ZW1fYmxvb2RzdG9uZSIsIH0sCn0KCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQotLSDliIbmoaPpooTorr7vvIjku4XkuIvliJflrZfmrrXlm6Dpmr7luqblj5jljJbvvJvlhbbkvZnpgLvovpHkvp3otZYgQXBwbHlDb25maWdQcmVzZXQg6buY6K6k5YC877yJCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQoKbG9jYWwgQk9UQUlfUFJFU0VUX0VBU1kgPSB7CiAgICB0aGlua19pbnRlcnZhbCA9IDEsICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIFRoaW5rIOS4u+W+queOr+mXtOmalO+8iOenku+8ie+8jOeVpeaUvuWuveS7peWHj+WNoemhvwogICAgcGF0cm9sX3JlYWNoX2Rpc3RhbmNlID0gMjYwLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDot53lt6HpgLvngrnlpJrov5Hop4bkuLrjgIzliLDovr7jgI0KICAgIGJsYWRlX21haWxfZXZhZGVfZHVyYXRpb24gPSAyLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g5a+55byA5YiD55Sy5pWM5Lq65ZCO5pKk54q25oCB5oyB57ut77yI56eS77yJCiAgICBibGFkZV9tYWlsX2V2YWRlX2Rpc3RhbmNlID0gNjgwLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOWIg+eUsuWQjuaSpOebruagh+eCuei3neemuwogICAgY2FzdF9kZWxheV9taW4gPSAwLjM1LCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDoh6rliqjmlr3ms5XliY3pmo/mnLrnrYnlvoXkuIvpmZDvvIjnp5LvvIkKICAgIGNhc3RfZGVsYXlfbWF4ID0gMC45NSwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g6Ieq5Yqo5pa95rOV5YmN6ZqP5py6562J5b6F5LiK6ZmQ77yI56eS77yJCiAgICBsZXZlbF9ncm93dGhfYWxsX2F0dHJpYnV0ZXMgPSAxLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOavj+WNh+S4gOe6p+mineWkluWKm+mHjy/mlY/mjbcv5pm65Yqb77yI5ZCEICtO77yJCiAgICBsZXZlbF9ncm93dGhfYm9udXNfaHAgPSAxLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOavj+WNh+S4gOe6p+mineWklueUn+WRvQogICAgbGV2ZWxfZ3Jvd3RoX2JvbnVzX21vdmVzcGVlZCA9IDEsICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDmr4/ljYfkuIDnuqfpop3lpJbnp7vpgJ8KICAgIGxldmVsX2dyb3d0aF9hYmlsaXR5X3BvaW50cyA9IDMsICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g5q+P5Y2H5LiA57qn6aKd5aSW5oqA6IO954K5CiAgICBkZWF0aF9ncm93dGhfYWxsX2F0dHJpYnV0ZXMgPSAxLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOavj+asoeatu+S6oeS4iee7tOWQhCArTgogICAgbmV1dHJhbF9raWxsX2dvbGQgPSAxLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDkurrmnLrlh7vmnYDpnZ7oi7Hpm4Tpop3lpJbph5HpkrHvvIhlbnRpdHlfa2lsbGVk77yJCiAgICBuZXV0cmFsX2tpbGxfZXhwZXJpZW5jZSA9IDEsICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOS6uuacuuWHu+adgOmdnuiLsembhOmineWklue7j+mqjAogICAgaXRlbV91c2VfaHBfZHVtcF9hbGxfYmVsb3dfcGN0ID0gMC4zMiwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDnlJ/lkb3mr5TkvovkvY7kuo7mraTvvJpUcnlVc2VBY3RpdmVJdGVtc0J5SGVhbHRoIOmUmeWzsOS6pOm9kOS4u+WKqOmBk+WFtwogICAgaXRlbV91c2VfaHBfcmFuZG9tXzUwX2JlbG93X3BjdCA9IDAuNSwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDkuI4gZHVtcOOAgXJhbmRvbV8zMCDliIbmoaPvvJrkvY7kuo7mraTnlKggcmFuZG9tX2NoYW5jZV9hdF82MCDkvZzpmo/mnLrkuqTkuIDku7bnmoTmpoLnjofkuIrnlYwKICAgIGl0ZW1fdXNlX2hwX3JhbmRvbV8zMF9iZWxvd19wY3QgPSAwLjcyLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g55Sf5ZG95q+U5L6LIOKJpSDmraTlgLzliJnkuI3ov5vlhaXkvY7ooYDpgZPlhbfpgLvovpHvvJvkvY7kuo7lkI7miY3lj6/og73pmo/mnLov5YWo5LqkCiAgICBpdGVtX3VzZV9yYW5kb21fY2hhbmNlX2F0XzYwID0gMC4zOCwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOihgOe6v+WcqCBbZHVtcCwgcmFuZG9tXzUwKSDml7bpmo/mnLrkuqTkuIDku7bnmoTmpoLnjofkuIrpmZAKICAgIGl0ZW1fdXNlX3JhbmRvbV9jaGFuY2VfYXRfODAgPSAwLjIyLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g6KGA57q/5ZyoIFtyYW5kb21fNTAsIHJhbmRvbV8zMCkg5pe26ZqP5py65Lqk5LiA5Lu255qE5qaC546H5LiK6ZmQCiAgICBpdGVtX3VzZV9kdW1wX2FsbF9zdGFnZ2VyID0gMC41LCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOWFqOS6pOmBk+WFt+aXtuavj+S7tumXtOmalO+8iOenku+8iQogICAgaXRlbV9idXlfbWluX2dvbGQgPSAxMDAwMCwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDph5HluIHovr7liLDmraTlgLzmiY3lvIDlp4vlsJ3or5XotK3nianvvIjnroDljZXmoaPlgY/pq5jvvIzlh7roo4XmhaLvvIkKICAgIGl0ZW1fYnV5X3Bvb2xfYnlfaGVyb190eXBlID0gQk9UQUlfU0hBUkVEX0lURU1fQlVZX1BPT0xfQllfVFAsICAgICAgICAgLS0g5b+F5Lmw6b2Q5ZCO55qE6ZqP5py66KOF5aSH5rGg77yI5oyJIHRw77yJCiAgICBpdGVtX2J1eV9yZXF1aXJlZF9ieV9oZXJvX3R5cGUgPSBCT1RBSV9TSEFSRURfSVRFTV9CVVlfUkVRVUlSRURfQllfVFAsIC0tIOW/heS5sOmhuuW6j++8iOaMiSB0cO+8iQogICAgbWVsZWVfc2tpbGxfbGVhcm5fYmxvY2tsaXN0ID0gQk9UQUlfU0hBUkVEX01FTEVFX0JMT0NLTElTVCwgICAgICAgICAgICAtLSDogonmkI/kuabpu5HlkI3ljZUKICAgIGRvdGFfc2tpbGxfcG9vbF9ncmFudF9pbnRlcnZhbCA9IDYwLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g5q+PIE4g56eS77ya5oqA6IO954K5ICsg5LuO5rGg5a2mIDEg5Liq5YiA5aGUIFNraWxsMe+8iOacqua7oSA0IOanveaXtu+8iQogICAgZG90YV9za2lsbF9wb29sX2J5X2hlcm9fdHlwZSA9IEJPVEFJX1NIQVJFRF9ET1RBX1NLSUxMX0lEU19CWV9UUCwgICAgICAtLSDliIDloZTmioDog70gSUQg5rGg77yI5oyJIHRw77yJCn0KCmxvY2FsIEJPVEFJX1BSRVNFVF9IQVJEID0gewogICAgdGhpbmtfaW50ZXJ2YWwgPSAwLjgyLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSBUaGluayDkuLvlvqrnjq/pl7TpmpTvvIjnp5LvvIkKICAgIHBhdHJvbF9yZWFjaF9kaXN0YW5jZSA9IDIyMCwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g5beh6YC75Yiw6L6+5Yik5a6a6Led56a7CiAgICBibGFkZV9tYWlsX2V2YWRlX2R1cmF0aW9uID0gMiwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOWIg+eUsuWQjuaSpOaMgee7re+8iOenku+8iQogICAgYmxhZGVfbWFpbF9ldmFkZV9kaXN0YW5jZSA9IDY4MCwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDliIPnlLLlkI7mkqTot53nprsKICAgIGNhc3RfZGVsYXlfbWluID0gMC4yLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g5pa95rOV5YmN6ZqP5py6562J5b6F5LiL6ZmQ77yI56eS77yJCiAgICBjYXN0X2RlbGF5X21heCA9IDAuNywgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOaWveazleWJjemaj+acuuetieW+heS4iumZkO+8iOenku+8iQogICAgbGV2ZWxfZ3Jvd3RoX2FsbF9hdHRyaWJ1dGVzID0gNiwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDmr4/nuqfpop3lpJbkuInnu7QKICAgIGxldmVsX2dyb3d0aF9ib251c19ocCA9IDMwMCwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g5q+P57qn6aKd5aSW55Sf5ZG9CiAgICBsZXZlbF9ncm93dGhfYm9udXNfbW92ZXNwZWVkID0gNSwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOavj+e6p+mineWkluenu+mAnwogICAgbGV2ZWxfZ3Jvd3RoX2FiaWxpdHlfcG9pbnRzID0gNSwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDmr4/nuqfpop3lpJbmioDog73ngrkKICAgIGRlYXRoX2dyb3d0aF9hbGxfYXR0cmlidXRlcyA9IDYsICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g5q+P5qyh5q275Lqh5LiJ57u05ZCEICtOCiAgICBuZXV0cmFsX2tpbGxfZ29sZCA9IDIwLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOmdnuiLsembhOWHu+adgOmineWklumHkQogICAgbmV1dHJhbF9raWxsX2V4cGVyaWVuY2UgPSAwLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDpnZ7oi7Hpm4Tlh7vmnYDpop3lpJbnu4/pqowKICAgIGl0ZW1fdXNlX2hwX2R1bXBfYWxsX2JlbG93X3BjdCA9IDAuNCwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g5L2O5LqO5q2k5YWo5Lqk5Li75Yqo6YGT5YW377yIVHJ5VXNlQWN0aXZlSXRlbXNCeUhlYWx0aO+8iQogICAgaXRlbV91c2VfaHBfcmFuZG9tXzUwX2JlbG93X3BjdCA9IDAuNiwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDliIbmoaPvvJrkvY7kuo7mraTnlKggcmFuZG9tX2NoYW5jZV9hdF82MO+8jOWQpuWImSBhdF84MAogICAgaXRlbV91c2VfaHBfcmFuZG9tXzMwX2JlbG93X3BjdCA9IDAuOCwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDnlJ/lkb3mr5Tkvosg4omlIOatpOWAvOWImeS4jei/m+WFpeS9juihgOmBk+WFt+mAu+i+kQogICAgaXRlbV91c2VfcmFuZG9tX2NoYW5jZV9hdF82MCA9IDAuNSwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDooYDnur/lnKggW2R1bXAsIHJhbmRvbV81MCkg5pe26ZqP5py65Lqk5LiA5Lu25qaC546H5LiK6ZmQCiAgICBpdGVtX3VzZV9yYW5kb21fY2hhbmNlX2F0XzgwID0gMC4zLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOihgOe6v+WcqCBbcmFuZG9tXzUwLCByYW5kb21fMzApIOaXtumaj+acuuS6pOS4gOS7tuamgueOh+S4iumZkAogICAgaXRlbV91c2VfZHVtcF9hbGxfc3RhZ2dlciA9IDAuMDgsICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDlhajkuqTplJnls7Dpl7TpmpTvvIjnp5LvvIkKICAgIGl0ZW1fYnV5X21pbl9nb2xkID0gNjAwMCwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g5byA5aeL6LSt54mp6YeR6ZKx5LiL6ZmQCiAgICBpdGVtX2J1eV9wb29sX2J5X2hlcm9fdHlwZSA9IEJPVEFJX1NIQVJFRF9JVEVNX0JVWV9QT09MX0JZX1RQLCAgICAgICAgIC0tIOW/heS5sOm9kOWQjueahOmaj+acuuijheWkh+axoO+8iOaMiSB0cO+8iQogICAgaXRlbV9idXlfcmVxdWlyZWRfYnlfaGVyb190eXBlID0gQk9UQUlfU0hBUkVEX0lURU1fQlVZX1JFUVVJUkVEX0JZX1RQLCAtLSDlv4XkubDpobrluo/vvIjmjIkgdHDvvIkKICAgIG1lbGVlX3NraWxsX2xlYXJuX2Jsb2NrbGlzdCA9IEJPVEFJX1NIQVJFRF9NRUxFRV9CTE9DS0xJU1QsICAgICAgICAgICAgLS0g6IKJ5pCP5Lmm6buR5ZCN5Y2VCiAgICBkb3RhX3NraWxsX3Bvb2xfZ3JhbnRfaW50ZXJ2YWwgPSA2MCwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOavjyBOIOenku+8muaKgOiDveeCuSArIOaxoOWGheWtpuWIgOWhlOaKgOiDvQogICAgZG90YV9za2lsbF9wb29sX2J5X2hlcm9fdHlwZSA9IEJPVEFJX1NIQVJFRF9ET1RBX1NLSUxMX0lEU19CWV9UUCwgICAgICAtLSDliIDloZTmioDog70gSUQg5rGg77yI5oyJIHRw77yJCn0KCmxvY2FsIEJPVEFJX1BSRVNFVF9JTlNBTkUgPSB7CiAgICB0aGlua19pbnRlcnZhbCA9IDAuNzIsICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIFRoaW5rIOS4u+W+queOr+mXtOmalO+8iOenku+8iQogICAgcGF0cm9sX3JlYWNoX2Rpc3RhbmNlID0gMTkwLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDlt6HpgLvliLDovr7liKTlrprot53nprsKICAgIGJsYWRlX21haWxfZXZhZGVfZHVyYXRpb24gPSAyLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g5YiD55Sy5ZCO5pKk5oyB57ut77yI56eS77yJCiAgICBibGFkZV9tYWlsX2V2YWRlX2Rpc3RhbmNlID0gNjgwLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOWIg+eUsuWQjuaSpOi3neemuwogICAgY2FzdF9kZWxheV9taW4gPSAwLjEyLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDmlr3ms5XliY3pmo/mnLrnrYnlvoXkuIvpmZDvvIjnp5LvvIkKICAgIGNhc3RfZGVsYXlfbWF4ID0gMC40MiwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g5pa95rOV5YmN6ZqP5py6562J5b6F5LiK6ZmQ77yI56eS77yJCiAgICBsZXZlbF9ncm93dGhfYWxsX2F0dHJpYnV0ZXMgPSAyMCwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOavj+e6p+mineWkluS4iee7tAogICAgbGV2ZWxfZ3Jvd3RoX2JvbnVzX2hwID0gODAwLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDmr4/nuqfpop3lpJbnlJ/lkb0KICAgIGxldmVsX2dyb3d0aF9ib251c19tb3Zlc3BlZWQgPSA2LCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g5q+P57qn6aKd5aSW56e76YCfCiAgICBsZXZlbF9ncm93dGhfYWJpbGl0eV9wb2ludHMgPSA1LCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOavj+e6p+mineWkluaKgOiDveeCuQogICAgZGVhdGhfZ3Jvd3RoX2FsbF9hdHRyaWJ1dGVzID0gMTUsICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDmr4/mrKHmrbvkuqHkuInnu7TlkIQgK04KICAgIG5ldXRyYWxfa2lsbF9nb2xkID0gMjgsICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g6Z2e6Iux6ZuE5Ye75p2A6aKd5aSW6YeRCiAgICBuZXV0cmFsX2tpbGxfZXhwZXJpZW5jZSA9IDIwLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOmdnuiLsembhOWHu+adgOmineWklue7j+mqjAogICAgaXRlbV91c2VfaHBfZHVtcF9hbGxfYmVsb3dfcGN0ID0gMC40OCwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDkvY7kuo7mraTlhajkuqTkuLvliqjpgZPlhbcKICAgIGl0ZW1fdXNlX2hwX3JhbmRvbV81MF9iZWxvd19wY3QgPSAwLjY4LCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g5YiG5qGj6ZiI5YC877yI5ZCM566A5Y2VL+WbsOmavu+8jOingeS4iu+8iQogICAgaXRlbV91c2VfaHBfcmFuZG9tXzMwX2JlbG93X3BjdCA9IDAuODgsICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDpq5jkuo7nrYnkuo7mraTkuI3op6blj5HkvY7ooYDpgZPlhbfpk74KICAgIGl0ZW1fdXNlX3JhbmRvbV9jaGFuY2VfYXRfNjAgPSAwLjYyLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g6KGA57q/5ZyoIFtkdW1wLCByYW5kb21fNTApIOaXtumaj+acuuS6pOS4gOS7tuamgueOh+S4iumZkAogICAgaXRlbV91c2VfcmFuZG9tX2NoYW5jZV9hdF84MCA9IDAuNDIsICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDooYDnur/lnKggW3JhbmRvbV81MCwgcmFuZG9tXzMwKSDml7bpmo/mnLrkuqTkuIDku7bmpoLnjofkuIrpmZAKICAgIGl0ZW1fdXNlX2R1bXBfYWxsX3N0YWdnZXIgPSAwLjA1LCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0g5YWo5Lqk6ZSZ5bOw6Ze06ZqU77yI56eS77yJCiAgICBpdGVtX2J1eV9taW5fZ29sZCA9IDQyMDAsICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIOW8gOWni+i0reeJqemHkemSseS4i+mZkO+8iOacgOS9ju+8jOWHuuijheacgOW/q++8iQogICAgaXRlbV9idXlfcG9vbF9ieV9oZXJvX3R5cGUgPSBCT1RBSV9TSEFSRURfSVRFTV9CVVlfUE9PTF9CWV9UUCwgICAgICAgICAtLSDlv4XkubDpvZDlkI7nmoTpmo/mnLroo4XlpIfmsaDvvIjmjIkgdHDvvIkKICAgIGl0ZW1fYnV5X3JlcXVpcmVkX2J5X2hlcm9fdHlwZSA9IEJPVEFJX1NIQVJFRF9JVEVNX0JVWV9SRVFVSVJFRF9CWV9UUCwgLS0g5b+F5Lmw6aG65bqP77yI5oyJIHRw77yJCiAgICBtZWxlZV9za2lsbF9sZWFybl9ibG9ja2xpc3QgPSBCT1RBSV9TSEFSRURfTUVMRUVfQkxPQ0tMSVNULCAgICAgICAgICAgIC0tIOiCieaQj+S5pum7keWQjeWNlQogICAgZG90YV9za2lsbF9wb29sX2dyYW50X2ludGVydmFsID0gNjAsICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSDmr48gTiDnp5LvvJrmioDog73ngrkgKyDmsaDlhoXlrabliIDloZTmioDog70KICAgIGRvdGFfc2tpbGxfcG9vbF9ieV9oZXJvX3R5cGUgPSBCT1RBSV9TSEFSRURfRE9UQV9TS0lMTF9JRFNfQllfVFAsICAgICAgLS0g5YiA5aGU5oqA6IO9IElEIOaxoO+8iOaMiSB0cO+8iQp9Cgpsb2NhbCBCT1RBSV9QUkVTRVRfQllfUEFUSCA9IHsKICAgIFsiaW5nYW1lLkJvdEFJLkNvbmZpZ19lYXN5Il0gPSBCT1RBSV9QUkVTRVRfRUFTWSwKICAgIFsiaW5nYW1lLkJvdEFJLkNvbmZpZ19oYXJkIl0gPSBCT1RBSV9QUkVTRVRfSEFSRCwKICAgIFsiaW5nYW1lLkJvdEFJLkNvbmZpZ19pbnNhbmUiXSA9IEJPVEFJX1BSRVNFVF9JTlNBTkUsCn0KCi0tW1sg5Y+v6YCJ77yaRGVlcENvcHkg5ZCO5oyC5YiwIHNlbGYuQ29uZmlnIOimhueblum7mOiupOihjOS4uu+8iOWLv+S4jiBpdGVtX2J1eV8qX2J5X2hlcm9fdHlwZSDmt7fnlKjlhajlsYDooajvvIkKICAgIG1lbGVlX3NraWxsX2xlYXJuX3doaXRlbGlzdOOAgW1lbGVlX3NraWxsX2xlYXJuX3doaXRlbGlzdF9ieV90eXBlCiAgICBpdGVtX2J1eV9wb29s44CBaXRlbV9idXlfcmVxdWlyZWTvvIjkvJropobnm5bmjIkgdHAg5YiG6KGo77yJCiAgICBkb3RhX3NraWxsX2Jvb2tfcG9vbO+8iOecn+S6uuaKgOiDveS5piBSb2xsIOWFnOW6lSBJRO+8iQpdXQoKZnVuY3Rpb24gQm90QUk6QXBwbHlDb25maWdQcmVzZXQoKQogICAgbG9jYWwgZCA9IDAKICAgIGlmIEJvb3QgYW5kIEJvb3QuQ29uZmlnIGFuZCBCb290LkNvbmZpZy5ib3RfZGlmZmljdWx0eSB+PSBuaWwgdGhlbgogICAgICAgIGQgPSB0b251bWJlcihCb290LkNvbmZpZy5ib3RfZGlmZmljdWx0eSkgb3IgMAogICAgZW5kCiAgICBsb2NhbCBwYXRoID0gImluZ2FtZS5Cb3RBSS5Db25maWdfaGFyZCIKICAgIGlmIGQgPT0gMSB0aGVuCiAgICAgICAgcGF0aCA9ICJpbmdhbWUuQm90QUkuQ29uZmlnX2Vhc3kiCiAgICBlbHNlaWYgZCA9PSAzIHRoZW4KICAgICAgICBwYXRoID0gImluZ2FtZS5Cb3RBSS5Db25maWdfaW5zYW5lIgogICAgZW5kCgogICAgbG9jYWwgZmFsbGJhY2tfcGF0aHMgPSB7IHBhdGggfQogICAgaWYgcGF0aCB+PSAiaW5nYW1lLkJvdEFJLkNvbmZpZ19oYXJkIiB0aGVuCiAgICAgICAgdGFibGUuaW5zZXJ0KGZhbGxiYWNrX3BhdGhzLCAiaW5nYW1lLkJvdEFJLkNvbmZpZ19oYXJkIikKICAgIGVuZAogICAgaWYgcGF0aCB+PSAiaW5nYW1lLkJvdEFJLkNvbmZpZ19lYXN5IiB0aGVuCiAgICAgICAgdGFibGUuaW5zZXJ0KGZhbGxiYWNrX3BhdGhzLCAiaW5nYW1lLkJvdEFJLkNvbmZpZ19lYXN5IikKICAgIGVuZAogICAgaWYgcGF0aCB+PSAiaW5nYW1lLkJvdEFJLkNvbmZpZ19pbnNhbmUiIHRoZW4KICAgICAgICB0YWJsZS5pbnNlcnQoZmFsbGJhY2tfcGF0aHMsICJpbmdhbWUuQm90QUkuQ29uZmlnX2luc2FuZSIpCiAgICBlbmQKCiAgICBsb2NhbCBjZmcsIGxvYWRlZF9mcm9tID0gbmlsLCBuaWwKICAgIGZvciBfLCB0cnlfcGF0aCBpbiBpcGFpcnMoZmFsbGJhY2tfcGF0aHMpIGRvCiAgICAgICAgY2ZnID0gQk9UQUlfUFJFU0VUX0JZX1BBVEhbdHJ5X3BhdGhdCiAgICAgICAgaWYgY2ZnIHRoZW4KICAgICAgICAgICAgbG9hZGVkX2Zyb20gPSB0cnlfcGF0aAogICAgICAgICAgICBicmVhawogICAgICAgIGVuZAogICAgZW5kCiAgICBpZiBub3QgY2ZnIHRoZW4KICAgICAgICBjZmcgPSBCT1RBSV9QUkVTRVRfSEFSRAogICAgICAgIGxvYWRlZF9mcm9tID0gImluZ2FtZS5Cb3RBSS5Db25maWdfaGFyZCIKICAgIGVuZAogICAgaWYgbG9hZGVkX2Zyb20gfj0gcGF0aCB0aGVuCiAgICAgICAgLS0gcHJpbnQoIltCb3RBSV0g6YWN572uICIgLi4gdG9zdHJpbmcocGF0aCkgLi4gIiDmnKrmib7liLDvvIzlt7Llm57pgIDkuLogIiAuLiB0b3N0cmluZyhsb2FkZWRfZnJvbSkpCiAgICBlbmQKICAgIHNlbGYuQ29uZmlnID0gVXRpbDpEZWVwQ29weVRhYihjZmcpCgogICAgLS1bW+WFqOmavuW6puWFseeUqO+8iOmUruWPr+WGmei/m+afkOS4gOaho+mihOiuvuimhueblu+8m+atpOWkhOS4uum7mOiupO+8ie+8mgogICAgICAgIHBvaXNvbl9yaW5nX29mZmF0dHJfdG9fcHJpbWFyeV90cmFuc2Zlcl9yYXRpb+WKm+S4u++8muaVj+aNt+KGkuWKm+mHj+avlOS+i++8iEFwcGx5SW50ZWxSZWRpc3RyaWJ1dGVBZnRlclBvaXNvblJpbmfvvIkKICAgICAgICBwb2lzb25fcmluZ19hbGxfaGVyb19pbnRlbF90b19zdHJfYWdpX3JhdGlvICAgIOaVjy/lhajmiY3kuLvvvJrmmbrlipvihpLlipvph4/mr5TkvosKICAgICAgICBib3RfaW5uYXRlX21hbmFfcmVnZW5fcGVyX3NlY29uZCAgICAgICAgICAgICAgIG1vZGlmaWVyX2JvdF9pbm5hdGVfbWFuYV9yZWdlbiDlm7rlrprlm57ok50v56eSCiAgICAgICAgYm90X2hlcm9fbGV2ZWxfY2FwICAgICAgICAgICAgICAgICAgICAgICAgICAgICDkurrmnLrnrYnnuqfkuIrpmZDvvIhIZXJvRGF0YSAvIOe7j+mqjO+8iQogICAgICAgIGJvdF9iYXNlX2F0dGFja19ib251c19wZXJfbGV2ZWwgICAgICAgICAgICAgICAgbW9kaWZpZXJfYm90X2lubmF0ZV9sZXZlbF9iYXNlX2F0dGFjayDmr4/nuqfln7rnoYDmlLvlh7sKICAgICAgICBib3RfcG9zdF9yaW5nX2JvbnVzXyogICAgICAgICAgICAgICAgICAgICAgICAgIOmmluasoee8qeWciOWQjuS6uuacuumineWkluS4iee7tC/mlLvlh7sv55Sf5ZG977yITWFwQ2hhbmdlMSDlkI7vvIkKICAgICAgICBpbnRfYm90X3JlZnJlc2hlcl9jb21ib19ocF90aHJlc2hvbGQgICAgICAgICAgIOaZuuWKm+S6uuacuuS9juihgOWIt+aWsCvooYDnsr4r5oqA6IO977yI55Sf5ZG95q+U5L6L77yJCiAgICAgICAgYWdpX3JhbmdlZF9odXJyaWNhbmVfcGlrZV8qICAgICAgICAgICAgICAgICAgICDov5znqIvmlY/po5Ppo47vvJrmlr3mlL7ooYDnur/jgIHnlKjlkI7ku4Xmma7mlLvnp5LmlbAKICAgICAgICBib3RfcmVzcGF3bl9waGFzZWRfc2Vjb25kcyAgICAgICAgICAgICAgICAgICAgIOS6uuacuuWkjea0u+ebuOS9jeaMgee7reaXtumXtO+8iEhlcm9EYXRh77yJCiAgICAgICAgYm90X2JsYWRlX21haWxfYWZ0ZXJfZGFtYWdlX3dpbmRvdyAgICAgICAgICAgICDlj5fmlYzmlrnoi7Hpm4TkvKTlkI7lhYHorrjlvIDliIPnlLLnmoTnp5LmlbDnqpflj6MKICAgIF1dCiAgICBzZWxmLkNvbmZpZy5wb2lzb25fcmluZ19vZmZhdHRyX3RvX3ByaW1hcnlfdHJhbnNmZXJfcmF0aW8gPSB0b251bWJlcihzZWxmLkNvbmZpZwogICAgICAgIC5wb2lzb25fcmluZ19vZmZhdHRyX3RvX3ByaW1hcnlfdHJhbnNmZXJfcmF0aW8pIG9yIDAuNzUKICAgIHNlbGYuQ29uZmlnLnBvaXNvbl9yaW5nX2FsbF9oZXJvX2ludGVsX3RvX3N0cl9hZ2lfcmF0aW8gPSB0b251bWJlcihzZWxmLkNvbmZpZwogICAgICAgIC5wb2lzb25fcmluZ19hbGxfaGVyb19pbnRlbF90b19zdHJfYWdpX3JhdGlvKSBvciAwLjgKICAgIHNlbGYuQ29uZmlnLmJvdF9pbm5hdGVfbWFuYV9yZWdlbl9wZXJfc2Vjb25kID0gdG9udW1iZXIoc2VsZi5Db25maWcuYm90X2lubmF0ZV9tYW5hX3JlZ2VuX3Blcl9zZWNvbmQpIG9yIDUwCiAgICBzZWxmLkNvbmZpZy5ib3RfaGVyb19sZXZlbF9jYXAgPSB0b251bWJlcihzZWxmLkNvbmZpZy5ib3RfaGVyb19sZXZlbF9jYXApIG9yIDQ1CiAgICBzZWxmLkNvbmZpZy5ib3RfYmFzZV9hdHRhY2tfYm9udXNfcGVyX2xldmVsID0gdG9udW1iZXIoc2VsZi5Db25maWcuYm90X2Jhc2VfYXR0YWNrX2JvbnVzX3Blcl9sZXZlbCkgb3IgMzAKICAgIHNlbGYuQ29uZmlnLmJvdF9wb3N0X3JpbmdfYm9udXNfYWxsX2F0dHJpYnV0ZXMgPSB0b251bWJlcihzZWxmLkNvbmZpZy5ib3RfcG9zdF9yaW5nX2JvbnVzX2FsbF9hdHRyaWJ1dGVzKSBvciAxMDAKICAgIHNlbGYuQ29uZmlnLmJvdF9wb3N0X3JpbmdfYm9udXNfYXR0YWNrID0gdG9udW1iZXIoc2VsZi5Db25maWcuYm90X3Bvc3RfcmluZ19ib251c19hdHRhY2spIG9yIDEwMDAKICAgIHNlbGYuQ29uZmlnLmJvdF9wb3N0X3JpbmdfYm9udXNfaGVhbHRoID0gdG9udW1iZXIoc2VsZi5Db25maWcuYm90X3Bvc3RfcmluZ19ib251c19oZWFsdGgpIG9yIDMwMDAKICAgIHNlbGYuQ29uZmlnLmludF9ib3RfcmVmcmVzaGVyX2NvbWJvX2hwX3RocmVzaG9sZCA9IHRvbnVtYmVyKHNlbGYuQ29uZmlnLmludF9ib3RfcmVmcmVzaGVyX2NvbWJvX2hwX3RocmVzaG9sZCkgb3IgMC41CiAgICBzZWxmLkNvbmZpZy5hZ2lfcmFuZ2VkX2h1cnJpY2FuZV9waWtlX2hwX3RocmVzaG9sZCA9IHRvbnVtYmVyKHNlbGYuQ29uZmlnLmFnaV9yYW5nZWRfaHVycmljYW5lX3Bpa2VfaHBfdGhyZXNob2xkKSBvcgogICAgICAgIDAuNQogICAgc2VsZi5Db25maWcuYWdpX3JhbmdlZF9odXJyaWNhbmVfcGlrZV9zdGFuZF9zZWNvbmRzID0gdG9udW1iZXIoc2VsZi5Db25maWcuYWdpX3JhbmdlZF9odXJyaWNhbmVfcGlrZV9zdGFuZF9zZWNvbmRzKSBvcgogICAgICAgIDEuNQogICAgc2VsZi5Db25maWcuYm90X3Jlc3Bhd25fcGhhc2VkX3NlY29uZHMgPSB0b251bWJlcihzZWxmLkNvbmZpZy5ib3RfcmVzcGF3bl9waGFzZWRfc2Vjb25kcykgb3IgMwogICAgc2VsZi5Db25maWcuYm90X2JsYWRlX21haWxfYWZ0ZXJfZGFtYWdlX3dpbmRvdyA9IHRvbnVtYmVyKHNlbGYuQ29uZmlnLmJvdF9ibGFkZV9tYWlsX2FmdGVyX2RhbWFnZV93aW5kb3cpIG9yIDYKCiAgICAtLSDkurrmnLrlsYDvvJrlnKjpooTorr7ln7rnoYDkuIrlho3mi4nplb8gVGhpbmvvvIzpmY3kvY7lpJogQm90IOWQjOW4p+WPoCBGaW5kVW5pdHMg55qE5qaC546H77yIQm9vdCDliJ3lp4vljJYgL+aUuemavuW6puaXtuS8muWGjei3keS4gOasoe+8iQogICAgbG9jYWwgYmMgPSBCb290IGFuZCBCb290LkNvbmZpZwogICAgaWYgYmMgYW5kIChiYy5lbmFibGVfYm90X3BsYXllcnMgPT0gdHJ1ZSBvciAodG9udW1iZXIoYmMuYm90X2RpZmZpY3VsdHkpIG9yIDApID4gMCkgdGhlbgogICAgICAgIGxvY2FsIHRpID0gdG9udW1iZXIoc2VsZi5Db25maWcudGhpbmtfaW50ZXJ2YWwpIG9yIDAuOAogICAgICAgIHRpID0gdGkgKyAwLjEKICAgICAgICBpZiB0aSA+IDEuMTggdGhlbgogICAgICAgICAgICB0aSA9IDEuMTgKICAgICAgICBlbmQKICAgICAgICBzZWxmLkNvbmZpZy50aGlua19pbnRlcnZhbCA9IHRpCiAgICBlbmQKZW5kCgpCb3RBSTpBcHBseUNvbmZpZ1ByZXNldCgpCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+--[[人机难度配置（原 Config_easy / Config_hard / Config_insane 合并于此，勿再 require 分文件）。
+    选取：`Boot.Config.bot_difficulty`，1=简单，2=困难，3=令人发狂；0 或未选时按困难档路径加载。
+    运行时：`BotAI:ApplyConfigPreset()` 深拷贝某一档后，再写入一批「全难度共用默认值」（缩圈比例、复活相位、modifier 用数值等，见文件底部）。
+]]
+
+---------------------------------------------------------------------------
+-- 公用表（按 tp1=力量 tp2=敏捷 tp3=智力，与 Boot.BootType 一致）
+---------------------------------------------------------------------------
+
+-- 人机定时学习的刀塔技能 ID 池（整局一套，按主属性分型；满 4 槽后不再从池学，仍定时加技能点）
+local BOTAI_SHARED_DOTA_SKILL_IDS_BY_TP = {
+    tp1 = { 2, 9, 17, 21, 22, 23, 29, 34, 35, 36, 37, 38, 39, 46, 47, 55, 61, 73, 77, 81, 83, 93, 98, 103, 105, 116, 145, 151, 152, 163, 164, 182, 194, 198, 199, 200, 207, 286, 313, 332 },
+    tp2 = { 1, 2, 3, 4, 8, 11, 20, 24, 29, 33, 35, 37, 38, 39, 46, 47, 57, 61, 69, 95, 98, 103, 113, 116, 126, 145, 182, 193, 194, 198, 199, 200, 209, 214, 231, 251, 257, 267, 326, 332, },
+    tp3 = { 2, 5, 7, 8, 19, 26, 28, 37, 39, 46, 47, 52, 69, 71, 78, 104, 105, 110, 120, 142, 162, 182, 183, 186, 194, 199, 202, 206, 207, 209, 214, 220, 226, 229, 246, 255, 257, 259, 267, 277, 281, 296, 299, 318, 327 },
+}
+
+
+-- 肉搏书全局黑名单；白名单由 `SelectHero:GetMeleeLearnWhitelistForHeroIndex`（BattleType + RMBList）生成
+local BOTAI_SHARED_MELEE_BLOCKLIST = {
+    ["item_skill_32"] = true,
+    ["item_skill_28"] = true,
+}
+
+-- 购装随机池（买齐必买表后才会抽这里）
+local BOTAI_SHARED_ITEM_BUY_POOL_BY_TP = {
+    tp1 = {
+        "item_heart",
+        "item_assault",
+        "item_shivas_guard",
+        "item_abyssal_blade",
+        "item_satanic",
+    },
+    tp2 = {
+        "item_sphere",
+        "item_butterfly",
+        "item_monkey_king_bar",
+        "item_greater_crit",
+        "item_hydras_breath",
+        "item_skadi",
+        "item_silver_edge",
+    },
+    tp3 = {
+        "item_sphere",
+        "item_shivas_guard",
+        "item_yasha_and_kaya",
+        "item_ethereal_blade",
+        "item_gungir",
+        "item_devastator",
+    },
+}
+
+-- 必买顺序（未买齐前不抽随机池）；远程敏、近战敏等特例插入见 Func.GetBotMandatoryItemBuyList
+local BOTAI_SHARED_ITEM_BUY_REQUIRED_BY_TP = {
+    tp1 = { "item_blade_mail", "item_black_king_bar", "item_sphere", },
+    tp2 = { "item_satanic", "item_black_king_bar", "item_nullifier", },
+    tp3 = { "item_sheepstick", "item_refresher", "item_bloodstone", },
+}
+
+---------------------------------------------------------------------------
+-- 分档预设（仅下列字段因难度变化；其余逻辑依赖 ApplyConfigPreset 默认值）
+---------------------------------------------------------------------------
+
+local BOTAI_PRESET_EASY = {
+    think_interval = 1,                                                    -- Think 主循环间隔（秒），略放宽以减卡顿
+    patrol_reach_distance = 260,                                           -- 距巡逻点多近视为「到达」
+    blade_mail_evade_duration = 2,                                         -- 对开刃甲敌人后撤状态持续（秒）
+    blade_mail_evade_distance = 680,                                       -- 刃甲后撤目标点距离
+    cast_delay_min = 0.35,                                                 -- 自动施法前随机等待下限（秒）
+    cast_delay_max = 0.95,                                                 -- 自动施法前随机等待上限（秒）
+    level_growth_all_attributes = 1,                                       -- 每升一级额外力量/敏捷/智力（各 +N）
+    level_growth_bonus_hp = 1,                                             -- 每升一级额外生命
+    level_growth_bonus_movespeed = 1,                                      -- 每升一级额外移速
+    level_growth_ability_points = 3,                                       -- 每升一级额外技能点
+    death_growth_all_attributes = 1,                                       -- 每次死亡三维各 +N
+    neutral_kill_gold = 1,                                                 -- 人机击杀非英雄额外金钱（entity_killed）
+    neutral_kill_experience = 1,                                           -- 人机击杀非英雄额外经验
+    item_use_hp_dump_all_below_pct = 0.32,                                 -- 生命比例低于此：TryUseActiveItemsByHealth 错峰交齐主动道具
+    item_use_hp_random_50_below_pct = 0.5,                                 -- 与 dump、random_30 分档：低于此用 random_chance_at_60 作随机交一件的概率上界
+    item_use_hp_random_30_below_pct = 0.72,                                -- 生命比例 ≥ 此值则不进入低血道具逻辑；低于后才可能随机/全交
+    item_use_random_chance_at_60 = 0.38,                                   -- 血线在 [dump, random_50) 时随机交一件的概率上限
+    item_use_random_chance_at_80 = 0.22,                                   -- 血线在 [random_50, random_30) 时随机交一件的概率上限
+    item_use_dump_all_stagger = 0.5,                                       -- 全交道具时每件间隔（秒）
+    item_buy_min_gold = 10000,                                             -- 金币达到此值才开始尝试购物（简单档偏高，出装慢）
+    item_buy_pool_by_hero_type = BOTAI_SHARED_ITEM_BUY_POOL_BY_TP,         -- 必买齐后的随机装备池（按 tp）
+    item_buy_required_by_hero_type = BOTAI_SHARED_ITEM_BUY_REQUIRED_BY_TP, -- 必买顺序（按 tp）
+    melee_skill_learn_blocklist = BOTAI_SHARED_MELEE_BLOCKLIST,            -- 肉搏书黑名单
+    dota_skill_pool_grant_interval = 60,                                   -- 每 N 秒：技能点 + 从池学 1 个刀塔 Skill1（未满 4 槽时）
+    dota_skill_pool_by_hero_type = BOTAI_SHARED_DOTA_SKILL_IDS_BY_TP,      -- 刀塔技能 ID 池（按 tp）
+}
+
+local BOTAI_PRESET_HARD = {
+    think_interval = 0.82,                                                 -- Think 主循环间隔（秒）
+    patrol_reach_distance = 220,                                           -- 巡逻到达判定距离
+    blade_mail_evade_duration = 2,                                         -- 刃甲后撤持续（秒）
+    blade_mail_evade_distance = 680,                                       -- 刃甲后撤距离
+    cast_delay_min = 0.2,                                                  -- 施法前随机等待下限（秒）
+    cast_delay_max = 0.7,                                                  -- 施法前随机等待上限（秒）
+    level_growth_all_attributes = 6,                                       -- 每级额外三维
+    level_growth_bonus_hp = 300,                                           -- 每级额外生命
+    level_growth_bonus_movespeed = 5,                                      -- 每级额外移速
+    level_growth_ability_points = 5,                                       -- 每级额外技能点
+    death_growth_all_attributes = 6,                                       -- 每次死亡三维各 +N
+    neutral_kill_gold = 20,                                                -- 非英雄击杀额外金
+    neutral_kill_experience = 0,                                           -- 非英雄击杀额外经验
+    item_use_hp_dump_all_below_pct = 0.4,                                  -- 低于此全交主动道具（TryUseActiveItemsByHealth）
+    item_use_hp_random_50_below_pct = 0.6,                                 -- 分档：低于此用 random_chance_at_60，否则 at_80
+    item_use_hp_random_30_below_pct = 0.8,                                 -- 生命比例 ≥ 此值则不进入低血道具逻辑
+    item_use_random_chance_at_60 = 0.5,                                    -- 血线在 [dump, random_50) 时随机交一件概率上限
+    item_use_random_chance_at_80 = 0.3,                                    -- 血线在 [random_50, random_30) 时随机交一件概率上限
+    item_use_dump_all_stagger = 0.08,                                      -- 全交错峰间隔（秒）
+    item_buy_min_gold = 6000,                                              -- 开始购物金钱下限
+    item_buy_pool_by_hero_type = BOTAI_SHARED_ITEM_BUY_POOL_BY_TP,         -- 必买齐后的随机装备池（按 tp）
+    item_buy_required_by_hero_type = BOTAI_SHARED_ITEM_BUY_REQUIRED_BY_TP, -- 必买顺序（按 tp）
+    melee_skill_learn_blocklist = BOTAI_SHARED_MELEE_BLOCKLIST,            -- 肉搏书黑名单
+    dota_skill_pool_grant_interval = 60,                                   -- 每 N 秒：技能点 + 池内学刀塔技能
+    dota_skill_pool_by_hero_type = BOTAI_SHARED_DOTA_SKILL_IDS_BY_TP,      -- 刀塔技能 ID 池（按 tp）
+}
+
+local BOTAI_PRESET_INSANE = {
+    think_interval = 0.72,                                                 -- Think 主循环间隔（秒）
+    patrol_reach_distance = 190,                                           -- 巡逻到达判定距离
+    blade_mail_evade_duration = 2,                                         -- 刃甲后撤持续（秒）
+    blade_mail_evade_distance = 680,                                       -- 刃甲后撤距离
+    cast_delay_min = 0.12,                                                 -- 施法前随机等待下限（秒）
+    cast_delay_max = 0.42,                                                 -- 施法前随机等待上限（秒）
+    level_growth_all_attributes = 20,                                      -- 每级额外三维
+    level_growth_bonus_hp = 800,                                           -- 每级额外生命
+    level_growth_bonus_movespeed = 6,                                      -- 每级额外移速
+    level_growth_ability_points = 5,                                       -- 每级额外技能点
+    death_growth_all_attributes = 15,                                      -- 每次死亡三维各 +N
+    neutral_kill_gold = 28,                                                -- 非英雄击杀额外金
+    neutral_kill_experience = 20,                                          -- 非英雄击杀额外经验
+    item_use_hp_dump_all_below_pct = 0.48,                                 -- 低于此全交主动道具
+    item_use_hp_random_50_below_pct = 0.68,                                -- 分档阈值（同简单/困难，见上）
+    item_use_hp_random_30_below_pct = 0.88,                                -- 高于等于此不触发低血道具链
+    item_use_random_chance_at_60 = 0.62,                                   -- 血线在 [dump, random_50) 时随机交一件概率上限
+    item_use_random_chance_at_80 = 0.42,                                   -- 血线在 [random_50, random_30) 时随机交一件概率上限
+    item_use_dump_all_stagger = 0.05,                                      -- 全交错峰间隔（秒）
+    item_buy_min_gold = 4200,                                              -- 开始购物金钱下限（最低，出装最快）
+    item_buy_pool_by_hero_type = BOTAI_SHARED_ITEM_BUY_POOL_BY_TP,         -- 必买齐后的随机装备池（按 tp）
+    item_buy_required_by_hero_type = BOTAI_SHARED_ITEM_BUY_REQUIRED_BY_TP, -- 必买顺序（按 tp）
+    melee_skill_learn_blocklist = BOTAI_SHARED_MELEE_BLOCKLIST,            -- 肉搏书黑名单
+    dota_skill_pool_grant_interval = 60,                                   -- 每 N 秒：技能点 + 池内学刀塔技能
+    dota_skill_pool_by_hero_type = BOTAI_SHARED_DOTA_SKILL_IDS_BY_TP,      -- 刀塔技能 ID 池（按 tp）
+}
+
+local BOTAI_PRESET_BY_PATH = {
+    ["ingame.BotAI.Config_easy"] = BOTAI_PRESET_EASY,
+    ["ingame.BotAI.Config_hard"] = BOTAI_PRESET_HARD,
+    ["ingame.BotAI.Config_insane"] = BOTAI_PRESET_INSANE,
+}
+
+--[[ 可选：DeepCopy 后挂到 self.Config 覆盖默认行为（勿与 item_buy_*_by_hero_type 混用全局表）
+    melee_skill_learn_whitelist、melee_skill_learn_whitelist_by_type
+    item_buy_pool、item_buy_required（会覆盖按 tp 分表）
+    dota_skill_book_pool（真人技能书 Roll 兜底 ID）
+]]
+
+function BotAI:ApplyConfigPreset()
+    local d = 0
+    if Boot and Boot.Config and Boot.Config.bot_difficulty ~= nil then
+        d = tonumber(Boot.Config.bot_difficulty) or 0
+    end
+    local path = "ingame.BotAI.Config_hard"
+    if d == 1 then
+        path = "ingame.BotAI.Config_easy"
+    elseif d == 3 then
+        path = "ingame.BotAI.Config_insane"
+    end
+
+    local fallback_paths = { path }
+    if path ~= "ingame.BotAI.Config_hard" then
+        table.insert(fallback_paths, "ingame.BotAI.Config_hard")
+    end
+    if path ~= "ingame.BotAI.Config_easy" then
+        table.insert(fallback_paths, "ingame.BotAI.Config_easy")
+    end
+    if path ~= "ingame.BotAI.Config_insane" then
+        table.insert(fallback_paths, "ingame.BotAI.Config_insane")
+    end
+
+    local cfg, loaded_from = nil, nil
+    for _, try_path in ipairs(fallback_paths) do
+        cfg = BOTAI_PRESET_BY_PATH[try_path]
+        if cfg then
+            loaded_from = try_path
+            break
+        end
+    end
+    if not cfg then
+        cfg = BOTAI_PRESET_HARD
+        loaded_from = "ingame.BotAI.Config_hard"
+    end
+    if loaded_from ~= path then
+        -- print("[BotAI] 配置 " .. tostring(path) .. " 未找到，已回退为 " .. tostring(loaded_from))
+    end
+    self.Config = Util:DeepCopyTab(cfg)
+
+    --[[全难度共用（键可写进某一档预设覆盖；此处为默认）：
+        poison_ring_offattr_to_primary_transfer_ratio力主：敏捷→力量比例（ApplyIntelRedistributeAfterPoisonRing）
+        poison_ring_all_hero_intel_to_str_agi_ratio    敏/全才主：智力→力量比例
+        bot_innate_mana_regen_per_second               modifier_bot_innate_mana_regen 固定回蓝/秒
+        bot_hero_level_cap                             人机等级上限（HeroData / 经验）
+        bot_base_attack_bonus_per_level                modifier_bot_innate_level_base_attack 每级基础攻击
+        bot_post_ring_bonus_*                          首次缩圈后人机额外三维/攻击/生命（MapChange1 后）
+        int_bot_refresher_combo_hp_threshold           智力人机低血刷新+血精+技能（生命比例）
+        agi_ranged_hurricane_pike_*                    远程敏飓风：施放血线、用后仅普攻秒数
+        bot_respawn_phased_seconds                     人机复活相位持续时间（HeroData）
+        bot_blade_mail_after_damage_window             受敌方英雄伤后允许开刃甲的秒数窗口
+    ]]
+    self.Config.poison_ring_offattr_to_primary_transfer_ratio = tonumber(self.Config
+        .poison_ring_offattr_to_primary_transfer_ratio) or 0.75
+    self.Config.poison_ring_all_hero_intel_to_str_agi_ratio = tonumber(self.Config
+        .poison_ring_all_hero_intel_to_str_agi_ratio) or 0.8
+    self.Config.bot_innate_mana_regen_per_second = tonumber(self.Config.bot_innate_mana_regen_per_second) or 50
+    self.Config.bot_hero_level_cap = tonumber(self.Config.bot_hero_level_cap) or 45
+    self.Config.bot_base_attack_bonus_per_level = tonumber(self.Config.bot_base_attack_bonus_per_level) or 30
+    self.Config.bot_post_ring_bonus_all_attributes = tonumber(self.Config.bot_post_ring_bonus_all_attributes) or 100
+    self.Config.bot_post_ring_bonus_attack = tonumber(self.Config.bot_post_ring_bonus_attack) or 1000
+    self.Config.bot_post_ring_bonus_health = tonumber(self.Config.bot_post_ring_bonus_health) or 3000
+    self.Config.int_bot_refresher_combo_hp_threshold = tonumber(self.Config.int_bot_refresher_combo_hp_threshold) or 0.5
+    self.Config.agi_ranged_hurricane_pike_hp_threshold = tonumber(self.Config.agi_ranged_hurricane_pike_hp_threshold) or
+        0.5
+    self.Config.agi_ranged_hurricane_pike_stand_seconds = tonumber(self.Config.agi_ranged_hurricane_pike_stand_seconds) or
+        1.5
+    self.Config.bot_respawn_phased_seconds = tonumber(self.Config.bot_respawn_phased_seconds) or 3
+    self.Config.bot_blade_mail_after_damage_window = tonumber(self.Config.bot_blade_mail_after_damage_window) or 6
+
+    -- 人机局：在预设基础上再拉长 Think，降低多 Bot 同帧叠 FindUnits 的概率（Boot 初始化 /改难度时会再跑一次）
+    local bc = Boot and Boot.Config
+    if bc and (bc.enable_bot_players == true or (tonumber(bc.bot_difficulty) or 0) > 0) then
+        local ti = tonumber(self.Config.think_interval) or 0.8
+        ti = ti + 0.1
+        if ti > 1.18 then
+            ti = 1.18
+        end
+        self.Config.think_interval = ti
+    end
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+BotAI:ApplyConfigPreset()

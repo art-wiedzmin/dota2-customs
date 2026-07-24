@@ -8,22 +8,87 @@
 ]]
 
 
-local encoded=[[ZnVuY3Rpb24gQ29kZTpHZXRHb29kcyhJRCkKICAgIHJldHVybiBzZWxmLkRhdGFbSURdLmdvb2RzCmVuZAoKZnVuY3Rpb24gQ29kZTpHZXRQYXlUcChJRCkKICAgIHJldHVybiBzZWxmLkRhdGFbSURdLnBheV90eXBlCmVuZAoKLS0tIOWFheWAvOaIkOWKn+W8ueeql++8muS4juWFkeaNoueggSBNc2dzOlBvcFJlZGVlbVN1Y2Nlc3Mg5LiA6Ie077yI5Y+v5pyJ5Zu+5oiW5peg5Zu+57qv5paH5a2X77yJCmZ1bmN0aW9uIENvZGU6UGF5UmV3YXJkUm93cyhJRCkKICAgIGxvY2FsIHJvd3MgPSB7fQogICAgaWYgbm90IElEIG9yIG5vdCBzZWxmLkRhdGFbSURdIHRoZW4KICAgICAgICByZXR1cm4gcm93cwogICAgZW5kCiAgICBsb2NhbCBnb29kcyA9IHNlbGY6R2V0R29vZHMoSUQpCiAgICBsb2NhbCBnb29zZF9uYW1lID0gc2VsZi5EYXRhW0lEXS5nb29kc19uYW1lCiAgICBsb2NhbCBnb2xkX2ljb24gPSBDb2RlLlBBWV9SRVdBUkRfR09MRF9JQ09OCgogICAgLS0g5pyI5Y2hL+Wto+WNoemZhOi1oOmHkeixhuWbuuWumiAzMDAvOTAw77yI5LiOIGdhbWVSZWNoYXJnZURlbGl2ZXJ5IOS4gOiHtO+8jOS4jeWPguS4jumHkeixhuaho+mmluWFhSDDlzPvvIkKICAgIGlmIGdvb3NkX25hbWUgPT0gImNhcmQxIiBvciBnb29kcyA9PSAiTU9OVEhfQ0FSRCIgdGhlbgogICAgICAgIHJvd3NbI3Jvd3MgKyAxXSA9IHsgY291bnQgPSAxLCB1bml0ID0gIuWLh+Wjq+aciOWNoSIgfQogICAgICAgIHJvd3NbI3Jvd3MgKyAxXSA9IHsgaW1nID0gZ29sZF9pY29uLCBjb3VudCA9IENvZGUuTU9OVEhfQ0FSRF9HT0xEX0JPTlVTIG9yIDMwMCwgdW5pdCA9ICLph5HosYYiIH0KICAgIGVsc2VpZiBnb29zZF9uYW1lID09ICJjYXJkMiIgb3IgZ29vZHMgPT0gIkNBUkQyIiB0aGVuCiAgICAgICAgcm93c1sjcm93cyArIDFdID0geyBjb3VudCA9IDEsIHVuaXQgPSAi6I2j6ICA5a2j5Y2hIiB9CiAgICAgICAgcm93c1sjcm93cyArIDFdID0geyBpbWcgPSBnb2xkX2ljb24sIGNvdW50ID0gQ29kZS5DQVJEMl9HT0xEX0JPTlVTIG9yIDkwMCwgdW5pdCA9ICLph5HosYYiIH0KICAgIGVsc2VpZiBnb29zZF9uYW1lID09ICJjYXJkMyIgdGhlbgogICAgICAgIGxvY2FsIGJvbnVzID0gNTAwMAogICAgICAgIGlmIFNob3AgYW5kIFNob3AuQ2FyZFN0YXRpY0RhdGEgYW5kIFNob3AuQ2FyZFN0YXRpY0RhdGEucHVyY2hhc2VfeHBfYm9udXMgdGhlbgogICAgICAgICAgICBib251cyA9IFNob3AuQ2FyZFN0YXRpY0RhdGEucHVyY2hhc2VfeHBfYm9udXMKICAgICAgICBlbmQKICAgICAgICByb3dzWyNyb3dzICsgMV0gPSB7CiAgICAgICAgICAgIGltZyA9IENvZGUuUEFZX1JFV0FSRF9DQVJEX1BSRU1JVU1fSUNPTiwKICAgICAgICAgICAgY291bnQgPSAxLAogICAgICAgICAgICB1bml0ID0gIui/m+mYtuaImOS7pOW3sua/gOa0uyIsCiAgICAgICAgfQogICAgICAgIHJvd3NbI3Jvd3MgKyAxXSA9IHsKICAgICAgICAgICAgaW1nID0gQ29kZS5QQVlfUkVXQVJEX0NBUkRfWFBfSUNPTiwKICAgICAgICAgICAgY291bnQgPSBib251cywKICAgICAgICAgICAgdW5pdCA9ICLpgJrooYzor4Hnu4/pqowiLAogICAgICAgIH0KICAgIGVsc2VpZiBnb29zZF9uYW1lID09ICJjYXJkX2xldmVsIiB0aGVuCiAgICAgICAgbG9jYWwgbHYgPSBzZWxmLkRhdGFbSURdLmNhcmRfbGV2ZWxfY291bnQgb3IgMQogICAgICAgIGxvY2FsIHhwX2VhY2ggPSBDb2RlLkNhcmRMZXZlbFhwUGVyTGV2ZWwgb3IgNTAwCiAgICAgICAgaWYgU2hvcCBhbmQgU2hvcC5DYXJkU3RhdGljRGF0YSBhbmQgU2hvcC5DYXJkU3RhdGljRGF0YS54cF9wZXJfbGV2ZWwgdGhlbgogICAgICAgICAgICB4cF9lYWNoID0gU2hvcC5DYXJkU3RhdGljRGF0YS54cF9wZXJfbGV2ZWwKICAgICAgICBlbmQKICAgICAgICByb3dzWyNyb3dzICsgMV0gPSB7CiAgICAgICAgICAgIGltZyA9IENvZGUuUEFZX1JFV0FSRF9DQVJEX1hQX0lDT04sCiAgICAgICAgICAgIGNvdW50ID0gbHYgKiB4cF9lYWNoLAogICAgICAgICAgICB1bml0ID0gIumAmuihjOivgee7j+mqjCIsCiAgICAgICAgfQogICAgZWxzZWlmIGdvb2RzID09ICJIT0xJREFZX0RXXzMwIiBvciBnb29kcyA9PSAiSE9MSURBWV9EV182OCIgb3IgZ29vZHMgPT0gIkhPTElEQVlfRFdfMTI4IiB0aGVuCiAgICAgICAgaWYgSG9saWRheVBhY2sgYW5kIEhvbGlkYXlQYWNrLkJ1aWxkUmVkZWVtUm93cyB0aGVuCiAgICAgICAgICAgIGxvY2FsIHBhY2tfcm93cyA9IEhvbGlkYXlQYWNrOkJ1aWxkUmVkZWVtUm93cyhnb29kcykKICAgICAgICAgICAgZm9yIF8sIHJvdyBpbiBpcGFpcnMocGFja19yb3dzKSBkbwogICAgICAgICAgICAgICAgcm93c1sjcm93cyArIDFdID0gcm93CiAgICAgICAgICAgIGVuZAogICAgICAgIGVuZAogICAgZWxzZWlmIHR5cGUoZ29vZHMpID09ICJzdHJpbmciIGFuZCBzdHJpbmcuc3ViKGdvb2RzLCAxLCA1KSA9PSAiR0lGVF8iIHRoZW4KICAgICAgICBpZiBIb2xpZGF5UGFjayBhbmQgSG9saWRheVBhY2suQnVpbGRSZWRlZW1Sb3dzRm9yR2lmdCB0aGVuCiAgICAgICAgICAgIGxvY2FsIHBhY2tfcm93cyA9IEhvbGlkYXlQYWNrOkJ1aWxkUmVkZWVtUm93c0ZvckdpZnQoSUQsIGdvb2RzKQogICAgICAgICAgICBmb3IgXywgcm93IGluIGlwYWlycyhwYWNrX3Jvd3MpIGRvCiAgICAgICAgICAgICAgICByb3dzWyNyb3dzICsgMV0gPSByb3cKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICBlbHNlaWYgZ29vZHMgfj0gIk1PTlRIX0NBUkQiIGFuZCBnb29kcyB+PSAiQ0FSRDIiIHRoZW4KICAgICAgICBsb2NhbCBiYXNlX3ByaWNlID0gZ29vZHMgYW5kIENvZGUuR29vZHNQcmljZVtnb29kc10gb3IgbmlsCiAgICAgICAgbG9jYWwgaXRlbV9udW0gPSAwCiAgICAgICAgaWYgYmFzZV9wcmljZSB0aGVuCiAgICAgICAgICAgIGl0ZW1fbnVtID0gYmFzZV9wcmljZSAqIDEwCiAgICAgICAgICAgIGlmIFNob3AuRGF0YVtJRF0gYW5kIFNob3AuRGF0YVtJRF0uZG91YmxlIHRoZW4KICAgICAgICAgICAgICAgIGlmIFNob3AuRGF0YVtJRF0uZG91YmxlW2dvb3NkX25hbWVdID09IDAgdGhlbgogICAgICAgICAgICAgICAgICAgIGl0ZW1fbnVtID0gaXRlbV9udW0gKiBDb2RlLkZJUlNUX0NIQVJHRV9HT0xEX01VTFQKICAgICAgICAgICAgICAgIGVsc2UKICAgICAgICAgICAgICAgICAgICBpdGVtX251bSA9IGl0ZW1fbnVtICogKENvZGUuUkVDSEFSR0VfR09MRF9NVUxUIG9yIDIpCiAgICAgICAgICAgICAgICBlbmQKICAgICAgICAgICAgZW5kCiAgICAgICAgZW5kCiAgICAgICAgaWYgaXRlbV9udW0gPiAwIHRoZW4KICAgICAgICAgICAgcm93c1sjcm93cyArIDFdID0geyBpbWcgPSBnb2xkX2ljb24sIGNvdW50ID0gaXRlbV9udW0sIHVuaXQgPSAi6YeR6LGGIiB9CiAgICAgICAgZW5kCiAgICBlbmQKICAgIHJldHVybiByb3dzCmVuZAo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+function Code:GetGoods(ID)
+    return self.Data[ID].goods
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function Code:GetPayTp(ID)
+    return self.Data[ID].pay_type
+end
+
+--- 充值成功弹窗：与兑换码 Msgs:PopRedeemSuccess 一致（可有图或无图纯文字）
+function Code:PayRewardRows(ID)
+    local rows = {}
+    if not ID or not self.Data[ID] then
+        return rows
+    end
+    local goods = self:GetGoods(ID)
+    local goosd_name = self.Data[ID].goods_name
+    local gold_icon = Code.PAY_REWARD_GOLD_ICON
+
+    -- 月卡/季卡附赠金豆固定 300/900（与 gameRechargeDelivery 一致，不参与金豆档首充 ×3）
+    if goosd_name == "card1" or goods == "MONTH_CARD" then
+        rows[#rows + 1] = { count = 1, unit = "勇士月卡" }
+        rows[#rows + 1] = { img = gold_icon, count = Code.MONTH_CARD_GOLD_BONUS or 300, unit = "金豆" }
+    elseif goosd_name == "card2" or goods == "CARD2" then
+        rows[#rows + 1] = { count = 1, unit = "荣耀季卡" }
+        rows[#rows + 1] = { img = gold_icon, count = Code.CARD2_GOLD_BONUS or 900, unit = "金豆" }
+    elseif goosd_name == "card3" then
+        local bonus = 5000
+        if Shop and Shop.CardStaticData and Shop.CardStaticData.purchase_xp_bonus then
+            bonus = Shop.CardStaticData.purchase_xp_bonus
+        end
+        rows[#rows + 1] = {
+            img = Code.PAY_REWARD_CARD_PREMIUM_ICON,
+            count = 1,
+            unit = "进阶战令已激活",
+        }
+        rows[#rows + 1] = {
+            img = Code.PAY_REWARD_CARD_XP_ICON,
+            count = bonus,
+            unit = "通行证经验",
+        }
+    elseif goosd_name == "card_level" then
+        local lv = self.Data[ID].card_level_count or 1
+        local xp_each = Code.CardLevelXpPerLevel or 500
+        if Shop and Shop.CardStaticData and Shop.CardStaticData.xp_per_level then
+            xp_each = Shop.CardStaticData.xp_per_level
+        end
+        rows[#rows + 1] = {
+            img = Code.PAY_REWARD_CARD_XP_ICON,
+            count = lv * xp_each,
+            unit = "通行证经验",
+        }
+    elseif goods == "HOLIDAY_DW_30" or goods == "HOLIDAY_DW_68" or goods == "HOLIDAY_DW_128" then
+        if HolidayPack and HolidayPack.BuildRedeemRows then
+            local pack_rows = HolidayPack:BuildRedeemRows(goods)
+            for _, row in ipairs(pack_rows) do
+                rows[#rows + 1] = row
+            end
+        end
+    elseif type(goods) == "string" and string.sub(goods, 1, 5) == "GIFT_" then
+        if HolidayPack and HolidayPack.BuildRedeemRowsForGift then
+            local pack_rows = HolidayPack:BuildRedeemRowsForGift(ID, goods)
+            for _, row in ipairs(pack_rows) do
+                rows[#rows + 1] = row
+            end
+        end
+    elseif goods ~= "MONTH_CARD" and goods ~= "CARD2" then
+        local base_price = goods and Code.GoodsPrice[goods] or nil
+        local item_num = 0
+        if base_price then
+            item_num = base_price * 10
+            if Shop.Data[ID] and Shop.Data[ID].double then
+                if Shop.Data[ID].double[goosd_name] == 0 then
+                    item_num = item_num * Code.FIRST_CHARGE_GOLD_MULT
+                else
+                    item_num = item_num * (Code.RECHARGE_GOLD_MULT or 2)
+                end
+            end
+        end
+        if item_num > 0 then
+            rows[#rows + 1] = { img = gold_icon, count = item_num, unit = "金豆" }
+        end
+    end
+    return rows
+end

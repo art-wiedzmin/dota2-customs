@@ -8,22 +8,253 @@
 ]]
 
 
-local encoded=[[aWYgYWJpbGl0eV9tXzFfNl9mbHV4ID09IG5pbCB0aGVuCiAgICBhYmlsaXR5X21fMV82X2ZsdXggPSBjbGFzcyh7fSkKZW5kCgpMaW5rTHVhTW9kaWZpZXIoIm1vZGlmaWVyX21fMV82X2ZsdXgiLAogICAgImluZ2FtZS9Nb25zdGVyL2FiaWxpdHlfbV8xXzZfZmx1eCIsCiAgICBMVUFfTU9ESUZJRVJfTU9USU9OX05PTkUpCgpMaW5rTHVhTW9kaWZpZXIoIm1vZGlmaWVyX21fMV82X2ZsdXhfYXR0YWNrIiwKICAgICJpbmdhbWUvTW9uc3Rlci9hYmlsaXR5X21fMV82X2ZsdXgiLAogICAgTFVBX01PRElGSUVSX01PVElPTl9OT05FKQoKZnVuY3Rpb24gYWJpbGl0eV9tXzFfNl9mbHV4OkdldENhc3RSYW5nZShsb2NhdGlvbiwgdGFyZ2V0KQogICAgbG9jYWwgcmFuZ2UgPSBzZWxmOkdldFNwZWNpYWxWYWx1ZUZvcigiQWJpbGl0eUNhc3RSYW5nZSIpCiAgICBpZiByYW5nZSA8PSAwIHRoZW4KICAgICAgICByYW5nZSA9IDEwMDAKICAgIGVuZAogICAgcmV0dXJuIHJhbmdlCmVuZAoKZnVuY3Rpb24gYWJpbGl0eV9tXzFfNl9mbHV4OkNhc3RGaWx0ZXJSZXN1bHRUYXJnZXQodGFyZ2V0KQogICAgaWYgbm90IHRhcmdldCBvciB0YXJnZXQ6SXNOdWxsKCkgdGhlbgogICAgICAgIHJldHVybiBVRl9GQUlMX0NVU1RPTQogICAgZW5kCiAgICBpZiB0YXJnZXQ6SXNJbnZ1bG5lcmFibGUoKSB0aGVuCiAgICAgICAgcmV0dXJuIFVGX0ZBSUxfSU5WVUxORVJBQkxFCiAgICBlbmQKICAgIGlmIHRhcmdldDpHZXRUZWFtTnVtYmVyKCkgPT0gc2VsZjpHZXRDYXN0ZXIoKTpHZXRUZWFtTnVtYmVyKCkgdGhlbgogICAgICAgIHJldHVybiBVRl9GQUlMX0ZSSUVORExZCiAgICBlbmQKICAgIGlmIHRhcmdldDpJc0J1aWxkaW5nKCkgb3IgdGFyZ2V0OklzT3RoZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuIFVGX0ZBSUxfQ1VTVE9NCiAgICBlbmQKICAgIHJldHVybiBVRl9TVUNDRVNTCmVuZAoKZnVuY3Rpb24gYWJpbGl0eV9tXzFfNl9mbHV4OkNhbkZsdXhUYXJnZXQoY2FzdGVyLCB0YXJnZXQpCiAgICBpZiBub3QgY2FzdGVyIG9yIGNhc3RlcjpJc051bGwoKSBvciBub3QgY2FzdGVyOklzQWxpdmUoKSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIGNhc3RlcjpJc1N0dW5uZWQoKSBvciBjYXN0ZXI6SXNTaWxlbmNlZCgpIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgaWYgbm90IHRhcmdldCBvciB0YXJnZXQ6SXNOdWxsKCkgb3Igbm90IHRhcmdldDpJc0FsaXZlKCkgb3IgdGFyZ2V0OklzSW52dWxuZXJhYmxlKCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiB0YXJnZXQ6R2V0VGVhbU51bWJlcigpID09IGNhc3RlcjpHZXRUZWFtTnVtYmVyKCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiB0YXJnZXQ6SXNCdWlsZGluZygpIG9yIHRhcmdldDpJc090aGVyKCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIGFiaWxpdHlfbV8xXzZfZmx1eDpBcHBseUZsdXhUb1RhcmdldCh0YXJnZXQpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGxvY2FsIGNhc3RlciA9IHNlbGY6R2V0Q2FzdGVyKCkKICAgIGlmIG5vdCBzZWxmOkNhbkZsdXhUYXJnZXQoY2FzdGVyLCB0YXJnZXQpIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAoKICAgIGxvY2FsIGR1cmF0aW9uID0gc2VsZjpHZXRTcGVjaWFsVmFsdWVGb3IoImR1cmF0aW9uIikKICAgIGlmIGR1cmF0aW9uIDw9IDAgdGhlbgogICAgICAgIGR1cmF0aW9uID0gMwogICAgZW5kCgogICAgRW1pdFNvdW5kT24oIkhlcm9fQXJjV2FyZGVuLkZsdXguVGFyZ2V0IiwgdGFyZ2V0KQoKICAgIGxvY2FsIHNsb3dfcGN0ID0gc2VsZjpHZXRTcGVjaWFsVmFsdWVGb3IoIm1vdmVfc3BlZWRfc2xvd19wY3QiKQogICAgaWYgc2xvd19wY3QgPD0gMCB0aGVuCiAgICAgICAgc2xvd19wY3QgPSAzNQogICAgZW5kCgogICAgdGFyZ2V0OkFkZE5ld01vZGlmaWVyKGNhc3Rlciwgc2VsZiwgIm1vZGlmaWVyX21fMV82X2ZsdXgiLCB7CiAgICAgICAgZHVyYXRpb24gPSBkdXJhdGlvbiwKICAgICAgICBzbG93X3BjdCA9IHNsb3dfcGN0LAogICAgfSkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gYWJpbGl0eV9tXzFfNl9mbHV4Ok9uU3BlbGxTdGFydCgpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGY6QXBwbHlGbHV4VG9UYXJnZXQoc2VsZjpHZXRDdXJzb3JUYXJnZXQoKSkKZW5kCgppZiBtb2RpZmllcl9tXzFfNl9mbHV4ID09IG5pbCB0aGVuCiAgICBtb2RpZmllcl9tXzFfNl9mbHV4ID0gY2xhc3Moe30pCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfbV8xXzZfZmx1eDpJc0hpZGRlbigpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzFfNl9mbHV4OklzRGVidWZmKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfbV8xXzZfZmx1eDpJc1B1cmdhYmxlKCkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfbV8xXzZfZmx1eDpPbkNyZWF0ZWQoa3YpCiAgICBzZWxmLnNsb3dfcGN0ID0ga3YgYW5kIGt2LnNsb3dfcGN0IG9yIDM1CiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGFiaWxpdHkgPSBzZWxmOkdldEFiaWxpdHkoKQogICAgaWYgc2VsZi5zbG93X3BjdCA8PSAwIHRoZW4KICAgICAgICBzZWxmLnNsb3dfcGN0ID0gYWJpbGl0eSBhbmQgYWJpbGl0eTpHZXRTcGVjaWFsVmFsdWVGb3IoIm1vdmVfc3BlZWRfc2xvd19wY3QiKSBvciAzNQogICAgICAgIGlmIHNlbGYuc2xvd19wY3QgPD0gMCB0aGVuCiAgICAgICAgICAgIHNlbGYuc2xvd19wY3QgPSAzNQogICAgICAgIGVuZAogICAgZW5kCiAgICBzZWxmLnRpY2tfaW50ZXJ2YWwgPSBhYmlsaXR5IGFuZCBhYmlsaXR5OkdldFNwZWNpYWxWYWx1ZUZvcigidGlja19pbnRlcnZhbCIpIG9yIDAuMjUKICAgIGxvY2FsIGRwcyA9IGFiaWxpdHkgYW5kIGFiaWxpdHk6R2V0U3BlY2lhbFZhbHVlRm9yKCJkYW1hZ2VfcGVyX3NlY29uZCIpIG9yIDAKICAgIHNlbGYuZGFtYWdlX3Blcl90aWNrID0gYWJpbGl0eSBhbmQgYWJpbGl0eTpHZXRTcGVjaWFsVmFsdWVGb3IoImRhbWFnZV9wZXJfdGljayIpIG9yIDAKICAgIGlmIHNlbGYuZGFtYWdlX3Blcl90aWNrIDw9IDAgYW5kIGRwcyA+IDAgYW5kIHNlbGYudGlja19pbnRlcnZhbCA+IDAgdGhlbgogICAgICAgIHNlbGYuZGFtYWdlX3Blcl90aWNrID0gZHBzICogc2VsZi50aWNrX2ludGVydmFsCiAgICBlbmQKICAgIGlmIHNlbGYuZGFtYWdlX3Blcl90aWNrIDw9IDAgdGhlbgogICAgICAgIHNlbGYuZGFtYWdlX3Blcl90aWNrID0gMTUKICAgIGVuZAogICAgaWYgc2VsZi50aWNrX2ludGVydmFsIDw9IDAgdGhlbgogICAgICAgIHNlbGYudGlja19pbnRlcnZhbCA9IDAuMjUKICAgIGVuZAogICAgc2VsZjpTdGFydEludGVydmFsVGhpbmsoc2VsZi50aWNrX2ludGVydmFsKQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX21fMV82X2ZsdXg6T25JbnRlcnZhbFRoaW5rKCkKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgcGFyZW50ID0gc2VsZjpHZXRQYXJlbnQoKQogICAgbG9jYWwgY2FzdGVyID0gc2VsZjpHZXRDYXN0ZXIoKQogICAgbG9jYWwgYWJpbGl0eSA9IHNlbGY6R2V0QWJpbGl0eSgpCiAgICBpZiBub3QgcGFyZW50IG9yIHBhcmVudDpJc051bGwoKSBvciBub3QgcGFyZW50OklzQWxpdmUoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGlmIG5vdCBjYXN0ZXIgb3IgY2FzdGVyOklzTnVsbCgpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgQXBwbHlEYW1hZ2UoewogICAgICAgIHZpY3RpbSA9IHBhcmVudCwKICAgICAgICBhdHRhY2tlciA9IGNhc3RlciwKICAgICAgICBkYW1hZ2UgPSBzZWxmLmRhbWFnZV9wZXJfdGljayBvciAxNSwKICAgICAgICBkYW1hZ2VfdHlwZSA9IERBTUFHRV9UWVBFX01BR0lDQUwsCiAgICAgICAgYWJpbGl0eSA9IGFiaWxpdHksCiAgICAgICAgZGFtYWdlX2ZsYWdzID0gRE9UQV9EQU1BR0VfRkxBR19OT19TUEVMTF9BTVBMSUZJQ0FUSU9OLAogICAgfSkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzFfNl9mbHV4OkRlY2xhcmVGdW5jdGlvbnMoKQogICAgcmV0dXJuIHsKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9NT1ZFU1BFRURfQk9OVVNfUEVSQ0VOVEFHRSwKICAgIH0KZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzFfNl9mbHV4OkdldE1vZGlmaWVyTW92ZVNwZWVkQm9udXNfUGVyY2VudGFnZSgpCiAgICByZXR1cm4gLShzZWxmLnNsb3dfcGN0IG9yIDM1KQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX21fMV82X2ZsdXg6R2V0RWZmZWN0TmFtZSgpCiAgICByZXR1cm4gInBhcnRpY2xlcy91bml0cy9oZXJvZXMvaGVyb19hcmNfd2FyZGVuL2FyY193YXJkZW5fZmx1eF90Z3QudnBjZiIKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzFfNl9mbHV4OkdldEVmZmVjdEF0dGFjaFR5cGUoKQogICAgcmV0dXJuIFBBVFRBQ0hfQUJTT1JJR0lOX0ZPTExPVwplbmQKCi0tIOaUu+WHu+WRveS4reS4lOaKgOiDveacquWGt+WNtOaXtuiHquWKqOWvueebruagh+mHiuaUvgppZiBtb2RpZmllcl9tXzFfNl9mbHV4X2F0dGFjayA9PSBuaWwgdGhlbgogICAgbW9kaWZpZXJfbV8xXzZfZmx1eF9hdHRhY2sgPSBjbGFzcyh7fSkKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzFfNl9mbHV4X2F0dGFjazpJc0hpZGRlbigpCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX21fMV82X2ZsdXhfYXR0YWNrOklzUHVyZ2FibGUoKQogICAgcmV0dXJuIGZhbHNlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfbV8xXzZfZmx1eF9hdHRhY2s6UmVtb3ZlT25EZWF0aCgpCiAgICByZXR1cm4gZmFsc2UKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzFfNl9mbHV4X2F0dGFjazpEZWNsYXJlRnVuY3Rpb25zKCkKICAgIHJldHVybiB7CiAgICAgICAgTU9ESUZJRVJfRVZFTlRfT05fQVRUQUNLX0xBTkRFRCwKICAgIH0KZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzFfNl9mbHV4X2F0dGFjazpDYW5Qcm9jT25UYXJnZXQodGFyZ2V0KQogICAgaWYgbm90IHRhcmdldCBvciB0YXJnZXQ6SXNOdWxsKCkgb3Igbm90IHRhcmdldDpJc0FsaXZlKCkgb3IgdGFyZ2V0OklzSW52dWxuZXJhYmxlKCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBub3QgdGFyZ2V0OklzSGVybygpIG9yIG5vdCB0YXJnZXQ6SXNSZWFsSGVybygpIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgcmV0dXJuIHRydWUKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzFfNl9mbHV4X2F0dGFjazpUcnlQcm9jRmx1eChjYXN0ZXIsIHRhcmdldCkKICAgIGlmIG5vdCBjYXN0ZXIgb3IgY2FzdGVyOklzTnVsbCgpIG9yIG5vdCBzZWxmOkNhblByb2NPblRhcmdldCh0YXJnZXQpIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgbm93ID0gR2FtZVJ1bGVzOkdldEdhbWVUaW1lKCkKICAgIGlmIHNlbGYubGFzdF9wcm9jX3RpbWUgYW5kIChub3cgLSBzZWxmLmxhc3RfcHJvY190aW1lKSA8IDAuMTUgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBhYiA9IGNhc3RlcjpGaW5kQWJpbGl0eUJ5TmFtZSgiYWJpbGl0eV9tXzFfNl9mbHV4IikKICAgIGlmIG5vdCBhYiBvciBhYjpJc051bGwoKSBvciBub3QgYWI6SXNDb29sZG93blJlYWR5KCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBhYi5BcHBseUZsdXhUb1RhcmdldCBhbmQgYWI6QXBwbHlGbHV4VG9UYXJnZXQodGFyZ2V0KSB0aGVuCiAgICAgICAgYWI6U3RhcnRDb29sZG93bihhYjpHZXRDb29sZG93bihhYjpHZXRMZXZlbCgpKSkKICAgICAgICBzZWxmLmxhc3RfcHJvY190aW1lID0gbm93CiAgICBlbmQKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzFfNl9mbHV4X2F0dGFjazpPbkF0dGFja0xhbmRlZChwYXJhbXMpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGNhc3RlciA9IHNlbGY6R2V0UGFyZW50KCkKICAgIGlmIG5vdCBjYXN0ZXIgb3IgY2FzdGVyOklzTnVsbCgpIG9yIHBhcmFtcy5hdHRhY2tlciB+PSBjYXN0ZXIgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCB0YXJnZXQgPSBwYXJhbXMudGFyZ2V0CiAgICBpZiBub3Qgc2VsZjpDYW5Qcm9jT25UYXJnZXQodGFyZ2V0KSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIGNhc3Rlcl9yZWYgPSBjYXN0ZXIKICAgIGxvY2FsIHRhcmdldF9yZWYgPSB0YXJnZXQKICAgIGxvY2FsIG1vZCA9IHNlbGYKICAgIFRpbWVyczpDcmVhdGVUaW1lcigwLCBmdW5jdGlvbigpCiAgICAgICAgaWYgbm90IGNhc3Rlcl9yZWYgb3IgY2FzdGVyX3JlZjpJc051bGwoKSBvciBub3QgY2FzdGVyX3JlZjpJc0FsaXZlKCkgdGhlbgogICAgICAgICAgICByZXR1cm4KICAgICAgICBlbmQKICAgICAgICBpZiBub3QgdGFyZ2V0X3JlZiBvciB0YXJnZXRfcmVmOklzTnVsbCgpIG9yIG5vdCB0YXJnZXRfcmVmOklzQWxpdmUoKSB0aGVuCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZAogICAgICAgIG1vZDpUcnlQcm9jRmx1eChjYXN0ZXJfcmVmLCB0YXJnZXRfcmVmKQogICAgZW5kKQplbmQK]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if ability_m_1_6_flux == nil then
+    ability_m_1_6_flux = class({})
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+LinkLuaModifier("modifier_m_1_6_flux",
+    "ingame/Monster/ability_m_1_6_flux",
+    LUA_MODIFIER_MOTION_NONE)
+
+LinkLuaModifier("modifier_m_1_6_flux_attack",
+    "ingame/Monster/ability_m_1_6_flux",
+    LUA_MODIFIER_MOTION_NONE)
+
+function ability_m_1_6_flux:GetCastRange(location, target)
+    local range = self:GetSpecialValueFor("AbilityCastRange")
+    if range <= 0 then
+        range = 1000
+    end
+    return range
+end
+
+function ability_m_1_6_flux:CastFilterResultTarget(target)
+    if not target or target:IsNull() then
+        return UF_FAIL_CUSTOM
+    end
+    if target:IsInvulnerable() then
+        return UF_FAIL_INVULNERABLE
+    end
+    if target:GetTeamNumber() == self:GetCaster():GetTeamNumber() then
+        return UF_FAIL_FRIENDLY
+    end
+    if target:IsBuilding() or target:IsOther() then
+        return UF_FAIL_CUSTOM
+    end
+    return UF_SUCCESS
+end
+
+function ability_m_1_6_flux:CanFluxTarget(caster, target)
+    if not caster or caster:IsNull() or not caster:IsAlive() then
+        return false
+    end
+    if caster:IsStunned() or caster:IsSilenced() then
+        return false
+    end
+    if not target or target:IsNull() or not target:IsAlive() or target:IsInvulnerable() then
+        return false
+    end
+    if target:GetTeamNumber() == caster:GetTeamNumber() then
+        return false
+    end
+    if target:IsBuilding() or target:IsOther() then
+        return false
+    end
+    return true
+end
+
+function ability_m_1_6_flux:ApplyFluxToTarget(target)
+    if not IsServer() then
+        return false
+    end
+    local caster = self:GetCaster()
+    if not self:CanFluxTarget(caster, target) then
+        return false
+    end
+
+    local duration = self:GetSpecialValueFor("duration")
+    if duration <= 0 then
+        duration = 3
+    end
+
+    EmitSoundOn("Hero_ArcWarden.Flux.Target", target)
+
+    local slow_pct = self:GetSpecialValueFor("move_speed_slow_pct")
+    if slow_pct <= 0 then
+        slow_pct = 35
+    end
+
+    target:AddNewModifier(caster, self, "modifier_m_1_6_flux", {
+        duration = duration,
+        slow_pct = slow_pct,
+    })
+    return true
+end
+
+function ability_m_1_6_flux:OnSpellStart()
+    if not IsServer() then
+        return
+    end
+    self:ApplyFluxToTarget(self:GetCursorTarget())
+end
+
+if modifier_m_1_6_flux == nil then
+    modifier_m_1_6_flux = class({})
+end
+
+function modifier_m_1_6_flux:IsHidden()
+    return false
+end
+
+function modifier_m_1_6_flux:IsDebuff()
+    return true
+end
+
+function modifier_m_1_6_flux:IsPurgable()
+    return true
+end
+
+function modifier_m_1_6_flux:OnCreated(kv)
+    self.slow_pct = kv and kv.slow_pct or 35
+    if not IsServer() then
+        return
+    end
+    local ability = self:GetAbility()
+    if self.slow_pct <= 0 then
+        self.slow_pct = ability and ability:GetSpecialValueFor("move_speed_slow_pct") or 35
+        if self.slow_pct <= 0 then
+            self.slow_pct = 35
+        end
+    end
+    self.tick_interval = ability and ability:GetSpecialValueFor("tick_interval") or 0.25
+    local dps = ability and ability:GetSpecialValueFor("damage_per_second") or 0
+    self.damage_per_tick = ability and ability:GetSpecialValueFor("damage_per_tick") or 0
+    if self.damage_per_tick <= 0 and dps > 0 and self.tick_interval > 0 then
+        self.damage_per_tick = dps * self.tick_interval
+    end
+    if self.damage_per_tick <= 0 then
+        self.damage_per_tick = 15
+    end
+    if self.tick_interval <= 0 then
+        self.tick_interval = 0.25
+    end
+    self:StartIntervalThink(self.tick_interval)
+end
+
+function modifier_m_1_6_flux:OnIntervalThink()
+    if not IsServer() then
+        return
+    end
+    local parent = self:GetParent()
+    local caster = self:GetCaster()
+    local ability = self:GetAbility()
+    if not parent or parent:IsNull() or not parent:IsAlive() then
+        return
+    end
+    if not caster or caster:IsNull() then
+        return
+    end
+    ApplyDamage({
+        victim = parent,
+        attacker = caster,
+        damage = self.damage_per_tick or 15,
+        damage_type = DAMAGE_TYPE_MAGICAL,
+        ability = ability,
+        damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+    })
+end
+
+function modifier_m_1_6_flux:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+    }
+end
+
+function modifier_m_1_6_flux:GetModifierMoveSpeedBonus_Percentage()
+    return -(self.slow_pct or 35)
+end
+
+function modifier_m_1_6_flux:GetEffectName()
+    return "particles/units/heroes/hero_arc_warden/arc_warden_flux_tgt.vpcf"
+end
+
+function modifier_m_1_6_flux:GetEffectAttachType()
+    return PATTACH_ABSORIGIN_FOLLOW
+end
+
+-- 攻击命中且技能未冷却时自动对目标释放
+if modifier_m_1_6_flux_attack == nil then
+    modifier_m_1_6_flux_attack = class({})
+end
+
+function modifier_m_1_6_flux_attack:IsHidden()
+    return true
+end
+
+function modifier_m_1_6_flux_attack:IsPurgable()
+    return false
+end
+
+function modifier_m_1_6_flux_attack:RemoveOnDeath()
+    return false
+end
+
+function modifier_m_1_6_flux_attack:DeclareFunctions()
+    return {
+        MODIFIER_EVENT_ON_ATTACK_LANDED,
+    }
+end
+
+function modifier_m_1_6_flux_attack:CanProcOnTarget(target)
+    if not target or target:IsNull() or not target:IsAlive() or target:IsInvulnerable() then
+        return false
+    end
+    if not target:IsHero() or not target:IsRealHero() then
+        return false
+    end
+    return true
+end
+
+function modifier_m_1_6_flux_attack:TryProcFlux(caster, target)
+    if not caster or caster:IsNull() or not self:CanProcOnTarget(target) then
+        return
+    end
+    local now = GameRules:GetGameTime()
+    if self.last_proc_time and (now - self.last_proc_time) < 0.15 then
+        return
+    end
+    local ab = caster:FindAbilityByName("ability_m_1_6_flux")
+    if not ab or ab:IsNull() or not ab:IsCooldownReady() then
+        return
+    end
+    if ab.ApplyFluxToTarget and ab:ApplyFluxToTarget(target) then
+        ab:StartCooldown(ab:GetCooldown(ab:GetLevel()))
+        self.last_proc_time = now
+    end
+end
+
+function modifier_m_1_6_flux_attack:OnAttackLanded(params)
+    if not IsServer() then
+        return
+    end
+    local caster = self:GetParent()
+    if not caster or caster:IsNull() or params.attacker ~= caster then
+        return
+    end
+    local target = params.target
+    if not self:CanProcOnTarget(target) then
+        return
+    end
+    local caster_ref = caster
+    local target_ref = target
+    local mod = self
+    Timers:CreateTimer(0, function()
+        if not caster_ref or caster_ref:IsNull() or not caster_ref:IsAlive() then
+            return
+        end
+        if not target_ref or target_ref:IsNull() or not target_ref:IsAlive() then
+            return
+        end
+        mod:TryProcFlux(caster_ref, target_ref)
+    end)
+end

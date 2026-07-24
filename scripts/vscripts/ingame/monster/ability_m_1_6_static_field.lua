@@ -8,22 +8,110 @@
 ]]
 
 
-local encoded=[[aWYgYWJpbGl0eV9tXzFfNl9zdGF0aWNfZmllbGQgPT0gbmlsIHRoZW4KICAgIGFiaWxpdHlfbV8xXzZfc3RhdGljX2ZpZWxkID0gY2xhc3Moe30pCmVuZAoKTGlua0x1YU1vZGlmaWVyKCJtb2RpZmllcl9tXzFfNl9zdGF0aWNfZmllbGQiLAogICAgImluZ2FtZS9Nb25zdGVyL2FiaWxpdHlfbV8xXzZfc3RhdGljX2ZpZWxkIiwKICAgIExVQV9NT0RJRklFUl9NT1RJT05fTk9ORSkKCmZ1bmN0aW9uIGFiaWxpdHlfbV8xXzZfc3RhdGljX2ZpZWxkOkdldEludHJpbnNpY01vZGlmaWVyTmFtZSgpCiAgICByZXR1cm4gIm1vZGlmaWVyX21fMV82X3N0YXRpY19maWVsZCIKZW5kCgppZiBtb2RpZmllcl9tXzFfNl9zdGF0aWNfZmllbGQgPT0gbmlsIHRoZW4KICAgIG1vZGlmaWVyX21fMV82X3N0YXRpY19maWVsZCA9IGNsYXNzKHt9KQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX21fMV82X3N0YXRpY19maWVsZDpJc0hpZGRlbigpCiAgICByZXR1cm4gdHJ1ZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX21fMV82X3N0YXRpY19maWVsZDpJc1B1cmdhYmxlKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX21fMV82X3N0YXRpY19maWVsZDpSZW1vdmVPbkRlYXRoKCkKICAgIHJldHVybiBmYWxzZQplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX21fMV82X3N0YXRpY19maWVsZDpEZWNsYXJlRnVuY3Rpb25zKCkKICAgIHJldHVybiB7CiAgICAgICAgTU9ESUZJRVJfRVZFTlRfT05fVEFLRURBTUFHRSwKICAgIH0KZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9tXzFfNl9zdGF0aWNfZmllbGQ6Q2FuU2hvY2tUYXJnZXQodGFyZ2V0KQogICAgbG9jYWwgcGFyZW50ID0gc2VsZjpHZXRQYXJlbnQoKQogICAgaWYgbm90IHBhcmVudCBvciBwYXJlbnQ6SXNOdWxsKCkgb3Igbm90IHBhcmVudDpJc0FsaXZlKCkgdGhlbgogICAgICAgIHJldHVybiBmYWxzZQogICAgZW5kCiAgICBpZiBwYXJlbnQ6UGFzc2l2ZXNEaXNhYmxlZCgpIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgaWYgbm90IHRhcmdldCBvciB0YXJnZXQ6SXNOdWxsKCkgb3Igbm90IHRhcmdldDpJc0FsaXZlKCkgb3IgdGFyZ2V0ID09IHBhcmVudCB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIHRhcmdldDpHZXRUZWFtTnVtYmVyKCkgPT0gcGFyZW50OkdldFRlYW1OdW1iZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIGlmIHRhcmdldDpJc0J1aWxkaW5nKCkgb3IgdGFyZ2V0OklzT3RoZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuIGZhbHNlCiAgICBlbmQKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfbV8xXzZfc3RhdGljX2ZpZWxkOk9uQ3JlYXRlZCgpCiAgICBpZiBJc1NlcnZlcigpIHRoZW4KICAgICAgICBzZWxmLnNob2NrX2NkID0ge30KICAgIGVuZAplbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX21fMV82X3N0YXRpY19maWVsZDpBcHBseVN0YXRpY0ZpZWxkRGFtYWdlKHRhcmdldCkKICAgIGlmIG5vdCBJc1NlcnZlcigpIG9yIG5vdCBzZWxmOkNhblNob2NrVGFyZ2V0KHRhcmdldCkgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBhYmlsaXR5ID0gc2VsZjpHZXRBYmlsaXR5KCkKICAgIGlmIG5vdCBhYmlsaXR5IHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgZWlkID0gdGFyZ2V0OmVudGluZGV4KCkKICAgIGxvY2FsIG5vdyA9IEdhbWVSdWxlczpHZXRHYW1lVGltZSgpCiAgICBpZiBzZWxmLnNob2NrX2NkW2VpZF0gYW5kIChub3cgLSBzZWxmLnNob2NrX2NkW2VpZF0pIDwgMC41IHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgc2VsZi5zaG9ja19jZFtlaWRdID0gbm93CiAgICBsb2NhbCBwY3QgPSBhYmlsaXR5OkdldFNwZWNpYWxWYWx1ZUZvcigiZGFtYWdlX2hlYWx0aF9wY3QiKQogICAgbG9jYWwgZGFtYWdlID0gdGFyZ2V0OkdldEhlYWx0aCgpICogcGN0ICogMC4wMQogICAgaWYgZGFtYWdlIDw9IDAgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBBcHBseURhbWFnZSh7CiAgICAgICAgdmljdGltID0gdGFyZ2V0LAogICAgICAgIGF0dGFja2VyID0gc2VsZjpHZXRQYXJlbnQoKSwKICAgICAgICBkYW1hZ2UgPSBkYW1hZ2UsCiAgICAgICAgZGFtYWdlX3R5cGUgPSBEQU1BR0VfVFlQRV9NQUdJQ0FMLAogICAgICAgIGFiaWxpdHkgPSBhYmlsaXR5LAogICAgICAgIGRhbWFnZV9mbGFncyA9IERPVEFfREFNQUdFX0ZMQUdfTk9fU1BFTExfQU1QTElGSUNBVElPTiwKICAgIH0pCiAgICBFbWl0U291bmRPbigiSGVyb19EaXNydXB0b3IuVGh1bmRlclN0cmlrZS5UYXJnZXQiLCB0YXJnZXQpCmVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfbV8xXzZfc3RhdGljX2ZpZWxkOk9uVGFrZURhbWFnZShwYXJhbXMpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIGxvY2FsIHBhcmVudCA9IHNlbGY6R2V0UGFyZW50KCkKICAgIGlmIHBhcmFtcy5hdHRhY2tlciB+PSBwYXJlbnQgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBpZiBwYXJhbXMuZGFtYWdlIDw9IDAgdGhlbgogICAgICAgIHJldHVybgogICAgZW5kCiAgICBsb2NhbCBhYmlsaXR5ID0gc2VsZjpHZXRBYmlsaXR5KCkKICAgIGlmIGFiaWxpdHkgYW5kIHBhcmFtcy5pbmZsaWN0b3IgPT0gYWJpbGl0eSB0aGVuCiAgICAgICAgcmV0dXJuCiAgICBlbmQKICAgIHNlbGY6QXBwbHlTdGF0aWNGaWVsZERhbWFnZShwYXJhbXMudW5pdCkKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if ability_m_1_6_static_field == nil then
+    ability_m_1_6_static_field = class({})
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+LinkLuaModifier("modifier_m_1_6_static_field",
+    "ingame/Monster/ability_m_1_6_static_field",
+    LUA_MODIFIER_MOTION_NONE)
+
+function ability_m_1_6_static_field:GetIntrinsicModifierName()
+    return "modifier_m_1_6_static_field"
+end
+
+if modifier_m_1_6_static_field == nil then
+    modifier_m_1_6_static_field = class({})
+end
+
+function modifier_m_1_6_static_field:IsHidden()
+    return true
+end
+
+function modifier_m_1_6_static_field:IsPurgable()
+    return false
+end
+
+function modifier_m_1_6_static_field:RemoveOnDeath()
+    return false
+end
+
+function modifier_m_1_6_static_field:DeclareFunctions()
+    return {
+        MODIFIER_EVENT_ON_TAKEDAMAGE,
+    }
+end
+
+function modifier_m_1_6_static_field:CanShockTarget(target)
+    local parent = self:GetParent()
+    if not parent or parent:IsNull() or not parent:IsAlive() then
+        return false
+    end
+    if parent:PassivesDisabled() then
+        return false
+    end
+    if not target or target:IsNull() or not target:IsAlive() or target == parent then
+        return false
+    end
+    if target:GetTeamNumber() == parent:GetTeamNumber() then
+        return false
+    end
+    if target:IsBuilding() or target:IsOther() then
+        return false
+    end
+    return true
+end
+
+function modifier_m_1_6_static_field:OnCreated()
+    if IsServer() then
+        self.shock_cd = {}
+    end
+end
+
+function modifier_m_1_6_static_field:ApplyStaticFieldDamage(target)
+    if not IsServer() or not self:CanShockTarget(target) then
+        return
+    end
+    local ability = self:GetAbility()
+    if not ability then
+        return
+    end
+    local eid = target:entindex()
+    local now = GameRules:GetGameTime()
+    if self.shock_cd[eid] and (now - self.shock_cd[eid]) < 0.5 then
+        return
+    end
+    self.shock_cd[eid] = now
+    local pct = ability:GetSpecialValueFor("damage_health_pct")
+    local damage = target:GetHealth() * pct * 0.01
+    if damage <= 0 then
+        return
+    end
+    ApplyDamage({
+        victim = target,
+        attacker = self:GetParent(),
+        damage = damage,
+        damage_type = DAMAGE_TYPE_MAGICAL,
+        ability = ability,
+        damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+    })
+    EmitSoundOn("Hero_Disruptor.ThunderStrike.Target", target)
+end
+
+function modifier_m_1_6_static_field:OnTakeDamage(params)
+    if not IsServer() then
+        return
+    end
+    local parent = self:GetParent()
+    if params.attacker ~= parent then
+        return
+    end
+    if params.damage <= 0 then
+        return
+    end
+    local ability = self:GetAbility()
+    if ability and params.inflictor == ability then
+        return
+    end
+    self:ApplyStaticFieldDamage(params.unit)
+end

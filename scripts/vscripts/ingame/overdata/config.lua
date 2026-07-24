@@ -8,22 +8,118 @@
 ]]
 
 
-local encoded=[[T3ZlckRhdGEuRGF0YSA9IHt9Ci0t546p5a625pWw5o2uCk92ZXJEYXRhLlB1YmxpYyA9IHt9Ck92ZXJEYXRhLlRlbXBsYXRlID0gewogICAgLS3muLjmiI/mqKHlvI/vvIgx77yMNXY1LDIuMXYx77yJCiAgICB0cCA9IDEsCiAgICAtLemhtemdouaYvuekuu+8iOS4jiBwYW5vcmFtYSBPdmVyRGF0YS5qcyDkuIDoh7TvvJrpobvkuLogMS8w77yM5Yu/55SoIGJvb2xlYW7vvIzlkKbliJkgb3BhY2l0eSDliKTmlq3lpLHotKXvvIkKICAgIHBhZ2UgPSAwLAogICAgLS0tIOS7iuaXpeWujOi1m+mHkeixhuasoeaVsO+8iOeUsSBQZXJzb24g5ZCM5q2l77ybUGFub3JhbWEg5LiK6ZmQ5YaZ5q27IDXvvIkKICAgIGRhaWx5X2dhbWVfYm9udXNfdG9kYXkgPSAtMSwKICAgIC0tLSDpgIPot5Hmg6nnvZrliankvZnlsYDmlbDvvIh1c2VyLnRwY2bvvIkKICAgIHRwY2YgPSAwLAogICAgLS0tIOacrOWxgOmihOiogOesrOS4gOWQjeWlluWKsemHkeixhu+8iC9nYW1lL3N1Ym1pdCDlkI7liLfmlrDvvIkKICAgIHByb3BoZWN5X2JvbnVzX2dvbGQgPSAwLAogICAgLS0tIOe7k+eul+S4iuaKpSBVSe+8mmxvYWRpbmcgLyBvayAvIGZhaWzvvIhQYW5vcmFtYSDlupXpg6jmjInpkq7ljLrvvIkKICAgIHN1Ym1pdF9zdGF0dXMgPSAiIiwKICAgIC0t5ri45oiP5pe26Ze077yI5YiG6ZKf77yJCiAgICB0aW1lID0gMCwKICAgIC0t6Zif5LyN5pWw5o2uCiAgICBkYXRhID0gewoKICAgIH0sCn0KT3ZlckRhdGEuVGVhbVRlbXBsYXRlID0gewogICAgLS3pmJ/kvI3mjpLlkI0o5LuOMS0xMCkKICAgIHNsb3QgPSAtMSwKICAgIC0t5piv5ZCm5pi+56S66Zif5LyNCiAgICBzdGF0ZSA9IGZhbHNlLAogICAgLS3og5zliKnpmJ/kvI0KICAgIHdpbl90ZWFtID0gLTEsCiAgICAtLemYn+S8jeWHu+adgOaVsOmHjwogICAga2lsbCA9IDAsCiAgICAtLemYn+S8jeeOqeWutuWIl+ihqAogICAgbGlzdCA9IHt9Cn0KLS3njqnlrrbmlbDmja4KT3ZlckRhdGEuUGxheWVyVGVtcGxhdGUgPSB7CiAgICAtLeaYr+WQpuS4uuepugogICAgc3RhdGUgPSBmYWxzZSwKICAgIC0t5ri45oiP5YaFSUQKICAgIGlkID0gLTEsCiAgICAtLeeOqeWutnN0ZWFtaWQKICAgIHBpZCA9IC0xLAogICAgLS3pmJ/kvI0KICAgIHRlYW0gPSAtMSwKICAgIC0t6Iux6ZuECiAgICBoZXJvID0gIiIsCiAgICAtLeaOkuWQjQogICAgcmFuayA9IC0xLAogICAgLS3nrYnnuqcKICAgIGxldmVsID0gMSwKICAgIC0t5LiT5bGe5q2m5ZmoCiAgICB3ZWFwb24gPSAiIiwKICAgIC0t6YeR5biBCiAgICBnb2xkID0gMCwKICAgIC0t5Ye75p2ACiAgICBraWxsID0gMCwKICAgIC0tIHJhbmtfM3g077ya6Zif5LyN5oC75Ye75p2A77yI5LiOIDV2NSDnu5PnrpfooajlpLTjgIznp6/liIbjgI3lkIzkuLrpmLXokKXkurrlpLTlkIjorqHvvIznm67moIfop4EgTWFpbkdhbWUuU3RhdGljLnRlYW1fa2lsbF8zeDTvvIkKICAgIHRlYW1fa2lsbCA9IDAsCiAgICAtLeatu+S6oQogICAgZGVhdGggPSAwLAogICAgLS3liqnmlLsKICAgIGFzc2l0ID0gMCwKICAgIC0ta2RhCiAgICBrZGEgPSAwLAogICAgLS3mioDog70KICAgIHNraWxsID0ge30sCiAgICAtLeWIhuaVsAogICAgcG9pbnQgPSAxMDAwLAogICAgLS3liIbmlbDlop7lh48KICAgIHBvaW50X2NoYW5nZSA9IDAsCiAgICAtLeS4quS6uuWIhuaVsAogICAgcG9pbnQyID0gMTAwMCwKICAgIC0tMXYx5YiG5pWw5aKe5YePCiAgICBwb2ludDJfY2hhbmdlID0gMCwKICAgIC0t5ZCD6bihCiAgICB0b3AgPSBmYWxzZSwKICAgIC0t5YmN5LiJCiAgICB0b3AzID0gZmFsc2UsCiAgICAtLeensOWPtwogICAgdGFnID0ge30KfQotLeaKgOiDveanveaooeadvwpPdmVyRGF0YS5Ta2lsbFRlbXBsYXRlID0gewogICAgLS3mp73ntKLlvJUKICAgIHNsb3QgPSAtMSwKICAgIC0t5piv5ZCm5Li656m6CiAgICBzdGF0ZSA9IGZhbHNlLAogICAgLS3mioDog73lkI3lrZcKICAgIG5hbWUgPSAiIgp9Ck92ZXJEYXRhLlBvaW50ID0gewogICAgdHBfMSA9IHsKICAgICAgICB3aW4gPSAxNSwKICAgICAgICBmYWlsID0gLTEwCiAgICB9LAogICAgdHBfMyA9IHsKICAgICAgICB0ZWFtXzEgPSAxNSwKICAgICAgICB0ZWFtXzIgPSAxMCwKICAgICAgICB0ZWFtXzMgPSAtNSwKICAgICAgICB0ZWFtXzQgPSAtMTAsCiAgICB9LAogICAgdHBfMiA9IHsKICAgICAgICB0ZWFtXzEgPSA0MCwKICAgICAgICB0ZWFtXzIgPSAyNCwKICAgICAgICB0ZWFtXzMgPSAxOCwKICAgICAgICB0ZWFtXzQgPSAxMiwKICAgICAgICB0ZWFtXzUgPSA4LAogICAgICAgIHRlYW1fNiA9IDAsCiAgICAgICAgdGVhbV83ID0gLTMsCiAgICAgICAgdGVhbV84ID0gLTUsCiAgICAgICAgdGVhbV85ID0gLTgsCiAgICAgICAgdGVhbV8xMCA9IC0xMiwKICAgIH0KfQo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
-end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+OverData.Data = {}
+--玩家数据
+OverData.Public = {}
+OverData.Template = {
+    --游戏模式（1，5v5,2.1v1）
+    tp = 1,
+    --页面显示（与 panorama OverData.js 一致：须为 1/0，勿用 boolean，否则 opacity 判断失败）
+    page = 0,
+    --- 今日完赛金豆次数（由 Person 同步；Panorama 上限写死 5）
+    daily_game_bonus_today = -1,
+    --- 逃跑惩罚剩余局数（user.tpcf）
+    tpcf = 0,
+    --- 本局预言第一名奖励金豆（/game/submit 后刷新）
+    prophecy_bonus_gold = 0,
+    --- 结算上报 UI：loading / ok / fail（Panorama 底部按钮区）
+    submit_status = "",
+    --游戏时间（分钟）
+    time = 0,
+    --队伍数据
+    data = {
+
+    },
+}
+OverData.TeamTemplate = {
+    --队伍排名(从1-10)
+    slot = -1,
+    --是否显示队伍
+    state = false,
+    --胜利队伍
+    win_team = -1,
+    --队伍击杀数量
+    kill = 0,
+    --队伍玩家列表
+    list = {}
+}
+--玩家数据
+OverData.PlayerTemplate = {
+    --是否为空
+    state = false,
+    --游戏内ID
+    id = -1,
+    --玩家steamid
+    pid = -1,
+    --队伍
+    team = -1,
+    --英雄
+    hero = "",
+    --排名
+    rank = -1,
+    --等级
+    level = 1,
+    --专属武器
+    weapon = "",
+    --金币
+    gold = 0,
+    --击杀
+    kill = 0,
+    -- rank_3x4：队伍总击杀（与 5v5 结算表头「积分」同为阵营人头合计，目标见 MainGame.Static.team_kill_3x4）
+    team_kill = 0,
+    --死亡
+    death = 0,
+    --助攻
+    assit = 0,
+    --kda
+    kda = 0,
+    --技能
+    skill = {},
+    --分数
+    point = 1000,
+    --分数增减
+    point_change = 0,
+    --个人分数
+    point2 = 1000,
+    --1v1分数增减
+    point2_change = 0,
+    --吃鸡
+    top = false,
+    --前三
+    top3 = false,
+    --称号
+    tag = {}
+}
+--技能槽模板
+OverData.SkillTemplate = {
+    --槽索引
+    slot = -1,
+    --是否为空
+    state = false,
+    --技能名字
+    name = ""
+}
+OverData.Point = {
+    tp_1 = {
+        win = 15,
+        fail = -10
+    },
+    tp_3 = {
+        team_1 = 15,
+        team_2 = 10,
+        team_3 = -5,
+        team_4 = -10,
+    },
+    tp_2 = {
+        team_1 = 40,
+        team_2 = 24,
+        team_3 = 18,
+        team_4 = 12,
+        team_5 = 8,
+        team_6 = 0,
+        team_7 = -3,
+        team_8 = -5,
+        team_9 = -8,
+        team_10 = -12,
+    }
+}

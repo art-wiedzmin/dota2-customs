@@ -8,22 +8,238 @@
 ]]
 
 
-local encoded=[[aWYgbW9kaWZpZXJfYXR0cl9idWZmID09IG5pbCB0aGVuIG1vZGlmaWVyX2F0dHJfYnVmZiA9IGNsYXNzKHt9KSBlbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2F0dHJfYnVmZjpJc0RlYnVmZigpIHJldHVybiBmYWxzZSBlbmQKCi0tIOaYr+WQpuWPr+S7peenu+mZpApmdW5jdGlvbiBtb2RpZmllcl9hdHRyX2J1ZmY6SXNQdXJnYWJsZSgpIHJldHVybiBmYWxzZSBlbmQKCi0tIOaYr+WQpuWcqOmdouadv+S4iuaYvuekugpmdW5jdGlvbiBtb2RpZmllcl9hdHRyX2J1ZmY6SXNIaWRkZW4oKSByZXR1cm4gdHJ1ZSBlbmQKCmZ1bmN0aW9uIG1vZGlmaWVyX2F0dHJfYnVmZjpSZW1vdmVPbkRlYXRoKCkgcmV0dXJuIGZhbHNlIGVuZAoKLS0g5bm75oOz5piv5ZCm57un5om/CmZ1bmN0aW9uIG1vZGlmaWVyX2F0dHJfYnVmZjpBbGxvd0lsbHVzaW9uRHVwbGljYXRlKCkgcmV0dXJuIGZhbHNlIGVuZAoKZnVuY3Rpb24gbW9kaWZpZXJfYXR0cl9idWZmOkdldEF0dHJpYnV0ZXMoKQogICAgcmV0dXJuIE1PRElGSUVSX0FUVFJJQlVURV9QRVJNQU5FTlQgKyBNT0RJRklFUl9BVFRSSUJVVEVfSUdOT1JFX0lOVlVMTkVSQUJMRQplbmQKCi0tIOWIm+W7uuaXtuiuvue9rgpmdW5jdGlvbiBtb2RpZmllcl9hdHRyX2J1ZmY6T25DcmVhdGVkKCkKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4gcmV0dXJuIGVuZAogICAgbG9jYWwgcGEgPSBzZWxmOkdldFBhcmVudCgpCgoKICAgIGxvY2FsIGt2ID0gR2V0VW5pdEtleVZhbHVlc0J5TmFtZShwYTpHZXRVbml0TmFtZSgpKQogICAgaWYga3YgdGhlbgogICAgICAgIHNlbGYuYmFzZURheVZpc2lvbiA9IHRvbnVtYmVyKGt2LlZpc2lvbkRheXRpbWVSYW5nZSkgb3IgMTgwMAogICAgICAgIHNlbGYuYmFzZU5pZ2h0VmlzaW9uID0gdG9udW1iZXIoa3YuVmlzaW9uTmlnaHR0aW1lUmFuZ2UpIG9yIDgwMAogICAgZWxzZQogICAgICAgIHNlbGYuYmFzZURheVZpc2lvbiA9IDE4MDAKICAgICAgICBzZWxmLmJhc2VOaWdodFZpc2lvbiA9IDgwMAogICAgZW5kCgogICAgc2VsZjpPblJlZnJlc2goKQogICAgc2VsZjpTdGFydEludGVydmFsVGhpbmsoMykKZW5kCgotLSDliLfmlrDlsLHlj5blgLzmm7TmlrAKZnVuY3Rpb24gbW9kaWZpZXJfYXR0cl9idWZmOk9uUmVmcmVzaCgpCiAgICBpZiBub3QgSXNTZXJ2ZXIoKSB0aGVuIHJldHVybiBlbmQKICAgIGxvY2FsIHBhID0gc2VsZjpHZXRQYXJlbnQoKQogICAgaWYgbm90IHBhIG9yIG5vdCBwYTpJc1JlYWxIZXJvKCkgdGhlbiByZXR1cm4gZW5kCiAgICBsb2NhbCBJRCA9IFV0aWw6SGVybzJJRChwYSkKICAgIGxvY2FsIHRhYiA9IEhlcm9EYXRhLkRhdGFbSURdLmhlcm9fYXR0cgogICAgaWYgbm90IHRhYiB0aGVuIHJldHVybiBlbmQKICAgIC0tIOaLt+i0neihqAogICAgbG9jYWwgdGVtcCA9IHt9CiAgICBmb3IgaywgdiBpbiBwYWlycyh0YWIpIGRvIHRlbXBba10gPSB2IGVuZAogICAgLS0g5Y+W5LiJ5Zu0CiAgICB0ZW1wLmJhc2VTVFIgPSBwYTpHZXRCYXNlU3RyZW5ndGgoKQogICAgdGVtcC5iYXNlQUdJID0gcGE6R2V0QmFzZUFnaWxpdHkoKQogICAgdGVtcC5iYXNlSU5UID0gcGE6R2V0QmFzZUludGVsbGVjdCgpCiAgICB0ZW1wLmF0dGFja0RhbWFnZSA9IHBhOkdldEF0dGFja0RhbWFnZSgpCiAgICBzZWxmLnN4ID0gdGVtcAogICAgLS0g6KeG6YeO5Yqg5oiQ5ZCM5q2l5Yiw5oiY5LqJ6L+36Zu+77ya5byV5pOO55qEIEdldEJvbnVzRGF5VmlzaW9uIOWPquW9seWTjeaVsOWAvO+8jEZPVyDpnIDnm7TmjqXorr7nva7ljZXkvY3op4bph47ojIPlm7QKICAgIGxvY2FsIGJvbnVzID0gdGVtcC5zeWpjIG9yIDAKICAgIGlmIHBhLlNldERheVRpbWVWaXNpb25SYW5nZSBhbmQgcGEuU2V0TmlnaHRUaW1lVmlzaW9uUmFuZ2UgdGhlbgogICAgICAgIGlmIFV0aWwgYW5kIFV0aWwuSXNQc2V1ZG9QbGF5ZXJJRCBhbmQgVXRpbDpJc1BzZXVkb1BsYXllcklEKElEKSB0aGVuCiAgICAgICAgICAgIGxvY2FsIGJhc2VCb3QgPSAoSGVyb0RhdGEgYW5kIHRvbnVtYmVyKEhlcm9EYXRhLkJPVF9WSVNJT05fREFZX05JR0hUKSkgb3IgMTcwMAogICAgICAgICAgICBpZiBiYXNlQm90IDwgMSB0aGVuCiAgICAgICAgICAgICAgICBiYXNlQm90ID0gMTcwMAogICAgICAgICAgICBlbmQKICAgICAgICAgICAgcGE6U2V0RGF5VGltZVZpc2lvblJhbmdlKGJhc2VCb3QgKyBib251cykKICAgICAgICAgICAgcGE6U2V0TmlnaHRUaW1lVmlzaW9uUmFuZ2UoYmFzZUJvdCArIGJvbnVzKQogICAgICAgIGVsc2VpZiBib251cyA+IDAgdGhlbgogICAgICAgICAgICBwYTpTZXREYXlUaW1lVmlzaW9uUmFuZ2Uoc2VsZi5iYXNlRGF5VmlzaW9uICsgYm9udXMpCiAgICAgICAgICAgIHBhOlNldE5pZ2h0VGltZVZpc2lvblJhbmdlKHNlbGYuYmFzZU5pZ2h0VmlzaW9uICsgYm9udXMpCiAgICAgICAgZW5kCiAgICBlbmQKICAgIGlmIHV0aWxleCBhbmQgdXRpbGV4LkJhc2VHamwgYW5kIElEIGFuZCBIZXJvRGF0YSBhbmQgSGVyb0RhdGEuRGF0YSBhbmQgSGVyb0RhdGEuRGF0YVtJRF0gdGhlbgogICAgICAgIHV0aWxleDpCYXNlR2psKElEKQogICAgZW5kCiAgICBwYTpDYWxjdWxhdGVTdGF0Qm9udXModHJ1ZSkKZW5kCgotLSDlkajmnJ/oh6rliLfmlrDvvJvpobrluKbmoKHmraPlhYjlpKnoo4XlpIcgdGFsZW50IG1vZGlmaWVy77yI5aaCIG1vZGlmaWVyX3RhbGVudF8zIOWBtuWPkeS4ouWkse+8iQpmdW5jdGlvbiBtb2RpZmllcl9hdHRyX2J1ZmY6T25JbnRlcnZhbFRoaW5rKCkKICAgIGlmIG5vdCBJc1NlcnZlcigpIHRoZW4gcmV0dXJuIGVuZAogICAgc2VsZjpGb3JjZVJlZnJlc2goKQogICAgLS0g5qCh5q2j5YWI5aSp6KOF5aSHIG1vZGlmaWVy77yIVGFsZW50IOazqOmHiuWQjOS4iu+8ie+8mueBvOeDp+etieWcqOW8leaTji/mjaLkurrlkI7lgbblj5HooqvljbjvvIzkuInoh7Pnp5LlkajmnJ/ooaXliLfmlrAKICAgIGRvCiAgICAgICAgbG9jYWwgcGEwID0gc2VsZjpHZXRQYXJlbnQoKQogICAgICAgIGlmIHBhMCBhbmQgbm90IHBhMDpJc051bGwoKSBhbmQgcGEwOklzUmVhbEhlcm8oKSB0aGVuCiAgICAgICAgICAgIGxvY2FsIFRJRCA9IFV0aWw6SGVybzJJRChwYTApCiAgICAgICAgICAgIGlmIChub3QgVElEIG9yIFRJRCA8IDApIGFuZCBwYTAuR2V0UGxheWVyT3duZXJJRCB0aGVuCiAgICAgICAgICAgICAgICBUSUQgPSBwYTA6R2V0UGxheWVyT3duZXJJRCgpCiAgICAgICAgICAgIGVuZAogICAgICAgICAgICBpZiBUSUQgYW5kIFRJRCA+PSAwIGFuZCBUYWxlbnQgYW5kIFRhbGVudC5FbnN1cmVUYWxlbnRFcXVpcE1vZGlmaWVyIGFuZCBUYWxlbnQuRGF0YQogICAgICAgICAgICAgICAgYW5kIFRhbGVudC5EYXRhW1RJRF0gYW5kIFRhbGVudC5EYXRhW1RJRF0uc2VsZWN0X3RhbGVudCA9PSB0cnVlCiAgICAgICAgICAgICAgICBhbmQgKFRhbGVudC5EYXRhW1RJRF0uaXRlbV9uYW1lID09ICJpdGVtX2dvb2RzXzE5IgogICAgICAgICAgICAgICAgICAgIG9yIFRhbGVudC5EYXRhW1RJRF0uaXRlbV9uYW1lID09ICJpdGVtX2dvb2RzXzI0IikgdGhlbgogICAgICAgICAgICAgICAgVGFsZW50OkVuc3VyZVRhbGVudEVxdWlwTW9kaWZpZXIoVElEKQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgIGVuZAogICAgbG9jYWwgc3RhdGUgPSBNYWluR2FtZS5EYXRhLnN0YXRlCiAgICBpZiBzdGF0ZSA9PSAxIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgaWYgTWFpbkdhbWUuRGF0YS5vdmVyIHRoZW4KICAgICAgICByZXR1cm4KICAgIGVuZAogICAgbG9jYWwgcmFuZwogICAgaWYgc3RhdGUgPT0gMiB0aGVuCiAgICAgICAgcmFuZyA9IE1haW5HYW1lLlN0YXRpYy5yYW5nMQogICAgZW5kCiAgICBpZiBzdGF0ZSA9PSAzIHRoZW4KICAgICAgICByYW5nID0gTWFpbkdhbWUuU3RhdGljLnJhbmcyCiAgICBlbmQKICAgIC0t5Yik5pat546p5a625L2N572u77yM5aaC5p6c546p5a625Zyo5q+S5ZyI5aSW77yM5bCx5Y+X5YiwMjAl5pyA5aSn55Sf5ZG95YC855qE5Lyk5a6zCiAgICBsb2NhbCBwYSA9IHNlbGY6R2V0UGFyZW50KCkKICAgIGlmIG5vdCBwYSBvciBub3QgcGE6SXNSZWFsSGVybygpIHRoZW4gcmV0dXJuIGVuZAogICAgbG9jYWwgY2VudGVyX3BvcyA9IE1vbnN0ZXIuU3RhdGljLm1hcF9jZW50ZXIKICAgIGxvY2FsIHBvcyA9IHBhOkdldEFic09yaWdpbigpCiAgICBsb2NhbCBsZW4gPSAoY2VudGVyX3BvcyAtIHBvcyk6TGVuZ3RoMkQoKQogICAgaWYgbGVuID4gcmFuZyB0aGVuCiAgICAgICAgbG9jYWwgZHVtbXlfYXR0ID0gTWFpbkdhbWU6R2V0RHVtbXkoKQogICAgICAgIGxvY2FsIGRhbWFnZSA9IG1hdGguZmxvb3IocGE6R2V0TWF4SGVhbHRoKCkgKiAwLjIpCiAgICAgICAgQXBwbHlEYW1hZ2UoewogICAgICAgICAgICBhdHRhY2tlciA9IGR1bW15X2F0dCBvciBwYSwKICAgICAgICAgICAgdmljdGltID0gcGEsCiAgICAgICAgICAgIGRhbWFnZSA9IGRhbWFnZSwKICAgICAgICAgICAgZGFtYWdlX3R5cGUgPSBEQU1BR0VfVFlQRV9QVVJFLAogICAgICAgIH0pCiAgICBlbmQKZW5kCgpmdW5jdGlvbiBtb2RpZmllcl9hdHRyX2J1ZmY6RGVjbGFyZUZ1bmN0aW9ucygpCiAgICByZXR1cm4gewogICAgICAgIC0tIOe7v+WtlyDlipvph4/liqDmiJAlK+WKm+mHj+WinuW5hSUKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9TVEFUU19TVFJFTkdUSF9CT05VUywKICAgICAgICAtLSDnu7/lrZcg5pWP5o235Yqg5oiQJSvmlY/mjbflop7luYUlK+aVj+aNt+W4uOaVsAogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX1NUQVRTX0FHSUxJVFlfQk9OVVMsCiAgICAgICAgLS0g57u/5a2XIOaZuuWKm+WKoOaIkCUr5pm65Yqb5aKe5bmFJSvmmbrlipvluLjmlbAKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9TVEFUU19JTlRFTExFQ1RfQk9OVVMsIC0tIOe7v+WtlyDlm57lpI3luLjmlbAKICAgICAgICBNT0RJRklFUl9QUk9QRVJUWV9IRUFMVEhfUkVHRU5fQ09OU1RBTlQsIC0tIOaUu+WHu+mXtOmalAogICAgICAgIC0tIE1PRElGSUVSX1BST1BFUlRZX0JBU0VfQVRUQUNLX1RJTUVfQ09OU1RBTlQsCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfU1RBVFVTX1JFU0lTVEFOQ0UsCiAgICAgICAgLS0g5pS75Ye76Led56a777yabW9kaWZpZXJfZ2pqbO+8iEhlcm9EYXRhOkFkZFNYIC0+IHV0aWxleDpCYXNlR2pqbO+8iQogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX0JPTlVTX0RBWV9WSVNJT04sCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfQk9OVVNfTklHSFRfVklTSU9OLAogICAgICAgIC0tIOW8uemBk+mAn+W6puWKoOaIkO+8iOS/ruWkjei/keaImOiLsembhOWtpumtlOWMli/lj5jpvpkv5pyI5YiD5pe25by56YGT6YCf5bqm5Li6MOWvvOiHtOaKgOiDveaXoOaViOeahGJ1Z++8iQogICAgICAgIE1PRElGSUVSX1BST1BFUlRZX1BST0pFQ1RJTEVfU1BFRURfQk9OVVMsICAgLS0g5oqk55SyCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfUEhZU0lDQUxfQVJNT1JfQk9OVVMsICAgICAtLSDnmb3lrZcg5bi45pWw56e75Yqo6YCf5bqmCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfTU9WRVNQRUVEX0JPTlVTX0NPTlNUQU5ULCAtLSDnu7/lrZcg5pS75Ye75Yqb5bi45pWwCiAgICAgICAgTU9ESUZJRVJfUFJPUEVSVFlfUFJFQVRUQUNLX0JPTlVTX0RBTUFHRSwKICAgICAgICAtLSDnlJ/lkb3lop7luYUlIOaUueeUsSBtb2RpZmllcl9zbXpm77yIdXRpbGV4OkJhc2VTbXpm77yJ5aSE55CGCiAgICAgICAgLS0gTU9ESUZJRVJfUFJPUEVSVFlfSEVBTFRIX0JPTlVTLAogICAgICAgIC0tIOe7v+WtlyDlm57lpI3luLjmlbAKICAgICAgICAtLSBNT0RJRklFUl9QUk9QRVJUWV9IRUFMVEhfUkVHRU5fQ09OU1RBTlQsCiAgICAgICAgLS0g5pS75Ye76YCf5bqm5bi45pWwCiAgICAgICAgLS0gTU9ESUZJRVJfUFJPUEVSVFlfQVRUQUNLU1BFRURfQk9OVVNfQ09OU1RBTlQsCiAgICAgICAgLS0gTU9ESUZJRVJfUFJPUEVSVFlfTUFHSUNBTF9SRVNJU1RBTkNFX0JPTlVTCiAgICB9CmVuZAoKLS0gZnVuY3Rpb24gbW9kaWZpZXJfYXR0cl9idWZmOkdldE1vZGlmaWVyQ29uc3RhbnRIZWFsdGhSZWdlbigpCi0tIAlpZiBub3Qgc2VsZi5zeCB0aGVuIHJldHVybiBlbmQKLS0gCXJldHVybiBzZWxmLnN4LnNtaGYKLS0gZW5kCgotLSBmdW5jdGlvbiBtb2RpZmllcl9hdHRyX2J1ZmY6R2V0TW9kaWZpZXJNYWdpY2FsUmVzaXN0YW5jZUJvbnVzKCkKLS0gICAgIHJldHVybiAwLjA1Ci0tIGVuZAoKLS0g57u/5a2X5pS75Ye75Yqb5bi45pWwIGpjZ2og5LuF55SxIG1vZGlmaWVyX2dqbGpj77yIdXRpbGV4OkJhc2VHamzvvInmj5DkvpvvvIzpgb/lhY3kuI4gbW9kaWZpZXJfYXR0cl9idWZmIOmHjeWkjeWPoOWKoApmdW5jdGlvbiBtb2RpZmllcl9hdHRyX2J1ZmY6R2V0TW9kaWZpZXJQcmVBdHRhY2tfQm9udXNEYW1hZ2UoKQogICAgcmV0dXJuIDAKZW5kCgotLSDnu7/lrZcg5Yqb6YeP5Yqg5oiQJS/lipvph4/lop7luYUlIOihgOmHj+i2hTIxReaciemXrumimApmdW5jdGlvbiBtb2RpZmllcl9hdHRyX2J1ZmY6R2V0TW9kaWZpZXJCb251c1N0YXRzX1N0cmVuZ3RoKCkKICAgIGlmIG5vdCBzZWxmLnN4IHRoZW4gcmV0dXJuIGVuZAogICAgbG9jYWwgbGxqYyA9IG1hdGguZmxvb3IoKHNlbGYuc3guYmFzZVNUUiAqIHNlbGYuc3gubGxqYykgLyAxMDApCiAgICByZXR1cm4gbGxqYwplbmQKCi0tIOe7v+WtlyDmlY/mjbfliqDmiJAlK+aVj+aNt+WinuW5hSUr5pWP5o235bi45pWwCmZ1bmN0aW9uIG1vZGlmaWVyX2F0dHJfYnVmZjpHZXRNb2RpZmllckJvbnVzU3RhdHNfQWdpbGl0eSgpCiAgICBpZiBub3Qgc2VsZi5zeCB0aGVuIHJldHVybiBlbmQKICAgIGxvY2FsIG1qamMgPSBtYXRoLmZsb29yKChzZWxmLnN4LmJhc2VBR0kgKiBzZWxmLnN4Lm1qamMpIC8gMTAwKQogICAgcmV0dXJuIG1qamMKZW5kCgotLSDnu7/lrZcg5pm65Yqb5Yqg5oiQJSvmmbrlipvlop7luYUlK+aZuuWKm+W4uOaVsApmdW5jdGlvbiBtb2RpZmllcl9hdHRyX2J1ZmY6R2V0TW9kaWZpZXJCb251c1N0YXRzX0ludGVsbGVjdCgpCiAgICBpZiBub3Qgc2VsZi5zeCB0aGVuIHJldHVybiBlbmQKICAgIGxvY2FsIHpsamMgPSBtYXRoLmZsb29yKChzZWxmLnN4LmJhc2VJTlQgKiBzZWxmLnN4LnpsamMpIC8gMTAwKQogICAgcmV0dXJuIHpsamMKZW5kCgotLSDmlLvlh7vpl7TpmpQKLS0gZnVuY3Rpb24gbW9kaWZpZXJfYXR0cl9idWZmOkdldE1vZGlmaWVyQmFzZUF0dGFja1RpbWVDb25zdGFudCgpCi0tICAgICBpZiBub3Qgc2VsZi5zeCB0aGVuIHJldHVybiBlbmQKLS0gICAgIHJldHVybiBzZWxmLnN4LmdqamcKLS0gZW5kCgotLSDnmb3lrZcg5pS75Ye76YCf5bqmCi0tIGZ1bmN0aW9uIG1vZGlmaWVyX2F0dHJfYnVmZjpHZXRNb2RpZmllckF0dGFja1NwZWVkQm9udXNfQ29uc3RhbnQoKQotLSAJaWYgbm90IHNlbGYuc3ggdGhlbiByZXR1cm4gZW5kCi0tIAlyZXR1cm4gc2VsZi5zeC5nanNkCi0tIGVuZAoKLS0g55Sf5ZG95aKe5bmF5bey6L+B56e76IezIG1vZGlmaWVyX3NtembvvIjop4EgdXRpbGV4OkJhc2VTbXpm77yJCgotLSDop4bph47liqDmiJDvvIjnmb3lpKnvvIktIOW8leaTjuWbnuiwg+WQjeS4uiBHZXRCb251c0RheVZpc2lvbu+8jOmdniBHZXRNb2RpZmllckJvbnVzRGF5VmlzaW9uCmZ1bmN0aW9uIG1vZGlmaWVyX2F0dHJfYnVmZjpHZXRCb251c0RheVZpc2lvbigpCiAgICBpZiBub3Qgc2VsZi5zeCB0aGVuIHJldHVybiAwIGVuZAogICAgcmV0dXJuIHNlbGYuc3guc3lqYyBvciAwCmVuZAoKLS0g6KeG6YeO5Yqg5oiQ77yI5aSc5pma77yJLSDlvJXmk47lm57osIPlkI3kuLogR2V0Qm9udXNOaWdodFZpc2lvbu+8jOmdniBHZXRNb2RpZmllckJvbnVzTmlnaHRWaXNpb24KZnVuY3Rpb24gbW9kaWZpZXJfYXR0cl9idWZmOkdldEJvbnVzTmlnaHRWaXNpb24oKQogICAgaWYgbm90IHNlbGYuc3ggdGhlbiByZXR1cm4gMCBlbmQKICAgIHJldHVybiBzZWxmLnN4LnN5amMgb3IgMAplbmQKCi0tIOW8uemBk+mAn+W6puWKoOaIkO+8mui/keaImOiLsembhOWtpumtlOWMli/lj5jpvpkv5pyI5YiDL+aZuuaFp+S5i+WIg+aXtu+8jOW8leaTjuW8uemBk+mAn+W6puS4ujDkvJrlr7zoh7TmioDog73ml6DmlYjvvIzpnIDmj5DkvpvmnIDkvY7lvLnpgZPpgJ/luqYKZnVuY3Rpb24gbW9kaWZpZXJfYXR0cl9idWZmOkdldE1vZGlmaWVyUHJvamVjdGlsZVNwZWVkQm9udXMoKQogICAgbG9jYWwgcGEgPSBzZWxmOkdldFBhcmVudCgpCiAgICBpZiBub3QgcGEgb3Igbm90IHBhOklzUmVhbEhlcm8oKSB0aGVuIHJldHVybiAwIGVuZAogICAgbG9jYWwgbnVtID0gMAogICAgLS0g5oul5pyJ6a2U5YyW44CB5Y+Y6b6Z44CB5pyI5YiD44CB5pm65oWn5LmL5YiD5LmL5LiA5pe277yM5o+Q5L6bOTAw5by56YGT6YCf5bqm77yI5LiOVEIvREsvTHVuYS9TaWxlbmNlcuWOn+eJiOS4gOiHtO+8ie+8jOino+WGs+i/keaImOiLsembhOW8uemBk+S4ujDnmoRidWcKICAgIC0tIGlmIHBhOkhhc0FiaWxpdHkoInRlcnJvcmJsYWRlX21ldGFtb3JwaG9zaXMiKSBvcgogICAgLS0gICAgIHBhOkhhc0FiaWxpdHkoImRyYWdvbl9rbmlnaHRfZWxkZXJfZHJhZ29uX2Zvcm0iKSBvcgogICAgLS0gICAgIHBhOkhhc0FiaWxpdHkoImx1bmFfbW9vbl9nbGFpdmUiKSBvcgogICAgLS0gICAgIHBhOkhhc0FiaWxpdHkoInNpbGVuY2VyX2dsYWl2ZXNfb2Zfd2lzZG9tIikgdGhlbgogICAgLS0gICAgIGxvY2FsIG5hbWUgPSBwYTpHZXRVbml0TmFtZSgpCiAgICAtLSAgICAgaWYgU2tpbGw6SXNSYW5nZWRBdHRhY2tlcihuYW1lKSB0aGVuCiAgICAtLSAgICAgICAgIG51bSA9IDkwMAogICAgLS0gICAgIGVuZAogICAgLS0gZW5kCiAgICByZXR1cm4gbnVtCmVuZAo=]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+if modifier_attr_buff == nil then modifier_attr_buff = class({}) end
+
+function modifier_attr_buff:IsDebuff() return false end
+
+-- 是否可以移除
+function modifier_attr_buff:IsPurgable() return false end
+
+-- 是否在面板上显示
+function modifier_attr_buff:IsHidden() return true end
+
+function modifier_attr_buff:RemoveOnDeath() return false end
+
+-- 幻想是否继承
+function modifier_attr_buff:AllowIllusionDuplicate() return false end
+
+function modifier_attr_buff:GetAttributes()
+    return MODIFIER_ATTRIBUTE_PERMANENT + MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+-- 创建时设置
+function modifier_attr_buff:OnCreated()
+    if not IsServer() then return end
+    local pa = self:GetParent()
+
+
+    local kv = GetUnitKeyValuesByName(pa:GetUnitName())
+    if kv then
+        self.baseDayVision = tonumber(kv.VisionDaytimeRange) or 1800
+        self.baseNightVision = tonumber(kv.VisionNighttimeRange) or 800
+    else
+        self.baseDayVision = 1800
+        self.baseNightVision = 800
+    end
+
+    self:OnRefresh()
+    self:StartIntervalThink(3)
+end
+
+-- 刷新就取值更新
+function modifier_attr_buff:OnRefresh()
+    if not IsServer() then return end
+    local pa = self:GetParent()
+    if not pa or not pa:IsRealHero() then return end
+    local ID = Util:Hero2ID(pa)
+    local tab = HeroData.Data[ID].hero_attr
+    if not tab then return end
+    -- 拷贝表
+    local temp = {}
+    for k, v in pairs(tab) do temp[k] = v end
+    -- 取三围
+    temp.baseSTR = pa:GetBaseStrength()
+    temp.baseAGI = pa:GetBaseAgility()
+    temp.baseINT = pa:GetBaseIntellect()
+    temp.attackDamage = pa:GetAttackDamage()
+    self.sx = temp
+    -- 视野加成同步到战争迷雾：引擎的 GetBonusDayVision 只影响数值，FOW 需直接设置单位视野范围
+    local bonus = temp.syjc or 0
+    if pa.SetDayTimeVisionRange and pa.SetNightTimeVisionRange then
+        if Util and Util.IsPseudoPlayerID and Util:IsPseudoPlayerID(ID) then
+            local baseBot = (HeroData and tonumber(HeroData.BOT_VISION_DAY_NIGHT)) or 1700
+            if baseBot < 1 then
+                baseBot = 1700
+            end
+            pa:SetDayTimeVisionRange(baseBot + bonus)
+            pa:SetNightTimeVisionRange(baseBot + bonus)
+        elseif bonus > 0 then
+            pa:SetDayTimeVisionRange(self.baseDayVision + bonus)
+            pa:SetNightTimeVisionRange(self.baseNightVision + bonus)
+        end
+    end
+    if utilex and utilex.BaseGjl and ID and HeroData and HeroData.Data and HeroData.Data[ID] then
+        utilex:BaseGjl(ID)
+    end
+    pa:CalculateStatBonus(true)
+end
+
+-- 周期自刷新；顺带校正先天装备 talent modifier（如 modifier_talent_3 偶发丢失）
+function modifier_attr_buff:OnIntervalThink()
+    if not IsServer() then return end
+    self:ForceRefresh()
+    -- 校正先天装备 modifier（Talent 注释同上）：灼烧等在引擎/换人后偶发被卸，三至秒周期补刷新
+    do
+        local pa0 = self:GetParent()
+        if pa0 and not pa0:IsNull() and pa0:IsRealHero() then
+            local TID = Util:Hero2ID(pa0)
+            if (not TID or TID < 0) and pa0.GetPlayerOwnerID then
+                TID = pa0:GetPlayerOwnerID()
+            end
+            if TID and TID >= 0 and Talent and Talent.EnsureTalentEquipModifier and Talent.Data
+                and Talent.Data[TID] and Talent.Data[TID].select_talent == true
+                and (Talent.Data[TID].item_name == "item_goods_19"
+                    or Talent.Data[TID].item_name == "item_goods_24") then
+                Talent:EnsureTalentEquipModifier(TID)
+            end
+        end
+    end
+    local state = MainGame.Data.state
+    if state == 1 then
+        return
+    end
+    if MainGame.Data.over then
+        return
+    end
+    local rang
+    if state == 2 then
+        rang = MainGame.Static.rang1
+    end
+    if state == 3 then
+        rang = MainGame.Static.rang2
+    end
+    --判断玩家位置，如果玩家在毒圈外，就受到20%最大生命值的伤害
+    local pa = self:GetParent()
+    if not pa or not pa:IsRealHero() then return end
+    local center_pos = Monster.Static.map_center
+    local pos = pa:GetAbsOrigin()
+    local len = (center_pos - pos):Length2D()
+    if len > rang then
+        local dummy_att = MainGame:GetDummy()
+        local damage = math.floor(pa:GetMaxHealth() * 0.2)
+        ApplyDamage({
+            attacker = dummy_att or pa,
+            victim = pa,
+            damage = damage,
+            damage_type = DAMAGE_TYPE_PURE,
+        })
+    end
+end
+
+function modifier_attr_buff:DeclareFunctions()
+    return {
+        -- 绿字 力量加成%+力量增幅%
+        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+        -- 绿字 敏捷加成%+敏捷增幅%+敏捷常数
+        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+        -- 绿字 智力加成%+智力增幅%+智力常数
+        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, -- 绿字 回复常数
+        MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT, -- 攻击间隔
+        -- MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT,
+        MODIFIER_PROPERTY_STATUS_RESISTANCE,
+        -- 攻击距离：modifier_gjjl（HeroData:AddSX -> utilex:BaseGjjl）
+        MODIFIER_PROPERTY_BONUS_DAY_VISION,
+        MODIFIER_PROPERTY_BONUS_NIGHT_VISION,
+        -- 弹道速度加成（修复近战英雄学魔化/变龙/月刃时弹道速度为0导致技能无效的bug）
+        MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS,   -- 护甲
+        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,     -- 白字 常数移动速度
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT, -- 绿字 攻击力常数
+        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+        -- 生命增幅% 改由 modifier_smzf（utilex:BaseSmzf）处理
+        -- MODIFIER_PROPERTY_HEALTH_BONUS,
+        -- 绿字 回复常数
+        -- MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+        -- 攻击速度常数
+        -- MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+        -- MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS
+    }
+end
+
+-- function modifier_attr_buff:GetModifierConstantHealthRegen()
+-- 	if not self.sx then return end
+-- 	return self.sx.smhf
+-- end
+
+-- function modifier_attr_buff:GetModifierMagicalResistanceBonus()
+--     return 0.05
+-- end
+
+-- 绿字攻击力常数 jcgj 仅由 modifier_gjljc（utilex:BaseGjl）提供，避免与 modifier_attr_buff 重复叠加
+function modifier_attr_buff:GetModifierPreAttack_BonusDamage()
+    return 0
+end
+
+-- 绿字 力量加成%/力量增幅% 血量超21E有问题
+function modifier_attr_buff:GetModifierBonusStats_Strength()
+    if not self.sx then return end
+    local lljc = math.floor((self.sx.baseSTR * self.sx.lljc) / 100)
+    return lljc
+end
+
+-- 绿字 敏捷加成%+敏捷增幅%+敏捷常数
+function modifier_attr_buff:GetModifierBonusStats_Agility()
+    if not self.sx then return end
+    local mjjc = math.floor((self.sx.baseAGI * self.sx.mjjc) / 100)
+    return mjjc
+end
+
+-- 绿字 智力加成%+智力增幅%+智力常数
+function modifier_attr_buff:GetModifierBonusStats_Intellect()
+    if not self.sx then return end
+    local zljc = math.floor((self.sx.baseINT * self.sx.zljc) / 100)
+    return zljc
+end
+
+-- 攻击间隔
+-- function modifier_attr_buff:GetModifierBaseAttackTimeConstant()
+--     if not self.sx then return end
+--     return self.sx.gjjg
+-- end
+
+-- 白字 攻击速度
+-- function modifier_attr_buff:GetModifierAttackSpeedBonus_Constant()
+-- 	if not self.sx then return end
+-- 	return self.sx.gjsd
+-- end
+
+-- 生命增幅已迁移至 modifier_smzf（见 utilex:BaseSmzf）
+
+-- 视野加成（白天）- 引擎回调名为 GetBonusDayVision，非 GetModifierBonusDayVision
+function modifier_attr_buff:GetBonusDayVision()
+    if not self.sx then return 0 end
+    return self.sx.syjc or 0
+end
+
+-- 视野加成（夜晚）- 引擎回调名为 GetBonusNightVision，非 GetModifierBonusNightVision
+function modifier_attr_buff:GetBonusNightVision()
+    if not self.sx then return 0 end
+    return self.sx.syjc or 0
+end
+
+-- 弹道速度加成：近战英雄学魔化/变龙/月刃/智慧之刃时，引擎弹道速度为0会导致技能无效，需提供最低弹道速度
+function modifier_attr_buff:GetModifierProjectileSpeedBonus()
+    local pa = self:GetParent()
+    if not pa or not pa:IsRealHero() then return 0 end
+    local num = 0
+    -- 拥有魔化、变龙、月刃、智慧之刃之一时，提供900弹道速度（与TB/DK/Luna/Silencer原版一致），解决近战英雄弹道为0的bug
+    -- if pa:HasAbility("terrorblade_metamorphosis") or
+    --     pa:HasAbility("dragon_knight_elder_dragon_form") or
+    --     pa:HasAbility("luna_moon_glaive") or
+    --     pa:HasAbility("silencer_glaives_of_wisdom") then
+    --     local name = pa:GetUnitName()
+    --     if Skill:IsRangedAttacker(name) then
+    --         num = 900
+    --     end
+    -- end
+    return num
+end

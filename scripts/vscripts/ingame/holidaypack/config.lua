@@ -8,22 +8,144 @@
 ]]
 
 
-local encoded=[[SG9saWRheVBhY2suRGF0YSA9IHt9CkhvbGlkYXlQYWNrLlRlbXBsYXRlID0gewogICAgcGFnZSA9IGZhbHNlLAogICAgZHdfZnJlZV9kYXkgPSAxLAogICAgZHdfZnJlZV9vcGVuID0gZmFsc2UsCiAgICBkd19mcmVlX2V2ZW50X3N0YXR1cyA9ICJlbmRlZCIsCiAgICBkd18zMF9idXkgPSAwLAogICAgZHdfNjhfYnV5ID0gMCwKICAgIGR3XzEyOF9idXkgPSAwLAogICAgLS0g5pyN5Yqh56uv5Yqo5oCB56S85YyF77yI5byA5bGA5ouJ5Y+W77yJCiAgICBnaWZ0X3BhY2tzID0ge30sCiAgICBnaWZ0X2J1eV9jb3VudHMgPSB7fSwKICAgIGdpZnRfZnJlZV9jbGFpbWVkID0ge30sCn0KCkhvbGlkYXlQYWNrLkJVWV9MSU1JVCA9IDMKCkhvbGlkYXlQYWNrLlBheUdvb2RzID0gewogICAgZHdfMzAgPSAxMSwKICAgIGR3XzY4ID0gMTIsCiAgICBkd18xMjggPSAxMywKfQoKLS0g5LiO5pyN5Yqh56uvIEhvbGlkYXlQYWNrU2VydmljZS5IT0xJREFZX1BBQ0tfUkVXQVJEUyDkuIDoh7QKSG9saWRheVBhY2suUmV3YXJkcyA9IHsKICAgIGR3X2ZyZWUgPSB7IGdvbGQgPSAyMDAsIGhlcm9fcGljayA9IDEsIHByb3BoZWN5X2NhcmQgPSAxIH0sCiAgICBIT0xJREFZX0RXXzMwID0geyBnb2xkID0gOTAwLCBoZXJvX3BpY2sgPSAxLCBwcm9waGVjeV9jYXJkID0gMSB9LAogICAgSE9MSURBWV9EV182OCA9IHsgZ29sZCA9IDIwNDAsIGhlcm9fcGljayA9IDIsIHByb3BoZWN5X2NhcmQgPSAyIH0sCiAgICBIT0xJREFZX0RXXzEyOCA9IHsgZ29sZCA9IDM4NDAsIGhlcm9fcGljayA9IDQsIHByb3BoZWN5X2NhcmQgPSA0IH0sCn0KCmxvY2FsIEhPTElEQVlfR09MRF9JQ09OID0gInJhdzovL3Jlc291cmNlL2ZsYXNoMy9pbWFnZXMvc2hvcC9iX2Nvc3QucG5nIgpsb2NhbCBIT0xJREFZX0hFUk9fUElDS19JQ09OID0gInJhdzovL3Jlc291cmNlL2ZsYXNoMy9pbWFnZXMvY2FyZC9oZXJvY2FyZC5wbmciCmxvY2FsIEhPTElEQVlfUFJPUEhFQ1lfSUNPTiA9ICJyYXc6Ly9yZXNvdXJjZS9mbGFzaDMvaW1hZ2VzL2FjaGl2ZS95eWsucG5nIgoKZnVuY3Rpb24gSG9saWRheVBhY2s6QnVpbGRSZWRlZW1Sb3dzKHBhY2tLZXkpCiAgICByZXR1cm4gc2VsZjpCdWlsZFJlZGVlbVJvd3NGcm9tUmV3YXJkcyhzZWxmLlJld2FyZHNbcGFja0tleV0pCmVuZAoKZnVuY3Rpb24gSG9saWRheVBhY2s6RmluZEdpZnRQYWNrQnlQcm9kdWN0VHlwZShJRCwgcHJvZHVjdF90eXBlKQogICAgaWYgbm90IElEIG9yIG5vdCBwcm9kdWN0X3R5cGUgb3Igbm90IHNlbGYuRGF0YVtJRF0gdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgbG9jYWwgcGFja3MgPSBzZWxmLkRhdGFbSURdLmdpZnRfcGFja3MKICAgIGlmIHR5cGUocGFja3MpIH49ICJ0YWJsZSIgdGhlbgogICAgICAgIHJldHVybiBuaWwKICAgIGVuZAogICAgZm9yIF8sIHBhY2sgaW4gcGFpcnMocGFja3MpIGRvCiAgICAgICAgaWYgcGFjayBhbmQgdG9zdHJpbmcocGFjay5wcm9kdWN0X3R5cGUpID09IHRvc3RyaW5nKHByb2R1Y3RfdHlwZSkgdGhlbgogICAgICAgICAgICByZXR1cm4gcGFjawogICAgICAgIGVuZAogICAgZW5kCiAgICByZXR1cm4gbmlsCmVuZAoKZnVuY3Rpb24gSG9saWRheVBhY2s6RmluZEdpZnRQYWNrQnlLZXkoSUQsIHBhY2tfa2V5KQogICAgaWYgbm90IElEIG9yIG5vdCBwYWNrX2tleSBvciBub3Qgc2VsZi5EYXRhW0lEXSB0aGVuCiAgICAgICAgcmV0dXJuIG5pbAogICAgZW5kCiAgICBsb2NhbCBwYWNrcyA9IHNlbGYuRGF0YVtJRF0uZ2lmdF9wYWNrcwogICAgaWYgdHlwZShwYWNrcykgfj0gInRhYmxlIiB0aGVuCiAgICAgICAgcmV0dXJuIG5pbAogICAgZW5kCiAgICBmb3IgXywgcGFjayBpbiBwYWlycyhwYWNrcykgZG8KICAgICAgICBpZiBwYWNrIGFuZCB0b3N0cmluZyhwYWNrLnBhY2tfa2V5KSA9PSB0b3N0cmluZyhwYWNrX2tleSkgdGhlbgogICAgICAgICAgICByZXR1cm4gcGFjawogICAgICAgIGVuZAogICAgZW5kCiAgICByZXR1cm4gbmlsCmVuZAoKZnVuY3Rpb24gSG9saWRheVBhY2s6QnVpbGRSZWRlZW1Sb3dzRm9yR2lmdChJRCwgcHJvZHVjdF90eXBlKQogICAgbG9jYWwgcGFjayA9IHNlbGY6RmluZEdpZnRQYWNrQnlQcm9kdWN0VHlwZShJRCwgcHJvZHVjdF90eXBlKQogICAgaWYgbm90IHBhY2sgdGhlbgogICAgICAgIHJldHVybiB7fQogICAgZW5kCiAgICByZXR1cm4gc2VsZjpCdWlsZFJlZGVlbVJvd3NGcm9tUmV3YXJkcyh7CiAgICAgICAgZ29sZCA9IHBhY2suZ29sZCwKICAgICAgICBoZXJvX3BpY2sgPSBwYWNrLmhlcm9fcGljaywKICAgICAgICBwcm9waGVjeV9jYXJkID0gcGFjay5wcm9waGVjeV9jYXJkLAogICAgfSkKZW5kCgpmdW5jdGlvbiBIb2xpZGF5UGFjazpCdWlsZFJlZGVlbVJvd3NGcm9tUmV3YXJkcyhyZXdhcmRzKQogICAgbG9jYWwgcm93cyA9IHt9CiAgICBpZiBub3QgcmV3YXJkcyB0aGVuCiAgICAgICAgcmV0dXJuIHJvd3MKICAgIGVuZAogICAgbG9jYWwgZ29sZCA9IHRvbnVtYmVyKHJld2FyZHMuZ29sZCkgb3IgMAogICAgaWYgZ29sZCA+IDAgdGhlbgogICAgICAgIHJvd3NbI3Jvd3MgKyAxXSA9IHsgaW1nID0gSE9MSURBWV9HT0xEX0lDT04sIGNvdW50ID0gZ29sZCwgdW5pdCA9ICLph5HosYYiIH0KICAgIGVuZAogICAgbG9jYWwgaGVyb19waWNrID0gdG9udW1iZXIocmV3YXJkcy5oZXJvX3BpY2spIG9yIDAKICAgIGlmIGhlcm9fcGljayA+IDAgdGhlbgogICAgICAgIHJvd3NbI3Jvd3MgKyAxXSA9IHsKICAgICAgICAgICAgaW1nID0gSE9MSURBWV9IRVJPX1BJQ0tfSUNPTiwKICAgICAgICAgICAgY291bnQgPSBoZXJvX3BpY2ssCiAgICAgICAgICAgIHVuaXQgPSAi6Iux6ZuE6Ieq6YCJ5Y2hIiwKICAgICAgICB9CiAgICBlbmQKICAgIGxvY2FsIHByb3BoZWN5ID0gdG9udW1iZXIocmV3YXJkcy5wcm9waGVjeV9jYXJkKSBvciAwCiAgICBpZiBwcm9waGVjeSA+IDAgdGhlbgogICAgICAgIHJvd3NbI3Jvd3MgKyAxXSA9IHsKICAgICAgICAgICAgaW1nID0gSE9MSURBWV9QUk9QSEVDWV9JQ09OLAogICAgICAgICAgICBjb3VudCA9IHByb3BoZWN5LAogICAgICAgICAgICB1bml0ID0gIumihOiogOWNoSIsCiAgICAgICAgfQogICAgZW5kCiAgICByZXR1cm4gcm93cwplbmQKCmZ1bmN0aW9uIEhvbGlkYXlQYWNrOklzRHdGcmVlT3BlbihJRCkKICAgIC0tIOW3suWPlua2iOa0u+WKqOaXtumXtOeql++8muWni+e7iOinhuS4uuW8gOaUvu+8iOavj+aXpeasoeaVsOS7jeeUsSBkd19mcmVlX2RheSDmjqfliLbvvIkKICAgIHJldHVybiB0cnVlCmVuZAoKZnVuY3Rpb24gSG9saWRheVBhY2s6R2V0R2lmdEJ1eUNvdW50KElELCBwYWNrX2tleSkKICAgIGlmIG5vdCBJRCBvciBub3QgcGFja19rZXkgb3Igbm90IHNlbGYuRGF0YVtJRF0gdGhlbgogICAgICAgIHJldHVybiAwCiAgICBlbmQKICAgIGxvY2FsIGNvdW50cyA9IHNlbGYuRGF0YVtJRF0uZ2lmdF9idXlfY291bnRzCiAgICBpZiB0eXBlKGNvdW50cykgfj0gInRhYmxlIiB0aGVuCiAgICAgICAgcmV0dXJuIDAKICAgIGVuZAogICAgcmV0dXJuIHRvbnVtYmVyKGNvdW50c1t0b3N0cmluZyhwYWNrX2tleSldKSBvciAwCmVuZAoKZnVuY3Rpb24gSG9saWRheVBhY2s6Q2FuQnV5R2lmdChJRCwgcGFjaykKICAgIGlmIG5vdCBwYWNrIHRoZW4KICAgICAgICByZXR1cm4gZmFsc2UKICAgIGVuZAogICAgbG9jYWwgbGltaXRlZCA9IHBhY2suaXNfbGltaXRlZCA9PSB0cnVlIG9yIHBhY2suaXNfbGltaXRlZCA9PSAxCiAgICBpZiBub3QgbGltaXRlZCB0aGVuCiAgICAgICAgcmV0dXJuIHRydWUKICAgIGVuZAogICAgbG9jYWwgbGltaXQgPSB0b251bWJlcihwYWNrLmxpbWl0X2NvdW50KSBvciAwCiAgICBpZiBsaW1pdCA8PSAwIHRoZW4KICAgICAgICByZXR1cm4gdHJ1ZQogICAgZW5kCiAgICByZXR1cm4gc2VsZjpHZXRHaWZ0QnV5Q291bnQoSUQsIHBhY2sucGFja19rZXkpIDwgbGltaXQKZW5kCg==]]
-local b64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local function decode(data)
-    data=string.gsub(data,'[^'..b64..'=]','')
-    return(data:gsub('.',function(x)
-        if x=='='then return''end
-        local r,f='',(b64:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and'1'or'0')end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(x)
-        if#x~=8 then return''end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1'and 2^(8-i)or 0)end
-        return string.char(c)
-    end))
+HolidayPack.Data = {}
+HolidayPack.Template = {
+    page = false,
+    dw_free_day = 1,
+    dw_free_open = false,
+    dw_free_event_status = "ended",
+    dw_30_buy = 0,
+    dw_68_buy = 0,
+    dw_128_buy = 0,
+    -- 服务端动态礼包（开局拉取）
+    gift_packs = {},
+    gift_buy_counts = {},
+    gift_free_claimed = {},
+}
+
+HolidayPack.BUY_LIMIT = 3
+
+HolidayPack.PayGoods = {
+    dw_30 = 11,
+    dw_68 = 12,
+    dw_128 = 13,
+}
+
+-- 与服务端 HolidayPackService.HOLIDAY_PACK_REWARDS 一致
+HolidayPack.Rewards = {
+    dw_free = { gold = 200, hero_pick = 1, prophecy_card = 1 },
+    HOLIDAY_DW_30 = { gold = 900, hero_pick = 1, prophecy_card = 1 },
+    HOLIDAY_DW_68 = { gold = 2040, hero_pick = 2, prophecy_card = 2 },
+    HOLIDAY_DW_128 = { gold = 3840, hero_pick = 4, prophecy_card = 4 },
+}
+
+local HOLIDAY_GOLD_ICON = "raw://resource/flash3/images/shop/b_cost.png"
+local HOLIDAY_HERO_PICK_ICON = "raw://resource/flash3/images/card/herocard.png"
+local HOLIDAY_PROPHECY_ICON = "raw://resource/flash3/images/achive/yyk.png"
+
+function HolidayPack:BuildRedeemRows(packKey)
+    return self:BuildRedeemRowsFromRewards(self.Rewards[packKey])
 end
-local decoded=decode(encoded)
-local func=loadstring(decoded)
-if func then func() end
+
+function HolidayPack:FindGiftPackByProductType(ID, product_type)
+    if not ID or not product_type or not self.Data[ID] then
+        return nil
+    end
+    local packs = self.Data[ID].gift_packs
+    if type(packs) ~= "table" then
+        return nil
+    end
+    for _, pack in pairs(packs) do
+        if pack and tostring(pack.product_type) == tostring(product_type) then
+            return pack
+        end
+    end
+    return nil
+end
+
+function HolidayPack:FindGiftPackByKey(ID, pack_key)
+    if not ID or not pack_key or not self.Data[ID] then
+        return nil
+    end
+    local packs = self.Data[ID].gift_packs
+    if type(packs) ~= "table" then
+        return nil
+    end
+    for _, pack in pairs(packs) do
+        if pack and tostring(pack.pack_key) == tostring(pack_key) then
+            return pack
+        end
+    end
+    return nil
+end
+
+function HolidayPack:BuildRedeemRowsForGift(ID, product_type)
+    local pack = self:FindGiftPackByProductType(ID, product_type)
+    if not pack then
+        return {}
+    end
+    return self:BuildRedeemRowsFromRewards({
+        gold = pack.gold,
+        hero_pick = pack.hero_pick,
+        prophecy_card = pack.prophecy_card,
+    })
+end
+
+function HolidayPack:BuildRedeemRowsFromRewards(rewards)
+    local rows = {}
+    if not rewards then
+        return rows
+    end
+    local gold = tonumber(rewards.gold) or 0
+    if gold > 0 then
+        rows[#rows + 1] = { img = HOLIDAY_GOLD_ICON, count = gold, unit = "金豆" }
+    end
+    local hero_pick = tonumber(rewards.hero_pick) or 0
+    if hero_pick > 0 then
+        rows[#rows + 1] = {
+            img = HOLIDAY_HERO_PICK_ICON,
+            count = hero_pick,
+            unit = "英雄自选卡",
+        }
+    end
+    local prophecy = tonumber(rewards.prophecy_card) or 0
+    if prophecy > 0 then
+        rows[#rows + 1] = {
+            img = HOLIDAY_PROPHECY_ICON,
+            count = prophecy,
+            unit = "预言卡",
+        }
+    end
+    return rows
+end
+
+function HolidayPack:IsDwFreeOpen(ID)
+    -- 已取消活动时间窗：始终视为开放（每日次数仍由 dw_free_day 控制）
+    return true
+end
+
+function HolidayPack:GetGiftBuyCount(ID, pack_key)
+    if not ID or not pack_key or not self.Data[ID] then
+        return 0
+    end
+    local counts = self.Data[ID].gift_buy_counts
+    if type(counts) ~= "table" then
+        return 0
+    end
+    return tonumber(counts[tostring(pack_key)]) or 0
+end
+
+function HolidayPack:CanBuyGift(ID, pack)
+    if not pack then
+        return false
+    end
+    local limited = pack.is_limited == true or pack.is_limited == 1
+    if not limited then
+        return true
+    end
+    local limit = tonumber(pack.limit_count) or 0
+    if limit <= 0 then
+        return true
+    end
+    return self:GetGiftBuyCount(ID, pack.pack_key) < limit
+end
